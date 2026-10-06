@@ -1,0 +1,282 @@
+{
+  "masterId": "coconut_soup",
+  "source": "hellofresh",
+  "createdAt": 1790795820,
+  "basePortions": 4,
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/coconut_soup/main.jpg",
+    "byNode": {
+      "coconut_soup__prepped_vegetables": "assets/recipes/coconut_soup/steps/prepped_vegetables.jpg",
+      "coconut_soup__cooked_noodles": "assets/recipes/coconut_soup/steps/cooked_noodles.jpg",
+      "coconut_soup__fried_vegetables": "assets/recipes/coconut_soup/steps/fried_vegetables.jpg",
+      "coconut_soup__soup": "assets/recipes/coconut_soup/steps/soup.jpg",
+      "coconut_soup__garnish": "assets/recipes/coconut_soup/steps/garnish.jpg",
+      "coconut_soup": "assets/recipes/coconut_soup/steps/serve.jpg"
+    }
+  },
+  "ratings": {
+    "average": 3.3,
+    "count": 27,
+    "source": "hellofresh"
+  },
+  "nodes": [
+    {
+      "id": "coconut_soup__prepped_vegetables",
+      "name": "Skär Svamp och Paprika",
+      "outputName": "Skuren svamp och paprika",
+      "inputs": [
+        {
+          "id": "forest_mushrooms",
+          "amount": 400,
+          "unit": "g"
+        },
+        {
+          "id": "paprika",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Kvarta {{forest_mushrooms}}.",
+        "Kärna ur {{paprika}} och skär i 2 cm stora bitar."
+      ],
+      "duration": 4,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "coconut_soup__lime_wedges",
+      "name": "Skär Lime",
+      "outputName": "Limeklyftor",
+      "inputs": [
+        {
+          "id": "lime",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skär {{lime}} i klyftor."
+      ],
+      "duration": 1,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "coconut_soup__cooked_noodles",
+      "name": "Koka Nudlar",
+      "outputName": "Kokta nudlar",
+      "inputs": [
+        {
+          "id": "noodles",
+          "amount": 200,
+          "unit": "g"
+        },
+        {
+          "id": "vegetable_bouillon",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "id": "water",
+          "amount": 2,
+          "unit": "l"
+        }
+      ],
+      "steps": [
+        "Koka upp {{water}} med {{vegetable_bouillon}} i en kastrull.",
+        "Lägg ner {{noodles}} i det kokande buljongvattnet.",
+        "Koka tills mjuka, 4–6 min.",
+        "Häll av vattnet i ett durkslag och häll tillbaka nudlarna i kastrullen."
+      ],
+      "duration": 3,
+      "wait": 5,
+      "tags": [],
+      "tips": [
+        "Använd inte mer nudlar än angivet — de sväller kraftigt."
+      ]
+    },
+    {
+      "id": "coconut_soup__prepped_aromatics",
+      "name": "Hacka Chili, Ingefära och Vitlök",
+      "outputName": "Hackade aromater",
+      "inputs": [
+        {
+          "id": "fresh_chili",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "ginger",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "garlic",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Kärna ur {{fresh_chili}} och finhacka (använd hela eller hälften beroende på styrka).",
+        "Skala och finhacka {{ginger}} (ca 20 g).",
+        "Riv eller finhacka {{garlic}}."
+      ],
+      "duration": 4,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "HF-kortet anger ca 10 g ingefära för 2 port (≈20 g för 4). Chili är stark — börja med hälften om du är osäker."
+      ]
+    },
+    {
+      "id": "coconut_soup__fried_vegetables",
+      "name": "Fräs Grönsaker",
+      "outputName": "Frästa grönsaker",
+      "inputs": [
+        {
+          "id": "coconut_soup__prepped_vegetables",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "coconut_soup__prepped_aromatics",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "oil",
+          "amount": 1,
+          "unit": "skvätt"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{oil}} i en stor kastrull på medelhög värme.",
+        "Fräs svamp och paprika från {{coconut_soup__prepped_vegetables}} samt chili, ingefära och vitlök från {{coconut_soup__prepped_aromatics}} i 2 min under omrörning."
+      ],
+      "duration": 3,
+      "tags": [],
+      "tips": [
+        "Chili är stark — justera mängden efter smak."
+      ]
+    },
+    {
+      "id": "coconut_soup__soup",
+      "name": "Gör Kokossoppa",
+      "outputName": "Kokossoppa med nudlar",
+      "inputs": [
+        {
+          "id": "coconut_soup__fried_vegetables",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "coconut_soup__cooked_noodles",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "coconut_milk",
+          "amount": 500,
+          "unit": "ml"
+        },
+        {
+          "id": "yellow_curry_paste",
+          "amount": 40,
+          "unit": "g"
+        },
+        {
+          "id": "water",
+          "amount": 15,
+          "unit": "ml"
+        },
+        {
+          "id": "soy_sauce",
+          "amount": 50,
+          "unit": "ml"
+        }
+      ],
+      "steps": [
+        "Häll i {{coconut_milk}}, {{yellow_curry_paste}} och {{water}} i kastrullen med {{coconut_soup__fried_vegetables}}.",
+        "Låt soppan sjuda tills grönsakerna har mjuknat, 3–4 min.",
+        "Häll i {{coconut_soup__cooked_noodles}}. Se till att de är nedsänkta i soppan och rör om ordentligt.",
+        "Rör i {{soy_sauce}}."
+      ],
+      "duration": 3,
+      "wait": 4,
+      "tags": []
+    },
+    {
+      "id": "coconut_soup__garnish",
+      "name": "Förbered Garnering",
+      "outputName": "Jordnötter, koriander och salladslök",
+      "inputs": [
+        {
+          "id": "peanuts",
+          "amount": 40,
+          "unit": "g"
+        },
+        {
+          "id": "coriander",
+          "amount": 1,
+          "unit": "kruka"
+        },
+        {
+          "id": "spring_onion",
+          "amount": 4,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Grovhacka {{peanuts}}.",
+        "Grovhacka bladen från {{coriander}} (kasta stjälkarna).",
+        "Skiva {{spring_onion}} tunt."
+      ],
+      "duration": 4,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "coconut_soup",
+      "name": "Kokossoppa",
+      "outputName": "Kokossoppa med skogschampinjoner, koriander och jordnötter",
+      "inputs": [
+        {
+          "id": "coconut_soup__soup",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "coconut_soup__garnish",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "coconut_soup__lime_wedges",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Rör i hälften av koriandern från {{coconut_soup__garnish}} i {{coconut_soup__soup}}.",
+        "Pressa i juice från {{coconut_soup__lime_wedges}} efter smak. Tillsätt {{salt}} om det behövs.",
+        "Servera soppan i skålar och toppa med jordnötter, resterande koriander och salladslök."
+      ],
+      "duration": 3,
+      "wait": 0,
+      "tags": [
+        "master"
+      ]
+    }
+  ]
+}

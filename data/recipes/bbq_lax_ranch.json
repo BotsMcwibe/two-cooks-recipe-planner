@@ -1,0 +1,451 @@
+{
+  "masterId": "bbq_lax_ranch",
+  "source": "hellofresh",
+  "createdAt": 1790853297,
+  "basePortions": 4,
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/bbq_lax_ranch/main.jpg",
+    "byNode": {
+      "bbq_lax_ranch__roasted_bbq_potato": "assets/recipes/bbq_lax_ranch/steps/roasted_bbq_potato.jpg",
+      "bbq_lax_ranch__ranch_dressing": "assets/recipes/bbq_lax_ranch/steps/ranch_dressing.jpg",
+      "bbq_lax_ranch__baked_bbq_salmon": "assets/recipes/bbq_lax_ranch/steps/baked_bbq_salmon.jpg",
+      "bbq_lax_ranch__corn_salsa": "assets/recipes/bbq_lax_ranch/steps/corn_salsa.jpg",
+      "bbq_lax_ranch__cabbage_salad": "assets/recipes/bbq_lax_ranch/steps/cabbage_salad.jpg",
+      "bbq_lax_ranch": "assets/recipes/bbq_lax_ranch/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 886,
+    "perPortion": {
+      "energyKcal": 1393,
+      "energyKj": 5829,
+      "fatG": 94.6,
+      "saturatedFatG": 19.1,
+      "carbsG": 81.3,
+      "sugarsG": 28.5,
+      "fiberG": 9.7,
+      "proteinG": 53.9,
+      "saltG": 6.8
+    }
+  },
+  "ratings": {
+    "average": 4,
+    "count": 2,
+    "source": "hellofresh"
+  },
+  "nodes": [
+    {
+      "id": "bbq_lax_ranch__preheated_oven_240",
+      "name": "Värm Ugnen",
+      "outputName": "Förvärmd ugn (240°C)",
+      "inputs": [],
+      "steps": [
+        "Värm ugnen till 240°C, eller 220°C varmluft."
+      ],
+      "duration": 1,
+      "wait": 12,
+      "tags": [
+        "prep",
+        "no-timer"
+      ],
+      "tips": [
+        "HF anger 240°C/220°C varmluft — lokal ugnsnode, inte preheated_oven_220 (220/200)."
+      ]
+    },
+    {
+      "id": "bbq_lax_ranch__potato_wedges",
+      "name": "Skär Potatis",
+      "outputName": "Potatisklyftor",
+      "inputs": [
+        {
+          "id": "potato",
+          "amount": 1000,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Skär {{potato}} (oskalad) i 2 cm breda klyftor."
+      ],
+      "duration": 5,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "bbq_lax_ranch__roasted_bbq_potato",
+      "name": "Rosta BBQ-potatis",
+      "outputName": "Rostad BBQ-potatis",
+      "inputs": [
+        {
+          "id": "bbq_lax_ranch__preheated_oven_240",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "bbq_lax_ranch__potato_wedges",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "bbq_spice_mix",
+          "amount": 10,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Placera {{bbq_lax_ranch__potato_wedges}} på en plåt med bakplåtspapper (använd 2 plåtar).",
+        "Blanda med {{olive_oil}}, {{bbq_spice_mix}}, {{salt}} och {{pepper}}.",
+        "Rosta i den förvärmda ugnen i 25–35 min, eller tills gyllene."
+      ],
+      "duration": 3,
+      "wait": 35,
+      "tags": []
+    },
+    {
+      "id": "bbq_lax_ranch__chopped_chives",
+      "name": "Hacka Gräslök",
+      "outputName": "Hackad gräslök",
+      "inputs": [
+        {
+          "id": "chives",
+          "amount": 1,
+          "unit": "pkt"
+        }
+      ],
+      "steps": [
+        "Finhacka {{chives}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "bbq_lax_ranch__ranch_dressing",
+      "name": "Gör Ranchdressing",
+      "outputName": "Ranchdressing",
+      "inputs": [
+        {
+          "id": "sour_cream",
+          "amount": 150,
+          "unit": "ml"
+        },
+        {
+          "id": "mayonnaise",
+          "amount": 100,
+          "unit": "g"
+        },
+        {
+          "id": "bbq_lax_ranch__chopped_chives",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Blanda {{sour_cream}}, {{mayonnaise}}, {{bbq_lax_ranch__chopped_chives}}, {{salt}} och {{pepper}} i en liten skål och ställ åt sidan."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "bbq_lax_ranch__baked_bbq_salmon",
+      "name": "Tillaga BBQ-lax",
+      "outputName": "Ugnsbakad BBQ-lax",
+      "inputs": [
+        {
+          "id": "bbq_lax_ranch__preheated_oven_240",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "salmon_fillet",
+          "amount": 800,
+          "unit": "g"
+        },
+        {
+          "id": "bbq_sauce",
+          "amount": 120,
+          "unit": "g"
+        },
+        {
+          "id": "butter",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Skär {{butter}} i kuber.",
+        "Torka av {{salmon_fillet}} med hushållspapper och krydda med {{salt}}.",
+        "Placera laxen med skinnsidan ner i en ugnsform med bakplåtspapper. Bre med {{bbq_sauce}} och toppa med smörkuber.",
+        "Tillaga i den förvärmda ugnen i 15–20 min, eller tills genomstekt."
+      ],
+      "duration": 5,
+      "wait": 20,
+      "tags": [],
+      "tips": [
+        "Laxen är färdiglagad när köttet är ogenomskinligt i mitten."
+      ]
+    },
+    {
+      "id": "bbq_lax_ranch__halved_tomatoes",
+      "name": "Halvera Tomater",
+      "outputName": "Halverade körsbärstomater",
+      "inputs": [
+        {
+          "id": "cherry_tomatoes",
+          "amount": 250,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Halvera {{cherry_tomatoes}}."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "bbq_lax_ranch__chopped_red_onion",
+      "name": "Hacka Rödlök",
+      "outputName": "Hackad rödlök",
+      "inputs": [
+        {
+          "id": "red_onion",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Finhacka {{red_onion}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "bbq_lax_ranch__chopped_parsley",
+      "name": "Hacka Persilja",
+      "outputName": "Hackad persilja",
+      "inputs": [
+        {
+          "id": "parsley",
+          "amount": 1,
+          "unit": "pkt"
+        }
+      ],
+      "steps": [
+        "Finhacka {{parsley}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "bbq_lax_ranch__fried_corn",
+      "name": "Stek Majs",
+      "outputName": "Stekt majs",
+      "inputs": [
+        {
+          "id": "canned_corn",
+          "amount": 1,
+          "unit": "burk"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        }
+      ],
+      "steps": [
+        "Häll av {{canned_corn}}.",
+        "Hetta upp {{olive_oil}} i en medelstor stekpanna på medelhög värme.",
+        "Stek majsen i 4–5 min, eller tills lätt brynt."
+      ],
+      "duration": 5,
+      "wait": 0,
+      "tags": []
+    },
+    {
+      "id": "bbq_lax_ranch__corn_salsa",
+      "name": "Gör Majssalsa",
+      "outputName": "Majssalsa",
+      "inputs": [
+        {
+          "id": "bbq_lax_ranch__fried_corn",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "bbq_lax_ranch__halved_tomatoes",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "bbq_lax_ranch__chopped_red_onion",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "bbq_lax_ranch__chopped_parsley",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "salted_peanuts",
+          "amount": 40,
+          "unit": "g"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Blanda {{bbq_lax_ranch__fried_corn}}, {{bbq_lax_ranch__halved_tomatoes}}, {{bbq_lax_ranch__chopped_red_onion}}, {{bbq_lax_ranch__chopped_parsley}}, {{salted_peanuts}}, {{olive_oil}}, {{salt}} och {{pepper}} i en medelstor skål."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "bbq_lax_ranch__cabbage_salad",
+      "name": "Gör Kålsallad",
+      "outputName": "Kålsallad med aioli",
+      "inputs": [
+        {
+          "id": "aioli",
+          "amount": 80,
+          "unit": "g"
+        },
+        {
+          "id": "water",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "cabbage_mix",
+          "amount": 300,
+          "unit": "g"
+        },
+        {
+          "id": "carrot_julienne",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Blanda {{aioli}}, {{water}}, {{olive_oil}}, {{salt}} och {{pepper}} i en medelstor skål.",
+        "Vänd ner {{cabbage_mix}} och {{carrot_julienne}} och ställ åt sidan."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "bbq_lax_ranch",
+      "name": "Festlig BBQ-lax och ranchdressing",
+      "outputName": "Festlig BBQ-lax och ranchdressing",
+      "inputs": [
+        {
+          "id": "bbq_lax_ranch__baked_bbq_salmon",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "bbq_lax_ranch__roasted_bbq_potato",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "bbq_lax_ranch__ranch_dressing",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "bbq_lax_ranch__cabbage_salad",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "bbq_lax_ranch__corn_salsa",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{bbq_lax_ranch__baked_bbq_salmon}} på ett serveringsfat och toppa med resterande smör från ugnsformen.",
+        "Servera med {{bbq_lax_ranch__roasted_bbq_potato}}, {{bbq_lax_ranch__ranch_dressing}}, {{bbq_lax_ranch__cabbage_salad}} och {{bbq_lax_ranch__corn_salsa}}."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [
+        "master"
+      ]
+    }
+  ]
+}

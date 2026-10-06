@@ -1,0 +1,202 @@
+{
+  "masterId": "chorizo_rigatoni_calabrese",
+  "source": "hellofresh",
+  "createdAt": 1791036455,
+  "basePortions": 4,
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/chorizo_rigatoni_calabrese/main.jpg",
+    "byNode": {
+      "chorizo_rigatoni_calabrese__sliced_chorizo": "assets/recipes/chorizo_rigatoni_calabrese/steps/prepped.jpg",
+      "chorizo_rigatoni_calabrese__chopped_basil": "assets/recipes/chorizo_rigatoni_calabrese/steps/prepped.jpg",
+      "chorizo_rigatoni_calabrese__minced_garlic": "assets/recipes/chorizo_rigatoni_calabrese/steps/prepped.jpg",
+      "chorizo_rigatoni_calabrese__chopped_walnuts": "assets/recipes/chorizo_rigatoni_calabrese/steps/prepped.jpg",
+      "chorizo_rigatoni_calabrese__rinsed_rucola": "assets/recipes/chorizo_rigatoni_calabrese/steps/prepped.jpg",
+      "chorizo_rigatoni_calabrese__cooked_rigatoni": "assets/recipes/chorizo_rigatoni_calabrese/steps/cooked_rigatoni.jpg",
+      "chorizo_rigatoni_calabrese__fried_chorizo": "assets/recipes/chorizo_rigatoni_calabrese/steps/fried_chorizo.jpg",
+      "chorizo_rigatoni_calabrese__cream_sauce": "assets/recipes/chorizo_rigatoni_calabrese/steps/cream_sauce.jpg",
+      "chorizo_rigatoni_calabrese__tossed_pasta": "assets/recipes/chorizo_rigatoni_calabrese/steps/tossed_pasta.jpg",
+      "chorizo_rigatoni_calabrese": "assets/recipes/chorizo_rigatoni_calabrese/steps/serve.jpg"
+    }
+  },
+  "ratings": {
+    "average": 3.5,
+    "count": 900,
+    "source": "hellofresh"
+  },
+  "cooked": {
+    "hfId": "62a3019cb69eb23bebb10d39",
+    "at": "2026-10-03T15:12:32+02:00",
+    "source": "photo",
+    "headline": "med calabresepesto och riven ost"
+  },
+  "nodes": [
+    {
+      "id": "chorizo_rigatoni_calabrese__sliced_chorizo",
+      "name": "Skiva Chorizo",
+      "outputName": "Skivad chorizo",
+      "inputs": [
+        { "id": "chorizo", "amount": 400, "unit": "g" }
+      ],
+      "steps": [
+        "Skär {{chorizo}} i 1 cm breda skivor."
+      ],
+      "duration": 3,
+      "tags": ["prep"]
+    },
+    {
+      "id": "chorizo_rigatoni_calabrese__chopped_basil",
+      "name": "Finhacka Basilika",
+      "outputName": "Finhackad basilika",
+      "inputs": [
+        { "id": "fresh_basil", "amount": 1, "unit": "pkt" }
+      ],
+      "steps": [
+        "Finhacka {{fresh_basil}}."
+      ],
+      "duration": 2,
+      "tags": ["prep"]
+    },
+    {
+      "id": "chorizo_rigatoni_calabrese__minced_garlic",
+      "name": "Hacka Vitlök",
+      "outputName": "Hackad vitlök",
+      "inputs": [
+        { "id": "garlic", "amount": 2, "unit": "st" }
+      ],
+      "steps": [
+        "Finhacka eller pressa {{garlic}}."
+      ],
+      "duration": 1,
+      "tags": ["prep"]
+    },
+    {
+      "id": "chorizo_rigatoni_calabrese__chopped_walnuts",
+      "name": "Grovhacka Valnötter",
+      "outputName": "Grovhackade valnötter",
+      "inputs": [
+        { "id": "walnuts", "amount": 20, "unit": "g" }
+      ],
+      "steps": [
+        "Grovhacka {{walnuts}}."
+      ],
+      "duration": 2,
+      "tags": ["prep"]
+    },
+    {
+      "id": "chorizo_rigatoni_calabrese__rinsed_rucola",
+      "name": "Skölj Rucola",
+      "outputName": "Sköljd rucola",
+      "inputs": [
+        { "id": "rucola", "amount": 40, "unit": "g" }
+      ],
+      "steps": [
+        "Skölj {{rucola}}."
+      ],
+      "duration": 1,
+      "tags": ["prep"]
+    },
+    {
+      "id": "chorizo_rigatoni_calabrese__cooked_rigatoni",
+      "name": "Koka Rigatoni",
+      "outputName": "Kokt rigatoni",
+      "inputs": [
+        { "id": "rigatoni", "amount": 1, "unit": "pkt" },
+        { "id": "water", "amount": 2, "unit": "l" },
+        { "id": "salt", "amount": 1, "unit": "msk" }
+      ],
+      "steps": [
+        "Koka upp en stor kastrull med saltat {{water}}.",
+        "Koka {{rigatoni}} i 11–12 min, eller tills al dente."
+      ],
+      "duration": 3,
+      "wait": 12,
+      "tags": []
+    },
+    {
+      "id": "chorizo_rigatoni_calabrese__drained_rigatoni",
+      "name": "Häll av Rigatoni",
+      "outputName": "Avhälld rigatoni",
+      "inputs": [
+        { "id": "chorizo_rigatoni_calabrese__cooked_rigatoni", "amount": 1, "unit": "st" },
+        { "id": "olive_oil", "amount": 1, "unit": "skvätt" }
+      ],
+      "steps": [
+        "Skopa upp 4 dl pastavatten och ställ åt sidan. Häll av resten, lägg tillbaka {{chorizo_rigatoni_calabrese__cooked_rigatoni}} i kastrullen och ringla eventuellt över lite {{olive_oil}}."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": []
+    },
+    {
+      "id": "chorizo_rigatoni_calabrese__fried_chorizo",
+      "name": "Stek Chorizo",
+      "outputName": "Stekt chorizo med tomater",
+      "inputs": [
+        { "id": "chorizo_rigatoni_calabrese__sliced_chorizo", "amount": 1, "unit": "st" },
+        { "id": "chorizo_rigatoni_calabrese__minced_garlic", "amount": 1, "unit": "st" },
+        { "id": "cherry_tomatoes", "amount": 250, "unit": "g" },
+        { "id": "olive_oil", "amount": 1, "unit": "skvätt" }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i en stor stekpanna på medelhög värme.",
+        "Stek {{chorizo_rigatoni_calabrese__sliced_chorizo}} i 1–2 min. Tillsätt {{chorizo_rigatoni_calabrese__minced_garlic}} och {{cherry_tomatoes}} och stek i ytterligare 1–2 min, tills tomaterna mjuknat."
+      ],
+      "duration": 5,
+      "wait": 0,
+      "tags": []
+    },
+    {
+      "id": "chorizo_rigatoni_calabrese__cream_sauce",
+      "name": "Gör Calabresesås",
+      "outputName": "Krämig calabresepesto",
+      "inputs": [
+        { "id": "chorizo_rigatoni_calabrese__fried_chorizo", "amount": 1, "unit": "st" },
+        { "id": "calabrese_pesto", "amount": 120, "unit": "g" },
+        { "id": "cooking_cream", "amount": 1, "unit": "pkt" }
+      ],
+      "steps": [
+        "Sänk till medelvärme. Rör ner {{calabrese_pesto}} och {{cooking_cream}} i {{chorizo_rigatoni_calabrese__fried_chorizo}}.",
+        "Sjud i 1–2 min, tills såsen tjocknat."
+      ],
+      "duration": 1,
+      "wait": 2,
+      "tags": []
+    },
+    {
+      "id": "chorizo_rigatoni_calabrese__tossed_pasta",
+      "name": "Blanda Pasta",
+      "outputName": "Chorizo-rigatoni i sås",
+      "inputs": [
+        { "id": "chorizo_rigatoni_calabrese__cream_sauce", "amount": 1, "unit": "st" },
+        { "id": "chorizo_rigatoni_calabrese__drained_rigatoni", "amount": 1, "unit": "st" },
+        { "id": "chorizo_rigatoni_calabrese__chopped_basil", "amount": 1, "unit": "st" },
+        { "id": "grated_cheese", "amount": 40, "unit": "g" },
+        { "id": "salt", "amount": 1, "unit": "nypa" },
+        { "id": "pepper", "amount": 1, "unit": "nypa" }
+      ],
+      "steps": [
+        "Tillsätt {{chorizo_rigatoni_calabrese__drained_rigatoni}}, 3 dl av det sparade pastavattnet, {{grated_cheese}} och {{chorizo_rigatoni_calabrese__chopped_basil}} till {{chorizo_rigatoni_calabrese__cream_sauce}}. Rör om och smaka av med {{salt}} och {{pepper}}."
+      ],
+      "duration": 3,
+      "wait": 0,
+      "tags": []
+    },
+    {
+      "id": "chorizo_rigatoni_calabrese",
+      "name": "Chorizo-rigatoni med calabresepesto",
+      "outputName": "Chorizo-rigatoni med calabresepesto",
+      "inputs": [
+        { "id": "chorizo_rigatoni_calabrese__tossed_pasta", "amount": 1, "unit": "st" },
+        { "id": "chorizo_rigatoni_calabrese__chopped_walnuts", "amount": 1, "unit": "st" },
+        { "id": "chorizo_rigatoni_calabrese__rinsed_rucola", "amount": 1, "unit": "st" }
+      ],
+      "steps": [
+        "Lägg upp {{chorizo_rigatoni_calabrese__tossed_pasta}} i skålar. Strö över {{chorizo_rigatoni_calabrese__chopped_walnuts}} och {{chorizo_rigatoni_calabrese__rinsed_rucola}}."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": ["master"]
+    }
+  ]
+}

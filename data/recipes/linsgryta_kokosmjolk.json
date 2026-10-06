@@ -1,0 +1,282 @@
+{
+  "masterId": "linsgryta_kokosmjolk",
+  "source": "ica",
+  "createdAt": 1791049875,
+  "basePortions": 4,
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/linsgryta_kokosmjolk/main.jpg"
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "perPortion": {
+      "energyKj": 2478,
+      "energyKcal": 592,
+      "fatG": 28,
+      "carbsG": 65,
+      "proteinG": 15,
+      "saltG": 2.8
+    }
+  },
+  "ratings": {
+    "average": 4.6,
+    "count": 1582,
+    "source": "ica"
+  },
+  "personalRating": {
+    "score": 7,
+    "outOf": 10
+  },
+  "cooked": {
+    "hfId": "ica-724788",
+    "at": "2026-10-03T21:05:04+02:00"
+  },
+  "nodes": [
+    {
+      "id": "linsgryta_kokosmjolk__cooked_rice",
+      "name": "Koka Ris",
+      "outputName": "Kokt ris",
+      "inputs": [
+        {
+          "id": "rice",
+          "amount": 4,
+          "unit": "portioner"
+        }
+      ],
+      "steps": [
+        "Koka {{rice}} enligt anvisningen på förpackningen, ca 8–10 min."
+      ],
+      "duration": 2,
+      "wait": 10,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "linsgryta_kokosmjolk__oven_on",
+      "name": "Sätt på Ugnen",
+      "outputName": "Påslagen ugn",
+      "inputs": [],
+      "steps": [
+        "Sätt på ugnen enligt anvisningen på brödförpackningen."
+      ],
+      "duration": 1,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "linsgryta_kokosmjolk__chopped_onion",
+      "name": "Hacka Lök",
+      "outputName": "Hackad lök",
+      "inputs": [
+        {
+          "id": "onion",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skala och hacka {{onion}}."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "linsgryta_kokosmjolk__fried_base",
+      "name": "Fräs Grytbas",
+      "outputName": "Fräst lökbas",
+      "inputs": [
+        {
+          "id": "linsgryta_kokosmjolk__chopped_onion",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "oil",
+          "amount": 1,
+          "unit": "msk"
+        },
+        {
+          "id": "garlic",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "curry",
+          "amount": 1,
+          "unit": "tsk"
+        },
+        {
+          "id": "tomato_paste",
+          "amount": 2,
+          "unit": "msk"
+        }
+      ],
+      "steps": [
+        "Fräs {{linsgryta_kokosmjolk__chopped_onion}} i {{oil}} i en gryta.",
+        "Pressa i {{garlic}} och tillsätt {{curry}} och {{tomato_paste}}. Fräs ytterligare någon minut."
+      ],
+      "duration": 4,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "linsgryta_kokosmjolk__halved_tomatoes",
+      "name": "Dela Tomater",
+      "outputName": "Delade tomater",
+      "inputs": [
+        {
+          "id": "cherry_tomatoes",
+          "amount": 250,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Dela {{cherry_tomatoes}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "linsgryta_kokosmjolk__simmered_stew",
+      "name": "Koka Linsgryta",
+      "outputName": "Kokt linsgryta",
+      "inputs": [
+        {
+          "id": "linsgryta_kokosmjolk__fried_base",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "coconut_milk",
+          "amount": 400,
+          "unit": "ml"
+        },
+        {
+          "id": "water",
+          "amount": 2.5,
+          "unit": "dl"
+        },
+        {
+          "id": "vegetable_bouillon",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "red_lentils",
+          "amount": 2,
+          "unit": "dl"
+        },
+        {
+          "id": "sambal_oelek",
+          "amount": 1,
+          "unit": "tsk"
+        },
+        {
+          "id": "linsgryta_kokosmjolk__halved_tomatoes",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Rör i {{coconut_milk}}, {{water}}, smulad {{vegetable_bouillon}}, {{red_lentils}} och {{sambal_oelek}} i {{linsgryta_kokosmjolk__fried_base}}.",
+        "Låt koka ca 15 minuter eller tills linserna är mjuka. Vänd ner {{linsgryta_kokosmjolk__halved_tomatoes}} mot slutet av koktiden, eller spara dem till servering."
+      ],
+      "duration": 2,
+      "wait": 15,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Späd eventuellt med mer vatten om grytan är för tjock."
+      ]
+    },
+    {
+      "id": "linsgryta_kokosmjolk__cooked_naan",
+      "name": "Tillaga Naanbröd",
+      "outputName": "Tillagat naanbröd",
+      "inputs": [
+        {
+          "id": "linsgryta_kokosmjolk__oven_on",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "naan_bread",
+          "amount": 2,
+          "unit": "pkt"
+        }
+      ],
+      "steps": [
+        "Tillaga {{naan_bread}} i {{linsgryta_kokosmjolk__oven_on}} enligt anvisningen på förpackningen, ca 2–4 min."
+      ],
+      "duration": 1,
+      "wait": 4,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "linsgryta_kokosmjolk",
+      "name": "Linsgryta med kokosmjölk",
+      "outputName": "Linsgryta med kokosmjölk",
+      "inputs": [
+        {
+          "id": "linsgryta_kokosmjolk__simmered_stew",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "linsgryta_kokosmjolk__cooked_rice",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "linsgryta_kokosmjolk__cooked_naan",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "matyoghurt",
+          "amount": 2,
+          "unit": "dl"
+        },
+        {
+          "id": "coriander",
+          "amount": 0.5,
+          "unit": "kruka"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Smaka av {{linsgryta_kokosmjolk__simmered_stew}} med {{salt}} och {{pepper}}.",
+        "Servera grytan med {{linsgryta_kokosmjolk__cooked_rice}} och tomater, {{linsgryta_kokosmjolk__cooked_naan}} samt {{matyoghurt}}, och toppa med {{coriander}}."
+      ],
+      "duration": 3,
+      "tags": [
+        "master"
+      ],
+      "tips": [
+        "Läs noga ingrediensförteckningen på buljongen och naanbrödet.",
+        "Fri från ägg. Glutenfri: välj ris eller annat glutenfritt gryn och byt naanbröd mot glutenfritt bröd.",
+        "Laktosfri: byt naanbröd mot laktosfritt bröd. Mjölkproteinfri: byt naanbröd mot mjölkproteinfritt bröd.",
+        "Smaksätt gärna med färsk eller torkad ingefära och lite extra sambal oelek."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,324 @@
+{
+  "masterId": "krispiga_kikartor_salladsbowl",
+  "source": "hellofresh",
+  "createdAt": 1791040446,
+  "basePortions": 4,
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/krispiga_kikartor_salladsbowl/main.jpg",
+    "byNode": {
+      "krispiga_kikartor_salladsbowl__roasted_potato": "assets/recipes/krispiga_kikartor_salladsbowl/steps/roasted_potato.jpg",
+      "krispiga_kikartor_salladsbowl__toasted_pine_nuts": "assets/recipes/krispiga_kikartor_salladsbowl/steps/toasted_pine_nuts.jpg",
+      "krispiga_kikartor_salladsbowl__roasted_chickpeas": "assets/recipes/krispiga_kikartor_salladsbowl/steps/roasted_chickpeas.jpg",
+      "krispiga_kikartor_salladsbowl__chive_dressing": "assets/recipes/krispiga_kikartor_salladsbowl/steps/chive_dressing.jpg",
+      "krispiga_kikartor_salladsbowl__prepped_salad": "assets/recipes/krispiga_kikartor_salladsbowl/steps/prepped_salad.jpg",
+      "krispiga_kikartor_salladsbowl": "assets/recipes/krispiga_kikartor_salladsbowl/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 545,
+    "perPortion": {
+      "energyKcal": 629,
+      "energyKj": 2632,
+      "fatG": 32.9,
+      "saturatedFatG": 8.2,
+      "carbsG": 61.7,
+      "sugarsG": 10.6,
+      "fiberG": 12,
+      "proteinG": 17.5,
+      "saltG": 4.2
+    }
+  },
+  "ratings": {
+    "average": 3.3,
+    "count": 163,
+    "source": "hellofresh"
+  },
+  "cooked": {
+    "hfId": "669a2dd39b6afed05f6419af",
+    "at": "2026-10-03T15:12:32+02:00",
+    "source": "photo",
+    "headline": "med avokado och rostade pinjenötter"
+  },
+  "nodes": [
+    {
+      "id": "krispiga_kikartor_salladsbowl__preheated_oven_240",
+      "name": "Värm Ugnen",
+      "outputName": "Förvärmd ugn (240°C)",
+      "inputs": [],
+      "steps": [
+        "Värm ugnen till 240°C, eller 220°C varmluft."
+      ],
+      "duration": 1,
+      "wait": 12,
+      "tags": [
+        "prep",
+        "no-timer"
+      ],
+      "tips": [
+        "Ugnen tar vanligtvis 10–15 minuter att värmas upp.",
+        "HF anger 240°C/220°C varmluft — lokal ugnsnode, inte preheated_oven_220."
+      ]
+    },
+    {
+      "id": "krispiga_kikartor_salladsbowl__potato_chunks",
+      "name": "Skär Potatis",
+      "outputName": "Potatisbitar",
+      "inputs": [
+        {
+          "id": "potato",
+          "amount": 1000,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Skär {{potato}} (oskalad) i 2 cm stora bitar."
+      ],
+      "duration": 5,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "krispiga_kikartor_salladsbowl__roasted_potato",
+      "name": "Rosta Potatis",
+      "outputName": "Rostad vitlökspotatis",
+      "inputs": [
+        {
+          "id": "krispiga_kikartor_salladsbowl__preheated_oven_240",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "krispiga_kikartor_salladsbowl__potato_chunks",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "garlic_flakes",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Lägg {{krispiga_kikartor_salladsbowl__potato_chunks}} på två plåtar med bakplåtspapper.",
+        "Blanda med {{olive_oil}}, {{garlic_flakes}}, {{salt}} och en nypa {{pepper}}.",
+        "Rosta i {{krispiga_kikartor_salladsbowl__preheated_oven_240}} i 25–35 min, eller tills potatisen är gyllene."
+      ],
+      "duration": 3,
+      "wait": 35,
+      "tags": [],
+      "tips": [
+        "Olivolja har ingen mängd i yields — 1 skvätt. Salt (steg 1) är 1 tsk."
+      ]
+    },
+    {
+      "id": "krispiga_kikartor_salladsbowl__toasted_pine_nuts",
+      "name": "Rosta Pinjenötter",
+      "outputName": "Rostade pinjenötter",
+      "inputs": [
+        {
+          "id": "pine_nuts",
+          "amount": 20,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Hetta upp en stor stekpanna på medelhög värme.",
+        "Rosta {{pine_nuts}} i 3–4 min, eller tills de är gyllene. Ställ åt sidan."
+      ],
+      "duration": 4,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Rostningen är hands-on så den inte bränner. 3–4 min ligger i duration, inte wait."
+      ]
+    },
+    {
+      "id": "krispiga_kikartor_salladsbowl__roasted_chickpeas",
+      "name": "Rosta Kikärtor",
+      "outputName": "Krispiga kikärtor",
+      "inputs": [
+        {
+          "id": "krispiga_kikartor_salladsbowl__preheated_oven_240",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "chickpeas",
+          "amount": 1,
+          "unit": "pkt"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Häll av {{chickpeas}} och lägg dem på en plåt med bakplåtspapper. Platta till dem med en sked eller stekspade.",
+        "Ringla över {{olive_oil}} och krydda med {{salt}} och en nypa {{pepper}}.",
+        "Rosta i {{krispiga_kikartor_salladsbowl__preheated_oven_240}} i 12–15 min, eller tills de är krispiga."
+      ],
+      "duration": 3,
+      "wait": 15,
+      "tags": [],
+      "tips": [
+        "Kikärtorna delar ugn med potatisen men har egen klocka. Inte inbakade i potatisens 25–35 min.",
+        "Yield Salt (steg 3) är 1 tsk. Stegtexten skriver ½ tsk vid 4 portioner. Yielden är använd.",
+        "Enhet paket → pkt. Olivolja är 1 skvätt, ingen mängd i yields."
+      ]
+    },
+    {
+      "id": "krispiga_kikartor_salladsbowl__chive_dressing",
+      "name": "Blanda Gräslöksdressing",
+      "outputName": "Gräslöksdressing",
+      "inputs": [
+        {
+          "id": "chives",
+          "amount": 1,
+          "unit": "pkt"
+        },
+        {
+          "id": "aioli",
+          "amount": 80,
+          "unit": "g"
+        },
+        {
+          "id": "yoghurt",
+          "amount": 150,
+          "unit": "ml"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Finhacka {{chives}}.",
+        "Blanda gräslök, {{aioli}}, {{yoghurt}}, {{salt}} och en nypa {{pepper}} i en liten skål."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Gräslök är 1 portionspåse vid både 2 och 4 portioner. Mappad till 1 pkt, inte uppskalad."
+      ]
+    },
+    {
+      "id": "krispiga_kikartor_salladsbowl__prepped_salad",
+      "name": "Förbered Sallad",
+      "outputName": "Sallad, avokado och rädisor",
+      "inputs": [
+        {
+          "id": "lettuce",
+          "amount": 200,
+          "unit": "g"
+        },
+        {
+          "id": "avocado",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "radish",
+          "amount": 125,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Ansa {{lettuce}}, separera bladen och grovhacka dem.",
+        "Halvera och kärna ur {{avocado}}. Gröp ur fruktköttet med en sked och skär i tunna skivor.",
+        "Skär {{radish}} i tunna skivor."
+      ],
+      "duration": 6,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Romansallad är mappad till lettuce (Sallad). Ingen egen romansallad-id."
+      ]
+    },
+    {
+      "id": "krispiga_kikartor_salladsbowl",
+      "name": "Salladsbowl på krispiga kikärtor",
+      "outputName": "Salladsbowl på krispiga kikärtor",
+      "inputs": [
+        {
+          "id": "krispiga_kikartor_salladsbowl__roasted_potato",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "krispiga_kikartor_salladsbowl__roasted_chickpeas",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "krispiga_kikartor_salladsbowl__toasted_pine_nuts",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "krispiga_kikartor_salladsbowl__chive_dressing",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "krispiga_kikartor_salladsbowl__prepped_salad",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "grated_cheese",
+          "amount": 40,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Lägg upp sallad och rädisor från {{krispiga_kikartor_salladsbowl__prepped_salad}} tillsammans med {{krispiga_kikartor_salladsbowl__roasted_potato}} i djupa tallrikar.",
+        "Toppa med avokadoskivorna från {{krispiga_kikartor_salladsbowl__prepped_salad}} och {{krispiga_kikartor_salladsbowl__toasted_pine_nuts}}.",
+        "Ringla över {{krispiga_kikartor_salladsbowl__chive_dressing}} och toppa med {{grated_cheese}} och {{krispiga_kikartor_salladsbowl__roasted_chickpeas}}."
+      ],
+      "duration": 3,
+      "tags": [
+        "master"
+      ]
+    }
+  ]
+}

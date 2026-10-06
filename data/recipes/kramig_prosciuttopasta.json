@@ -1,0 +1,392 @@
+{
+  "masterId": "kramig_prosciuttopasta",
+  "source": "hellofresh",
+  "createdAt": 1791036048,
+  "basePortions": 4,
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/kramig_prosciuttopasta/main.jpg",
+    "byNode": {
+      "kramig_prosciuttopasta__sliced_portobello": "assets/recipes/kramig_prosciuttopasta/steps/prepped.jpg",
+      "kramig_prosciuttopasta__chopped_shallot": "assets/recipes/kramig_prosciuttopasta/steps/prepped.jpg",
+      "kramig_prosciuttopasta__minced_garlic": "assets/recipes/kramig_prosciuttopasta/steps/prepped.jpg",
+      "kramig_prosciuttopasta__sliced_basil": "assets/recipes/kramig_prosciuttopasta/steps/prepped.jpg",
+      "kramig_prosciuttopasta__chopped_zucchini": "assets/recipes/kramig_prosciuttopasta/steps/prepped.jpg",
+      "kramig_prosciuttopasta__chopped_prosciutto": "assets/recipes/kramig_prosciuttopasta/steps/prepped.jpg",
+      "kramig_prosciuttopasta__rinsed_spinach": "assets/recipes/kramig_prosciuttopasta/steps/prepped.jpg",
+      "kramig_prosciuttopasta__cooked_rigatoni": "assets/recipes/kramig_prosciuttopasta/steps/cooked_rigatoni.jpg",
+      "kramig_prosciuttopasta__fried_prosciutto": "assets/recipes/kramig_prosciuttopasta/steps/fried_prosciutto.jpg",
+      "kramig_prosciuttopasta__sauteed_veg": "assets/recipes/kramig_prosciuttopasta/steps/cream_sauce.jpg",
+      "kramig_prosciuttopasta__cream_sauce": "assets/recipes/kramig_prosciuttopasta/steps/cream_sauce.jpg",
+      "kramig_prosciuttopasta": "assets/recipes/kramig_prosciuttopasta/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 459,
+    "perPortion": {
+      "energyKcal": 792,
+      "energyKj": 3315,
+      "fatG": 24.69,
+      "saturatedFatG": 13.9,
+      "carbsG": 105.31,
+      "sugarsG": 12,
+      "proteinG": 35.33,
+      "saltG": 2.5
+    }
+  },
+  "ratings": {
+    "average": 3.5,
+    "count": 2678,
+    "source": "hellofresh"
+  },
+  "cooked": {
+    "hfId": "61b9c556dc65d108172fd87a",
+    "at": "2026-10-03T15:12:32+02:00",
+    "source": "photo",
+    "headline": "med stekt portobello och färsk basilika"
+  },
+  "nodes": [
+    {
+      "id": "kramig_prosciuttopasta__sliced_portobello",
+      "name": "Skiva Portobello",
+      "outputName": "Skivad portobello",
+      "inputs": [
+        {
+          "id": "portobello",
+          "amount": 300,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Skiva {{portobello}} tunt."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "kramig_prosciuttopasta__chopped_shallot",
+      "name": "Hacka Schalottenlök",
+      "outputName": "Hackad schalottenlök",
+      "inputs": [
+        {
+          "id": "shallot",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Finhacka {{shallot}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "kramig_prosciuttopasta__minced_garlic",
+      "name": "Hacka Vitlök",
+      "outputName": "Hackad vitlök",
+      "inputs": [
+        {
+          "id": "garlic",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Finhacka eller pressa {{garlic}}."
+      ],
+      "duration": 1,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "kramig_prosciuttopasta__sliced_basil",
+      "name": "Skiva Basilika",
+      "outputName": "Skivad basilika",
+      "inputs": [
+        {
+          "id": "fresh_basil",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skiva {{fresh_basil}} tunt."
+      ],
+      "duration": 1,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "kramig_prosciuttopasta__chopped_zucchini",
+      "name": "Skär Zucchini",
+      "outputName": "Skuren zucchini",
+      "inputs": [
+        {
+          "id": "zucchini",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skär {{zucchini}} i 2 cm stora bitar."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "kramig_prosciuttopasta__chopped_prosciutto",
+      "name": "Hacka Prosciutto",
+      "outputName": "Grovhackad prosciutto",
+      "inputs": [
+        {
+          "id": "prosciutto",
+          "amount": 100,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Grovhacka {{prosciutto}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "kramig_prosciuttopasta__rinsed_spinach",
+      "name": "Skölj Spenat",
+      "outputName": "Sköljd spenat",
+      "inputs": [
+        {
+          "id": "baby_spinach",
+          "amount": 100,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Skölj {{baby_spinach}}."
+      ],
+      "duration": 1,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "kramig_prosciuttopasta__cooked_rigatoni",
+      "name": "Koka Rigatoni",
+      "outputName": "Kokt rigatoni",
+      "inputs": [
+        {
+          "id": "rigatoni",
+          "amount": 1,
+          "unit": "pkt"
+        },
+        {
+          "id": "water",
+          "amount": 2,
+          "unit": "l"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "msk"
+        }
+      ],
+      "steps": [
+        "Koka upp en stor kastrull med saltat {{water}}.",
+        "Koka {{rigatoni}} i 11–12 min, eller tills al dente."
+      ],
+      "duration": 3,
+      "wait": 12,
+      "tags": [],
+      "tips": [
+        "Kokvattnet ska vara lika salt som havsvatten.",
+        "Al dente betyder att pastan är genomkokt men fortfarande har tuggmotstånd."
+      ]
+    },
+    {
+      "id": "kramig_prosciuttopasta__drained_rigatoni",
+      "name": "Häll av Rigatoni",
+      "outputName": "Avrunnen rigatoni",
+      "inputs": [
+        {
+          "id": "kramig_prosciuttopasta__cooked_rigatoni",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        }
+      ],
+      "steps": [
+        "Häll av vattnet och lägg tillbaka {{kramig_prosciuttopasta__cooked_rigatoni}} i kastrullen tillsammans med lite {{olive_oil}}."
+      ],
+      "duration": 1,
+      "tags": []
+    },
+    {
+      "id": "kramig_prosciuttopasta__fried_prosciutto",
+      "name": "Fräs Prosciutto",
+      "outputName": "Fräst prosciutto",
+      "inputs": [
+        {
+          "id": "kramig_prosciuttopasta__chopped_prosciutto",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i en stor stekpanna på medelhög värme.",
+        "Fräs {{kramig_prosciuttopasta__chopped_prosciutto}} i 2–3 min och lägg sedan över på en tallrik med hushållspapper."
+      ],
+      "duration": 4,
+      "wait": 0,
+      "tags": []
+    },
+    {
+      "id": "kramig_prosciuttopasta__sauteed_veg",
+      "name": "Stek Grönsaker",
+      "outputName": "Stekta grönsaker",
+      "inputs": [
+        {
+          "id": "kramig_prosciuttopasta__chopped_shallot",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "kramig_prosciuttopasta__chopped_zucchini",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "kramig_prosciuttopasta__sliced_portobello",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "kramig_prosciuttopasta__minced_garlic",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i stekpannan på medelhög värme.",
+        "Stek {{kramig_prosciuttopasta__chopped_shallot}}, {{kramig_prosciuttopasta__chopped_zucchini}}, {{kramig_prosciuttopasta__sliced_portobello}}, {{kramig_prosciuttopasta__minced_garlic}} och {{salt}} i 4–5 min, tills de börjar mjukna."
+      ],
+      "duration": 1,
+      "wait": 5,
+      "tags": []
+    },
+    {
+      "id": "kramig_prosciuttopasta__cream_sauce",
+      "name": "Koka Gräddsås",
+      "outputName": "Krämig grönsakssås",
+      "inputs": [
+        {
+          "id": "kramig_prosciuttopasta__sauteed_veg",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "chicken_bouillon",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "id": "cooking_cream",
+          "amount": 2,
+          "unit": "pkt"
+        },
+        {
+          "id": "kramig_prosciuttopasta__sliced_basil",
+          "amount": 0.5,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Tillsätt {{chicken_bouillon}}, {{cooking_cream}} och hälften av {{kramig_prosciuttopasta__sliced_basil}} till {{kramig_prosciuttopasta__sauteed_veg}}.",
+        "Koka i 2–3 min, tills såsen börjar tjockna."
+      ],
+      "duration": 1,
+      "wait": 3,
+      "tags": []
+    },
+    {
+      "id": "kramig_prosciuttopasta",
+      "name": "Krämig prosciuttopasta",
+      "outputName": "Krämig prosciuttopasta",
+      "inputs": [
+        {
+          "id": "kramig_prosciuttopasta__cream_sauce",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "kramig_prosciuttopasta__drained_rigatoni",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "kramig_prosciuttopasta__rinsed_spinach",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "kramig_prosciuttopasta__fried_prosciutto",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "grated_cheese",
+          "amount": 40,
+          "unit": "g"
+        },
+        {
+          "id": "kramig_prosciuttopasta__sliced_basil",
+          "amount": 0.5,
+          "unit": "st"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Vänd ner {{kramig_prosciuttopasta__drained_rigatoni}}, {{kramig_prosciuttopasta__rinsed_spinach}} och hälften av {{kramig_prosciuttopasta__fried_prosciutto}} i {{kramig_prosciuttopasta__cream_sauce}}. Krydda generöst med {{pepper}}.",
+        "Lägg upp pastan i skålar. Toppa med resten av {{kramig_prosciuttopasta__fried_prosciutto}} och {{grated_cheese}}. Garnera med resten av {{kramig_prosciuttopasta__sliced_basil}}."
+      ],
+      "duration": 3,
+      "wait": 0,
+      "tags": [
+        "master"
+      ]
+    }
+  ]
+}

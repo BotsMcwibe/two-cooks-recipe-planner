@@ -1,0 +1,210 @@
+{
+  "masterId": "autumn_kale_salad",
+  "source": "hellofresh",
+  "createdAt": 1790854064,
+  "basePortions": 4,
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/autumn_kale_salad/main.jpg",
+    "byNode": {
+      "autumn_kale_salad__roasted_butternut": "assets/recipes/autumn_kale_salad/steps/roasted_butternut.jpg",
+      "autumn_kale_salad__dressed_kale": "assets/recipes/autumn_kale_salad/steps/dressed_kale.jpg",
+      "autumn_kale_salad": "assets/recipes/autumn_kale_salad/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 419,
+    "perPortion": {
+      "energyKcal": 460,
+      "energyKj": 1926,
+      "fatG": 27.2,
+      "saturatedFatG": 9.8,
+      "carbsG": 41.4,
+      "sugarsG": 11.6,
+      "fiberG": 6.2,
+      "proteinG": 14.4,
+      "saltG": 2
+    }
+  },
+  "ratings": {
+    "average": 4,
+    "count": 2,
+    "source": "hellofresh"
+  },
+  "nodes": [
+    {
+      "id": "autumn_kale_salad__preheated_oven_240",
+      "name": "Värm Ugnen",
+      "outputName": "Förvärmd ugn (240°C)",
+      "inputs": [],
+      "steps": [
+        "Värm ugnen till 240°C, eller 220°C varmluft."
+      ],
+      "duration": 1,
+      "wait": 12,
+      "tags": [
+        "prep",
+        "no-timer"
+      ],
+      "tips": [
+        "HF anger 240°C/220°C varmluft — lokal ugnsnode, inte preheated_oven_220 (som är 220/200)."
+      ]
+    },
+    {
+      "id": "autumn_kale_salad__sliced_butternut",
+      "name": "Skär Butternutpumpa",
+      "outputName": "Butternutpumpa i klyftor",
+      "inputs": [
+        {
+          "id": "butternut_squash",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skala och halvera {{butternut_squash}}.",
+        "Gröp ur kärnorna och skär pumpan i tunna klyftor."
+      ],
+      "duration": 8,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "autumn_kale_salad__roasted_butternut",
+      "name": "Rosta Butternutpumpa",
+      "outputName": "Rostad butternutpumpa",
+      "inputs": [
+        {
+          "id": "autumn_kale_salad__preheated_oven_240",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "autumn_kale_salad__sliced_butternut",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 0.5,
+          "unit": "msk"
+        },
+        {
+          "id": "salt",
+          "amount": 0.25,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Placera {{autumn_kale_salad__sliced_butternut}} på en plåt med bakplåtspapper.",
+        "Ringla över {{olive_oil}} och krydda med {{salt}} och {{pepper}}.",
+        "Rosta i {{autumn_kale_salad__preheated_oven_240}} i 20–30 min, eller tills mjuk och gyllene."
+      ],
+      "duration": 3,
+      "wait": 30,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "autumn_kale_salad__toasted_walnuts",
+      "name": "Rosta Valnötter",
+      "outputName": "Rostade valnötter",
+      "inputs": [
+        {
+          "id": "walnuts",
+          "amount": 20,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Hetta upp en stor stekpanna på medelhög värme.",
+        "Rosta {{walnuts}} i 3–4 min, eller tills gyllene. Ställ åt sidan."
+      ],
+      "duration": 4,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Rosta under uppsikt och skaka pannan ibland så att nötterna inte bränns."
+      ]
+    },
+    {
+      "id": "autumn_kale_salad__dressed_kale",
+      "name": "Blanda Grönkålssallad",
+      "outputName": "Grönkålssallad med dressing",
+      "inputs": [
+        {
+          "id": "honey_mustard_dressing",
+          "amount": 40,
+          "unit": "g"
+        },
+        {
+          "id": "kale",
+          "amount": 50,
+          "unit": "g"
+        },
+        {
+          "id": "dried_cranberries",
+          "amount": 20,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Blanda {{honey_mustard_dressing}} och {{kale}} i en stor skål.",
+        "Tillsätt {{dried_cranberries}} och vänd runt."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "HF levererar skuren grönkål — ingen separat hackningsnod."
+      ]
+    },
+    {
+      "id": "autumn_kale_salad",
+      "name": "Höstig grönkålssallad",
+      "outputName": "Höstig grönkålssallad med butternutpumpa och valnöt",
+      "inputs": [
+        {
+          "id": "autumn_kale_salad__dressed_kale",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "autumn_kale_salad__roasted_butternut",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "feta_cheese",
+          "amount": 100,
+          "unit": "g"
+        },
+        {
+          "id": "autumn_kale_salad__toasted_walnuts",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{autumn_kale_salad__dressed_kale}} på en tallrik och toppa med {{autumn_kale_salad__roasted_butternut}}.",
+        "Smula över {{feta_cheese}} och garnera med {{autumn_kale_salad__toasted_walnuts}}."
+      ],
+      "duration": 3,
+      "wait": 0,
+      "tags": [
+        "master"
+      ]
+    }
+  ]
+}

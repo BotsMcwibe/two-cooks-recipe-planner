@@ -1,0 +1,316 @@
+{
+  "masterId": "mushroom_risotto",
+  "source": "hellofresh",
+  "createdAt": 1790852559,
+  "basePortions": 4,
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/mushroom_risotto/main.jpg"
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 87,
+    "perPortion": {
+      "energyKcal": 359,
+      "energyKj": 1500,
+      "fatG": 9.85,
+      "saturatedFatG": 0.9,
+      "carbsG": 59.26,
+      "sugarsG": 0.5,
+      "proteinG": 6.58,
+      "saltG": 0.1
+    }
+  },
+  "ratings": {
+    "average": 3.1,
+    "count": 11,
+    "source": "hellofresh"
+  },
+  "nodes": [
+    {
+      "id": "mushroom_risotto__chopped_onion",
+      "name": "Hacka Lök",
+      "outputName": "Hackad lök",
+      "inputs": [
+        {
+          "id": "onion",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skala och finhacka {{onion}}."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "mushroom_risotto__chopped_garlic",
+      "name": "Hacka Vitlök",
+      "outputName": "Hackad vitlök",
+      "inputs": [
+        {
+          "id": "garlic",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skala och finhacka {{garlic}}."
+      ],
+      "duration": 1,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "mushroom_risotto__diced_carrot",
+      "name": "Tärna Morot",
+      "outputName": "Tärnad morot",
+      "inputs": [
+        {
+          "id": "carrot",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skala och tärna {{carrot}} till små kuber (ca 0,5×0,5 cm)."
+      ],
+      "duration": 4,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "mushroom_risotto__diced_mushrooms",
+      "name": "Tärna Svamp",
+      "outputName": "Tärnad svamp",
+      "inputs": [
+        {
+          "id": "forest_mushrooms",
+          "amount": 400,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Tärna {{forest_mushrooms}} i ca 1×1 cm stora bitar."
+      ],
+      "duration": 4,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "mushroom_risotto__diced_apple",
+      "name": "Tärna Äpple",
+      "outputName": "Tärnat äpple",
+      "inputs": [
+        {
+          "id": "apple",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Tärna {{apple}} i små kuber."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "mushroom_risotto__chopped_oregano",
+      "name": "Hacka Oregano",
+      "outputName": "Hackad oregano",
+      "inputs": [
+        {
+          "id": "oregano",
+          "amount": 1,
+          "unit": "kruka"
+        }
+      ],
+      "steps": [
+        "Plocka {{oregano}}-bladen (spara inte stjälken) och finhacka dem."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "mushroom_risotto__chopped_hazelnuts",
+      "name": "Hacka Hasselnötter",
+      "outputName": "Hackade hasselnötter",
+      "inputs": [
+        {
+          "id": "hazelnuts",
+          "amount": 40,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Hacka {{hazelnuts}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "mushroom_risotto__risotto_base",
+      "name": "Fräs Risottobas",
+      "outputName": "Fräst risottobas",
+      "inputs": [
+        {
+          "id": "mushroom_risotto__chopped_garlic",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "mushroom_risotto__chopped_onion",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "mushroom_risotto__diced_carrot",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "mushroom_risotto__diced_mushrooms",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "risotto_rice",
+          "amount": 300,
+          "unit": "g"
+        },
+        {
+          "id": "vegetable_bouillon",
+          "amount": 4,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i en stor stekpanna på medelhög värme.",
+        "Fräs {{mushroom_risotto__chopped_garlic}}, {{mushroom_risotto__chopped_onion}} och {{mushroom_risotto__diced_carrot}} i ca 3 min.",
+        "Tillsätt {{mushroom_risotto__diced_mushrooms}} och fräs i ytterligare ca 3 min.",
+        "Häll i {{risotto_rice}} och {{vegetable_bouillon}}, och fräs i 1 min."
+      ],
+      "duration": 8,
+      "tags": []
+    },
+    {
+      "id": "mushroom_risotto__cooked_risotto",
+      "name": "Koka Svamprisotto",
+      "outputName": "Kokt svamprisotto",
+      "inputs": [
+        {
+          "id": "mushroom_risotto__risotto_base",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "water",
+          "amount": 1,
+          "unit": "l"
+        }
+      ],
+      "steps": [
+        "Blanda i ca 1 dl av {{water}} i {{mushroom_risotto__risotto_base}} och låt sjuda under omrörning.",
+        "Späd med mer vatten allteftersom riset sugit åt sig vätskan, ca 1 dl per gång, tills riset är krämigt och al dente (ca 15–20 min). Rör om nästan hela tiden."
+      ],
+      "duration": 18,
+      "tags": [],
+      "tips": [
+        "För en mer autentisk italiensk smak kan du byta ut en del av vattnet mot vitt vin.",
+        "Risotto kräver aktiv omrörning — ingen passiv wait-timer."
+      ]
+    },
+    {
+      "id": "mushroom_risotto__oregano_apples",
+      "name": "Gör Oreganoäpplen",
+      "outputName": "Oreganoäpplen med hasselnötter",
+      "inputs": [
+        {
+          "id": "mushroom_risotto__diced_apple",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "mushroom_risotto__chopped_oregano",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "mushroom_risotto__chopped_hazelnuts",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "white_wine_vinegar",
+          "amount": 24,
+          "unit": "ml"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Blanda {{mushroom_risotto__chopped_hazelnuts}}, {{mushroom_risotto__diced_apple}} och {{mushroom_risotto__chopped_oregano}} i en salladsskål.",
+        "Smaksätt med {{white_wine_vinegar}}, {{salt}} och {{pepper}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "mushroom_risotto",
+      "name": "Svamprisotto med oreganoäpplen",
+      "outputName": "Svamprisotto med oreganoäpplen",
+      "inputs": [
+        {
+          "id": "mushroom_risotto__cooked_risotto",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "parmesan",
+          "amount": 40,
+          "unit": "g"
+        },
+        {
+          "id": "mushroom_risotto__oregano_apples",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Strö {{parmesan}} över {{mushroom_risotto__cooked_risotto}}.",
+        "Servera med {{mushroom_risotto__oregano_apples}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "master"
+      ]
+    }
+  ]
+}

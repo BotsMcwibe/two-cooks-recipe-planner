@@ -1,0 +1,67 @@
+{
+  "id": "pirog_dough",
+  "nodes": [
+    {
+      "id": "warmed_milk_oil",
+      "name": "Värm Mjölk och Olja",
+      "outputName": "Uppvärmd mjölk och olja",
+      "inputs": [
+        {
+          "id": "milk",
+          "amount": 2,
+          "unit": "dl"
+        },
+        {
+          "id": "oil",
+          "amount": 1,
+          "unit": "msk"
+        }
+      ],
+      "steps": [
+        "Värm {{oil}} och {{milk}} till 37°C i en kastrull eller mikrovågsugn."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Använd ett finger för att kontrollera temperaturen."
+      ]
+    },
+    {
+      "id": "pirog_dough",
+      "name": "Gör Pirogdeg",
+      "outputName": "Pirogdeg",
+      "inputs": [
+        {
+          "id": "warmed_milk_oil",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "yeast",
+          "amount": 25,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "flour",
+          "amount": 6,
+          "unit": "dl"
+        }
+      ],
+      "steps": [
+        "Lös upp {{yeast}} och {{salt}} i {{warmed_milk_oil}}.",
+        "Blanda i {{flour}} lite i taget tills en smidig deg bildas.",
+        "Låt degen jäsa medan fyllningen förbereds."
+      ],
+      "duration": 5,
+      "tags": [],
+      "wait": 20
+    }
+  ]
+}

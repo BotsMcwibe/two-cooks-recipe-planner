@@ -1,0 +1,431 @@
+{
+  "masterId": "warm_lentil_salad",
+  "source": "hellofresh",
+  "createdAt": 1790795820,
+  "basePortions": 4,
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/warm_lentil_salad/main.jpg"
+  },
+  "ratings": {
+    "average": 3.1,
+    "count": 15,
+    "source": "hellofresh"
+  },
+  "nodes": [
+    {
+      "id": "warm_lentil_salad__preheated_oven_200",
+      "name": "Värm Ugnen",
+      "outputName": "Förvärmd ugn (200°C)",
+      "inputs": [],
+      "steps": [
+        "Sätt ugnen på 200°C."
+      ],
+      "duration": 1,
+      "wait": 12,
+      "tags": [
+        "prep",
+        "no-timer"
+      ],
+      "tips": [
+        "HF anger 200°C (inte 220) — lokal ugnsnode, inte preheated_oven_220."
+      ]
+    },
+    {
+      "id": "warm_lentil_salad__diced_butternut",
+      "name": "Tärna Butternutpumpa",
+      "outputName": "Tärnad butternutpumpa",
+      "inputs": [
+        {
+          "id": "butternut_squash",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Ansa {{butternut_squash}} (du behöver inte skala).",
+        "Gröp ur kärnorna och tärna i 2 cm stora bitar."
+      ],
+      "duration": 8,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "FLAG: _unitInference Butternutpumpa 2 tsk — överstyrd till 2 st (metod: ansa/tärna hel pumpa; HF-typ countable)."
+      ]
+    },
+    {
+      "id": "warm_lentil_salad__diced_aubergine",
+      "name": "Tärna Aubergine",
+      "outputName": "Tärnad aubergine",
+      "inputs": [
+        {
+          "id": "aubergine",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Tärna {{aubergine}} i 2 cm stora bitar."
+      ],
+      "duration": 4,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "warm_lentil_salad__roasted_vegetables",
+      "name": "Rosta Grönsaker",
+      "outputName": "Rostad butternutpumpa och aubergine",
+      "inputs": [
+        {
+          "id": "warm_lentil_salad__preheated_oven_200",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "warm_lentil_salad__diced_butternut",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "warm_lentil_salad__diced_aubergine",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Placera {{warm_lentil_salad__diced_butternut}} och {{warm_lentil_salad__diced_aubergine}} på en stor bakplåt täckt med bakplåtspapper.",
+        "Häll över {{olive_oil}}, {{salt}} och {{pepper}}. Blanda så att bitarna täcks.",
+        "Rosta på översta hyllan i {{warm_lentil_salad__preheated_oven_200}} tills grönsakerna är gyllenbruna och mjuka, 30–35 min. Vänd halvvägs."
+      ],
+      "duration": 3,
+      "wait": 35,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "warm_lentil_salad__sliced_red_onion",
+      "name": "Skiva Rödlök",
+      "outputName": "Skivad rödlök",
+      "inputs": [
+        {
+          "id": "red_onion",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Halvera {{red_onion}} och skiva tunt."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "warm_lentil_salad__pressed_garlic",
+      "name": "Pressa Vitlök",
+      "outputName": "Pressad vitlök",
+      "inputs": [
+        {
+          "id": "garlic",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Pressa {{garlic}}."
+      ],
+      "duration": 1,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "FLAG: _unitInference Vitlöksklyfta 2 klyfta — klyfta finns inte i units.json; överstyrd till 2 st."
+      ]
+    },
+    {
+      "id": "warm_lentil_salad__chopped_parsley",
+      "name": "Hacka Persilja",
+      "outputName": "Hackad bladpersilja",
+      "inputs": [
+        {
+          "id": "parsley",
+          "amount": 1,
+          "unit": "kruka"
+        }
+      ],
+      "steps": [
+        "Grovhacka {{parsley}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "FLAG: _unitInference Bladpersilja 1 g — överstyrd till 1 kruka (färsk örtkruka; samma mönster som andra HF-örter)."
+      ]
+    },
+    {
+      "id": "warm_lentil_salad__chopped_mint",
+      "name": "Hacka Mynta",
+      "outputName": "Hackad mynta",
+      "inputs": [
+        {
+          "id": "mint",
+          "amount": 1,
+          "unit": "kruka"
+        }
+      ],
+      "steps": [
+        "Plocka bladen från {{mint}} (släng stjälken).",
+        "Grovhacka myntabladen."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "FLAG: _unitInference Mynta 2 g (4 port) — överstyrd till 1 kruka (färsk ört; HF-skalar ibland gram nonsensiskt)."
+      ]
+    },
+    {
+      "id": "warm_lentil_salad__lemon_halves",
+      "name": "Halvera Citron",
+      "outputName": "Citronhalvor",
+      "inputs": [
+        {
+          "id": "lemon",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Halvera {{lemon}}."
+      ],
+      "duration": 1,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "FLAG: _unitInference Citrusfrukt 1 tsk — överstyrd till 1 st (metod: halvera citron; HF-typ lemon)."
+      ]
+    },
+    {
+      "id": "warm_lentil_salad__rinsed_lentils",
+      "name": "Skölj Linser",
+      "outputName": "Sköljda gröna linser",
+      "inputs": [
+        {
+          "id": "green_lentils",
+          "amount": 2,
+          "unit": "burk"
+        }
+      ],
+      "steps": [
+        "Rensa och skölj {{green_lentils}} i en sil under rinnande vatten tills vattnet klarnar."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "warm_lentil_salad__cooked_bulgur",
+      "name": "Koka Bulgur",
+      "outputName": "Kokt bulgur",
+      "inputs": [
+        {
+          "id": "water",
+          "amount": 3,
+          "unit": "dl"
+        },
+        {
+          "id": "vegetable_bouillon",
+          "amount": 4,
+          "unit": "g"
+        },
+        {
+          "id": "bulgur",
+          "amount": 200,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Koka upp {{water}} i en stor kastrull.",
+        "Tillsätt {{vegetable_bouillon}} och rör om tills den löses upp.",
+        "Häll i {{bulgur}}. Lägg på ett lock och sätt kastrullen åt sidan i 10 min."
+      ],
+      "duration": 5,
+      "wait": 10,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "FLAG: _unitInference Vatten 3 ml — överstyrd till 3 dl (HF ingredient type slug water-…-1dl; behåller numeral 3). Buljong 4 ml → 4 g (samma mönster som halloumi/paprikor)."
+      ]
+    },
+    {
+      "id": "warm_lentil_salad__fried_onion_garlic",
+      "name": "Fräs Rödlök och Vitlök",
+      "outputName": "Fräst rödlök och vitlök",
+      "inputs": [
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "warm_lentil_salad__sliced_red_onion",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "warm_lentil_salad__pressed_garlic",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i en stekpanna på hög värme.",
+        "Lägg i {{warm_lentil_salad__sliced_red_onion}}. Fräs tills den mjuknat, ca 5 min.",
+        "Tillsätt {{warm_lentil_salad__pressed_garlic}} och fräs i 1 min."
+      ],
+      "duration": 7,
+      "tags": []
+    },
+    {
+      "id": "warm_lentil_salad__fried_lentils",
+      "name": "Fräs Linser",
+      "outputName": "Frästa linser med lök",
+      "inputs": [
+        {
+          "id": "warm_lentil_salad__fried_onion_garlic",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "warm_lentil_salad__rinsed_lentils",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Häll {{warm_lentil_salad__rinsed_lentils}} i stekpannan med {{warm_lentil_salad__fried_onion_garlic}}. Sänk till medelvärme och fräs linserna i 2–3 min.",
+        "Täck stekpannan med lock och sätt åt sidan."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "warm_lentil_salad__minty_feta",
+      "name": "Gör Mintig Salladsost",
+      "outputName": "Mintig salladsost",
+      "inputs": [
+        {
+          "id": "feta_cheese",
+          "amount": 300,
+          "unit": "g"
+        },
+        {
+          "id": "warm_lentil_salad__chopped_mint",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        }
+      ],
+      "steps": [
+        "Smula {{feta_cheese}} i en skål.",
+        "Blanda osten med ungefär hälften av {{warm_lentil_salad__chopped_mint}} och {{olive_oil}}. Spara resten av myntan till salladen."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "FLAG: HF Olivolja 0.667 ml (type slug …-1tbsp → troligen msk) — modellerad som skvätt per användning (rost/fräs/ost) enligt metodtext.",
+        "Grekisk salladsost mappad till feta_cheese (300 g)."
+      ]
+    },
+    {
+      "id": "warm_lentil_salad",
+      "name": "Varm linssallad",
+      "outputName": "Varm linssallad med rostade grönsaker och mint",
+      "inputs": [
+        {
+          "id": "warm_lentil_salad__fried_lentils",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "warm_lentil_salad__cooked_bulgur",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "warm_lentil_salad__chopped_parsley",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "warm_lentil_salad__minty_feta",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "warm_lentil_salad__roasted_vegetables",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "warm_lentil_salad__lemon_halves",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Fluffa upp {{warm_lentil_salad__cooked_bulgur}} med en gaffel och för över till stekpannan med {{warm_lentil_salad__fried_lentils}}.",
+        "Rör i {{warm_lentil_salad__chopped_parsley}} och resterande mynta från {{warm_lentil_salad__minty_feta}}.",
+        "Krydda med en skvätt juice från {{warm_lentil_salad__lemon_halves}}, {{salt}} och {{pepper}} efter smak.",
+        "Servera den varma linssalladen i djupa skålar. Toppa med {{warm_lentil_salad__roasted_vegetables}}, {{warm_lentil_salad__minty_feta}} och en skvätt citronjuice."
+      ],
+      "duration": 5,
+      "tags": [
+        "master"
+      ]
+    }
+  ]
+}

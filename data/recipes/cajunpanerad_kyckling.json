@@ -1,0 +1,305 @@
+{
+  "masterId": "cajunpanerad_kyckling",
+  "source": "hellofresh",
+  "createdAt": 1791036641,
+  "basePortions": 4,
+  "sharedPrep": [
+    "preheated_oven_220"
+  ],
+  "images": {
+    "main": "assets/recipes/cajunpanerad_kyckling/main.jpg",
+    "byNode": {
+      "cajunpanerad_kyckling__roasted_potato": "assets/recipes/cajunpanerad_kyckling/steps/roasted_potato.jpg",
+      "cajunpanerad_kyckling__chopped_salad_veg": "assets/recipes/cajunpanerad_kyckling/steps/chopped_salad_veg.jpg",
+      "cajunpanerad_kyckling__breaded_chicken": "assets/recipes/cajunpanerad_kyckling/steps/breaded_chicken.jpg",
+      "cajunpanerad_kyckling__fried_chicken": "assets/recipes/cajunpanerad_kyckling/steps/fried_chicken.jpg",
+      "cajunpanerad_kyckling__tomato_salad": "assets/recipes/cajunpanerad_kyckling/steps/tomato_salad.jpg",
+      "cajunpanerad_kyckling": "assets/recipes/cajunpanerad_kyckling/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 675,
+    "perPortion": {
+      "energyKcal": 719,
+      "energyKj": 3007,
+      "fatG": 28.4,
+      "saturatedFatG": 4.5,
+      "carbsG": 68.8,
+      "sugarsG": 14.8,
+      "fiberG": 7.1,
+      "proteinG": 46.8,
+      "saltG": 2.6
+    }
+  },
+  "ratings": {
+    "average": 3.5,
+    "count": 725,
+    "source": "hellofresh"
+  },
+  "cooked": {
+    "hfId": "6593e313aa12a55eb352a27b",
+    "at": "2026-10-03T15:12:32+02:00",
+    "source": "photo",
+    "headline": "med kryddig potatis och tomatsallad"
+  },
+  "nodes": [
+    {
+      "id": "cajunpanerad_kyckling__diced_potato",
+      "name": "Tärna Potatis",
+      "outputName": "Tärnad potatis",
+      "inputs": [
+        {
+          "id": "potato",
+          "amount": 1000,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Tärna oskalad {{potato}} i 2 cm stora bitar."
+      ],
+      "duration": 5,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "cajunpanerad_kyckling__roasted_potato",
+      "name": "Rosta Potatis",
+      "outputName": "Kryddrostad potatis",
+      "inputs": [
+        {
+          "id": "cajunpanerad_kyckling__diced_potato",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "preheated_oven_220",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "mamas_favorit",
+          "amount": 8,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Lägg {{cajunpanerad_kyckling__diced_potato}} på en plåt med bakplåtspapper (2 plåtar för 4 portioner). Blanda med olivolja, {{mamas_favorit}}, salt och peppar.",
+        "Rosta i {{preheated_oven_220}} i 25–35 min, eller tills potatisen är gyllene."
+      ],
+      "duration": 3,
+      "wait": 35,
+      "tags": [],
+      "tips": [
+        "Passiv rosttid 25–35 min → wait 35 (övre gräns). Sista steget äger timern.",
+        "FLAG: olivolja, salt och peppar till potatisen saknar mängd i yields. Den enda olivoljan (2 msk) är märkt steg 4 och används till stekningen."
+      ]
+    },
+    {
+      "id": "cajunpanerad_kyckling__chopped_salad_veg",
+      "name": "Hacka Salladsgrönsaker",
+      "outputName": "Hackad tomat, paprika och persilja",
+      "inputs": [
+        {
+          "id": "tomato",
+          "amount": 4,
+          "unit": "st"
+        },
+        {
+          "id": "paprika",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "parsley",
+          "amount": 1,
+          "unit": "kruka"
+        }
+      ],
+      "steps": [
+        "Finhacka {{tomato}} och {{parsley}}.",
+        "Kärna ur och finhacka {{paprika}}."
+      ],
+      "duration": 6,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "FLAG: paprika är 1 st vid både 2 och 4 portioner — inte uppskalad.",
+        "FLAG: bladpersilja är 1 portionspåse vid både 2 och 4 portioner. Enhet överstyrd till 1 kruka (portionspåse finns inte i units.json)."
+      ]
+    },
+    {
+      "id": "cajunpanerad_kyckling__pressed_garlic",
+      "name": "Pressa Vitlök",
+      "outputName": "Pressad vitlök",
+      "inputs": [
+        {
+          "id": "garlic",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Finhacka eller pressa {{garlic}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "cajunpanerad_kyckling__breaded_chicken",
+      "name": "Panera Kyckling",
+      "outputName": "Cajunpanerad kyckling",
+      "inputs": [
+        {
+          "id": "chicken_breast",
+          "amount": 600,
+          "unit": "g"
+        },
+        {
+          "id": "egg",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "cajunpanerad_kyckling__pressed_garlic",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "cajun_spice_mix",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "id": "panko",
+          "amount": 75,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Lägg {{chicken_breast}} mellan två bakplåtspapper på en separat skärbräda. Banka med kavel eller stekpanna tills den är jämntjock, ca 2 cm, och krydda med salt.",
+        "Vispa {{egg}} i en djup tallrik. Blanda {{cajunpanerad_kyckling__pressed_garlic}}, {{cajun_spice_mix}}, {{panko}}, {{salt}} och peppar i en ny djup tallrik.",
+        "Vänd kycklingen först i ägg, sedan i paneringen, så att den täcks helt."
+      ],
+      "duration": 8,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Om du inte har ägg kan du använda 2 msk mjölk i stället.",
+        "Tvätta händer och redskap noggrant efter hantering av rå kyckling.",
+        "FLAG: saltet på kycklingen innan panering och peppar i paneringen saknar mängd. 0,5 tsk är saltet i paneringen (4 portioner).",
+        "FLAG: panko är 25 g vid 2 portioner och 75 g vid 4 — inte linjärt. 75 g är oförändrat från 4-portionsyielden."
+      ]
+    },
+    {
+      "id": "cajunpanerad_kyckling__fried_chicken",
+      "name": "Stek Kyckling",
+      "outputName": "Stekt cajunkyckling",
+      "inputs": [
+        {
+          "id": "cajunpanerad_kyckling__breaded_chicken",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 2,
+          "unit": "msk"
+        }
+      ],
+      "steps": [
+        "Hetta upp en stor stekpanna på medelhög värme och tillsätt {{olive_oil}} så det täcker pannan.",
+        "Stek {{cajunpanerad_kyckling__breaded_chicken}} 3–4 min per sida, tills den är gyllene och genomstekt. Lägg över på hushållspapper."
+      ],
+      "duration": 9,
+      "wait": 0,
+      "tags": [],
+      "tips": [
+        "Aktiv stektid (3–4 min per sida) ligger i duration, inte wait.",
+        "Kycklingen är klar när köttet är vitt och utan rosa."
+      ]
+    },
+    {
+      "id": "cajunpanerad_kyckling__tomato_salad",
+      "name": "Blanda Tomatsallad",
+      "outputName": "Tomatsallad",
+      "inputs": [
+        {
+          "id": "cajunpanerad_kyckling__chopped_salad_veg",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "balsamic_vinegar",
+          "amount": 25,
+          "unit": "ml"
+        },
+        {
+          "id": "sugar",
+          "amount": 2,
+          "unit": "tsk"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Blanda {{cajunpanerad_kyckling__chopped_salad_veg}} i en skål. Tillsätt {{balsamic_vinegar}}, {{sugar}}, {{salt}} och peppar."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "FLAG: peppar till salladen saknar mängd i yields."
+      ]
+    },
+    {
+      "id": "cajunpanerad_kyckling",
+      "name": "Cajunpanerad kyckling",
+      "outputName": "Cajunpanerad kyckling",
+      "inputs": [
+        {
+          "id": "cajunpanerad_kyckling__roasted_potato",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "cajunpanerad_kyckling__fried_chicken",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "cajunpanerad_kyckling__tomato_salad",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "aioli",
+          "amount": 80,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{cajunpanerad_kyckling__roasted_potato}}, {{cajunpanerad_kyckling__fried_chicken}} och {{cajunpanerad_kyckling__tomato_salad}} på tallrikar.",
+        "Servera med en klick {{aioli}}."
+      ],
+      "duration": 3,
+      "tags": [
+        "master"
+      ]
+    }
+  ]
+}

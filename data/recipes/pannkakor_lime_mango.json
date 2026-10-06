@@ -1,0 +1,204 @@
+{
+  "masterId": "pannkakor_lime_mango",
+  "source": "hellofresh",
+  "createdAt": 1790852541,
+  "basePortions": 4,
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/pannkakor_lime_mango/main.jpg",
+    "byNode": {
+      "pannkakor_lime_mango__marinated_mango": "assets/recipes/pannkakor_lime_mango/steps/marinated_mango.jpg",
+      "pannkakor_lime_mango__roasted_coconut": "assets/recipes/pannkakor_lime_mango/steps/roasted_coconut.jpg",
+      "pannkakor_lime_mango__fried_pancakes": "assets/recipes/pannkakor_lime_mango/steps/fried_pancakes.jpg",
+      "pannkakor_lime_mango": "assets/recipes/pannkakor_lime_mango/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 735,
+    "perPortion": {
+      "energyKcal": 1460,
+      "energyKj": 6109,
+      "fatG": 49.7,
+      "saturatedFatG": 29.4,
+      "carbsG": 212.6,
+      "sugarsG": 114,
+      "fiberG": 11.1,
+      "proteinG": 31,
+      "saltG": 3.6
+    }
+  },
+  "ratings": {
+    "average": 4,
+    "count": 3,
+    "source": "hellofresh"
+  },
+  "nodes": [
+    {
+      "id": "pannkakor_lime_mango__marinated_mango",
+      "name": "Marinera Mango",
+      "outputName": "Limemarinerad mango",
+      "inputs": [
+        {
+          "id": "mango",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "lime",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "sugar",
+          "amount": 2,
+          "unit": "tsk"
+        },
+        {
+          "id": "water",
+          "amount": 1,
+          "unit": "msk"
+        }
+      ],
+      "steps": [
+        "Skala och skär {{mango}} i tre delar längs med kärnan. Tärna i ca 2 cm stora bitar.",
+        "Halvera {{lime}}.",
+        "Blanda {{sugar}}, {{water}} och en generös skvätt limesaft i en medelstor skål.",
+        "Vänd ner mangobitarna och ställ åt sidan medan du gör resten."
+      ],
+      "duration": 5,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Mangon marineras passivt medan du rostade kokos, blandar smet och steker pannkakor."
+      ]
+    },
+    {
+      "id": "pannkakor_lime_mango__roasted_coconut",
+      "name": "Rosta Kokos",
+      "outputName": "Rostad kokos",
+      "inputs": [
+        {
+          "id": "desiccated_coconut",
+          "amount": 30,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Hetta upp en stor stekpanna på medelhög värme.",
+        "Rosta {{desiccated_coconut}} i 2–3 min, eller tills gyllene. Ställ åt sidan i en skål."
+      ],
+      "duration": 1,
+      "wait": 3,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Rör om ofta så att kokosen inte bränns."
+      ]
+    },
+    {
+      "id": "pannkakor_lime_mango__batter",
+      "name": "Gör Pannkakssmet",
+      "outputName": "Pannkakssmet",
+      "inputs": [
+        {
+          "id": "pancake_mix",
+          "amount": 400,
+          "unit": "g"
+        },
+        {
+          "id": "water",
+          "amount": 5,
+          "unit": "dl"
+        }
+      ],
+      "steps": [
+        "Vispa {{water}} och {{pancake_mix}} i en stor skål tills smeten är slät."
+      ],
+      "duration": 3,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "HF anger ingen vila för smeten — blanda tills slät och stek direkt. Kan göras under rostningen av kokos."
+      ]
+    },
+    {
+      "id": "pannkakor_lime_mango__fried_pancakes",
+      "name": "Stek Pannkakor",
+      "outputName": "Stekta pannkakor",
+      "inputs": [
+        {
+          "id": "pannkakor_lime_mango__batter",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "butter",
+          "amount": 2,
+          "unit": "msk"
+        }
+      ],
+      "steps": [
+        "Smält {{butter}} i samma stekpanna på medelhög värme.",
+        "Portionera ut {{pannkakor_lime_mango__batter}} till pannkakor på 8–10 cm i pannan.",
+        "Stek i 1–2 min på varje sida, eller tills gyllene och genomstekta. Upprepa med resten av smeten i omgångar."
+      ],
+      "duration": 12,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Tillsätt mer smör vid behov mellan omgångarna.",
+        "Håll färdiga pannkakor varma i ugnen vid 100 °C / 80 °C varmluft tills servering."
+      ]
+    },
+    {
+      "id": "pannkakor_lime_mango",
+      "name": "Pannkakor med limemarinerad mango",
+      "outputName": "Pannkakor med limemarinerad mango",
+      "inputs": [
+        {
+          "id": "pannkakor_lime_mango__fried_pancakes",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "pannkakor_lime_mango__marinated_mango",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "pannkakor_lime_mango__roasted_coconut",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "yoghurt",
+          "amount": 150,
+          "unit": "ml"
+        },
+        {
+          "id": "syrup",
+          "amount": 100,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{pannkakor_lime_mango__fried_pancakes}} på tallrikar.",
+        "Toppa med en klick {{yoghurt}} och {{pannkakor_lime_mango__marinated_mango}}.",
+        "Strö över {{pannkakor_lime_mango__roasted_coconut}} och ringla över {{syrup}}."
+      ],
+      "duration": 3,
+      "wait": 0,
+      "tags": [
+        "master"
+      ]
+    }
+  ]
+}

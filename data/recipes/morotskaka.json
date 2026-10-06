@@ -1,0 +1,233 @@
+{
+  "masterId": "morotskaka",
+  "source": "hellofresh",
+  "createdAt": 1790852217,
+  "basePortions": 4,
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/morotskaka/main.jpg",
+    "byNode": {
+      "morotskaka__grated_carrot": "assets/recipes/morotskaka/steps/grated_carrot.jpg",
+      "morotskaka__baked_cake": "assets/recipes/morotskaka/steps/baked_cake.jpg",
+      "morotskaka__frosting": "assets/recipes/morotskaka/steps/frosting.jpg",
+      "morotskaka": "assets/recipes/morotskaka/steps/decorate.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 558,
+    "perPortion": {
+      "energyKcal": 1637,
+      "energyKj": 6849,
+      "fatG": 86.6,
+      "saturatedFatG": 27.1,
+      "carbsG": 187.2,
+      "sugarsG": 34.1,
+      "fiberG": 7.1,
+      "proteinG": 24.8,
+      "saltG": 2.2
+    }
+  },
+  "ratings": {
+    "average": 4,
+    "count": 3,
+    "source": "hellofresh"
+  },
+  "nodes": [
+    {
+      "id": "morotskaka__preheated_oven",
+      "name": "Värm Ugnen",
+      "outputName": "Förvärmd ugn (190°C)",
+      "inputs": [],
+      "steps": [
+        "Värm ugnen till 190°C, eller 170°C varmluft."
+      ],
+      "duration": 1,
+      "wait": 10,
+      "tags": [
+        "prep",
+        "no-timer"
+      ],
+      "tips": [
+        "Ugnen tar vanligtvis 10–15 minuter att värmas upp."
+      ]
+    },
+    {
+      "id": "morotskaka__grated_carrot",
+      "name": "Riv Morot",
+      "outputName": "Riven morot",
+      "inputs": [
+        {
+          "id": "carrot",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Riv {{carrot}} (oskalad) grovt."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Ta ut bakmixen från kylskåpet 30 min innan den ska användas."
+      ]
+    },
+    {
+      "id": "morotskaka__baked_cake",
+      "name": "Baka Morotskaka",
+      "outputName": "Gräddad morotskaka",
+      "inputs": [
+        {
+          "id": "morotskaka__preheated_oven",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "sponge_cake_mix",
+          "amount": 600,
+          "unit": "g"
+        },
+        {
+          "id": "cinnamon",
+          "amount": 1,
+          "unit": "tsk"
+        },
+        {
+          "id": "morotskaka__grated_carrot",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Blanda {{sponge_cake_mix}}, {{cinnamon}} och {{morotskaka__grated_carrot}} i en skål.",
+        "Häll smeten i en rund bakform (20–22 cm i diameter) med bakplåtspapper och platta till med en slickepott.",
+        "Grädda i ugnen i 30–35 min."
+      ],
+      "duration": 5,
+      "wait": 35,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Använd en provsticka: om stickan är torr är kakan färdig."
+      ]
+    },
+    {
+      "id": "morotskaka__roasted_walnuts",
+      "name": "Rosta Valnötter",
+      "outputName": "Rostade valnötter",
+      "inputs": [
+        {
+          "id": "morotskaka__preheated_oven",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "walnuts",
+          "amount": 40,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Placera {{walnuts}} på en plåt med bakplåtspapper.",
+        "Rosta i ugnen i 5 min, eller tills gyllene."
+      ],
+      "duration": 1,
+      "wait": 5,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Rostningen kan göras medan kakan gräddas."
+      ]
+    },
+    {
+      "id": "morotskaka__chopped_walnuts",
+      "name": "Hacka Valnötter",
+      "outputName": "Grovhackade valnötter",
+      "inputs": [
+        {
+          "id": "morotskaka__roasted_walnuts",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Grovhacka {{morotskaka__roasted_walnuts}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "morotskaka__frosting",
+      "name": "Gör Glasyr",
+      "outputName": "Färskostglasyr",
+      "inputs": [
+        {
+          "id": "cream_cheese",
+          "amount": 150,
+          "unit": "g"
+        },
+        {
+          "id": "powdered_sugar",
+          "amount": 50,
+          "unit": "g"
+        },
+        {
+          "id": "lemon",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Halvera {{lemon}} och pressa saften.",
+        "Blanda {{cream_cheese}}, {{powdered_sugar}} och citronsaft i en medelstor skål till en slät glasyr."
+      ],
+      "duration": 4,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Glasyren kan göras medan kakan gräddas."
+      ]
+    },
+    {
+      "id": "morotskaka",
+      "name": "Morotskaka",
+      "outputName": "Morotskaka",
+      "inputs": [
+        {
+          "id": "morotskaka__baked_cake",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "morotskaka__frosting",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "morotskaka__chopped_walnuts",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Låt {{morotskaka__baked_cake}} svalna innan servering.",
+        "Bre {{morotskaka__frosting}} på kakan och toppa med {{morotskaka__chopped_walnuts}}."
+      ],
+      "duration": 5,
+      "wait": 0,
+      "tags": [
+        "master"
+      ],
+      "tips": [
+        "Kakan ska vara sval innan du breder på glasyren, annars smälter den."
+      ]
+    }
+  ]
+}

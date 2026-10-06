@@ -1,0 +1,265 @@
+{
+  "masterId": "falafel_bulgur_bowl",
+  "source": "hellofresh",
+  "createdAt": 1790851435,
+  "basePortions": 4,
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/falafel_bulgur_bowl/main.jpg",
+    "byNode": {
+      "falafel_bulgur_bowl__cooked_bulgur": "assets/recipes/falafel_bulgur_bowl/steps/cooked_bulgur.jpg",
+      "falafel_bulgur_bowl__prepped_vegetables": "assets/recipes/falafel_bulgur_bowl/steps/prepped_vegetables.jpg",
+      "falafel_bulgur_bowl__chili_feta": "assets/recipes/falafel_bulgur_bowl/steps/chili_feta.jpg",
+      "falafel_bulgur_bowl__fried_falafel": "assets/recipes/falafel_bulgur_bowl/steps/fried_falafel.jpg",
+      "falafel_bulgur_bowl__tahini_sauce": "assets/recipes/falafel_bulgur_bowl/steps/tahini_sauce.jpg",
+      "falafel_bulgur_bowl": "assets/recipes/falafel_bulgur_bowl/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 482,
+    "perPortion": {
+      "energyKcal": 699,
+      "energyKj": 2926,
+      "fatG": 37,
+      "saturatedFatG": 10.6,
+      "carbsG": 67.6,
+      "sugarsG": 12.4,
+      "fiberG": 14.7,
+      "proteinG": 23.6,
+      "saltG": 4.9
+    }
+  },
+  "ratings": {
+    "average": 4,
+    "count": 1,
+    "source": "hellofresh"
+  },
+  "nodes": [
+    {
+      "id": "falafel_bulgur_bowl__cooked_bulgur",
+      "name": "Koka Bulgur",
+      "outputName": "Kryddad bulgur",
+      "inputs": [
+        {
+          "id": "water",
+          "amount": 4.5,
+          "unit": "dl"
+        },
+        {
+          "id": "bulgur",
+          "amount": 170,
+          "unit": "g"
+        },
+        {
+          "id": "souvlaki_spice",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Koka upp {{water}} i en kastrull.",
+        "Rör i {{bulgur}}, {{souvlaki_spice}} och {{salt}} och sänk till medellåg värme.",
+        "Sjud under lock i 9–10 min, eller tills ”al dente”."
+      ],
+      "duration": 3,
+      "wait": 10,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "falafel_bulgur_bowl__prepped_vegetables",
+      "name": "Förbered Grönsaker",
+      "outputName": "Förberedda grönsaker",
+      "inputs": [
+        {
+          "id": "lettuce",
+          "amount": 200,
+          "unit": "g"
+        },
+        {
+          "id": "tomato",
+          "amount": 4,
+          "unit": "st"
+        },
+        {
+          "id": "cucumber",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Ansa {{lettuce}} och separera och grovhacka salladsblad.",
+        "Skär {{tomato}} i klyftor.",
+        "Tärna {{cucumber}} i 1 cm stora bitar."
+      ],
+      "duration": 8,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "falafel_bulgur_bowl__chili_feta",
+      "name": "Förbered Chili-feta",
+      "outputName": "Chili-feta",
+      "inputs": [
+        {
+          "id": "chili_flakes",
+          "amount": 2,
+          "unit": "g"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 4,
+          "unit": "msk"
+        },
+        {
+          "id": "feta_cheese",
+          "amount": 100,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Blanda {{chili_flakes}}, {{olive_oil}}, {{salt}} och {{pepper}} i en liten skål.",
+        "Smula ner {{feta_cheese}} i grova bitar och vänd runt."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Skippa chili eller använd mindre om du inte tycker om stark mat."
+      ]
+    },
+    {
+      "id": "falafel_bulgur_bowl__fried_falafel",
+      "name": "Stek Falafel",
+      "outputName": "Stekt falafel",
+      "inputs": [
+        {
+          "id": "falafel",
+          "amount": 2,
+          "unit": "pkt"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i en stor stekpanna på medelhög värme.",
+        "Stek {{falafel}} i 4–5 min, eller tills genomvarma, gyllene och spröda."
+      ],
+      "duration": 5,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Vänd falafel ofta, så de inte bränns vid."
+      ]
+    },
+    {
+      "id": "falafel_bulgur_bowl__tahini_sauce",
+      "name": "Gör Tahinisås",
+      "outputName": "Tahinisås",
+      "inputs": [
+        {
+          "id": "tahini",
+          "amount": 50,
+          "unit": "g"
+        },
+        {
+          "id": "yoghurt",
+          "amount": 150,
+          "unit": "g"
+        },
+        {
+          "id": "water",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "sugar",
+          "amount": 1,
+          "unit": "tsk"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Blanda {{tahini}}, {{yoghurt}}, {{water}}, {{sugar}}, {{salt}} och {{pepper}} i en liten skål."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "falafel_bulgur_bowl",
+      "name": "Medelhavsbowl på falafel och bulgur",
+      "outputName": "Medelhavsbowl på falafel och bulgur",
+      "inputs": [
+        {
+          "id": "falafel_bulgur_bowl__cooked_bulgur",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "falafel_bulgur_bowl__prepped_vegetables",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "falafel_bulgur_bowl__fried_falafel",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "falafel_bulgur_bowl__chili_feta",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "falafel_bulgur_bowl__tahini_sauce",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{falafel_bulgur_bowl__cooked_bulgur}} och {{falafel_bulgur_bowl__prepped_vegetables}} i skålar och toppa bulgur med {{falafel_bulgur_bowl__fried_falafel}}.",
+        "Toppa salladen med {{falafel_bulgur_bowl__chili_feta}}.",
+        "Ringla {{falafel_bulgur_bowl__tahini_sauce}} över falafel och bulgur."
+      ],
+      "duration": 3,
+      "tags": [
+        "master"
+      ],
+      "wait": 0
+    }
+  ]
+}

@@ -1,0 +1,387 @@
+{
+  "masterId": "rump_steak_basil_sauce",
+  "source": "hellofresh",
+  "createdAt": 1790852559,
+  "basePortions": 4,
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/rump_steak_basil_sauce/main.jpg",
+    "byNode": {
+      "rump_steak_basil_sauce__marinated_steak": "assets/recipes/rump_steak_basil_sauce/steps/marinated_steak.jpg",
+      "rump_steak_basil_sauce__garlic_cheese_mash": "assets/recipes/rump_steak_basil_sauce/steps/garlic_cheese_mash.jpg",
+      "rump_steak_basil_sauce__tomato_salad": "assets/recipes/rump_steak_basil_sauce/steps/tomato_salad.jpg",
+      "rump_steak_basil_sauce__fried_steak": "assets/recipes/rump_steak_basil_sauce/steps/fried_steak.jpg",
+      "rump_steak_basil_sauce__basil_sauce": "assets/recipes/rump_steak_basil_sauce/steps/basil_sauce.jpg",
+      "rump_steak_basil_sauce": "assets/recipes/rump_steak_basil_sauce/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 697,
+    "perPortion": {
+      "energyKcal": 1263,
+      "energyKj": 5286,
+      "fatG": 37.4,
+      "saturatedFatG": 19.2,
+      "carbsG": 58.8,
+      "sugarsG": 12.5,
+      "fiberG": 6.4,
+      "proteinG": 46.7,
+      "saltG": 5.2
+    }
+  },
+  "ratings": {
+    "average": 4,
+    "count": 7,
+    "source": "hellofresh"
+  },
+  "nodes": [
+    {
+      "id": "rump_steak_basil_sauce__marinated_steak",
+      "name": "Marinera Rumpstek",
+      "outputName": "Marinerad rumpstek",
+      "inputs": [
+        {
+          "id": "rump_steak",
+          "amount": 600,
+          "unit": "g"
+        },
+        {
+          "id": "soy_sauce",
+          "amount": 25,
+          "unit": "ml"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Lägg {{rump_steak}}, {{soy_sauce}} och {{pepper}} i en medelstor skål.",
+        "Vänd så köttet täcks och ställ åt sidan för att marinera."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "rump_steak_basil_sauce__diced_potato",
+      "name": "Skär Potatis och Skala Vitlök",
+      "outputName": "Tärnad potatis och skalad vitlök",
+      "inputs": [
+        {
+          "id": "potato",
+          "amount": 1000,
+          "unit": "g"
+        },
+        {
+          "id": "garlic",
+          "amount": 3,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skala och tärna {{potato}} i 2 cm stora bitar.",
+        "Skala {{garlic}}."
+      ],
+      "duration": 6,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "rump_steak_basil_sauce__garlic_cheese_mash",
+      "name": "Gör Ost- och Vitlöksmos",
+      "outputName": "Ost- och vitlöksmos",
+      "inputs": [
+        {
+          "id": "rump_steak_basil_sauce__diced_potato",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "water",
+          "amount": 2,
+          "unit": "l"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        },
+        {
+          "id": "milk",
+          "amount": 6,
+          "unit": "msk"
+        },
+        {
+          "id": "grated_cheese",
+          "amount": 40,
+          "unit": "g"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Koka upp en stor kastrull med saltat {{water}}.",
+        "Koka {{rump_steak_basil_sauce__diced_potato}} i 11–13 min, eller tills de enkelt kan delas med en kniv.",
+        "Häll av vattnet och mosa potatis och vitlök tillsammans med {{milk}}, {{grated_cheese}}, {{salt}} och {{pepper}} i kastrullen.",
+        "Ställ åt sidan under lock."
+      ],
+      "duration": 3,
+      "tags": [],
+      "wait": 13,
+      "tips": [
+        "Tillsätt en klick smör för att göra moset extra krämigt."
+      ]
+    },
+    {
+      "id": "rump_steak_basil_sauce__chopped_basil",
+      "name": "Hacka Basilika",
+      "outputName": "Hackad basilika",
+      "inputs": [
+        {
+          "id": "fresh_basil",
+          "amount": 1,
+          "unit": "kruka"
+        }
+      ],
+      "steps": [
+        "Finhacka bladen från {{fresh_basil}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "rump_steak_basil_sauce__halved_tomatoes",
+      "name": "Halvera Körsbärstomater",
+      "outputName": "Halverade körsbärstomater",
+      "inputs": [
+        {
+          "id": "cherry_tomatoes",
+          "amount": 250,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Halvera {{cherry_tomatoes}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "rump_steak_basil_sauce__pickled_shallot",
+      "name": "Snabbsylta Schalottenlök",
+      "outputName": "Snabbsyltad schalottenlök",
+      "inputs": [
+        {
+          "id": "shallot",
+          "amount": 3,
+          "unit": "st"
+        },
+        {
+          "id": "lemon",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "sugar",
+          "amount": 1,
+          "unit": "tsk"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Skär {{shallot}} i tunna skivor.",
+        "Pressa saften från {{lemon}} i en liten skål och rör i {{sugar}} och {{salt}}.",
+        "Vänd schalottenlöken i lagen och ställ åt sidan."
+      ],
+      "duration": 4,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "rump_steak_basil_sauce__tomato_salad",
+      "name": "Blanda Tomatsallad",
+      "outputName": "Tomatsallad",
+      "inputs": [
+        {
+          "id": "rump_steak_basil_sauce__halved_tomatoes",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "mixed_salad",
+          "amount": 100,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Skölj {{mixed_salad}}.",
+        "Blanda {{rump_steak_basil_sauce__halved_tomatoes}}, salladsmixen, {{salt}} och {{pepper}} i en medelstor skål.",
+        "Ställ åt sidan."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "rump_steak_basil_sauce__roasted_pine_nuts",
+      "name": "Rosta Pinjenötter",
+      "outputName": "Rostade pinjenötter",
+      "inputs": [
+        {
+          "id": "pine_nuts",
+          "amount": 40,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Hetta upp en stor stekpanna på medelhög värme.",
+        "Rosta {{pine_nuts}} i 3–4 min, eller tills gyllene.",
+        "Ställ åt sidan i en liten skål."
+      ],
+      "duration": 1,
+      "tags": [],
+      "wait": 4
+    },
+    {
+      "id": "rump_steak_basil_sauce__fried_steak",
+      "name": "Stek Rumpstek",
+      "outputName": "Stekt rumpstek",
+      "inputs": [
+        {
+          "id": "rump_steak_basil_sauce__marinated_steak",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i samma stekpanna på medelhög värme.",
+        "Stek {{rump_steak_basil_sauce__marinated_steak}} (spara sojasåsen i skålen) i 3–4 min per sida, eller tills brynt."
+      ],
+      "duration": 8,
+      "tags": [],
+      "wait": 0,
+      "tips": [
+        "Stek i ytterligare 1–2 min för genomstekt.",
+        "Låt köttet vila i ett foliepaket tills servering — det fortsätter tillagas något under vilan."
+      ]
+    },
+    {
+      "id": "rump_steak_basil_sauce__basil_sauce",
+      "name": "Gör Basilikasås till Steken",
+      "outputName": "Stekt rumpstek med basilikasås",
+      "inputs": [
+        {
+          "id": "rump_steak_basil_sauce__fried_steak",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "soy_sauce",
+          "amount": 25,
+          "unit": "ml"
+        },
+        {
+          "id": "creme_fraiche",
+          "amount": 300,
+          "unit": "ml"
+        },
+        {
+          "id": "sugar",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "rump_steak_basil_sauce__chopped_basil",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Hetta upp samma stekpanna (med sky) på medelvärme.",
+        "Rör i resterande {{soy_sauce}} (från skålen och foliepaketet), {{creme_fraiche}}, {{sugar}} och {{rump_steak_basil_sauce__chopped_basil}}.",
+        "Sjud i 1–2 min, tills såsen lätt tjocknat.",
+        "Smaka av med salt och peppar och ta av från värme.",
+        "Behåll den vilade steken från {{rump_steak_basil_sauce__fried_steak}} redo för uppläggning."
+      ],
+      "duration": 3,
+      "tags": [],
+      "wait": 2
+    },
+    {
+      "id": "rump_steak_basil_sauce",
+      "name": "Stekt rumpstek och krämig basilikasås",
+      "outputName": "Stekt rumpstek och krämig basilikasås",
+      "inputs": [
+        {
+          "id": "rump_steak_basil_sauce__basil_sauce",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "rump_steak_basil_sauce__garlic_cheese_mash",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "rump_steak_basil_sauce__tomato_salad",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "rump_steak_basil_sauce__pickled_shallot",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "rump_steak_basil_sauce__roasted_pine_nuts",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Häll av lagen från {{rump_steak_basil_sauce__pickled_shallot}} och vänd ner den i {{rump_steak_basil_sauce__tomato_salad}} precis innan servering.",
+        "Lägg upp {{rump_steak_basil_sauce__basil_sauce}} och {{rump_steak_basil_sauce__garlic_cheese_mash}} på tallrikar.",
+        "Skeda basilikasåsen över köttet.",
+        "Servera med tomatsalladen toppad med {{rump_steak_basil_sauce__roasted_pine_nuts}}."
+      ],
+      "duration": 3,
+      "tags": [
+        "master"
+      ],
+      "wait": 0
+    }
+  ]
+}

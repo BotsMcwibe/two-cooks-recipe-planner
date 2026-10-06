@@ -1,0 +1,278 @@
+{
+  "masterId": "kramig_medelhavs_rakpasta",
+  "source": "hellofresh",
+  "createdAt": 1791036851,
+  "basePortions": 4,
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/kramig_medelhavs_rakpasta/main.jpg",
+    "byNode": {
+      "kramig_medelhavs_rakpasta__cooked_spaghetti": "assets/recipes/kramig_medelhavs_rakpasta/steps/cooked_spaghetti.jpg",
+      "kramig_medelhavs_rakpasta__fried_shrimp": "assets/recipes/kramig_medelhavs_rakpasta/steps/fried_shrimp.jpg",
+      "kramig_medelhavs_rakpasta__cream_sauce": "assets/recipes/kramig_medelhavs_rakpasta/steps/cream_sauce.jpg",
+      "kramig_medelhavs_rakpasta": "assets/recipes/kramig_medelhavs_rakpasta/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 435,
+    "perPortion": {
+      "energyKcal": 658,
+      "energyKj": 2751,
+      "fatG": 23,
+      "saturatedFatG": 11.2,
+      "carbsG": 76.5,
+      "sugarsG": 11.6,
+      "fiberG": 5.6,
+      "proteinG": 33,
+      "saltG": 3.2
+    }
+  },
+  "ratings": {
+    "average": 3.5,
+    "count": 373,
+    "source": "hellofresh"
+  },
+  "cooked": {
+    "hfId": "64fb1e6771b62ce12834188d",
+    "at": "2026-10-03T15:12:32+02:00",
+    "source": "photo",
+    "headline": "med stekta tomater och finriven ost"
+  },
+  "nodes": [
+    {
+      "id": "kramig_medelhavs_rakpasta__sliced_onion",
+      "name": "Skiva Lök",
+      "outputName": "Skivad lök",
+      "inputs": [
+        {
+          "id": "onion",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skär {{onion}} i tunna skivor."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "kramig_medelhavs_rakpasta__chopped_tomato",
+      "name": "Hacka Tomat",
+      "outputName": "Grovhackad tomat",
+      "inputs": [
+        {
+          "id": "tomato",
+          "amount": 4,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Grovhacka {{tomato}}."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "kramig_medelhavs_rakpasta__rinsed_spinach",
+      "name": "Skölj Spenat",
+      "outputName": "Sköljd spenat",
+      "inputs": [
+        {
+          "id": "baby_spinach",
+          "amount": 100,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Skölj {{baby_spinach}}."
+      ],
+      "duration": 1,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "kramig_medelhavs_rakpasta__cooked_spaghetti",
+      "name": "Koka Spaghetti",
+      "outputName": "Kokt spaghetti",
+      "inputs": [
+        {
+          "id": "spaghetti",
+          "amount": 1,
+          "unit": "pkt"
+        },
+        {
+          "id": "water",
+          "amount": 2,
+          "unit": "l"
+        }
+      ],
+      "steps": [
+        "Koka upp en stor kastrull med saltat {{water}}.",
+        "Koka {{spaghetti}} i 8–9 min, eller tills al dente."
+      ],
+      "duration": 2,
+      "wait": 9,
+      "tags": [],
+      "tips": [
+        "Kokvattnet ska vara lika salt som havsvatten.",
+        "Al dente betyder att pastan är genomkokt men fortfarande har tuggmotstånd."
+      ]
+    },
+    {
+      "id": "kramig_medelhavs_rakpasta__drained_spaghetti",
+      "name": "Häll av Spaghetti",
+      "outputName": "Avrunnen spaghetti",
+      "inputs": [
+        {
+          "id": "kramig_medelhavs_rakpasta__cooked_spaghetti",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skopa upp ca 2 dl pastavatten och ställ åt sidan. Häll av resten och lägg tillbaka {{kramig_medelhavs_rakpasta__cooked_spaghetti}} i kastrullen."
+      ],
+      "duration": 1,
+      "tags": []
+    },
+    {
+      "id": "kramig_medelhavs_rakpasta__fried_shrimp",
+      "name": "Stek Räkor",
+      "outputName": "Stekta räkor med tomat och lök",
+      "inputs": [
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "msk"
+        },
+        {
+          "id": "shrimp",
+          "amount": 300,
+          "unit": "g"
+        },
+        {
+          "id": "kramig_medelhavs_rakpasta__sliced_onion",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "kramig_medelhavs_rakpasta__chopped_tomato",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "mamas_favorit",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "id": "spicemix_pearl",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i en stor stekpanna på medelhög värme.",
+        "Stek {{shrimp}}, {{kramig_medelhavs_rakpasta__sliced_onion}}, {{kramig_medelhavs_rakpasta__chopped_tomato}}, {{mamas_favorit}}, {{spicemix_pearl}}, {{salt}} och {{pepper}} i 3–4 min, tills löken är mjuk."
+      ],
+      "duration": 5,
+      "wait": 0,
+      "tags": [],
+      "tips": [
+        "Räkorna är färdiga när de är rosa utanpå och ogenomskinliga i mitten."
+      ]
+    },
+    {
+      "id": "kramig_medelhavs_rakpasta__cream_sauce",
+      "name": "Sjud Gräddsås",
+      "outputName": "Krämig räksås",
+      "inputs": [
+        {
+          "id": "kramig_medelhavs_rakpasta__fried_shrimp",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "kramig_medelhavs_rakpasta__rinsed_spinach",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "cooking_cream",
+          "amount": 2,
+          "unit": "pkt"
+        },
+        {
+          "id": "water",
+          "amount": 1,
+          "unit": "dl"
+        },
+        {
+          "id": "vegetable_bouillon",
+          "amount": 8,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Sänk till medelvärme. Rör i {{kramig_medelhavs_rakpasta__rinsed_spinach}}, {{cooking_cream}}, 1 dl av det sparade pastavattnet ({{water}}) och {{vegetable_bouillon}} i {{kramig_medelhavs_rakpasta__fried_shrimp}}.",
+        "Sjud i 1–2 min."
+      ],
+      "duration": 1,
+      "wait": 2,
+      "tags": []
+    },
+    {
+      "id": "kramig_medelhavs_rakpasta",
+      "name": "Krämig medelhavs-inspirerad räkpasta",
+      "outputName": "Krämig medelhavs-inspirerad räkpasta",
+      "inputs": [
+        {
+          "id": "kramig_medelhavs_rakpasta__cream_sauce",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "kramig_medelhavs_rakpasta__drained_spaghetti",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "pumpkin_seeds",
+          "amount": 1,
+          "unit": "g"
+        },
+        {
+          "id": "grated_cheese",
+          "amount": 40,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Rör ner {{kramig_medelhavs_rakpasta__drained_spaghetti}} i {{kramig_medelhavs_rakpasta__cream_sauce}}.",
+        "Lägg upp räkpastan i skålar. Garnera med {{pumpkin_seeds}} och {{grated_cheese}}."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [
+        "master"
+      ]
+    }
+  ]
+}

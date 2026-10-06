@@ -1,0 +1,377 @@
+{
+  "masterId": "chicken_bulgur_mediterranean",
+  "source": "hellofresh",
+  "createdAt": 1791037352,
+  "basePortions": 4,
+  "sharedPrep": [
+    "preheated_oven_220"
+  ],
+  "cooked": {
+    "hfId": "655373681b313a369d6182a5",
+    "at": "2026-10-03T15:12:32+02:00",
+    "source": "photo",
+    "headline": "med rostade grönsaker och persiljebulgur"
+  },
+  "nodes": [
+    {
+      "id": "chicken_bulgur_mediterranean__diced_vegetables",
+      "name": "Tärna Grönsaker",
+      "outputName": "Tärnade grönsaker",
+      "inputs": [
+        {
+          "id": "tomato",
+          "amount": 4,
+          "unit": "st"
+        },
+        {
+          "id": "paprika",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Tärna {{paprika}} och {{tomato}} i 2 cm stora bitar."
+      ],
+      "duration": 10,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "chicken_bulgur_mediterranean__red_onion_wedges",
+      "name": "Skär Rödlöksklyftor",
+      "outputName": "Rödlöksklyftor",
+      "inputs": [
+        {
+          "id": "red_onion",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skär {{red_onion}} i 2 cm tjocka klyftor."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "chicken_bulgur_mediterranean__roasted_vegetables",
+      "name": "Rosta Grönsaker",
+      "outputName": "Rostade Grönsaker",
+      "inputs": [
+        {
+          "id": "preheated_oven_220",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "chicken_bulgur_mediterranean__diced_vegetables",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "chicken_bulgur_mediterranean__red_onion_wedges",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "vegetable_bouillon",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "id": "spicemix_pearl",
+          "amount": 4,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Placera {{chicken_bulgur_mediterranean__diced_vegetables}} och {{chicken_bulgur_mediterranean__red_onion_wedges}} på en plåt med bakplåtspapper. Blanda med {{olive_oil}}, {{spicemix_pearl}}, {{vegetable_bouillon}}, {{salt}} och en nypa {{pepper}}.",
+        "Rosta i {{preheated_oven_220}} i 10-15 minuter, eller tills mjuka."
+      ],
+      "duration": 5,
+      "tags": [],
+      "wait": 10,
+      "tips": [
+        "Använd fler plåtar om det blir för trångt."
+      ]
+    },
+    {
+      "id": "chicken_bulgur_mediterranean__boiled_bulgur",
+      "name": "Koka Bulgur",
+      "outputName": "Kokad Bulgur",
+      "inputs": [
+        {
+          "id": "bulgur",
+          "amount": 170,
+          "unit": "g"
+        },
+        {
+          "id": "water",
+          "amount": 4.5,
+          "unit": "dl"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Koka upp en kastrull med {{water}}.",
+        "Rör i bulgur och salt, sänk till medellåg värme. Sjud under lock i 9-10 minuter, eller tills \"al dente\"."
+      ],
+      "duration": 2,
+      "tags": [],
+      "wait": 9
+    },
+    {
+      "id": "chicken_bulgur_mediterranean__chopped_parsley",
+      "name": "Hackad Persilja",
+      "outputName": "Finhackad persilja",
+      "inputs": [
+        {
+          "id": "parsley",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skölj {{parsley}} under kallt vatten.",
+        "Hacka {{parsley}} fint med en vass kniv."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Använd en stor kniv och samla ihop persiljan till en hög för att underlätta hackningen."
+      ]
+    },
+    {
+      "id": "chicken_bulgur_mediterranean__bulgur_with_roasted_vegetables",
+      "name": "Blanda Bulgur och Rostade Grönsaker",
+      "outputName": "Bulgur med Rostade Grönsaker",
+      "inputs": [
+        {
+          "id": "chicken_bulgur_mediterranean__boiled_bulgur",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "chicken_bulgur_mediterranean__roasted_vegetables",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "chicken_bulgur_mediterranean__chopped_parsley",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "chicken_bulgur_mediterranean__lemon_juice",
+          "amount": 0.5,
+          "unit": "st"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 0.25,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Rör ned {{chicken_bulgur_mediterranean__roasted_vegetables}}, {{chicken_bulgur_mediterranean__chopped_parsley}}, {{olive_oil}}, en skvätt {{chicken_bulgur_mediterranean__lemon_juice}}, {{salt}} och {{pepper}} i {{chicken_bulgur_mediterranean__boiled_bulgur}}."
+      ],
+      "duration": 5,
+      "tags": [
+        "carbs"
+      ]
+    },
+    {
+      "id": "chicken_bulgur_mediterranean__chopped_chicken",
+      "name": "Skär Kyckling",
+      "outputName": "Kyckling i bitar",
+      "inputs": [
+        {
+          "id": "chicken_breast_bbq",
+          "amount": 600,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Skär varje {{chicken_breast_bbq}} i 3 delar på en separat skärbräda."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "chicken_bulgur_mediterranean__grilled_chicken",
+      "name": "Stek Kyckling",
+      "outputName": "Stekt Kyckling",
+      "inputs": [
+        {
+          "id": "chicken_bulgur_mediterranean__chopped_chicken",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "garlic",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 0.25,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i en stor stekpanna på medelhög värme.",
+        "Stek {{chicken_bulgur_mediterranean__chopped_chicken}} med {{salt}} i 3 min på varje sida, eller tills gylllene och genomstekt."
+      ],
+      "duration": 9,
+      "tags": [
+        "protein"
+      ],
+      "tips": [
+        "Kyckling är färdiglagad när köttet inte längre är rosa i mitten."
+      ]
+    },
+    {
+      "id": "chicken_bulgur_mediterranean__lemon_juice",
+      "name": "Pressa Citronsaft",
+      "outputName": "Citronsaft",
+      "inputs": [
+        {
+          "id": "lemon",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skölj {{lemon}} under kallt vatten.",
+        "Dela {{lemon}} på mitten och pressa ur saften."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Råreceptet: en skvätt saft i yoghurten och en skvätt i bulguren, alltså 0,5 st + 0,5 st."
+      ]
+    },
+    {
+      "id": "chicken_bulgur_mediterranean__lemon_yoghurt",
+      "name": "Blanda Citronyoghurt",
+      "outputName": "Citronyoghurt",
+      "inputs": [
+        {
+          "id": "yoghurt",
+          "amount": 150,
+          "unit": "g"
+        },
+        {
+          "id": "chicken_bulgur_mediterranean__lemon_juice",
+          "amount": 0.5,
+          "unit": "st"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Blanda {{yoghurt}}, en skvätt {{chicken_bulgur_mediterranean__lemon_juice}}, {{salt}} och {{pepper}} i en liten skål."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep",
+        "sauce"
+      ],
+      "tips": [
+        "Smaka av."
+      ]
+    },
+    {
+      "id": "chicken_bulgur_mediterranean",
+      "name": "Medelhavs-inspirerad Kyckling",
+      "outputName": "Medelhavs-inspirerad kyckling",
+      "inputs": [
+        {
+          "id": "chicken_bulgur_mediterranean__bulgur_with_roasted_vegetables",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "chicken_bulgur_mediterranean__grilled_chicken",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "chicken_bulgur_mediterranean__lemon_yoghurt",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "pumpkin_seeds",
+          "amount": 20,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{chicken_bulgur_mediterranean__bulgur_with_roasted_vegetables}} i djupa tallrikar.",
+        "Toppa med {{chicken_bulgur_mediterranean__grilled_chicken}} och {{chicken_bulgur_mediterranean__lemon_yoghurt}}.",
+        "Strö över {{pumpkin_seeds}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "master"
+      ]
+    }
+  ]
+}

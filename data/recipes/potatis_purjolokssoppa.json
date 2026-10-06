@@ -1,0 +1,162 @@
+{
+  "masterId": "potatis_purjolokssoppa",
+  "source": "citygross",
+  "createdAt": 1791056383,
+  "basePortions": 4,
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/potatis_purjolokssoppa/main.jpg"
+  },
+  "nodes": [
+    {
+      "id": "potatis_purjolokssoppa__soffritto",
+      "name": "Fräs Grönsaker",
+      "outputName": "Fräst potatis och lök",
+      "inputs": [
+        {
+          "id": "potato",
+          "amount": 800,
+          "unit": "g"
+        },
+        {
+          "id": "onion",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "leek",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "butter",
+          "amount": 2,
+          "unit": "msk"
+        }
+      ],
+      "steps": [
+        "Skala och tärna {{potato}} och {{onion}}. Dela, skölj och skär {{leek}} i bitar. Stek allt i {{butter}} ett par minuter."
+      ],
+      "duration": 8,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "\"Ett par minuter\" är hands-on, ingen wait."
+      ]
+    },
+    {
+      "id": "potatis_purjolokssoppa__simmer",
+      "name": "Koka Soppan",
+      "outputName": "Kokt potatis- och purjolökssoppa",
+      "inputs": [
+        {
+          "id": "potatis_purjolokssoppa__soffritto",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "water",
+          "amount": 1,
+          "unit": "l"
+        },
+        {
+          "id": "chicken_bouillon",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Häll {{water}} och {{chicken_bouillon}} över {{potatis_purjolokssoppa__soffritto}}. Koka upp och koka under lock ca 15 min tills potatisen är mjuk."
+      ],
+      "duration": 2,
+      "wait": 15,
+      "tags": [],
+      "tips": [
+        "Buljong står som 2 st tärningar. Inte omräknat till gram."
+      ]
+    },
+    {
+      "id": "potatis_purjolokssoppa__soup",
+      "name": "Runda Av Soppan",
+      "outputName": "Krämig potatis- och purjolökssoppa",
+      "inputs": [
+        {
+          "id": "potatis_purjolokssoppa__simmer",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "whipping_cream",
+          "amount": 1,
+          "unit": "dl"
+        },
+        {
+          "id": "salt",
+          "amount": 2,
+          "unit": "krm"
+        },
+        {
+          "id": "white_pepper",
+          "amount": 2,
+          "unit": "krm"
+        }
+      ],
+      "steps": [
+        "Mixa {{potatis_purjolokssoppa__simmer}} slät om du vill. Rör i {{whipping_cream}} och smaka av med {{salt}} och {{white_pepper}}."
+      ],
+      "duration": 4,
+      "tags": [],
+      "tips": [
+        "Salt och vitpeppar har mängd 2 krm i rådatan, så de är inte 1 nypa. Vispgrädde är ny ingrediens, inte matlagningsgrädde."
+      ]
+    },
+    {
+      "id": "potatis_purjolokssoppa__sausage",
+      "name": "Stek Korvslantar",
+      "outputName": "Krispiga korvslantar",
+      "inputs": [
+        {
+          "id": "sausage",
+          "amount": 300,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Slanta {{sausage}} och stek den krispig."
+      ],
+      "duration": 6,
+      "tags": [],
+      "tips": [
+        "Ingen tid i råsteget, därför ingen wait. \"Kryddig korv\" är mappad till ny generisk korv."
+      ]
+    },
+    {
+      "id": "potatis_purjolokssoppa",
+      "name": "Potatis- och purjolökssoppa med kryddig korv",
+      "outputName": "Potatis- och purjolökssoppa med kryddig korv",
+      "inputs": [
+        {
+          "id": "potatis_purjolokssoppa__soup",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "potatis_purjolokssoppa__sausage",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Servera {{potatis_purjolokssoppa__soup}} med {{potatis_purjolokssoppa__sausage}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "master"
+      ],
+      "tips": [
+        "Har du gammalt bröd kan du tärna det, ringla över lite olja och rosta till krutonger. Inte tillagt som ingrediens."
+      ]
+    }
+  ]
+}

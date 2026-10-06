@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Inköpslista - Recipe Prototype App</title>
+  <!-- Add more includes here -->
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/checkbox-styles.css">
+  <link rel="stylesheet" href="./css/shopping-list.css">
+  <!-- jQuery CDN import with SRI -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Navigation header -->
+    <div id="navigation-header" style="max-width:800px;margin:0 auto 20px auto;padding:15px 20px;background:#f8fafc;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.1);display:flex;justify-content:space-between;align-items:center;">
+      <h1 style="margin:0;color:#2d3748;">Inköpslista</h1>
+      <a href="index.html" style="padding:8px 16px;background:#4299e1;color:white;text-decoration:none;border-radius:6px;font-size:14px;">← Tillbaka till Recept</a>
+    </div>
+
+    <!-- Recipe selection area -->
+    <div id="recipe-selection" style="max-width:800px;margin:0 auto 20px auto;padding:20px;background:#f8fafc;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+      <h2 style="margin:0 0 15px 0;color:#2d3748;">Välj Huvudrecept</h2>
+      <div id="recipe-checkboxes">
+        <!-- Recipe checkboxes will be populated by JavaScript -->
+      </div>
+      <div style="margin-top:15px;">
+        <button id="generate-list-btn" style="padding:10px 20px;background:#48bb78;color:white;border:none;border-radius:6px;font-size:16px;cursor:pointer;" disabled>Skapa Inköpslista</button>
+      </div>
+    </div>
+
+    <!-- Shopping list display area -->
+    <div id="shopping-list-container" style="max-width:800px;margin:0 auto;padding:20px;background:#f8fafc;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.1);display:none;">
+      <h2 style="margin:0 0 15px 0;color:#2d3748;">Din Inköpslista</h2>
+      
+      <!-- Summary of selected recipes -->
+      <div id="selected-recipes-summary" style="margin-bottom:20px;padding:15px;background:#e2e8f0;border-radius:6px;">
+        <h3 style="margin:0 0 10px 0;color:#2d3748;font-size:16px;">Valda Recept:</h3>
+        <div id="recipe-list">
+          <!-- Selected recipes will be listed here -->
+        </div>
+      </div>
+
+      <!-- Ingredient list organized by category -->
+      <div id="ingredient-categories">
+        <!-- Categories will be populated here -->
+      </div>
+
+      <!-- Actions -->
+      <div style="margin-top:20px;display:flex;gap:10px;">
+        <button id="print-list-btn" style="padding:10px 20px;background:#4299e1;color:white;border:none;border-radius:6px;font-size:14px;cursor:pointer;">Skriv ut</button>
+        <button id="reset-list-btn" style="padding:10px 20px;background:#e53e3e;color:white;border:none;border-radius:6px;font-size:14px;cursor:pointer;">Börja om</button>
+      </div>
+    </div>
+
+    <!-- Include all necessary JavaScript files -->
+    <script src="js/core/common.js"></script>
+    <script src="js/core/recipe-tree-builder.js"></script>
+    <script src="js/models/models.js"></script>
+    <script src="js/data/recipes.js"></script>
+    
+    <!-- Recipe Collections - Add new recipe files here -->
+    <script src="js/data/recipes/mediterranean-chicken.js"></script>
+    <script src="js/data/recipes/spaghetti-bolognese.js"></script>
+    <script src="js/data/recipes/portionspajer.js"></script>
+    <script src="js/data/recipes/spinach-feta-piroger.js"></script>
+    <script src="js/data/recipes/basilika-kyckling-rotmos.js"></script>
+    
+    <!-- Shopping list specific JavaScript -->
+    <script src="js/shopping-list/recipe-analyzer.js"></script>
+    <script src="js/shopping-list/shopping-list-manager.js"></script>
+    <script src="js/shopping-list/ingredient-aggregator.js"></script>
+    <script src="js/shopping-list/shopping-list-app.js"></script>
+</body>
+</html>

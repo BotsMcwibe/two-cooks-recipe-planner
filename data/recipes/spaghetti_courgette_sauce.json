@@ -1,0 +1,282 @@
+{
+  "masterId": "spaghetti_courgette_sauce",
+  "source": "hellofresh",
+  "createdAt": 1790795820,
+  "basePortions": 4,
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/spaghetti_courgette_sauce/main.jpg"
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 17,
+    "perPortion": {
+      "energyKcal": 79,
+      "energyKj": 330,
+      "fatG": 2.93,
+      "saturatedFatG": 0.4,
+      "carbsG": 11.14,
+      "sugarsG": 0.2,
+      "proteinG": 1.83,
+      "saltG": 0.1
+    }
+  },
+  "ratings": {
+    "average": 3,
+    "count": 17,
+    "source": "hellofresh"
+  },
+  "nodes": [
+    {
+      "id": "spaghetti_courgette_sauce__diced_zucchini",
+      "name": "Tärna Courgette",
+      "outputName": "Tärnad courgette",
+      "inputs": [
+        {
+          "id": "zucchini",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Tärna {{zucchini}} i 1×1 cm stora bitar."
+      ],
+      "duration": 4,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "spaghetti_courgette_sauce__chopped_chili",
+      "name": "Hacka Chili",
+      "outputName": "Hackad chili",
+      "inputs": [
+        {
+          "id": "fresh_chili",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Halvera {{fresh_chili}}, ta bort frön och finhacka."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Använd bara en halv chili om du inte tycker om stark mat."
+      ]
+    },
+    {
+      "id": "spaghetti_courgette_sauce__chopped_garlic_onion",
+      "name": "Hacka Vitlök och Lök",
+      "outputName": "Hackad vitlök och lök",
+      "inputs": [
+        {
+          "id": "garlic",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "onion",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Halvera, skala och finhacka {{garlic}} och {{onion}}."
+      ],
+      "duration": 4,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "spaghetti_courgette_sauce__chopped_parsley",
+      "name": "Hacka Persilja",
+      "outputName": "Hackad persilja",
+      "inputs": [
+        {
+          "id": "parsley",
+          "amount": 1,
+          "unit": "kruka"
+        }
+      ],
+      "steps": [
+        "Finhacka {{parsley}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "spaghetti_courgette_sauce__fried_vegetables",
+      "name": "Fräs Courgette och Aromater",
+      "outputName": "Fräst courgette med chili, vitlök och lök",
+      "inputs": [
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "spaghetti_courgette_sauce__diced_zucchini",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "spaghetti_courgette_sauce__chopped_chili",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "spaghetti_courgette_sauce__chopped_garlic_onion",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i en stor stekpanna på medelvärme.",
+        "Fräs {{spaghetti_courgette_sauce__diced_zucchini}}, {{spaghetti_courgette_sauce__chopped_chili}} och {{spaghetti_courgette_sauce__chopped_garlic_onion}} i 1–2 min."
+      ],
+      "duration": 3,
+      "tags": []
+    },
+    {
+      "id": "spaghetti_courgette_sauce__courgette_sauce",
+      "name": "Gör Courgettesås",
+      "outputName": "Courgettesås",
+      "inputs": [
+        {
+          "id": "spaghetti_courgette_sauce__fried_vegetables",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "spaghetti_courgette_sauce__chopped_parsley",
+          "amount": 0.5,
+          "unit": "st"
+        },
+        {
+          "id": "canned_tomatoes",
+          "amount": 2,
+          "unit": "burk"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 0.5,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Tillsätt {{spaghetti_courgette_sauce__chopped_parsley}} och {{canned_tomatoes}} till {{spaghetti_courgette_sauce__fried_vegetables}} i pannan.",
+        "Låt sjuda i 10–12 min tills såsen tjocknat. Krydda med {{salt}} och {{pepper}} mot slutet."
+      ],
+      "duration": 2,
+      "wait": 12,
+      "tags": [],
+      "tips": [
+        "Hälften av den hackade persiljan (0.5 st) går i såsen, resten (0.5 st) strös över vid servering — enligt HF 'halva persiljan'."
+      ]
+    },
+    {
+      "id": "spaghetti_courgette_sauce__cooked_spaghetti",
+      "name": "Koka Spaghetti",
+      "outputName": "Kokt spaghetti",
+      "inputs": [
+        {
+          "id": "spaghetti",
+          "amount": 500,
+          "unit": "g"
+        },
+        {
+          "id": "water",
+          "amount": 3,
+          "unit": "l"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "msk"
+        }
+      ],
+      "steps": [
+        "Koka upp saltat {{water}} i en stor kastrull.",
+        "Tillsätt {{spaghetti}} och koka i 10–12 min utan lock, eller tills al dente.",
+        "Rör om regelbundet så att spaghettin inte blir klibbig.",
+        "Häll av i ett durkslag."
+      ],
+      "duration": 3,
+      "wait": 12,
+      "tags": [],
+      "tips": [
+        "Al dente betyder att pastan är genomkokt men fortfarande har tuggmotstånd."
+      ]
+    },
+    {
+      "id": "spaghetti_courgette_sauce__crispy_parmesan_panko",
+      "name": "Stek Krispig Ost",
+      "outputName": "Krispig parmesan och panko",
+      "inputs": [
+        {
+          "id": "parmesan",
+          "amount": 40,
+          "unit": "g"
+        },
+        {
+          "id": "panko",
+          "amount": 50,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Lägg {{parmesan}} och {{panko}} i en stekpanna på medelvärme.",
+        "Rör tills blandningen är gyllenbrun och krispig, ca 5 min."
+      ],
+      "duration": 5,
+      "tags": []
+    },
+    {
+      "id": "spaghetti_courgette_sauce",
+      "name": "Spaghetti och courgettesås",
+      "outputName": "Spaghetti och courgettesås",
+      "inputs": [
+        {
+          "id": "spaghetti_courgette_sauce__cooked_spaghetti",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "spaghetti_courgette_sauce__courgette_sauce",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "spaghetti_courgette_sauce__crispy_parmesan_panko",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "spaghetti_courgette_sauce__chopped_parsley",
+          "amount": 0.5,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Servera {{spaghetti_courgette_sauce__cooked_spaghetti}} med {{spaghetti_courgette_sauce__courgette_sauce}} i djupa tallrikar.",
+        "Strö över {{spaghetti_courgette_sauce__crispy_parmesan_panko}} och resterande {{spaghetti_courgette_sauce__chopped_parsley}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "master"
+      ]
+    }
+  ]
+}

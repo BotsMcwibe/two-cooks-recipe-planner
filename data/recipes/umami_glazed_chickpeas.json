@@ -1,0 +1,438 @@
+{
+  "masterId": "umami_glazed_chickpeas",
+  "source": "hellofresh",
+  "createdAt": 1790853846,
+  "basePortions": 4,
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/umami_glazed_chickpeas/main.jpg",
+    "byNode": {
+      "umami_glazed_chickpeas__simmered_rice": "assets/recipes/umami_glazed_chickpeas/steps/simmered_rice.jpg",
+      "umami_glazed_chickpeas__umami_glaze": "assets/recipes/umami_glazed_chickpeas/steps/umami_glaze.jpg",
+      "umami_glazed_chickpeas__fried_chickpeas": "assets/recipes/umami_glazed_chickpeas/steps/fried_chickpeas.jpg",
+      "umami_glazed_chickpeas__ponzu_salad": "assets/recipes/umami_glazed_chickpeas/steps/ponzu_salad.jpg",
+      "umami_glazed_chickpeas__glazed_chickpeas": "assets/recipes/umami_glazed_chickpeas/steps/glazed_chickpeas.jpg",
+      "umami_glazed_chickpeas": "assets/recipes/umami_glazed_chickpeas/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 500,
+    "perPortion": {
+      "energyKcal": 892,
+      "energyKj": 3732,
+      "fatG": 45.1,
+      "saturatedFatG": 9.5,
+      "carbsG": 97.7,
+      "sugarsG": 17.7,
+      "fiberG": 10.7,
+      "proteinG": 20.3,
+      "saltG": 6.7
+    }
+  },
+  "ratings": {
+    "average": 4,
+    "count": 2,
+    "source": "hellofresh"
+  },
+  "nodes": [
+    {
+      "id": "umami_glazed_chickpeas__simmered_rice",
+      "name": "Koka Jasminris",
+      "outputName": "Sjudet jasminris",
+      "inputs": [
+        {
+          "id": "water",
+          "amount": 6,
+          "unit": "dl"
+        },
+        {
+          "id": "jasmine_rice",
+          "amount": 300,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Koka upp en medelstor kastrull med {{water}}.",
+        "Rör i {{jasmine_rice}} och {{salt}}, sänk till medellåg värme och sjud under lock i 12 min."
+      ],
+      "duration": 2,
+      "wait": 12,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Riset ska ångkoka, så tjuvkika inte."
+      ]
+    },
+    {
+      "id": "umami_glazed_chickpeas__cooked_rice",
+      "name": "Vila Jasminris",
+      "outputName": "Kokt jasminris",
+      "inputs": [
+        {
+          "id": "umami_glazed_chickpeas__simmered_rice",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Ta av {{umami_glazed_chickpeas__simmered_rice}} från värmen och låt vila under lock i 10 min."
+      ],
+      "duration": 1,
+      "wait": 10,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "umami_glazed_chickpeas__drained_chickpeas",
+      "name": "Häll Av Kikärtor",
+      "outputName": "Avrunna kikärtor och sparat kikärtslag",
+      "inputs": [
+        {
+          "id": "chickpeas",
+          "amount": 2,
+          "unit": "pkt"
+        }
+      ],
+      "steps": [
+        "Skeda upp 4 msk lag från {{chickpeas}} och ställ åt sidan till glazen. Häll av resten."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Kikärtslaget är en processrest, inte en egen vara.",
+        "Burkarna delas: 4 msk lag till glazen (0,1 st) och de avrunna kikärtorna till stekningen (0,9 st). Andelen är en uppskattning; råreceptet anger ingen burkstorlek."
+      ]
+    },
+    {
+      "id": "umami_glazed_chickpeas__pressed_garlic",
+      "name": "Pressa Vitlök",
+      "outputName": "Pressad vitlök",
+      "inputs": [
+        {
+          "id": "garlic",
+          "amount": 4,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Finhacka eller pressa {{garlic}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "umami_glazed_chickpeas__umami_glaze",
+      "name": "Blanda Umamiglaze",
+      "outputName": "Umamiglaze",
+      "inputs": [
+        {
+          "id": "umami_glazed_chickpeas__drained_chickpeas",
+          "amount": 0.1,
+          "unit": "st"
+        },
+        {
+          "id": "soy_sauce",
+          "amount": 50,
+          "unit": "ml"
+        },
+        {
+          "id": "honey",
+          "amount": 25,
+          "unit": "g"
+        },
+        {
+          "id": "umami_sauce",
+          "amount": 100,
+          "unit": "g"
+        },
+        {
+          "id": "flour",
+          "amount": 1,
+          "unit": "msk"
+        }
+      ],
+      "steps": [
+        "Blanda 4 msk sparat kikärtslag från {{umami_glazed_chickpeas__drained_chickpeas}} med {{soy_sauce}}, {{honey}}, {{umami_sauce}} och {{flour}}."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Glazen tar bara det sparade laget; kikärtorna själva steks i en egen nod."
+      ]
+    },
+    {
+      "id": "umami_glazed_chickpeas__garlic_oil",
+      "name": "Gör Vitlöksolja",
+      "outputName": "Vitlöksolja",
+      "inputs": [
+        {
+          "id": "umami_glazed_chickpeas__pressed_garlic",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 4,
+          "unit": "msk"
+        }
+      ],
+      "steps": [
+        "Blanda {{olive_oil}} och {{umami_glazed_chickpeas__pressed_garlic}} i en liten skål. Ställ åt sidan till servering."
+      ],
+      "duration": 1,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "umami_glazed_chickpeas__fried_chickpeas",
+      "name": "Stek Kikärtor",
+      "outputName": "Stekta kikärtor",
+      "inputs": [
+        {
+          "id": "umami_glazed_chickpeas__drained_chickpeas",
+          "amount": 0.9,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 2,
+          "unit": "msk"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i en stor stekpanna på medelhög värme.",
+        "Stek {{umami_glazed_chickpeas__drained_chickpeas}} i 5–7 min, eller tills gyllene. Rör om då och då."
+      ],
+      "duration": 7,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "5–7 min är hands-on stek (duration 7, övre gräns). Ingen passiv wait."
+      ]
+    },
+    {
+      "id": "umami_glazed_chickpeas__cut_vegetables",
+      "name": "Skär Rädisor, Morot och Gurka",
+      "outputName": "Skurna grönsaker",
+      "inputs": [
+        {
+          "id": "radish",
+          "amount": 150,
+          "unit": "g"
+        },
+        {
+          "id": "carrot",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "cucumber",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Halvera {{radish}}.",
+        "Skala {{carrot}} i långa band med en potatisskalare och finhacka den sista innersta biten.",
+        "Skär {{cucumber}} i tunna stavar."
+      ],
+      "duration": 6,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "umami_glazed_chickpeas__ponzu_salad",
+      "name": "Gör Ponzugrönsaker",
+      "outputName": "Ponzugrönsaker",
+      "inputs": [
+        {
+          "id": "umami_glazed_chickpeas__cut_vegetables",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "salted_peanuts",
+          "amount": 40,
+          "unit": "g"
+        },
+        {
+          "id": "ponzu_dressing",
+          "amount": 30,
+          "unit": "ml"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Grovhacka {{salted_peanuts}}.",
+        "Blanda {{umami_glazed_chickpeas__cut_vegetables}} (rädisor, morot och gurka) och jordnötterna med {{ponzu_dressing}}, {{olive_oil}}, {{salt}} och {{pepper}} i en medelstor skål."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "umami_glazed_chickpeas__glazed_chickpeas",
+      "name": "Glasera Kikärtor",
+      "outputName": "Umamiglaserade kikärtor",
+      "inputs": [
+        {
+          "id": "umami_glazed_chickpeas__fried_chickpeas",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "umami_glazed_chickpeas__umami_glaze",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Tillsätt {{umami_glazed_chickpeas__umami_glaze}} till pannan med {{umami_glazed_chickpeas__fried_chickpeas}} och sjud i 2–3 min, eller tills såsen har tjocknat och kikärtorna är glaserade."
+      ],
+      "duration": 1,
+      "wait": 3,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "umami_glazed_chickpeas__sriracha_yoghurt",
+      "name": "Blanda Srirachayoghurt",
+      "outputName": "Srirachayoghurt",
+      "inputs": [
+        {
+          "id": "sriracha",
+          "amount": 20,
+          "unit": "g"
+        },
+        {
+          "id": "yoghurt",
+          "amount": 150,
+          "unit": "ml"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Blanda {{sriracha}} och {{yoghurt}} i en liten skål. Krydda med {{salt}} och {{pepper}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "HF-kortet lägger yoghurten i samma steg som glaseringen; egen nod så 2–3 min-sjuden äger timern."
+      ]
+    },
+    {
+      "id": "umami_glazed_chickpeas__grated_coriander",
+      "name": "Riv Koriander",
+      "outputName": "Riven koriander",
+      "inputs": [
+        {
+          "id": "coriander",
+          "amount": 1,
+          "unit": "pkt"
+        }
+      ],
+      "steps": [
+        "Riv eller grovhacka {{coriander}}."
+      ],
+      "duration": 1,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "HF-enhet portionspåse finns inte i units.json — satt till 1 pkt. Samma mängd vid 2 och 4 portioner."
+      ]
+    },
+    {
+      "id": "umami_glazed_chickpeas",
+      "name": "Umamiglaserade kikärtor",
+      "outputName": "Umamiglaserade kikärtor",
+      "inputs": [
+        {
+          "id": "umami_glazed_chickpeas__cooked_rice",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "umami_glazed_chickpeas__garlic_oil",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "umami_glazed_chickpeas__ponzu_salad",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "umami_glazed_chickpeas__glazed_chickpeas",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "umami_glazed_chickpeas__grated_coriander",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "umami_glazed_chickpeas__sriracha_yoghurt",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{umami_glazed_chickpeas__cooked_rice}} i djupa tallrikar och ringla över {{umami_glazed_chickpeas__garlic_oil}}.",
+        "Toppa med {{umami_glazed_chickpeas__ponzu_salad}} och {{umami_glazed_chickpeas__glazed_chickpeas}}.",
+        "Strö över {{umami_glazed_chickpeas__grated_coriander}} och servera med {{umami_glazed_chickpeas__sriracha_yoghurt}}."
+      ],
+      "duration": 3,
+      "wait": 0,
+      "tags": [
+        "master"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,314 @@
+{
+  "masterId": "tomato_pepper_soup",
+  "source": "hellofresh",
+  "createdAt": 1790795820,
+  "basePortions": 4,
+  "sharedPrep": [
+    "preheated_oven_220"
+  ],
+  "images": {
+    "main": "assets/recipes/tomato_pepper_soup/main.jpg"
+  },
+  "ratings": {
+    "average": 2.9,
+    "count": 24,
+    "source": "hellofresh"
+  },
+  "nodes": [
+    {
+      "id": "tomato_pepper_soup__prepped_vegetables",
+      "name": "Förbered Grönsaker",
+      "outputName": "Förberedda grönsaker",
+      "inputs": [
+        {
+          "id": "shallot",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "garlic",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "tomato",
+          "amount": 8,
+          "unit": "st"
+        },
+        {
+          "id": "paprika",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Riv {{shallot}}.",
+        "Skala och pressa {{garlic}}.",
+        "Grovhacka {{tomato}}.",
+        "Kärna ur {{paprika}} och grovhacka."
+      ],
+      "duration": 8,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "FLAG: _unitInference Tomat 8 tsk — överstyrd till 8 st (metod: grovhacka; yield 2 var 4 tsk→4 st).",
+        "FLAG: _unitInference Röd paprika 2 tsk — överstyrd till 2 st (metod: grovhacka; spice-reason fel).",
+        "FLAG: _unitInference Vitlöksklyfta 4 tsk vid 4 port — delad 2+2 st (yield 2 var 2 klyfta; klyfta→st).",
+        "HF-ingrediens heter Lök men stegen säger schalottenlök — mappar till shallot."
+      ]
+    },
+    {
+      "id": "tomato_pepper_soup__chopped_tarragon",
+      "name": "Hacka Dragon",
+      "outputName": "Hackad dragon",
+      "inputs": [
+        {
+          "id": "tarragon",
+          "amount": 1,
+          "unit": "kruka"
+        }
+      ],
+      "steps": [
+        "Plocka bladen från {{tarragon}} (kasta stjälken) och finhacka."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "FLAG: _unitInference Dragon 1 tsk — överstyrd till 1 kruka (metod: plocka blad; färsk ört)."
+      ]
+    },
+    {
+      "id": "tomato_pepper_soup__cooked_couscous",
+      "name": "Koka Pärlcouscous",
+      "outputName": "Kokt pärlcouscous",
+      "inputs": [
+        {
+          "id": "pearl_couscous",
+          "amount": 335,
+          "unit": "g"
+        },
+        {
+          "id": "water",
+          "amount": 1,
+          "unit": "l"
+        }
+      ],
+      "steps": [
+        "Täck {{pearl_couscous}} med {{water}} i en kastrull.",
+        "Låt koka under lock i 12–14 min. Rör om regelbundet så grynen inte fastnar.",
+        "Häll av vattnet, fluffa upp med en gaffel och sätt åt sidan att ångtorka."
+      ],
+      "duration": 3,
+      "wait": 13,
+      "tags": [],
+      "tips": [
+        "FLAG: couscous-vatten 1 l är processmängd (ej HF yields 8 ml)."
+      ]
+    },
+    {
+      "id": "tomato_pepper_soup__soup_base",
+      "name": "Koka Soppbas",
+      "outputName": "Kokt soppbas",
+      "inputs": [
+        {
+          "id": "oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "tomato_pepper_soup__prepped_vegetables",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "water",
+          "amount": 8,
+          "unit": "dl"
+        },
+        {
+          "id": "vegetable_bouillon",
+          "amount": 4,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{oil}} i en stor kastrull.",
+        "Fräs schalottenlök, tomat, paprika och vitlök från {{tomato_pepper_soup__prepped_vegetables}} i 2 min på låg till medelvärme under omrörning.",
+        "Häll i {{water}} (kokande) och {{vegetable_bouillon}}. Låt soppan sjuda under lock i 15 min."
+      ],
+      "duration": 4,
+      "wait": 15,
+      "tags": [],
+      "tips": [
+        "FLAG: _unitInference Buljong 4 ml — överstyrd till 4 g (yield 2 var null/null; samma mönster som övriga masters).",
+        "FLAG: _unitInference Vatten 8 ml — överstyrd till 8 dl (HF-steg: 200 ml kokande vatten per person).",
+        "FLAG: olja till fräsning saknas i HF yields — 1 skvätt pantry."
+      ]
+    },
+    {
+      "id": "tomato_pepper_soup__soup",
+      "name": "Mixa Soppan",
+      "outputName": "Tomat- och paprikasoppa",
+      "inputs": [
+        {
+          "id": "tomato_pepper_soup__soup_base",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "tomato_pepper_soup__cooked_couscous",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "creme_fraiche",
+          "amount": 150,
+          "unit": "ml"
+        },
+        {
+          "id": "sugar",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Ta {{tomato_pepper_soup__soup_base}} av värmen. Tillsätt {{creme_fraiche}} och blanda slät med stavmixer.",
+        "Krydda med {{salt}}, {{pepper}} och {{sugar}} efter smak.",
+        "Rör i {{tomato_pepper_soup__cooked_couscous}}."
+      ],
+      "duration": 4,
+      "tags": [],
+      "tips": [
+        "FLAG: _unitInference Socker 1 g — överstyrd till 1 nypa (efter smak).",
+        "Häll i en skvätt extra kokande vatten om soppan känns för tjock.",
+        "Resterande crème fraiche (150 ml) sparas till servering."
+      ]
+    },
+    {
+      "id": "tomato_pepper_soup__garlic_butter",
+      "name": "Gör Vitlökssmör",
+      "outputName": "Vitlökssmör",
+      "inputs": [
+        {
+          "id": "butter",
+          "amount": 40,
+          "unit": "g"
+        },
+        {
+          "id": "garlic",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Ta fram {{butter}} i rumstemperatur.",
+        "Skala och pressa {{garlic}}. Blanda med smöret i en skål."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "FLAG: _unitInference Smör 2,667 g — orimligt för vitlökssmör; pantry-uppskattning 40 g för 4 port."
+      ]
+    },
+    {
+      "id": "tomato_pepper_soup__garlic_bread",
+      "name": "Baka Vitlöksbröd",
+      "outputName": "Vitlöksbröd",
+      "inputs": [
+        {
+          "id": "preheated_oven_220",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "ciabatta",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "tomato_pepper_soup__garlic_butter",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "oil",
+          "amount": 1,
+          "unit": "skvätt"
+        }
+      ],
+      "steps": [
+        "Halvera {{ciabatta}} på längden och skär i ca 5 cm breda skivor.",
+        "Lägg brödet på en bakplåt med bakplåtspapper. Bre med {{tomato_pepper_soup__garlic_butter}} och ringla över {{oil}}.",
+        "Baka i den förvärmda ugnen ({{preheated_oven_220}}) i 6–8 min tills gyllenbruna."
+      ],
+      "duration": 3,
+      "wait": 7,
+      "tags": [],
+      "tips": [
+        "FLAG: _unitInference Ciabatta 1 tsk — överstyrd till 1 st (metod: halvera ciabatta).",
+        "FLAG: olja över brödet saknas i HF yields — 1 skvätt pantry.",
+        "Sätt ugnen på 220°C i början (shared preheated_oven_220)."
+      ]
+    },
+    {
+      "id": "tomato_pepper_soup",
+      "name": "Tomat- och paprikasoppa",
+      "outputName": "Tomat- och paprikasoppa med pärlcouscous och dragon",
+      "inputs": [
+        {
+          "id": "tomato_pepper_soup__soup",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "tomato_pepper_soup__garlic_bread",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "tomato_pepper_soup__chopped_tarragon",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "creme_fraiche",
+          "amount": 150,
+          "unit": "ml"
+        },
+        {
+          "id": "grated_cheese",
+          "amount": 40,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Häll {{tomato_pepper_soup__soup}} i djupa skålar.",
+        "Strö över {{grated_cheese}}, toppa med en klick {{creme_fraiche}} och {{tomato_pepper_soup__chopped_tarragon}}.",
+        "Servera med {{tomato_pepper_soup__garlic_bread}} vid sidan."
+      ],
+      "duration": 3,
+      "wait": 0,
+      "tags": [
+        "master"
+      ],
+      "tips": [
+        "HF-steg säger 'Riv parmesan' men ingrediensen är finriven ost — använd {{grated_cheese}} som den är."
+      ]
+    }
+  ]
+}

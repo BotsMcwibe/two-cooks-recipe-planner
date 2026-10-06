@@ -1,0 +1,205 @@
+{
+  "masterId": "pulled_pork_taquitos",
+  "source": "hellofresh",
+  "createdAt": 1790854403,
+  "basePortions": 4,
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/pulled_pork_taquitos/main.jpg",
+    "byNode": {
+      "pulled_pork_taquitos__simmered_pork": "assets/recipes/pulled_pork_taquitos/steps/simmered_pork.jpg",
+      "pulled_pork_taquitos__lime_dip": "assets/recipes/pulled_pork_taquitos/steps/lime_dip.jpg",
+      "pulled_pork_taquitos__baked_taquitos": "assets/recipes/pulled_pork_taquitos/steps/baked_taquitos.jpg",
+      "pulled_pork_taquitos": "assets/recipes/pulled_pork_taquitos/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 437,
+    "perPortion": {
+      "energyKcal": 757,
+      "energyKj": 3167,
+      "fatG": 35.6,
+      "saturatedFatG": 14.9,
+      "carbsG": 72.1,
+      "sugarsG": 8.1,
+      "fiberG": 6.6,
+      "proteinG": 35,
+      "saltG": 6.4
+    }
+  },
+  "ratings": {
+    "average": 4,
+    "count": 2,
+    "source": "hellofresh"
+  },
+  "nodes": [
+    {
+      "id": "pulled_pork_taquitos__preheated_oven",
+      "name": "Värm Ugnen",
+      "outputName": "Förvärmd ugn (240°C)",
+      "inputs": [],
+      "steps": [
+        "Värm ugnen till 240°C, eller 220°C varmluft."
+      ],
+      "duration": 1,
+      "wait": 12,
+      "tags": [
+        "prep",
+        "no-timer"
+      ],
+      "tips": [
+        "Ugnen tar vanligtvis 10–15 minuter att värmas upp."
+      ]
+    },
+    {
+      "id": "pulled_pork_taquitos__simmered_pork",
+      "name": "Sjud Pulled Pork",
+      "outputName": "Sjuden pulled pork",
+      "inputs": [
+        {
+          "id": "pulled_pork",
+          "amount": 300,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Placera {{pulled_pork}} och sky från förpackningen i en kastrull.",
+        "Hetta upp kastrullen på medelvärme och sjud under lock i 10–12 min."
+      ],
+      "duration": 2,
+      "wait": 12,
+      "tags": []
+    },
+    {
+      "id": "pulled_pork_taquitos__pork_filling",
+      "name": "Gör Pulled Pork-fyllning",
+      "outputName": "Pulled pork-fyllning",
+      "inputs": [
+        {
+          "id": "pulled_pork_taquitos__simmered_pork",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "canned_tomatoes",
+          "amount": 0.5,
+          "unit": "pkt"
+        },
+        {
+          "id": "tex_mex",
+          "amount": 5,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Tillsätt {{canned_tomatoes}} och {{tex_mex}} till {{pulled_pork_taquitos__simmered_pork}}.",
+        "Använd 2 gafflar för att riva tills köttet är helt strimlat."
+      ],
+      "duration": 3,
+      "wait": 0,
+      "tags": []
+    },
+    {
+      "id": "pulled_pork_taquitos__lime_dip",
+      "name": "Gör Limedipp",
+      "outputName": "Limedipp",
+      "inputs": [
+        {
+          "id": "lime",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "creme_fraiche",
+          "amount": 75,
+          "unit": "ml"
+        },
+        {
+          "id": "salt",
+          "amount": 0.25,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Halvera {{lime}}.",
+        "Blanda {{creme_fraiche}}, limesaft, {{salt}} och {{pepper}} i en liten skål."
+      ],
+      "duration": 3,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "pulled_pork_taquitos__baked_taquitos",
+      "name": "Rulla och Grädda Taquitos",
+      "outputName": "Gräddade taquitos",
+      "inputs": [
+        {
+          "id": "pulled_pork_taquitos__preheated_oven",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "pulled_pork_taquitos__pork_filling",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "mini_tortillas",
+          "amount": 8,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Fördela {{pulled_pork_taquitos__pork_filling}} på {{mini_tortillas}}, rulla ihop dem stramt och placera på en plåt med bakplåtspapper.",
+        "Pensla med en generös skvätt {{olive_oil}} och krydda med {{salt}}.",
+        "Grädda i 7–9 min, tills spröda och gyllene."
+      ],
+      "duration": 5,
+      "wait": 9,
+      "tags": []
+    },
+    {
+      "id": "pulled_pork_taquitos",
+      "name": "Pulled pork-taquitos",
+      "outputName": "Pulled pork-taquitos",
+      "inputs": [
+        {
+          "id": "pulled_pork_taquitos__baked_taquitos",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "pulled_pork_taquitos__lime_dip",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Servera {{pulled_pork_taquitos__baked_taquitos}} med {{pulled_pork_taquitos__lime_dip}}."
+      ],
+      "duration": 1,
+      "wait": 0,
+      "tags": [
+        "master"
+      ]
+    }
+  ]
+}

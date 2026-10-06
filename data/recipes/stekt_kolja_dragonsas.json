@@ -1,0 +1,341 @@
+{
+  "masterId": "stekt_kolja_dragonsas",
+  "source": "hellofresh",
+  "createdAt": 1791039812,
+  "basePortions": 4,
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/stekt_kolja_dragonsas/main.jpg",
+    "byNode": {
+      "stekt_kolja_dragonsas__roasted_potato": "assets/recipes/stekt_kolja_dragonsas/steps/roasted_potato.jpg",
+      "stekt_kolja_dragonsas__tarragon_sauce": "assets/recipes/stekt_kolja_dragonsas/steps/tarragon_sauce.jpg",
+      "stekt_kolja_dragonsas__prepped_vegetables": "assets/recipes/stekt_kolja_dragonsas/steps/prepped_vegetables.jpg",
+      "stekt_kolja_dragonsas__roasted_broccoli_radish": "assets/recipes/stekt_kolja_dragonsas/steps/roasted_broccoli_radish.jpg",
+      "stekt_kolja_dragonsas__pan_fried_haddock": "assets/recipes/stekt_kolja_dragonsas/steps/pan_fried_haddock.jpg",
+      "stekt_kolja_dragonsas": "assets/recipes/stekt_kolja_dragonsas/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 686,
+    "perPortion": {
+      "energyKcal": 695,
+      "energyKj": 2908,
+      "fatG": 35.7,
+      "saturatedFatG": 22.5,
+      "carbsG": 53.5,
+      "sugarsG": 10.9,
+      "fiberG": 41.2,
+      "proteinG": 41.8,
+      "saltG": 5.5
+    }
+  },
+  "cooked": {
+    "hfId": "63be847d7c361f9347ada82b",
+    "at": "2026-10-03T15:12:32+02:00",
+    "source": "photo",
+    "headline": "med rostade rädisor och dragonsås"
+  },
+  "nodes": [
+    {
+      "id": "stekt_kolja_dragonsas__preheated_oven_240",
+      "name": "Värm Ugnen",
+      "outputName": "Förvärmd ugn (240°C)",
+      "inputs": [],
+      "steps": [
+        "Värm ugnen till 240°C, eller 220°C varmluft."
+      ],
+      "duration": 1,
+      "wait": 12,
+      "tags": [
+        "prep",
+        "no-timer"
+      ],
+      "tips": [
+        "Ugnen tar vanligtvis 10–15 minuter att värmas upp.",
+        "HF anger 240°C/220°C varmluft — lokal ugnsnode, inte preheated_oven_220 (220/200)."
+      ]
+    },
+    {
+      "id": "stekt_kolja_dragonsas__potato_wedges",
+      "name": "Skär Potatis",
+      "outputName": "Potatisklyftor",
+      "inputs": [
+        {
+          "id": "potato",
+          "amount": 1000,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Skär {{potato}} (oskalad) i 1 cm tjocka klyftor."
+      ],
+      "duration": 5,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "stekt_kolja_dragonsas__roasted_potato",
+      "name": "Rosta Potatis",
+      "outputName": "Halvrostad potatis",
+      "inputs": [
+        {
+          "id": "stekt_kolja_dragonsas__preheated_oven_240",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "stekt_kolja_dragonsas__potato_wedges",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Placera {{stekt_kolja_dragonsas__potato_wedges}} på ena sidan av en plåt med bakplåtspapper.",
+        "Blanda med {{olive_oil}}, {{salt}} och en nypa {{pepper}}.",
+        "Rosta i {{stekt_kolja_dragonsas__preheated_oven_240}} i ca 20 min, tills det återstår 15 min av totalt 25–35 min."
+      ],
+      "duration": 3,
+      "wait": 20,
+      "tags": [],
+      "tips": [
+        "Använd fler plåtar om det blir för trångt.",
+        "Första fasen är övre gränsen 35 min minus de 15 min som återstår när broccoli och rädisor läggs på."
+      ]
+    },
+    {
+      "id": "stekt_kolja_dragonsas__tarragon_sauce",
+      "name": "Blanda Dragonsås",
+      "outputName": "Dragonsås",
+      "inputs": [
+        {
+          "id": "tarragon",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "lemon",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "cooking_cream",
+          "amount": 300,
+          "unit": "ml"
+        },
+        {
+          "id": "vegetable_bouillon",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "id": "water",
+          "amount": 1,
+          "unit": "dl"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Skär {{lemon}} i klyftor.",
+        "Plocka och finhacka blad från {{tarragon}}.",
+        "Blanda dragon, {{cooking_cream}}, {{vegetable_bouillon}}, en generös skvätt citrussaft, {{water}}, {{salt}} och en nypa {{pepper}} i en liten skål."
+      ],
+      "duration": 5,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "HF skriver att halva mängden av vissa ingredienser används — mängderna här är 4-portionsyielden som den står."
+      ]
+    },
+    {
+      "id": "stekt_kolja_dragonsas__chopped_shallot",
+      "name": "Hacka Schalottenlök",
+      "outputName": "Finhackad schalottenlök",
+      "inputs": [
+        {
+          "id": "shallot",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Finhacka {{shallot}}."
+      ],
+      "duration": 1,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "stekt_kolja_dragonsas__prepped_vegetables",
+      "name": "Förbered Broccoli och Rädisor",
+      "outputName": "Broccolibitar och halverade rädisor",
+      "inputs": [
+        {
+          "id": "broccoli",
+          "amount": 500,
+          "unit": "g"
+        },
+        {
+          "id": "radish",
+          "amount": 120,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Skär buketter och stjälk på {{broccoli}} i 2 cm stora bitar.",
+        "Ansa och halvera {{radish}}."
+      ],
+      "duration": 5,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "stekt_kolja_dragonsas__roasted_broccoli_radish",
+      "name": "Rosta Broccoli och Rädisor",
+      "outputName": "Rostad potatis, broccoli och rädisor",
+      "inputs": [
+        {
+          "id": "stekt_kolja_dragonsas__roasted_potato",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "stekt_kolja_dragonsas__prepped_vegetables",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Lägg {{stekt_kolja_dragonsas__prepped_vegetables}} på andra sidan av plåten med {{stekt_kolja_dragonsas__roasted_potato}}.",
+        "Blanda grönsakerna med {{olive_oil}}, {{salt}} och en nypa {{pepper}}.",
+        "Rosta i ytterligare 15 min, eller tills potatisen är gyllene."
+      ],
+      "duration": 2,
+      "wait": 15,
+      "tags": []
+    },
+    {
+      "id": "stekt_kolja_dragonsas__pan_fried_haddock",
+      "name": "Stek Kolja",
+      "outputName": "Stekt kolja med dragonsås",
+      "inputs": [
+        {
+          "id": "haddock",
+          "amount": 500,
+          "unit": "g"
+        },
+        {
+          "id": "stekt_kolja_dragonsas__chopped_shallot",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "stekt_kolja_dragonsas__tarragon_sauce",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "msk"
+        },
+        {
+          "id": "butter",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i en stor stekpanna på medelhög värme. Torka av {{haddock}} med hushållspapper och krydda med {{salt}} och en nypa {{pepper}} på båda sidor.",
+        "Stek fisken i 2–3 min.",
+        "Vänd fisken, tillsätt {{butter}} och {{stekt_kolja_dragonsas__chopped_shallot}} och stek i 1 min.",
+        "Sänk till medelvärme, rör ner {{stekt_kolja_dragonsas__tarragon_sauce}} och sjud i ytterligare 2–3 min, tills fisken är genomstekt och såsen varm."
+      ],
+      "duration": 6,
+      "wait": 3,
+      "tags": [],
+      "tips": [
+        "Fisken är klar när fiskköttet är vitt och ogenomskinligt och lätt faller isär.",
+        "Starta stekningen när broccoli och rädisor sätts in — den behöver inte vänta på att ugnen är klar."
+      ]
+    },
+    {
+      "id": "stekt_kolja_dragonsas",
+      "name": "Stekt vit fisk med rostade rädisor och dragonsås",
+      "outputName": "Stekt vit fisk med rostade rädisor och dragonsås",
+      "inputs": [
+        {
+          "id": "stekt_kolja_dragonsas__roasted_broccoli_radish",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "stekt_kolja_dragonsas__pan_fried_haddock",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Lägg upp potatis och rostade grönsaker från {{stekt_kolja_dragonsas__roasted_broccoli_radish}} och fisken från {{stekt_kolja_dragonsas__pan_fried_haddock}} på tallrikar.",
+        "Toppa fisken med dragonsåsen från pannan."
+      ],
+      "duration": 3,
+      "tags": [
+        "master"
+      ]
+    }
+  ]
+}

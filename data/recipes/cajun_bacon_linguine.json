@@ -1,0 +1,152 @@
+{
+  "masterId": "cajun_bacon_linguine",
+  "source": "hellofresh",
+  "createdAt": 1790796855,
+  "basePortions": 4,
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/cajun_bacon_linguine/main.jpg",
+    "byNode": {
+      "cajun_bacon_linguine__cooked_linguine": "assets/recipes/cajun_bacon_linguine/steps/cooked_linguine.jpg",
+      "cajun_bacon_linguine__fried_bacon_veg": "assets/recipes/cajun_bacon_linguine/steps/fried_bacon_veg.jpg",
+      "cajun_bacon_linguine__cajun_cream_sauce": "assets/recipes/cajun_bacon_linguine/steps/cajun_cream_sauce.jpg",
+      "cajun_bacon_linguine": "assets/recipes/cajun_bacon_linguine/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 502,
+    "perPortion": {
+      "energyKcal": 792,
+      "energyKj": 3313,
+      "fatG": 34.9,
+      "saturatedFatG": 17,
+      "carbsG": 84.3,
+      "sugarsG": 19.4,
+      "fiberG": 8.8,
+      "proteinG": 31.7,
+      "saltG": 3
+    }
+  },
+  "ratings": {
+    "average": 4,
+    "count": 2,
+    "source": "hellofresh"
+  },
+  "nodes": [
+    {
+      "id": "cajun_bacon_linguine__sliced_paprika",
+      "name": "Skär Paprika",
+      "outputName": "Skivad paprika",
+      "inputs": [
+        { "id": "paprika", "amount": 2, "unit": "st" }
+      ],
+      "steps": [
+        "Skär {{paprika}} i 1 cm tunna skivor."
+      ],
+      "duration": 2,
+      "tags": ["prep"]
+    },
+    {
+      "id": "cajun_bacon_linguine__rinsed_rucola",
+      "name": "Skölj Rucola",
+      "outputName": "Sköljd rucola",
+      "inputs": [
+        { "id": "rucola", "amount": 70, "unit": "g" }
+      ],
+      "steps": [
+        "Skölj {{rucola}}."
+      ],
+      "duration": 1,
+      "tags": ["prep"]
+    },
+    {
+      "id": "cajun_bacon_linguine__cooked_linguine",
+      "name": "Koka Linguine",
+      "outputName": "Kokt linguine",
+      "inputs": [
+        { "id": "linguine", "amount": 360, "unit": "g" },
+        { "id": "water", "amount": 2, "unit": "l" },
+        { "id": "salt", "amount": 1, "unit": "msk" }
+      ],
+      "steps": [
+        "Koka upp en stor kastrull med saltat {{water}}.",
+        "Koka {{linguine}} i 8 min, eller tills al dente.",
+        "Precis innan pastan är färdig, skopa upp ca 2 dl kokvatten i en kopp och ställ åt sidan.",
+        "Häll av vattnet och lägg tillbaka pastan i kastrullen."
+      ],
+      "duration": 2,
+      "wait": 8,
+      "tags": [],
+      "tips": [
+        "Kokvattnet ska vara lika salt som havsvatten.",
+        "Al dente betyder att pastan är genomkokt men fortfarande har tuggmotstånd."
+      ]
+    },
+    {
+      "id": "cajun_bacon_linguine__fried_bacon_veg",
+      "name": "Stek Bacon och Grönsaker",
+      "outputName": "Stekt bacon med paprika och tomat",
+      "inputs": [
+        { "id": "bacon", "amount": 280, "unit": "g" },
+        { "id": "cherry_tomatoes", "amount": 500, "unit": "g" },
+        { "id": "cajun_bacon_linguine__sliced_paprika", "amount": 1, "unit": "st" },
+        { "id": "tomato_paste", "amount": 70, "unit": "g" },
+        { "id": "chili_flakes", "amount": 1, "unit": "nypa" },
+        { "id": "smoked_paprika", "amount": 4, "unit": "g" },
+        { "id": "cajun_spice_mix", "amount": 8, "unit": "g" }
+      ],
+      "steps": [
+        "Hetta upp en medelstor stekpanna på medelhög värme.",
+        "Stek {{bacon}}, {{cherry_tomatoes}} och {{cajun_bacon_linguine__sliced_paprika}} i 4–5 min, eller tills mjuka.",
+        "Tillsätt {{tomato_paste}}, {{chili_flakes}}, {{smoked_paprika}} och {{cajun_spice_mix}}. Stek i 30 sek, tills väldoftande."
+      ],
+      "duration": 2,
+      "wait": 5,
+      "tags": [],
+      "tips": [
+        "Skippa chili eller använd mindre om du inte tycker om stark mat.",
+        "I det här receptet används halva mängden av vissa kryddor – dubbelkolla mängderna."
+      ]
+    },
+    {
+      "id": "cajun_bacon_linguine__cajun_cream_sauce",
+      "name": "Gör Cajunsås",
+      "outputName": "Krämig cajunsås med bacon",
+      "inputs": [
+        { "id": "cajun_bacon_linguine__fried_bacon_veg", "amount": 1, "unit": "st" },
+        { "id": "cooking_cream", "amount": 300, "unit": "ml" },
+        { "id": "vegetable_bouillon", "amount": 8, "unit": "g" },
+        { "id": "parmesan", "amount": 40, "unit": "g" },
+        { "id": "water", "amount": 2, "unit": "dl" }
+      ],
+      "steps": [
+        "Tillsätt {{cooking_cream}}, {{vegetable_bouillon}}, finriven {{parmesan}} och det sparade pastavattnet ({{water}}) till stekpannan med {{cajun_bacon_linguine__fried_bacon_veg}}.",
+        "Rör ihop till en krämig sås."
+      ],
+      "duration": 2,
+      "tags": [],
+      "tips": [
+        "Tillsätt en skvätt vatten om pastan verkar torr."
+      ]
+    },
+    {
+      "id": "cajun_bacon_linguine",
+      "name": "Cajunkryddad baconlinguine",
+      "outputName": "Cajunkryddad baconlinguine",
+      "inputs": [
+        { "id": "cajun_bacon_linguine__cajun_cream_sauce", "amount": 1, "unit": "st" },
+        { "id": "cajun_bacon_linguine__cooked_linguine", "amount": 1, "unit": "st" },
+        { "id": "cajun_bacon_linguine__rinsed_rucola", "amount": 1, "unit": "st" }
+      ],
+      "steps": [
+        "Vänd ner {{cajun_bacon_linguine__cooked_linguine}} i {{cajun_bacon_linguine__cajun_cream_sauce}}.",
+        "Rör i {{cajun_bacon_linguine__rinsed_rucola}} precis innan servering.",
+        "Lägg upp pastan i djupa tallrikar."
+      ],
+      "duration": 2,
+      "tags": ["master"],
+      "wait": 0
+    }
+  ]
+}

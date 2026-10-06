@@ -1,0 +1,367 @@
+{
+  "masterId": "stekt_flask_graslokssas",
+  "source": "hellofresh",
+  "createdAt": 1791035037,
+  "basePortions": 4,
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/stekt_flask_graslokssas/main.jpg",
+    "byNode": {
+      "stekt_flask_graslokssas__root_mash": "assets/recipes/stekt_flask_graslokssas/steps/root_mash.jpg",
+      "stekt_flask_graslokssas__prepped_veg": "assets/recipes/stekt_flask_graslokssas/steps/prepped_veg.jpg",
+      "stekt_flask_graslokssas__sauteed_mushrooms": "assets/recipes/stekt_flask_graslokssas/steps/sauteed_mushrooms.jpg",
+      "stekt_flask_graslokssas__seared_pork": "assets/recipes/stekt_flask_graslokssas/steps/seared_pork.jpg",
+      "stekt_flask_graslokssas__chive_sauce": "assets/recipes/stekt_flask_graslokssas/steps/chive_sauce.jpg",
+      "stekt_flask_graslokssas": "assets/recipes/stekt_flask_graslokssas/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 601,
+    "perPortion": {
+      "energyKcal": 671,
+      "energyKj": 2806,
+      "fatG": 35.4,
+      "saturatedFatG": 20.2,
+      "carbsG": 52,
+      "sugarsG": 9.4,
+      "proteinG": 39.1,
+      "saltG": 3.1
+    }
+  },
+  "ratings": {
+    "average": 3.6,
+    "count": 194,
+    "source": "hellofresh"
+  },
+  "cooked": {
+    "hfId": "6481815cf0b225130ecebcf9",
+    "at": "2026-10-03T15:12:32+02:00",
+    "source": "photo",
+    "headline": "med sauterad svamp och morot- och potatismos"
+  },
+  "nodes": [
+    {
+      "id": "stekt_flask_graslokssas__diced_roots",
+      "name": "Tärna Potatis och Morot",
+      "outputName": "Tärnad potatis och morot",
+      "inputs": [
+        {
+          "id": "potato",
+          "amount": 1000,
+          "unit": "g"
+        },
+        {
+          "id": "carrot",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skala och tärna {{potato}} och {{carrot}} i 2 cm stora bitar."
+      ],
+      "duration": 6,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "FLAG: enheter ifyllda (ursprungligen null) — potatis g, morot st. 1000 g potatis och 2 st morot vid 4 portioner. Bekräfta."
+      ]
+    },
+    {
+      "id": "stekt_flask_graslokssas__boiled_roots",
+      "name": "Koka Potatis och Morot",
+      "outputName": "Kokt potatis och morot",
+      "inputs": [
+        {
+          "id": "stekt_flask_graslokssas__diced_roots",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Koka upp en medelstor kastrull med saltat vatten.",
+        "Koka {{stekt_flask_graslokssas__diced_roots}} i 11–13 min, eller tills de enkelt kan delas med en kniv."
+      ],
+      "duration": 2,
+      "wait": 13,
+      "tags": [],
+      "tips": [
+        "Passiv koktid 11–13 min → wait 13 (övre gräns). Sista steget äger timern.",
+        "Salt till kokvattnet har ingen mängd i yields — skriv inte över mosets 1 tsk."
+      ]
+    },
+    {
+      "id": "stekt_flask_graslokssas__root_mash",
+      "name": "Mosa Potatis och Morot",
+      "outputName": "Morot- och potatismos",
+      "inputs": [
+        {
+          "id": "stekt_flask_graslokssas__boiled_roots",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "milk",
+          "amount": 6,
+          "unit": "msk"
+        },
+        {
+          "id": "butter",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Häll av vattnet. Mosa {{stekt_flask_graslokssas__boiled_roots}} med {{milk}}, {{butter}}, {{salt}} och en nypa peppar. Ställ åt sidan under lock."
+      ],
+      "duration": 4,
+      "tags": [],
+      "tips": [
+        "FLAG: enheter ifyllda — mjölk msk (6 msk), smör msk (2 msk till moset), salt tsk (1 tsk) vid 4 portioner.",
+        "Under lock till servering är ingen klockad vila — ingen wait."
+      ]
+    },
+    {
+      "id": "stekt_flask_graslokssas__prepped_veg",
+      "name": "Förbered Svamp och Schalottenlök",
+      "outputName": "Förberedd svamp och schalottenlök",
+      "inputs": [
+        {
+          "id": "mushrooms",
+          "amount": 200,
+          "unit": "g"
+        },
+        {
+          "id": "shallot",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skär {{mushrooms}} i kvartar.",
+        "Skär {{shallot}} i tunna skivor."
+      ],
+      "duration": 5,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "FLAG: enheter ifyllda — champinjoner g (200 g), lök st mappad till schalottenlök (HF-typ shallot; steget säger schalottenlök; 2 st).",
+        "FLAG: steget skriver svamp som 1/2 paket för 2P, men yield är 100 g / 200 g. Använder 200 g, inte paket."
+      ]
+    },
+    {
+      "id": "stekt_flask_graslokssas__chopped_chives",
+      "name": "Hacka Gräslök",
+      "outputName": "Finhackad gräslök",
+      "inputs": [
+        {
+          "id": "chives",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Finhacka {{chives}}."
+      ],
+      "duration": 1,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "FLAG: gräslök är 1 st vid både 2 och 4 portioner — skalar inte.",
+        "Merparten går i såsen och lite sparas till garnering. Råreceptet anger ingen proportion, så grafen delar 0,8 st + 0,2 st."
+      ]
+    },
+    {
+      "id": "stekt_flask_graslokssas__pork_medallions",
+      "name": "Skär Fläskmedaljonger",
+      "outputName": "Fläskmedaljonger",
+      "inputs": [
+        {
+          "id": "pork_tenderloin",
+          "amount": 600,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Skär {{pork_tenderloin}} i medaljonger (3 per person) på en separat skärbräda. Krydda med salt och peppar."
+      ],
+      "duration": 4,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "FLAG: enhet ifylld — fläskytterfilé g, 600 g vid 4 portioner.",
+        "Salt och peppar till medaljongerna har ingen mängd i yields."
+      ]
+    },
+    {
+      "id": "stekt_flask_graslokssas__sauteed_mushrooms",
+      "name": "Stek Svamp och Schalottenlök",
+      "outputName": "Sauterad svamp och schalottenlök",
+      "inputs": [
+        {
+          "id": "stekt_flask_graslokssas__prepped_veg",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "butter",
+          "amount": 2,
+          "unit": "msk"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{butter}} i en stor stekpanna på medelhög värme.",
+        "Stek {{stekt_flask_graslokssas__prepped_veg}} i 3–4 min, tills svampen är mjuk och schalottenlöken är karamelliserad. Krydda med en generös nypa salt och peppar, och ställ åt sidan på en tallrik."
+      ],
+      "duration": 5,
+      "tags": [],
+      "tips": [
+        "Stektiden 3–4 min är hands-on och ligger i duration, inte wait. Ställ-åt-sidan är invikt i sista steget så ingen kort sidohandling äger en timer.",
+        "FLAG: smör msk (steg 3) ifylld — 2 msk vid 4 portioner, utöver mosets smör."
+      ]
+    },
+    {
+      "id": "stekt_flask_graslokssas__seared_pork",
+      "name": "Stek Fläskmedaljonger",
+      "outputName": "Stekta fläskmedaljonger",
+      "inputs": [
+        {
+          "id": "stekt_flask_graslokssas__pork_medallions",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        }
+      ],
+      "steps": [
+        "Hetta upp stekpannan där svampen stektes (eller en ny stor stekpanna) på medelhög värme och tillsätt {{olive_oil}} vid behov.",
+        "Stek {{stekt_flask_graslokssas__pork_medallions}} i 2–3 min per sida, tills de är brynta och gyllene. Sätt åt sidan på en tallrik."
+      ],
+      "duration": 7,
+      "tags": [],
+      "tips": [
+        "2–3 min per sida är hands-on (vändning) och ligger i duration, inte wait.",
+        "FLAG: olivolja saknas i yields — bara 'en skvätt vid behov'. Satt till 1 skvätt."
+      ]
+    },
+    {
+      "id": "stekt_flask_graslokssas__sauce_base",
+      "name": "Koka Gräslökssåsbas",
+      "outputName": "Gräslökssåsbas",
+      "inputs": [
+        {
+          "id": "water",
+          "amount": 1,
+          "unit": "dl"
+        },
+        {
+          "id": "chicken_bouillon",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Sänk till medelvärme. Rör i {{water}}, {{chicken_bouillon}}, {{salt}} och en generös nypa peppar i stekpannan där köttet stektes.",
+        "Låt sjuda i 1 min."
+      ],
+      "duration": 1,
+      "wait": 1,
+      "tags": [],
+      "tips": [
+        "Första sjudningen (1 min) är egen nod. Fläsk, crème fraiche och gräslök kommer i nästa nod så att den andra minuten inte blandas ihop med den här.",
+        "FLAG: enheter ifyllda — vatten dl (1 dl), kycklingbuljong g (8 g vid 4 portioner; 4 g vid 2), salt tsk (1/2 tsk till såsen)."
+      ]
+    },
+    {
+      "id": "stekt_flask_graslokssas__chive_sauce",
+      "name": "Gör Gräslökssås",
+      "outputName": "Fläsk i gräslökssås",
+      "inputs": [
+        {
+          "id": "stekt_flask_graslokssas__sauce_base",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "stekt_flask_graslokssas__seared_pork",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "stekt_flask_graslokssas__chopped_chives",
+          "amount": 0.8,
+          "unit": "st"
+        },
+        {
+          "id": "creme_fraiche",
+          "amount": 1,
+          "unit": "pkt"
+        }
+      ],
+      "steps": [
+        "Rör ner {{stekt_flask_graslokssas__seared_pork}}, {{creme_fraiche}} och merparten av {{stekt_flask_graslokssas__chopped_chives}} i {{stekt_flask_graslokssas__sauce_base}} (spara lite gräslök till garnering).",
+        "Låt sjuda i ytterligare 1 min, tills såsen är genomvarm."
+      ],
+      "duration": 1,
+      "wait": 1,
+      "tags": [],
+      "tips": [
+        "Andra sjudningen är 1 min — wait 1, sista steget äger timern.",
+        "FLAG: crème fraiche. Yield 4 = 1 paket, yield 2 = 1/2 paket. Stegtexten säger '[1/2 paket, 2P]'. Enhet paket → pkt. Vid 4 portioner används 1 pkt, inte ett halvt. Bekräfta paketstorlek."
+      ]
+    },
+    {
+      "id": "stekt_flask_graslokssas",
+      "name": "Stekt fläsk i gräslökssås",
+      "outputName": "Stekt fläsk i gräslökssås med svamp och morot- och potatismos",
+      "inputs": [
+        {
+          "id": "stekt_flask_graslokssas__root_mash",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "stekt_flask_graslokssas__chive_sauce",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "stekt_flask_graslokssas__sauteed_mushrooms",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "stekt_flask_graslokssas__chopped_chives",
+          "amount": 0.2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{stekt_flask_graslokssas__root_mash}} och fläsket från {{stekt_flask_graslokssas__chive_sauce}} på tallrikar.",
+        "Skeda över gräslökssåsen och lägg på svamp och schalottenlök från {{stekt_flask_graslokssas__sauteed_mushrooms}}.",
+        "Garnera med resterande {{stekt_flask_graslokssas__chopped_chives}}."
+      ],
+      "duration": 3,
+      "tags": [
+        "master"
+      ]
+    }
+  ]
+}

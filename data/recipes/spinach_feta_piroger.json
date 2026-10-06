@@ -1,0 +1,249 @@
+{
+  "masterId": "spinach_feta_piroger",
+  "source": "hellofresh",
+  "createdAt": 1790852559,
+  "basePortions": 4,
+  "sharedPrep": [
+    "preheated_oven_220",
+    "pirog_dough",
+    "egg_wash"
+  ],
+  "nodes": [
+    {
+      "id": "spinach_feta_piroger__chopped_onion",
+      "name": "Hacka Lök",
+      "outputName": "Finhackad lök",
+      "inputs": [
+        {
+          "id": "onion",
+          "amount": 0.5,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Hacka {{onion}} fint."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "spinach_feta_piroger__sauteed_onion",
+      "name": "Fräs Lök",
+      "outputName": "Fräst lök",
+      "inputs": [
+        {
+          "id": "spinach_feta_piroger__chopped_onion",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i en stekpanna på medelhög värme.",
+        "Fräs {{spinach_feta_piroger__chopped_onion}} i {{olive_oil}} några minuter tills den mjuknar."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "spinach_feta_piroger__wilted_spinach",
+      "name": "Fräs Spenat",
+      "outputName": "Fräst Lök och Spenat",
+      "inputs": [
+        {
+          "id": "spinach_feta_piroger__sauteed_onion",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "baby_spinach",
+          "amount": 65,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Tillsätt {{baby_spinach}} till {{spinach_feta_piroger__sauteed_onion}} och fräs tills mjuka."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "spinach_feta_piroger__sliced_sun_dried_tomatoes",
+      "name": "Strimla Soltorkade Tomater",
+      "outputName": "Strimlade soltorkade tomater",
+      "inputs": [
+        {
+          "id": "sun_dried_tomatoes",
+          "amount": 3,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Strimla {{sun_dried_tomatoes}} i tunna strimlor."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "spinach_feta_piroger__spinach_tomato_mix",
+      "name": "Tillsätt Soltorkade Tomater",
+      "outputName": "Spenat och tomatblandning",
+      "inputs": [
+        {
+          "id": "spinach_feta_piroger__wilted_spinach",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "spinach_feta_piroger__sliced_sun_dried_tomatoes",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Fräs {{spinach_feta_piroger__sliced_sun_dried_tomatoes}} med {{spinach_feta_piroger__wilted_spinach}} i 1 minut.",
+        "Krydda med {{salt}} och {{pepper}}.",
+        "Låt blandningen svalna något."
+      ],
+      "duration": 4,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "spinach_feta_piroger__spinach_feta_filling",
+      "name": "Gör Spenat- och Fetafyllning",
+      "outputName": "Spenat- och fetafyllning",
+      "inputs": [
+        {
+          "id": "spinach_feta_piroger__spinach_tomato_mix",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "feta_cheese",
+          "amount": 75,
+          "unit": "g"
+        },
+        {
+          "id": "egg",
+          "amount": 0.5,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Smula {{feta_cheese}} och blanda med {{spinach_feta_piroger__spinach_tomato_mix}} och {{egg}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "spinach_feta_piroger__rolled_dough",
+      "name": "Kavla ut Degen",
+      "outputName": "Utkavlade degbitar",
+      "inputs": [
+        {
+          "id": "pirog_dough",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Dela {{pirog_dough}} i 4-6 bitar.",
+        "Kavla eller tryck ut rundlar, ca 15 cm i diameter, 0.5 cm tjocka."
+      ],
+      "duration": 4,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "spinach_feta_piroger__shaped_piroger",
+      "name": "Forma Piroger",
+      "outputName": "Formade piroger",
+      "inputs": [
+        {
+          "id": "spinach_feta_piroger__rolled_dough",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "spinach_feta_piroger__spinach_feta_filling",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Lägg en klick {{spinach_feta_piroger__spinach_feta_filling}} på ena halvan av varje bit av {{spinach_feta_piroger__rolled_dough}}.",
+        "Vik ihop degen till en halvmåne och nyp ihop kanterna ordentligt med en gaffel.",
+        "Lägg pirogerna på en plåt med bakplåtspapper."
+      ],
+      "duration": 6,
+      "tags": []
+    },
+    {
+      "id": "spinach_feta_piroger",
+      "name": "Piroger med Fetaost och Spenat",
+      "outputName": "Piroger med Spenat och Fetaost",
+      "inputs": [
+        {
+          "id": "preheated_oven_220",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "spinach_feta_piroger__shaped_piroger",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "egg_wash",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "sesame_seeds",
+          "amount": 0.5,
+          "unit": "msk"
+        }
+      ],
+      "steps": [
+        "Pensla pirogerna med {{egg_wash}}.",
+        "Strö över {{sesame_seeds}}.",
+        "Grädda på nedersta valsen i {{preheated_oven_220}} i ca 12 minuter tills de fått fin färg."
+      ],
+      "duration": 5,
+      "tags": [
+        "master"
+      ],
+      "wait": 12,
+      "tips": [
+        "Pirogerna är klara när de fått en gyllenbrun färg."
+      ]
+    }
+  ]
+}

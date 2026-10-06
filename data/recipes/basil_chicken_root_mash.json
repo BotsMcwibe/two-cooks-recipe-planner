@@ -1,0 +1,333 @@
+{
+  "masterId": "basil_chicken_root_mash",
+  "source": "hellofresh",
+  "createdAt": 1790852559,
+  "basePortions": 4,
+  "sharedPrep": [],
+  "nodes": [
+    {
+      "id": "basil_chicken_root_mash__chopped_potato_carrot",
+      "name": "Skär Potatis och Morötter",
+      "outputName": "Skuren potatis och morötter",
+      "inputs": [
+        {
+          "id": "potato",
+          "amount": 1000,
+          "unit": "g"
+        },
+        {
+          "id": "carrot",
+          "amount": 4,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skala {{potato}} och {{carrot}}.",
+        "Skär {{potato}} och {{carrot}} i 2 cm stora bitar."
+      ],
+      "duration": 8,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "basil_chicken_root_mash__boiled_potato_carrot",
+      "name": "Koka Potatis och Morötter",
+      "outputName": "Kokt potatis och morötter",
+      "inputs": [
+        {
+          "id": "basil_chicken_root_mash__chopped_potato_carrot",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "water",
+          "amount": 1,
+          "unit": "l"
+        }
+      ],
+      "steps": [
+        "Lägg {{basil_chicken_root_mash__chopped_potato_carrot}} i en kastrull och täck med kallt {{water}}.",
+        "Koka upp, sänk värmen och sjud i 10–12 minuter tills de är mjuka."
+      ],
+      "duration": 2,
+      "tags": [],
+      "wait": 12
+    },
+    {
+      "id": "basil_chicken_root_mash__fried_chicken",
+      "name": "Stek Kyckling",
+      "outputName": "Stekt kyckling",
+      "inputs": [
+        {
+          "id": "chicken_inner_fillet",
+          "amount": 560,
+          "unit": "g"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i en stor stekpanna på medelhög värme.",
+        "Bryn {{chicken_inner_fillet}} 4–5 minuter tills gyllene."
+      ],
+      "duration": 6,
+      "tags": []
+    },
+    {
+      "id": "basil_chicken_root_mash__chopped_basil",
+      "name": "Hacka Basilika",
+      "outputName": "Grovhackad basilika",
+      "inputs": [
+        {
+          "id": "fresh_basil",
+          "amount": 1,
+          "unit": "kruka"
+        }
+      ],
+      "steps": [
+        "Grovhacka {{fresh_basil}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "basil_chicken_root_mash__basil_chicken_sauce",
+      "name": "Gör Basilikasås",
+      "outputName": "Basilikakyckling med sås",
+      "inputs": [
+        {
+          "id": "basil_chicken_root_mash__fried_chicken",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "creme_fraiche",
+          "amount": 2,
+          "unit": "burk"
+        },
+        {
+          "id": "soy_sauce",
+          "amount": 50,
+          "unit": "ml"
+        },
+        {
+          "id": "honey",
+          "amount": 25,
+          "unit": "g"
+        },
+        {
+          "id": "basil_chicken_root_mash__chopped_basil",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Sänk till låg värme i pannan med {{basil_chicken_root_mash__fried_chicken}}.",
+        "Tillsätt {{creme_fraiche}}, {{soy_sauce}} och {{honey}}. Krydda med {{salt}} och {{pepper}}.",
+        "Låt sjuda i 8–10 minuter tills kycklingen är genomlagad. Rör ner {{basil_chicken_root_mash__chopped_basil}} mot slutet."
+      ],
+      "duration": 3,
+      "tags": [
+        "protein"
+      ],
+      "tips": [
+        "Tillsätt vatten om såsen blir för tjock."
+      ],
+      "wait": 10
+    },
+    {
+      "id": "basil_chicken_root_mash__grated_zucchini",
+      "name": "Riv Zucchini",
+      "outputName": "Riven zucchini",
+      "inputs": [
+        {
+          "id": "zucchini",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Riv {{zucchini}} grovt.",
+        "Krama ur vätskan från den rivna zucchinin."
+      ],
+      "duration": 4,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "basil_chicken_root_mash__sliced_apple",
+      "name": "Skiva Äpplen",
+      "outputName": "Skivade äpplen",
+      "inputs": [
+        {
+          "id": "apple",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skiva {{apple}} i tunna skivor."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "basil_chicken_root_mash__lemon_wedges",
+      "name": "Skär Citronklyftor",
+      "outputName": "Citronklyftor och citronsaft",
+      "inputs": [
+        {
+          "id": "organic_lemon",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skär {{organic_lemon}} i klyftor.",
+        "Spara lite citronsaft för salladen."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "En skvätt saft går till salladen (0,25 st), resten serveras som klyftor (0,75 st). Råreceptet anger ingen proportion."
+      ]
+    },
+    {
+      "id": "basil_chicken_root_mash__zucchini_salad",
+      "name": "Gör Zucchinisallad",
+      "outputName": "Zucchinisallad",
+      "inputs": [
+        {
+          "id": "basil_chicken_root_mash__grated_zucchini",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "basil_chicken_root_mash__sliced_apple",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "basil_chicken_root_mash__lemon_wedges",
+          "amount": 0.25,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Blanda {{basil_chicken_root_mash__grated_zucchini}}, {{basil_chicken_root_mash__sliced_apple}}, en skvätt citronsaft från {{basil_chicken_root_mash__lemon_wedges}}, {{olive_oil}}, {{salt}} och {{pepper}} i en skål."
+      ],
+      "duration": 3,
+      "tags": [
+        "salad"
+      ]
+    },
+    {
+      "id": "basil_chicken_root_mash__root_vegetable_mash",
+      "name": "Gör Rotmos",
+      "outputName": "Rotmos",
+      "inputs": [
+        {
+          "id": "basil_chicken_root_mash__boiled_potato_carrot",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "butter",
+          "amount": 1,
+          "unit": "klick"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Häll av vattnet från kastrullen med {{basil_chicken_root_mash__boiled_potato_carrot}}.",
+        "Mosa potatis och morot tillsammans med en klick {{butter}} till mos.",
+        "Smaka av med {{salt}} och {{pepper}}."
+      ],
+      "duration": 5,
+      "tags": [
+        "carbs"
+      ]
+    },
+    {
+      "id": "basil_chicken_root_mash",
+      "name": "Basilikakyckling med Rotmos och Zucchinisallad",
+      "outputName": "Basilikakyckling med rotmos och zucchinisallad",
+      "inputs": [
+        {
+          "id": "basil_chicken_root_mash__root_vegetable_mash",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "basil_chicken_root_mash__basil_chicken_sauce",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "basil_chicken_root_mash__zucchini_salad",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "basil_chicken_root_mash__lemon_wedges",
+          "amount": 0.75,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{basil_chicken_root_mash__root_vegetable_mash}} på tallrikar.",
+        "Toppa med {{basil_chicken_root_mash__basil_chicken_sauce}}.",
+        "Servera med {{basil_chicken_root_mash__zucchini_salad}} och resterande {{basil_chicken_root_mash__lemon_wedges}} på sidan."
+      ],
+      "duration": 2,
+      "tags": [
+        "master"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,326 @@
+{
+  "masterId": "cajunkryddad_kycklingfile",
+  "source": "hellofresh",
+  "createdAt": 1791041990,
+  "basePortions": 4,
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/cajunkryddad_kycklingfile/main.jpg",
+    "byNode": {
+      "cajunkryddad_kycklingfile__prepped_veg": "assets/recipes/cajunkryddad_kycklingfile/steps/prepped_veg.jpg",
+      "cajunkryddad_kycklingfile__roasted_veg_first": "assets/recipes/cajunkryddad_kycklingfile/steps/roasted_veg.jpg",
+      "cajunkryddad_kycklingfile__roasted_with_corn": "assets/recipes/cajunkryddad_kycklingfile/steps/roasted_with_corn.jpg",
+      "cajunkryddad_kycklingfile__fried_chicken": "assets/recipes/cajunkryddad_kycklingfile/steps/fried_chicken.jpg",
+      "cajunkryddad_kycklingfile__spinach_veg": "assets/recipes/cajunkryddad_kycklingfile/steps/spinach_veg.jpg",
+      "cajunkryddad_kycklingfile": "assets/recipes/cajunkryddad_kycklingfile/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 693,
+    "perPortion": {
+      "energyKcal": 617,
+      "energyKj": 2580,
+      "fatG": 20.2,
+      "saturatedFatG": 2.3,
+      "carbsG": 64.7,
+      "sugarsG": 17.3,
+      "fiberG": 41.2,
+      "proteinG": 43.8,
+      "saltG": 3.1
+    }
+  },
+  "ratings": {
+    "average": 4.0,
+    "count": 2,
+    "source": "hellofresh"
+  },
+  "nodes": [
+    {
+      "id": "cajunkryddad_kycklingfile__preheated_oven_240",
+      "name": "Värm Ugnen",
+      "outputName": "Förvärmd ugn (240°C)",
+      "inputs": [],
+      "steps": [
+        "Värm ugnen till 240°C, eller 220°C varmluft."
+      ],
+      "duration": 1,
+      "wait": 12,
+      "tags": [
+        "prep",
+        "no-timer"
+      ],
+      "tips": [
+        "Ugnen tar vanligtvis 10–15 minuter att värmas upp.",
+        "HF anger 240°C/220°C varmluft — lokal ugnsnode, inte preheated_oven_220."
+      ]
+    },
+    {
+      "id": "cajunkryddad_kycklingfile__prepped_veg",
+      "name": "Skär Grönsaker",
+      "outputName": "Lökklyftor och tärnade grönsaker",
+      "inputs": [
+        {
+          "id": "red_onion",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "carrot",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "paprika",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "potato",
+          "amount": 1000,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Skär {{red_onion}} i 2 cm breda klyftor.",
+        "Tärna {{carrot}}, {{paprika}} och {{potato}} (oskalad) i 2 cm stora bitar."
+      ],
+      "duration": 8,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Potatisens korttyp är ekologisk potatis, mappad till potato. Löken är rödlök."
+      ]
+    },
+    {
+      "id": "cajunkryddad_kycklingfile__roasted_veg_first",
+      "name": "Rosta Grönsaker",
+      "outputName": "Halvrostade grönsaker",
+      "inputs": [
+        {
+          "id": "cajunkryddad_kycklingfile__preheated_oven_240",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "cajunkryddad_kycklingfile__prepped_veg",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Lägg {{cajunkryddad_kycklingfile__prepped_veg}} på en plåt med bakplåtspapper. Blanda med {{olive_oil}}, {{salt}} och en nypa {{pepper}}.",
+        "Rosta i {{cajunkryddad_kycklingfile__preheated_oven_240}} i ca 25 min, tills det återstår 10 min av totalt 25–35 min."
+      ],
+      "duration": 3,
+      "wait": 25,
+      "tags": [],
+      "tips": [
+        "Använd fler plåtar om det blir för trångt.",
+        "Första fasen är övre gränsen 35 min minus de 10 min som återstår när majsen läggs på. Olivolja och peppar har ingen yield."
+      ]
+    },
+    {
+      "id": "cajunkryddad_kycklingfile__roasted_with_corn",
+      "name": "Rosta Majs",
+      "outputName": "Grönsaker med majs, 5 min kvar",
+      "inputs": [
+        {
+          "id": "cajunkryddad_kycklingfile__roasted_veg_first",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "canned_corn",
+          "amount": 300,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Häll av {{canned_corn}} och lägg majsen på plåten med {{cajunkryddad_kycklingfile__roasted_veg_first}}.",
+        "Rosta i ca 5 min, tills det återstår 5 min av grönsakernas tid."
+      ],
+      "duration": 1,
+      "wait": 5,
+      "tags": [],
+      "tips": [
+        "Majs är 300 g vid både 3 och 4 portioner. Inte uppskalad."
+      ]
+    },
+    {
+      "id": "cajunkryddad_kycklingfile__finished_veg",
+      "name": "Rosta Grönsaker Klart",
+      "outputName": "Rostade grönsaker och majs",
+      "inputs": [
+        {
+          "id": "cajunkryddad_kycklingfile__roasted_with_corn",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Rosta {{cajunkryddad_kycklingfile__roasted_with_corn}} i ytterligare 5 min, eller tills grönsakerna är gyllene."
+      ],
+      "duration": 1,
+      "wait": 5,
+      "tags": []
+    },
+    {
+      "id": "cajunkryddad_kycklingfile__seasoned_chicken",
+      "name": "Banka och Krydda Kyckling",
+      "outputName": "Kryddad kycklingfilé",
+      "inputs": [
+        {
+          "id": "chicken_breast",
+          "amount": 600,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "cajun_spice_mix",
+          "amount": 8,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "När det återstår 5 min av grönsakernas tid i ugnen, lägg {{chicken_breast}} mellan två bakplåtspapper och banka den till ca 2 cm jämn tjocklek.",
+        "Krydda med {{salt}} och {{cajun_spice_mix}}."
+      ],
+      "duration": 3,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Ay Cajun-ba är mappad till cajun_spice_mix. 8 g är samma vid 3 och 4 portioner."
+      ]
+    },
+    {
+      "id": "cajunkryddad_kycklingfile__fried_chicken",
+      "name": "Stek Kyckling",
+      "outputName": "Stekt cajunkyckling",
+      "inputs": [
+        {
+          "id": "cajunkryddad_kycklingfile__seasoned_chicken",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i en stor stekpanna på medelhög värme.",
+        "Stek {{cajunkryddad_kycklingfile__seasoned_chicken}} i 2 min per sida, eller tills den är brynt.",
+        "Sänk till medelvärme och stek i ytterligare 2–3 min per sida, eller tills den är genomstekt."
+      ],
+      "duration": 11,
+      "wait": 0,
+      "tags": [],
+      "tips": [
+        "Tvätta händer och redskap efter rå kyckling. Kycklingen är klar när köttet inte längre är rosa i mitten.",
+        "Båda stegomgångarna är hands-on, därför duration 11 och wait 0. Inte hopslagen med ugnen."
+      ]
+    },
+    {
+      "id": "cajunkryddad_kycklingfile__sliced_chicken",
+      "name": "Skiva Kyckling",
+      "outputName": "Skivad kyckling",
+      "inputs": [
+        {
+          "id": "cajunkryddad_kycklingfile__fried_chicken",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skär {{cajunkryddad_kycklingfile__fried_chicken}} i tunna skivor."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "cajunkryddad_kycklingfile__spinach_veg",
+      "name": "Blanda Spenat och Grönsaker",
+      "outputName": "Rostade grönsaker med spenat",
+      "inputs": [
+        {
+          "id": "cajunkryddad_kycklingfile__finished_veg",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "baby_spinach",
+          "amount": 60,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Skölj {{baby_spinach}}.",
+        "Blanda spenaten med {{cajunkryddad_kycklingfile__finished_veg}} på plåten."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Spenatens korttyp är ekologisk babyspenat, mappad till baby_spinach."
+      ]
+    },
+    {
+      "id": "cajunkryddad_kycklingfile",
+      "name": "Cajunkryddad kycklingfilé",
+      "outputName": "Cajunkryddad kycklingfilé",
+      "inputs": [
+        {
+          "id": "cajunkryddad_kycklingfile__spinach_veg",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "cajunkryddad_kycklingfile__sliced_chicken",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "vegan_sriracha_mayo",
+          "amount": 100,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{cajunkryddad_kycklingfile__spinach_veg}}, {{cajunkryddad_kycklingfile__sliced_chicken}} och {{vegan_sriracha_mayo}} på tallrikar."
+      ],
+      "duration": 2,
+      "tags": [
+        "master"
+      ]
+    }
+  ]
+}

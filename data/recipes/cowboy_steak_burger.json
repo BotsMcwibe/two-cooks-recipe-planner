@@ -1,0 +1,389 @@
+{
+  "masterId": "cowboy_steak_burger",
+  "source": "hellofresh",
+  "createdAt": 1790852559,
+  "basePortions": 4,
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/cowboy_steak_burger/main.jpg",
+    "byNode": {
+      "cowboy_steak_burger__roasted_potato_bacon": "assets/recipes/cowboy_steak_burger/steps/roasted_potato_bacon.jpg",
+      "cowboy_steak_burger__onion_rings": "assets/recipes/cowboy_steak_burger/steps/onion_rings.jpg",
+      "cowboy_steak_burger__fried_onion_rings": "assets/recipes/cowboy_steak_burger/steps/fried_onion_rings.jpg",
+      "cowboy_steak_burger__grilled_steak": "assets/recipes/cowboy_steak_burger/steps/grilled_steak.jpg",
+      "cowboy_steak_burger__warmed_buns": "assets/recipes/cowboy_steak_burger/steps/warmed_buns.jpg",
+      "cowboy_steak_burger": "assets/recipes/cowboy_steak_burger/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 680,
+    "perPortion": {
+      "energyKcal": 1016,
+      "energyKj": 4250,
+      "fatG": 41,
+      "saturatedFatG": 9.3,
+      "carbsG": 109.4,
+      "sugarsG": 20.2,
+      "fiberG": 7.4,
+      "proteinG": 52.1,
+      "saltG": 5.4
+    }
+  },
+  "ratings": {
+    "average": 4,
+    "count": 4,
+    "source": "hellofresh"
+  },
+  "nodes": [
+    {
+      "id": "cowboy_steak_burger__preheated_oven_240",
+      "name": "Värm Ugnen",
+      "outputName": "Förvärmd ugn (240°C)",
+      "inputs": [],
+      "steps": [
+        "Värm ugnen till 240°C, eller 220°C varmluft."
+      ],
+      "duration": 1,
+      "tags": [
+        "prep",
+        "no-timer"
+      ],
+      "wait": 12,
+      "tips": [
+        "HF anger 240°C/220°C varmluft — lokal ugnsnode, inte preheated_oven_220 (220/200)."
+      ]
+    },
+    {
+      "id": "cowboy_steak_burger__seasoned_steak",
+      "name": "Krydda Rumpstek",
+      "outputName": "Kryddad rumpstek",
+      "inputs": [
+        {
+          "id": "rump_steak",
+          "amount": 600,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "panamat_spice",
+          "amount": 4,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Ta fram {{rump_steak}} så den blir rumstempererad.",
+        "Krydda med {{salt}} och {{panamat_spice}}.",
+        "Värm grillen till hög värme."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Låt köttet ligga framme medan övrig prep pågår."
+      ]
+    },
+    {
+      "id": "cowboy_steak_burger__diced_potato",
+      "name": "Skär Potatis",
+      "outputName": "Tärnad potatis",
+      "inputs": [
+        {
+          "id": "potato",
+          "amount": 1000,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Skär {{potato}} (oskalad) i 2 cm stora bitar."
+      ],
+      "duration": 5,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "cowboy_steak_burger__sliced_tomato",
+      "name": "Skiva Tomat",
+      "outputName": "Tomatskivor",
+      "inputs": [
+        {
+          "id": "tomato",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skär {{tomato}} i tunna skivor."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "cowboy_steak_burger__onion_rings",
+      "name": "Skär Lökringar",
+      "outputName": "Lökringar",
+      "inputs": [
+        {
+          "id": "onion",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skär {{onion}} i 1 cm tunna skivor och dela upp dem i ringar."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "cowboy_steak_burger__roasting_potato",
+      "name": "Rosta Potatis",
+      "outputName": "Potatis under rostning",
+      "inputs": [
+        {
+          "id": "cowboy_steak_burger__preheated_oven_240",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "cowboy_steak_burger__diced_potato",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Placera {{cowboy_steak_burger__diced_potato}} på ena sidan av en plåt med bakplåtspapper.",
+        "Blanda med {{olive_oil}}, {{salt}} och {{pepper}}.",
+        "Rosta i den förvärmda ugnen i 13–23 min (första delen av totalt 25–35 min), tills det är dags för bacon."
+      ],
+      "duration": 3,
+      "wait": 23,
+      "tags": [],
+      "tips": [
+        "Totalt rostas potatisen 25–35 min; bacon går in de sista 12 min på samma plåt."
+      ]
+    },
+    {
+      "id": "cowboy_steak_burger__roasted_potato_bacon",
+      "name": "Rosta Bacon med Potatis",
+      "outputName": "Rostad potatis och krispigt bacon",
+      "inputs": [
+        {
+          "id": "cowboy_steak_burger__roasting_potato",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "bacon",
+          "amount": 125,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Placera {{bacon}} på andra sidan av plåten med {{cowboy_steak_burger__roasting_potato}}.",
+        "Rosta klart i 12 min, eller tills potatisen är gyllene och baconet krispigt."
+      ],
+      "duration": 1,
+      "wait": 12,
+      "tags": [],
+      "tips": [
+        "Bacon och potatis delar plåt de sista 12 minuterna."
+      ]
+    },
+    {
+      "id": "cowboy_steak_burger__onion_batter",
+      "name": "Gör Frityrsmet",
+      "outputName": "Frityrsmet",
+      "inputs": [
+        {
+          "id": "egg",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "flour",
+          "amount": 4,
+          "unit": "msk"
+        },
+        {
+          "id": "water",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Vispa ihop {{egg}}, {{flour}}, {{water}} och {{salt}} i en djup tallrik."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Vispa tills smeten är len och klumpfri."
+      ]
+    },
+    {
+      "id": "cowboy_steak_burger__fried_onion_rings",
+      "name": "Stek Lökringar",
+      "outputName": "Stekta lökringar",
+      "inputs": [
+        {
+          "id": "cowboy_steak_burger__onion_rings",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "cowboy_steak_burger__onion_batter",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 2,
+          "unit": "msk"
+        }
+      ],
+      "steps": [
+        "Hetta upp en stekpanna på medelhög värme och tillsätt {{olive_oil}} så det täcker botten.",
+        "Doppa {{cowboy_steak_burger__onion_rings}} i {{cowboy_steak_burger__onion_batter}} så de täcks.",
+        "Stek lökringarna i 1–2 min per sida, tills gyllene."
+      ],
+      "duration": 3,
+      "wait": 4,
+      "tags": [],
+      "tips": [
+        "Lägg färdiga lökringar på hushållspapper så överflödig olja sugs upp."
+      ]
+    },
+    {
+      "id": "cowboy_steak_burger__grilled_steak",
+      "name": "Grilla Rumpstek",
+      "outputName": "Grillad rumpstek",
+      "inputs": [
+        {
+          "id": "cowboy_steak_burger__seasoned_steak",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Grilla {{cowboy_steak_burger__seasoned_steak}} i 2–3 min per sida, eller tills tillagad som du vill ha den."
+      ],
+      "duration": 1,
+      "wait": 6,
+      "tags": [],
+      "tips": [
+        "2–3 min per sida ger medium vid rumstempererat kött; justera efter tjocklek."
+      ]
+    },
+    {
+      "id": "cowboy_steak_burger__warmed_buns",
+      "name": "Värm Briochebröd",
+      "outputName": "Uppvärmda briochebröd",
+      "inputs": [
+        {
+          "id": "cowboy_steak_burger__preheated_oven_240",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "brioche_bun",
+          "amount": 4,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Dela {{brioche_bun}} på mitten.",
+        "Placera bröden direkt på ugnsgallret och värm i ugnen i 3–4 min, eller tills uppvärmda."
+      ],
+      "duration": 1,
+      "wait": 4,
+      "tags": [],
+      "tips": [
+        "Starta gärna när det återstår ca 5 min av potatis/bacon-rostningen."
+      ]
+    },
+    {
+      "id": "cowboy_steak_burger",
+      "name": "Grillad cowboy steak burger och BBQ-sås",
+      "outputName": "Grillad cowboy steak burger och BBQ-sås",
+      "inputs": [
+        {
+          "id": "cowboy_steak_burger__grilled_steak",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "cowboy_steak_burger__warmed_buns",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "cowboy_steak_burger__sliced_tomato",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "cowboy_steak_burger__roasted_potato_bacon",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "cowboy_steak_burger__fried_onion_rings",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "aioli",
+          "amount": 80,
+          "unit": "g"
+        },
+        {
+          "id": "bbq_sauce",
+          "amount": 60,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Skär {{cowboy_steak_burger__grilled_steak}} i tunna skivor.",
+        "Bre {{cowboy_steak_burger__warmed_buns}} med lite {{aioli}} och toppa med kött, en klick {{bbq_sauce}}, {{cowboy_steak_burger__sliced_tomato}}, bacon och några lökringar.",
+        "Servera med resterande {{cowboy_steak_burger__fried_onion_rings}}, {{cowboy_steak_burger__roasted_potato_bacon}} toppad med resterande aioli och resterande BBQ-sås."
+      ],
+      "duration": 5,
+      "wait": 0,
+      "tags": [
+        "master"
+      ]
+    }
+  ]
+}

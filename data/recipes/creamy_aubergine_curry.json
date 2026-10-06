@@ -1,0 +1,319 @@
+{
+  "masterId": "creamy_aubergine_curry",
+  "source": "hellofresh",
+  "createdAt": 1790852559,
+  "basePortions": 4,
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/creamy_aubergine_curry/main.jpg"
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 227,
+    "perPortion": {
+      "energyKcal": 183,
+      "energyKj": 766,
+      "fatG": 0.84,
+      "saturatedFatG": 0.2,
+      "carbsG": 23.22,
+      "sugarsG": 1.4,
+      "proteinG": 15.84,
+      "saltG": 0.8
+    }
+  },
+  "ratings": {
+    "average": 3.3,
+    "count": 24,
+    "source": "hellofresh"
+  },
+  "nodes": [
+    {
+      "id": "creamy_aubergine_curry__preheated_oven",
+      "name": "Värm Ugnen",
+      "outputName": "Förvärmd ugn (200°C)",
+      "inputs": [],
+      "steps": [
+        "Värm ugnen till 200°C."
+      ],
+      "duration": 1,
+      "wait": 10,
+      "tags": [
+        "prep",
+        "no-timer"
+      ],
+      "tips": [
+        "Ugnen tar vanligtvis 10–15 minuter att värmas upp."
+      ]
+    },
+    {
+      "id": "creamy_aubergine_curry__chopped_aromatics",
+      "name": "Hacka Aromater",
+      "outputName": "Hackad ingefära, lök och vitlök",
+      "inputs": [
+        {
+          "id": "ginger",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "onion",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "garlic",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skala och finhacka {{ginger}}, {{onion}} och {{garlic}}."
+      ],
+      "duration": 5,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "creamy_aubergine_curry__diced_potato",
+      "name": "Tärna Potatis",
+      "outputName": "Tärnad potatis",
+      "inputs": [
+        {
+          "id": "potato",
+          "amount": 200,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Skala {{potato}} och tärna i 1 cm stora bitar."
+      ],
+      "duration": 4,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "creamy_aubergine_curry__diced_aubergine",
+      "name": "Tärna Aubergine",
+      "outputName": "Tärnad aubergine",
+      "inputs": [
+        {
+          "id": "aubergine",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Tärna {{aubergine}} i 1 cm stora bitar."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "creamy_aubergine_curry__chopped_chili",
+      "name": "Hacka Chili",
+      "outputName": "Hackad chili",
+      "inputs": [
+        {
+          "id": "fresh_chili",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Halvera {{fresh_chili}}, ta bort frön och finhacka."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Använd bara en halv chili om du inte tycker om stark mat."
+      ]
+    },
+    {
+      "id": "creamy_aubergine_curry__chopped_coriander",
+      "name": "Hacka Koriander",
+      "outputName": "Hackad koriander",
+      "inputs": [
+        {
+          "id": "coriander",
+          "amount": 1,
+          "unit": "kruka"
+        }
+      ],
+      "steps": [
+        "Grovhacka {{coriander}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "creamy_aubergine_curry__aubergine_base",
+      "name": "Fräs Auberginebas",
+      "outputName": "Mjuk auberginebas",
+      "inputs": [
+        {
+          "id": "creamy_aubergine_curry__chopped_aromatics",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "creamy_aubergine_curry__diced_potato",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "creamy_aubergine_curry__diced_aubergine",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Fräs {{creamy_aubergine_curry__chopped_aromatics}}, {{creamy_aubergine_curry__diced_potato}} och {{creamy_aubergine_curry__diced_aubergine}} med {{olive_oil}} i en stor kastrull på medelvärme.",
+        "Krydda med {{salt}} och {{pepper}}. Låt sjuda tills auberginen är mjuk och gyllenbrun, ca 10 min. Rör om regelbundet."
+      ],
+      "duration": 4,
+      "wait": 10,
+      "tags": [],
+      "tips": [
+        "Rör om då och då under sjudningen så att det inte bränner vid."
+      ]
+    },
+    {
+      "id": "creamy_aubergine_curry__curry",
+      "name": "Gör Auberginecurry",
+      "outputName": "Krämig auberginecurry",
+      "inputs": [
+        {
+          "id": "creamy_aubergine_curry__aubergine_base",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "creamy_aubergine_curry__chopped_chili",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "green_lentils",
+          "amount": 2,
+          "unit": "burk"
+        },
+        {
+          "id": "coconut_milk",
+          "amount": 500,
+          "unit": "ml"
+        },
+        {
+          "id": "water",
+          "amount": 2,
+          "unit": "dl"
+        },
+        {
+          "id": "soy_sauce",
+          "amount": 30,
+          "unit": "ml"
+        }
+      ],
+      "steps": [
+        "Skölj {{green_lentils}} i en sil under rinnande vatten tills vattnet klarnar.",
+        "Tillsätt linserna i {{creamy_aubergine_curry__aubergine_base}} tillsammans med {{creamy_aubergine_curry__chopped_chili}}, {{coconut_milk}}, {{water}} och {{soy_sauce}}.",
+        "Låt sjuda i ytterligare 5–10 min, tills auberginen är mosig och potatisen färdigkokt."
+      ],
+      "duration": 3,
+      "wait": 10,
+      "tags": []
+    },
+    {
+      "id": "creamy_aubergine_curry__warmed_baguette",
+      "name": "Värm Baguette",
+      "outputName": "Värmd baguette",
+      "inputs": [
+        {
+          "id": "creamy_aubergine_curry__preheated_oven",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "baguette",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Värm {{baguette}} i ugnen i 7–8 min."
+      ],
+      "duration": 1,
+      "wait": 8,
+      "tags": []
+    },
+    {
+      "id": "creamy_aubergine_curry",
+      "name": "Krämig auberginecurry",
+      "outputName": "Krämig auberginecurry med gröna linser och koriander",
+      "inputs": [
+        {
+          "id": "creamy_aubergine_curry__curry",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "creamy_aubergine_curry__chopped_coriander",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "creamy_aubergine_curry__warmed_baguette",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "lime",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Halvera {{lime}}. Pressa i juice från en limehalva i {{creamy_aubergine_curry__curry}} och rör i hälften av {{creamy_aubergine_curry__chopped_coriander}}.",
+        "Krydda med extra limejuice, {{salt}} och {{pepper}} efter smak.",
+        "Sleva upp curryn i djupa skålar, toppa med resterande koriander och servera med {{creamy_aubergine_curry__warmed_baguette}} vid sidan av."
+      ],
+      "duration": 3,
+      "wait": 0,
+      "tags": [
+        "master"
+      ]
+    }
+  ]
+}

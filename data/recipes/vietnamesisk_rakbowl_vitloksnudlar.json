@@ -1,0 +1,380 @@
+{
+  "masterId": "vietnamesisk_rakbowl_vitloksnudlar",
+  "source": "hellofresh",
+  "createdAt": 1791038018,
+  "basePortions": 4,
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/vietnamesisk_rakbowl_vitloksnudlar/main.jpg",
+    "byNode": {
+      "vietnamesisk_rakbowl_vitloksnudlar__cooked_noodles": "assets/recipes/vietnamesisk_rakbowl_vitloksnudlar/steps/cooked_noodles.jpg",
+      "vietnamesisk_rakbowl_vitloksnudlar__garlic_oil": "assets/recipes/vietnamesisk_rakbowl_vitloksnudlar/steps/garlic_oil.jpg",
+      "vietnamesisk_rakbowl_vitloksnudlar__marinade": "assets/recipes/vietnamesisk_rakbowl_vitloksnudlar/steps/marinade.jpg",
+      "vietnamesisk_rakbowl_vitloksnudlar__salad": "assets/recipes/vietnamesisk_rakbowl_vitloksnudlar/steps/prepped_veg.jpg",
+      "vietnamesisk_rakbowl_vitloksnudlar__diced_mango": "assets/recipes/vietnamesisk_rakbowl_vitloksnudlar/steps/prepped_veg.jpg",
+      "vietnamesisk_rakbowl_vitloksnudlar__chopped_peanuts": "assets/recipes/vietnamesisk_rakbowl_vitloksnudlar/steps/prepped_veg.jpg",
+      "vietnamesisk_rakbowl_vitloksnudlar__sliced_spring_onion": "assets/recipes/vietnamesisk_rakbowl_vitloksnudlar/steps/prepped_veg.jpg",
+      "vietnamesisk_rakbowl_vitloksnudlar__fried_shrimp": "assets/recipes/vietnamesisk_rakbowl_vitloksnudlar/steps/fried_shrimp.jpg",
+      "vietnamesisk_rakbowl_vitloksnudlar": "assets/recipes/vietnamesisk_rakbowl_vitloksnudlar/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 537,
+    "perPortion": {
+      "energyKcal": 709,
+      "energyKj": 2966,
+      "fatG": 30.3,
+      "saturatedFatG": 4.6,
+      "carbsG": 79.3,
+      "sugarsG": 26.3,
+      "fiberG": 5.1,
+      "proteinG": 29.3,
+      "saltG": 8.1
+    }
+  },
+  "ratings": {
+    "average": 3.5,
+    "count": 32,
+    "source": "hellofresh"
+  },
+  "cooked": {
+    "hfId": "66e9435b00a3edabf7af994c",
+    "at": "2026-10-03T15:12:32+02:00",
+    "source": "photo",
+    "headline": "med vitlöksnudlar och färsk mango"
+  },
+  "nodes": [
+    {
+      "id": "vietnamesisk_rakbowl_vitloksnudlar__cooked_noodles",
+      "name": "Koka Mienudlar",
+      "outputName": "Kokta mienudlar",
+      "inputs": [
+        {
+          "id": "mie_noodles",
+          "amount": 300,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Koka upp en stor kastrull med saltat vatten.",
+        "Koka {{mie_noodles}} i 4 min, tills mjuka."
+      ],
+      "duration": 4,
+      "wait": 4,
+      "tags": [],
+      "tips": [
+        "Vattnet ska vara lika salt som havsvatten."
+      ]
+    },
+    {
+      "id": "vietnamesisk_rakbowl_vitloksnudlar__drained_noodles",
+      "name": "Skölj Mienudlar",
+      "outputName": "Sköljda mienudlar",
+      "inputs": [
+        {
+          "id": "vietnamesisk_rakbowl_vitloksnudlar__cooked_noodles",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Häll av vattnet och skölj {{vietnamesisk_rakbowl_vitloksnudlar__cooked_noodles}} i kallt vatten."
+      ],
+      "duration": 2,
+      "tags": []
+    },
+    {
+      "id": "vietnamesisk_rakbowl_vitloksnudlar__garlic_oil",
+      "name": "Gör Vitlöksolja",
+      "outputName": "Vitlöksolja",
+      "inputs": [
+        {
+          "id": "garlic",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 3,
+          "unit": "msk"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Finhacka eller pressa {{garlic}}.",
+        "Blanda vitlöken med {{olive_oil}}, {{salt}} och {{pepper}} i en liten skål. Ställ åt sidan."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "vietnamesisk_rakbowl_vitloksnudlar__marinade",
+      "name": "Gör Marinad",
+      "outputName": "Marinad",
+      "inputs": [
+        {
+          "id": "lime",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "fresh_chili",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "ginger_paste",
+          "amount": 20,
+          "unit": "g"
+        },
+        {
+          "id": "sugar",
+          "amount": 4,
+          "unit": "tsk"
+        },
+        {
+          "id": "soy_sauce",
+          "amount": 50,
+          "unit": "ml"
+        },
+        {
+          "id": "fish_sauce",
+          "amount": 60,
+          "unit": "g"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 2,
+          "unit": "msk"
+        }
+      ],
+      "steps": [
+        "Halvera {{lime}} och pressa ur en generös skvätt saft.",
+        "Kärna ur och finhacka {{fresh_chili}}.",
+        "Blanda chilin, limesaften, {{ginger_paste}}, {{sugar}}, {{soy_sauce}}, {{fish_sauce}} och {{olive_oil}} till en marinad i en liten skål. Ställ åt sidan."
+      ],
+      "duration": 5,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Skippa chilin, eller använd mindre, om du inte gillar stark mat."
+      ]
+    },
+    {
+      "id": "vietnamesisk_rakbowl_vitloksnudlar__salad",
+      "name": "Gör Morot- och Gurksallad",
+      "outputName": "Morot- och gurksallad",
+      "inputs": [
+        {
+          "id": "carrot",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "cucumber",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "mint_coriander",
+          "amount": 2,
+          "unit": "pkt"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "msk"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Skala {{carrot}} i långa band med en potatisskalare och finhacka den sista innersta biten.",
+        "Grovhacka {{cucumber}}.",
+        "Finhacka {{mint_coriander}}.",
+        "Blanda morotsbanden, gurkan, örterna, {{olive_oil}} och {{salt}} i en stor skål."
+      ],
+      "duration": 8,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "vietnamesisk_rakbowl_vitloksnudlar__diced_mango",
+      "name": "Tärna Mango",
+      "outputName": "Tärnad mango",
+      "inputs": [
+        {
+          "id": "mango",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skala {{mango}} och skär i två delar längs kärnan. Tärna i 2 cm stora bitar."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "vietnamesisk_rakbowl_vitloksnudlar__chopped_peanuts",
+      "name": "Hacka Jordnötter",
+      "outputName": "Hackade jordnötter",
+      "inputs": [
+        {
+          "id": "salted_peanuts",
+          "amount": 40,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Finhacka {{salted_peanuts}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "vietnamesisk_rakbowl_vitloksnudlar__sliced_spring_onion",
+      "name": "Skiva Salladslök",
+      "outputName": "Skivad salladslök",
+      "inputs": [
+        {
+          "id": "spring_onion",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skär {{spring_onion}} i tunna skivor."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "vietnamesisk_rakbowl_vitloksnudlar__fried_shrimp",
+      "name": "Stek Räkor",
+      "outputName": "Stekta räkor",
+      "inputs": [
+        {
+          "id": "king_prawns",
+          "amount": 500,
+          "unit": "g"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i en stor stekpanna på medelhög värme.",
+        "Tillsätt {{king_prawns}} och krydda med {{salt}}. Stek 1–2 min per sida, tills de är gyllene och genomstekta."
+      ],
+      "duration": 5,
+      "tags": [],
+      "tips": [
+        "Räkorna är färdiga när de är rosa utanpå och ogenomskinliga i mitten."
+      ]
+    },
+    {
+      "id": "vietnamesisk_rakbowl_vitloksnudlar__garlic_noodles",
+      "name": "Vänd Nudlar i Vitlöksolja",
+      "outputName": "Vitlöksnudlar",
+      "inputs": [
+        {
+          "id": "vietnamesisk_rakbowl_vitloksnudlar__drained_noodles",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "vietnamesisk_rakbowl_vitloksnudlar__garlic_oil",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Vänd {{vietnamesisk_rakbowl_vitloksnudlar__drained_noodles}} med {{vietnamesisk_rakbowl_vitloksnudlar__garlic_oil}} precis innan servering."
+      ],
+      "duration": 1,
+      "tags": []
+    },
+    {
+      "id": "vietnamesisk_rakbowl_vitloksnudlar",
+      "name": "Vietnamesisk räkbowl med vitlöksnudlar",
+      "outputName": "Vietnamesisk räkbowl med vitlöksnudlar",
+      "inputs": [
+        {
+          "id": "vietnamesisk_rakbowl_vitloksnudlar__garlic_noodles",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "vietnamesisk_rakbowl_vitloksnudlar__diced_mango",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "vietnamesisk_rakbowl_vitloksnudlar__salad",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "vietnamesisk_rakbowl_vitloksnudlar__fried_shrimp",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "vietnamesisk_rakbowl_vitloksnudlar__marinade",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "vietnamesisk_rakbowl_vitloksnudlar__chopped_peanuts",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "vietnamesisk_rakbowl_vitloksnudlar__sliced_spring_onion",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{vietnamesisk_rakbowl_vitloksnudlar__garlic_noodles}}, {{vietnamesisk_rakbowl_vitloksnudlar__diced_mango}} och {{vietnamesisk_rakbowl_vitloksnudlar__salad}} i djupa skålar.",
+        "Toppa nudlarna med {{vietnamesisk_rakbowl_vitloksnudlar__fried_shrimp}} och skeda över {{vietnamesisk_rakbowl_vitloksnudlar__marinade}}.",
+        "Garnera med {{vietnamesisk_rakbowl_vitloksnudlar__chopped_peanuts}} och {{vietnamesisk_rakbowl_vitloksnudlar__sliced_spring_onion}}."
+      ],
+      "duration": 3,
+      "tags": [
+        "master"
+      ]
+    }
+  ]
+}

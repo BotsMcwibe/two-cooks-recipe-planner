@@ -1,0 +1,32 @@
+{
+  "_comment": "Manual id -> relative path under /workspace/recipes/images for pantry gaps exact-name backfill misses. Applied after exact Swedish-name matches in backfill-ingredient-images.mjs. yeast is generated (no HF scrape).",
+  "aliases": {
+    "parsley": "ingredients/a73fe6d59cee9375.png",
+    "pepper": "ingredients/55f9fc48d26fd955.png",
+    "onion": "ingredients/13da9262a01d590f.png",
+    "fresh_basil": "ingredients/e0f113a7bdb8ece7.png",
+    "baby_spinach": "ingredients/c52da20c4e492d7e.png",
+    "lime": "ingredients/3be977733b19db85.png",
+    "oil": "ingredients/e90891148e632dda.png",
+    "rice": "ingredients/a93545c569f969da.png",
+    "pasta": "ingredients/3490a70244f47cad.png",
+    "bread": "ingredients/8c4553d0b85a0fad.png",
+    "cheese": "ingredients/7e558c2e3d147acc.png",
+    "grated_cheese": "ingredients/7e558c2e3d147acc.png",
+    "feta_cheese": "ingredients/4edb024366b77c2c.png",
+    "ham": "ingredients/cf9c420b35f6517b.png",
+    "kale": "ingredients/2d935814a7aaa3f8.png",
+    "green_asparagus": "ingredients/403775d659744492.png",
+    "ground_beef": "ingredients/116b3343813ee167.png",
+    "beef_bouillon": "ingredients/e1437a2963d41491.png",
+    "sun_dried_tomatoes": "ingredients/4b47a05490715f2a.png",
+    "tex_mex": "ingredients/a70d2b7ac27777bd.png",
+    "cajun_spice_mix": "ingredients/64b46db260676492.png"
+  },
+  "generated": {
+    "yeast": {
+      "path": "assets/ingredients/yeast.png",
+      "method": "style-matched from sugar.png (beige dry-yeast granules); GenerateImage unavailable to executor"
+    }
+  }
+}

@@ -1,0 +1,437 @@
+{
+  "masterId": "rosemary_lamb_leek_sauce",
+  "source": "hellofresh",
+  "createdAt": 1790852559,
+  "basePortions": 4,
+  "sharedPrep": [
+    "preheated_oven_220"
+  ],
+  "images": {
+    "main": "assets/recipes/rosemary_lamb_leek_sauce/main.jpg",
+    "byNode": {
+      "rosemary_lamb_leek_sauce__boiled_potato": "assets/recipes/rosemary_lamb_leek_sauce/steps/boiled_potato.jpg",
+      "rosemary_lamb_leek_sauce__roasted_lamb": "assets/recipes/rosemary_lamb_leek_sauce/steps/roasted_lamb.jpg",
+      "rosemary_lamb_leek_sauce__chopped_broccoli": "assets/recipes/rosemary_lamb_leek_sauce/steps/prepped_veg.jpg",
+      "rosemary_lamb_leek_sauce__roasted_potato_broccoli": "assets/recipes/rosemary_lamb_leek_sauce/steps/roasted_potato_broccoli.jpg",
+      "rosemary_lamb_leek_sauce__leek_sauce": "assets/recipes/rosemary_lamb_leek_sauce/steps/leek_sauce.jpg",
+      "rosemary_lamb_leek_sauce": "assets/recipes/rosemary_lamb_leek_sauce/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 714,
+    "perPortion": {
+      "energyKcal": 1111,
+      "energyKj": 4648,
+      "fatG": 81.6,
+      "saturatedFatG": 32.9,
+      "carbsG": 49,
+      "sugarsG": 13,
+      "fiberG": 37.8,
+      "proteinG": 42.5,
+      "saltG": 4
+    }
+  },
+  "ratings": {
+    "average": 4,
+    "count": 3,
+    "source": "hellofresh"
+  },
+  "nodes": [
+    {
+      "id": "rosemary_lamb_leek_sauce__chopped_rosemary",
+      "name": "Hacka Rosmarin",
+      "outputName": "Hackad rosmarin",
+      "inputs": [
+        {
+          "id": "rosemary",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Grovhacka {{rosemary}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "rosemary_lamb_leek_sauce__chopped_broccoli",
+      "name": "Hacka Broccoli",
+      "outputName": "Hackad broccoli",
+      "inputs": [
+        {
+          "id": "broccoli",
+          "amount": 500,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Skär broccolibuketter och stjälken i 2 cm stora bitar."
+      ],
+      "duration": 4,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "rosemary_lamb_leek_sauce__chopped_mint",
+      "name": "Hacka Mynta",
+      "outputName": "Hackad mynta",
+      "inputs": [
+        {
+          "id": "mint",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Grovhacka {{mint}}."
+      ],
+      "duration": 1,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "rosemary_lamb_leek_sauce__sliced_leek",
+      "name": "Skiva Purjolök",
+      "outputName": "Skivad purjolök",
+      "inputs": [
+        {
+          "id": "leek",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skölj av och rensa {{leek}}.",
+        "Skär den sedan i tunna skivor."
+      ],
+      "duration": 5,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Se till att purjolöken är ordentligt sköljd och rensad."
+      ]
+    },
+    {
+      "id": "rosemary_lamb_leek_sauce__minced_garlic",
+      "name": "Hacka Vitlök",
+      "outputName": "Hackad vitlök",
+      "inputs": [
+        {
+          "id": "garlic",
+          "amount": 4,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Finhacka eller pressa {{garlic}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "rosemary_lamb_leek_sauce__chopped_pistachios",
+      "name": "Hacka Pistagenötter",
+      "outputName": "Hackade pistagenötter",
+      "inputs": [
+        {
+          "id": "pistachios",
+          "amount": 120,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Grovhacka {{pistachios}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "rosemary_lamb_leek_sauce__boiled_potato",
+      "name": "Koka Potatis",
+      "outputName": "Förkokt potatis",
+      "inputs": [
+        {
+          "id": "potato",
+          "amount": 800,
+          "unit": "g"
+        },
+        {
+          "id": "water",
+          "amount": 2,
+          "unit": "l"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Koka upp en medelstor kastrull med saltat {{water}}.",
+        "Koka {{potato}} i 15–18 min, eller tills nästan genomkokta.",
+        "Häll av vattnet."
+      ],
+      "duration": 3,
+      "wait": 17,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Ta fram lammsteken så den blir rumstempererad medan potatisen kokar.",
+        "Kokvatten 2 l är processmängd (ej HF yields); salt 1 tsk är HF salt till potatis (används både i kokvatten och vid krossning)."
+      ]
+    },
+    {
+      "id": "rosemary_lamb_leek_sauce__crushed_potato",
+      "name": "Krossa Potatis",
+      "outputName": "Krossad potatis på plåt",
+      "inputs": [
+        {
+          "id": "rosemary_lamb_leek_sauce__boiled_potato",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Placera {{rosemary_lamb_leek_sauce__boiled_potato}} på en plåt med bakplåtspapper.",
+        "Krossa den lätt med en gaffel.",
+        "Vänd tillsammans med en skvätt {{olive_oil}}, {{salt}} och en nypa {{pepper}}."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "rosemary_lamb_leek_sauce__seared_lamb",
+      "name": "Bryn Lammstek",
+      "outputName": "Brynt lammstek",
+      "inputs": [
+        {
+          "id": "lamb_rump",
+          "amount": 600,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Skär fettsidan av {{lamb_rump}} i ett 1 cm djupt zickzackmönster och krydda med {{salt}}.",
+        "Placera köttet med fettsidan ner i en medelstor stekpanna. Värm upp stekpannan på medelvärme och stek oavbrutet i 8–9 min, eller tills gyllene.",
+        "Höj till hög värme och bryn köttet på alla sidor i 30 sek."
+      ],
+      "duration": 10,
+      "tags": []
+    },
+    {
+      "id": "rosemary_lamb_leek_sauce__roasted_lamb",
+      "name": "Tillaga Lammstek",
+      "outputName": "Rosmarinkryddad lammstek",
+      "inputs": [
+        {
+          "id": "preheated_oven_220",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "rosemary_lamb_leek_sauce__seared_lamb",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "rosemary_lamb_leek_sauce__chopped_rosemary",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "mustard",
+          "amount": 60,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Lägg över {{rosemary_lamb_leek_sauce__seared_lamb}} på en bakplåt med bakplåtspapper med fettsidan upp. Bre ovansidan med {{mustard}} och tryck försiktigt fast {{rosemary_lamb_leek_sauce__chopped_rosemary}}.",
+        "Rosta i ugnen ({{preheated_oven_220}}) i 15 min eller tills genomstekt."
+      ],
+      "duration": 2,
+      "wait": 15,
+      "tags": [],
+      "tips": [
+        "Låt köttet vila i ett foliepaket till servering — det fortsätter tillagas något under vilan.",
+        "Sätt in potatisplåten i ugnen samtidigt som lammsteken rostas."
+      ]
+    },
+    {
+      "id": "rosemary_lamb_leek_sauce__roasted_potato_broccoli",
+      "name": "Rosta Potatis och Broccoli",
+      "outputName": "Rostat potatis och broccoli",
+      "inputs": [
+        {
+          "id": "preheated_oven_220",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "rosemary_lamb_leek_sauce__crushed_potato",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "rosemary_lamb_leek_sauce__chopped_broccoli",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "När det återstår 10–12 min av köttets tillagningstid, tillsätt {{rosemary_lamb_leek_sauce__chopped_broccoli}} på plåten med {{rosemary_lamb_leek_sauce__crushed_potato}}.",
+        "Rosta i ugnen resterande tid, eller tills gyllene."
+      ],
+      "duration": 2,
+      "wait": 12,
+      "tags": [],
+      "tips": [
+        "Använd fler plåtar om det blir för trångt."
+      ]
+    },
+    {
+      "id": "rosemary_lamb_leek_sauce__leek_base",
+      "name": "Koka Purjolöksbas",
+      "outputName": "Kokt purjolök",
+      "inputs": [
+        {
+          "id": "olive_oil",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "rosemary_lamb_leek_sauce__sliced_leek",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "rosemary_lamb_leek_sauce__minced_garlic",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "water",
+          "amount": 3,
+          "unit": "dl"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i en medelstor kastrull på medelhög värme.",
+        "Fräs {{rosemary_lamb_leek_sauce__sliced_leek}} och {{rosemary_lamb_leek_sauce__minced_garlic}} i 1–2 min, eller tills något mjuknat.",
+        "Tillsätt {{water}} och sjud i 3–4 min."
+      ],
+      "duration": 3,
+      "wait": 4,
+      "tags": []
+    },
+    {
+      "id": "rosemary_lamb_leek_sauce__leek_sauce",
+      "name": "Mixa Purjolökssås",
+      "outputName": "Purjolökssås",
+      "inputs": [
+        {
+          "id": "rosemary_lamb_leek_sauce__leek_base",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "cooking_cream",
+          "amount": 300,
+          "unit": "ml"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Mixa {{rosemary_lamb_leek_sauce__leek_base}} slätt med en stavmixer.",
+        "Rör ner {{cooking_cream}} och {{salt}} och sjud i ytterligare 1 min."
+      ],
+      "duration": 3,
+      "wait": 0,
+      "tags": [],
+      "tips": [
+        "Om du inte har en mixer, hacka purjolöken riktigt fint så såsen får en rustik konsistens.",
+        "Tillsätt en skvätt vatten om såsen blir för tjock."
+      ]
+    },
+    {
+      "id": "rosemary_lamb_leek_sauce",
+      "name": "Rosmarinkryddad lammstek med purjolökssås",
+      "outputName": "Rosmarinkryddad lammstek med purjolökssås",
+      "inputs": [
+        {
+          "id": "rosemary_lamb_leek_sauce__roasted_lamb",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "rosemary_lamb_leek_sauce__roasted_potato_broccoli",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "rosemary_lamb_leek_sauce__leek_sauce",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "rosemary_lamb_leek_sauce__chopped_pistachios",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "rosemary_lamb_leek_sauce__chopped_mint",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skär {{rosemary_lamb_leek_sauce__roasted_lamb}} i tunna skivor precis före servering.",
+        "Lägg upp kött, broccoli och krossad potatis på tallrikar.",
+        "Skeda över {{rosemary_lamb_leek_sauce__leek_sauce}}.",
+        "Toppa med {{rosemary_lamb_leek_sauce__chopped_pistachios}} och {{rosemary_lamb_leek_sauce__chopped_mint}}."
+      ],
+      "duration": 4,
+      "wait": 0,
+      "tags": [
+        "master"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,451 @@
+{
+  "masterId": "gratinerade_kidneybonor",
+  "source": "hellofresh",
+  "createdAt": 1790852559,
+  "basePortions": 4,
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/gratinerade_kidneybonor/main.jpg"
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 220,
+    "perPortion": {
+      "energyKcal": 469,
+      "energyKj": 1960,
+      "fatG": 11.47,
+      "saturatedFatG": 4.7,
+      "carbsG": 67.66,
+      "sugarsG": 0.7,
+      "proteinG": 17.46,
+      "saltG": 0.7
+    }
+  },
+  "ratings": {
+    "average": 2.6,
+    "count": 26,
+    "source": "hellofresh"
+  },
+  "nodes": [
+    {
+      "id": "gratinerade_kidneybonor__preheated_oven_200",
+      "name": "Värm Ugnen",
+      "outputName": "Förvärmd ugn (200°C)",
+      "inputs": [],
+      "steps": [
+        "Sätt ugnen på 200°C."
+      ],
+      "duration": 1,
+      "wait": 12,
+      "tags": [
+        "prep",
+        "no-timer"
+      ],
+      "tips": [
+        "HF anger 200°C (inte 220) — lokal ugnsnode, inte preheated_oven_220."
+      ]
+    },
+    {
+      "id": "gratinerade_kidneybonor__simmered_rice",
+      "name": "Koka Jasminris",
+      "outputName": "Sjudet jasminris",
+      "inputs": [
+        {
+          "id": "jasmine_rice",
+          "amount": 300,
+          "unit": "g"
+        },
+        {
+          "id": "water",
+          "amount": 6,
+          "unit": "dl"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Fyll en kastrull med {{water}} och {{salt}}.",
+        "Häll i {{jasmine_rice}}. Koka på låg värme under lock i 12 min."
+      ],
+      "duration": 2,
+      "wait": 12,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "FLAG: _unitInference Vatten (steg 1) 6 ml — överstyrd till 6 dl (HF-typ water-step-1-…-1dl; risvatten).",
+        "FLAG: alla 30 _unitInference-fyllningar — se tips och agentrapport."
+      ]
+    },
+    {
+      "id": "gratinerade_kidneybonor__cooked_rice",
+      "name": "Vila Jasminris",
+      "outputName": "Kokt jasminris",
+      "inputs": [
+        {
+          "id": "gratinerade_kidneybonor__simmered_rice",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Ta av {{gratinerade_kidneybonor__simmered_rice}} från värmen och låt stå i 10 min med lock på innan servering."
+      ],
+      "duration": 1,
+      "wait": 10,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "gratinerade_kidneybonor__chopped_onion",
+      "name": "Finhacka Lök",
+      "outputName": "Finhackad lök",
+      "inputs": [
+        {
+          "id": "onion",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Finhacka {{onion}}."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "FLAG: _unitInference Lök 2 st — behållen (countable)."
+      ]
+    },
+    {
+      "id": "gratinerade_kidneybonor__chopped_celery",
+      "name": "Finhacka Selleri",
+      "outputName": "Finhackad selleri",
+      "inputs": [
+        {
+          "id": "celery",
+          "amount": 4,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Finhacka {{celery}}."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "FLAG: _unitInference Bladselleri 4 tsk — överstyrd till 4 st (metod: finhacka selleristjälkar)."
+      ]
+    },
+    {
+      "id": "gratinerade_kidneybonor__chopped_pepper",
+      "name": "Skär Paprika",
+      "outputName": "Skuren paprika",
+      "inputs": [
+        {
+          "id": "paprika",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skär {{paprika}} i 2 cm stora bitar."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "FLAG: _unitInference Röd paprika 2 tsk — överstyrd till 2 st (metod: skär i bitar)."
+      ]
+    },
+    {
+      "id": "gratinerade_kidneybonor__chopped_carrot",
+      "name": "Skär Morot",
+      "outputName": "Skuren morot",
+      "inputs": [
+        {
+          "id": "carrot",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skär {{carrot}} i 2 cm stora bitar."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "FLAG: _unitInference Morot 2 st — behållen (countable)."
+      ]
+    },
+    {
+      "id": "gratinerade_kidneybonor__chopped_chili",
+      "name": "Finhacka Chili",
+      "outputName": "Finhackad chili",
+      "inputs": [
+        {
+          "id": "fresh_chili",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Halvera {{fresh_chili}}, ta bort frön och finhacka."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "FLAG: _unitInference Chili 1 tsk — överstyrd till 1 st (metod: halvera och finhacka färsk chili; skalar inte 2→4)."
+      ]
+    },
+    {
+      "id": "gratinerade_kidneybonor__rinsed_beans",
+      "name": "Skölj Kidneybönor",
+      "outputName": "Sköljda kidneybönor",
+      "inputs": [
+        {
+          "id": "kidney_beans",
+          "amount": 2,
+          "unit": "burk"
+        }
+      ],
+      "steps": [
+        "Rensa och skölj {{kidney_beans}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "FLAG: _unitInference Kidneybönor 2 burk — behållen (can)."
+      ]
+    },
+    {
+      "id": "gratinerade_kidneybonor__fried_vegetables",
+      "name": "Fräs Grönsaker",
+      "outputName": "Frästa grönsaker",
+      "inputs": [
+        {
+          "id": "gratinerade_kidneybonor__chopped_onion",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "gratinerade_kidneybonor__chopped_celery",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "gratinerade_kidneybonor__chopped_pepper",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "gratinerade_kidneybonor__chopped_carrot",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "gratinerade_kidneybonor__chopped_chili",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i en stor stekpanna på medelhög värme.",
+        "Lägg i {{gratinerade_kidneybonor__chopped_onion}}, {{gratinerade_kidneybonor__chopped_celery}}, {{gratinerade_kidneybonor__chopped_pepper}}, {{gratinerade_kidneybonor__chopped_carrot}} och {{gratinerade_kidneybonor__chopped_chili}}.",
+        "Fräs tills grönsakerna mjuknat, 6–7 min."
+      ],
+      "duration": 8,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Stekolja är pantry-skvätt (ej i HF yields; yields-olivolja går till salladen)."
+      ]
+    },
+    {
+      "id": "gratinerade_kidneybonor__bean_tomato_mix",
+      "name": "Gör Bönröra",
+      "outputName": "Kidneybönor i tomatsås",
+      "inputs": [
+        {
+          "id": "gratinerade_kidneybonor__fried_vegetables",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "gratinerade_kidneybonor__rinsed_beans",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "canned_tomatoes",
+          "amount": 2,
+          "unit": "burk"
+        },
+        {
+          "id": "baharat",
+          "amount": 4,
+          "unit": "tsk"
+        },
+        {
+          "id": "water",
+          "amount": 2,
+          "unit": "dl"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Rör i {{gratinerade_kidneybonor__rinsed_beans}}, {{canned_tomatoes}} och {{baharat}} i stekpannan med {{gratinerade_kidneybonor__fried_vegetables}}.",
+        "Tillsätt {{water}}. Stek under omrörning i 2–3 min.",
+        "Krydda med {{salt}} och {{pepper}}."
+      ],
+      "duration": 4,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "FLAG: _unitInference Krossade tomater 2 burk — behållen; Baharat 4 tsk — behållen (krydda).",
+        "FLAG: _unitInference Vatten (steg 4) 2 ml — överstyrd till 2 dl (HF-typ water-step-4-…-1dl)."
+      ]
+    },
+    {
+      "id": "gratinerade_kidneybonor__gratinated_beans",
+      "name": "Gratinera Bönröran",
+      "outputName": "Gratinerade kidneybönor",
+      "inputs": [
+        {
+          "id": "gratinerade_kidneybonor__preheated_oven_200",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "gratinerade_kidneybonor__bean_tomato_mix",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "grated_mozzarella",
+          "amount": 100,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "För över {{gratinerade_kidneybonor__bean_tomato_mix}} till en ugnsform.",
+        "Strö över ett jämnt lager {{grated_mozzarella}}.",
+        "Gratinera i {{gratinerade_kidneybonor__preheated_oven_200}} tills osten har smält och är gyllenbrun, 10–12 min."
+      ],
+      "duration": 3,
+      "wait": 12,
+      "tags": [],
+      "tips": [
+        "FLAG: _unitInference Riven mozzarella 100 g — behållen."
+      ]
+    },
+    {
+      "id": "gratinerade_kidneybonor__gem_salad",
+      "name": "Gör Gemsallad",
+      "outputName": "Gemsallad",
+      "inputs": [
+        {
+          "id": "lettuce",
+          "amount": 180,
+          "unit": "g"
+        },
+        {
+          "id": "lemon",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "msk"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Dela {{lettuce}} i stora bitar och lägg i en salladsskål.",
+        "Halvera {{lemon}} och pressa saften över salladen.",
+        "Smaksätt med {{olive_oil}}, {{salt}} och {{pepper}}."
+      ],
+      "duration": 4,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "FLAG: _unitInference Citrusfrukt/citron 1 tsk — överstyrd till 1 st (metod: halvera citron / citronjuice).",
+        "FLAG: _unitInference Sallad 180 g — behållen.",
+        "FLAG: _unitInference Olivolja (steg 5) 1,333 ml — överstyrd till 1 msk (HF-typ …-1tbsp; avrundat från 1,333)."
+      ]
+    },
+    {
+      "id": "gratinerade_kidneybonor",
+      "name": "Gratinerade kidneybönor i tomatsås",
+      "outputName": "Gratinerade kidneybönor i tomatsås",
+      "inputs": [
+        {
+          "id": "gratinerade_kidneybonor__cooked_rice",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "gratinerade_kidneybonor__gratinated_beans",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "gratinerade_kidneybonor__gem_salad",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Fördela {{gratinerade_kidneybonor__cooked_rice}} mellan tallrikarna.",
+        "Lägg på rikligt med {{gratinerade_kidneybonor__gratinated_beans}}.",
+        "Servera {{gratinerade_kidneybonor__gem_salad}} vid sidan."
+      ],
+      "duration": 3,
+      "tags": [
+        "master"
+      ],
+      "wait": 0
+    }
+  ]
+}

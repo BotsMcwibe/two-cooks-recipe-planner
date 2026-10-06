@@ -1,0 +1,216 @@
+{
+  "masterId": "creamy_mushroom_bruschetta",
+  "source": "hellofresh",
+  "createdAt": 1790852912,
+  "basePortions": 4,
+  "sharedPrep": [
+    "preheated_oven_220"
+  ],
+  "images": {
+    "main": "assets/recipes/creamy_mushroom_bruschetta/main.jpg",
+    "byNode": {
+      "creamy_mushroom_bruschetta__chopped_mushrooms": "assets/recipes/creamy_mushroom_bruschetta/steps/prep.jpg",
+      "creamy_mushroom_bruschetta__toasted_ciabatta": "assets/recipes/creamy_mushroom_bruschetta/steps/toasted_ciabatta.jpg",
+      "creamy_mushroom_bruschetta__mushroom_cream": "assets/recipes/creamy_mushroom_bruschetta/steps/mushroom_cream.jpg",
+      "creamy_mushroom_bruschetta": "assets/recipes/creamy_mushroom_bruschetta/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 319,
+    "perPortion": {
+      "energyKcal": 572,
+      "energyKj": 2393,
+      "fatG": 25.6,
+      "saturatedFatG": 12.9,
+      "carbsG": 69,
+      "sugarsG": 8.3,
+      "proteinG": 15.9,
+      "saltG": 2.6
+    }
+  },
+  "ratings": {
+    "average": 4,
+    "count": 2,
+    "source": "hellofresh"
+  },
+  "nodes": [
+    {
+      "id": "creamy_mushroom_bruschetta__chopped_garlic",
+      "name": "Hacka Vitlök",
+      "outputName": "Hackad vitlök",
+      "inputs": [
+        {
+          "id": "garlic",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Finhacka eller pressa {{garlic}}."
+      ],
+      "duration": 1,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "creamy_mushroom_bruschetta__chopped_mushrooms",
+      "name": "Hacka Svamp",
+      "outputName": "Hackad svamp",
+      "inputs": [
+        {
+          "id": "mushrooms",
+          "amount": 200,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Grovhacka {{mushrooms}}."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "creamy_mushroom_bruschetta__chopped_parsley",
+      "name": "Hacka Persilja",
+      "outputName": "Hackad persilja",
+      "inputs": [
+        {
+          "id": "parsley",
+          "amount": 1,
+          "unit": "kruka"
+        }
+      ],
+      "steps": [
+        "Finhacka {{parsley}} (spara lite blad till garnering)."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "creamy_mushroom_bruschetta__toasted_ciabatta",
+      "name": "Rosta Ciabatta",
+      "outputName": "Rostad ciabatta",
+      "inputs": [
+        {
+          "id": "preheated_oven_220",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "ciabatta",
+          "amount": 250,
+          "unit": "g"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Skär {{ciabatta}} i 1,5 cm tjocka skivor.",
+        "Placera skivorna på en plåt med bakplåtspapper, ringla över {{olive_oil}} och krydda med {{salt}}.",
+        "Rosta i mitten av den förvärmda ugnen ({{preheated_oven_220}}) i 6–8 min, tills spröda och gyllene."
+      ],
+      "duration": 3,
+      "wait": 8,
+      "tags": []
+    },
+    {
+      "id": "creamy_mushroom_bruschetta__mushroom_cream",
+      "name": "Gör Svampstuvning",
+      "outputName": "Krämig svampstuvning",
+      "inputs": [
+        {
+          "id": "creamy_mushroom_bruschetta__chopped_mushrooms",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "creamy_mushroom_bruschetta__chopped_garlic",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "creamy_mushroom_bruschetta__chopped_parsley",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "butter",
+          "amount": 1,
+          "unit": "msk"
+        },
+        {
+          "id": "cooking_cream",
+          "amount": 1,
+          "unit": "pkt"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{butter}} i en stor stekpanna på medelhög värme.",
+        "Stek {{creamy_mushroom_bruschetta__chopped_mushrooms}} i 3–4 min, tills brynta.",
+        "Tillsätt {{creamy_mushroom_bruschetta__chopped_garlic}}, {{cooking_cream}}, {{salt}} och {{pepper}}.",
+        "Sjud i 3–5 min, eller tills grädden tjocknat, och rör i {{creamy_mushroom_bruschetta__chopped_parsley}}."
+      ],
+      "duration": 5,
+      "wait": 5,
+      "tags": [],
+      "tips": [
+        "Stekningen är hands-on (duration); sjuda är passiv wait med persilja i sista steget."
+      ]
+    },
+    {
+      "id": "creamy_mushroom_bruschetta",
+      "name": "Krämig svampbruschetta",
+      "outputName": "Krämig svampbruschetta",
+      "inputs": [
+        {
+          "id": "creamy_mushroom_bruschetta__toasted_ciabatta",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "creamy_mushroom_bruschetta__mushroom_cream",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "truffle_oil",
+          "amount": 8,
+          "unit": "ml"
+        }
+      ],
+      "steps": [
+        "Toppa {{creamy_mushroom_bruschetta__toasted_ciabatta}} med {{creamy_mushroom_bruschetta__mushroom_cream}}.",
+        "Ringla över {{truffle_oil}} och garnera med sparade persiljeblad."
+      ],
+      "duration": 3,
+      "wait": 0,
+      "tags": [
+        "master"
+      ]
+    }
+  ]
+}

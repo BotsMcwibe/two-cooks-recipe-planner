@@ -1,0 +1,310 @@
+{
+  "masterId": "vietnamesisk_rakbowl",
+  "source": "hellofresh",
+  "createdAt": 1791034509,
+  "basePortions": 4,
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/vietnamesisk_rakbowl/main.jpg",
+    "byNode": {
+      "vietnamesisk_rakbowl__coconut_rice": "assets/recipes/vietnamesisk_rakbowl/steps/coconut_rice.jpg",
+      "vietnamesisk_rakbowl__prepped_aromatics": "assets/recipes/vietnamesisk_rakbowl/steps/prepped_aromatics.jpg",
+      "vietnamesisk_rakbowl__ginger_sauce": "assets/recipes/vietnamesisk_rakbowl/steps/ginger_sauce.jpg",
+      "vietnamesisk_rakbowl__mango_salad": "assets/recipes/vietnamesisk_rakbowl/steps/mango_salad.jpg",
+      "vietnamesisk_rakbowl__fried_shrimp": "assets/recipes/vietnamesisk_rakbowl/steps/fried_shrimp.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 491,
+    "perPortion": {
+      "energyKcal": 636,
+      "energyKj": 2659,
+      "fatG": 18.6,
+      "saturatedFatG": 6.4,
+      "carbsG": 94.7,
+      "sugarsG": 22,
+      "fiberG": 8.2,
+      "proteinG": 24.8,
+      "saltG": 5.7
+    }
+  },
+  "ratings": {
+    "average": 3.8,
+    "count": 8,
+    "source": "hellofresh"
+  },
+  "cooked": {
+    "hfId": "6a689117640e6eb29c2ac576",
+    "at": "2026-10-03T15:12:32+02:00",
+    "source": "photo",
+    "headline": "med kokosris och färsk mangosallad"
+  },
+  "nodes": [
+    {
+      "id": "vietnamesisk_rakbowl__coconut_rice",
+      "name": "Koka Kokosris",
+      "outputName": "Kokt kokosris",
+      "inputs": [
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "desiccated_coconut",
+          "amount": 30,
+          "unit": "g"
+        },
+        {
+          "id": "water",
+          "amount": 5.5,
+          "unit": "dl"
+        },
+        {
+          "id": "long_grain_rice",
+          "amount": 300,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i en medelstor kastrull på medelvärme. Fräs {{desiccated_coconut}} i 1 min, tills väldoftande.",
+        "Tillsätt {{water}} och koka upp. Rör i {{long_grain_rice}} och {{salt}}, sänk till medellåg värme och sjud under lock i 14 min."
+      ],
+      "duration": 4,
+      "wait": 14,
+      "tags": [],
+      "tips": [
+        "Riset ska ångkoka, så tjuvkika inte."
+      ]
+    },
+    {
+      "id": "vietnamesisk_rakbowl__rested_coconut_rice",
+      "name": "Vila Kokosris",
+      "outputName": "Vilat kokosris",
+      "inputs": [
+        {
+          "id": "vietnamesisk_rakbowl__coconut_rice",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Ta av kastrullen från värmen och låt {{vietnamesisk_rakbowl__coconut_rice}} vila under lock i 10 min."
+      ],
+      "duration": 1,
+      "wait": 10,
+      "tags": []
+    },
+    {
+      "id": "vietnamesisk_rakbowl__prepped_aromatics",
+      "name": "Förbered Aromer",
+      "outputName": "Förberedda aromer",
+      "inputs": [
+        {
+          "id": "lime",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "ginger",
+          "amount": 4,
+          "unit": "tsk"
+        },
+        {
+          "id": "garlic",
+          "amount": 3,
+          "unit": "st"
+        },
+        {
+          "id": "fresh_chili",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Halvera {{lime}}.",
+        "Riv {{ginger}} och {{garlic}} fint.",
+        "Halvera, kärna ur och finhacka {{fresh_chili}}."
+      ],
+      "duration": 6,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "vietnamesisk_rakbowl__ginger_sauce",
+      "name": "Gör Ingefärssås",
+      "outputName": "Ingefärssås",
+      "inputs": [
+        {
+          "id": "vietnamesisk_rakbowl__prepped_aromatics",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "sugar",
+          "amount": 4,
+          "unit": "tsk"
+        },
+        {
+          "id": "soy_sauce",
+          "amount": 40,
+          "unit": "ml"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 2,
+          "unit": "msk"
+        }
+      ],
+      "steps": [
+        "Pressa saften ur limen i {{vietnamesisk_rakbowl__prepped_aromatics}}.",
+        "Blanda saften med chilin, vitlöken, ingefäran, {{sugar}}, {{soy_sauce}} och {{olive_oil}} i en liten skål."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Skippa chili eller använd mindre om du inte tycker om stark mat."
+      ]
+    },
+    {
+      "id": "vietnamesisk_rakbowl__cut_mango_vegetables",
+      "name": "Skär Mango, Kålrabbi och Rädisor",
+      "outputName": "Skuren mango, kålrabbi och rädisor",
+      "inputs": [
+        {
+          "id": "mango",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "kohlrabi",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "radish",
+          "amount": 150,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Skala och skär {{mango}} i tre delar längs kärnan. Tärna i 2 cm bitar.",
+        "Skala och tärna {{kohlrabi}} i 2 cm stora bitar.",
+        "Skär {{radish}} i kvartar."
+      ],
+      "duration": 8,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "vietnamesisk_rakbowl__mango_salad",
+      "name": "Blanda Mangosallad",
+      "outputName": "Mangosallad",
+      "inputs": [
+        {
+          "id": "vietnamesisk_rakbowl__cut_mango_vegetables",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "coriander",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Finhacka {{coriander}}.",
+        "Blanda {{vietnamesisk_rakbowl__cut_mango_vegetables}} (mango, kålrabbi och rädisor), {{salt}} och koriander i en stor skål."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Tillsätt eventuellt en skvätt olivolja till salladen."
+      ]
+    },
+    {
+      "id": "vietnamesisk_rakbowl__fried_shrimp",
+      "name": "Stek Räkor",
+      "outputName": "Stekta kungsräkor",
+      "inputs": [
+        {
+          "id": "king_prawns",
+          "amount": 500,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "msk"
+        }
+      ],
+      "steps": [
+        "Krydda {{king_prawns}} med {{salt}}.",
+        "Hetta upp {{olive_oil}} i en stor stekpanna på medelhög värme.",
+        "Stek räkorna 1–2 min på varje sida, tills de är gyllene och genomstekta."
+      ],
+      "duration": 6,
+      "tags": [],
+      "tips": [
+        "Räkorna är färdiga när de är rosa utanpå och ogenomskinliga i mitten."
+      ]
+    },
+    {
+      "id": "vietnamesisk_rakbowl",
+      "name": "Vietnamesisk räkbowl",
+      "outputName": "Vietnamesisk räkbowl",
+      "inputs": [
+        {
+          "id": "vietnamesisk_rakbowl__rested_coconut_rice",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "vietnamesisk_rakbowl__mango_salad",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "vietnamesisk_rakbowl__fried_shrimp",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "vietnamesisk_rakbowl__ginger_sauce",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{vietnamesisk_rakbowl__rested_coconut_rice}} och {{vietnamesisk_rakbowl__mango_salad}} på tallrikar.",
+        "Toppa med {{vietnamesisk_rakbowl__fried_shrimp}} och {{vietnamesisk_rakbowl__ginger_sauce}}."
+      ],
+      "duration": 3,
+      "tags": [
+        "master"
+      ]
+    }
+  ]
+}

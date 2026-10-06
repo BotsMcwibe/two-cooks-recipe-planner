@@ -1,0 +1,377 @@
+{
+  "masterId": "medelhavskryddad_kyckling",
+  "source": "hellofresh",
+  "createdAt": 1791035423,
+  "basePortions": 4,
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/medelhavskryddad_kyckling/main.jpg",
+    "byNode": {
+      "medelhavskryddad_kyckling__roasting_potato": "assets/recipes/medelhavskryddad_kyckling/steps/roasting_potato.jpg",
+      "medelhavskryddad_kyckling__onion_wedges": "assets/recipes/medelhavskryddad_kyckling/steps/prepped_veg.jpg",
+      "medelhavskryddad_kyckling__roasted_souvlaki_potato": "assets/recipes/medelhavskryddad_kyckling/steps/roasted_souvlaki_potato.jpg",
+      "medelhavskryddad_kyckling__cooked_chicken": "assets/recipes/medelhavskryddad_kyckling/steps/cooked_chicken.jpg",
+      "medelhavskryddad_kyckling__lemon_yoghurt": "assets/recipes/medelhavskryddad_kyckling/steps/lemon_yoghurt.jpg",
+      "medelhavskryddad_kyckling": "assets/recipes/medelhavskryddad_kyckling/steps/plated.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 575,
+    "perPortion": {
+      "energyKcal": 566,
+      "energyKj": 2368,
+      "fatG": 20.8,
+      "saturatedFatG": 10.4,
+      "carbsG": 43.1,
+      "sugarsG": 10.3,
+      "fiberG": 5.4,
+      "proteinG": 45.5,
+      "saltG": 6.3
+    }
+  },
+  "ratings": {
+    "average": 3.6,
+    "count": 112,
+    "source": "hellofresh"
+  },
+  "cooked": {
+    "hfId": "65fc563709492af87e81517f",
+    "at": "2026-10-03T15:12:32+02:00",
+    "source": "photo",
+    "headline": "med souvlakipotatis och citronyoghurt"
+  },
+  "nodes": [
+    {
+      "id": "medelhavskryddad_kyckling__preheated_oven",
+      "name": "Värm Ugn",
+      "outputName": "Förvärmd ugn 240°C",
+      "inputs": [],
+      "steps": [
+        "Värm ugnen till 240°C, eller 220°C varmluft."
+      ],
+      "duration": 1,
+      "wait": 12,
+      "tags": [
+        "prep",
+        "no-timer"
+      ],
+      "tips": [
+        "HF anger 240°C/220°C varmluft — lokal ugnsnode, inte preheated_oven_220 (220/200)."
+      ]
+    },
+    {
+      "id": "medelhavskryddad_kyckling__halved_potato",
+      "name": "Halvera Potatis",
+      "outputName": "Halverad småpotatis",
+      "inputs": [
+        {
+          "id": "small_potato",
+          "amount": 800,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Halvera {{small_potato}}."
+      ],
+      "duration": 4,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "medelhavskryddad_kyckling__roasting_potato",
+      "name": "Rosta Potatis",
+      "outputName": "Halvrostad souvlakipotatis",
+      "inputs": [
+        {
+          "id": "medelhavskryddad_kyckling__preheated_oven",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "medelhavskryddad_kyckling__halved_potato",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        },
+        {
+          "id": "souvlaki_spice",
+          "amount": 2,
+          "unit": "g"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Lägg {{medelhavskryddad_kyckling__halved_potato}} på en plåt med bakplåtspapper (2 plåtar för 4 portioner).",
+        "Blanda med {{olive_oil}}, {{salt}}, {{souvlaki_spice}} och {{pepper}}.",
+        "Rosta i den förvärmda ugnen i 10–20 min (första delen av totalt 25–35 min), tills det återstår 15 min."
+      ],
+      "duration": 4,
+      "wait": 20,
+      "tags": [],
+      "tips": [
+        "Övre gränsen av 25–35 min minus de sista 15 min ger 20 min i första fasen."
+      ]
+    },
+    {
+      "id": "medelhavskryddad_kyckling__onion_wedges",
+      "name": "Skär Lökklyftor",
+      "outputName": "Lökklyftor",
+      "inputs": [
+        {
+          "id": "red_onion",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skär {{red_onion}} i 1 cm breda klyftor."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "medelhavskryddad_kyckling__chopped_tomato",
+      "name": "Grovhacka Tomat",
+      "outputName": "Grovhackad tomat",
+      "inputs": [
+        {
+          "id": "tomato",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Grovhacka {{tomato}}."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "medelhavskryddad_kyckling__crumbled_feta",
+      "name": "Smula Salladsost",
+      "outputName": "Smulad salladsost",
+      "inputs": [
+        {
+          "id": "feta_cheese",
+          "amount": 150,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Smula {{feta_cheese}} i en liten skål."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "medelhavskryddad_kyckling__rinsed_rucola",
+      "name": "Skölj Rucola",
+      "outputName": "Sköljd rucola",
+      "inputs": [
+        {
+          "id": "rucola",
+          "amount": 70,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Skölj {{rucola}}."
+      ],
+      "duration": 1,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "medelhavskryddad_kyckling__roasted_souvlaki_potato",
+      "name": "Rosta Grönsaker",
+      "outputName": "Rostad souvlakipotatis med grönsaker",
+      "inputs": [
+        {
+          "id": "medelhavskryddad_kyckling__roasting_potato",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "medelhavskryddad_kyckling__onion_wedges",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "medelhavskryddad_kyckling__chopped_tomato",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "medelhavskryddad_kyckling__crumbled_feta",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Tillsätt {{medelhavskryddad_kyckling__onion_wedges}}, {{medelhavskryddad_kyckling__chopped_tomato}} och {{medelhavskryddad_kyckling__crumbled_feta}} på plåten med {{medelhavskryddad_kyckling__roasting_potato}}.",
+        "Vänd runt och rosta resterande 15 min."
+      ],
+      "duration": 2,
+      "wait": 15,
+      "tags": []
+    },
+    {
+      "id": "medelhavskryddad_kyckling__seasoned_chicken",
+      "name": "Krydda Kyckling",
+      "outputName": "Kryddad kyckling",
+      "inputs": [
+        {
+          "id": "chicken_breast_bbq",
+          "amount": 600,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "spicemix_pearl",
+          "amount": 8,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Krydda {{chicken_breast_bbq}} med {{salt}} och {{spicemix_pearl}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "medelhavskryddad_kyckling__cooked_chicken",
+      "name": "Stek och Ugnsbaka Kyckling",
+      "outputName": "Stekt kyckling",
+      "inputs": [
+        {
+          "id": "medelhavskryddad_kyckling__seasoned_chicken",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "medelhavskryddad_kyckling__preheated_oven",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i en stor stekpanna på medelhög värme.",
+        "Stek {{medelhavskryddad_kyckling__seasoned_chicken}} i 2 min per sida, eller tills brynt.",
+        "Lägg över kycklingen på en plåt med bakplåtspapper.",
+        "Tillaga i den förvärmda ugnen i 11–12 min, eller tills genomstekt."
+      ],
+      "duration": 5,
+      "wait": 12,
+      "tags": [],
+      "tips": [
+        "Tvätta händer och köksredskap noggrant efter hantering av rå kyckling.",
+        "Kycklingen är färdiglagad när köttet inte längre är rosa i mitten."
+      ]
+    },
+    {
+      "id": "medelhavskryddad_kyckling__lemon_yoghurt",
+      "name": "Blanda Citronyoghurt",
+      "outputName": "Citronyoghurt",
+      "inputs": [
+        {
+          "id": "lemon",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "yoghurt",
+          "amount": 150,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Halvera {{lemon}} och pressa ur 1 msk saft.",
+        "Blanda saften med {{yoghurt}}, {{salt}} och {{pepper}} i en liten skål och ställ åt sidan."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "medelhavskryddad_kyckling",
+      "name": "Medelhavskryddad kyckling",
+      "outputName": "Medelhavskryddad kyckling",
+      "inputs": [
+        {
+          "id": "medelhavskryddad_kyckling__roasted_souvlaki_potato",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "medelhavskryddad_kyckling__rinsed_rucola",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "medelhavskryddad_kyckling__cooked_chicken",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "medelhavskryddad_kyckling__lemon_yoghurt",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Vänd {{medelhavskryddad_kyckling__rinsed_rucola}} med {{medelhavskryddad_kyckling__roasted_souvlaki_potato}} precis innan servering.",
+        "Lägg upp potatis, grönsaker och {{medelhavskryddad_kyckling__cooked_chicken}} på tallrikar.",
+        "Servera med {{medelhavskryddad_kyckling__lemon_yoghurt}}."
+      ],
+      "duration": 3,
+      "wait": 0,
+      "tags": [
+        "master"
+      ]
+    }
+  ]
+}

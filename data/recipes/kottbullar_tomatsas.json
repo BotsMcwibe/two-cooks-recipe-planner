@@ -1,0 +1,321 @@
+{
+  "masterId": "kottbullar_tomatsas",
+  "source": "hellofresh",
+  "createdAt": 1790796736,
+  "basePortions": 4,
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/kottbullar_tomatsas/main.jpg",
+    "byNode": {
+      "kottbullar_tomatsas__roasted_pine_nuts": "assets/recipes/kottbullar_tomatsas/steps/roasted_pine_nuts.jpg",
+      "kottbullar_tomatsas__meatballs": "assets/recipes/kottbullar_tomatsas/steps/meatballs.jpg",
+      "kottbullar_tomatsas__meatballs_tomato_sauce": "assets/recipes/kottbullar_tomatsas/steps/meatballs_tomato_sauce.jpg",
+      "kottbullar_tomatsas__pine_nut_salad": "assets/recipes/kottbullar_tomatsas/steps/pine_nut_salad.jpg",
+      "kottbullar_tomatsas__cooked_pasta": "assets/recipes/kottbullar_tomatsas/steps/cooked_pasta.jpg",
+      "kottbullar_tomatsas": "assets/recipes/kottbullar_tomatsas/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 661,
+    "perPortion": {
+      "energyKcal": 1217,
+      "energyKj": 5093,
+      "fatG": 68.7,
+      "saturatedFatG": 26.8,
+      "carbsG": 97.6,
+      "sugarsG": 18.3,
+      "fiberG": 10,
+      "proteinG": 52.6,
+      "saltG": 9.1
+    }
+  },
+  "ratings": {
+    "average": 4,
+    "count": 2,
+    "source": "hellofresh"
+  },
+  "nodes": [
+    {
+      "id": "kottbullar_tomatsas__roasted_pine_nuts",
+      "name": "Rosta Pinjenötter",
+      "outputName": "Rostade pinjenötter",
+      "inputs": [
+        {
+          "id": "pine_nuts",
+          "amount": 40,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Hetta upp en stor stekpanna på medelhög värme.",
+        "Rosta {{pine_nuts}} i 3–4 min, eller tills gyllene. Lägg över i en skål."
+      ],
+      "duration": 2,
+      "wait": 4,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "kottbullar_tomatsas__pickled_shallot",
+      "name": "Lägg In Schalottenlök",
+      "outputName": "Inlagd schalottenlök",
+      "inputs": [
+        {
+          "id": "shallot",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        },
+        {
+          "id": "water",
+          "amount": 1,
+          "unit": "dl"
+        }
+      ],
+      "steps": [
+        "Skär {{shallot}} i tunna skivor.",
+        "Blanda schalottenlök, {{salt}} och {{water}} (tillräckligt för att täcka löken) i en liten skål och ställ åt sidan."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "kottbullar_tomatsas__meatballs",
+      "name": "Forma och Stek Köttbullar",
+      "outputName": "Stekta köttbullar",
+      "inputs": [
+        {
+          "id": "mixed_mince",
+          "amount": 500,
+          "unit": "g"
+        },
+        {
+          "id": "egg",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "breadcrumbs",
+          "amount": 50,
+          "unit": "g"
+        },
+        {
+          "id": "buon_appetito",
+          "amount": 4,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 2,
+          "unit": "msk"
+        }
+      ],
+      "steps": [
+        "Blanda {{mixed_mince}}, {{egg}}, {{breadcrumbs}}, {{buon_appetito}} (hälften av kryddmixen) och {{salt}} i en stor skål.",
+        "Rulla färsen till köttbullar med fuktiga händer (5 per person) och placera dem på en tallrik.",
+        "Hetta upp {{olive_oil}} i en stor stekpanna på medelhög värme.",
+        "Stek köttbullarna, vänd dem regelbundet, i 3–4 min, eller tills brynta."
+      ],
+      "duration": 10,
+      "wait": 4,
+      "tags": []
+    },
+    {
+      "id": "kottbullar_tomatsas__meatballs_tomato_sauce",
+      "name": "Sjud Köttbullar i Tomatsås",
+      "outputName": "Köttbullar i tomatsås",
+      "inputs": [
+        {
+          "id": "kottbullar_tomatsas__meatballs",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "buon_appetito",
+          "amount": 4,
+          "unit": "g"
+        },
+        {
+          "id": "garlic_herb_seasoning",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "id": "beef_bouillon",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "id": "canned_tomatoes",
+          "amount": 780,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        },
+        {
+          "id": "water",
+          "amount": 3,
+          "unit": "dl"
+        },
+        {
+          "id": "sugar",
+          "amount": 1,
+          "unit": "tsk"
+        },
+        {
+          "id": "butter",
+          "amount": 3,
+          "unit": "msk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Tillsätt resterande {{buon_appetito}}, {{garlic_herb_seasoning}}, {{beef_bouillon}}, {{canned_tomatoes}}, {{salt}}, {{water}} och {{sugar}} till stekpannan med {{kottbullar_tomatsas__meatballs}}.",
+        "Sänk till medellåg värme och sjud i 10–15 min, tills såsen har tjocknat och köttbullarna är genomstekta.",
+        "Rör i {{butter}} och krydda med en nypa salt och {{pepper}}."
+      ],
+      "duration": 3,
+      "wait": 15,
+      "tags": [],
+      "tips": [
+        "Köttbullarna är färdiglagade när de inte längre är rosa i mitten."
+      ]
+    },
+    {
+      "id": "kottbullar_tomatsas__pine_nut_salad",
+      "name": "Blanda Pinjenötssallad",
+      "outputName": "Pinjenötssallad",
+      "inputs": [
+        {
+          "id": "mixed_salad",
+          "amount": 100,
+          "unit": "g"
+        },
+        {
+          "id": "cherry_tomatoes",
+          "amount": 250,
+          "unit": "g"
+        },
+        {
+          "id": "kottbullar_tomatsas__pickled_shallot",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "kottbullar_tomatsas__roasted_pine_nuts",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Skölj {{mixed_salad}}.",
+        "Halvera {{cherry_tomatoes}}.",
+        "Häll av {{kottbullar_tomatsas__pickled_shallot}}.",
+        "Blanda tomater, schalottenlök, {{kottbullar_tomatsas__roasted_pine_nuts}}, salladsmix, {{olive_oil}} och {{salt}} i en stor skål."
+      ],
+      "duration": 5,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "kottbullar_tomatsas__cooked_pasta",
+      "name": "Koka Tagliatelle",
+      "outputName": "Kokt tagliatelle",
+      "inputs": [
+        {
+          "id": "fresh_tagliatelle",
+          "amount": 500,
+          "unit": "g"
+        },
+        {
+          "id": "water",
+          "amount": 2,
+          "unit": "l"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "msk"
+        }
+      ],
+      "steps": [
+        "Koka upp en stor kastrull med saltat {{water}}.",
+        "Tillsätt {{fresh_tagliatelle}} till det kokande vattnet. Koka i 2–3 min, tills al dente.",
+        "Häll av vattnet och lägg tillbaka pastan i kastrullen."
+      ],
+      "duration": 3,
+      "wait": 3,
+      "tags": [],
+      "tips": [
+        "Kokvattnet ska vara lika salt som havsvatten.",
+        "Al dente betyder att pastan är genomkokt men fortfarande har tuggmotstånd."
+      ]
+    },
+    {
+      "id": "kottbullar_tomatsas",
+      "name": "Köttbullar i tomatsås",
+      "outputName": "Köttbullar i tomatsås",
+      "inputs": [
+        {
+          "id": "kottbullar_tomatsas__cooked_pasta",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "kottbullar_tomatsas__meatballs_tomato_sauce",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "parmesan",
+          "amount": 80,
+          "unit": "g"
+        },
+        {
+          "id": "kottbullar_tomatsas__pine_nut_salad",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{kottbullar_tomatsas__cooked_pasta}} i skålar och toppa med {{kottbullar_tomatsas__meatballs_tomato_sauce}}.",
+        "Strö över {{parmesan}} och servera med {{kottbullar_tomatsas__pine_nut_salad}}."
+      ],
+      "duration": 3,
+      "tags": [
+        "master"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,209 @@
+{
+  "masterId": "prosciutto_pita_pizza",
+  "source": "hellofresh",
+  "createdAt": 1790853972,
+  "basePortions": 4,
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/prosciutto_pita_pizza/main.jpg",
+    "byNode": {
+      "prosciutto_pita_pizza__roasted_pita": "assets/recipes/prosciutto_pita_pizza/steps/roasted_pita.jpg",
+      "prosciutto_pita_pizza__walnut_pesto": "assets/recipes/prosciutto_pita_pizza/steps/walnut_pesto.jpg",
+      "prosciutto_pita_pizza": "assets/recipes/prosciutto_pita_pizza/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 215,
+    "perPortion": {
+      "energyKcal": 771,
+      "energyKj": 3226,
+      "fatG": 55.8,
+      "saturatedFatG": 11.6,
+      "carbsG": 37,
+      "sugarsG": 1.8,
+      "fiberG": 2.5,
+      "proteinG": 29.1,
+      "saltG": 4.6
+    }
+  },
+  "ratings": {
+    "average": 4,
+    "count": 2,
+    "source": "hellofresh"
+  },
+  "nodes": [
+    {
+      "id": "prosciutto_pita_pizza__preheated_oven_200",
+      "name": "Värm Ugnen",
+      "outputName": "Förvärmd ugn (200°C)",
+      "inputs": [],
+      "steps": [
+        "Värm ugnen till 200°C, eller 180°C varmluft."
+      ],
+      "duration": 1,
+      "wait": 12,
+      "tags": [
+        "prep",
+        "no-timer"
+      ],
+      "tips": [
+        "HF anger 200°C/180°C varmluft — lokal ugnsnode, inte preheated_oven_220.",
+        "Ugnen tar vanligtvis 10–15 minuter att värmas upp."
+      ]
+    },
+    {
+      "id": "prosciutto_pita_pizza__chopped_walnuts",
+      "name": "Hacka Valnötter",
+      "outputName": "Finhackade valnötter",
+      "inputs": [
+        {
+          "id": "walnuts",
+          "amount": 40,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Finhacka {{walnuts}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "prosciutto_pita_pizza__chopped_basil",
+      "name": "Hacka Basilika",
+      "outputName": "Finhackad basilika",
+      "inputs": [
+        {
+          "id": "fresh_basil",
+          "amount": 1,
+          "unit": "kruka"
+        }
+      ],
+      "steps": [
+        "Finhacka {{fresh_basil}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "prosciutto_pita_pizza__walnut_pesto",
+      "name": "Gör Valnötspesto",
+      "outputName": "Valnötspesto",
+      "inputs": [
+        {
+          "id": "prosciutto_pita_pizza__chopped_walnuts",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "prosciutto_pita_pizza__chopped_basil",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "grated_cheese",
+          "amount": 20,
+          "unit": "g"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 4,
+          "unit": "msk"
+        },
+        {
+          "id": "salt",
+          "amount": 0.25,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Blanda {{prosciutto_pita_pizza__chopped_walnuts}}, {{prosciutto_pita_pizza__chopped_basil}}, {{grated_cheese}}, {{olive_oil}}, {{salt}} och {{pepper}} i en liten skål."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Hälften av den rivna osten går till peston; andra hälften strös på pitabrödet innan rostning."
+      ]
+    },
+    {
+      "id": "prosciutto_pita_pizza__roasted_pita",
+      "name": "Rosta Pitabröd",
+      "outputName": "Rostade pitabröd med ost",
+      "inputs": [
+        {
+          "id": "prosciutto_pita_pizza__preheated_oven_200",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "pita_bread",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "grated_cheese",
+          "amount": 20,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Placera {{pita_bread}} på bakplåtspapper direkt på gallret.",
+        "Strö över {{grated_cheese}}.",
+        "Rosta i den förvärmda ugnen ({{prosciutto_pita_pizza__preheated_oven_200}}) i 3–4 min, eller tills uppvärmda."
+      ],
+      "duration": 2,
+      "wait": 4,
+      "tags": []
+    },
+    {
+      "id": "prosciutto_pita_pizza",
+      "name": "Prosciuttotoppad pitapizza",
+      "outputName": "Prosciuttotoppad pitapizza",
+      "inputs": [
+        {
+          "id": "prosciutto_pita_pizza__roasted_pita",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "prosciutto_pita_pizza__walnut_pesto",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "rucola",
+          "amount": 40,
+          "unit": "g"
+        },
+        {
+          "id": "prosciutto",
+          "amount": 100,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Skölj {{rucola}}.",
+        "Lägg upp {{prosciutto_pita_pizza__roasted_pita}} på tallrikar och toppa med {{rucola}} och {{prosciutto}}.",
+        "Ringla {{prosciutto_pita_pizza__walnut_pesto}} över pitapizzan."
+      ],
+      "duration": 3,
+      "wait": 0,
+      "tags": [
+        "master"
+      ]
+    }
+  ]
+}

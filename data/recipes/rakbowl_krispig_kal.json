@@ -1,0 +1,338 @@
+{
+  "masterId": "rakbowl_krispig_kal",
+  "source": "linas",
+  "createdAt": 1791056876,
+  "basePortions": 4,
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/rakbowl_krispig_kal/main.jpg"
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "perPortion": {
+      "energyKcal": 743,
+      "fatG": 27.42,
+      "carbsG": 98.42,
+      "proteinG": 25.73
+    }
+  },
+  "ratings": {
+    "average": 4.09,
+    "count": 259,
+    "source": "linas"
+  },
+  "nodes": [
+    {
+      "id": "rakbowl_krispig_kal__rice_marinade",
+      "name": "Blanda Rismarinad",
+      "outputName": "Rismarinad",
+      "inputs": [
+        {
+          "id": "white_wine_vinegar",
+          "amount": 30,
+          "unit": "ml"
+        },
+        {
+          "id": "sugar",
+          "amount": 1,
+          "unit": "msk"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Blanda {{white_wine_vinegar}}, {{sugar}} och {{salt}} i en skål."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Råraden är 1 påse vitvinsvinäger 30ml. Lagrad som 30 ml, inte 1 påse."
+      ]
+    },
+    {
+      "id": "rakbowl_krispig_kal__cooked_rice",
+      "name": "Koka Jasminris",
+      "outputName": "Kokt jasminris",
+      "inputs": [
+        {
+          "id": "jasmine_rice",
+          "amount": 405,
+          "unit": "g"
+        },
+        {
+          "id": "water",
+          "amount": 6,
+          "unit": "dl"
+        }
+      ],
+      "steps": [
+        "Tvätta {{jasmine_rice}} under kallt vatten ca 5 min. Lägg i en kastrull med {{water}} och koka upp.",
+        "Sänk till låg värme och koka under lock ca 10 min, tills riset är mjukt."
+      ],
+      "duration": 6,
+      "tags": [],
+      "wait": 10,
+      "tips": [
+        "Två rårader, 270 g och 135 g, är samma kastrull och är summerade till 405 g.",
+        "5 min skölj är aktiv och ligger i duration. 10 min är sista stegets wait."
+      ]
+    },
+    {
+      "id": "rakbowl_krispig_kal__dressed_rice",
+      "name": "Blanda Marinerat Ris",
+      "outputName": "Marinerat ris",
+      "inputs": [
+        {
+          "id": "rakbowl_krispig_kal__cooked_rice",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "rakbowl_krispig_kal__rice_marinade",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Låt {{rakbowl_krispig_kal__cooked_rice}} svalna något. Blanda försiktigt ner {{rakbowl_krispig_kal__rice_marinade}} så riskornen separerar."
+      ],
+      "duration": 3,
+      "tags": [],
+      "tips": [
+        "\"Svalna något\" har ingen minut, därför ingen wait."
+      ]
+    },
+    {
+      "id": "rakbowl_krispig_kal__pickle",
+      "name": "Pickla Gurka",
+      "outputName": "Ingefärspicklad gurka",
+      "inputs": [
+        {
+          "id": "grated_ginger",
+          "amount": 0.67,
+          "unit": "förp"
+        },
+        {
+          "id": "water",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "vinegar_spirit",
+          "amount": 1,
+          "unit": "msk"
+        },
+        {
+          "id": "sugar",
+          "amount": 1,
+          "unit": "msk"
+        },
+        {
+          "id": "cucumber",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Blanda {{water}}, {{vinegar_spirit}}, {{sugar}} och {{grated_ginger}} i en bunke.",
+        "Hyvla {{cucumber}} tunt och blanda ner. Låt dra minst 15 min."
+      ],
+      "duration": 4,
+      "tags": [
+        "prep"
+      ],
+      "wait": 15,
+      "tips": [
+        "Riven ingefära är ⅔ förp, avrundat till 0.67. Tillsammans med räkornas ⅓ (0.33) blir det 1 förp.",
+        "15 min är sista stegets wait. Kommentarens mandolin är ett tips, ingen extra mängd."
+      ]
+    },
+    {
+      "id": "rakbowl_krispig_kal__shrimp",
+      "name": "Marinera Räkor",
+      "outputName": "Marinerade räkor",
+      "inputs": [
+        {
+          "id": "grated_ginger",
+          "amount": 0.33,
+          "unit": "förp"
+        },
+        {
+          "id": "lime",
+          "amount": 0.5,
+          "unit": "st"
+        },
+        {
+          "id": "soy_sauce",
+          "amount": 2.5,
+          "unit": "msk"
+        },
+        {
+          "id": "sesame_oil",
+          "amount": 0.5,
+          "unit": "msk"
+        },
+        {
+          "id": "shrimp",
+          "amount": 1,
+          "unit": "förp"
+        }
+      ],
+      "steps": [
+        "Blanda {{grated_ginger}} med pressad saft från {{lime}}, {{soy_sauce}} och {{sesame_oil}}.",
+        "Häll av {{shrimp}} och blanda ner. Ställ kallt till servering."
+      ],
+      "duration": 4,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "⅓ förp ingefära är avrundat till 0.33. Räkor är 1 förp utan vikt.",
+        "\"Till servering\" har ingen minut, därför ingen wait. Japansk soja är mappad till sojasås."
+      ]
+    },
+    {
+      "id": "rakbowl_krispig_kal__mayo",
+      "name": "Blanda Sojamajonnäs",
+      "outputName": "Sojamajonnäs",
+      "inputs": [
+        {
+          "id": "mayonnaise",
+          "amount": 1,
+          "unit": "dl"
+        },
+        {
+          "id": "soy_sauce",
+          "amount": 0.5,
+          "unit": "msk"
+        }
+      ],
+      "steps": [
+        "Blanda {{mayonnaise}} och {{soy_sauce}} i en liten skål."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Sojan här är ½ msk, inte hopslagen med räkmarinadens 2½ msk."
+      ]
+    },
+    {
+      "id": "rakbowl_krispig_kal__cabbage",
+      "name": "Rosta Sesam och Strimla Kål",
+      "outputName": "Rostad sesam och krispig kål",
+      "inputs": [
+        {
+          "id": "sesame_seeds",
+          "amount": 2,
+          "unit": "förp"
+        },
+        {
+          "id": "red_cabbage",
+          "amount": 300,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Rosta {{sesame_seeds}} i en torr panna tills de är gyllenbruna.",
+        "Finstrimla {{red_cabbage}} och lägg i iskallt vatten så den blir krispig."
+      ],
+      "duration": 5,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Varken rostning eller isbad har en minut, därför ingen wait.",
+        "Sesam är 2 förp utan vikt. Rödkål är hel 300 g, inte den förskurna varianten."
+      ]
+    },
+    {
+      "id": "rakbowl_krispig_kal__spinach",
+      "name": "Dressa Spenat",
+      "outputName": "Sesamdressad spenat",
+      "inputs": [
+        {
+          "id": "baby_spinach",
+          "amount": 75,
+          "unit": "g"
+        },
+        {
+          "id": "sesame_oil",
+          "amount": 0.5,
+          "unit": "msk"
+        },
+        {
+          "id": "lime",
+          "amount": 0.5,
+          "unit": "st"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "krm"
+        }
+      ],
+      "steps": [
+        "Blanda {{baby_spinach}} med {{sesame_oil}}, pressad saft från {{lime}} och {{salt}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Andra limehalvan och andra sesamoljan. Salt är ½ krm enligt rådatan."
+      ]
+    },
+    {
+      "id": "rakbowl_krispig_kal",
+      "name": "Räkbowl med krispig kål, rostade sesamfrön, picklad gurka och sojamajonnäs",
+      "outputName": "Räkbowl med krispig kål, rostade sesamfrön, picklad gurka och sojamajonnäs",
+      "inputs": [
+        {
+          "id": "rakbowl_krispig_kal__dressed_rice",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "rakbowl_krispig_kal__mayo",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "rakbowl_krispig_kal__cabbage",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "rakbowl_krispig_kal__shrimp",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "rakbowl_krispig_kal__spinach",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "rakbowl_krispig_kal__pickle",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{rakbowl_krispig_kal__dressed_rice}} i skålar. Ringla över {{rakbowl_krispig_kal__mayo}} och strö på sesam från {{rakbowl_krispig_kal__cabbage}}.",
+        "Lägg {{rakbowl_krispig_kal__shrimp}} i mitten. Lägg kålen, {{rakbowl_krispig_kal__spinach}} och {{rakbowl_krispig_kal__pickle}} runt om."
+      ],
+      "duration": 4,
+      "tags": [
+        "master"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,220 @@
+{
+  "masterId": "tex_mex_pork_burrito",
+  "source": "hellofresh",
+  "createdAt": 1790853154,
+  "basePortions": 4,
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/tex_mex_pork_burrito/main.jpg",
+    "byNode": {
+      "tex_mex_pork_burrito__warmed_tortillas": "assets/recipes/tex_mex_pork_burrito/steps/warmed_tortillas.jpg",
+      "tex_mex_pork_burrito__fried_pork": "assets/recipes/tex_mex_pork_burrito/steps/fried_pork.jpg",
+      "tex_mex_pork_burrito__lime_salad": "assets/recipes/tex_mex_pork_burrito/steps/lime_salad.jpg",
+      "tex_mex_pork_burrito": "assets/recipes/tex_mex_pork_burrito/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 370,
+    "perPortion": {
+      "energyKcal": 780,
+      "energyKj": 3262,
+      "fatG": 52.3,
+      "saturatedFatG": 8.5,
+      "carbsG": 43.2,
+      "sugarsG": 6.6,
+      "fiberG": 4.6,
+      "proteinG": 32.4,
+      "saltG": 4
+    }
+  },
+  "ratings": {
+    "average": 4,
+    "count": 2,
+    "source": "hellofresh"
+  },
+  "nodes": [
+    {
+      "id": "tex_mex_pork_burrito__warmed_tortillas",
+      "name": "Värm Tortillas",
+      "outputName": "Varma tortillas",
+      "inputs": [
+        {
+          "id": "tortillas",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Värm {{tortillas}} i mikrovågsugnen i ca 30–60 sek, eller tills mjuka och varma."
+      ],
+      "duration": 1,
+      "wait": 1,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Tortillas kan ätas rätt ur påsen, men vi rekommenderar att värma dem.",
+        "Utan mikrovågsugn: värm ugnen till 220 °C/200 °C varmluft och värm tortillas täckta med folie i 4–5 min."
+      ]
+    },
+    {
+      "id": "tex_mex_pork_burrito__seasoned_pork",
+      "name": "Strimla och Krydda Fläsk",
+      "outputName": "Kryddat fläskkött",
+      "inputs": [
+        {
+          "id": "sliced_pork_chop",
+          "amount": 250,
+          "unit": "g"
+        },
+        {
+          "id": "tex_mex",
+          "amount": 5,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 0.25,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Skär {{sliced_pork_chop}} i 2 cm tjocka strimlor på en separat skärbräda.",
+        "Krydda med {{tex_mex}} och {{salt}}."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "tex_mex_pork_burrito__fried_pork",
+      "name": "Stek Fläskkött",
+      "outputName": "Stekt Tex-Mex-fläsk",
+      "inputs": [
+        {
+          "id": "tex_mex_pork_burrito__seasoned_pork",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i en stor stekpanna på medelhög värme.",
+        "Stek {{tex_mex_pork_burrito__seasoned_pork}} i 3–4 min, eller tills brynt och genomstekt."
+      ],
+      "duration": 4,
+      "wait": 0,
+      "tags": [],
+      "tips": [
+        "Köttet är färdiglagat när det är utan inslag av rosa."
+      ]
+    },
+    {
+      "id": "tex_mex_pork_burrito__sriracha_mayo",
+      "name": "Gör Srirachamajonnäs",
+      "outputName": "Srirachamajonnäs",
+      "inputs": [
+        {
+          "id": "mayonnaise",
+          "amount": 100,
+          "unit": "g"
+        },
+        {
+          "id": "sriracha",
+          "amount": 20,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Blanda {{mayonnaise}} och {{sriracha}} i en liten skål."
+      ],
+      "duration": 1,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "tex_mex_pork_burrito__lime_salad",
+      "name": "Gör Kålsallad med Limedressing",
+      "outputName": "Kålsallad med limedressing",
+      "inputs": [
+        {
+          "id": "lime",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 0.5,
+          "unit": "msk"
+        },
+        {
+          "id": "salt",
+          "amount": 0.25,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "mixed_salad",
+          "amount": 150,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Halvera {{lime}}.",
+        "Blanda 1 msk limesaft, {{olive_oil}}, {{salt}} och {{pepper}} i en stor skål.",
+        "Vänd ner {{mixed_salad}} i skålen med dressingen."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "tex_mex_pork_burrito",
+      "name": "Tex-Mex-kryddad fläskköttsburrito",
+      "outputName": "Tex-Mex-kryddad fläskköttsburrito",
+      "inputs": [
+        {
+          "id": "tex_mex_pork_burrito__warmed_tortillas",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "tex_mex_pork_burrito__lime_salad",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "tex_mex_pork_burrito__sriracha_mayo",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "tex_mex_pork_burrito__fried_pork",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Placera {{tex_mex_pork_burrito__lime_salad}}, {{tex_mex_pork_burrito__sriracha_mayo}} och {{tex_mex_pork_burrito__fried_pork}} i mitten på {{tex_mex_pork_burrito__warmed_tortillas}}.",
+        "Vik in sidorna och rulla ihop till burritos."
+      ],
+      "duration": 3,
+      "wait": 0,
+      "tags": [
+        "master"
+      ]
+    }
+  ]
+}

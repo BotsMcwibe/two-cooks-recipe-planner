@@ -1,0 +1,431 @@
+{
+  "masterId": "honungsstekt_grillost_tzatziki",
+  "source": "hellofresh",
+  "createdAt": 1791040575,
+  "basePortions": 4,
+  "sharedPrep": [
+    "preheated_oven_220"
+  ],
+  "images": {
+    "main": "assets/recipes/honungsstekt_grillost_tzatziki/main.jpg",
+    "byNode": {
+      "honungsstekt_grillost_tzatziki__roasted_fries_first": "assets/recipes/honungsstekt_grillost_tzatziki/steps/oregano_fries.jpg",
+      "honungsstekt_grillost_tzatziki__roasted_tomatoes": "assets/recipes/honungsstekt_grillost_tzatziki/steps/roasted_tomatoes.jpg",
+      "honungsstekt_grillost_tzatziki__sliced_halloumi": "assets/recipes/honungsstekt_grillost_tzatziki/steps/sliced_halloumi.jpg",
+      "honungsstekt_grillost_tzatziki__tomato_salad": "assets/recipes/honungsstekt_grillost_tzatziki/steps/tomato_salad.jpg",
+      "honungsstekt_grillost_tzatziki__tzatziki": "assets/recipes/honungsstekt_grillost_tzatziki/steps/tomato_salad.jpg",
+      "honungsstekt_grillost_tzatziki__fried_halloumi": "assets/recipes/honungsstekt_grillost_tzatziki/steps/fried_halloumi.jpg",
+      "honungsstekt_grillost_tzatziki": "assets/recipes/honungsstekt_grillost_tzatziki/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 608,
+    "perPortion": {
+      "energyKcal": 638,
+      "energyKj": 2668,
+      "fatG": 30.7,
+      "saturatedFatG": 24.2,
+      "carbsG": 61.7,
+      "sugarsG": 16.7,
+      "fiberG": 7.9,
+      "proteinG": 32.5,
+      "saltG": 3.1
+    }
+  },
+  "cooked": {
+    "hfId": "6502f25453d80a036210ed91",
+    "at": "2026-10-03T15:12:32+02:00",
+    "source": "photo",
+    "headline": "med mild tzatziki och oreganokryddade pommes"
+  },
+  "nodes": [
+    {
+      "id": "honungsstekt_grillost_tzatziki__cut_fries",
+      "name": "Skär Pommes",
+      "outputName": "Råa pommes",
+      "inputs": [
+        {
+          "id": "potato",
+          "amount": 1000,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Skär {{potato}} i 0,5 cm tunna pommes."
+      ],
+      "duration": 6,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "honungsstekt_grillost_tzatziki__roasted_fries_first",
+      "name": "Rosta Oreganopommes",
+      "outputName": "Halvrostade oreganopommes",
+      "inputs": [
+        {
+          "id": "preheated_oven_220",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "honungsstekt_grillost_tzatziki__cut_fries",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "dried_oregano",
+          "amount": 1,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Lägg {{honungsstekt_grillost_tzatziki__cut_fries}} på en plåt med bakplåtspapper.",
+        "Blanda med {{olive_oil}}, {{dried_oregano}}, en nypa {{salt}} och {{pepper}}.",
+        "Rosta i {{preheated_oven_220}} i ca 25 min, tills det återstår 5 min av totalt 25–30 min."
+      ],
+      "duration": 3,
+      "wait": 25,
+      "tags": [],
+      "tips": [
+        "Första fasen är övre gränsen 30 min minus de 5 min som återstår när halloumin steks.",
+        "Oregano är 1 g (fylld enhet). Stegtexten säger 1/2 paket vid 2 portioner. Olivolja, salt och peppar är stjärnmärkta utan mängd."
+      ]
+    },
+    {
+      "id": "honungsstekt_grillost_tzatziki__roasted_fries",
+      "name": "Rosta Pommes Klart",
+      "outputName": "Oreganokryddade pommes",
+      "inputs": [
+        {
+          "id": "honungsstekt_grillost_tzatziki__roasted_fries_first",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Rosta {{honungsstekt_grillost_tzatziki__roasted_fries_first}} i ytterligare 5 min, eller tills de är gyllene."
+      ],
+      "duration": 1,
+      "wait": 5,
+      "tags": []
+    },
+    {
+      "id": "honungsstekt_grillost_tzatziki__halved_tomatoes",
+      "name": "Halvera Tomater",
+      "outputName": "Halverade körsbärstomater",
+      "inputs": [
+        {
+          "id": "cherry_tomatoes",
+          "amount": 250,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Halvera {{cherry_tomatoes}}."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "honungsstekt_grillost_tzatziki__roasted_tomatoes",
+      "name": "Rosta Tomater",
+      "outputName": "Rostade körsbärstomater",
+      "inputs": [
+        {
+          "id": "preheated_oven_220",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "honungsstekt_grillost_tzatziki__halved_tomatoes",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Lägg {{honungsstekt_grillost_tzatziki__halved_tomatoes}} på en ny plåt med bakplåtspapper.",
+        "Blanda med en generös skvätt {{olive_oil}}, en nypa {{salt}} och {{pepper}}.",
+        "Rosta i {{preheated_oven_220}} i 15–20 min."
+      ],
+      "duration": 2,
+      "wait": 20,
+      "tags": [],
+      "tips": [
+        "Egen klocka, inte hopslagen med pommesens 25–30 min."
+      ]
+    },
+    {
+      "id": "honungsstekt_grillost_tzatziki__tzatziki_veg",
+      "name": "Förbered Vitlök och Riven Gurka",
+      "outputName": "Hackad vitlök och riven gurka",
+      "inputs": [
+        {
+          "id": "garlic",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "cucumber",
+          "amount": 0.5,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Finhacka eller pressa {{garlic}}.",
+        "Riv {{cucumber}} grovt och pressa ur så mycket vätska som möjligt."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Råreceptet: hälften av gurkan rivs till tzatzikin, resten skivas till salladen. Gurka är 1 st vid både 2 och 4 portioner."
+      ]
+    },
+    {
+      "id": "honungsstekt_grillost_tzatziki__salad_veg",
+      "name": "Skiva Gurka och Skölj Sallad",
+      "outputName": "Skivad gurka och salladsmix",
+      "inputs": [
+        {
+          "id": "cucumber",
+          "amount": 0.5,
+          "unit": "st"
+        },
+        {
+          "id": "mixed_salad",
+          "amount": 100,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Skär {{cucumber}} i skivor eller halvmånar.",
+        "Skölj {{mixed_salad}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "honungsstekt_grillost_tzatziki__lemon_wedges",
+      "name": "Skär Citronklyftor",
+      "outputName": "Citronklyftor",
+      "inputs": [
+        {
+          "id": "lemon",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Dela {{lemon}} i klyftor."
+      ],
+      "duration": 1,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Citron är 1 st vid både 2 och 4 portioner. Inte uppskalad.",
+        "Klyftorna delas: en skvätt till tomatsalladen (0,25 st), en skvätt till halloumin (0,25 st) och resten serveras (0,5 st). Råreceptet anger ingen proportion."
+      ]
+    },
+    {
+      "id": "honungsstekt_grillost_tzatziki__tzatziki",
+      "name": "Blanda Tzatziki",
+      "outputName": "Mild tzatziki",
+      "inputs": [
+        {
+          "id": "honungsstekt_grillost_tzatziki__tzatziki_veg",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "yoghurt",
+          "amount": 150,
+          "unit": "ml"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Blanda {{yoghurt}}, {{honungsstekt_grillost_tzatziki__tzatziki_veg}}, en nypa {{salt}} och {{pepper}} i en skål."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "honungsstekt_grillost_tzatziki__tomato_salad",
+      "name": "Blanda Tomatsallad",
+      "outputName": "Ugnsrostad tomatsallad",
+      "inputs": [
+        {
+          "id": "honungsstekt_grillost_tzatziki__salad_veg",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "honungsstekt_grillost_tzatziki__roasted_tomatoes",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "honungsstekt_grillost_tzatziki__lemon_wedges",
+          "amount": 0.25,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Blanda {{honungsstekt_grillost_tzatziki__salad_veg}} med {{honungsstekt_grillost_tzatziki__roasted_tomatoes}} och en skvätt saft från {{honungsstekt_grillost_tzatziki__lemon_wedges}} i en skål."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "En skvätt olivolja i salladen är valfri och har ingen mängd, så den är inte med som ingrediens."
+      ]
+    },
+    {
+      "id": "honungsstekt_grillost_tzatziki__sliced_halloumi",
+      "name": "Skär Halloumi",
+      "outputName": "Halloumiskivor",
+      "inputs": [
+        {
+          "id": "halloumi",
+          "amount": 400,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Skär {{halloumi}} i två skivor per person."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "honungsstekt_grillost_tzatziki__fried_halloumi",
+      "name": "Stek Halloumi",
+      "outputName": "Honungsstekt halloumi",
+      "inputs": [
+        {
+          "id": "honungsstekt_grillost_tzatziki__sliced_halloumi",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "honungsstekt_grillost_tzatziki__lemon_wedges",
+          "amount": 0.25,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "honey",
+          "amount": 25,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i en stor stekpanna på medelhög värme när det återstår 5 min av pommesens tid i ugnen.",
+        "Stek {{honungsstekt_grillost_tzatziki__sliced_halloumi}} i 2 min på varje sida, eller tills de är gyllene.",
+        "Ringla över {{honey}} och en skvätt saft från {{honungsstekt_grillost_tzatziki__lemon_wedges}} när 1 min återstår, och vänd skivorna så de täcks."
+      ],
+      "duration": 5,
+      "wait": 0,
+      "tags": [],
+      "tips": [
+        "2 min per sida är hands-on stek, därför duration och wait 0. Honungen går på under sista minuten, inte som egen klocka."
+      ]
+    },
+    {
+      "id": "honungsstekt_grillost_tzatziki",
+      "name": "Honungsstekt grillost med mild tzatziki",
+      "outputName": "Honungsstekt grillost med mild tzatziki",
+      "inputs": [
+        {
+          "id": "honungsstekt_grillost_tzatziki__roasted_fries",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "honungsstekt_grillost_tzatziki__fried_halloumi",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "honungsstekt_grillost_tzatziki__tomato_salad",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "honungsstekt_grillost_tzatziki__tzatziki",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "honungsstekt_grillost_tzatziki__lemon_wedges",
+          "amount": 0.5,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{honungsstekt_grillost_tzatziki__roasted_fries}}, {{honungsstekt_grillost_tzatziki__fried_halloumi}} och {{honungsstekt_grillost_tzatziki__tomato_salad}} på tallrikar.",
+        "Servera med {{honungsstekt_grillost_tzatziki__tzatziki}} och resterande {{honungsstekt_grillost_tzatziki__lemon_wedges}}."
+      ],
+      "duration": 3,
+      "tags": [
+        "master"
+      ]
+    }
+  ]
+}

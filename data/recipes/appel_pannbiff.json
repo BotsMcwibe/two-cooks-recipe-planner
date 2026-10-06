@@ -1,0 +1,421 @@
+{
+  "masterId": "appel_pannbiff",
+  "source": "hellofresh",
+  "createdAt": 1791037531,
+  "basePortions": 4,
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/appel_pannbiff/main.jpg",
+    "byNode": {
+      "appel_pannbiff__roasted_potatoes": "assets/recipes/appel_pannbiff/steps/roasted_potatoes.jpg",
+      "appel_pannbiff__formed_patties": "assets/recipes/appel_pannbiff/steps/formed_patties.jpg",
+      "appel_pannbiff__fried_patties": "assets/recipes/appel_pannbiff/steps/fried_patties.jpg",
+      "appel_pannbiff__cabbage_salad": "assets/recipes/appel_pannbiff/steps/cabbage_salad.jpg",
+      "appel_pannbiff": "assets/recipes/appel_pannbiff/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 630,
+    "perPortion": {
+      "energyKcal": 628,
+      "energyKj": 2628,
+      "fatG": 26,
+      "saturatedFatG": 13.4,
+      "carbsG": 59.1,
+      "sugarsG": 21.6,
+      "proteinG": 36.3,
+      "saltG": 2.6
+    }
+  },
+  "ratings": {
+    "average": 3.5,
+    "count": 205,
+    "source": "hellofresh"
+  },
+  "cooked": {
+    "hfId": "64ae8cefb22c4a8c5919a9c8",
+    "at": "2026-10-03T15:12:32+02:00",
+    "source": "photo",
+    "headline": "med kålsallad och kryddad potatis"
+  },
+  "nodes": [
+    {
+      "id": "appel_pannbiff__preheated_oven",
+      "name": "Värm Ugnen",
+      "outputName": "Förvärmd ugn (240°C)",
+      "inputs": [],
+      "steps": [
+        "Värm ugnen till 240°C, eller 220°C varmluft."
+      ],
+      "duration": 1,
+      "wait": 12,
+      "tags": [
+        "prep",
+        "no-timer"
+      ],
+      "tips": [
+        "HF anger 240°C / 220°C varmluft — lokal ugnsnode, inte preheated_oven_220."
+      ]
+    },
+    {
+      "id": "appel_pannbiff__cut_potatoes",
+      "name": "Skär Potatis",
+      "outputName": "Potatisklyftor",
+      "inputs": [
+        {
+          "id": "small_potato",
+          "amount": 800,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Skär {{small_potato}} (oskalad) i klyftor."
+      ],
+      "duration": 6,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "appel_pannbiff__roasted_potatoes",
+      "name": "Rosta Potatis",
+      "outputName": "Kryddad klyftpotatis",
+      "inputs": [
+        {
+          "id": "appel_pannbiff__preheated_oven",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "appel_pannbiff__cut_potatoes",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "mamas_favorit",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "msk"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Lägg {{appel_pannbiff__cut_potatoes}} på en plåt med bakplåtspapper.",
+        "Blanda med {{olive_oil}}, {{mamas_favorit}}, {{salt}} och {{pepper}}.",
+        "Rosta i ugnen i 25–35 min, tills mjuka."
+      ],
+      "duration": 4,
+      "wait": 35,
+      "tags": []
+    },
+    {
+      "id": "appel_pannbiff__sliced_onion",
+      "name": "Skiva Lök",
+      "outputName": "Skivad lök",
+      "inputs": [
+        {
+          "id": "onion",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skär {{onion}} i tunna skivor."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "appel_pannbiff__softened_onion",
+      "name": "Stek Lök Mjuk",
+      "outputName": "Mjukstekt lök",
+      "inputs": [
+        {
+          "id": "appel_pannbiff__sliced_onion",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i en stor stekpanna på medelvärme.",
+        "Stek {{appel_pannbiff__sliced_onion}} i 5–10 min, eller tills mjuk."
+      ],
+      "duration": 2,
+      "wait": 10,
+      "tags": []
+    },
+    {
+      "id": "appel_pannbiff__caramelized_onion",
+      "name": "Karamellisera Lök",
+      "outputName": "Karamelliserad lök",
+      "inputs": [
+        {
+          "id": "appel_pannbiff__softened_onion",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "butter",
+          "amount": 1,
+          "unit": "msk"
+        }
+      ],
+      "steps": [
+        "Tillsätt {{butter}} till {{appel_pannbiff__softened_onion}} och stek i ytterligare 5 min, tills karamelliserad."
+      ],
+      "duration": 1,
+      "wait": 5,
+      "tags": []
+    },
+    {
+      "id": "appel_pannbiff__grated_apple",
+      "name": "Riv Äpple",
+      "outputName": "Rivet äpple",
+      "inputs": [
+        {
+          "id": "apple",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skala och riv {{apple}} grovt."
+      ],
+      "duration": 4,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "appel_pannbiff__formed_patties",
+      "name": "Forma Pannbiffar",
+      "outputName": "Äppelpannbiffar",
+      "inputs": [
+        {
+          "id": "ground_beef",
+          "amount": 500,
+          "unit": "g"
+        },
+        {
+          "id": "appel_pannbiff__grated_apple",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "breadcrumbs",
+          "amount": 25,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Blanda {{ground_beef}}, {{appel_pannbiff__grated_apple}}, {{breadcrumbs}}, {{salt}} och {{pepper}} i en stor skål.",
+        "Forma till 4 biffar (1 per person) med fuktiga händer."
+      ],
+      "duration": 8,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "appel_pannbiff__fried_patties",
+      "name": "Stek Pannbiffar",
+      "outputName": "Stekta äppelpannbiffar",
+      "inputs": [
+        {
+          "id": "appel_pannbiff__formed_patties",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i en stor stekpanna på medelhög värme.",
+        "Stek {{appel_pannbiff__formed_patties}} i 4–5 min per sida, tills de inte längre är rosa i mitten."
+      ],
+      "duration": 10,
+      "wait": 0,
+      "tags": [],
+      "tips": [
+        "Biffarna är klara när de inte längre är rosa i mitten. Vändningen är hands-on, ingen passiv timer."
+      ]
+    },
+    {
+      "id": "appel_pannbiff__pressed_garlic",
+      "name": "Pressa Vitlök",
+      "outputName": "Pressad vitlök",
+      "inputs": [
+        {
+          "id": "garlic",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Finhacka eller pressa {{garlic}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "appel_pannbiff__grated_carrot",
+      "name": "Riv Morot",
+      "outputName": "Riven morot",
+      "inputs": [
+        {
+          "id": "carrot",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Riv {{carrot}} (oskalad) grovt."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "appel_pannbiff__garlic_yoghurt",
+      "name": "Gör Vitlöksyoghurt",
+      "outputName": "Vitlöksyoghurt",
+      "inputs": [
+        {
+          "id": "yoghurt",
+          "amount": 2,
+          "unit": "pkt"
+        },
+        {
+          "id": "appel_pannbiff__pressed_garlic",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Blanda {{yoghurt}} och {{appel_pannbiff__pressed_garlic}} i en skål.",
+        "Krydda med {{salt}} och {{pepper}}."
+      ],
+      "duration": 3,
+      "tags": []
+    },
+    {
+      "id": "appel_pannbiff__cabbage_salad",
+      "name": "Gör Kålsallad",
+      "outputName": "Kålsallad med sparad vitlöksyoghurt",
+      "inputs": [
+        {
+          "id": "cabbage_mix",
+          "amount": 300,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "appel_pannbiff__grated_carrot",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "appel_pannbiff__garlic_yoghurt",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Blanda {{cabbage_mix}} och {{salt}} i en stor skål. Massera med händerna i 30 sek.",
+        "Rör i {{appel_pannbiff__grated_carrot}} och hälften av {{appel_pannbiff__garlic_yoghurt}}. Spara resten till servering."
+      ],
+      "duration": 4,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "appel_pannbiff",
+      "name": "Äppelpannbiff med kålsallad",
+      "outputName": "Äppelpannbiff med kålsallad och kryddad potatis",
+      "inputs": [
+        {
+          "id": "appel_pannbiff__fried_patties",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "appel_pannbiff__roasted_potatoes",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "appel_pannbiff__cabbage_salad",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "appel_pannbiff__caramelized_onion",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{appel_pannbiff__fried_patties}}, {{appel_pannbiff__roasted_potatoes}} och {{appel_pannbiff__cabbage_salad}} på tallrikar.",
+        "Toppa pannbiffarna med {{appel_pannbiff__caramelized_onion}}.",
+        "Servera med resterande vitlöksyoghurt."
+      ],
+      "duration": 3,
+      "wait": 0,
+      "tags": [
+        "master"
+      ]
+    }
+  ]
+}

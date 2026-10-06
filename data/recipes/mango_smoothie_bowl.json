@@ -1,0 +1,151 @@
+{
+  "masterId": "mango_smoothie_bowl",
+  "source": "hellofresh",
+  "createdAt": 1790852665,
+  "basePortions": 4,
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/mango_smoothie_bowl/main.jpg",
+    "byNode": {
+      "mango_smoothie_bowl__diced_mango": "assets/recipes/mango_smoothie_bowl/steps/diced_mango.jpg",
+      "mango_smoothie_bowl__roasted_cashews": "assets/recipes/mango_smoothie_bowl/steps/roasted_cashews.jpg",
+      "mango_smoothie_bowl__blended": "assets/recipes/mango_smoothie_bowl/steps/blended.jpg",
+      "mango_smoothie_bowl": "assets/recipes/mango_smoothie_bowl/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 276,
+    "perPortion": {
+      "energyKcal": 409,
+      "energyKj": 1713,
+      "fatG": 26.1,
+      "saturatedFatG": 15.4,
+      "carbsG": 35.8,
+      "sugarsG": 32.1,
+      "fiberG": 3.9,
+      "proteinG": 6.5,
+      "saltG": 0.1
+    }
+  },
+  "ratings": {
+    "average": 4,
+    "count": 2,
+    "source": "hellofresh"
+  },
+  "nodes": [
+    {
+      "id": "mango_smoothie_bowl__diced_mango",
+      "name": "Förbered Mango",
+      "outputName": "Tärnad mango",
+      "inputs": [
+        {
+          "id": "mango",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skala {{mango}} och skär i två delar längs med kärnan i mitten.",
+        "Tärna i stora bitar."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "FLAG: HF yields 2/3/4 har identiska mängder (1 st mango); headline anger 2 portioner. Behållen yields==4 som hos granola-kit — underportionerat om man skalar UI till 4."
+      ]
+    },
+    {
+      "id": "mango_smoothie_bowl__roasted_cashews",
+      "name": "Rosta Cashewnötter",
+      "outputName": "Rostade cashewnötter",
+      "inputs": [
+        {
+          "id": "cashews",
+          "amount": 40,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Placera påsen med {{cashews}} på en plan yta. Krossa dem genom att banka med botten av en stekpanna.",
+        "Hetta upp en stor stekpanna på medelhög värme. Rosta de krossade cashewnötterna i 3–4 min, eller tills gyllene, under omrörning."
+      ],
+      "duration": 5,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Rör om under rostningen så att nötterna inte bränns."
+      ]
+    },
+    {
+      "id": "mango_smoothie_bowl__blended",
+      "name": "Mixa Smoothie",
+      "outputName": "Mangosmoothie",
+      "inputs": [
+        {
+          "id": "mango_smoothie_bowl__diced_mango",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "honey",
+          "amount": 25,
+          "unit": "g"
+        },
+        {
+          "id": "coconut_milk",
+          "amount": 180,
+          "unit": "ml"
+        }
+      ],
+      "steps": [
+        "Tillsätt {{mango_smoothie_bowl__diced_mango}}, {{honey}} och {{coconut_milk}} till mixern.",
+        "Mixa i 1–2 min, eller tills smoothien har önskad konsistens."
+      ],
+      "duration": 3,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Lägg honung i en skål med varmt vatten i 1 min om den har stelnat.",
+        "Tillsätt några isbitar när du mixar för en kallare och fylligare smoothie."
+      ]
+    },
+    {
+      "id": "mango_smoothie_bowl",
+      "name": "Smoothiebowl på mango",
+      "outputName": "Smoothiebowl på mango",
+      "inputs": [
+        {
+          "id": "mango_smoothie_bowl__blended",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "mango_smoothie_bowl__roasted_cashews",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "freeze_dried_strawberries",
+          "amount": 8,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Häll upp {{mango_smoothie_bowl__blended}} i skålar.",
+        "Garnera med {{mango_smoothie_bowl__roasted_cashews}} och {{freeze_dried_strawberries}}."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [
+        "master"
+      ]
+    }
+  ]
+}

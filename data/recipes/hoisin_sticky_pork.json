@@ -1,0 +1,107 @@
+{
+  "masterId": "hoisin_sticky_pork",
+  "source": "citygross",
+  "createdAt": 1791056383,
+  "basePortions": 4,
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/hoisin_sticky_pork/main.jpg"
+  },
+  "nodes": [
+    {
+      "id": "hoisin_sticky_pork__noodles",
+      "name": "Koka Nudlar",
+      "outputName": "Kokta nudlar",
+      "inputs": [
+        {
+          "id": "noodles",
+          "amount": 250,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Koka {{noodles}} enligt anvisningen på förpackningen, ca 8–10 min."
+      ],
+      "duration": 2,
+      "wait": 10,
+      "tags": [],
+      "tips": [
+        "Råsteget säger bara \"enligt anvisningarna\" och har ingen timer. 8–10 min är en gissning så att förpackningskoket får en timer. Inte uppskalat."
+      ]
+    },
+    {
+      "id": "hoisin_sticky_pork__pork",
+      "name": "Stek Sticky Pork",
+      "outputName": "Sticky pork",
+      "inputs": [
+        {
+          "id": "pork_collar",
+          "amount": 500,
+          "unit": "g"
+        },
+        {
+          "id": "hoisin_sauce",
+          "amount": 125,
+          "unit": "ml"
+        },
+        {
+          "id": "water_chestnuts",
+          "amount": 140,
+          "unit": "g"
+        },
+        {
+          "id": "sesame_seeds",
+          "amount": 1,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Strimla {{pork_collar}} fint och stek den krispig.",
+        "Rör i {{hoisin_sauce}} och avrunna {{water_chestnuts}}. Strö över {{sesame_seeds}}."
+      ],
+      "duration": 10,
+      "tags": [],
+      "tips": [
+        "Ingen olja i rålistan, så ingen skvätt är tillagd.",
+        "Ingen tid står på stekningen, därför ingen wait. Karré är ny ingrediens, inte fläskkotlett."
+      ]
+    },
+    {
+      "id": "hoisin_sticky_pork",
+      "name": "Hoisin med sticky pork",
+      "outputName": "Hoisin med sticky pork",
+      "inputs": [
+        {
+          "id": "hoisin_sticky_pork__pork",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "hoisin_sticky_pork__noodles",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "romaine_lettuce",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "lime",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Servera {{hoisin_sticky_pork__pork}} med {{hoisin_sticky_pork__noodles}} i blad av {{romaine_lettuce}} och klyftad {{lime}}."
+      ],
+      "duration": 3,
+      "tags": [
+        "master"
+      ],
+      "tips": [
+        "Lite hetta och mer sälta? Servera med sambal oelek och japansk soja. Inte tillagt som ingrediens."
+      ]
+    }
+  ]
+}

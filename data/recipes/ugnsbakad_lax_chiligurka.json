@@ -1,0 +1,262 @@
+{
+  "masterId": "ugnsbakad_lax_chiligurka",
+  "source": "linas",
+  "createdAt": 1791056876,
+  "basePortions": 4,
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/ugnsbakad_lax_chiligurka/main.jpg"
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "perPortion": {
+      "energyKcal": 797,
+      "fatG": 42.6,
+      "carbsG": 67.5,
+      "proteinG": 35.83
+    }
+  },
+  "ratings": {
+    "average": 4.32,
+    "count": 478,
+    "source": "linas"
+  },
+  "nodes": [
+    {
+      "id": "ugnsbakad_lax_chiligurka__oven",
+      "name": "Värm Ugnen",
+      "outputName": "Varm ugn",
+      "inputs": [],
+      "steps": [
+        "Värm ugnen till 200°C varmluft eller 225°C vanlig."
+      ],
+      "duration": 1,
+      "tags": [
+        "prep",
+        "no-timer"
+      ],
+      "tips": [
+        "Råsteget anger ingen förvärmningstid, därför ingen wait."
+      ]
+    },
+    {
+      "id": "ugnsbakad_lax_chiligurka__rice",
+      "name": "Koka Jasminris",
+      "outputName": "Kokt jasminris",
+      "inputs": [
+        {
+          "id": "jasmine_rice",
+          "amount": 270,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Koka {{jasmine_rice}} enligt anvisningen på förpackningen, ca 10–12 min."
+      ],
+      "duration": 2,
+      "tags": [],
+      "wait": 12,
+      "tips": [
+        "Råsteget har ingen minut. 10–12 min är en paketgissning, wait är 12. Inget vatten i rålistan, inget vatten påhittat."
+      ]
+    },
+    {
+      "id": "ugnsbakad_lax_chiligurka__pickle",
+      "name": "Pickla Gurka",
+      "outputName": "Chilipicklad gurka",
+      "inputs": [
+        {
+          "id": "sugar",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "chili_flakes",
+          "amount": 0.5,
+          "unit": "förp"
+        },
+        {
+          "id": "vinegar_spirit",
+          "amount": 1,
+          "unit": "msk"
+        },
+        {
+          "id": "water",
+          "amount": 0.5,
+          "unit": "dl"
+        },
+        {
+          "id": "cucumber",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Blanda {{sugar}}, {{chili_flakes}}, {{vinegar_spirit}} och {{water}} i en bunke.",
+        "Skiva {{cucumber}} så tunt som möjligt och blanda ner i lagen. Låt stå till servering."
+      ],
+      "duration": 5,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Chili flakes är ½ förp enligt rådatan. Ingen vikt, inga gram påhittade.",
+        "\"Till servering\" har ingen minut, därför ingen wait."
+      ]
+    },
+    {
+      "id": "ugnsbakad_lax_chiligurka__kohlrabi",
+      "name": "Skär Kålrabbi",
+      "outputName": "Limesyrlig kålrabbi",
+      "inputs": [
+        {
+          "id": "kohlrabi",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "lime",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "krm"
+        }
+      ],
+      "steps": [
+        "Skala {{kohlrabi}} och skär i tunna stavar.",
+        "Skölj {{lime}} och finriv skalet. Blanda kålrabbin med limeskal, pressad limesaft och {{salt}}."
+      ],
+      "duration": 5,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Kålrabbi är mappad till befintlig vit kålrabbi. Färgen är inte angiven.",
+        "Salt är en egen rad, 1 krm, inte hopslagen med laxens salt."
+      ]
+    },
+    {
+      "id": "ugnsbakad_lax_chiligurka__salmon",
+      "name": "Baka Lax",
+      "outputName": "Ugnsbakad lax",
+      "inputs": [
+        {
+          "id": "ugnsbakad_lax_chiligurka__oven",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "grated_ginger",
+          "amount": 1,
+          "unit": "förp"
+        },
+        {
+          "id": "soy_sauce",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "sugar",
+          "amount": 1,
+          "unit": "tsk"
+        },
+        {
+          "id": "tomato_paste",
+          "amount": 1,
+          "unit": "msk"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "krm"
+        },
+        {
+          "id": "salmon_fillet",
+          "amount": 4,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Blanda {{grated_ginger}} med {{soy_sauce}}, {{sugar}}, {{tomato_paste}} och {{salt}}.",
+        "Lägg {{salmon_fillet}} i en ugnsform och bred över marinaden. Baka i {{ugnsbakad_lax_chiligurka__oven}}, i mitten, ca 15 min."
+      ],
+      "duration": 3,
+      "tags": [],
+      "wait": 15,
+      "tips": [
+        "Råtexten säger smord form men listan har ingen olja. Ingen mängd påhittad.",
+        "Lax är 4 st utan vikt. Riven ingefära är 1 förp, inga gram.",
+        "Japansk soja är mappad till sojasås. 15 min är sista stegets wait."
+      ]
+    },
+    {
+      "id": "ugnsbakad_lax_chiligurka__mayo",
+      "name": "Blanda Sojamajonnäs",
+      "outputName": "Sojamajonnäs",
+      "inputs": [
+        {
+          "id": "mayonnaise",
+          "amount": 1,
+          "unit": "dl"
+        },
+        {
+          "id": "soy_sauce",
+          "amount": 1,
+          "unit": "msk"
+        }
+      ],
+      "steps": [
+        "Blanda {{mayonnaise}} och {{soy_sauce}} i en liten skål."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Andra sojaraden är 1 msk, inte hopslagen med marinadens 2 msk."
+      ]
+    },
+    {
+      "id": "ugnsbakad_lax_chiligurka",
+      "name": "Ugnsbakad lax med chilipicklad gurka, limesyrlig kålrabbi och sojamajonnäs",
+      "outputName": "Ugnsbakad lax med chilipicklad gurka, limesyrlig kålrabbi och sojamajonnäs",
+      "inputs": [
+        {
+          "id": "ugnsbakad_lax_chiligurka__salmon",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "ugnsbakad_lax_chiligurka__rice",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "ugnsbakad_lax_chiligurka__pickle",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "ugnsbakad_lax_chiligurka__kohlrabi",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "ugnsbakad_lax_chiligurka__mayo",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Servera {{ugnsbakad_lax_chiligurka__salmon}} med {{ugnsbakad_lax_chiligurka__rice}}, {{ugnsbakad_lax_chiligurka__pickle}}, {{ugnsbakad_lax_chiligurka__kohlrabi}} och en klick {{ugnsbakad_lax_chiligurka__mayo}}."
+      ],
+      "duration": 3,
+      "tags": [
+        "master"
+      ]
+    }
+  ]
+}

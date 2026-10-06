@@ -1,0 +1,479 @@
+{
+  "masterId": "chicken_kiev",
+  "source": "hellofresh",
+  "createdAt": 1790852559,
+  "basePortions": 4,
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/chicken_kiev/main.jpg",
+    "byNode": {
+      "chicken_kiev__roasted_vegetables": "assets/recipes/chicken_kiev/steps/roasted_vegetables.jpg",
+      "chicken_kiev__stuffed_chicken": "assets/recipes/chicken_kiev/steps/stuffed_chicken.jpg",
+      "chicken_kiev__breaded_chicken": "assets/recipes/chicken_kiev/steps/breaded_chicken.jpg",
+      "chicken_kiev__cooked_chicken": "assets/recipes/chicken_kiev/steps/cooked_chicken.jpg",
+      "chicken_kiev__veg_salad": "assets/recipes/chicken_kiev/steps/veg_salad.jpg",
+      "chicken_kiev": "assets/recipes/chicken_kiev/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 568,
+    "perPortion": {
+      "energyKcal": 754,
+      "energyKj": 3154,
+      "fatG": 44.7,
+      "saturatedFatG": 15.9,
+      "carbsG": 41.6,
+      "sugarsG": 15,
+      "fiberG": 8.5,
+      "proteinG": 47.9,
+      "saltG": 5.2
+    }
+  },
+  "ratings": {
+    "average": 4,
+    "count": 4,
+    "source": "hellofresh"
+  },
+  "nodes": [
+    {
+      "id": "chicken_kiev__preheated_oven_240",
+      "name": "Värm Ugnen",
+      "outputName": "Förvärmd ugn (240°C)",
+      "inputs": [],
+      "steps": [
+        "Värm ugnen till 240°C, eller 220°C varmluft."
+      ],
+      "duration": 1,
+      "tags": [
+        "prep",
+        "no-timer"
+      ],
+      "wait": 12,
+      "tips": [
+        "HF anger 240°C/220°C varmluft — lokal ugnsnode, inte preheated_oven_220 (220/200)."
+      ]
+    },
+    {
+      "id": "chicken_kiev__chopped_root_veg",
+      "name": "Skär Rotfrukter",
+      "outputName": "Skurna rotfrukter",
+      "inputs": [
+        {
+          "id": "parsnip",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "beetroot",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skär {{parsnip}} och {{beetroot}} (oskalade) i 2 cm stora bitar."
+      ],
+      "duration": 6,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "chicken_kiev__onion_wedges",
+      "name": "Skär Löksklyftor",
+      "outputName": "Löksklyftor",
+      "inputs": [
+        {
+          "id": "onion",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skär {{onion}} i 2 cm breda klyftor."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "FLAG: HF type=shallot men namn/slug är Lök — mappad till onion (gul lök), inte shallot."
+      ]
+    },
+    {
+      "id": "chicken_kiev__chopped_broccolini",
+      "name": "Grovhacka Broccolini",
+      "outputName": "Grovhackad broccolini",
+      "inputs": [
+        {
+          "id": "broccolini",
+          "amount": 400,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Grovhacka {{broccolini}}."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "chicken_kiev__minced_garlic",
+      "name": "Finhacka Vitlök",
+      "outputName": "Finhackad vitlök",
+      "inputs": [
+        {
+          "id": "garlic",
+          "amount": 3,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Finhacka eller pressa {{garlic}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "chicken_kiev__lemon_wedges",
+      "name": "Skär Citrusklyftor",
+      "outputName": "Citrusklyftor",
+      "inputs": [
+        {
+          "id": "lemon",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skär {{lemon}} i klyftor."
+      ],
+      "duration": 1,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "HF 'Citrusfrukt' (type lemon) → lemon."
+      ]
+    },
+    {
+      "id": "chicken_kiev__garlic_butter",
+      "name": "Gör Vitlökssmör",
+      "outputName": "Vitlökssmör",
+      "inputs": [
+        {
+          "id": "butter",
+          "amount": 6,
+          "unit": "msk"
+        },
+        {
+          "id": "chicken_kiev__minced_garlic",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "parsley",
+          "amount": 5,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Ta ut {{butter}} ur kylen så det blir rumstempererat.",
+        "Finhacka {{parsley}}.",
+        "Mosa {{butter}}, {{chicken_kiev__minced_garlic}}, den finhackade persiljan, {{salt}} och {{pepper}} med en gaffel i en skål.",
+        "Ställ åt sidan."
+      ],
+      "duration": 4,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "chicken_kiev__roasting_root_veg",
+      "name": "Rosta Rotfrukter",
+      "outputName": "Rotfrukter under rostning",
+      "inputs": [
+        {
+          "id": "chicken_kiev__preheated_oven_240",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "chicken_kiev__chopped_root_veg",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "chicken_kiev__onion_wedges",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Lägg {{chicken_kiev__chopped_root_veg}} och {{chicken_kiev__onion_wedges}} på en plåt med bakplåtspapper.",
+        "Blanda med {{olive_oil}}, {{salt}} och {{pepper}}.",
+        "Rosta i den förvärmda ugnen i 8–18 min (första delen av totalt 20–30 min), tills det är dags för broccolini."
+      ],
+      "duration": 4,
+      "wait": 18,
+      "tags": [],
+      "tips": [
+        "Totalt rostas rotfrukterna 20–30 min; broccolini går in de sista 12 min."
+      ]
+    },
+    {
+      "id": "chicken_kiev__roasted_vegetables",
+      "name": "Rosta Broccolini med Rotfrukter",
+      "outputName": "Rostade rotfrukter med broccolini",
+      "inputs": [
+        {
+          "id": "chicken_kiev__roasting_root_veg",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "chicken_kiev__chopped_broccolini",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Tillsätt {{chicken_kiev__chopped_broccolini}} på plåten med {{chicken_kiev__roasting_root_veg}}.",
+        "Rosta klart i 12 min, eller tills rotfrukterna är mjuka och broccolini är klar."
+      ],
+      "duration": 1,
+      "wait": 12,
+      "tags": [],
+      "tips": [
+        "Använd fler plåtar om det blir för trångt."
+      ]
+    },
+    {
+      "id": "chicken_kiev__stuffed_chicken",
+      "name": "Fyll Kyckling",
+      "outputName": "Fylld kyckling",
+      "inputs": [
+        {
+          "id": "chicken_breast",
+          "amount": 600,
+          "unit": "g"
+        },
+        {
+          "id": "chicken_kiev__garlic_butter",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Skär ett horisontellt snitt i varje {{chicken_breast}} med en vass kniv utan att skära rakt igenom, på en separat skärbräda.",
+        "Krydda med {{salt}}.",
+        "Fyll fickorna med {{chicken_kiev__garlic_butter}}."
+      ],
+      "duration": 8,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "VIKTIGT: Tvätta händer och köksredskap noggrant efter hantering av rå kyckling."
+      ]
+    },
+    {
+      "id": "chicken_kiev__seasoned_panko",
+      "name": "Blanda Pankomix",
+      "outputName": "Kryddad pankomix",
+      "inputs": [
+        {
+          "id": "parsley",
+          "amount": 5,
+          "unit": "g"
+        },
+        {
+          "id": "panko",
+          "amount": 50,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Finhacka {{parsley}}.",
+        "Blanda {{panko}}, den finhackade persiljan, {{salt}} och {{pepper}} i en annan djup tallrik."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "chicken_kiev__breaded_chicken",
+      "name": "Panera Kyckling",
+      "outputName": "Panerad kyckling",
+      "inputs": [
+        {
+          "id": "chicken_kiev__stuffed_chicken",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "egg",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "chicken_kiev__seasoned_panko",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Vispa {{egg}} i en djup tallrik.",
+        "Vänd {{chicken_kiev__stuffed_chicken}} i ägg och sedan i {{chicken_kiev__seasoned_panko}}.",
+        "Ställ åt sidan på en tallrik."
+      ],
+      "duration": 5,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Var försiktig när du panerar kycklingen, så att inte fyllningen ramlar ut."
+      ]
+    },
+    {
+      "id": "chicken_kiev__cooked_chicken",
+      "name": "Stek och Ugnsbaka Kyckling",
+      "outputName": "Gyllenstekt Kyckling Kiev",
+      "inputs": [
+        {
+          "id": "chicken_kiev__breaded_chicken",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "chicken_kiev__preheated_oven_240",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 2,
+          "unit": "msk"
+        }
+      ],
+      "steps": [
+        "Hetta upp en stor stekpanna på medelhög värme och tillsätt {{olive_oil}} så det täcker pannan.",
+        "Stek {{chicken_kiev__breaded_chicken}} i 2–3 min per sida, eller tills gyllene.",
+        "Lägg över kycklingen på en ny plåt med bakplåtspapper.",
+        "Tillaga i den förvärmda ugnen i 6–10 min, tills genomstekt."
+      ],
+      "duration": 10,
+      "wait": 8,
+      "tags": [],
+      "tips": [
+        "Kycklingen är färdiglagad när köttet inte längre är rosa i mitten.",
+        "En del av vitlökssmöret kommer att rinna ut – servera det vid sidan av!"
+      ]
+    },
+    {
+      "id": "chicken_kiev__veg_salad",
+      "name": "Blanda Grönsakssallad",
+      "outputName": "Rostade grönsaker med sallad",
+      "inputs": [
+        {
+          "id": "chicken_kiev__roasted_vegetables",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "mixed_salad",
+          "amount": 100,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Skölj {{mixed_salad}}.",
+        "Blanda {{chicken_kiev__roasted_vegetables}} med {{mixed_salad}} på plåten och vänd runt tills salladen har mjuknat något."
+      ],
+      "duration": 3,
+      "tags": []
+    },
+    {
+      "id": "chicken_kiev",
+      "name": "Gyllenstekt Kyckling Kiev",
+      "outputName": "Gyllenstekt Kyckling Kiev",
+      "inputs": [
+        {
+          "id": "chicken_kiev__cooked_chicken",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "chicken_kiev__veg_salad",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "chicken_kiev__lemon_wedges",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "aioli",
+          "amount": 80,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{chicken_kiev__veg_salad}} och {{chicken_kiev__cooked_chicken}} på tallrikar.",
+        "Ringla över resterande vitlökssmör från stekpannan.",
+        "Servera med en klick {{aioli}} och {{chicken_kiev__lemon_wedges}} att pressa över kycklingen."
+      ],
+      "duration": 3,
+      "tags": [
+        "master"
+      ],
+      "wait": 0
+    }
+  ]
+}

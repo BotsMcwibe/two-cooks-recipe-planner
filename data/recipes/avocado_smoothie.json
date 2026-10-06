@@ -1,0 +1,128 @@
+{
+  "masterId": "avocado_smoothie",
+  "source": "hellofresh",
+  "createdAt": 1790854508,
+  "basePortions": 4,
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/avocado_smoothie/main.jpg",
+    "byNode": {
+      "avocado_smoothie__prepped_produce": "assets/recipes/avocado_smoothie/steps/prepped_produce.jpg",
+      "avocado_smoothie__blended": "assets/recipes/avocado_smoothie/steps/blended.jpg",
+      "avocado_smoothie": "assets/recipes/avocado_smoothie/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 675,
+    "perPortion": {
+      "energyKcal": 708,
+      "energyKj": 2961,
+      "fatG": 36,
+      "saturatedFatG": 15.2,
+      "carbsG": 63.2,
+      "sugarsG": 56.9,
+      "fiberG": 13.3,
+      "proteinG": 13.6,
+      "saltG": 0.2
+    }
+  },
+  "ratings": {
+    "average": 4,
+    "count": 2,
+    "source": "hellofresh"
+  },
+  "nodes": [
+    {
+      "id": "avocado_smoothie__prepped_produce",
+      "name": "Förbered Frukt och Grönt",
+      "outputName": "Förberedd mango, avokado, spenat och mynta",
+      "inputs": [
+        {
+          "id": "mango",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "avocado",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "baby_spinach",
+          "amount": 100,
+          "unit": "g"
+        },
+        {
+          "id": "mint",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skala {{mango}} och skär i två delar längs med kärnan i mitten. Tärna i stora bitar.",
+        "Halvera och kärna ur {{avocado}}. Gröp ur den med en sked.",
+        "Skölj {{baby_spinach}}.",
+        "Plocka blad från {{mint}}."
+      ],
+      "duration": 5,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "avocado_smoothie__blended",
+      "name": "Mixa Smoothie",
+      "outputName": "Avokadosmoothie",
+      "inputs": [
+        {
+          "id": "avocado_smoothie__prepped_produce",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "yoghurt",
+          "amount": 300,
+          "unit": "g"
+        },
+        {
+          "id": "honey",
+          "amount": 50,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Tillsätt {{avocado_smoothie__prepped_produce}}, {{yoghurt}} och {{honey}} till mixern.",
+        "Mixa i 1–2 min, eller tills slätt."
+      ],
+      "duration": 3,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Tillsätt några isbitar när du mixar för en kallare och fylligare smoothie."
+      ]
+    },
+    {
+      "id": "avocado_smoothie",
+      "name": "Avokadosmoothie",
+      "outputName": "Avokadosmoothie",
+      "inputs": [
+        {
+          "id": "avocado_smoothie__blended",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Servera {{avocado_smoothie__blended}} i 4 glas."
+      ],
+      "duration": 1,
+      "wait": 0,
+      "tags": [
+        "master"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,270 @@
+{
+  "masterId": "girasoli_creamy_paprika",
+  "source": "hellofresh",
+  "createdAt": 1790795941,
+  "basePortions": 4,
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/girasoli_creamy_paprika/main.jpg",
+    "byNode": {
+      "girasoli_creamy_paprika__sliced_onion": "assets/recipes/girasoli_creamy_paprika/steps/prepped_vegetables.jpg",
+      "girasoli_creamy_paprika__fried_mushrooms_onion": "assets/recipes/girasoli_creamy_paprika/steps/fried_mushrooms_onion.jpg",
+      "girasoli_creamy_paprika__cooked_pasta": "assets/recipes/girasoli_creamy_paprika/steps/cooked_pasta.jpg",
+      "girasoli_creamy_paprika__paprika_cream_sauce": "assets/recipes/girasoli_creamy_paprika/steps/paprika_cream_sauce.jpg",
+      "girasoli_creamy_paprika": "assets/recipes/girasoli_creamy_paprika/steps/combine.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 374,
+    "perPortion": {
+      "energyKcal": 769,
+      "energyKj": 3216,
+      "fatG": 51.2,
+      "saturatedFatG": 25.7,
+      "carbsG": 52,
+      "sugarsG": 16.2,
+      "fiberG": 4.9,
+      "proteinG": 21.6,
+      "saltG": 3.4
+    }
+  },
+  "ratings": {
+    "average": 4,
+    "count": 4,
+    "source": "hellofresh"
+  },
+  "nodes": [
+    {
+      "id": "girasoli_creamy_paprika__sliced_onion",
+      "name": "Skär Lök",
+      "outputName": "Skivad lök",
+      "inputs": [
+        {
+          "id": "onion",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skär {{onion}} i tunna skivor."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "girasoli_creamy_paprika__chopped_garlic",
+      "name": "Hacka Vitlök",
+      "outputName": "Hackad vitlök",
+      "inputs": [
+        {
+          "id": "garlic",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Finhacka eller pressa {{garlic}}."
+      ],
+      "duration": 1,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "girasoli_creamy_paprika__chopped_portobello",
+      "name": "Grovhacka Portobello",
+      "outputName": "Grovhackad portobello",
+      "inputs": [
+        {
+          "id": "portobello",
+          "amount": 300,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Grovhacka {{portobello}}."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "girasoli_creamy_paprika__rinsed_spinach",
+      "name": "Skölj Spenat",
+      "outputName": "Sköljd spenat",
+      "inputs": [
+        {
+          "id": "baby_spinach",
+          "amount": 60,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Skölj {{baby_spinach}}."
+      ],
+      "duration": 1,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "girasoli_creamy_paprika__fried_mushrooms_onion",
+      "name": "Stek Svamp och Lök",
+      "outputName": "Stekt svamp och lök",
+      "inputs": [
+        {
+          "id": "girasoli_creamy_paprika__chopped_portobello",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "girasoli_creamy_paprika__sliced_onion",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i en stor stekpanna på medelhög värme.",
+        "Stek {{girasoli_creamy_paprika__chopped_portobello}} och {{girasoli_creamy_paprika__sliced_onion}} i 4–6 min, tills mjuka och gyllene.",
+        "Krydda med {{salt}}."
+      ],
+      "duration": 2,
+      "wait": 5,
+      "tags": []
+    },
+    {
+      "id": "girasoli_creamy_paprika__cooked_pasta",
+      "name": "Koka Girasoli",
+      "outputName": "Kokt girasoli",
+      "inputs": [
+        {
+          "id": "girasoli",
+          "amount": 600,
+          "unit": "g"
+        },
+        {
+          "id": "water",
+          "amount": 2,
+          "unit": "l"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "msk"
+        }
+      ],
+      "steps": [
+        "Koka upp en stor kastrull med saltat {{water}}.",
+        "Koka {{girasoli}} i 1–2 min, eller tills al dente.",
+        "Precis innan pastan är färdig, skopa upp ca 2 dl kokvatten i en kopp och ställ åt sidan.",
+        "Häll av vattnet och lägg tillbaka pastan i kastrullen."
+      ],
+      "duration": 3,
+      "wait": 2,
+      "tags": [],
+      "tips": [
+        "Kokvattnet ska vara lika salt som havsvatten.",
+        "Al dente betyder att pastan är genomkokt men fortfarande har tuggmotstånd."
+      ]
+    },
+    {
+      "id": "girasoli_creamy_paprika__paprika_cream_sauce",
+      "name": "Gör Paprikasås",
+      "outputName": "Krämig paprikasås",
+      "inputs": [
+        {
+          "id": "girasoli_creamy_paprika__fried_mushrooms_onion",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "girasoli_creamy_paprika__chopped_garlic",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "soy_sauce",
+          "amount": 40,
+          "unit": "ml"
+        },
+        {
+          "id": "tomato_paste",
+          "amount": 70,
+          "unit": "g"
+        },
+        {
+          "id": "smoked_paprika",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "id": "creme_fraiche",
+          "amount": 300,
+          "unit": "g"
+        },
+        {
+          "id": "water",
+          "amount": 2,
+          "unit": "dl"
+        }
+      ],
+      "steps": [
+        "Tillsätt {{girasoli_creamy_paprika__chopped_garlic}}, {{soy_sauce}}, {{tomato_paste}} och {{smoked_paprika}} till stekpannan med {{girasoli_creamy_paprika__fried_mushrooms_onion}}.",
+        "Stek i 30 sek på medelhög värme, tills väldoftande.",
+        "Sänk till medelvärme och tillsätt {{creme_fraiche}} och det sparade pastavattnet ({{water}}).",
+        "Sjud i 1–2 min, tills såsen har tjocknat något."
+      ],
+      "duration": 3,
+      "wait": 2,
+      "tags": []
+    },
+    {
+      "id": "girasoli_creamy_paprika",
+      "name": "Girasoli i krämig paprikasås",
+      "outputName": "Girasoli i krämig paprikasås",
+      "inputs": [
+        {
+          "id": "girasoli_creamy_paprika__paprika_cream_sauce",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "girasoli_creamy_paprika__cooked_pasta",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "girasoli_creamy_paprika__rinsed_spinach",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Rör ner {{girasoli_creamy_paprika__cooked_pasta}} och {{girasoli_creamy_paprika__rinsed_spinach}} i {{girasoli_creamy_paprika__paprika_cream_sauce}} precis innan servering.",
+        "Lägg upp pasta och sås i skålar."
+      ],
+      "duration": 2,
+      "tags": [
+        "master"
+      ],
+      "tips": [
+        "Tillsätt en skvätt vatten om såsen är för tjock."
+      ],
+      "wait": 0
+    }
+  ]
+}

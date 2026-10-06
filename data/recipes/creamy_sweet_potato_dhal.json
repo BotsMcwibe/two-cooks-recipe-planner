@@ -1,0 +1,367 @@
+{
+  "masterId": "creamy_sweet_potato_dhal",
+  "source": "hellofresh",
+  "createdAt": 1790854640,
+  "basePortions": 4,
+  "sharedPrep": [
+    "preheated_oven_220"
+  ],
+  "images": {
+    "main": "assets/recipes/creamy_sweet_potato_dhal/main.jpg",
+    "byNode": {
+      "creamy_sweet_potato_dhal__roasted_sweet_potato": "assets/recipes/creamy_sweet_potato_dhal/steps/roasted_sweet_potato.jpg",
+      "creamy_sweet_potato_dhal__dhal_base": "assets/recipes/creamy_sweet_potato_dhal/steps/dhal_base.jpg",
+      "creamy_sweet_potato_dhal__simmered_dhal": "assets/recipes/creamy_sweet_potato_dhal/steps/simmered_dhal.jpg",
+      "creamy_sweet_potato_dhal__coriander_oil": "assets/recipes/creamy_sweet_potato_dhal/steps/coriander_oil.jpg",
+      "creamy_sweet_potato_dhal__tortilla_chips": "assets/recipes/creamy_sweet_potato_dhal/steps/tortilla_chips.jpg",
+      "creamy_sweet_potato_dhal": "assets/recipes/creamy_sweet_potato_dhal/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 603,
+    "perPortion": {
+      "energyKcal": 966,
+      "energyKj": 4042,
+      "fatG": 44.7,
+      "saturatedFatG": 20.6,
+      "carbsG": 106.4,
+      "sugarsG": 8.3,
+      "fiberG": 15.5,
+      "proteinG": 26.3,
+      "saltG": 3.6
+    }
+  },
+  "ratings": {
+    "average": 4,
+    "count": 1,
+    "source": "hellofresh"
+  },
+  "nodes": [
+    {
+      "id": "creamy_sweet_potato_dhal__diced_sweet_potato",
+      "name": "Tärna Sötpotatis",
+      "outputName": "Tärnad sötpotatis",
+      "inputs": [
+        {
+          "id": "sweet_potato",
+          "amount": 900,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Tärna {{sweet_potato}} i 2 cm stora bitar."
+      ],
+      "duration": 5,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "creamy_sweet_potato_dhal__roasted_sweet_potato",
+      "name": "Rosta Sötpotatis",
+      "outputName": "Rostad sötpotatis",
+      "inputs": [
+        {
+          "id": "preheated_oven_220",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "creamy_sweet_potato_dhal__diced_sweet_potato",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "msk"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Blanda {{creamy_sweet_potato_dhal__diced_sweet_potato}} med {{olive_oil}}, {{salt}} och {{pepper}} på en plåt med bakplåtspapper.",
+        "Sprid ut och rosta i ugnen i 20 min, eller tills mjuka."
+      ],
+      "duration": 2,
+      "wait": 20,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "creamy_sweet_potato_dhal__rinsed_lentils",
+      "name": "Skölj Linser",
+      "outputName": "Sköljda röda linser",
+      "inputs": [
+        {
+          "id": "red_lentils",
+          "amount": 200,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Skölj {{red_lentils}} under kallt vatten."
+      ],
+      "duration": 1,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "creamy_sweet_potato_dhal__chopped_aromatics",
+      "name": "Hacka Aromater",
+      "outputName": "Hackad lök och riven ingefära",
+      "inputs": [
+        {
+          "id": "onion",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "ginger",
+          "amount": 2,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Finhacka {{onion}}.",
+        "Skala och finriv {{ginger}}."
+      ],
+      "duration": 4,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "FLAG: Ingefära anges som 2 tsk (riven) i HF-yields även för 2 portioner — icke-linjär skalning."
+      ]
+    },
+    {
+      "id": "creamy_sweet_potato_dhal__dhal_base",
+      "name": "Gör Dhalbas",
+      "outputName": "Dhalbas med kokosmjölk",
+      "inputs": [
+        {
+          "id": "creamy_sweet_potato_dhal__chopped_aromatics",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "msk"
+        },
+        {
+          "id": "milda_mahal",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "id": "curry_on",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "id": "coconut_milk",
+          "amount": 400,
+          "unit": "ml"
+        },
+        {
+          "id": "water",
+          "amount": 4,
+          "unit": "dl"
+        },
+        {
+          "id": "vegetable_bouillon",
+          "amount": 8,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i en kastrull på medelhög värme.",
+        "Fräs {{creamy_sweet_potato_dhal__chopped_aromatics}} (löken) i 2–3 min.",
+        "Tillsätt ingefäran, {{milda_mahal}} och {{curry_on}}, och fräs i 1–2 min.",
+        "Rör i {{coconut_milk}}, {{water}} och {{vegetable_bouillon}}."
+      ],
+      "duration": 6,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "creamy_sweet_potato_dhal__simmered_dhal",
+      "name": "Sjud Dhal",
+      "outputName": "Sjuden sötpotatisdhal",
+      "inputs": [
+        {
+          "id": "creamy_sweet_potato_dhal__dhal_base",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "creamy_sweet_potato_dhal__rinsed_lentils",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "soy_sauce",
+          "amount": 50,
+          "unit": "ml"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Tillsätt {{creamy_sweet_potato_dhal__rinsed_lentils}} till {{creamy_sweet_potato_dhal__dhal_base}}. Koka upp, sänk sedan värmen och sjud under lock tills linserna har mjuknat, 20–25 min.",
+        "Smaka av med {{soy_sauce}}, {{salt}} och {{pepper}}."
+      ],
+      "duration": 2,
+      "wait": 25,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Tillsätt mer vatten om dhalen är för tjock.",
+        "Smaka av efter tillagningstiden — om linserna inte är mjuka, sjud ytterligare ca 5 min."
+      ]
+    },
+    {
+      "id": "creamy_sweet_potato_dhal__coriander_oil",
+      "name": "Gör Korianderolja",
+      "outputName": "Korianderolja",
+      "inputs": [
+        {
+          "id": "coriander",
+          "amount": 1,
+          "unit": "kruka"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 4,
+          "unit": "msk"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Finhacka {{coriander}}.",
+        "Blanda koriander, {{olive_oil}}, {{salt}} och {{pepper}} i en skål."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "FLAG: HF yields anger koriander som 1 st — överstyrd till 1 kruka (färsk ört)."
+      ]
+    },
+    {
+      "id": "creamy_sweet_potato_dhal__tortilla_chips",
+      "name": "Rosta Korianderchips",
+      "outputName": "Krispiga korianderchips",
+      "inputs": [
+        {
+          "id": "preheated_oven_220",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "tortillas",
+          "amount": 4,
+          "unit": "st"
+        },
+        {
+          "id": "creamy_sweet_potato_dhal__coriander_oil",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skär {{tortillas}} i 3 cm breda band och lägg dem på en plåt med bakplåtspapper.",
+        "Pensla över {{creamy_sweet_potato_dhal__coriander_oil}}.",
+        "Rosta i ugnen tills gyllene och krispiga, ca 4–6 min."
+      ],
+      "duration": 3,
+      "wait": 6,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Håll ett öga på chipsen så att de inte bränns vid.",
+        "Rosta i omgångar om inte alla får plats, eller använd 2 plåtar med varmluft.",
+        "Börja gärna när det återstår ca 10 min på dhalen."
+      ]
+    },
+    {
+      "id": "creamy_sweet_potato_dhal",
+      "name": "Krämig sötpotatisdhal",
+      "outputName": "Krämig sötpotatisdhal",
+      "inputs": [
+        {
+          "id": "creamy_sweet_potato_dhal__simmered_dhal",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "creamy_sweet_potato_dhal__roasted_sweet_potato",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "baby_spinach",
+          "amount": 100,
+          "unit": "g"
+        },
+        {
+          "id": "yoghurt",
+          "amount": 150,
+          "unit": "ml"
+        },
+        {
+          "id": "creamy_sweet_potato_dhal__tortilla_chips",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skölj {{baby_spinach}}.",
+        "Rör i {{creamy_sweet_potato_dhal__roasted_sweet_potato}} och {{baby_spinach}} i {{creamy_sweet_potato_dhal__simmered_dhal}}.",
+        "Sleva upp dhalen i djupa tallrikar och toppa med en klick {{yoghurt}}.",
+        "Servera med {{creamy_sweet_potato_dhal__tortilla_chips}} vid sidan av."
+      ],
+      "duration": 4,
+      "wait": 0,
+      "tags": [
+        "master"
+      ],
+      "tips": [
+        "FLAG: HF yields anger spenat 100 st vid 4 portioner (1 st vid 2) — överstyrd till 100 g babyspenat."
+      ]
+    }
+  ]
+}

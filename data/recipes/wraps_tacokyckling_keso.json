@@ -1,0 +1,119 @@
+{
+  "masterId": "wraps_tacokyckling_keso",
+  "source": "citygross",
+  "createdAt": 1791056383,
+  "basePortions": 4,
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/wraps_tacokyckling_keso/main.jpg"
+  },
+  "nodes": [
+    {
+      "id": "wraps_tacokyckling_keso__salsa",
+      "name": "Blanda Majsröra",
+      "outputName": "Majsröra",
+      "inputs": [
+        {
+          "id": "tomato",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "cucumber",
+          "amount": 0.5,
+          "unit": "st"
+        },
+        {
+          "id": "canned_corn",
+          "amount": 340,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Tärna {{tomato}} och {{cucumber}}. Häll av spadet från {{canned_corn}} och blanda allt."
+      ],
+      "duration": 6,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Halv gurka står så vid 4 portioner. Majs är mappad till befintlig majs på burk."
+      ]
+    },
+    {
+      "id": "wraps_tacokyckling_keso__chicken",
+      "name": "Stek Tacokyckling",
+      "outputName": "Tacokyckling",
+      "inputs": [
+        {
+          "id": "chicken_breast_strips",
+          "amount": 550,
+          "unit": "g"
+        },
+        {
+          "id": "taco_seasoning",
+          "amount": 28,
+          "unit": "g"
+        },
+        {
+          "id": "water",
+          "amount": 0.75,
+          "unit": "dl"
+        }
+      ],
+      "steps": [
+        "Stek {{chicken_breast_strips}} tills den fått färg. Häll i {{taco_seasoning}} och stek ytterligare ett par minuter.",
+        "Häll i {{water}} och sjud ca 5 min."
+      ],
+      "duration": 6,
+      "wait": 5,
+      "tags": [],
+      "tips": [
+        "Ingen olja i rålistan, så ingen skvätt är tillagd.",
+        "\"Ett par minuter\" är hands-on i duration. 5 min är råstegets timer."
+      ]
+    },
+    {
+      "id": "wraps_tacokyckling_keso",
+      "name": "Wraps med tacokyckling och keso",
+      "outputName": "Wraps med tacokyckling och keso",
+      "inputs": [
+        {
+          "id": "wraps_tacokyckling_keso__chicken",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "wraps_tacokyckling_keso__salsa",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "mixed_salad",
+          "amount": 35,
+          "unit": "g"
+        },
+        {
+          "id": "tortillas",
+          "amount": 8,
+          "unit": "st"
+        },
+        {
+          "id": "cottage_cheese",
+          "amount": 250,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Servera {{wraps_tacokyckling_keso__chicken}} i {{tortillas}} med {{cottage_cheese}}, {{mixed_salad}} och {{wraps_tacokyckling_keso__salsa}}."
+      ],
+      "duration": 3,
+      "tags": [
+        "master"
+      ],
+      "tips": [
+        "Grönsakerna kan blandas i en skål eller ställas fram i småskålar."
+      ]
+    }
+  ]
+}

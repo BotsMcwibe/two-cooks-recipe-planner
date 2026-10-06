@@ -1,0 +1,347 @@
+{
+  "masterId": "halloumi_rostade_morotter",
+  "source": "hellofresh",
+  "createdAt": 1790795820,
+  "basePortions": 4,
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/halloumi_rostade_morotter/main.jpg"
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 124,
+    "perPortion": {
+      "energyKcal": 460,
+      "energyKj": 1926,
+      "fatG": 32.19,
+      "saturatedFatG": 16.3,
+      "carbsG": 13.69,
+      "sugarsG": 12.7,
+      "proteinG": 25.32,
+      "saltG": 2.6
+    }
+  },
+  "ratings": {
+    "average": 3.1,
+    "count": 50,
+    "source": "hellofresh"
+  },
+  "nodes": [
+    {
+      "id": "halloumi_rostade_morotter__preheated_oven_200",
+      "name": "Värm Ugnen",
+      "outputName": "Förvärmd ugn (200°C)",
+      "inputs": [],
+      "steps": [
+        "Sätt ugnen på 200°C.",
+        "Koka upp vatten i vattenkokaren (behövs till couscous och mandlar)."
+      ],
+      "duration": 1,
+      "tags": [
+        "prep",
+        "no-timer"
+      ],
+      "wait": 12,
+      "tips": [
+        "HF anger 200°C (inte 220) — lokal ugnsnode, inte preheated_oven_220."
+      ]
+    },
+    {
+      "id": "halloumi_rostade_morotter__prepped_carrots",
+      "name": "Förbered Morötter",
+      "outputName": "Förberedda morötter",
+      "inputs": [
+        {
+          "id": "carrot",
+          "amount": 6,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skrubba ren {{carrot}}.",
+        "Ansa morotsblasten och halvera eventuellt längre morötter."
+      ],
+      "duration": 5,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "FLAG: HF/yield unit infererade som 6 tsk — överstyrd till 6 st (metod: skrubba/halvera hela morötter)."
+      ]
+    },
+    {
+      "id": "halloumi_rostade_morotter__diced_zucchini",
+      "name": "Tärna Zucchini",
+      "outputName": "Tärnad zucchini",
+      "inputs": [
+        {
+          "id": "zucchini",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Tärna {{zucchini}} i 1×1 cm stora bitar."
+      ],
+      "duration": 4,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "halloumi_rostade_morotter__onion_wedges",
+      "name": "Skär Rödlöksklyftor",
+      "outputName": "Rödlöksklyftor",
+      "inputs": [
+        {
+          "id": "red_onion",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Halvera {{red_onion}} och dela varje halv i klyftor (ca 8 per lök)."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "halloumi_rostade_morotter__roasted_vegetables",
+      "name": "Rosta Grönsaker",
+      "outputName": "Rostade grönsaker",
+      "inputs": [
+        {
+          "id": "halloumi_rostade_morotter__preheated_oven_200",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "halloumi_rostade_morotter__prepped_carrots",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "halloumi_rostade_morotter__diced_zucchini",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "halloumi_rostade_morotter__onion_wedges",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Lägg {{halloumi_rostade_morotter__prepped_carrots}}, {{halloumi_rostade_morotter__diced_zucchini}} och {{halloumi_rostade_morotter__onion_wedges}} i en skål.",
+        "Häll på {{olive_oil}}, krydda med {{salt}} och {{pepper}} och blanda ordentligt.",
+        "Sprid ut grönsakerna jämnt på en bakplåt täckt med bakplåtspapper.",
+        "Baka i {{halloumi_rostade_morotter__preheated_oven_200}} i 20–25 min tills de är gyllenbruna och möra."
+      ],
+      "duration": 5,
+      "wait": 25,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "halloumi_rostade_morotter__spiced_couscous",
+      "name": "Gör Kryddig Couscous",
+      "outputName": "Kryddig couscous",
+      "inputs": [
+        {
+          "id": "water",
+          "amount": 4,
+          "unit": "dl"
+        },
+        {
+          "id": "vegetable_bouillon",
+          "amount": 4,
+          "unit": "g"
+        },
+        {
+          "id": "couscous",
+          "amount": 300,
+          "unit": "g"
+        },
+        {
+          "id": "tex_mex",
+          "amount": 6,
+          "unit": "tsk"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        }
+      ],
+      "steps": [
+        "Koka upp {{water}} i en medelstor kastrull och rör i {{vegetable_bouillon}}.",
+        "Rör i {{couscous}}, {{tex_mex}} och {{olive_oil}}.",
+        "Sätt på locket och ta av kastrullen från spisplattan.",
+        "Låt stå i 5 min, eller tills allt vatten har absorberats. Rör om med en gaffel."
+      ],
+      "duration": 5,
+      "wait": 5,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "FLAG: HF Buljong amount=4 unit infererad som ml (yields 2 unresolved null). Tolkat som 4 g grönsaksbuljong + 4 dl vatten till 300 g couscous (HF: 'vatten se mängd i ingredienslistan')."
+      ]
+    },
+    {
+      "id": "halloumi_rostade_morotter__honey_lemon_dressing",
+      "name": "Gör Citron-Honungsdressing",
+      "outputName": "Citron-honungsdressing",
+      "inputs": [
+        {
+          "id": "lemon",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "honey",
+          "amount": 50,
+          "unit": "g"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Halvera {{lemon}} och pressa ur 2–4 msk juice.",
+        "Blanda citronjuicen med {{honey}}, {{olive_oil}}, {{salt}} och {{pepper}} i en liten skål."
+      ],
+      "duration": 4,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "FLAG: HF Citrusfrukt 2 tsk — överstyrd till 2 st citron (metod: halvera citron / 2–4 msk juice)."
+      ]
+    },
+    {
+      "id": "halloumi_rostade_morotter__roasted_almonds",
+      "name": "Rosta Mandlar",
+      "outputName": "Rostade mandlar",
+      "inputs": [
+        {
+          "id": "almonds",
+          "amount": 40,
+          "unit": "g"
+        },
+        {
+          "id": "water",
+          "amount": 2,
+          "unit": "dl"
+        }
+      ],
+      "steps": [
+        "Lägg {{almonds}} i en skål och häll över kokande {{water}}. Låt stå i 5 minuter och häll av i en sil.",
+        "Skala mandlarna för hand när skalet är mjukt. Strimla dem grovt.",
+        "Rosta de strimlade mandlarna i en torr stekpanna på medelvärme 2–3 min under omrörning tills de är gyllenbruna. Lägg åt sidan."
+      ],
+      "duration": 8,
+      "wait": 5,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "halloumi_rostade_morotter__fried_halloumi",
+      "name": "Stek Halloumi",
+      "outputName": "Stekt halloumi",
+      "inputs": [
+        {
+          "id": "halloumi",
+          "amount": 400,
+          "unit": "g"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        }
+      ],
+      "steps": [
+        "Dela {{halloumi}} i 1 cm tjocka skivor.",
+        "Hetta upp {{olive_oil}} i stekpannan på medelvärme.",
+        "Stek halloumiskivorna tills de är gyllenbruna, ca 2 min per sida."
+      ],
+      "duration": 8,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "halloumi_rostade_morotter",
+      "name": "Halloumi och rostade morötter",
+      "outputName": "Halloumi och rostade morötter",
+      "inputs": [
+        {
+          "id": "halloumi_rostade_morotter__spiced_couscous",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "halloumi_rostade_morotter__roasted_vegetables",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "halloumi_rostade_morotter__fried_halloumi",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "halloumi_rostade_morotter__roasted_almonds",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "halloumi_rostade_morotter__honey_lemon_dressing",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{halloumi_rostade_morotter__spiced_couscous}}, {{halloumi_rostade_morotter__roasted_vegetables}} och {{halloumi_rostade_morotter__fried_halloumi}} på tallriken.",
+        "Strö över {{halloumi_rostade_morotter__roasted_almonds}} och ringla {{halloumi_rostade_morotter__honey_lemon_dressing}} på toppen."
+      ],
+      "duration": 3,
+      "tags": [
+        "master"
+      ],
+      "wait": 0
+    }
+  ]
+}

@@ -1,0 +1,156 @@
+{
+  "masterId": "spaghetti_bolognese",
+  "source": "hellofresh",
+  "createdAt": 1790852559,
+  "basePortions": 4,
+  "sharedPrep": [],
+  "nodes": [
+    {
+      "id": "spaghetti_bolognese__chopped_onion",
+      "name": "Hacka Lök",
+      "outputName": "Hackad lök",
+      "inputs": [
+        {
+          "id": "onion",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skala och hacka {{onion}} fint."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "spaghetti_bolognese__browned_mince",
+      "name": "Bryn Köttfärs och Lök",
+      "outputName": "Brynt köttfärs med lök",
+      "inputs": [
+        {
+          "id": "olive_oil",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "spaghetti_bolognese__chopped_onion",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "ground_beef",
+          "amount": 400,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i en stor kastrull.",
+        "Fräs {{spaghetti_bolognese__chopped_onion}} i 3 minuter tills mjuk.",
+        "Tillsätt {{ground_beef}} och stek i 5 minuter."
+      ],
+      "duration": 9,
+      "tags": []
+    },
+    {
+      "id": "spaghetti_bolognese__bolognese_sauce",
+      "name": "Gör Köttfärssås",
+      "outputName": "Köttfärssås",
+      "inputs": [
+        {
+          "id": "spaghetti_bolognese__browned_mince",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "canned_tomatoes",
+          "amount": 400,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 0.5,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Tillsätt {{canned_tomatoes}}, {{salt}} och {{pepper}} till {{spaghetti_bolognese__browned_mince}} i kastrullen.",
+        "Låt sjuda på låg värme i 20 minuter."
+      ],
+      "duration": 1,
+      "tags": [],
+      "wait": 20
+    },
+    {
+      "id": "spaghetti_bolognese__cooked_pasta",
+      "name": "Koka Pasta",
+      "outputName": "Kokt pasta",
+      "inputs": [
+        {
+          "id": "pasta",
+          "amount": 400,
+          "unit": "g"
+        },
+        {
+          "id": "water",
+          "amount": 2,
+          "unit": "l"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "msk"
+        }
+      ],
+      "steps": [
+        "Koka upp saltat {{water}} i en stor kastrull.",
+        "Tillsätt {{pasta}} och koka enligt förpackningen, ca 8–10 min tills al dente.",
+        "Häll av vattnet."
+      ],
+      "duration": 2,
+      "tags": [],
+      "wait": 10
+    },
+    {
+      "id": "spaghetti_bolognese",
+      "name": "Spaghetti Bolognese",
+      "outputName": "Spaghetti Bolognese",
+      "inputs": [
+        {
+          "id": "spaghetti_bolognese__cooked_pasta",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "spaghetti_bolognese__bolognese_sauce",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "parmesan",
+          "amount": 50,
+          "unit": "g"
+        },
+        {
+          "id": "basil",
+          "amount": 0.5,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Blanda {{spaghetti_bolognese__cooked_pasta}} med {{spaghetti_bolognese__bolognese_sauce}}.",
+        "Servera med riven {{parmesan}} och {{basil}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "master"
+      ]
+    }
+  ]
+}

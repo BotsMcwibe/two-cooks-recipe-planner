@@ -1,0 +1,194 @@
+{
+  "masterId": "zaatar_flaskkotlett",
+  "source": "linas",
+  "createdAt": 1791056876,
+  "basePortions": 4,
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/zaatar_flaskkotlett/main.jpg"
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "perPortion": {
+      "energyKcal": 522,
+      "fatG": 18.99,
+      "carbsG": 45.83,
+      "proteinG": 41.9
+    }
+  },
+  "ratings": {
+    "average": 3.92,
+    "count": 190,
+    "source": "linas"
+  },
+  "nodes": [
+    {
+      "id": "zaatar_flaskkotlett__bulgur",
+      "name": "Koka Bulgur",
+      "outputName": "Kokt bulgur",
+      "inputs": [
+        {
+          "id": "bulgur",
+          "amount": 250,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Koka {{bulgur}} enligt anvisningen på förpackningen, ca 10–12 min."
+      ],
+      "duration": 2,
+      "tags": [],
+      "wait": 12,
+      "tips": [
+        "Råsteget har ingen minut och listan har inget vatten. 10–12 min är en paketgissning, wait är 12. Inget vatten påhittat."
+      ]
+    },
+    {
+      "id": "zaatar_flaskkotlett__salad",
+      "name": "Blanda Bulgursallad",
+      "outputName": "Bulgursallad",
+      "inputs": [
+        {
+          "id": "zaatar_flaskkotlett__bulgur",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "red_onion",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "balsamic_vinegar",
+          "amount": 1,
+          "unit": "msk"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "msk"
+        },
+        {
+          "id": "salt",
+          "amount": 2,
+          "unit": "krm"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "krm"
+        },
+        {
+          "id": "orange",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "tomato",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "cucumber",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "mint",
+          "amount": 20,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Strimla {{red_onion}} och blanda med {{balsamic_vinegar}}, {{olive_oil}}, {{salt}} och {{pepper}}.",
+        "Skala {{orange}}, dela i klyftor och skär i bitar. Tärna {{tomato}} och {{cucumber}}. Blanda ner tillsammans med {{zaatar_flaskkotlett__bulgur}}.",
+        "Strimla {{mint}} och blanda ner."
+      ],
+      "duration": 8,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Snackgurka är mappad till gurka. Svartpeppar är mappad till peppar.",
+        "Mynta blandas sist. Ingen wait, råsteget har ingen minut."
+      ]
+    },
+    {
+      "id": "zaatar_flaskkotlett__pork",
+      "name": "Stek Fläskkotlett",
+      "outputName": "Stekt fläskkotlett",
+      "inputs": [
+        {
+          "id": "pork_chop",
+          "amount": 600,
+          "unit": "g"
+        },
+        {
+          "id": "zaatar",
+          "amount": 1,
+          "unit": "förp"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 2,
+          "unit": "krm"
+        },
+        {
+          "id": "oil",
+          "amount": 1,
+          "unit": "tsk"
+        },
+        {
+          "id": "butter",
+          "amount": 1,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Skär {{pork_chop}} i 4 jämntjocka skivor. Krydda med {{zaatar}}, {{salt}} och {{pepper}}.",
+        "Hetta upp {{oil}} och {{butter}} i en rymlig panna. Stek på medelvärme ca 3 min per sida, tills köttet är genomstekt."
+      ],
+      "duration": 8,
+      "tags": [],
+      "tips": [
+        "3 min per sida är hands-on och ligger i duration, inte som wait. Ingen vilotid är angiven.",
+        "Za'atar är 1 förp utan vikt. Olja är angiven som 1 tsk, inte 1 skvätt.",
+        "Salt och peppar här är egna rader, inte hopslagna med salladens."
+      ]
+    },
+    {
+      "id": "zaatar_flaskkotlett",
+      "name": "Zaatarstekt fläskkotlett med bulgursallad, apelsin och yoghurt",
+      "outputName": "Zaatarstekt fläskkotlett med bulgursallad, apelsin och yoghurt",
+      "inputs": [
+        {
+          "id": "zaatar_flaskkotlett__pork",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "zaatar_flaskkotlett__salad",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "matyoghurt",
+          "amount": 300,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Servera {{zaatar_flaskkotlett__pork}} med {{zaatar_flaskkotlett__salad}} och {{matyoghurt}}."
+      ],
+      "duration": 3,
+      "tags": [
+        "master"
+      ]
+    }
+  ]
+}

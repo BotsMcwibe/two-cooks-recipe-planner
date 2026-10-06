@@ -1,0 +1,375 @@
+{
+  "masterId": "beef_kofta_greek_salad",
+  "source": "hellofresh",
+  "createdAt": 1790796623,
+  "basePortions": 4,
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/beef_kofta_greek_salad/main.jpg",
+    "byNode": {
+      "beef_kofta_greek_salad__roasted_fries": "assets/recipes/beef_kofta_greek_salad/steps/roasted_fries.jpg",
+      "beef_kofta_greek_salad__tzatziki": "assets/recipes/beef_kofta_greek_salad/steps/tzatziki.jpg",
+      "beef_kofta_greek_salad__greek_salad": "assets/recipes/beef_kofta_greek_salad/steps/greek_salad.jpg",
+      "beef_kofta_greek_salad__cooked_koftas": "assets/recipes/beef_kofta_greek_salad/steps/cooked_koftas.jpg",
+      "beef_kofta_greek_salad__mint_flatbread": "assets/recipes/beef_kofta_greek_salad/steps/mint_flatbread.jpg",
+      "beef_kofta_greek_salad": "assets/recipes/beef_kofta_greek_salad/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 864,
+    "perPortion": {
+      "energyKcal": 1177,
+      "energyKj": 4923,
+      "fatG": 55.8,
+      "saturatedFatG": 22.3,
+      "carbsG": 111.9,
+      "sugarsG": 10.7,
+      "fiberG": 39.5,
+      "proteinG": 56.3,
+      "saltG": 7.4
+    }
+  },
+  "ratings": {
+    "average": 4,
+    "count": 2,
+    "source": "hellofresh"
+  },
+  "nodes": [
+    {
+      "id": "beef_kofta_greek_salad__preheated_oven_240",
+      "name": "Värm Ugnen",
+      "outputName": "Förvärmd ugn (240°C)",
+      "inputs": [],
+      "steps": [
+        "Värm ugnen till 240 °C, eller 220 °C varmluft."
+      ],
+      "duration": 1,
+      "wait": 12,
+      "tags": [
+        "prep",
+        "no-timer"
+      ],
+      "tips": [
+        "HF anger 240 °C / 220 °C varmluft — lokal ugnsnode, inte preheated_oven_220."
+      ]
+    },
+    {
+      "id": "beef_kofta_greek_salad__cut_fries",
+      "name": "Skär Pommes",
+      "outputName": "Skurna potatisstavar",
+      "inputs": [
+        {
+          "id": "potato",
+          "amount": 1000,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Skär {{potato}} (oskalad) i 1 cm tunna pommes."
+      ],
+      "duration": 8,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "beef_kofta_greek_salad__roasted_fries",
+      "name": "Rosta Pommes",
+      "outputName": "Rostade kryddiga pommes",
+      "inputs": [
+        {
+          "id": "beef_kofta_greek_salad__preheated_oven_240",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "beef_kofta_greek_salad__cut_fries",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "buon_appetito",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Placera {{beef_kofta_greek_salad__cut_fries}} på en plåt med bakplåtspapper.",
+        "Blanda med {{olive_oil}}, {{buon_appetito}}, {{salt}} och en nypa {{pepper}}.",
+        "Rosta i {{beef_kofta_greek_salad__preheated_oven_240}} i 25–35 min, eller tills gyllene och mjuka."
+      ],
+      "duration": 3,
+      "wait": 30,
+      "tags": []
+    },
+    {
+      "id": "beef_kofta_greek_salad__tzatziki",
+      "name": "Gör Tzatziki",
+      "outputName": "Dilltzatziki",
+      "inputs": [
+        {
+          "id": "dill",
+          "amount": 10,
+          "unit": "g"
+        },
+        {
+          "id": "garlic",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "cucumber",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "yoghurt",
+          "amount": 300,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Finhacka {{dill}} och finhacka eller pressa {{garlic}}.",
+        "Riv {{cucumber}} grovt och pressa ur så mycket vätska som möjligt i en ren handduk.",
+        "Blanda gurka, vitlök, {{yoghurt}}, dill, {{salt}} och en nypa {{pepper}} i en medelstor skål. Ställ åt sidan."
+      ],
+      "duration": 10,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "beef_kofta_greek_salad__cut_salad_vegetables",
+      "name": "Skär Salladsgrönsaker",
+      "outputName": "Skurna salladsgrönsaker",
+      "inputs": [
+        {
+          "id": "lettuce",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "cherry_tomatoes",
+          "amount": 250,
+          "unit": "g"
+        },
+        {
+          "id": "radish",
+          "amount": 120,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Ansa {{lettuce}} och separera och grovhacka salladsblad.",
+        "Halvera {{cherry_tomatoes}}.",
+        "Skär {{radish}} i tunna skivor."
+      ],
+      "duration": 7,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "beef_kofta_greek_salad__greek_salad",
+      "name": "Blanda Grekisk Sallad",
+      "outputName": "Grekisk sallad",
+      "inputs": [
+        {
+          "id": "beef_kofta_greek_salad__cut_salad_vegetables",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "feta_cheese",
+          "amount": 200,
+          "unit": "g"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "msk"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Smula {{feta_cheese}}.",
+        "Blanda {{beef_kofta_greek_salad__cut_salad_vegetables}} (sallad, körsbärstomater och rädisor), fetaost, {{olive_oil}}, {{salt}} och en nypa {{pepper}} i en medelstor skål. Ställ åt sidan."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "beef_kofta_greek_salad__cooked_koftas",
+      "name": "Stek Koftas",
+      "outputName": "Stekta nötfärskoftas",
+      "inputs": [
+        {
+          "id": "ground_beef",
+          "amount": 450,
+          "unit": "g"
+        },
+        {
+          "id": "panamat_spice",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "id": "breadcrumbs",
+          "amount": 50,
+          "unit": "g"
+        },
+        {
+          "id": "egg",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        }
+      ],
+      "steps": [
+        "Blanda {{ground_beef}}, {{panamat_spice}}, {{breadcrumbs}}, {{egg}}, {{salt}} och en nypa {{pepper}} i en stor skål.",
+        "Forma färsen till 8 cm långa koftas med fuktiga händer (4 per person).",
+        "Hetta upp {{olive_oil}} i en stor stekpanna på medelhög värme.",
+        "Stek koftas, vänd dem regelbundet, i 2–3 min, eller tills brynta. Sänk till medelvärme och stek i ytterligare 6–7 min, eller tills genomstekta."
+      ],
+      "duration": 15,
+      "wait": 0,
+      "tags": [],
+      "tips": [
+        "Köttet är färdiglagat när det inte längre är rosa i mitten."
+      ]
+    },
+    {
+      "id": "beef_kofta_greek_salad__mint_flatbread",
+      "name": "Rosta Tunnbröd",
+      "outputName": "Rostade tunnbröd med myntaolja",
+      "inputs": [
+        {
+          "id": "beef_kofta_greek_salad__preheated_oven_240",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "mint",
+          "amount": 1,
+          "unit": "kruka"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 4,
+          "unit": "msk"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "flatbread",
+          "amount": 4,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Finhacka bladen från {{mint}}.",
+        "Blanda mynta, {{olive_oil}} och {{salt}} i en liten skål.",
+        "Placera {{flatbread}} på en plåt med bakplåtspapper och bre med myntaolja.",
+        "Värm i {{beef_kofta_greek_salad__preheated_oven_240}} i 2–3 min, eller tills rostat. Skär i kvartar."
+      ],
+      "duration": 5,
+      "wait": 3,
+      "tags": []
+    },
+    {
+      "id": "beef_kofta_greek_salad",
+      "name": "Nötfärskoftas och grekisk sallad",
+      "outputName": "Nötfärskoftas och grekisk sallad",
+      "inputs": [
+        {
+          "id": "beef_kofta_greek_salad__cooked_koftas",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "beef_kofta_greek_salad__roasted_fries",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "beef_kofta_greek_salad__greek_salad",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "beef_kofta_greek_salad__mint_flatbread",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "beef_kofta_greek_salad__tzatziki",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{beef_kofta_greek_salad__cooked_koftas}}, {{beef_kofta_greek_salad__roasted_fries}}, {{beef_kofta_greek_salad__greek_salad}} och {{beef_kofta_greek_salad__mint_flatbread}} på tallrikar.",
+        "Servera med {{beef_kofta_greek_salad__tzatziki}}."
+      ],
+      "duration": 3,
+      "wait": 0,
+      "tags": [
+        "master"
+      ]
+    }
+  ]
+}

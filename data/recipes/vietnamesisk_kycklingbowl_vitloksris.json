@@ -1,0 +1,309 @@
+{
+  "masterId": "vietnamesisk_kycklingbowl_vitloksris",
+  "source": "hellofresh",
+  "createdAt": 1791039326,
+  "basePortions": 4,
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/vietnamesisk_kycklingbowl_vitloksris/main.jpg",
+    "byNode": {
+      "vietnamesisk_kycklingbowl_vitloksris__garlic_rice": "assets/recipes/vietnamesisk_kycklingbowl_vitloksris/steps/garlic_rice.jpg",
+      "vietnamesisk_kycklingbowl_vitloksris__pickled_cucumber": "assets/recipes/vietnamesisk_kycklingbowl_vitloksris/steps/pickled_cucumber.jpg",
+      "vietnamesisk_kycklingbowl_vitloksris__fried_veg": "assets/recipes/vietnamesisk_kycklingbowl_vitloksris/steps/fried_veg.jpg",
+      "vietnamesisk_kycklingbowl_vitloksris__fried_chicken": "assets/recipes/vietnamesisk_kycklingbowl_vitloksris/steps/fried_chicken.jpg",
+      "vietnamesisk_kycklingbowl_vitloksris__sauced_chicken": "assets/recipes/vietnamesisk_kycklingbowl_vitloksris/steps/sauced_chicken.jpg",
+      "vietnamesisk_kycklingbowl_vitloksris": "assets/recipes/vietnamesisk_kycklingbowl_vitloksris/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 521,
+    "perPortion": {
+      "energyKj": 3265,
+      "energyKcal": 780,
+      "fatG": 29.8,
+      "saturatedFatG": 4.7,
+      "carbsG": 90.3,
+      "sugarsG": 21.4,
+      "fiberG": 4.6,
+      "proteinG": 43.5,
+      "saltG": 4.7
+    }
+  },
+  "cooked": {
+    "hfId": "6273d44cfabd8854209415df",
+    "at": "2026-10-03T15:12:32+02:00",
+    "source": "photo",
+    "headline": "med vitlöksris och srirachamajonnäs"
+  },
+  "nodes": [
+    {
+      "id": "vietnamesisk_kycklingbowl_vitloksris__minced_garlic",
+      "name": "Hacka Vitlök",
+      "outputName": "Hackad vitlök",
+      "inputs": [
+        {
+          "id": "garlic",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Finhacka eller pressa {{garlic}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "vietnamesisk_kycklingbowl_vitloksris__sliced_onion",
+      "name": "Skiva Lök",
+      "outputName": "Skivad lök",
+      "inputs": [
+        {
+          "id": "onion",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Halvera och skär {{onion}} i tunna skivor."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "vietnamesisk_kycklingbowl_vitloksris__garlic_rice",
+      "name": "Koka Vitlöksris",
+      "outputName": "Kokt vitlöksris",
+      "inputs": [
+        {
+          "id": "vietnamesisk_kycklingbowl_vitloksris__minced_garlic",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "butter",
+          "amount": 1,
+          "unit": "msk"
+        },
+        {
+          "id": "water",
+          "amount": 6,
+          "unit": "dl"
+        },
+        {
+          "id": "jasmine_rice",
+          "amount": 300,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{butter}} i en stor kastrull på medelvärme. Fräs {{vietnamesisk_kycklingbowl_vitloksris__minced_garlic}} i 30 sek, eller tills väldoftande.",
+        "Tillsätt {{water}} och koka upp. Rör i {{jasmine_rice}} och {{salt}}, sänk till medellåg värme och sjud under lock i 12 min."
+      ],
+      "duration": 3,
+      "tags": [],
+      "wait": 12,
+      "tips": [
+        "Riset ska ångkoka, så tjuvkika inte."
+      ]
+    },
+    {
+      "id": "vietnamesisk_kycklingbowl_vitloksris__rested_garlic_rice",
+      "name": "Vila Vitlöksris",
+      "outputName": "Vilat vitlöksris",
+      "inputs": [
+        {
+          "id": "vietnamesisk_kycklingbowl_vitloksris__garlic_rice",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Ta av kastrullen från värmen och låt {{vietnamesisk_kycklingbowl_vitloksris__garlic_rice}} vila under lock i 10 min."
+      ],
+      "duration": 1,
+      "tags": [],
+      "wait": 10
+    },
+    {
+      "id": "vietnamesisk_kycklingbowl_vitloksris__pickled_cucumber",
+      "name": "Sylta Gurka",
+      "outputName": "Syltad gurka",
+      "inputs": [
+        {
+          "id": "cucumber",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "white_wine_vinegar",
+          "amount": 24,
+          "unit": "ml"
+        },
+        {
+          "id": "sugar",
+          "amount": 1,
+          "unit": "tsk"
+        },
+        {
+          "id": "water",
+          "amount": 2,
+          "unit": "msk"
+        }
+      ],
+      "steps": [
+        "Skär {{cucumber}} i tunna halvmånar.",
+        "Blanda {{white_wine_vinegar}}, {{sugar}}, {{water}} och en nypa salt i en liten skål. Vänd i gurkan och ställ åt sidan."
+      ],
+      "duration": 4,
+      "tags": [
+        "prep"
+      ],
+      "wait": 0,
+      "tips": [
+        "Häll av lagen före servering."
+      ]
+    },
+    {
+      "id": "vietnamesisk_kycklingbowl_vitloksris__fried_veg",
+      "name": "Stek Morot och Lök",
+      "outputName": "Stekt morot och lök",
+      "inputs": [
+        {
+          "id": "olive_oil",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "carrot_julienne",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "vietnamesisk_kycklingbowl_vitloksris__sliced_onion",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "ginger_ninja",
+          "amount": 10,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i en stor stekpanna på medelhög värme.",
+        "Stek {{carrot_julienne}}, {{vietnamesisk_kycklingbowl_vitloksris__sliced_onion}}, {{ginger_ninja}} och en nypa salt i 3–4 min, eller tills mjukt. Lägg över i en skål med lock för att hålla värmen."
+      ],
+      "duration": 5,
+      "tags": [],
+      "wait": 0
+    },
+    {
+      "id": "vietnamesisk_kycklingbowl_vitloksris__fried_chicken",
+      "name": "Stek Kyckling",
+      "outputName": "Stekt kyckling",
+      "inputs": [
+        {
+          "id": "chicken_inner_fillet",
+          "amount": 600,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Krydda {{chicken_inner_fillet}} med {{salt}}.",
+        "Hetta upp stekpannan där grönsakerna stektes (eller en ny stor stekpanna) på medelhög värme och tillsätt en skvätt olivolja vid behov. Stek kycklingen i 3 min per sida, eller tills brynt och genomstekt."
+      ],
+      "duration": 7,
+      "tags": [],
+      "wait": 0,
+      "tips": [
+        "Tvätta händer och köksredskap noggrant efter hantering av rå kyckling.",
+        "Kycklingen är färdiglagad när köttet inte längre är rosa i mitten."
+      ]
+    },
+    {
+      "id": "vietnamesisk_kycklingbowl_vitloksris__sauced_chicken",
+      "name": "Blanda Woksås",
+      "outputName": "Kyckling i woksås",
+      "inputs": [
+        {
+          "id": "vietnamesisk_kycklingbowl_vitloksris__fried_chicken",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "asian_wok_sauce",
+          "amount": 150,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Ta av från värmen, tillsätt {{asian_wok_sauce}} och rör om tills {{vietnamesisk_kycklingbowl_vitloksris__fried_chicken}} är täckt med sås."
+      ],
+      "duration": 1,
+      "tags": [],
+      "wait": 0
+    },
+    {
+      "id": "vietnamesisk_kycklingbowl_vitloksris",
+      "name": "Vietnamesisk kycklingbowl",
+      "outputName": "Vietnamesisk kycklingbowl",
+      "inputs": [
+        {
+          "id": "vietnamesisk_kycklingbowl_vitloksris__rested_garlic_rice",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "vietnamesisk_kycklingbowl_vitloksris__fried_veg",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "vietnamesisk_kycklingbowl_vitloksris__sauced_chicken",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "vietnamesisk_kycklingbowl_vitloksris__pickled_cucumber",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "coriander",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "vegan_sriracha_mayo",
+          "amount": 100,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{vietnamesisk_kycklingbowl_vitloksris__rested_garlic_rice}}, {{vietnamesisk_kycklingbowl_vitloksris__fried_veg}}, {{vietnamesisk_kycklingbowl_vitloksris__sauced_chicken}} och {{vietnamesisk_kycklingbowl_vitloksris__pickled_cucumber}} i skålar. Häll av lagen från gurkan. Skeda över resterande sås från stekpannan.",
+        "Plocka blad från {{coriander}}, riv dem och strö över. Toppa med en klick {{vegan_sriracha_mayo}}."
+      ],
+      "duration": 4,
+      "tags": [
+        "master"
+      ],
+      "wait": 0
+    }
+  ]
+}

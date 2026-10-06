@@ -1,0 +1,257 @@
+/* Enhanced Checkbox Styles */
+
+/* Custom checkbox with checkmark animation */
+.custom-checkbox {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.custom-checkbox input[type="checkbox"] {
+  opacity: 0;
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+.custom-checkbox .checkmark {
+  position: relative;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background: var(--bg-white);
+  border: 2px solid var(--primary);
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px var(--shadow-light);
+}
+
+.custom-checkbox:hover .checkmark {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--primary-lighter);
+  transform: scale(1.05);
+}
+
+.custom-checkbox input:checked + .checkmark {
+  background: var(--primary);
+  border-color: var(--primary);
+  transform: scale(1);
+}
+
+.custom-checkbox input:checked + .checkmark::after {
+  content: '';
+  position: absolute;
+  left: 7px;
+  top: 3px;
+  width: 6px;
+  height: 12px;
+  border: solid var(--color-white);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  animation: checkmark-appear 0.3s ease;
+}
+
+@keyframes checkmark-appear {
+  0% {
+    opacity: 0;
+    transform: rotate(45deg) scale(0.5);
+  }
+  50% {
+    opacity: 1;
+    transform: rotate(45deg) scale(1.2);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(45deg) scale(1);
+  }
+}
+
+/* Alternative style: Toggle switch checkbox */
+.toggle-checkbox {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 26px;
+}
+
+.toggle-checkbox input[type="checkbox"] {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--border-medium);
+  transition: all 0.3s ease;
+  border-radius: 26px;
+  box-shadow: inset 0 2px 4px var(--shadow-light);
+}
+
+.toggle-slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  top: 3px;
+  background-color: var(--bg-white);
+  transition: all 0.3s ease;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px var(--shadow-medium);
+}
+
+.toggle-checkbox input:checked + .toggle-slider {
+  background-color: var(--primary);
+  box-shadow: inset 0 2px 4px var(--shadow-primary);
+}
+
+.toggle-checkbox input:checked + .toggle-slider:before {
+  transform: translateX(24px);
+  background-color: var(--color-white);
+}
+
+.toggle-checkbox:hover .toggle-slider {
+  box-shadow: 0 0 0 3px var(--primary-lighter);
+}
+
+/* Enhanced step checkboxes with better interaction */
+.step-checkbox-enhanced {
+  position: relative;
+  width: 22px;
+  height: 22px;
+  appearance: none;
+  background: var(--bg-white);
+  border: 2px solid var(--border-medium);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 1px 3px var(--shadow-light);
+}
+
+.step-checkbox-enhanced:hover {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px var(--primary-lighter);
+  transform: translateY(-1px);
+}
+
+.step-checkbox-enhanced:checked {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary) 100%);
+  border-color: var(--primary);
+  animation: checkbox-bounce 0.4s ease;
+}
+
+.step-checkbox-enhanced:checked::before {
+  content: '✓';
+  position: absolute;
+  top: -2px;
+  left: 3px;
+  color: var(--color-white);
+  font-size: 16px;
+  font-weight: bold;
+  text-shadow: 0 1px 2px var(--shadow-dark);
+}
+
+@keyframes checkbox-bounce {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+/* Checkbox with pulse effect on check */
+.pulse-checkbox {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  appearance: none;
+  background: var(--bg-white);
+  border: 2px solid var(--primary);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.pulse-checkbox:checked {
+  background: var(--primary);
+  animation: pulse-effect 0.6s ease;
+}
+
+.pulse-checkbox:checked::after {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 3px;
+  width: 6px;
+  height: 10px;
+  border: solid var(--color-white);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+@keyframes pulse-effect {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 var(--primary);
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 10px rgba(227, 0, 11, 0.3);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(227, 0, 11, 0);
+  }
+}
+
+/* Gradient checkbox */
+.gradient-checkbox {
+  position: relative;
+  width: 22px;
+  height: 22px;
+  appearance: none;
+  background: linear-gradient(135deg, var(--bg-white) 0%, var(--primary-lightest) 100%);
+  border: 2px solid var(--primary);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px var(--shadow-light);
+}
+
+.gradient-checkbox:hover {
+  box-shadow: 0 4px 12px var(--shadow-primary);
+  transform: translateY(-1px);
+}
+
+.gradient-checkbox:checked {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary) 100%);
+  border-color: var(--primary);
+}
+
+.gradient-checkbox:checked::before {
+  content: '';
+  position: absolute;
+  left: 6px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid var(--color-white);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  animation: checkmark-slide 0.3s ease;
+}
+
+@keyframes checkmark-slide {
+  0% {
+    opacity: 0;
+    transform: rotate(45deg) translateY(5px);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(45deg) translateY(0);
+  }
+}

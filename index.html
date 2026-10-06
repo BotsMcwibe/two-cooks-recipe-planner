@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recept</title>
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+    crossorigin="anonymous"></script>
+</head>
+<body>
+  <header>
+    <a href="#browse" class="brand" aria-label="Recept, till receptlistan">
+      <svg class="brand-mark" viewBox="0 0 32 32" width="28" height="28" aria-hidden="true" focusable="false">
+        <circle cx="15" cy="18" r="10" fill="none" stroke="currentColor" stroke-width="2"/>
+        <circle cx="15" cy="18" r="6" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M20.2 4.2c.4 3.4-1.1 6-3.6 7.2 2.8.3 5 1.8 6.1 4-3.6-.5-6.6-2.4-7.9-5.2.7-2.6 2.6-5 5.4-6z" fill="currentColor"/>
+      </svg>
+      <span class="brand-word">Recept</span>
+    </a>
+  </header>
+
+  <main class="main-browse">
+    <!-- Browse + shopping sidebar -->
+    <div id="app-layout" class="app-layout is-browse">
+      <section id="view-browse"></section>
+      <aside id="shopping-sidebar" class="shopping-sidebar" aria-label="Inköpslista"></aside>
+    </div>
+    <div id="shopping-sidebar-backdrop" class="shopping-sidebar-backdrop" hidden></div>
+    <button type="button" id="shopping-drawer-toggle" class="shopping-drawer-toggle" hidden>
+      Inköpslista
+    </button>
+
+    <!-- Cooking / Matlagning (gantt + steps) -->
+    <section id="view-cooking" style="display:none">
+      <div id="cooking-hero" hidden></div>
+      <div id="cooking-header" hidden></div>
+      <div id="cook-toggles" class="cook-toggles"></div>
+      <div id="gantt-chart"></div>
+      <div id="cooking-layout" class="cooking-layout">
+        <aside class="cooking-sidebar">
+          <div id="cook-portions" class="cook-portions"></div>
+          <div id="cooking-ingredients"></div>
+          <div id="cooking-nutrition" hidden></div>
+        </aside>
+        <div class="cooking-main">
+          <div id="cooking-steps"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="js/main.js?v=20261007"></script>
+</body>
+</html>

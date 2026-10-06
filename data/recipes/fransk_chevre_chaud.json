@@ -1,0 +1,177 @@
+{
+  "masterId": "fransk_chevre_chaud",
+  "source": "hellofresh",
+  "createdAt": 1791042265,
+  "basePortions": 2,
+  "sharedPrep": [
+    "preheated_oven_220"
+  ],
+  "images": {
+    "main": "assets/recipes/fransk_chevre_chaud/main.jpg",
+    "byNode": {
+      "fransk_chevre_chaud__goat_cheese_baguette": "assets/recipes/fransk_chevre_chaud/steps/goat_cheese_baguette.jpg",
+      "fransk_chevre_chaud__dressed_salad": "assets/recipes/fransk_chevre_chaud/steps/dressed_salad.jpg",
+      "fransk_chevre_chaud__honey_walnuts": "assets/recipes/fransk_chevre_chaud/steps/honey_walnuts.jpg",
+      "fransk_chevre_chaud": "assets/recipes/fransk_chevre_chaud/steps/serve.jpg"
+    }
+  },
+  "ratings": {
+    "average": 4.0,
+    "count": 1,
+    "source": "hellofresh"
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 253,
+    "perPortion": {
+      "energyKcal": 559,
+      "energyKj": 2338,
+      "fatG": 30,
+      "saturatedFatG": 10.2,
+      "carbsG": 54.6,
+      "sugarsG": 20.3,
+      "fiberG": 5,
+      "proteinG": 17.1,
+      "saltG": 1.6
+    }
+  },
+  "nodes": [
+    {
+      "id": "fransk_chevre_chaud__goat_cheese_baguette",
+      "name": "Rosta Getostbaguette",
+      "outputName": "Getostbaguette",
+      "inputs": [
+        {
+          "id": "preheated_oven_220",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "baguette",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "goat_cheese",
+          "amount": 100,
+          "unit": "g"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Dela {{baguette}} på längden och sedan på hälften så det blir 4 bitar.",
+        "Lägg bitarna på en plåt med bakplåtspapper, ringla över olivolja, bre på {{goat_cheese}} och krydda med {{pepper}}.",
+        "Rosta i {{preheated_oven_220}} i 8–10 min, tills gyllene."
+      ],
+      "duration": 4,
+      "wait": 10,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Olivoljan på baguetten har ingen mängd på kortet. Den uppmätta olivoljan, 1/2 msk, hör till dressingen."
+      ]
+    },
+    {
+      "id": "fransk_chevre_chaud__dressed_salad",
+      "name": "Blanda Sallad",
+      "outputName": "Dressad sallad med äpple",
+      "inputs": [
+        {
+          "id": "balsamic_vinegar",
+          "amount": 12,
+          "unit": "ml"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 0.5,
+          "unit": "msk"
+        },
+        {
+          "id": "sugar",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "mixed_salad",
+          "amount": 100,
+          "unit": "g"
+        },
+        {
+          "id": "apple",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Blanda {{balsamic_vinegar}}, {{olive_oil}} och {{sugar}} i en stor skål.",
+        "Skölj {{mixed_salad}}.",
+        "Halvera, kärna ur och skär {{apple}} i tunna skivor.",
+        "Vänd ner salladsmixen och äpplet i dressingen."
+      ],
+      "duration": 6,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "fransk_chevre_chaud__honey_walnuts",
+      "name": "Blanda Honungsvalnötter",
+      "outputName": "Honungsvalnötter",
+      "inputs": [
+        {
+          "id": "walnuts",
+          "amount": 40,
+          "unit": "g"
+        },
+        {
+          "id": "honey",
+          "amount": 25,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Grovhacka {{walnuts}} och blanda dem med {{honey}} i en liten skål."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "fransk_chevre_chaud",
+      "name": "Fransk chèvre chaud-sallad",
+      "outputName": "Fransk chèvre chaud-sallad",
+      "inputs": [
+        {
+          "id": "fransk_chevre_chaud__dressed_salad",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "fransk_chevre_chaud__goat_cheese_baguette",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "fransk_chevre_chaud__honey_walnuts",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{fransk_chevre_chaud__dressed_salad}} i skålar.",
+        "Toppa med {{fransk_chevre_chaud__goat_cheese_baguette}} och {{fransk_chevre_chaud__honey_walnuts}}."
+      ],
+      "duration": 3,
+      "wait": 0,
+      "tags": [
+        "master"
+      ]
+    }
+  ]
+}

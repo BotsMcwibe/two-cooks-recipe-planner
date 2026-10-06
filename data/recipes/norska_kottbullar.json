@@ -1,0 +1,343 @@
+{
+  "masterId": "norska_kottbullar",
+  "source": "hellofresh",
+  "createdAt": 1791040287,
+  "basePortions": 4,
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/norska_kottbullar/main.jpg",
+    "byNode": {
+      "norska_kottbullar__potato_mash": "assets/recipes/norska_kottbullar/steps/potato_mash.jpg",
+      "norska_kottbullar__fried_meatballs": "assets/recipes/norska_kottbullar/steps/fried_meatballs.jpg",
+      "norska_kottbullar__prepped_onion_garlic": "assets/recipes/norska_kottbullar/steps/prepped_onion_garlic.jpg",
+      "norska_kottbullar__fried_kale": "assets/recipes/norska_kottbullar/steps/fried_kale.jpg",
+      "norska_kottbullar__meatball_sauce": "assets/recipes/norska_kottbullar/steps/meatball_sauce.jpg",
+      "norska_kottbullar": "assets/recipes/norska_kottbullar/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 566,
+    "perPortion": {
+      "energyKcal": 696,
+      "energyKj": 2911,
+      "fatG": 26.3,
+      "saturatedFatG": 10.5,
+      "carbsG": 77.8,
+      "sugarsG": 22.2,
+      "proteinG": 36.9,
+      "saltG": 5.8
+    }
+  },
+  "ratings": {
+    "average": 3.4,
+    "count": 326,
+    "source": "hellofresh"
+  },
+  "cooked": {
+    "hfId": "64ae8ce6565e2133abaa5178",
+    "at": "2026-10-03T15:12:32+02:00",
+    "source": "photo",
+    "headline": "med vitlöksstekt grönkål och potatismos"
+  },
+  "nodes": [
+    {
+      "id": "norska_kottbullar__diced_potato",
+      "name": "Tärna Potatis",
+      "outputName": "Tärnad potatis",
+      "inputs": [
+        {
+          "id": "potato",
+          "amount": 1000,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Skala och tärna {{potato}} i 2 cm stora bitar."
+      ],
+      "duration": 5,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "norska_kottbullar__boiled_potato",
+      "name": "Koka Potatis",
+      "outputName": "Kokt potatis",
+      "inputs": [
+        {
+          "id": "norska_kottbullar__diced_potato",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Koka upp en medelstor kastrull med saltat vatten.",
+        "Koka {{norska_kottbullar__diced_potato}} i 11–13 min, eller tills bitarna enkelt kan delas med en kniv."
+      ],
+      "duration": 2,
+      "wait": 13,
+      "tags": [],
+      "tips": [
+        "Salt till kokvattnet har ingen mängd. 1 tsk salt hör till moset."
+      ]
+    },
+    {
+      "id": "norska_kottbullar__potato_mash",
+      "name": "Mosa Potatis",
+      "outputName": "Potatismos",
+      "inputs": [
+        {
+          "id": "norska_kottbullar__boiled_potato",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "milk",
+          "amount": 6,
+          "unit": "msk"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Häll av vattnet. Mosa {{norska_kottbullar__boiled_potato}} med {{milk}}, {{salt}} och en nypa {{pepper}}. Ställ åt sidan under lock."
+      ],
+      "duration": 3,
+      "wait": 0,
+      "tags": [],
+      "tips": [
+        "En klick smör gör moset krämigare. Ingen mängd är angiven, så det är bara ett tips. Under lock är ingen klockad vila."
+      ]
+    },
+    {
+      "id": "norska_kottbullar__rolled_meatballs",
+      "name": "Rulla Köttbullar",
+      "outputName": "Rullade köttbullar",
+      "inputs": [
+        {
+          "id": "ground_beef",
+          "amount": 500,
+          "unit": "g"
+        },
+        {
+          "id": "egg",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "breadcrumbs",
+          "amount": 50,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Blanda {{ground_beef}}, {{egg}}, {{breadcrumbs}} och {{salt}} i en stor skål.",
+        "Rulla färsen till köttbullar (4 per person) och lägg dem på en tallrik."
+      ],
+      "duration": 6,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Nötfärs är mappad till ground_beef (Köttfärs), inte blandfärs."
+      ]
+    },
+    {
+      "id": "norska_kottbullar__fried_meatballs",
+      "name": "Stek Köttbullar",
+      "outputName": "Stekta köttbullar",
+      "inputs": [
+        {
+          "id": "norska_kottbullar__rolled_meatballs",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i en stor stekpanna på medelhög värme.",
+        "Stek {{norska_kottbullar__rolled_meatballs}} i 12–14 min, tills de är brynta och genomstekta. Sänk till medelvärme när de är brynta. Lägg över dem på en tallrik."
+      ],
+      "duration": 14,
+      "wait": 0,
+      "tags": [],
+      "tips": [
+        "Köttbullarna är klara när de inte längre är rosa i mitten.",
+        "12–14 min är hands-on vändning, därför duration 14 och wait 0. Oljan är en skvätt, inte den 1 msk som hör till såsen."
+      ]
+    },
+    {
+      "id": "norska_kottbullar__prepped_onion_garlic",
+      "name": "Skär Lök och Vitlök",
+      "outputName": "Skivad lök och hackad vitlök",
+      "inputs": [
+        {
+          "id": "onion",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "garlic",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skär {{onion}} i tunna skivor.",
+        "Finhacka eller pressa {{garlic}}."
+      ],
+      "duration": 4,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "norska_kottbullar__fried_kale",
+      "name": "Stek Grönkål",
+      "outputName": "Vitlöksstekt grönkål med tranbär",
+      "inputs": [
+        {
+          "id": "butter",
+          "amount": 1,
+          "unit": "msk"
+        },
+        {
+          "id": "kale",
+          "amount": 100,
+          "unit": "g"
+        },
+        {
+          "id": "dried_cranberries",
+          "amount": 40,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Smält {{butter}} i en kastrull på medelvärme.",
+        "Tillsätt {{kale}}, {{salt}} och en nypa {{pepper}}. Sänk till medellåg värme, tillsätt {{dried_cranberries}} och rör i 3–4 min, tills grönkålen mjuknat."
+      ],
+      "duration": 5,
+      "wait": 0,
+      "tags": [],
+      "tips": [
+        "De 3–4 min är rörande stek, inte passiv wait."
+      ]
+    },
+    {
+      "id": "norska_kottbullar__meatball_sauce",
+      "name": "Gör Lingonsås",
+      "outputName": "Köttbullar i lingonsås",
+      "inputs": [
+        {
+          "id": "norska_kottbullar__fried_meatballs",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "norska_kottbullar__prepped_onion_garlic",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "msk"
+        },
+        {
+          "id": "water",
+          "amount": 1,
+          "unit": "dl"
+        },
+        {
+          "id": "lingon_jam",
+          "amount": 50,
+          "unit": "g"
+        },
+        {
+          "id": "red_wine_sauce",
+          "amount": 120,
+          "unit": "g"
+        },
+        {
+          "id": "beef_bouillon",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i samma stekpanna på medelhög värme. Fräs {{norska_kottbullar__prepped_onion_garlic}} i 3–4 min, tills löken mjuknat.",
+        "Tillsätt {{water}}, {{lingon_jam}}, {{red_wine_sauce}}, {{salt}}, {{beef_bouillon}} och {{norska_kottbullar__fried_meatballs}}.",
+        "Sänk till medellåg värme och sjud i 2–3 min, tills såsen tjocknat något."
+      ],
+      "duration": 5,
+      "wait": 3,
+      "tags": [],
+      "tips": [
+        "Löken steks hands-on (duration). Sjudningen 2–3 min är sista stegets wait 3, inte hopslagen med stektiden."
+      ]
+    },
+    {
+      "id": "norska_kottbullar",
+      "name": "Norska köttbullar",
+      "outputName": "Norska köttbullar",
+      "inputs": [
+        {
+          "id": "norska_kottbullar__potato_mash",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "norska_kottbullar__meatball_sauce",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "norska_kottbullar__fried_kale",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{norska_kottbullar__potato_mash}} och {{norska_kottbullar__meatball_sauce}} på tallrikar.",
+        "Servera med {{norska_kottbullar__fried_kale}}."
+      ],
+      "duration": 3,
+      "tags": [
+        "master"
+      ]
+    }
+  ]
+}

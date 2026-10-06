@@ -1,0 +1,167 @@
+{
+  "masterId": "torsk_currykokos",
+  "source": "citygross",
+  "createdAt": 1791056383,
+  "basePortions": 4,
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/torsk_currykokos/main.jpg"
+  },
+  "nodes": [
+    {
+      "id": "torsk_currykokos__rice",
+      "name": "Koka Ris",
+      "outputName": "Kokt ris",
+      "inputs": [
+        {
+          "id": "rice",
+          "amount": 250,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Koka {{rice}} enligt anvisningen på förpackningen, ca 10–12 min."
+      ],
+      "duration": 2,
+      "wait": 12,
+      "tags": [],
+      "tips": [
+        "Råsteget säger bara \"enligt anvisningarna\" och har ingen timer. 10–12 min är en gissning. Ris är befintligt vanligt ris, inte jasmin."
+      ]
+    },
+    {
+      "id": "torsk_currykokos__sauce",
+      "name": "Koka Currykokos",
+      "outputName": "Currykokossås",
+      "inputs": [
+        {
+          "id": "ginger",
+          "amount": 0.75,
+          "unit": "msk"
+        },
+        {
+          "id": "garlic",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "leek",
+          "amount": 75,
+          "unit": "g"
+        },
+        {
+          "id": "curry",
+          "amount": 1,
+          "unit": "tsk"
+        },
+        {
+          "id": "butter",
+          "amount": 2,
+          "unit": "tsk"
+        },
+        {
+          "id": "coconut_milk",
+          "amount": 4,
+          "unit": "dl"
+        }
+      ],
+      "steps": [
+        "Riv {{ginger}} och {{garlic}}. Stek dem med {{leek}} och {{curry}} i {{butter}} ca 1 min. Häll i {{coconut_milk}} och låt såsen koka upp."
+      ],
+      "duration": 4,
+      "tags": [],
+      "tips": [
+        "1 min är hands-on stek, inte en passiv wait.",
+        "Ingefäran står som redan riven, mängden 0.75 msk är behållen. Vitlök är 1 st klyfta."
+      ]
+    },
+    {
+      "id": "torsk_currykokos__fish",
+      "name": "Sjuda Torsk",
+      "outputName": "Torsk i currykokos",
+      "inputs": [
+        {
+          "id": "torsk_currykokos__sauce",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "cod_fillet",
+          "amount": 500,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 2,
+          "unit": "krm"
+        }
+      ],
+      "steps": [
+        "Dela {{cod_fillet}} i bitar, lägg i {{torsk_currykokos__sauce}} och låt sjuda ca 8 min. Smaka av med {{salt}}."
+      ],
+      "duration": 3,
+      "wait": 8,
+      "tags": [],
+      "tips": [
+        "Salt är 2 krm i rådatan, inte 1 nypa. 8 min är råstegets timer."
+      ]
+    },
+    {
+      "id": "torsk_currykokos__veg_rice",
+      "name": "Blanda Grönsaksris",
+      "outputName": "Krispigt grönsaksris",
+      "inputs": [
+        {
+          "id": "torsk_currykokos__rice",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "sugar_snaps",
+          "amount": 150,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Dela {{sugar_snaps}} på längden och rör ner dem i {{torsk_currykokos__rice}}."
+      ],
+      "duration": 3,
+      "tags": [],
+      "tips": [
+        "Rånamnet är \"sugar snaps\". Mappat till sockerärtor."
+      ]
+    },
+    {
+      "id": "torsk_currykokos",
+      "name": "Torsk i currykokos med grönsaksris",
+      "outputName": "Torsk i currykokos med grönsaksris",
+      "inputs": [
+        {
+          "id": "torsk_currykokos__fish",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "torsk_currykokos__veg_rice",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "lime",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Servera {{torsk_currykokos__fish}} med {{torsk_currykokos__veg_rice}} och pressad {{lime}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "master"
+      ],
+      "tips": [
+        "Vill du ha en helt slät sås kan du mixa den innan fisken läggs i. Inte ett eget steg."
+      ]
+    }
+  ]
+}

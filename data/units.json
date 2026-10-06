@@ -1,0 +1,134 @@
+{
+  "st": {
+    "name": "styck",
+    "type": "count",
+    "baseUnit": "st",
+    "conversionFactor": 1
+  },
+  "g": {
+    "name": "gram",
+    "type": "weight",
+    "baseUnit": "g",
+    "conversionFactor": 1
+  },
+  "kg": {
+    "name": "kilogram",
+    "type": "weight",
+    "baseUnit": "g",
+    "conversionFactor": 1000
+  },
+  "tsk": {
+    "name": "tesked",
+    "type": "volume",
+    "baseUnit": "ml",
+    "conversionFactor": 5
+  },
+  "msk": {
+    "name": "matsked",
+    "type": "volume",
+    "baseUnit": "ml",
+    "conversionFactor": 15
+  },
+  "ml": {
+    "name": "milliliter",
+    "type": "volume",
+    "baseUnit": "ml",
+    "conversionFactor": 1
+  },
+  "dl": {
+    "name": "deciliter",
+    "type": "volume",
+    "baseUnit": "ml",
+    "conversionFactor": 100
+  },
+  "l": {
+    "name": "liter",
+    "type": "volume",
+    "baseUnit": "ml",
+    "conversionFactor": 1000
+  },
+  "skvätt": {
+    "name": "skvätt",
+    "type": "volume",
+    "baseUnit": "ml",
+    "conversionFactor": 10
+  },
+  "nypa": {
+    "name": "nypa",
+    "type": "volume",
+    "baseUnit": "ml",
+    "conversionFactor": 1
+  },
+  "klick": {
+    "name": "klick",
+    "type": "volume",
+    "baseUnit": "ml",
+    "conversionFactor": 5
+  },
+  "skiva": {
+    "name": "skiva",
+    "type": "count",
+    "baseUnit": "st",
+    "conversionFactor": 1
+  },
+  "huvud": {
+    "name": "huvud",
+    "type": "count",
+    "baseUnit": "st",
+    "conversionFactor": 1
+  },
+  "pkt": {
+    "name": "paket",
+    "type": "count",
+    "baseUnit": "st",
+    "conversionFactor": 1
+  },
+  "burk": {
+    "name": "burk",
+    "type": "count",
+    "baseUnit": "st",
+    "conversionFactor": 1
+  },
+  "kruka": {
+    "name": "kruka",
+    "type": "count",
+    "baseUnit": "st",
+    "conversionFactor": 1
+  },
+  "portioner": {
+    "name": "portioner",
+    "type": "count",
+    "baseUnit": "st",
+    "conversionFactor": 1
+  },
+  "klyfta": {
+    "name": "klyfta",
+    "type": "count",
+    "baseUnit": "st",
+    "conversionFactor": 1
+  },
+  "bit": {
+    "name": "bit",
+    "type": "count",
+    "baseUnit": "st",
+    "conversionFactor": 1
+  },
+  "förp": {
+    "name": "förpackning",
+    "type": "count",
+    "baseUnit": "st",
+    "conversionFactor": 1
+  },
+  "påse": {
+    "name": "påse",
+    "type": "count",
+    "baseUnit": "st",
+    "conversionFactor": 1
+  },
+  "krm": {
+    "name": "kryddmått",
+    "type": "volume",
+    "baseUnit": "ml",
+    "conversionFactor": 1
+  }
+}

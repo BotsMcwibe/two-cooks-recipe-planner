@@ -1,0 +1,407 @@
+{
+  "masterId": "sweet_chili_pork_chop",
+  "source": "hellofresh",
+  "createdAt": 1790852559,
+  "basePortions": 4,
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/sweet_chili_pork_chop/main.jpg",
+    "byNode": {
+      "sweet_chili_pork_chop__cooked_rice": "assets/recipes/sweet_chili_pork_chop/steps/cooked_rice.jpg",
+      "sweet_chili_pork_chop__fried_vegetables": "assets/recipes/sweet_chili_pork_chop/steps/fried_vegetables.jpg",
+      "sweet_chili_pork_chop__sweet_chili_glaze": "assets/recipes/sweet_chili_pork_chop/steps/sweet_chili_glaze.jpg",
+      "sweet_chili_pork_chop__glazed_pork": "assets/recipes/sweet_chili_pork_chop/steps/glazed_pork.jpg",
+      "sweet_chili_pork_chop": "assets/recipes/sweet_chili_pork_chop/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 461,
+    "perPortion": {
+      "energyKcal": 707,
+      "energyKj": 2956,
+      "fatG": 24.2,
+      "saturatedFatG": 5.6,
+      "carbsG": 96.2,
+      "sugarsG": 20.6,
+      "fiberG": 5.7,
+      "proteinG": 37.9,
+      "saltG": 5.8
+    }
+  },
+  "ratings": {
+    "average": 4,
+    "count": 4,
+    "source": "hellofresh"
+  },
+  "nodes": [
+    {
+      "id": "sweet_chili_pork_chop__julienned_carrot",
+      "name": "Skär Morot i Stavar",
+      "outputName": "Morotsstavar",
+      "inputs": [
+        {
+          "id": "carrot",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skala {{carrot}} och skär i 0,5 cm tunna stavar."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "sweet_chili_pork_chop__sliced_red_onion",
+      "name": "Skiva Rödlök",
+      "outputName": "Skivad rödlök",
+      "inputs": [
+        {
+          "id": "red_onion",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skala {{red_onion}} och skär i tunna skivor."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "sweet_chili_pork_chop__chopped_broccolini",
+      "name": "Hacka Broccolini",
+      "outputName": "Hackad broccolini",
+      "inputs": [
+        {
+          "id": "broccolini",
+          "amount": 200,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Grovhacka {{broccolini}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "sweet_chili_pork_chop__quartered_radishes",
+      "name": "Kvartera Rädisor",
+      "outputName": "Kvarterade rädisor",
+      "inputs": [
+        {
+          "id": "radish",
+          "amount": 75,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Skär {{radish}} i kvartar."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "sweet_chili_pork_chop__minced_garlic",
+      "name": "Hacka Vitlök",
+      "outputName": "Hackad vitlök",
+      "inputs": [
+        {
+          "id": "garlic",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skala och finhacka eller pressa {{garlic}}."
+      ],
+      "duration": 1,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "sweet_chili_pork_chop__grated_ginger",
+      "name": "Riv Ingefära",
+      "outputName": "Riven ingefära",
+      "inputs": [
+        {
+          "id": "ginger",
+          "amount": 4,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Riv {{ginger}} (oskalad) fint."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "sweet_chili_pork_chop__lime_wedges",
+      "name": "Skär Lime",
+      "outputName": "Limeklyftor",
+      "inputs": [
+        {
+          "id": "lime",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skär {{lime}} i klyftor."
+      ],
+      "duration": 1,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "En skvätt saft går till glazen (0,25 st), resten pressas över vid servering (0,75 st). Råreceptet anger ingen proportion."
+      ]
+    },
+    {
+      "id": "sweet_chili_pork_chop__diced_pork",
+      "name": "Tärna Fläskkotlett",
+      "outputName": "Tärnad fläskkotlett",
+      "inputs": [
+        {
+          "id": "sliced_pork_chop",
+          "amount": 500,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Tärna {{sliced_pork_chop}} i 2 cm stora bitar på en separat skärbräda och krydda med {{salt}}."
+      ],
+      "duration": 4,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "sweet_chili_pork_chop__simmered_rice",
+      "name": "Koka Jasminris",
+      "outputName": "Sjudet jasminris",
+      "inputs": [
+        {
+          "id": "water",
+          "amount": 6,
+          "unit": "dl"
+        },
+        {
+          "id": "vegetable_bouillon",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "id": "jasmine_rice",
+          "amount": 300,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Koka upp {{water}} och {{vegetable_bouillon}} i en kastrull.",
+        "Rör i {{jasmine_rice}} och {{salt}}, sänk till medellåg värme och sjud under lock i 12 min."
+      ],
+      "duration": 3,
+      "wait": 12,
+      "tags": [],
+      "tips": [
+        "Riset ska ångkoka, så tjuvkika inte!"
+      ]
+    },
+    {
+      "id": "sweet_chili_pork_chop__cooked_rice",
+      "name": "Vila Jasminris",
+      "outputName": "Kokt jasminris",
+      "inputs": [
+        {
+          "id": "sweet_chili_pork_chop__simmered_rice",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Ta av {{sweet_chili_pork_chop__simmered_rice}} från värmen och låt vila under lock i 10 min."
+      ],
+      "duration": 1,
+      "wait": 10,
+      "tags": []
+    },
+    {
+      "id": "sweet_chili_pork_chop__fried_vegetables",
+      "name": "Stek Grönsaker",
+      "outputName": "Vitlöksstekta grönsaker",
+      "inputs": [
+        {
+          "id": "sweet_chili_pork_chop__julienned_carrot",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "sweet_chili_pork_chop__sliced_red_onion",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "sweet_chili_pork_chop__quartered_radishes",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "sweet_chili_pork_chop__chopped_broccolini",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "sweet_chili_pork_chop__minced_garlic",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i en stor stekpanna på medelhög värme.",
+        "Stek {{sweet_chili_pork_chop__julienned_carrot}}, {{sweet_chili_pork_chop__sliced_red_onion}}, {{sweet_chili_pork_chop__quartered_radishes}} och {{sweet_chili_pork_chop__chopped_broccolini}} i 3–4 min, eller tills de är nästan mjuka.",
+        "Tillsätt {{sweet_chili_pork_chop__minced_garlic}} och stek i 1 min.",
+        "Krydda med {{salt}} och {{pepper}}. Lägg över grönsakerna i en skål och håll varma under lock."
+      ],
+      "duration": 6,
+      "tags": []
+    },
+    {
+      "id": "sweet_chili_pork_chop__sweet_chili_glaze",
+      "name": "Blanda Sweet Chiliglaze",
+      "outputName": "Sweet chiliglaze",
+      "inputs": [
+        {
+          "id": "sweet_chili_sauce",
+          "amount": 80,
+          "unit": "g"
+        },
+        {
+          "id": "soy_sauce",
+          "amount": 40,
+          "unit": "ml"
+        },
+        {
+          "id": "sweet_chili_pork_chop__grated_ginger",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "sweet_chili_pork_chop__lime_wedges",
+          "amount": 0.25,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Blanda {{sweet_chili_sauce}}, {{soy_sauce}}, {{sweet_chili_pork_chop__grated_ginger}} och en skvätt saft från {{sweet_chili_pork_chop__lime_wedges}} i en liten skål. Spara resten av klyftorna till servering."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "sweet_chili_pork_chop__glazed_pork",
+      "name": "Stek Fläsk i Glaze",
+      "outputName": "Sweet chili-glaserad fläskkotlett",
+      "inputs": [
+        {
+          "id": "olive_oil",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "sweet_chili_pork_chop__diced_pork",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "sweet_chili_pork_chop__sweet_chili_glaze",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} på medelhög värme i stekpannan där grönsakerna stektes (när de är avlyfta), eller i en ny stor stekpanna.",
+        "Stek {{sweet_chili_pork_chop__diced_pork}} i 3–4 min, eller tills det är brynt och genomstekt.",
+        "Tillsätt {{sweet_chili_pork_chop__sweet_chili_glaze}} när det återstår 30 sek av stektiden och rör om tills allt är genomvarmt och ingefäran väldoftande."
+      ],
+      "duration": 5,
+      "tags": []
+    },
+    {
+      "id": "sweet_chili_pork_chop",
+      "name": "Sweet chili-glaserad fläskkotlett",
+      "outputName": "Sweet chili-glaserad fläskkotlett",
+      "inputs": [
+        {
+          "id": "sweet_chili_pork_chop__cooked_rice",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "sweet_chili_pork_chop__fried_vegetables",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "sweet_chili_pork_chop__glazed_pork",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "sweet_chili_pork_chop__lime_wedges",
+          "amount": 0.75,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{sweet_chili_pork_chop__cooked_rice}} och {{sweet_chili_pork_chop__fried_vegetables}} i skålar.",
+        "Toppa med {{sweet_chili_pork_chop__glazed_pork}} och pressa över saft från resterande {{sweet_chili_pork_chop__lime_wedges}}."
+      ],
+      "duration": 3,
+      "tags": [
+        "master"
+      ]
+    }
+  ]
+}

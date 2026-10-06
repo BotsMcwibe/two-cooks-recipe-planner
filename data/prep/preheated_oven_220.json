@@ -1,0 +1,23 @@
+{
+  "id": "preheated_oven_220",
+  "nodes": [
+    {
+      "id": "preheated_oven_220",
+      "name": "Värm Ugnen",
+      "outputName": "Förvärmd ugn (220°C)",
+      "inputs": [],
+      "steps": [
+        "Värm ugnen till 220°C, eller 200°C varmluft."
+      ],
+      "duration": 1,
+      "tags": [
+        "prep",
+        "no-timer"
+      ],
+      "wait": 12,
+      "tips": [
+        "Ugnen tar vanligtvis 10-15 minuter att värmas upp."
+      ]
+    }
+  ]
+}

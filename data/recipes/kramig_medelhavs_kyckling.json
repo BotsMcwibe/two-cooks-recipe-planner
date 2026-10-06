@@ -1,0 +1,319 @@
+{
+  "masterId": "kramig_medelhavs_kyckling",
+  "source": "hellofresh",
+  "createdAt": 1791038921,
+  "basePortions": 4,
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/kramig_medelhavs_kyckling/main.jpg",
+    "byNode": {
+      "kramig_medelhavs_kyckling__boiled_bulgur": "assets/recipes/kramig_medelhavs_kyckling/steps/boiled_bulgur.jpg",
+      "kramig_medelhavs_kyckling__fried_chicken": "assets/recipes/kramig_medelhavs_kyckling/steps/fried_chicken.jpg",
+      "kramig_medelhavs_kyckling__bulgur_med_gronsaker": "assets/recipes/kramig_medelhavs_kyckling/steps/bulgur_med_gronsaker.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 445,
+    "perPortion": {
+      "energyKj": 2432,
+      "energyKcal": 581,
+      "fatG": 38.6,
+      "saturatedFatG": 16.6,
+      "carbsG": 40,
+      "sugarsG": 10,
+      "fiberG": 7.9,
+      "proteinG": 44.5,
+      "saltG": 7.5
+    }
+  },
+  "ratings": {
+    "average": 3.2,
+    "count": 248,
+    "source": "hellofresh"
+  },
+  "cooked": {
+    "hfId": "6511645d3e0981e84af20618",
+    "at": "2026-10-03T15:12:32+02:00",
+    "source": "photo",
+    "headline": "med bulgur och chili flakes"
+  },
+  "nodes": [
+    {
+      "id": "kramig_medelhavs_kyckling__sliced_onion",
+      "name": "Skiva Lök",
+      "outputName": "Skivad lök",
+      "inputs": [
+        {
+          "id": "onion",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skär {{onion}} i tunna skivor."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "kramig_medelhavs_kyckling__pressed_garlic",
+      "name": "Pressa Vitlök",
+      "outputName": "Pressad vitlök",
+      "inputs": [
+        {
+          "id": "garlic",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Finhacka eller pressa {{garlic}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "kramig_medelhavs_kyckling__boiled_bulgur",
+      "name": "Koka Bulgur",
+      "outputName": "Kokt bulgur",
+      "inputs": [
+        {
+          "id": "water",
+          "amount": 4.5,
+          "unit": "dl"
+        },
+        {
+          "id": "bulgur",
+          "amount": 170,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Koka upp {{water}}.",
+        "Tillsätt {{bulgur}} och {{salt}}, sänk till medelvärme och koka i 9–10 min tills al dente."
+      ],
+      "duration": 3,
+      "wait": 10,
+      "tags": []
+    },
+    {
+      "id": "kramig_medelhavs_kyckling__chopped_tomato",
+      "name": "Hacka Tomat",
+      "outputName": "Grovhackad tomat",
+      "inputs": [
+        {
+          "id": "tomato",
+          "amount": 4,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Grovhacka {{tomato}}."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "kramig_medelhavs_kyckling__rinsed_spinach",
+      "name": "Skölj Spenat",
+      "outputName": "Sköljd spenat",
+      "inputs": [
+        {
+          "id": "baby_spinach",
+          "amount": 60,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Skölj {{baby_spinach}}."
+      ],
+      "duration": 1,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "kramig_medelhavs_kyckling__chopped_parsley",
+      "name": "Riv Persilja",
+      "outputName": "Riven persilja",
+      "inputs": [
+        {
+          "id": "parsley",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Riv eller finhacka {{parsley}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "kramig_medelhavs_kyckling__fried_chicken",
+      "name": "Stek Kyckling",
+      "outputName": "Stekt kyckling",
+      "inputs": [
+        {
+          "id": "olive_oil",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "kramig_medelhavs_kyckling__sliced_onion",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "kramig_medelhavs_kyckling__pressed_garlic",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "chicken_breast_strips",
+          "amount": 600,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i en stekpanna på medelhög värme.",
+        "Tillsätt {{kramig_medelhavs_kyckling__sliced_onion}}, {{kramig_medelhavs_kyckling__pressed_garlic}} och {{chicken_breast_strips}} och en nypa salt. Stek i 4–5 min tills kycklingen är gyllene och genomstekt."
+      ],
+      "duration": 6,
+      "tags": [],
+      "tips": [
+        "Tvätta händer och redskap efter rå kyckling. Färdig när köttet inte längre är rosa i mitten."
+      ]
+    },
+    {
+      "id": "kramig_medelhavs_kyckling__cream_sauce",
+      "name": "Sjud Krämig Sås",
+      "outputName": "Krämig kycklingsås",
+      "inputs": [
+        {
+          "id": "kramig_medelhavs_kyckling__fried_chicken",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "cooking_cream",
+          "amount": 2,
+          "unit": "pkt"
+        },
+        {
+          "id": "mamas_favorit",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "id": "garlic_flakes",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "id": "chili_flakes",
+          "amount": 1,
+          "unit": "g"
+        },
+        {
+          "id": "chicken_bouillon",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        },
+        {
+          "id": "water",
+          "amount": 2,
+          "unit": "dl"
+        }
+      ],
+      "steps": [
+        "Tillsätt {{cooking_cream}}, {{mamas_favorit}}, {{garlic_flakes}}, {{chili_flakes}}, {{chicken_bouillon}}, {{salt}} och {{water}} i {{kramig_medelhavs_kyckling__fried_chicken}}.",
+        "Sjud i 1–2 min tills såsen har tjocknat."
+      ],
+      "duration": 1,
+      "wait": 2,
+      "tags": []
+    },
+    {
+      "id": "kramig_medelhavs_kyckling__bulgur_med_gronsaker",
+      "name": "Blanda Bulgur",
+      "outputName": "Bulgur med tomat och spenat",
+      "inputs": [
+        {
+          "id": "kramig_medelhavs_kyckling__boiled_bulgur",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "kramig_medelhavs_kyckling__chopped_tomato",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "kramig_medelhavs_kyckling__rinsed_spinach",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Rör ner {{kramig_medelhavs_kyckling__chopped_tomato}}, {{kramig_medelhavs_kyckling__rinsed_spinach}} och {{salt}} i den färdigkokta {{kramig_medelhavs_kyckling__boiled_bulgur}}."
+      ],
+      "duration": 2,
+      "tags": []
+    },
+    {
+      "id": "kramig_medelhavs_kyckling",
+      "name": "Krämig medelhavs-inspirerad kyckling",
+      "outputName": "Krämig medelhavs-inspirerad kyckling",
+      "inputs": [
+        {
+          "id": "kramig_medelhavs_kyckling__bulgur_med_gronsaker",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "kramig_medelhavs_kyckling__cream_sauce",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "kramig_medelhavs_kyckling__chopped_parsley",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{kramig_medelhavs_kyckling__bulgur_med_gronsaker}} i skålar och toppa med {{kramig_medelhavs_kyckling__cream_sauce}}.",
+        "Garnera med {{kramig_medelhavs_kyckling__chopped_parsley}}."
+      ],
+      "duration": 3,
+      "tags": [
+        "master"
+      ]
+    }
+  ]
+}

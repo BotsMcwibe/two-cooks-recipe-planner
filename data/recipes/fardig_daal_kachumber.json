@@ -1,0 +1,157 @@
+{
+  "masterId": "fardig_daal_kachumber",
+  "source": "linas",
+  "createdAt": 1791056876,
+  "basePortions": 4,
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/fardig_daal_kachumber/main.jpg"
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "perPortion": {
+      "energyKcal": 544,
+      "fatG": 13.49,
+      "carbsG": 88.9,
+      "proteinG": 16.67
+    }
+  },
+  "nodes": [
+    {
+      "id": "fardig_daal_kachumber__rice",
+      "name": "Koka Basmatiris",
+      "outputName": "Kokt basmatiris",
+      "inputs": [
+        {
+          "id": "basmati_rice",
+          "amount": 270,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Koka {{basmati_rice}} enligt anvisningen på förpackningen, ca 10–12 min."
+      ],
+      "duration": 2,
+      "tags": [],
+      "wait": 12,
+      "tips": [
+        "Råsteget har ingen minut. 10–12 min är en paketgissning, wait är 12. Inget vatten i rålistan, inget vatten påhittat."
+      ]
+    },
+    {
+      "id": "fardig_daal_kachumber__kachumber",
+      "name": "Blanda Kachumber",
+      "outputName": "Kachumber",
+      "inputs": [
+        {
+          "id": "tomato",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "red_onion",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "cucumber",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "coriander",
+          "amount": 20,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 2,
+          "unit": "krm"
+        },
+        {
+          "id": "cumin",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "lime",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Tärna {{tomato}} och {{cucumber}} i små bitar och finhacka {{red_onion}}. Lägg i en skål.",
+        "Grovhacka {{coriander}} och blanda ner. Krydda med {{salt}} och {{cumin}}. Pressa över saften från {{lime}}."
+      ],
+      "duration": 8,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "fardig_daal_kachumber__daal",
+      "name": "Värm Daal",
+      "outputName": "Värmd daal",
+      "inputs": [
+        {
+          "id": "ready_daal",
+          "amount": 4,
+          "unit": "förp"
+        },
+        {
+          "id": "water",
+          "amount": 2,
+          "unit": "dl"
+        }
+      ],
+      "steps": [
+        "Lägg {{ready_daal}} och {{water}} i en kastrull. Värm på medelvärme ca 5–7 min."
+      ],
+      "duration": 2,
+      "tags": [],
+      "wait": 7,
+      "tips": [
+        "Daal är 4 förp utan vikt. \"Späd med lite vatten\" har ingen mängd, inget extra vatten påhittat.",
+        "5–7 min ger wait 7, övre gränsen i sista steget."
+      ]
+    },
+    {
+      "id": "fardig_daal_kachumber",
+      "name": "Färdig daal med basmatiris, kachumber och yoghurt",
+      "outputName": "Färdig daal med basmatiris, kachumber och yoghurt",
+      "inputs": [
+        {
+          "id": "fardig_daal_kachumber__daal",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "fardig_daal_kachumber__rice",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "fardig_daal_kachumber__kachumber",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "matyoghurt",
+          "amount": 150,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Servera {{fardig_daal_kachumber__daal}} med {{fardig_daal_kachumber__rice}}, {{fardig_daal_kachumber__kachumber}} och en klick {{matyoghurt}}."
+      ],
+      "duration": 3,
+      "tags": [
+        "master"
+      ],
+      "tips": [
+        "Inledningen \"läs igenom receptet\" är ingen teknik och är inte ett steg.",
+        "Betyg saknas (average null, 13 röster). Inget betyg påhittat."
+      ]
+    }
+  ]
+}

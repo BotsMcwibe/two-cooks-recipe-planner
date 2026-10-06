@@ -1,0 +1,169 @@
+{
+  "masterId": "crispy_bbq_chicken",
+  "source": "hellofresh",
+  "createdAt": 1790853043,
+  "basePortions": 4,
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/crispy_bbq_chicken/main.jpg",
+    "byNode": {
+      "crispy_bbq_chicken__breaded_chicken": "assets/recipes/crispy_bbq_chicken/steps/breaded_chicken.jpg",
+      "crispy_bbq_chicken__fried_chicken": "assets/recipes/crispy_bbq_chicken/steps/fried_chicken.jpg",
+      "crispy_bbq_chicken__garlic_dip": "assets/recipes/crispy_bbq_chicken/steps/garlic_dip.jpg",
+      "crispy_bbq_chicken": "assets/recipes/crispy_bbq_chicken/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 255,
+    "perPortion": {
+      "energyKcal": 503,
+      "energyKj": 2103,
+      "fatG": 25.7,
+      "saturatedFatG": 6.4,
+      "carbsG": 30.6,
+      "sugarsG": 11.3,
+      "proteinG": 36.8,
+      "saltG": 2.6
+    }
+  },
+  "ratings": {
+    "average": 4,
+    "count": 2,
+    "source": "hellofresh"
+  },
+  "nodes": [
+    {
+      "id": "crispy_bbq_chicken__breaded_chicken",
+      "name": "Panera Kyckling",
+      "outputName": "Panerad BBQ-kyckling",
+      "inputs": [
+        {
+          "id": "bbq_sauce",
+          "amount": 60,
+          "unit": "g"
+        },
+        {
+          "id": "panko",
+          "amount": 50,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 0.25,
+          "unit": "tsk"
+        },
+        {
+          "id": "chicken_inner_fillet",
+          "amount": 280,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Häll {{bbq_sauce}} i en djup tallrik.",
+        "Blanda {{panko}} och {{salt}} i en ny djup tallrik.",
+        "Vänd {{chicken_inner_fillet}} först i BBQ-sås och sedan i panko. Ställ åt sidan på en tallrik."
+      ],
+      "duration": 6,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "VIKTIGT: Tvätta händer och köksredskap noggrant efter hantering av rå kyckling."
+      ]
+    },
+    {
+      "id": "crispy_bbq_chicken__fried_chicken",
+      "name": "Stek Kyckling",
+      "outputName": "Stekt BBQ-kyckling",
+      "inputs": [
+        {
+          "id": "crispy_bbq_chicken__breaded_chicken",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "msk"
+        }
+      ],
+      "steps": [
+        "Hetta upp en stor stekpanna på medelhög värme och tillsätt {{olive_oil}} så det täcker pannan.",
+        "Stek {{crispy_bbq_chicken__breaded_chicken}} i 3–4 min per sida, eller tills gyllene och genomstekt.",
+        "Ställ åt sidan på en tallrik med hushållspapper."
+      ],
+      "duration": 9,
+      "wait": 0,
+      "tags": [],
+      "tips": [
+        "Kycklingen är färdiglagad när köttet inte längre är rosa i mitten."
+      ]
+    },
+    {
+      "id": "crispy_bbq_chicken__garlic_dip",
+      "name": "Gör Vitlöksdipp",
+      "outputName": "Vitlöksdipp",
+      "inputs": [
+        {
+          "id": "garlic",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "sour_cream",
+          "amount": 75,
+          "unit": "ml"
+        },
+        {
+          "id": "mayonnaise",
+          "amount": 25,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 0.25,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Finhacka eller pressa {{garlic}}.",
+        "Blanda {{sour_cream}}, {{mayonnaise}}, vitlöken, {{salt}} och {{pepper}} i en liten skål."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "crispy_bbq_chicken",
+      "name": "Krispig BBQ-kyckling",
+      "outputName": "Krispig BBQ-kyckling",
+      "inputs": [
+        {
+          "id": "crispy_bbq_chicken__fried_chicken",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "crispy_bbq_chicken__garlic_dip",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Servera {{crispy_bbq_chicken__fried_chicken}} med {{crispy_bbq_chicken__garlic_dip}}."
+      ],
+      "duration": 1,
+      "wait": 0,
+      "tags": [
+        "master"
+      ]
+    }
+  ]
+}

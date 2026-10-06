@@ -1,0 +1,318 @@
+{
+  "masterId": "asiatiska_raktacos",
+  "source": "hellofresh",
+  "createdAt": 1791041462,
+  "basePortions": 4,
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/asiatiska_raktacos/main.jpg",
+    "byNode": {
+      "asiatiska_raktacos__chopped_salsa_veg": "assets/recipes/asiatiska_raktacos/steps/prepped_produce.jpg",
+      "asiatiska_raktacos__pico_de_gallo": "assets/recipes/asiatiska_raktacos/steps/pico_de_gallo.jpg",
+      "asiatiska_raktacos__fried_shrimp": "assets/recipes/asiatiska_raktacos/steps/fried_shrimp.jpg",
+      "asiatiska_raktacos__warmed_tortillas": "assets/recipes/asiatiska_raktacos/steps/warmed_tortillas.jpg",
+      "asiatiska_raktacos__bang_bang_sauce": "assets/recipes/asiatiska_raktacos/steps/bang_bang_sauce.jpg",
+      "asiatiska_raktacos": "assets/recipes/asiatiska_raktacos/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 562,
+    "perPortion": {
+      "energyKcal": 631,
+      "energyKj": 2638,
+      "fatG": 26.2,
+      "saturatedFatG": 3.1,
+      "carbsG": 70.2,
+      "sugarsG": 22.8,
+      "fiberG": 14.9,
+      "proteinG": 27.5,
+      "saltG": 5.5
+    }
+  },
+  "cooked": {
+    "hfId": "6a71a469e8e5c2a7fd0dcfe2",
+    "at": "2026-10-03T15:12:32+02:00",
+    "source": "photo",
+    "headline": "med pico de gallo och bang bang-sås"
+  },
+  "nodes": [
+    {
+      "id": "asiatiska_raktacos__chopped_salsa_veg",
+      "name": "Hacka Grönsaker till Salsa",
+      "outputName": "Hackad gurka, tomat, lök och koriander",
+      "inputs": [
+        {
+          "id": "cucumber",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "tomato",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "red_onion",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "coriander",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Finhacka {{cucumber}}, {{tomato}} och {{red_onion}}.",
+        "Plocka blad från {{coriander}}."
+      ],
+      "duration": 6,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Koriander är 1 st från 2 till 4 portioner. Inte uppskalad.",
+        "Gurka är 1 st vid 4 portioner. 2 och 3 portioner står på 0,5 st.",
+        "Tomatens korttyp är ekologisk tomat."
+      ]
+    },
+    {
+      "id": "asiatiska_raktacos__lettuce_leaves",
+      "name": "Ansa Sallad",
+      "outputName": "Salladsblad",
+      "inputs": [
+        {
+          "id": "lettuce",
+          "amount": 200,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Ansa {{lettuce}} och separera bladen."
+      ],
+      "duration": 1,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Romansallad är mappad till lettuce."
+      ]
+    },
+    {
+      "id": "asiatiska_raktacos__lime_wedges",
+      "name": "Skär Limeklyftor",
+      "outputName": "Limeklyftor",
+      "inputs": [
+        {
+          "id": "lime",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skär {{lime}} i klyftor."
+      ],
+      "duration": 1,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Lime är 1 st från 2 till 4 portioner. Inte uppskalad.",
+        "Klyftorna delas: en generös skvätt till pico de gallo (0,4 st), en skvätt till såsen (0,2 st), resten pressas över tacosen (0,4 st). Råreceptet anger ingen proportion."
+      ]
+    },
+    {
+      "id": "asiatiska_raktacos__pico_de_gallo",
+      "name": "Blanda Pico de Gallo",
+      "outputName": "Pico de gallo",
+      "inputs": [
+        {
+          "id": "asiatiska_raktacos__chopped_salsa_veg",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "asiatiska_raktacos__lime_wedges",
+          "amount": 0.4,
+          "unit": "st"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Blanda {{asiatiska_raktacos__chopped_salsa_veg}} med en generös skvätt saft från {{asiatiska_raktacos__lime_wedges}}, {{salt}} och en nypa {{pepper}} i en medelstor skål."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "asiatiska_raktacos__fried_shrimp",
+      "name": "Stek Räkor",
+      "outputName": "Stekta räkor",
+      "inputs": [
+        {
+          "id": "king_prawns",
+          "amount": 480,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "jorden_runt",
+          "amount": 4,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Grovhacka {{king_prawns}} på en separat skärbräda och krydda med {{salt}}.",
+        "Hetta upp {{olive_oil}} i en stor stekpanna på medelhög värme.",
+        "Stek räkorna och {{jorden_runt}} i 2–3 min, eller tills räkorna är gyllene och genomstekta."
+      ],
+      "duration": 5,
+      "wait": 0,
+      "tags": [],
+      "tips": [
+        "Räkorna är klara när de är rosa utanpå och ogenomskinliga i mitten.",
+        "2–3 min är hands-on, därför duration och wait 0. Olivoljan har ingen mängd i yields.",
+        "Jorden Runt är 4 g vid både 3 och 4 portioner."
+      ]
+    },
+    {
+      "id": "asiatiska_raktacos__warmed_tortillas",
+      "name": "Värm Tortillas",
+      "outputName": "Varma tortillas",
+      "inputs": [
+        {
+          "id": "mini_tortillas",
+          "amount": 16,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Värm {{mini_tortillas}} i 30–60 sek i mikrovågsugnen."
+      ],
+      "duration": 1,
+      "wait": 1,
+      "tags": [],
+      "tips": [
+        "Om du inte har mikro: värm ugnen till 220°C/200°C varmluft och värm tortillas täckta med folie i 4–5 min. Det är ett alternativ, inte en andra klocka i samma nod.",
+        "Kortet säger fullkorn. Befintlig mini_tortillas används, inte en ny id."
+      ]
+    },
+    {
+      "id": "asiatiska_raktacos__bang_bang_sauce",
+      "name": "Blanda Bang Bang-sås",
+      "outputName": "Bang bang-sås",
+      "inputs": [
+        {
+          "id": "sweet_chili_sauce",
+          "amount": 80,
+          "unit": "g"
+        },
+        {
+          "id": "vegan_sriracha_mayo",
+          "amount": 100,
+          "unit": "g"
+        },
+        {
+          "id": "asiatiska_raktacos__lime_wedges",
+          "amount": 0.2,
+          "unit": "st"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Blanda {{sweet_chili_sauce}}, {{vegan_sriracha_mayo}}, en skvätt saft från {{asiatiska_raktacos__lime_wedges}}, {{salt}} och en nypa {{pepper}} i en liten skål."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Såsen är sweet chili plus vegansk srirachamajonnäs, inte en egen SKU och inte sriracha på burk.",
+        "4 portioner är 100 g majonnäs. 3 portioner är 75 g, inte 80 g. Sweet chili är 80 g vid både 3 och 4 portioner."
+      ]
+    },
+    {
+      "id": "asiatiska_raktacos",
+      "name": "Asiatiska räktacos",
+      "outputName": "Asiatiska räktacos",
+      "inputs": [
+        {
+          "id": "asiatiska_raktacos__warmed_tortillas",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "asiatiska_raktacos__lettuce_leaves",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "asiatiska_raktacos__lime_wedges",
+          "amount": 0.4,
+          "unit": "st"
+        },
+        {
+          "id": "shredded_red_cabbage",
+          "amount": 150,
+          "unit": "g"
+        },
+        {
+          "id": "asiatiska_raktacos__pico_de_gallo",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "asiatiska_raktacos__fried_shrimp",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "asiatiska_raktacos__bang_bang_sauce",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Fyll {{asiatiska_raktacos__warmed_tortillas}} med {{asiatiska_raktacos__lettuce_leaves}}, {{shredded_red_cabbage}}, {{asiatiska_raktacos__pico_de_gallo}} och {{asiatiska_raktacos__fried_shrimp}}.",
+        "Pressa över saft från resterande {{asiatiska_raktacos__lime_wedges}} och ringla över generöst med {{asiatiska_raktacos__bang_bang_sauce}}."
+      ],
+      "duration": 4,
+      "tags": [
+        "master"
+      ],
+      "tips": [
+        "Rödkål är 150 g vid både 3 och 4 portioner."
+      ]
+    }
+  ]
+}

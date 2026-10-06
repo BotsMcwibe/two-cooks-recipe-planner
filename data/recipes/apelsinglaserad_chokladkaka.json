@@ -1,0 +1,228 @@
+{
+  "masterId": "apelsinglaserad_chokladkaka",
+  "source": "hellofresh",
+  "createdAt": 1790854739,
+  "basePortions": 4,
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/apelsinglaserad_chokladkaka/main.jpg",
+    "byNode": {
+      "apelsinglaserad_chokladkaka__baked_cake": "assets/recipes/apelsinglaserad_chokladkaka/steps/baked_cake.jpg",
+      "apelsinglaserad_chokladkaka__roasted_hazelnuts": "assets/recipes/apelsinglaserad_chokladkaka/steps/roasted_hazelnuts.jpg",
+      "apelsinglaserad_chokladkaka__orange_glaze": "assets/recipes/apelsinglaserad_chokladkaka/steps/orange_glaze.jpg",
+      "apelsinglaserad_chokladkaka": "assets/recipes/apelsinglaserad_chokladkaka/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 545,
+    "perPortion": {
+      "energyKcal": 1673,
+      "energyKj": 7001,
+      "fatG": 74.1,
+      "saturatedFatG": 23,
+      "carbsG": 225.8,
+      "sugarsG": 157.3,
+      "fiberG": 11.1,
+      "proteinG": 24.8,
+      "saltG": 2.2
+    }
+  },
+  "ratings": {
+    "average": 4,
+    "count": 1,
+    "source": "hellofresh"
+  },
+  "nodes": [
+    {
+      "id": "apelsinglaserad_chokladkaka__preheated_oven",
+      "name": "Värm Ugnen",
+      "outputName": "Förvärmd ugn (190°C)",
+      "inputs": [],
+      "steps": [
+        "Värm ugnen till 190°C, eller 170°C varmluft."
+      ],
+      "duration": 1,
+      "wait": 10,
+      "tags": [
+        "prep",
+        "no-timer"
+      ],
+      "tips": [
+        "Ugnen tar vanligtvis 10–15 minuter att värmas upp."
+      ]
+    },
+    {
+      "id": "apelsinglaserad_chokladkaka__baked_cake",
+      "name": "Baka Chokladkaka",
+      "outputName": "Gräddad chokladkaka",
+      "inputs": [
+        {
+          "id": "apelsinglaserad_chokladkaka__preheated_oven",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "chocolate_cake_mix",
+          "amount": 600,
+          "unit": "g"
+        },
+        {
+          "id": "milk_chocolate_chips",
+          "amount": 100,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Häll {{chocolate_cake_mix}} i en rund bakform (20–22 cm i diameter) med bakplåtspapper.",
+        "Rör ner {{milk_chocolate_chips}} och platta till med en slickepott.",
+        "Baka i ugnen i 30–35 min."
+      ],
+      "duration": 5,
+      "wait": 35,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Ta ut bakmixen från kylskåpet 30 min innan den ska användas.",
+        "Använd en provsticka: om stickan är torr är kakan färdig."
+      ]
+    },
+    {
+      "id": "apelsinglaserad_chokladkaka__roasted_hazelnuts",
+      "name": "Rosta Hasselnötter",
+      "outputName": "Rostade hasselnötter",
+      "inputs": [
+        {
+          "id": "apelsinglaserad_chokladkaka__preheated_oven",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "hazelnuts",
+          "amount": 40,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Placera {{hazelnuts}} på en plåt med bakplåtspapper.",
+        "Rosta i ugnen i 4–6 min, eller tills gyllene."
+      ],
+      "duration": 1,
+      "wait": 6,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Rostningen kan göras medan kakan gräddas."
+      ]
+    },
+    {
+      "id": "apelsinglaserad_chokladkaka__chopped_hazelnuts",
+      "name": "Hacka Hasselnötter",
+      "outputName": "Grovhackade hasselnötter",
+      "inputs": [
+        {
+          "id": "apelsinglaserad_chokladkaka__roasted_hazelnuts",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Grovhacka {{apelsinglaserad_chokladkaka__roasted_hazelnuts}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "apelsinglaserad_chokladkaka__orange_glaze",
+      "name": "Gör Apelsinglasyr",
+      "outputName": "Apelsinglasyr",
+      "inputs": [
+        {
+          "id": "orange",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "powdered_sugar",
+          "amount": 50,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Halvera {{orange}} och pressa saften.",
+        "Blanda {{powdered_sugar}} och ½ msk apelsinsaft i en medelstor skål till en slät glasyr."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Tillsätt mer apelsinsaft om glasyren är för tjock.",
+        "Glasyren kan göras medan kakan gräddas."
+      ]
+    },
+    {
+      "id": "apelsinglaserad_chokladkaka__orange_slices",
+      "name": "Skiva Apelsin",
+      "outputName": "Apelsinskivor",
+      "inputs": [
+        {
+          "id": "orange",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skär bort botten och toppen på {{orange}}, skär sedan bort skalet runt om. Var noga med att skära bort allt det vita från skalet.",
+        "Halvera apelsinen och skär i tunna skivor. Ta bort eventuella kärnor."
+      ],
+      "duration": 4,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "apelsinglaserad_chokladkaka",
+      "name": "Apelsinglaserad chokladkaka",
+      "outputName": "Apelsinglaserad chokladkaka",
+      "inputs": [
+        {
+          "id": "apelsinglaserad_chokladkaka__baked_cake",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "apelsinglaserad_chokladkaka__orange_glaze",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "apelsinglaserad_chokladkaka__orange_slices",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "apelsinglaserad_chokladkaka__chopped_hazelnuts",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Låt {{apelsinglaserad_chokladkaka__baked_cake}} svalna innan servering.",
+        "Toppa med {{apelsinglaserad_chokladkaka__orange_glaze}}, {{apelsinglaserad_chokladkaka__orange_slices}} och {{apelsinglaserad_chokladkaka__chopped_hazelnuts}}."
+      ],
+      "duration": 5,
+      "wait": 0,
+      "tags": [
+        "master"
+      ],
+      "tips": [
+        "Kakan ska vara sval innan du toppar den, annars rinner glasyren."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,159 @@
+{
+  "masterId": "chocolate_granola",
+  "source": "hellofresh",
+  "createdAt": 1790852363,
+  "basePortions": 4,
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/chocolate_granola/main.jpg",
+    "byNode": {
+      "chocolate_granola__mixed": "assets/recipes/chocolate_granola/steps/mixed.jpg",
+      "chocolate_granola__roasted": "assets/recipes/chocolate_granola/steps/roasted.jpg",
+      "chocolate_granola": "assets/recipes/chocolate_granola/steps/finish.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 154,
+    "perPortion": {
+      "energyKcal": 624,
+      "energyKj": 2610,
+      "fatG": 21.5,
+      "saturatedFatG": 2.5,
+      "carbsG": 84.7,
+      "sugarsG": 25.8,
+      "fiberG": 11.4,
+      "proteinG": 17.2,
+      "saltG": 0
+    }
+  },
+  "ratings": {
+    "average": 4,
+    "count": 3,
+    "source": "hellofresh"
+  },
+  "nodes": [
+    {
+      "id": "chocolate_granola__preheated_oven",
+      "name": "Värm Ugnen",
+      "outputName": "Förvärmd ugn (180°C)",
+      "inputs": [],
+      "steps": [
+        "Värm ugnen till 180°C, eller 160°C varmluft."
+      ],
+      "duration": 1,
+      "wait": 10,
+      "tags": [
+        "prep",
+        "no-timer"
+      ],
+      "tips": [
+        "Ugnen tar vanligtvis 10–15 minuter att värmas upp.",
+        "HF anger 180°C/160°C varmluft — lokal ugnsnode, inte preheated_oven_220."
+      ]
+    },
+    {
+      "id": "chocolate_granola__mixed",
+      "name": "Blanda Granola",
+      "outputName": "Orostad chokladgranola",
+      "inputs": [
+        {
+          "id": "honey",
+          "amount": 50,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "oats",
+          "amount": 200,
+          "unit": "g"
+        },
+        {
+          "id": "cocoa_powder",
+          "amount": 10,
+          "unit": "g"
+        },
+        {
+          "id": "hazelnuts",
+          "amount": 40,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Blanda {{honey}} och {{salt}} i en stor skål.",
+        "Vänd ner {{oats}}, {{cocoa_powder}} och {{hazelnuts}} i skålen."
+      ],
+      "duration": 5,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Lägg honung i en skål med varmt vatten i 1 min om den har stelnat."
+      ]
+    },
+    {
+      "id": "chocolate_granola__roasted",
+      "name": "Rosta Granola",
+      "outputName": "Rostad chokladgranola",
+      "inputs": [
+        {
+          "id": "chocolate_granola__preheated_oven",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "chocolate_granola__mixed",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Sprid ut {{chocolate_granola__mixed}} i ett jämnt lager på en plåt med bakplåtspapper.",
+        "Rosta i {{chocolate_granola__preheated_oven}} i 10–15 min. Rör om var 5:e minut, tills granolan är jämnt rostad."
+      ],
+      "duration": 3,
+      "wait": 15,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Rör om var 5:e minut under rostningen så att granolan inte bränns."
+      ]
+    },
+    {
+      "id": "chocolate_granola",
+      "name": "Lyxig chokladgranola",
+      "outputName": "Lyxig chokladgranola",
+      "inputs": [
+        {
+          "id": "chocolate_granola__roasted",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "freeze_dried_strawberries",
+          "amount": 8,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Ta ut {{chocolate_granola__roasted}} från ugnen och låt svalna helt.",
+        "Vänd ner {{freeze_dried_strawberries}}.",
+        "Servera till frukost, eller förvara i en lufttät behållare i upp till 2 veckor."
+      ],
+      "duration": 5,
+      "wait": 0,
+      "tags": [
+        "master"
+      ],
+      "tips": [
+        "Granolan blir knaprig och god när den har svalnat helt!",
+        "Ingen minutangiven svalning i HF-kortet — inventera inte wait; låt svalna innan jordgubbarna blandas i."
+      ]
+    }
+  ]
+}

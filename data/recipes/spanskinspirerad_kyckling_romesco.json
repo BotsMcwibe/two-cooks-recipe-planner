@@ -1,0 +1,450 @@
+{
+  "masterId": "spanskinspirerad_kyckling_romesco",
+  "source": "hellofresh",
+  "createdAt": 1791039093,
+  "basePortions": 4,
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/spanskinspirerad_kyckling_romesco/main.jpg",
+    "byNode": {
+      "spanskinspirerad_kyckling_romesco__romesco": "assets/recipes/spanskinspirerad_kyckling_romesco/steps/romesco.jpg",
+      "spanskinspirerad_kyckling_romesco__seasoned_chicken": "assets/recipes/spanskinspirerad_kyckling_romesco/steps/prepped_chicken.jpg",
+      "spanskinspirerad_kyckling_romesco__fried_chicken": "assets/recipes/spanskinspirerad_kyckling_romesco/steps/fried_chicken.jpg",
+      "spanskinspirerad_kyckling_romesco__tomato_spinach_salad": "assets/recipes/spanskinspirerad_kyckling_romesco/steps/tomato_salad.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 623,
+    "perPortion": {
+      "energyKj": 2789,
+      "energyKcal": 667,
+      "fatG": 30.1,
+      "saturatedFatG": 8.3,
+      "carbsG": 58.8,
+      "sugarsG": 11.3,
+      "fiberG": 9.6,
+      "proteinG": 44.2,
+      "saltG": 5
+    }
+  },
+  "cooked": {
+    "hfId": "66e968c7fc7cbf38fecf2d3f",
+    "at": "2026-10-03T15:12:32+02:00",
+    "source": "photo",
+    "headline": "med örtpotatis och tomatsallad"
+  },
+  "nodes": [
+    {
+      "id": "spanskinspirerad_kyckling_romesco__preheated_oven",
+      "name": "Värm Ugn",
+      "outputName": "Förvärmd ugn 240°C",
+      "inputs": [],
+      "steps": [
+        "Värm ugnen till 240°C, eller 220°C varmluft."
+      ],
+      "duration": 1,
+      "wait": 12,
+      "tags": [
+        "prep",
+        "no-timer"
+      ],
+      "tips": [
+        "HF anger 240°C/220°C varmluft — lokal ugnsnode, inte preheated_oven_220 (220/200)."
+      ]
+    },
+    {
+      "id": "spanskinspirerad_kyckling_romesco__diced_potato",
+      "name": "Tärna Potatis",
+      "outputName": "Tärnad potatis",
+      "inputs": [
+        {
+          "id": "potato",
+          "amount": 1000,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Skär oskalad {{potato}} i 2 cm stora bitar."
+      ],
+      "duration": 5,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "spanskinspirerad_kyckling_romesco__herb_roast_potato",
+      "name": "Rosta Örtpotatis",
+      "outputName": "Örtrostad potatis",
+      "inputs": [
+        {
+          "id": "spanskinspirerad_kyckling_romesco__preheated_oven",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "spanskinspirerad_kyckling_romesco__diced_potato",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        },
+        {
+          "id": "dried_oregano",
+          "amount": 1,
+          "unit": "g"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Lägg {{spanskinspirerad_kyckling_romesco__diced_potato}} på en plåt med bakplåtspapper (använd flera plåtar om det blir för trångt).",
+        "Blanda med olivolja, {{salt}}, {{dried_oregano}} och {{pepper}}.",
+        "Rosta i {{spanskinspirerad_kyckling_romesco__preheated_oven}} i 25–35 min, eller tills potatisen är gyllene."
+      ],
+      "duration": 3,
+      "wait": 35,
+      "tags": [],
+      "tips": [
+        "Passiv rosttid 25–35 min → wait 35 (övre gräns). Sista steget äger timern.",
+        "FLAG: olivolja till potatisen saknar mängd i yields (enda oljan 1 msk är märkt till stekning)."
+      ]
+    },
+    {
+      "id": "spanskinspirerad_kyckling_romesco__toasted_walnuts",
+      "name": "Rosta Valnötter",
+      "outputName": "Rostade finhackade valnötter",
+      "inputs": [
+        {
+          "id": "walnuts",
+          "amount": 40,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Hetta upp en stor stekpanna på medelhög värme.",
+        "Rosta {{walnuts}} i 3–4 min, eller tills gyllene. Finhacka."
+      ],
+      "duration": 5,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Hands-on rostning 3–4 min → duration 5 (inkl. finhack), ingen wait."
+      ]
+    },
+    {
+      "id": "spanskinspirerad_kyckling_romesco__romesco",
+      "name": "Gör Romescosås",
+      "outputName": "Romescosås",
+      "inputs": [
+        {
+          "id": "calabrese_pesto",
+          "amount": 120,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "water",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "spanskinspirerad_kyckling_romesco__toasted_walnuts",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "smoked_paprika",
+          "amount": 4,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Blanda {{calabrese_pesto}}, {{salt}}, {{water}}, {{spanskinspirerad_kyckling_romesco__toasted_walnuts}} och {{smoked_paprika}} i en medelstor skål. Ställ åt sidan."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "spanskinspirerad_kyckling_romesco__chopped_parsley",
+      "name": "Finhacka Persilja",
+      "outputName": "Finhackad persilja",
+      "inputs": [
+        {
+          "id": "parsley",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Finhacka {{parsley}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "FLAG: bladpersilja är 1 st vid både 2 och 4 portioner."
+      ]
+    },
+    {
+      "id": "spanskinspirerad_kyckling_romesco__pressed_garlic",
+      "name": "Pressa Vitlök",
+      "outputName": "Pressad vitlök",
+      "inputs": [
+        {
+          "id": "garlic",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Finhacka eller pressa {{garlic}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "spanskinspirerad_kyckling_romesco__tomato_wedges",
+      "name": "Skär Tomatklyftor",
+      "outputName": "Tomatklyftor",
+      "inputs": [
+        {
+          "id": "tomato",
+          "amount": 4,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skär {{tomato}} i klyftor."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "spanskinspirerad_kyckling_romesco__halved_lemon",
+      "name": "Halvera Citron",
+      "outputName": "Halverad citron",
+      "inputs": [
+        {
+          "id": "lemon",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Halvera {{lemon}}."
+      ],
+      "duration": 1,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "spanskinspirerad_kyckling_romesco__rinsed_spinach",
+      "name": "Skölj Spenat",
+      "outputName": "Sköljd spenat",
+      "inputs": [
+        {
+          "id": "baby_spinach",
+          "amount": 1,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Skölj {{baby_spinach}}."
+      ],
+      "duration": 1,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "FLAG HUMAN REVIEW: spenat är 30 g vid 2 portioner och 1 g vid 4 portioner i HF-yield. Beloppet 1 g vid basePortions=4 lämnas oförändrat (ej uppskalat till 60 g)."
+      ]
+    },
+    {
+      "id": "spanskinspirerad_kyckling_romesco__seasoned_chicken",
+      "name": "Klyv och Krydda Kyckling",
+      "outputName": "Kryddad kycklingfilé",
+      "inputs": [
+        {
+          "id": "chicken_breast",
+          "amount": 600,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "hello_sunrise",
+          "amount": 8,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Lägg handen ovanpå {{chicken_breast}} och skär försiktigt i två tunna filéer på långsidan på en separat skärbräda.",
+        "Krydda kycklingen med {{salt}} och {{hello_sunrise}}."
+      ],
+      "duration": 6,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Tvätta händer och köksredskap noggrant efter att ha hanterat rå kyckling."
+      ]
+    },
+    {
+      "id": "spanskinspirerad_kyckling_romesco__fried_chicken",
+      "name": "Stek Kyckling",
+      "outputName": "Stekt kyckling med vitlökssmör",
+      "inputs": [
+        {
+          "id": "spanskinspirerad_kyckling_romesco__seasoned_chicken",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "msk"
+        },
+        {
+          "id": "butter",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "spanskinspirerad_kyckling_romesco__pressed_garlic",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i en stor stekpanna på medelhög värme.",
+        "Stek {{spanskinspirerad_kyckling_romesco__seasoned_chicken}} i 2 min per sida, eller tills brynt.",
+        "Tillsätt {{butter}} och {{spanskinspirerad_kyckling_romesco__pressed_garlic}} till pannan. Stek i 1–2 min, tills väldoftande och kycklingen är genomstekt."
+      ],
+      "duration": 8,
+      "tags": [],
+      "tips": [
+        "Hands-on stekning (2+2+1–2 min) → duration 8, ingen wait.",
+        "Kycklingen är färdiglagad när köttet inte längre är rosa i mitten."
+      ]
+    },
+    {
+      "id": "spanskinspirerad_kyckling_romesco__tomato_spinach_salad",
+      "name": "Blanda Tomatsallad",
+      "outputName": "Tomatsallad med spenat",
+      "inputs": [
+        {
+          "id": "spanskinspirerad_kyckling_romesco__tomato_wedges",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "spanskinspirerad_kyckling_romesco__halved_lemon",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "spanskinspirerad_kyckling_romesco__rinsed_spinach",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Blanda {{spanskinspirerad_kyckling_romesco__tomato_wedges}}, saften från {{spanskinspirerad_kyckling_romesco__halved_lemon}}, {{spanskinspirerad_kyckling_romesco__rinsed_spinach}} och {{salt}} i en stor skål.",
+        "Tillsätt eventuellt en skvätt olivolja."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "spanskinspirerad_kyckling_romesco__herb_potato_finish",
+      "name": "Vänd Potatis med Persilja",
+      "outputName": "Örtpotatis med persilja",
+      "inputs": [
+        {
+          "id": "spanskinspirerad_kyckling_romesco__herb_roast_potato",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "spanskinspirerad_kyckling_romesco__chopped_parsley",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Vänd {{spanskinspirerad_kyckling_romesco__herb_roast_potato}} med {{spanskinspirerad_kyckling_romesco__chopped_parsley}} precis innan servering."
+      ],
+      "duration": 1,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "spanskinspirerad_kyckling_romesco",
+      "name": "Spanskinspirerad kyckling och romescosås",
+      "outputName": "Spanskinspirerad kyckling och romescosås",
+      "inputs": [
+        {
+          "id": "spanskinspirerad_kyckling_romesco__herb_potato_finish",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "spanskinspirerad_kyckling_romesco__tomato_spinach_salad",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "spanskinspirerad_kyckling_romesco__romesco",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "spanskinspirerad_kyckling_romesco__fried_chicken",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{spanskinspirerad_kyckling_romesco__herb_potato_finish}} och {{spanskinspirerad_kyckling_romesco__tomato_spinach_salad}} på tallrikar.",
+        "Bre ut en klick {{spanskinspirerad_kyckling_romesco__romesco}} på tallrikarna med baksidan av en sked.",
+        "Toppa med {{spanskinspirerad_kyckling_romesco__fried_chicken}} och sky från pannan."
+      ],
+      "duration": 3,
+      "wait": 0,
+      "tags": [
+        "master"
+      ]
+    }
+  ]
+}

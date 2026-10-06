@@ -1,0 +1,266 @@
+{
+  "masterId": "bacon_tortelloni_tomato",
+  "source": "hellofresh",
+  "createdAt": 1790795819,
+  "basePortions": 4,
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/bacon_tortelloni_tomato/main.jpg",
+    "byNode": {
+      "bacon_tortelloni_tomato__tomato_cream_sauce": "assets/recipes/bacon_tortelloni_tomato/steps/tomato_cream_sauce.jpg",
+      "bacon_tortelloni_tomato__cooked_pasta_broccoli": "assets/recipes/bacon_tortelloni_tomato/steps/cooked_pasta_broccoli.jpg",
+      "bacon_tortelloni_tomato__chili_oil": "assets/recipes/bacon_tortelloni_tomato/steps/chili_oil.jpg",
+      "bacon_tortelloni_tomato": "assets/recipes/bacon_tortelloni_tomato/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 525,
+    "perPortion": {
+      "energyKcal": 939,
+      "energyKj": 3928,
+      "fatG": 53.5,
+      "saturatedFatG": 19.1,
+      "carbsG": 71.5,
+      "sugarsG": 14.4,
+      "fiberG": 8.4,
+      "proteinG": 39.7,
+      "saltG": 3
+    }
+  },
+  "ratings": {
+    "average": 2.5,
+    "count": 2,
+    "source": "hellofresh"
+  },
+  "nodes": [
+    {
+      "id": "bacon_tortelloni_tomato__chopped_broccoli",
+      "name": "Hacka Broccoli",
+      "outputName": "Hackad broccoli",
+      "inputs": [
+        {
+          "id": "broccoli",
+          "amount": 500,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Skär {{broccoli}}buketter och stjälken i 2 cm stora bitar."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "bacon_tortelloni_tomato__chopped_walnuts",
+      "name": "Hacka Valnötter",
+      "outputName": "Hackade valnötter",
+      "inputs": [
+        {
+          "id": "walnuts",
+          "amount": 40,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Finhacka {{walnuts}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "bacon_tortelloni_tomato__diced_bacon",
+      "name": "Tärna Bacon",
+      "outputName": "Tärnad bacon",
+      "inputs": [
+        {
+          "id": "bacon",
+          "amount": 280,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Tärna {{bacon}} i små bitar."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "bacon_tortelloni_tomato__tomato_cream_sauce",
+      "name": "Gör Tomatsås",
+      "outputName": "Tomatsås med bacon",
+      "inputs": [
+        {
+          "id": "bacon_tortelloni_tomato__diced_bacon",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "passata",
+          "amount": 390,
+          "unit": "g"
+        },
+        {
+          "id": "cooking_cream",
+          "amount": 150,
+          "unit": "ml"
+        },
+        {
+          "id": "parmesan",
+          "amount": 40,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Hetta upp en medelstor stekpanna på medelhög värme.",
+        "Stek {{bacon_tortelloni_tomato__diced_bacon}} i 4–5 min, eller tills brynt.",
+        "Tillsätt {{passata}}, {{cooking_cream}} och hälften av {{parmesan}} (40 g).",
+        "Sjud i 2–3 min, tills såsen tjocknat."
+      ],
+      "duration": 8,
+      "wait": 3,
+      "tags": [],
+      "tips": [
+        "Tillsätt en skvätt vatten om såsen blir för tjock."
+      ]
+    },
+    {
+      "id": "bacon_tortelloni_tomato__cooked_pasta_broccoli",
+      "name": "Koka Pasta och Broccoli",
+      "outputName": "Kokt tortelloni med broccoli",
+      "inputs": [
+        {
+          "id": "tortelloni",
+          "amount": 600,
+          "unit": "g"
+        },
+        {
+          "id": "bacon_tortelloni_tomato__chopped_broccoli",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "water",
+          "amount": 2,
+          "unit": "l"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "msk"
+        }
+      ],
+      "steps": [
+        "Koka upp en medelstor kastrull med saltat {{water}}.",
+        "Tillsätt {{bacon_tortelloni_tomato__chopped_broccoli}} och {{tortelloni}} i det kokande vattnet.",
+        "Koka i 1–2 min, tills pastan är al dente och broccolin mjuknat.",
+        "Precis innan pastan är färdig, skopa upp ca 2 dl kokvatten i en kopp och ställ åt sidan.",
+        "Häll av pasta och broccoli."
+      ],
+      "duration": 4,
+      "wait": 2,
+      "tags": [],
+      "tips": [
+        "Kokvattnet ska vara lika salt som havsvatten.",
+        "Al dente betyder att pastan är genomkokt men fortfarande har tuggmotstånd."
+      ]
+    },
+    {
+      "id": "bacon_tortelloni_tomato__chili_oil",
+      "name": "Gör Chiliolja",
+      "outputName": "Chiliolja med valnötter",
+      "inputs": [
+        {
+          "id": "chili_flakes",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "bacon_tortelloni_tomato__chopped_walnuts",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 2,
+          "unit": "msk"
+        }
+      ],
+      "steps": [
+        "Blanda {{chili_flakes}}, {{bacon_tortelloni_tomato__chopped_walnuts}} och {{olive_oil}} i en liten skål."
+      ],
+      "duration": 1,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "bacon_tortelloni_tomato__pasta_in_sauce",
+      "name": "Vänd Pasta i Såsen",
+      "outputName": "Pasta i tomatsås",
+      "inputs": [
+        {
+          "id": "bacon_tortelloni_tomato__tomato_cream_sauce",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "bacon_tortelloni_tomato__cooked_pasta_broccoli",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "water",
+          "amount": 2,
+          "unit": "dl"
+        }
+      ],
+      "steps": [
+        "Tillsätt {{bacon_tortelloni_tomato__cooked_pasta_broccoli}} i stekpannan med {{bacon_tortelloni_tomato__tomato_cream_sauce}}.",
+        "Rör ner det sparade pastavattnet ({{water}})."
+      ],
+      "duration": 2,
+      "tags": []
+    },
+    {
+      "id": "bacon_tortelloni_tomato",
+      "name": "Bacon-tortelloni med tomatsås",
+      "outputName": "Bacon-tortelloni med tomatsås",
+      "inputs": [
+        {
+          "id": "bacon_tortelloni_tomato__pasta_in_sauce",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "parmesan",
+          "amount": 40,
+          "unit": "g"
+        },
+        {
+          "id": "bacon_tortelloni_tomato__chili_oil",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{bacon_tortelloni_tomato__pasta_in_sauce}} i skålar.",
+        "Toppa med resterande {{parmesan}}.",
+        "Ringla {{bacon_tortelloni_tomato__chili_oil}} över vuxenportionerna."
+      ],
+      "duration": 1,
+      "tags": [
+        "master"
+      ],
+      "tips": [
+        "Låt barnportionerna vara utan chiliolja om ni vill."
+      ]
+    }
+  ]
+}

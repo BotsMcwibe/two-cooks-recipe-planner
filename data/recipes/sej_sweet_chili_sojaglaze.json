@@ -1,0 +1,342 @@
+{
+  "masterId": "sej_sweet_chili_sojaglaze",
+  "source": "hellofresh",
+  "createdAt": 1791039978,
+  "basePortions": 4,
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/sej_sweet_chili_sojaglaze/main.jpg",
+    "byNode": {
+      "sej_sweet_chili_sojaglaze__simmered_rice": "assets/recipes/sej_sweet_chili_sojaglaze/steps/simmered_rice.jpg",
+      "sej_sweet_chili_sojaglaze__dressing": "assets/recipes/sej_sweet_chili_sojaglaze/steps/dressing.jpg",
+      "sej_sweet_chili_sojaglaze__toasted_sesame": "assets/recipes/sej_sweet_chili_sojaglaze/steps/prepped_salad.jpg",
+      "sej_sweet_chili_sojaglaze__prepped_salad_veg": "assets/recipes/sej_sweet_chili_sojaglaze/steps/prepped_salad.jpg",
+      "sej_sweet_chili_sojaglaze__fried_saithe": "assets/recipes/sej_sweet_chili_sojaglaze/steps/fried_saithe.jpg",
+      "sej_sweet_chili_sojaglaze__glazed_saithe": "assets/recipes/sej_sweet_chili_sojaglaze/steps/glazed_saithe.jpg",
+      "sej_sweet_chili_sojaglaze": "assets/recipes/sej_sweet_chili_sojaglaze/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 421,
+    "perPortion": {
+      "energyKcal": 522,
+      "energyKj": 2182,
+      "fatG": 8.8,
+      "saturatedFatG": 3.7,
+      "carbsG": 85.6,
+      "sugarsG": 15,
+      "fiberG": 3.1,
+      "proteinG": 34.5,
+      "saltG": 4.7
+    }
+  },
+  "cooked": {
+    "hfId": "6707d8119e048437c2cbc158",
+    "at": "2026-10-03T15:12:32+02:00",
+    "source": "photo",
+    "headline": "med krämig gurk- och spenatsallad"
+  },
+  "nodes": [
+    {
+      "id": "sej_sweet_chili_sojaglaze__simmered_rice",
+      "name": "Koka Jasminris",
+      "outputName": "Sjudet jasminris",
+      "inputs": [
+        {
+          "id": "water",
+          "amount": 6,
+          "unit": "dl"
+        },
+        {
+          "id": "jasmine_rice",
+          "amount": 300,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Koka upp {{water}} i en medelstor kastrull.",
+        "Rör i {{jasmine_rice}} och {{salt}}, sänk till medellåg värme och sjud under lock i 12 min."
+      ],
+      "duration": 3,
+      "wait": 12,
+      "tags": [],
+      "tips": [
+        "Riset ska ångkoka, så tjuvkika inte."
+      ]
+    },
+    {
+      "id": "sej_sweet_chili_sojaglaze__cooked_rice",
+      "name": "Vila Jasminris",
+      "outputName": "Kokt jasminris",
+      "inputs": [
+        {
+          "id": "sej_sweet_chili_sojaglaze__simmered_rice",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Ta av {{sej_sweet_chili_sojaglaze__simmered_rice}} från värmen och låt vila under lock i 10 min."
+      ],
+      "duration": 1,
+      "wait": 10,
+      "tags": []
+    },
+    {
+      "id": "sej_sweet_chili_sojaglaze__dressing",
+      "name": "Gör Gurkdressing",
+      "outputName": "Krämig limesdressing",
+      "inputs": [
+        {
+          "id": "ginger",
+          "amount": 2,
+          "unit": "tsk"
+        },
+        {
+          "id": "lime",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "sour_cream",
+          "amount": 150,
+          "unit": "ml"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Riv {{ginger}} (oskalad) fint. Halvera {{lime}}.",
+        "Blanda {{sour_cream}}, ingefäran, saft från limen och {{salt}} i en stor skål. Ställ åt sidan."
+      ],
+      "duration": 4,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "sej_sweet_chili_sojaglaze__toasted_sesame",
+      "name": "Rosta Sesamfrön",
+      "outputName": "Rostade sesamfrön",
+      "inputs": [
+        {
+          "id": "sesame_seeds",
+          "amount": 10,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Hetta upp en stor stekpanna på medelhög värme.",
+        "Rosta {{sesame_seeds}} i 3–4 min, eller tills de är gyllene. Häll av och spara pannan."
+      ],
+      "duration": 1,
+      "wait": 4,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Hacka salladen under tiden fröna rostas."
+      ]
+    },
+    {
+      "id": "sej_sweet_chili_sojaglaze__prepped_salad_veg",
+      "name": "Förbered Spenat och Gurka",
+      "outputName": "Hackad spenat och gurka",
+      "inputs": [
+        {
+          "id": "baby_spinach",
+          "amount": 1,
+          "unit": "g"
+        },
+        {
+          "id": "cucumber",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skölj och finhacka {{baby_spinach}}.",
+        "Skär {{cucumber}} i halvmånar."
+      ],
+      "duration": 4,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "4-portionsyielden anger 1 g spenat (2 portioner är 30 g). Lämnad som skriven, inte uppskalad."
+      ]
+    },
+    {
+      "id": "sej_sweet_chili_sojaglaze__sliced_spring_onion",
+      "name": "Skiva Salladslök",
+      "outputName": "Skivad salladslök",
+      "inputs": [
+        {
+          "id": "spring_onion",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skär {{spring_onion}} i tunna skivor."
+      ],
+      "duration": 1,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "sej_sweet_chili_sojaglaze__fried_saithe",
+      "name": "Stek Sej",
+      "outputName": "Stekt sej",
+      "inputs": [
+        {
+          "id": "saithe",
+          "amount": 500,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        }
+      ],
+      "steps": [
+        "Torka av {{saithe}} med hushållspapper och krydda med {{salt}}.",
+        "Hetta upp {{olive_oil}} på medelhög värme i stekpannan där sesamfröna rostades, eller i en ny stor stekpanna.",
+        "Stek fisken i 2–3 min per sida, eller tills den är gyllene och genomstekt."
+      ],
+      "duration": 7,
+      "wait": 0,
+      "tags": [],
+      "tips": [
+        "Fisken är klar när fiskköttet är vitt och ogenomskinligt och lätt faller isär."
+      ]
+    },
+    {
+      "id": "sej_sweet_chili_sojaglaze__glazed_saithe",
+      "name": "Vänd Sej i Glaze",
+      "outputName": "Sej i sweet chili- och sojaglaze",
+      "inputs": [
+        {
+          "id": "sej_sweet_chili_sojaglaze__fried_saithe",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "sweet_chili_sauce",
+          "amount": 80,
+          "unit": "g"
+        },
+        {
+          "id": "soy_sauce",
+          "amount": 25,
+          "unit": "ml"
+        },
+        {
+          "id": "chili_flakes",
+          "amount": 1,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Blanda {{sweet_chili_sauce}}, {{soy_sauce}}, {{chili_flakes}}, en nypa {{salt}} och {{pepper}} i en liten skål.",
+        "Tillsätt blandningen i pannan med {{sej_sweet_chili_sojaglaze__fried_saithe}} och ta av från värmen. Vänd fisken i glazen."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [],
+      "tips": [
+        "Skippa chili eller använd mindre om du inte tycker om stark mat."
+      ]
+    },
+    {
+      "id": "sej_sweet_chili_sojaglaze__dressed_salad",
+      "name": "Blanda Sallad",
+      "outputName": "Krämig gurk- och spenatsallad",
+      "inputs": [
+        {
+          "id": "sej_sweet_chili_sojaglaze__dressing",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "sej_sweet_chili_sojaglaze__prepped_salad_veg",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Vänd ner {{sej_sweet_chili_sojaglaze__prepped_salad_veg}} i {{sej_sweet_chili_sojaglaze__dressing}} precis innan servering."
+      ],
+      "duration": 1,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "sej_sweet_chili_sojaglaze",
+      "name": "Sej i sweet chili- och sojaglaze",
+      "outputName": "Sej i sweet chili- och sojaglaze",
+      "inputs": [
+        {
+          "id": "sej_sweet_chili_sojaglaze__cooked_rice",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "sej_sweet_chili_sojaglaze__dressed_salad",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "sej_sweet_chili_sojaglaze__glazed_saithe",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "sej_sweet_chili_sojaglaze__toasted_sesame",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "sej_sweet_chili_sojaglaze__sliced_spring_onion",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{sej_sweet_chili_sojaglaze__cooked_rice}} och {{sej_sweet_chili_sojaglaze__dressed_salad}} på tallrikar och toppa riset med {{sej_sweet_chili_sojaglaze__glazed_saithe}}.",
+        "Skeda över resterande glaze från pannan och garnera med {{sej_sweet_chili_sojaglaze__sliced_spring_onion}} och {{sej_sweet_chili_sojaglaze__toasted_sesame}}."
+      ],
+      "duration": 3,
+      "tags": [
+        "master"
+      ]
+    }
+  ]
+}

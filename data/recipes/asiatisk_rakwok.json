@@ -1,0 +1,288 @@
+{
+  "masterId": "asiatisk_rakwok",
+  "source": "hellofresh",
+  "createdAt": 1791041301,
+  "basePortions": 4,
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/asiatisk_rakwok/main.jpg",
+    "byNode": {
+      "asiatisk_rakwok__garlic_rice": "assets/recipes/asiatisk_rakwok/steps/garlic_rice.jpg",
+      "asiatisk_rakwok__pak_choi_rice": "assets/recipes/asiatisk_rakwok/steps/pak_choi_rice.jpg",
+      "asiatisk_rakwok__seasoned_avocado": "assets/recipes/asiatisk_rakwok/steps/prepped_veg.jpg",
+      "asiatisk_rakwok__shrimp_wok": "assets/recipes/asiatisk_rakwok/steps/shrimp_wok.jpg",
+      "asiatisk_rakwok": "assets/recipes/asiatisk_rakwok/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 458,
+    "perPortion": {
+      "energyKcal": 636,
+      "energyKj": 2663,
+      "fatG": 19.6,
+      "saturatedFatG": 4.1,
+      "carbsG": 80.2,
+      "sugarsG": 12.5,
+      "fiberG": 9.3,
+      "proteinG": 23,
+      "saltG": 6.7
+    }
+  },
+  "ratings": {
+    "average": 3.3,
+    "count": 126,
+    "source": "hellofresh"
+  },
+  "cooked": {
+    "hfId": "67f924eea3ffaf7fe8736639",
+    "at": "2026-10-03T15:12:32+02:00",
+    "source": "photo",
+    "headline": "med pak choi-ris och sojastekt broccoli"
+  },
+  "nodes": [
+    {
+      "id": "asiatisk_rakwok__prepped_pak_choi",
+      "name": "Hacka Pak Choi",
+      "outputName": "Hackad pak choi",
+      "inputs": [
+        {
+          "id": "pak_choi",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Grovhacka {{pak_choi}} och dela den vita delen från den gröna."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Pak choi är 1 st vid både 3 och 4 portioner. Inte uppskalad.",
+        "Den vita delen går till woken och den gröna till riset; råreceptet anger ingen proportion, så grafen delar 0,5 st / 0,5 st."
+      ]
+    },
+    {
+      "id": "asiatisk_rakwok__garlic_rice",
+      "name": "Koka Vitlöksris",
+      "outputName": "Kokt vitlöksris",
+      "inputs": [
+        {
+          "id": "garlic",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "msk"
+        },
+        {
+          "id": "water",
+          "amount": 5.5,
+          "unit": "dl"
+        },
+        {
+          "id": "long_grain_rice",
+          "amount": 300,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Finhacka eller pressa {{garlic}}. Hetta upp {{olive_oil}} i en medelstor kastrull på medelhög värme och fräs vitlöken i 30 sek, tills den doftar.",
+        "Tillsätt {{water}} och koka upp. Rör i {{long_grain_rice}} och {{salt}}, sänk till medellåg värme och sjud under lock i 14 min."
+      ],
+      "duration": 3,
+      "wait": 14,
+      "tags": [],
+      "tips": [
+        "Riset ska ångkoka, så tjuvkika inte. 30 sek vitlöksfräs är hands-on i duration. 14 min är sista stegets wait."
+      ]
+    },
+    {
+      "id": "asiatisk_rakwok__pak_choi_rice",
+      "name": "Vila Ris med Pak Choi",
+      "outputName": "Pak choi-ris",
+      "inputs": [
+        {
+          "id": "asiatisk_rakwok__garlic_rice",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "asiatisk_rakwok__prepped_pak_choi",
+          "amount": 0.5,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Ta av {{asiatisk_rakwok__garlic_rice}} från värmen. Lägg den gröna delen från {{asiatisk_rakwok__prepped_pak_choi}} ovanpå riset, sätt på locket och låt stå tills servering."
+      ],
+      "duration": 1,
+      "wait": 0,
+      "tags": [],
+      "tips": [
+        "Vilan tills servering har ingen minuttid, därför wait 0. Inte hopslagen med de 14 minuterna."
+      ]
+    },
+    {
+      "id": "asiatisk_rakwok__chopped_broccoli",
+      "name": "Skär Broccoli",
+      "outputName": "Broccolibitar",
+      "inputs": [
+        {
+          "id": "broccoli",
+          "amount": 500,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Skär buketter och stjälk på {{broccoli}} i 1 cm stora bitar."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "asiatisk_rakwok__seasoned_avocado",
+      "name": "Skiva Avokado",
+      "outputName": "Kryddad avokado",
+      "inputs": [
+        {
+          "id": "avocado",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "sesame_seeds",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Halvera och kärna ur {{avocado}}. Gröp ur fruktköttet, skär i tunna skivor och krydda med en nypa {{sesame_seeds}}, en nypa {{salt}} och {{pepper}}."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Råreceptet: en nypa sesamfrön på avokadon, resterande av de 10 g i woken."
+      ]
+    },
+    {
+      "id": "asiatisk_rakwok__shrimp_wok",
+      "name": "Woka Räkor och Broccoli",
+      "outputName": "Sojastekt broccoli och räkor",
+      "inputs": [
+        {
+          "id": "asiatisk_rakwok__chopped_broccoli",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "asiatisk_rakwok__prepped_pak_choi",
+          "amount": 0.5,
+          "unit": "st"
+        },
+        {
+          "id": "king_prawns",
+          "amount": 300,
+          "unit": "g"
+        },
+        {
+          "id": "sesame_seeds",
+          "amount": 10,
+          "unit": "g"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "msk"
+        },
+        {
+          "id": "soy_sauce",
+          "amount": 50,
+          "unit": "ml"
+        },
+        {
+          "id": "asian_wok_sauce",
+          "amount": 150,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i en stor stekpanna på medelvärme. Stek {{asiatisk_rakwok__chopped_broccoli}}, den vita delen från {{asiatisk_rakwok__prepped_pak_choi}} och en skvätt av {{soy_sauce}} i 3–4 min, tills broccolin börjar mjukna.",
+        "Tillsätt {{king_prawns}} och resten av {{sesame_seeds}}. Stek i 2–3 min, tills räkorna är genomstekta.",
+        "Tillsätt resten av {{soy_sauce}} och {{asian_wok_sauce}}, ta av pannan från värmen och rör om. Krydda med {{salt}} och en nypa {{pepper}}."
+      ],
+      "duration": 8,
+      "wait": 0,
+      "tags": [],
+      "tips": [
+        "Båda stekstegena är hands-on wok, därför duration 8 och wait 0. Inte en passiv klocka och inte hopslagen med risets 14 min.",
+        "Sesam är 10 g totalt enligt råreceptet; en nypa av dem har redan gått till avokadon.",
+        "Soja är 50 ml totalt, samma vid 3 och 4 portioner. Skvätten och resten är samma mängd, inte delad i påhittade milliliter.",
+        "Räkorna är klara när de är rosa utanpå och ogenomskinliga i mitten."
+      ]
+    },
+    {
+      "id": "asiatisk_rakwok",
+      "name": "Asiatisk räkwok",
+      "outputName": "Asiatisk räkwok",
+      "inputs": [
+        {
+          "id": "asiatisk_rakwok__pak_choi_rice",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "asiatisk_rakwok__shrimp_wok",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "asiatisk_rakwok__seasoned_avocado",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Fluffa upp {{asiatisk_rakwok__pak_choi_rice}} med en gaffel.",
+        "Lägg upp riset och {{asiatisk_rakwok__shrimp_wok}} i skålar och toppa med {{asiatisk_rakwok__seasoned_avocado}}."
+      ],
+      "duration": 3,
+      "tags": [
+        "master"
+      ]
+    }
+  ]
+}

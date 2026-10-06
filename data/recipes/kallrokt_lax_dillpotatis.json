@@ -1,0 +1,256 @@
+{
+  "masterId": "kallrokt_lax_dillpotatis",
+  "source": "hellofresh",
+  "createdAt": 1791037687,
+  "basePortions": 4,
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/kallrokt_lax_dillpotatis/main.jpg",
+    "byNode": {
+      "kallrokt_lax_dillpotatis__boiled_potatoes": "assets/recipes/kallrokt_lax_dillpotatis/steps/boiled_potatoes.jpg",
+      "kallrokt_lax_dillpotatis__pickled_shallot": "assets/recipes/kallrokt_lax_dillpotatis/steps/pickled_shallot.jpg",
+      "kallrokt_lax_dillpotatis__prepped_salad_veg": "assets/recipes/kallrokt_lax_dillpotatis/steps/prepped_salad_veg.jpg",
+      "kallrokt_lax_dillpotatis__shallot_salad": "assets/recipes/kallrokt_lax_dillpotatis/steps/shallot_salad.jpg",
+      "kallrokt_lax_dillpotatis__dill_potatoes": "assets/recipes/kallrokt_lax_dillpotatis/steps/dill_potatoes.jpg",
+      "kallrokt_lax_dillpotatis": "assets/recipes/kallrokt_lax_dillpotatis/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 537,
+    "perPortion": {
+      "energyKcal": 534,
+      "energyKj": 2234,
+      "fatG": 28.1,
+      "saturatedFatG": 10,
+      "carbsG": 52.6,
+      "sugarsG": 8.2,
+      "fiberG": 5.9,
+      "proteinG": 19.8,
+      "saltG": 3
+    }
+  },
+  "ratings": {
+    "average": 3.5,
+    "count": 139,
+    "source": "hellofresh"
+  },
+  "cooked": {
+    "hfId": "65ef349fd4f9506890146d40",
+    "at": "2026-10-03T15:12:32+02:00",
+    "source": "photo",
+    "headline": "med crème fraiche och syltad schalottenlök"
+  },
+  "nodes": [
+    {
+      "id": "kallrokt_lax_dillpotatis__boiled_potatoes",
+      "name": "Koka Potatis",
+      "outputName": "Kokt potatis",
+      "inputs": [
+        {
+          "id": "potato",
+          "amount": 1000,
+          "unit": "g"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Koka upp en medelstor kastrull med saltat vatten. Tärna {{potato}} (oskalad) i 2 cm stora bitar.",
+        "Koka potatisen i 11–13 min, tills den enkelt kan delas med en kniv. Häll av, krydda med en nypa salt och {{pepper}} och ställ åt sidan under lock."
+      ],
+      "duration": 5,
+      "wait": 13,
+      "tags": []
+    },
+    {
+      "id": "kallrokt_lax_dillpotatis__pickled_shallot",
+      "name": "Sylta Schalottenlök",
+      "outputName": "Syltad schalottenlök",
+      "inputs": [
+        {
+          "id": "shallot",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "lemon",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "sugar",
+          "amount": 1,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Skär {{shallot}} i tunna skivor. Dela {{lemon}} på mitten och pressa ur ca 2 msk saft.",
+        "Blanda {{salt}}, {{sugar}} och citronsaften i en stor skål. Vänd ner schalottenlöken och ställ åt sidan."
+      ],
+      "tips": [
+        "Ingen vilotid är angiven. Låt löken dra medan resten förbereds."
+      ],
+      "duration": 4,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "kallrokt_lax_dillpotatis__chopped_dill",
+      "name": "Hacka Dill",
+      "outputName": "Hackad dill",
+      "inputs": [
+        {
+          "id": "dill",
+          "amount": 1,
+          "unit": "pkt"
+        }
+      ],
+      "steps": [
+        "Grovhacka {{dill}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "kallrokt_lax_dillpotatis__prepped_salad_veg",
+      "name": "Förbered Salladsgrönsaker",
+      "outputName": "Skivad gurka, rädisor och sallad",
+      "inputs": [
+        {
+          "id": "radish",
+          "amount": 125,
+          "unit": "g"
+        },
+        {
+          "id": "cucumber",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "mixed_salad",
+          "amount": 100,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Skär {{radish}} i tunna skivor.",
+        "Skär {{cucumber}} i tunna, diagonala halvmånar.",
+        "Skölj {{mixed_salad}}."
+      ],
+      "duration": 5,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "kallrokt_lax_dillpotatis__shallot_salad",
+      "name": "Blanda Sallad",
+      "outputName": "Sallad med syltad schalottenlök",
+      "inputs": [
+        {
+          "id": "kallrokt_lax_dillpotatis__pickled_shallot",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "kallrokt_lax_dillpotatis__prepped_salad_veg",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 2,
+          "unit": "msk"
+        }
+      ],
+      "steps": [
+        "Vänd ner {{kallrokt_lax_dillpotatis__prepped_salad_veg}} och {{olive_oil}} i skålen med {{kallrokt_lax_dillpotatis__pickled_shallot}}."
+      ],
+      "duration": 2,
+      "tags": []
+    },
+    {
+      "id": "kallrokt_lax_dillpotatis__dill_potatoes",
+      "name": "Blanda Dillpotatis",
+      "outputName": "Dillpotatis med crème fraiche",
+      "inputs": [
+        {
+          "id": "kallrokt_lax_dillpotatis__boiled_potatoes",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "kallrokt_lax_dillpotatis__chopped_dill",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "creme_fraiche",
+          "amount": 150,
+          "unit": "ml"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Rör ner {{creme_fraiche}}, {{kallrokt_lax_dillpotatis__chopped_dill}}, {{salt}} och {{pepper}} i {{kallrokt_lax_dillpotatis__boiled_potatoes}} precis innan servering."
+      ],
+      "tips": [
+        "Blanda i crème fraiche och dill precis innan servering."
+      ],
+      "duration": 2,
+      "tags": []
+    },
+    {
+      "id": "kallrokt_lax_dillpotatis",
+      "name": "Kallrökt lax och dillpotatis",
+      "outputName": "Kallrökt lax och dillpotatis",
+      "inputs": [
+        {
+          "id": "kallrokt_lax_dillpotatis__dill_potatoes",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "kallrokt_lax_dillpotatis__shallot_salad",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "cold_smoked_salmon",
+          "amount": 200,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{kallrokt_lax_dillpotatis__dill_potatoes}} och {{kallrokt_lax_dillpotatis__shallot_salad}} i djupa tallrikar.",
+        "Toppa med {{cold_smoked_salmon}}."
+      ],
+      "duration": 3,
+      "tags": [
+        "master"
+      ]
+    }
+  ]
+}

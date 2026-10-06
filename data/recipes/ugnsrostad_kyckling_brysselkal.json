@@ -1,0 +1,364 @@
+{
+  "masterId": "ugnsrostad_kyckling_brysselkal",
+  "source": "hellofresh",
+  "createdAt": 1791040742,
+  "basePortions": 4,
+  "sharedPrep": [
+    "preheated_oven_220"
+  ],
+  "images": {
+    "main": "assets/recipes/ugnsrostad_kyckling_brysselkal/main.jpg",
+    "byNode": {
+      "ugnsrostad_kyckling_brysselkal__roasted_chicken": "assets/recipes/ugnsrostad_kyckling_brysselkal/steps/roasted_chicken_sprouts.jpg",
+      "ugnsrostad_kyckling_brysselkal__cooked_bulgur": "assets/recipes/ugnsrostad_kyckling_brysselkal/steps/cooked_bulgur.jpg",
+      "ugnsrostad_kyckling_brysselkal__cabbage_apple_salad": "assets/recipes/ugnsrostad_kyckling_brysselkal/steps/cabbage_apple_salad.jpg",
+      "ugnsrostad_kyckling_brysselkal__garlic_dressing": "assets/recipes/ugnsrostad_kyckling_brysselkal/steps/garlic_dressing.jpg",
+      "ugnsrostad_kyckling_brysselkal__toasted_walnuts": "assets/recipes/ugnsrostad_kyckling_brysselkal/steps/toasted_walnuts.jpg",
+      "ugnsrostad_kyckling_brysselkal": "assets/recipes/ugnsrostad_kyckling_brysselkal/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 525,
+    "perPortion": {
+      "energyKcal": 620,
+      "energyKj": 2595,
+      "fatG": 21.7,
+      "saturatedFatG": 7.1,
+      "carbsG": 55.2,
+      "sugarsG": 15.9,
+      "fiberG": 12.1,
+      "proteinG": 49.3,
+      "saltG": 4
+    }
+  },
+  "ratings": {
+    "average": 3.3,
+    "count": 1,
+    "source": "hellofresh"
+  },
+  "cooked": {
+    "hfId": "6a68917497f1e022091745d2",
+    "at": "2026-10-03T15:12:32+02:00",
+    "source": "photo",
+    "headline": "med kål- och äppelsallad & vitlöksdressing"
+  },
+  "nodes": [
+    {
+      "id": "ugnsrostad_kyckling_brysselkal__sliced_sprouts",
+      "name": "Skiva Brysselkål",
+      "outputName": "Skivad brysselkål",
+      "inputs": [
+        {
+          "id": "brussels_sprouts",
+          "amount": 300,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Ta bort de yttersta bladen från {{brussels_sprouts}} och skär den i tunna skivor."
+      ],
+      "duration": 4,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "300 g är samma mängd vid 3 och 4 portioner. Inte uppskalad."
+      ]
+    },
+    {
+      "id": "ugnsrostad_kyckling_brysselkal__roasted_sprouts",
+      "name": "Rosta Brysselkål",
+      "outputName": "Ugnsrostad brysselkål",
+      "inputs": [
+        {
+          "id": "preheated_oven_220",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "ugnsrostad_kyckling_brysselkal__sliced_sprouts",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Lägg {{ugnsrostad_kyckling_brysselkal__sliced_sprouts}} på en plåt med bakplåtspapper. Blanda med en skvätt {{olive_oil}}, {{salt}} och en nypa {{pepper}}.",
+        "Rosta i {{preheated_oven_220}} i 10–12 min, eller tills brysselkålen är gyllene."
+      ],
+      "duration": 2,
+      "wait": 12,
+      "tags": [],
+      "tips": [
+        "Kycklingen rostas på samma plåt. Salt till grönsaker är 0,5 tsk. Olivoljan på plåten är skvätt, inte salladens 1 msk."
+      ]
+    },
+    {
+      "id": "ugnsrostad_kyckling_brysselkal__roasted_chicken",
+      "name": "Rosta Kyckling",
+      "outputName": "Ugnsrostad kyckling",
+      "inputs": [
+        {
+          "id": "preheated_oven_220",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "chicken_breast",
+          "amount": 600,
+          "unit": "g"
+        },
+        {
+          "id": "jorden_runt",
+          "amount": 4,
+          "unit": "g"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Lägg {{chicken_breast}} på plåten bredvid brysselkålen. Ringla över en skvätt {{olive_oil}} och krydda med {{jorden_runt}}, {{salt}} och en nypa {{pepper}}.",
+        "Rosta i {{preheated_oven_220}} i 10–12 min, eller tills kycklingen är genomstekt."
+      ],
+      "duration": 2,
+      "wait": 12,
+      "tags": [],
+      "tips": [
+        "Jorden Runt är 8 g totalt och delas på mitten: 4 g här, 4 g i bulgur. 8 g är samma vid 3 och 4 portioner.",
+        "Rostas på samma plåt som brysselkålen. Salt till kött är 0,5 tsk."
+      ]
+    },
+    {
+      "id": "ugnsrostad_kyckling_brysselkal__sliced_chicken",
+      "name": "Skiva Kyckling",
+      "outputName": "Skivad kyckling",
+      "inputs": [
+        {
+          "id": "ugnsrostad_kyckling_brysselkal__roasted_chicken",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skär {{ugnsrostad_kyckling_brysselkal__roasted_chicken}} i tunna skivor."
+      ],
+      "duration": 3,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "ugnsrostad_kyckling_brysselkal__cooked_bulgur",
+      "name": "Koka Bulgur",
+      "outputName": "Kokt bulgur",
+      "inputs": [
+        {
+          "id": "water",
+          "amount": 4.5,
+          "unit": "dl"
+        },
+        {
+          "id": "bulgur",
+          "amount": 170,
+          "unit": "g"
+        },
+        {
+          "id": "jorden_runt",
+          "amount": 4,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Koka upp {{water}} i en kastrull.",
+        "Rör i {{bulgur}}, {{jorden_runt}} och {{salt}}. Sänk till medellåg värme och sjud under lock i 9–10 min, eller tills bulgur är al dente."
+      ],
+      "duration": 3,
+      "wait": 10,
+      "tags": []
+    },
+    {
+      "id": "ugnsrostad_kyckling_brysselkal__cabbage_apple_salad",
+      "name": "Blanda Kål- och Äppelsallad",
+      "outputName": "Kål- och äppelsallad",
+      "inputs": [
+        {
+          "id": "apple",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "pear",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "shredded_red_cabbage",
+          "amount": 300,
+          "unit": "g"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "msk"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Halvera, kärna ur och skär {{apple}} och {{pear}} i tunna skivor.",
+        "Blanda äpple, päron, {{shredded_red_cabbage}}, {{olive_oil}}, {{salt}} och en nypa {{pepper}} i en stor skål."
+      ],
+      "duration": 5,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Rödkål är 300 g vid både 3 och 4 portioner."
+      ]
+    },
+    {
+      "id": "ugnsrostad_kyckling_brysselkal__garlic_dressing",
+      "name": "Blanda Vitlöksdressing",
+      "outputName": "Vitlöksdressing",
+      "inputs": [
+        {
+          "id": "garlic",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "yoghurt",
+          "amount": 300,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Finhacka eller pressa {{garlic}}.",
+        "Blanda vitlök, {{yoghurt}} och {{salt}} i en liten skål."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Yoghurten är fylld som 300 g, inte ml."
+      ]
+    },
+    {
+      "id": "ugnsrostad_kyckling_brysselkal__toasted_walnuts",
+      "name": "Rosta Valnötter",
+      "outputName": "Rostade valnötter",
+      "inputs": [
+        {
+          "id": "walnuts",
+          "amount": 40,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Hetta upp en stekpanna på medelhög värme. Grovhacka {{walnuts}}.",
+        "Rosta nötterna i 2–3 min, eller tills de är gyllene."
+      ],
+      "duration": 4,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "2–3 min är hands-on rostning, därför duration och wait 0."
+      ]
+    },
+    {
+      "id": "ugnsrostad_kyckling_brysselkal",
+      "name": "Bowl på ugnsrostad kyckling och brysselkål",
+      "outputName": "Bowl på ugnsrostad kyckling och brysselkål",
+      "inputs": [
+        {
+          "id": "ugnsrostad_kyckling_brysselkal__cooked_bulgur",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "ugnsrostad_kyckling_brysselkal__cabbage_apple_salad",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "ugnsrostad_kyckling_brysselkal__roasted_sprouts",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "ugnsrostad_kyckling_brysselkal__sliced_chicken",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "ugnsrostad_kyckling_brysselkal__toasted_walnuts",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "ugnsrostad_kyckling_brysselkal__garlic_dressing",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{ugnsrostad_kyckling_brysselkal__cooked_bulgur}}, {{ugnsrostad_kyckling_brysselkal__cabbage_apple_salad}} och {{ugnsrostad_kyckling_brysselkal__roasted_sprouts}} i skålar och toppa med {{ugnsrostad_kyckling_brysselkal__sliced_chicken}}.",
+        "Garnera med {{ugnsrostad_kyckling_brysselkal__toasted_walnuts}} och ringla över {{ugnsrostad_kyckling_brysselkal__garlic_dressing}}."
+      ],
+      "duration": 3,
+      "tags": [
+        "master"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": "egg_wash",
+  "nodes": [
+    {
+      "id": "egg_wash",
+      "name": "Gör Äggpensel",
+      "outputName": "Äggpensel",
+      "inputs": [
+        {
+          "id": "egg",
+          "amount": 0.5,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Vispa {{egg}} lätt i en liten skål."
+      ],
+      "duration": 1,
+      "tags": [
+        "prep"
+      ]
+    }
+  ]
+}

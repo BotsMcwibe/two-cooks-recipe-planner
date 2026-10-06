@@ -1,0 +1,234 @@
+{
+  "masterId": "pear_goat_cheese_bruschetta",
+  "source": "hellofresh",
+  "createdAt": 1790854164,
+  "basePortions": 4,
+  "sharedPrep": [
+    "preheated_oven_220"
+  ],
+  "images": {
+    "main": "assets/recipes/pear_goat_cheese_bruschetta/main.jpg",
+    "byNode": {
+      "pear_goat_cheese_bruschetta__diced_pear": "assets/recipes/pear_goat_cheese_bruschetta/steps/prep.jpg",
+      "pear_goat_cheese_bruschetta__fried_pear": "assets/recipes/pear_goat_cheese_bruschetta/steps/fried_pear.jpg",
+      "pear_goat_cheese_bruschetta__roasted_ciabatta": "assets/recipes/pear_goat_cheese_bruschetta/steps/roasted_ciabatta.jpg",
+      "pear_goat_cheese_bruschetta": "assets/recipes/pear_goat_cheese_bruschetta/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 350,
+    "perPortion": {
+      "energyKcal": 718,
+      "energyKj": 3002,
+      "fatG": 28.3,
+      "saturatedFatG": 10,
+      "carbsG": 89.3,
+      "sugarsG": 24.1,
+      "fiberG": 9,
+      "proteinG": 22.1,
+      "saltG": 1.9
+    }
+  },
+  "ratings": {
+    "average": 4,
+    "count": 2,
+    "source": "hellofresh"
+  },
+  "nodes": [
+    {
+      "id": "pear_goat_cheese_bruschetta__chopped_walnuts",
+      "name": "Hacka Valnötter",
+      "outputName": "Hackade valnötter",
+      "inputs": [
+        {
+          "id": "walnuts",
+          "amount": 40,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Grovhacka {{walnuts}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "pear_goat_cheese_bruschetta__diced_pear",
+      "name": "Tärna Päron",
+      "outputName": "Tärnade päron",
+      "inputs": [
+        {
+          "id": "pear",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Halvera, kärna ur och tärna {{pear}} i 1 cm stora bitar."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "pear_goat_cheese_bruschetta__picked_thyme",
+      "name": "Plocka Timjan",
+      "outputName": "Timjanblad",
+      "inputs": [
+        {
+          "id": "fresh_thyme",
+          "amount": 1,
+          "unit": "pkt"
+        }
+      ],
+      "steps": [
+        "Plocka bladen från {{fresh_thyme}} (ca 2 stjälkar)."
+      ],
+      "duration": 1,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Håll längst upp på timjanstjälken och dra med fingrarna längs stjälken för att frigöra bladen.",
+        "FLAG: HF-enhet portionspåse finns inte i units.json — satt till 1 pkt. Samma mängd vid 2/3/4 portioner."
+      ]
+    },
+    {
+      "id": "pear_goat_cheese_bruschetta__toasted_walnuts",
+      "name": "Rosta Valnötter",
+      "outputName": "Rostade valnötter",
+      "inputs": [
+        {
+          "id": "pear_goat_cheese_bruschetta__chopped_walnuts",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Hetta upp en stor stekpanna på medelhög värme.",
+        "Rosta {{pear_goat_cheese_bruschetta__chopped_walnuts}} i 3–4 min, eller tills gyllene. Lägg över i en liten skål."
+      ],
+      "duration": 4,
+      "wait": 0,
+      "tags": []
+    },
+    {
+      "id": "pear_goat_cheese_bruschetta__fried_pear",
+      "name": "Stek Päron",
+      "outputName": "Stekta päron",
+      "inputs": [
+        {
+          "id": "pear_goat_cheese_bruschetta__diced_pear",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "msk"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i samma stekpanna på medelhög värme.",
+        "Stek {{pear_goat_cheese_bruschetta__diced_pear}} med {{salt}} i 3–4 min, tills mjukt."
+      ],
+      "duration": 4,
+      "wait": 0,
+      "tags": [],
+      "tips": [
+        "Stekningen är hands-on (duration); ingen passiv wait."
+      ]
+    },
+    {
+      "id": "pear_goat_cheese_bruschetta__roasted_ciabatta",
+      "name": "Rosta Ciabatta med Getost",
+      "outputName": "Rostad getostciabatta",
+      "inputs": [
+        {
+          "id": "preheated_oven_220",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "ciabatta",
+          "amount": 250,
+          "unit": "g"
+        },
+        {
+          "id": "goat_cheese",
+          "amount": 100,
+          "unit": "g"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Halvera {{ciabatta}} på längden och sen ytterligare en gång till trekanter.",
+        "Placera ciabatta på en plåt med bakplåtspapper och ringla över {{olive_oil}}.",
+        "Bre {{goat_cheese}} på ciabatta och krydda med {{pepper}}.",
+        "Rosta i den förvärmda ugnen ({{preheated_oven_220}}) i 8–10 min, tills gyllene."
+      ],
+      "duration": 3,
+      "wait": 10,
+      "tags": []
+    },
+    {
+      "id": "pear_goat_cheese_bruschetta",
+      "name": "Päron- och getostbruschetta",
+      "outputName": "Päron- och getostbruschetta",
+      "inputs": [
+        {
+          "id": "pear_goat_cheese_bruschetta__roasted_ciabatta",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "pear_goat_cheese_bruschetta__fried_pear",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "pear_goat_cheese_bruschetta__toasted_walnuts",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "pear_goat_cheese_bruschetta__picked_thyme",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "honey",
+          "amount": 25,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Toppa {{pear_goat_cheese_bruschetta__roasted_ciabatta}} med {{pear_goat_cheese_bruschetta__fried_pear}}, {{pear_goat_cheese_bruschetta__toasted_walnuts}} och {{pear_goat_cheese_bruschetta__picked_thyme}}.",
+        "Ringla över {{honey}}."
+      ],
+      "duration": 3,
+      "wait": 0,
+      "tags": [
+        "master"
+      ]
+    }
+  ]
+}

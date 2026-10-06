@@ -1,0 +1,468 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<title>Recipe graph viewer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root { --bg:#f6f4ef; --panel:#fff; --ink:#222; --muted:#777; --line:#b9b4aa; --crit:#e8590c; --master:#f2c94c; --shared:#7b5ea7; --equip:#9aa0a6; --pantry:#5f8f4e; }
+  * { box-sizing: border-box; }
+  body { margin:0; font:14px/1.35 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color:var(--ink); background:var(--bg); height:100vh; display:flex; flex-direction:column; }
+  header { display:flex; gap:12px; align-items:center; padding:8px 14px; background:#2f3b2f; color:#fff; flex-wrap:wrap; }
+  header h1 { font-size:16px; margin:0 8px 0 0; font-weight:600; }
+  header .tab { background:none; border:1px solid #6b7a6b; color:#fff; padding:4px 10px; border-radius:4px; cursor:pointer; }
+  header .tab.active { background:#fff; color:#2f3b2f; }
+  header input[type=search], header select { padding:4px 6px; border-radius:4px; border:1px solid #888; font:inherit; }
+  header select { max-width:340px; }
+  header label { font-size:13px; display:flex; gap:4px; align-items:center; }
+  main { flex:1; display:flex; min-height:0; }
+  #canvas { flex:1; min-width:0; position:relative; }
+  #canvas svg { width:100%; height:100%; display:block; cursor:grab; }
+  aside { width:340px; background:var(--panel); border-left:1px solid #ddd; overflow:auto; padding:12px 14px; }
+  aside h2 { font-size:17px; margin:0 0 2px; }
+  aside .sub { color:var(--muted); font-size:12px; margin-bottom:10px; }
+  aside table { border-collapse:collapse; width:100%; font-size:13px; }
+  aside td { padding:3px 4px; border-bottom:1px solid #eee; vertical-align:top; }
+  aside td:first-child { color:var(--muted); white-space:nowrap; }
+  aside td:last-child { text-align:right; font-variant-numeric:tabular-nums; }
+  aside h3 { font-size:13px; margin:14px 0 4px; text-transform:uppercase; letter-spacing:.04em; color:#555; }
+  aside ol { margin:0; padding-left:20px; font-size:13px; }
+  .legend { display:flex; flex-wrap:wrap; gap:8px; font-size:12px; margin-top:12px; }
+  .legend span { display:inline-flex; align-items:center; gap:4px; }
+  .sw { width:14px; height:10px; border:2px solid #888; border-radius:3px; display:inline-block; }
+  .node rect { fill:#fff; stroke:#8c867a; stroke-width:1.2; }
+  .node.crit rect { stroke:var(--crit); stroke-width:3; }
+  .node.master rect { fill:#fff7d6; stroke:#c99a06; stroke-width:3; }
+  .node.master.crit rect { stroke:var(--crit); }
+  .node.shared rect { fill:#f1ecf8; stroke-dasharray:5 3; }
+  .node.equip rect { fill:#eef0f2; }
+  .node.pantry rect { fill:#eef6ea; stroke:#a9c79c; rx:10; }
+  .node text { font-size:13px; fill:#222; }
+  .node .t1 { font-weight:600; }
+  .node .t2 { font-size:11.5px; fill:#666; }
+  .node.pantry text { font-size:11.5px; fill:#33502a; }
+  .edge { fill:none; stroke:var(--line); stroke-width:1.6; }
+  .edge.pantry { stroke:#cfdcc8; stroke-width:1.1; }
+  .edge.crit { stroke:var(--crit); stroke-width:3.2; }
+  .elabel { font-size:11.5px; fill:#9a3412; font-weight:600; paint-order:stroke; stroke:var(--bg); stroke-width:4px; }
+  .lvl { font-size:11px; fill:#aaa; }
+  #overview { flex:1; overflow:auto; padding:16px 20px; display:none; }
+  #overview .charts { display:flex; flex-wrap:wrap; gap:18px; }
+  #overview .card { background:#fff; border:1px solid #ddd; border-radius:6px; padding:10px 12px; }
+  #overview .card h3 { margin:0 0 6px; font-size:14px; }
+  .dot { cursor:pointer; stroke:#fff; stroke-width:1; opacity:.85; }
+  .dot:hover { stroke:#000; stroke-width:2; opacity:1; }
+  .axis text { font-size:11px; fill:#555; }
+  .axis line, .axis path { stroke:#bbb; }
+  .bar { fill:#6a8f5e; }
+  .tip { position:fixed; pointer-events:none; background:#222; color:#fff; padding:4px 7px; border-radius:4px; font-size:12px; display:none; z-index:10; }
+  #gstats td { padding:2px 8px; font-size:12.5px; border-bottom:1px solid #eee; text-align:right; font-variant-numeric:tabular-nums; }
+  #gstats td:first-child { text-align:left; color:#555; }
+  #gstats th { font-size:12px; text-align:right; padding:2px 8px; color:#555; }
+  #gstats th:first-child { text-align:left; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Recipe graphs</h1>
+  <button class="tab" data-tab="recipe">Recipe</button>
+  <button class="tab" data-tab="overview">Overview</button>
+  <span id="recipeControls" style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+    <input type="search" id="q" placeholder="Search recipes…" size="18">
+    <select id="sel"></select>
+    <label><input type="checkbox" id="pantry"> pantry ingredients</label>
+    <label><input type="checkbox" id="crit" checked> critical path</label>
+    <button class="tab" id="fit">Fit</button>
+  </span>
+</header>
+<main>
+  <div id="canvas"><svg id="svg"></svg></div>
+  <aside id="side"></aside>
+  <div id="overview"></div>
+</main>
+<div class="tip" id="tip"></div>
+<script>
+const DATA = null; /*__DATA__*/
+const R = DATA.recipes;
+const IDS = Object.keys(R).sort((a, b) => R[a].stats.name.localeCompare(R[b].stats.name, 'sv'));
+const SRC_COLORS = { hellofresh: '#5b9a3c', ica: '#d6202b', citygross: '#1f6fb5', linas: '#e08a00', unknown: '#888' };
+const $ = s => document.querySelector(s);
+const NS = 'http://www.w3.org/2000/svg';
+const el = (tag, attrs = {}, parent) => {
+  const e = document.createElementNS(NS, tag);
+  for (const [k, v] of Object.entries(attrs)) e.setAttribute(k, v);
+  if (parent) parent.appendChild(e);
+  return e;
+};
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const short = (s, n) => (s.length > n ? s.slice(0, n - 1) + '…' : s);
+const fmtAmt = (a, u) => `${Math.round(a * 1000) / 1000} ${u || ''}`.trim();
+const timeLabel = n => {
+  const d = n.duration || 0, w = n.wait || 0;
+  return w ? `${d} min + ${w} vänta` : `${d} min`;
+};
+
+// ---------- state / routing ----------
+const state = { tab: 'recipe', id: 'norska_kottbullar', pantry: false, crit: true };
+function readHash() {
+  const h = location.hash.slice(1);
+  if (h === 'overview') { state.tab = 'overview'; return; }
+  const p = new URLSearchParams(h);
+  state.tab = 'recipe';
+  if (p.get('r') && R[p.get('r')]) state.id = p.get('r');
+  if (p.has('pantry')) state.pantry = p.get('pantry') === '1';
+  if (p.has('crit')) state.crit = p.get('crit') !== '0';
+}
+function writeHash() {
+  const h = state.tab === 'overview' ? 'overview' : `r=${state.id}${state.pantry ? '&pantry=1' : ''}${state.crit ? '' : '&crit=0'}`;
+  if (location.hash.slice(1) !== h) history.replaceState(null, '', '#' + h);
+}
+if (!R[state.id]) state.id = IDS[0];
+
+// ---------- controls ----------
+function fillSelect() {
+  const q = $('#q').value.trim().toLowerCase();
+  const sel = $('#sel');
+  sel.innerHTML = '';
+  for (const id of IDS) {
+    const s = R[id].stats;
+    if (q && !(`${id} ${s.name} ${s.source}`.toLowerCase().includes(q)) && id !== state.id) continue;
+    const o = document.createElement('option');
+    o.value = id;
+    o.textContent = `${s.name} — ${s.source}, depth ${s.maxDepth}, ${s.nodes} nodes`;
+    if (id === state.id) o.selected = true;
+    sel.appendChild(o);
+  }
+}
+$('#q').addEventListener('input', () => {
+  const q = $('#q').value.trim().toLowerCase();
+  const hit = id => `${id} ${R[id].stats.name} ${R[id].stats.source}`.toLowerCase().includes(q);
+  if (q && !hit(state.id)) { const first = IDS.find(hit); if (first) { state.id = first; render(); return; } }
+  fillSelect();
+});
+$('#sel').addEventListener('change', e => { state.id = e.target.value; render(); });
+$('#pantry').addEventListener('change', e => { state.pantry = e.target.checked; render(); });
+$('#crit').addEventListener('change', e => { state.crit = e.target.checked; render(); });
+$('#fit').addEventListener('click', () => fitView());
+document.querySelectorAll('header .tab[data-tab]').forEach(b => b.addEventListener('click', () => { state.tab = b.dataset.tab; render(); }));
+window.addEventListener('hashchange', () => { readHash(); render(); });
+
+// ---------- layout ----------
+const NODE_W = 200, NODE_H = 48, PANTRY_W = 170, PANTRY_H = 22, GAP_Y = 12, COL_GAP = 70;
+function layout(rec, withPantry) {
+  const g = rec.graph, mid = rec.stats.id;
+  const byId = new Map(g.nodes.map(n => [n.id, n]));
+  const items = new Map(); // key -> {key,kind,node?,col,w,h,y,children:[]}
+  const maxLayer = Math.max(...g.nodes.map(n => n.alap));
+  for (const n of g.nodes) {
+    items.set(n.id, { key: n.id, kind: 'node', node: n, col: withPantry ? 2 * n.alap + 1 : n.alap, w: NODE_W, h: NODE_H, children: [] });
+  }
+  const derivedIn = new Map(g.nodes.map(n => [n.id, []]));
+  for (const e of g.edges) derivedIn.get(e.to).push(e);
+  const pantryIn = new Map(g.nodes.map(n => [n.id, []]));
+  if (withPantry) {
+    g.pantryEdges.forEach((e, i) => {
+      const key = `p${i}`;
+      const consumer = items.get(e.to);
+      items.set(key, { key, kind: 'pantry', edge: e, col: consumer.col - 1, w: PANTRY_W, h: PANTRY_H, children: [] });
+      pantryIn.get(e.to).push(key);
+    });
+  }
+  // children in display order: pantry chips first, then derived inputs in input order
+  for (const n of g.nodes) {
+    const it = items.get(n.id);
+    it.children = [...pantryIn.get(n.id), ...derivedIn.get(n.id).map(e => e.from)];
+  }
+  // tidy-tree pass: leaves take sequential slots, parents centre on their children
+  const placed = new Set();
+  let cursor = 0;
+  function place(key) {
+    const it = items.get(key);
+    if (placed.has(key)) return it.y;
+    placed.add(key);
+    const ys = it.children.filter(c => !placed.has(c)).map(place);
+    if (!ys.length) { it.y = cursor + it.h / 2; cursor += it.h + GAP_Y; }
+    else it.y = (Math.min(...ys) + Math.max(...ys)) / 2;
+    return it.y;
+  }
+  place(mid);
+  for (const key of items.keys()) if (!placed.has(key)) place(key);
+  // resolve overlaps per column (keep order, push down), then re-centre parents once
+  const cols = {};
+  for (const it of items.values()) (cols[it.col] ||= []).push(it);
+  const resolve = () => {
+    for (const list of Object.values(cols)) {
+      list.sort((a, b) => a.y - b.y);
+      for (let i = 1; i < list.length; i++) {
+        const min = list[i - 1].y + list[i - 1].h / 2 + GAP_Y + list[i].h / 2;
+        if (list[i].y < min) list[i].y = min;
+      }
+    }
+  };
+  resolve();
+  // column x positions (pantry columns narrower)
+  const colKeys = Object.keys(cols).map(Number).sort((a, b) => a - b);
+  const colX = {};
+  let x = 0;
+  const lastCol = Math.max(...colKeys);
+  for (let c = 0; c <= lastCol; c++) {
+    const w = cols[c] ? Math.max(...cols[c].map(it => it.w)) : (withPantry && c % 2 === 0 ? PANTRY_W : NODE_W);
+    colX[c] = { x, w };
+    x += w + COL_GAP;
+  }
+  for (const it of items.values()) { it.x = colX[it.col].x + (colX[it.col].w - it.w); }
+  const ys = [...items.values()].flatMap(it => [it.y - it.h / 2, it.y + it.h / 2]);
+  return { items, colX, width: x - COL_GAP, top: Math.min(...ys), bottom: Math.max(...ys), maxLayer };
+}
+
+// ---------- recipe view ----------
+let view = { x: 0, y: 0, w: 100, h: 100 }, bounds = null;
+function setViewBox() { $('#svg').setAttribute('viewBox', `${view.x} ${view.y} ${view.w} ${view.h}`); }
+function fitView() {
+  if (!bounds) return;
+  const pad = 30;
+  view = { x: bounds.x - pad, y: bounds.y - pad, w: bounds.w + 2 * pad, h: bounds.h + 2 * pad };
+  setViewBox();
+}
+function drawRecipe() {
+  const rec = R[state.id];
+  const svg = $('#svg');
+  svg.innerHTML = '';
+  const L = layout(rec, state.pantry);
+  const g = rec.graph;
+  const crit = new Set(state.crit ? rec.stats.criticalPath : []);
+  const critEdge = (a, b) => crit.has(a) && crit.has(b) && rec.stats.criticalPath.indexOf(b) === rec.stats.criticalPath.indexOf(a) + 1;
+  const root = el('g', {}, svg);
+  // level captions
+  const levelCols = Object.entries(L.colX).filter(([c]) => !state.pantry || c % 2 === 1);
+  levelCols.forEach(([c, { x, w }], i) => {
+    const t = el('text', { x: x + w / 2, y: L.top - 14, 'text-anchor': 'middle', class: 'lvl' }, root);
+    t.textContent = i === levelCols.length - 1 ? 'master' : `steg ${i + 1}`;
+  });
+  const edgeLayer = el('g', {}, root), labelLayer = el('g', {}, root), nodeLayer = el('g', {}, root);
+  const path = (a, b) => {
+    const x1 = a.x + a.w, y1 = a.y, x2 = b.x, y2 = b.y, dx = Math.max(30, (x2 - x1) / 2);
+    return `M${x1},${y1} C${x1 + dx},${y1} ${x2 - dx},${y2} ${x2},${y2}`;
+  };
+  const drawn = [];
+  for (const e of g.edges) {
+    const a = L.items.get(e.from), b = L.items.get(e.to);
+    const isCrit = critEdge(e.from, e.to);
+    const p = el('path', { d: path(a, b), class: 'edge' + (isCrit ? ' crit' : '') }, isCrit ? null : edgeLayer);
+    if (isCrit) drawn.push(p);
+    if (!(e.amount === 1 && e.unit === 'st')) {
+      const t = el('text', { x: b.x - 8, y: b.y - 6, 'text-anchor': 'end', class: 'elabel' }, labelLayer);
+      // place label near the target end, offset by source position so labels on the same target don't stack
+      t.setAttribute('y', b.y + (a.y < b.y ? -7 : a.y > b.y ? 15 : -7));
+      t.textContent = fmtAmt(e.amount, e.unit);
+    }
+  }
+  drawn.forEach(p => edgeLayer.appendChild(p));
+  if (state.pantry) {
+    for (const it of L.items.values()) {
+      if (it.kind !== 'pantry') continue;
+      const b = L.items.get(it.edge.to);
+      el('path', { d: path(it, b), class: 'edge pantry' }, edgeLayer);
+    }
+  }
+  for (const it of L.items.values()) {
+    const grp = el('g', { transform: `translate(${it.x},${it.y - it.h / 2})` }, nodeLayer);
+    if (it.kind === 'pantry') {
+      grp.setAttribute('class', 'node pantry');
+      el('rect', { width: it.w, height: it.h, rx: 10 }, grp);
+      const t = el('text', { x: 8, y: 15 }, grp);
+      t.textContent = short(`${it.edge.name} · ${fmtAmt(it.edge.amount, it.edge.unit)}`, 27);
+      el('title', {}, grp).textContent = `${it.edge.name} (${it.edge.from}) ${fmtAmt(it.edge.amount, it.edge.unit)}`;
+      continue;
+    }
+    const n = it.node;
+    const cls = ['node'];
+    if (n.master) cls.push('master');
+    if (crit.has(n.id)) cls.push('crit');
+    if (n.shared) cls.push('shared');
+    else if (n.inDeg === 0 && !g.pantryEdges.some(e => e.to === n.id)) cls.push('equip');
+    grp.setAttribute('class', cls.join(' '));
+    el('rect', { width: it.w, height: it.h, rx: 6 }, grp);
+    const t1 = el('text', { x: 9, y: 19, class: 't1' }, grp);
+    t1.textContent = short(n.name, 25);
+    const t2 = el('text', { x: 9, y: 37, class: 't2' }, grp);
+    t2.textContent = short(`${timeLabel(n)}${n.shared ? ' · delad: ' + n.shared : ''}`, 31);
+    el('title', {}, grp).textContent = `${n.name}\n→ ${n.outputName}\n${n.id}\n${timeLabel(n)}${n.tags.length ? '\ntags: ' + n.tags.join(', ') : ''}`;
+  }
+  bounds = { x: 0, y: L.top - 30, w: L.width, h: L.bottom - L.top + 30 };
+  fitView();
+}
+
+function drawSide() {
+  const s = R[state.id].stats, g = R[state.id].graph;
+  const nameOf = id => g.nodes.find(n => n.id === id);
+  const rows = [
+    ['Source', `<span style="color:${SRC_COLORS[s.source] || '#888'};font-weight:600">${esc(s.source)}</span>`],
+    ['Cooking nodes', `${s.nodes}${s.sharedNodes ? ` (${s.sharedNodes} shared prep)` : ''}`],
+    ['Pantry ingredients', `${s.pantry} (${s.pantryEdges} lines)`],
+    ['Derived edges', s.edges],
+    ['Max depth', `${s.maxDepth} nodes`],
+    ['Min depth', `${s.minDepth} any leaf · ${s.minDepthFood} food leaf`],
+    ['Critical path', `${s.critMin} min`],
+    ['All node time summed', `${s.totalMin} min`],
+    ['Leaves (chains)', s.leaves],
+    ['Max in-degree', `${s.maxIn} <span style="color:#888">(${esc(nameOf(s.maxInNode)?.name || '')})</span>`],
+    ['Avg in-degree', `${s.avgIn} all · ${s.avgInInternal} non-leaf`],
+    ['Merge nodes (in ≥ 2)', s.merges],
+    ['Width', s.width],
+    ['Per level', Object.values(s.perLevel).join(' · ')],
+    ['Shared prep', Object.entries(s.sharedPrep).map(([k, v]) => `${esc(k)} ×${v}`).join('<br>') || '—'],
+    ['Multi-use outputs', s.multiOut.map(m => `${esc(m.id.replace(s.id + '__', ''))} ×${m.consumers} (${m.kind})`).join('<br>') || '—'],
+  ];
+  $('#side').innerHTML = `
+    <h2>${esc(s.name)}</h2><div class="sub">${esc(s.id)}</div>
+    <table>${rows.map(([k, v]) => `<tr><td>${k}</td><td>${v}</td></tr>`).join('')}</table>
+    <h3>Critical path (${s.critMin} min)</h3>
+    <ol>${s.criticalPath.map(id => { const n = nameOf(id); return `<li>${esc(n.name)} <span style="color:#888">${timeLabel(n)}</span></li>`; }).join('')}</ol>
+    <div class="legend">
+      <span><i class="sw" style="background:#fff7d6;border-color:#c99a06"></i>master</span>
+      <span><i class="sw" style="border-color:var(--crit)"></i>critical path</span>
+      <span><i class="sw" style="background:#f1ecf8;border-style:dashed"></i>shared prep</span>
+      <span><i class="sw" style="background:#eef0f2"></i>equipment</span>
+      <span><i class="sw" style="background:#eef6ea;border-color:#a9c79c"></i>pantry</span>
+      <span style="color:#9a3412;font-weight:600">0.5 st</span><span>= edge amount ≠ 1 st</span>
+    </div>`;
+}
+
+// pan / zoom
+(() => {
+  const svg = $('#svg');
+  let drag = null;
+  svg.addEventListener('wheel', e => {
+    e.preventDefault();
+    const r = svg.getBoundingClientRect();
+    const k = e.deltaY > 0 ? 1.12 : 1 / 1.12;
+    const scale = Math.max(view.w / r.width, view.h / r.height);
+    const offX = (r.width * scale - view.w) / 2, offY = (r.height * scale - view.h) / 2;
+    const px = view.x - offX + (e.clientX - r.left) * scale, py = view.y - offY + (e.clientY - r.top) * scale;
+    view = { x: px - (px - view.x) * k, y: py - (py - view.y) * k, w: view.w * k, h: view.h * k };
+    setViewBox();
+  }, { passive: false });
+  svg.addEventListener('mousedown', e => { drag = { x: e.clientX, y: e.clientY, v: { ...view } }; svg.style.cursor = 'grabbing'; });
+  window.addEventListener('mouseup', () => { drag = null; svg.style.cursor = ''; });
+  window.addEventListener('mousemove', e => {
+    if (!drag) return;
+    const r = svg.getBoundingClientRect();
+    const scale = Math.max(view.w / r.width, view.h / r.height);
+    view.x = drag.v.x - (e.clientX - drag.x) * scale;
+    view.y = drag.v.y - (e.clientY - drag.y) * scale;
+    setViewBox();
+  });
+})();
+
+// ---------- overview ----------
+function summary(vals) {
+  const v = vals.filter(x => typeof x === 'number').sort((a, b) => a - b);
+  const m = v.length >> 1;
+  return { min: v[0], median: v.length % 2 ? v[m] : (v[m - 1] + v[m]) / 2, mean: v.reduce((a, b) => a + b, 0) / v.length, max: v[v.length - 1] };
+}
+function tipOn(e, html) { const t = $('#tip'); t.innerHTML = html; t.style.display = 'block'; t.style.left = e.clientX + 12 + 'px'; t.style.top = e.clientY + 12 + 'px'; }
+function tipOff() { $('#tip').style.display = 'none'; }
+function axis(svg, x0, y0, len, horizontal, ticks, scale, label) {
+  const a = el('g', { class: 'axis' }, svg);
+  el('line', horizontal ? { x1: x0, y1: y0, x2: x0 + len, y2: y0 } : { x1: x0, y1: y0, x2: x0, y2: y0 - len }, a);
+  for (const t of ticks) {
+    const p = scale(t);
+    if (horizontal) { el('line', { x1: p, y1: y0, x2: p, y2: y0 + 4 }, a); const tx = el('text', { x: p, y: y0 + 16, 'text-anchor': 'middle' }, a); tx.textContent = t; }
+    else { el('line', { x1: x0 - 4, y1: p, x2: x0, y2: p }, a); const tx = el('text', { x: x0 - 7, y: p + 4, 'text-anchor': 'end' }, a); tx.textContent = t; }
+  }
+  const lt = el('text', horizontal ? { x: x0 + len / 2, y: y0 + 34, 'text-anchor': 'middle' } : { x: x0 - 34, y: y0 - len / 2, 'text-anchor': 'middle', transform: `rotate(-90 ${x0 - 34} ${y0 - len / 2})` }, a);
+  lt.textContent = label; lt.style.fontSize = '12.5px'; lt.style.fill = '#333';
+}
+function scatter(stats) {
+  const W = 640, H = 420, m = { l: 56, r: 16, t: 14, b: 48 };
+  const svg = el('svg', { width: W, height: H });
+  const xs = stats.map(s => s.nodes), ys = stats.map(s => s.maxDepth);
+  const x0 = Math.min(...xs) - 1, x1 = Math.max(...xs) + 1, y0 = Math.min(...ys) - 0.6, y1 = Math.max(...ys) + 0.6;
+  const sx = v => m.l + (v - x0) / (x1 - x0) * (W - m.l - m.r), sy = v => H - m.b - (v - y0) / (y1 - y0) * (H - m.t - m.b);
+  for (let d = Math.ceil(y0); d <= y1; d++) el('line', { x1: m.l, x2: W - m.r, y1: sy(d), y2: sy(d), stroke: '#f0f0f0' }, svg);
+  axis(svg, m.l, H - m.b, W - m.l - m.r, true, Array.from({ length: x1 - x0 - 1 }, (_, i) => x0 + 1 + i), sx, 'cooking nodes');
+  axis(svg, m.l, H - m.b, H - m.t - m.b, false, Array.from({ length: Math.floor(y1) - Math.ceil(y0) + 1 }, (_, i) => Math.ceil(y0) + i), sy, 'max depth (nodes)');
+  // group identical (nodes, depth) points and spread them in a small sunflower so all are visible
+  const groups = {};
+  for (const s of stats) (groups[`${s.nodes},${s.maxDepth}`] ||= []).push(s);
+  for (const list of Object.values(groups)) {
+    list.forEach((s, i) => {
+      const r = i === 0 ? 0 : 5.2 * Math.sqrt(i), a = i * 2.39996;
+      const c = el('circle', { cx: sx(s.nodes) + r * Math.cos(a), cy: sy(s.maxDepth) + r * Math.sin(a), r: 5, fill: SRC_COLORS[s.source] || '#888', class: 'dot' }, svg);
+      c.addEventListener('mousemove', e => tipOn(e, `<b>${esc(s.name)}</b><br>${s.source} · ${s.nodes} nodes · depth ${s.maxDepth} · crit ${s.critMin} min`));
+      c.addEventListener('mouseleave', tipOff);
+      c.addEventListener('click', () => { tipOff(); state.tab = 'recipe'; state.id = s.id; render(); });
+    });
+  }
+  // legend
+  Object.entries(SRC_COLORS).filter(([k]) => stats.some(s => s.source === k)).forEach(([k, c], i) => {
+    el('circle', { cx: m.l + 14, cy: m.t + 10 + i * 17, r: 5, fill: c }, svg);
+    const t = el('text', { x: m.l + 24, y: m.t + 14 + i * 17 }, svg);
+    t.textContent = `${k} (${stats.filter(s => s.source === k).length})`; t.style.fontSize = '12px';
+  });
+  return svg;
+}
+function histogram(stats, key, label, binW = 1) {
+  const W = 400, H = 200, m = { l: 40, r: 10, t: 14, b: 44 };
+  const svg = el('svg', { width: W, height: H });
+  const vals = stats.map(s => s[key]);
+  const lo = Math.floor(Math.min(...vals) / binW) * binW, hi = Math.floor(Math.max(...vals) / binW) * binW;
+  const bins = [];
+  for (let b = lo; b <= hi; b += binW) bins.push({ b, n: vals.filter(v => v >= b && v < b + binW).length });
+  const maxN = Math.max(...bins.map(b => b.n));
+  const bw = (W - m.l - m.r) / bins.length;
+  const sy = v => H - m.b - v / maxN * (H - m.t - m.b);
+  bins.forEach((b, i) => {
+    const r = el('rect', { x: m.l + i * bw + 1, y: sy(b.n), width: bw - 2, height: H - m.b - sy(b.n), class: 'bar' }, svg);
+    r.addEventListener('mousemove', e => tipOn(e, `${label} ${binW === 1 ? b.b : `${b.b}–${b.b + binW - 1}`}: ${b.n} recipes`));
+    r.addEventListener('mouseleave', tipOff);
+    if (b.n) { const t = el('text', { x: m.l + i * bw + bw / 2, y: sy(b.n) - 3, 'text-anchor': 'middle' }, svg); t.textContent = b.n; t.style.fontSize = '11px'; }
+    if (bins.length <= 16 || i % 2 === 0) { const t = el('text', { x: m.l + i * bw + bw / 2, y: H - m.b + 14, 'text-anchor': 'middle' }, svg); t.textContent = b.b; t.style.fontSize = '11px'; }
+  });
+  el('line', { x1: m.l, x2: W - m.r, y1: H - m.b, y2: H - m.b, stroke: '#bbb' }, svg);
+  const t = el('text', { x: m.l + (W - m.l - m.r) / 2, y: H - 10, 'text-anchor': 'middle' }, svg); t.textContent = label; t.style.fontSize = '12.5px';
+  return svg;
+}
+function drawOverview() {
+  const stats = Object.values(R).map(r => r.stats);
+  const ov = $('#overview');
+  ov.innerHTML = '';
+  const head = document.createElement('div');
+  head.innerHTML = `<h2 style="margin:0 0 4px">All recipes (${stats.length})</h2><div style="color:#666;font-size:13px;margin-bottom:12px">Click a dot to open that recipe. Identical (nodes, depth) points are spread in a small cluster.</div>`;
+  ov.appendChild(head);
+  const charts = document.createElement('div'); charts.className = 'charts'; ov.appendChild(charts);
+  const card = (title, node) => { const c = document.createElement('div'); c.className = 'card'; c.innerHTML = `<h3>${title}</h3>`; c.appendChild(node); charts.appendChild(c); return c; };
+  card('Max depth vs node count', scatter(stats));
+  const col = document.createElement('div'); col.style.display = 'flex'; col.style.flexDirection = 'column'; col.style.gap = '18px';
+  charts.appendChild(col);
+  const c1 = card('Max depth distribution', histogram(stats, 'maxDepth', 'max depth (nodes)')); col.appendChild(c1);
+  const c2 = card('Node count distribution', histogram(stats, 'nodes', 'cooking nodes')); col.appendChild(c2);
+  const metrics = [['nodes', 'cooking nodes'], ['pantry', 'pantry ingredients'], ['maxDepth', 'max depth'], ['minDepthFood', 'min depth (food leaf)'], ['critMin', 'critical path min'], ['leaves', 'leaves'], ['maxIn', 'max in-degree'], ['merges', 'merge nodes'], ['width', 'width']];
+  const f = v => (Number.isInteger(v) ? v : v.toFixed(2));
+  const sources = [...new Set(stats.map(s => s.source))];
+  const tbl = document.createElement('table'); tbl.id = 'gstats';
+  tbl.innerHTML = `<tr><th>metric</th><th>min</th><th>median</th><th>mean</th><th>max</th>${sources.map(s => `<th style="color:${SRC_COLORS[s]}">${s} μ</th>`).join('')}</tr>` +
+    metrics.map(([k, l]) => { const s = summary(stats.map(r => r[k])); return `<tr><td>${l}</td><td>${f(s.min)}</td><td>${f(s.median)}</td><td>${f(s.mean)}</td><td>${f(s.max)}</td>${sources.map(src => `<td>${f(summary(stats.filter(r => r.source === src).map(r => r[k])).mean)}</td>`).join('')}</tr>`; }).join('');
+  card('Global stats', tbl);
+}
+
+// ---------- render ----------
+function render() {
+  document.querySelectorAll('header .tab[data-tab]').forEach(b => b.classList.toggle('active', b.dataset.tab === state.tab));
+  const rec = state.tab === 'recipe';
+  $('#recipeControls').style.visibility = rec ? 'visible' : 'hidden';
+  $('#canvas').style.display = rec ? '' : 'none';
+  $('#side').style.display = rec ? '' : 'none';
+  $('#overview').style.display = rec ? 'none' : 'block';
+  $('#pantry').checked = state.pantry;
+  $('#crit').checked = state.crit;
+  if (rec) { fillSelect(); drawRecipe(); drawSide(); } else drawOverview();
+  writeHash();
+}
+readHash();
+render();
+window.addEventListener('resize', () => state.tab === 'recipe' && fitView());
+</script>
+</body>
+</html>

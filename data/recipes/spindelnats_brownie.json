@@ -1,0 +1,202 @@
+{
+  "masterId": "spindelnats_brownie",
+  "source": "hellofresh",
+  "createdAt": 1790852117,
+  "basePortions": 4,
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/spindelnats_brownie/main.jpg",
+    "byNode": {
+      "spindelnats_brownie__melted_chocolate": "assets/recipes/spindelnats_brownie/steps/melted_chocolate.jpg",
+      "spindelnats_brownie__baked_brownie": "assets/recipes/spindelnats_brownie/steps/baked_brownie.jpg",
+      "spindelnats_brownie": "assets/recipes/spindelnats_brownie/steps/decorate.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 505,
+    "perPortion": {
+      "energyKcal": 2303,
+      "energyKj": 9637,
+      "fatG": 133.4,
+      "saturatedFatG": 36.8,
+      "carbsG": 236.7,
+      "sugarsG": 78.9,
+      "fiberG": 14.1,
+      "proteinG": 35.4,
+      "saltG": 2.3
+    }
+  },
+  "ratings": {
+    "average": 4,
+    "count": 3,
+    "source": "hellofresh"
+  },
+  "nodes": [
+    {
+      "id": "spindelnats_brownie__preheated_oven",
+      "name": "Värm Ugnen",
+      "outputName": "Förvärmd ugn (190°C)",
+      "inputs": [],
+      "steps": [
+        "Värm ugnen till 190°C, eller 170°C varmluft."
+      ],
+      "duration": 1,
+      "wait": 10,
+      "tags": [
+        "prep",
+        "no-timer"
+      ],
+      "tips": [
+        "Ugnen tar vanligtvis 10–15 minuter att värmas upp."
+      ]
+    },
+    {
+      "id": "spindelnats_brownie__melted_chocolate",
+      "name": "Smält Choklad",
+      "outputName": "Smält mjölkchoklad",
+      "inputs": [
+        {
+          "id": "milk_chocolate_chips",
+          "amount": 100,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Placera {{milk_chocolate_chips}} i en liten skål.",
+        "Värm i mikrovågsugnen i 20 sekunder åt gången tills chokladen har smält. Rör om mellan varje gång."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Ta ut bakmixen från kylskåpet 30 min innan den ska användas.",
+        "Smält chokladen i ett vattenbad om du inte har mikrovågsugn."
+      ]
+    },
+    {
+      "id": "spindelnats_brownie__chopped_hazelnuts",
+      "name": "Hacka Hasselnötter",
+      "outputName": "Grovhackade hasselnötter",
+      "inputs": [
+        {
+          "id": "hazelnuts",
+          "amount": 160,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Grovhacka {{hazelnuts}}."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "spindelnats_brownie__baked_brownie",
+      "name": "Baka Brownie",
+      "outputName": "Gräddad brownie",
+      "inputs": [
+        {
+          "id": "spindelnats_brownie__preheated_oven",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "chocolate_cake_mix",
+          "amount": 600,
+          "unit": "g"
+        },
+        {
+          "id": "spindelnats_brownie__melted_chocolate",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "spindelnats_brownie__chopped_hazelnuts",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "milk_chocolate_chips",
+          "amount": 100,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Blanda {{chocolate_cake_mix}}, {{spindelnats_brownie__melted_chocolate}} och {{spindelnats_brownie__chopped_hazelnuts}} i en stor skål.",
+        "Klä en bakform med bakplåtspapper. Häll i smeten och platta till med en slickepott.",
+        "Toppa med resterande {{milk_chocolate_chips}}.",
+        "Grädda i ugnen i 25–30 min."
+      ],
+      "duration": 5,
+      "wait": 30,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Använd en provsticka: om stickan är torr är kakan färdig."
+      ]
+    },
+    {
+      "id": "spindelnats_brownie__icing",
+      "name": "Gör Glasyr",
+      "outputName": "Florsockerglasyr",
+      "inputs": [
+        {
+          "id": "powdered_sugar",
+          "amount": 50,
+          "unit": "g"
+        },
+        {
+          "id": "water",
+          "amount": 1,
+          "unit": "msk"
+        }
+      ],
+      "steps": [
+        "Blanda {{powdered_sugar}} och {{water}} i en liten skål till en slät glasyr.",
+        "Häll glasyren i en plastpåse. Klipp ett litet hål i ena hörnet när det är dags att spritsa."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Glasyren kan göras medan brownien gräddas."
+      ]
+    },
+    {
+      "id": "spindelnats_brownie",
+      "name": "Spindelnätsbrownie",
+      "outputName": "Spindelnätsbrownie",
+      "inputs": [
+        {
+          "id": "spindelnats_brownie__baked_brownie",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "spindelnats_brownie__icing",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Låt {{spindelnats_brownie__baked_brownie}} svalna.",
+        "Spritsa ett spindelnätsmönster med {{spindelnats_brownie__icing}} på kakan, eller ringla glasyr över den.",
+        "Skär upp och servera."
+      ],
+      "duration": 5,
+      "wait": 0,
+      "tags": [
+        "master"
+      ],
+      "tips": [
+        "Kakan ska vara sval innan du spritsar, annars rinner glasyren ut."
+      ]
+    }
+  ]
+}

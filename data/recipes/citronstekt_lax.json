@@ -1,0 +1,355 @@
+{
+  "masterId": "citronstekt_lax",
+  "source": "hellofresh",
+  "createdAt": 1791034710,
+  "basePortions": 4,
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/citronstekt_lax/main.jpg",
+    "byNode": {
+      "citronstekt_lax__roasted_potato": "assets/recipes/citronstekt_lax/steps/roasted_potato.jpg",
+      "citronstekt_lax__lemon_broth": "assets/recipes/citronstekt_lax/steps/lemon_broth.jpg",
+      "citronstekt_lax__roasted_broccoli": "assets/recipes/citronstekt_lax/steps/roasted_broccoli.jpg",
+      "citronstekt_lax__seared_salmon": "assets/recipes/citronstekt_lax/steps/seared_salmon.jpg",
+      "citronstekt_lax__lemon_salmon": "assets/recipes/citronstekt_lax/steps/lemon_salmon.jpg",
+      "citronstekt_lax": "assets/recipes/citronstekt_lax/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 592,
+    "perPortion": {
+      "energyKcal": 786,
+      "energyKj": 3289,
+      "fatG": 46.6,
+      "saturatedFatG": 10,
+      "carbsG": 53.9,
+      "sugarsG": 8.4,
+      "fiberG": 9.8,
+      "proteinG": 36.9,
+      "saltG": 3.6
+    }
+  },
+  "ratings": {
+    "average": 3.7,
+    "count": 296,
+    "source": "hellofresh"
+  },
+  "cooked": {
+    "hfId": "677659581d65e30dd089145a",
+    "at": "2026-10-03T15:12:32+02:00",
+    "source": "photo",
+    "headline": "med rostad potatis, broccoli och aioli"
+  },
+  "nodes": [
+    {
+      "id": "citronstekt_lax__preheated_oven",
+      "name": "Värm Ugnen",
+      "outputName": "Förvärmd ugn (240°C)",
+      "inputs": [],
+      "steps": [
+        "Värm ugnen till 240°C, eller 220°C varmluft."
+      ],
+      "duration": 1,
+      "wait": 12,
+      "tags": [
+        "prep",
+        "no-timer"
+      ],
+      "tips": [
+        "HF anger 240°C/220°C varmluft — lokal ugnsnode, inte delad preheated_oven_220."
+      ]
+    },
+    {
+      "id": "citronstekt_lax__diced_potato",
+      "name": "Tärna Potatis",
+      "outputName": "Tärnad potatis",
+      "inputs": [
+        {
+          "id": "potato",
+          "amount": 1000,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Tärna {{potato}} (oskalad) i 1 cm stora bitar."
+      ],
+      "duration": 5,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "citronstekt_lax__roasted_potato",
+      "name": "Rosta Potatis",
+      "outputName": "Förstekt potatis",
+      "inputs": [
+        {
+          "id": "citronstekt_lax__preheated_oven",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "citronstekt_lax__diced_potato",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Lägg {{citronstekt_lax__diced_potato}} på en plåt med bakplåtspapper. Blanda med en skvätt olivolja, {{salt}} och en nypa peppar.",
+        "Rosta i den förvärmda ugnen i 15 min."
+      ],
+      "duration": 3,
+      "wait": 15,
+      "tags": [],
+      "tips": [
+        "Potatisen ska totalt rosta 20–30 min. Broccoli i när 15 min återstår, så den här noden är bara första fasen (övre gräns 30 minus 15).",
+        "Använd fler plåtar om det blir för trångt."
+      ]
+    },
+    {
+      "id": "citronstekt_lax__garlic_dill",
+      "name": "Hacka Vitlök och Dill",
+      "outputName": "Hackad vitlök och dill",
+      "inputs": [
+        {
+          "id": "garlic",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "dill",
+          "amount": 1,
+          "unit": "pkt"
+        }
+      ],
+      "steps": [
+        "Finhacka eller pressa {{garlic}}.",
+        "Grovhacka {{dill}}."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "citronstekt_lax__lemon_slices",
+      "name": "Skiva Citron",
+      "outputName": "Citronskivor",
+      "inputs": [
+        {
+          "id": "lemon",
+          "amount": 0.5,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skär {{lemon}} i tunna skivor."
+      ],
+      "duration": 1,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Råreceptet halverar citronen: ena halvan skivas till garnering, den andra pressas i buljongen."
+      ]
+    },
+    {
+      "id": "citronstekt_lax__lemon_broth",
+      "name": "Blanda Citronbuljong",
+      "outputName": "Citronbuljong",
+      "inputs": [
+        {
+          "id": "citronstekt_lax__garlic_dill",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "water",
+          "amount": 1,
+          "unit": "msk"
+        },
+        {
+          "id": "vegetable_bouillon",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "id": "lemon",
+          "amount": 0.5,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Blanda {{water}}, {{vegetable_bouillon}}, {{citronstekt_lax__garlic_dill}} och en generös skvätt saft från {{lemon}} i en liten skål."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Citronsaften pressas från den andra citronhalvan."
+      ]
+    },
+    {
+      "id": "citronstekt_lax__diced_broccoli",
+      "name": "Tärna Broccoli",
+      "outputName": "Tärnad broccoli",
+      "inputs": [
+        {
+          "id": "broccoli",
+          "amount": 500,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Tärna buketter och stjälk på {{broccoli}} i 2 cm stora bitar."
+      ],
+      "duration": 4,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "citronstekt_lax__roasted_broccoli",
+      "name": "Rosta Broccoli",
+      "outputName": "Rostad potatis och broccoli",
+      "inputs": [
+        {
+          "id": "citronstekt_lax__roasted_potato",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "citronstekt_lax__diced_broccoli",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Lägg {{citronstekt_lax__diced_broccoli}} på samma plåt som {{citronstekt_lax__roasted_potato}}. Ringla över en skvätt olivolja och krydda med {{salt}} och en nypa peppar.",
+        "Rosta i ugnen i 15 min, tills potatis och broccoli är mjuka och gyllene."
+      ],
+      "duration": 2,
+      "wait": 15,
+      "tags": [],
+      "tips": [
+        "Det är de sista 15 minuterna av potatisens 20–30 min."
+      ]
+    },
+    {
+      "id": "citronstekt_lax__seared_salmon",
+      "name": "Stek Lax",
+      "outputName": "Skinstekt lax",
+      "inputs": [
+        {
+          "id": "salmon_fillet",
+          "amount": 500,
+          "unit": "g"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "msk"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i en stor stekpanna på medelhög värme.",
+        "Torka av {{salmon_fillet}} med hushållspapper och krydda med {{salt}}.",
+        "Stek laxen med skinnsidan ner i 3–4 min."
+      ],
+      "duration": 6,
+      "tags": [],
+      "tips": [
+        "Sätt igång när det återstår ca 10 min av potatisens och broccolins ugnstid. Stektiden är hands-on och ligger i duration, inte wait."
+      ]
+    },
+    {
+      "id": "citronstekt_lax__lemon_salmon",
+      "name": "Stek Lax med Citronbuljong",
+      "outputName": "Citronstekt lax",
+      "inputs": [
+        {
+          "id": "citronstekt_lax__seared_salmon",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "citronstekt_lax__lemon_broth",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "butter",
+          "amount": 2,
+          "unit": "msk"
+        }
+      ],
+      "steps": [
+        "Vänd {{citronstekt_lax__seared_salmon}}. Tillsätt {{citronstekt_lax__lemon_broth}} och {{butter}}.",
+        "Stek laxen i ytterligare 3–5 min, tills den är gyllene och genomstekt."
+      ],
+      "duration": 6,
+      "tags": [],
+      "tips": [
+        "Laxen är färdiglagad när köttet är ogenomskinligt i mitten. Andra stekningen är hands-on och ligger i duration."
+      ]
+    },
+    {
+      "id": "citronstekt_lax",
+      "name": "Citronstekt lax",
+      "outputName": "Citronstekt lax med rostad potatis, broccoli och aioli",
+      "inputs": [
+        {
+          "id": "citronstekt_lax__lemon_salmon",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "citronstekt_lax__roasted_broccoli",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "citronstekt_lax__lemon_slices",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "aioli",
+          "amount": 80,
+          "unit": "g"
+        },
+        {
+          "id": "sesame_seeds",
+          "amount": 20,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{citronstekt_lax__lemon_salmon}}, rostad potatis och broccoli från {{citronstekt_lax__roasted_broccoli}} på tallrikar.",
+        "Skeda citronbuljongen från pannan över laxen och garnera med {{citronstekt_lax__lemon_slices}}.",
+        "Servera med {{aioli}} och toppa potatis och broccoli med {{sesame_seeds}}."
+      ],
+      "duration": 3,
+      "tags": [
+        "master"
+      ]
+    }
+  ]
+}

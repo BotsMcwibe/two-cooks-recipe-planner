@@ -1,0 +1,316 @@
+{
+  "masterId": "rodvinsstekt_kyckling",
+  "source": "hellofresh",
+  "createdAt": 1791037081,
+  "basePortions": 4,
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/rodvinsstekt_kyckling/main.jpg",
+    "byNode": {
+      "rodvinsstekt_kyckling__potato_mash": "assets/recipes/rodvinsstekt_kyckling/steps/potato_mash.jpg",
+      "rodvinsstekt_kyckling__honey_mustard_dressing": "assets/recipes/rodvinsstekt_kyckling/steps/honey_mustard_dressing.jpg",
+      "rodvinsstekt_kyckling__cabbage_salad": "assets/recipes/rodvinsstekt_kyckling/steps/cabbage_salad.jpg",
+      "rodvinsstekt_kyckling__fried_chicken": "assets/recipes/rodvinsstekt_kyckling/steps/fried_chicken.jpg",
+      "rodvinsstekt_kyckling__red_wine_sauce": "assets/recipes/rodvinsstekt_kyckling/steps/red_wine_sauce.jpg",
+      "rodvinsstekt_kyckling": "assets/recipes/rodvinsstekt_kyckling/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 531,
+    "perPortion": {
+      "energyKcal": 698,
+      "energyKj": 2922,
+      "fatG": 34.6,
+      "saturatedFatG": 12,
+      "carbsG": 60.6,
+      "sugarsG": 14.1,
+      "proteinG": 39.9,
+      "saltG": 2.6
+    }
+  },
+  "ratings": {
+    "average": 3.5,
+    "count": 300,
+    "source": "hellofresh"
+  },
+  "cooked": {
+    "hfId": "63e6bbd311d6aa361e490747",
+    "at": "2026-10-03T15:12:32+02:00",
+    "source": "photo",
+    "headline": "med potatisstomp och krispig kålsallad"
+  },
+  "nodes": [
+    {
+      "id": "rodvinsstekt_kyckling__diced_potato",
+      "name": "Tärna Potatis",
+      "outputName": "Tärnad potatis",
+      "inputs": [
+        {
+          "id": "potato",
+          "amount": 1000,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Tärna oskalad {{potato}} i 2 cm stora bitar."
+      ],
+      "duration": 4,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "rodvinsstekt_kyckling__boiled_potato",
+      "name": "Koka Potatis",
+      "outputName": "Kokt potatis",
+      "inputs": [
+        {
+          "id": "rodvinsstekt_kyckling__diced_potato",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Koka upp en kastrull med saltat vatten.",
+        "Lägg i {{rodvinsstekt_kyckling__diced_potato}} och koka i 10–12 min, tills de enkelt kan delas med en kniv."
+      ],
+      "duration": 3,
+      "wait": 12,
+      "tags": []
+    },
+    {
+      "id": "rodvinsstekt_kyckling__potato_mash",
+      "name": "Mosa Potatis",
+      "outputName": "Potatisstomp",
+      "inputs": [
+        {
+          "id": "rodvinsstekt_kyckling__boiled_potato",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "butter",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Häll av vattnet och mosa {{rodvinsstekt_kyckling__boiled_potato}} grovt med {{butter}} och {{salt}}.",
+        "Sätt åt sidan under lock så moset håller värmen."
+      ],
+      "duration": 3,
+      "tags": [],
+      "tips": [
+        "Låt stå under lock tills servering. Det är ingen tidsatt vila."
+      ]
+    },
+    {
+      "id": "rodvinsstekt_kyckling__honey_mustard_dressing",
+      "name": "Blanda Honungssenap",
+      "outputName": "Honungs- och senapsdressing",
+      "inputs": [
+        {
+          "id": "wholegrain_mustard",
+          "amount": 25,
+          "unit": "g"
+        },
+        {
+          "id": "honey",
+          "amount": 25,
+          "unit": "g"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 2,
+          "unit": "msk"
+        }
+      ],
+      "steps": [
+        "Blanda {{wholegrain_mustard}}, {{honey}}, {{olive_oil}} och en nypa salt och peppar i en stor skål."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "rodvinsstekt_kyckling__cabbage_salad",
+      "name": "Gör Kålsallad",
+      "outputName": "Krispig kålsallad",
+      "inputs": [
+        {
+          "id": "rodvinsstekt_kyckling__honey_mustard_dressing",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "kale",
+          "amount": 100,
+          "unit": "g"
+        },
+        {
+          "id": "shredded_red_cabbage",
+          "amount": 150,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Lägg {{kale}} och {{shredded_red_cabbage}} i {{rodvinsstekt_kyckling__honey_mustard_dressing}}.",
+        "Massera med händerna i ca 30 sek, tills kålen mjuknar."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "rodvinsstekt_kyckling__minced_garlic",
+      "name": "Hacka Vitlök",
+      "outputName": "Hackad vitlök",
+      "inputs": [
+        {
+          "id": "garlic",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Finhacka eller pressa {{garlic}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "rodvinsstekt_kyckling__fried_chicken",
+      "name": "Stek Kyckling",
+      "outputName": "Stekt kyckling",
+      "inputs": [
+        {
+          "id": "chicken_inner_fillet",
+          "amount": 560,
+          "unit": "g"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 2,
+          "unit": "msk"
+        }
+      ],
+      "steps": [
+        "Krydda {{chicken_inner_fillet}} med en nypa salt.",
+        "Hetta upp {{olive_oil}} i en stor stekpanna på medelhög värme.",
+        "Stek kycklingen i 5–6 min, tills den är brynt och genomstekt. Lägg över den på en tallrik."
+      ],
+      "duration": 8,
+      "tags": [],
+      "tips": [
+        "Tvätta händer och redskap efter rå kyckling. Den är klar när köttet inte längre är rosa i mitten."
+      ]
+    },
+    {
+      "id": "rodvinsstekt_kyckling__red_wine_sauce",
+      "name": "Koka Rödvinssås",
+      "outputName": "Rödvinssås",
+      "inputs": [
+        {
+          "id": "rodvinsstekt_kyckling__minced_garlic",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "butter",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "dried_thyme",
+          "amount": 1,
+          "unit": "g"
+        },
+        {
+          "id": "red_wine_sauce",
+          "amount": 120,
+          "unit": "g"
+        },
+        {
+          "id": "chicken_bouillon",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "id": "water",
+          "amount": 1,
+          "unit": "dl"
+        }
+      ],
+      "steps": [
+        "Hetta upp stekpannan som kycklingen stektes i igen på medelvärme.",
+        "Tillsätt {{butter}}, {{rodvinsstekt_kyckling__minced_garlic}}, {{dried_thyme}}, {{red_wine_sauce}}, {{chicken_bouillon}}, {{water}} och en nypa peppar. Koka i 2–3 min."
+      ],
+      "duration": 2,
+      "wait": 3,
+      "tags": []
+    },
+    {
+      "id": "rodvinsstekt_kyckling__sauced_chicken",
+      "name": "Vänd Kycklingen i Såsen",
+      "outputName": "Rödvinsstekt kyckling i sås",
+      "inputs": [
+        {
+          "id": "rodvinsstekt_kyckling__red_wine_sauce",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "rodvinsstekt_kyckling__fried_chicken",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Häll köttsaften från tallriken med {{rodvinsstekt_kyckling__fried_chicken}} i {{rodvinsstekt_kyckling__red_wine_sauce}}.",
+        "Lägg i kycklingen och vänd tills den är täckt av såsen."
+      ],
+      "duration": 1,
+      "tags": []
+    },
+    {
+      "id": "rodvinsstekt_kyckling",
+      "name": "Rödvinsstekt kyckling",
+      "outputName": "Rödvinsstekt kyckling",
+      "inputs": [
+        {
+          "id": "rodvinsstekt_kyckling__potato_mash",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "rodvinsstekt_kyckling__sauced_chicken",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "rodvinsstekt_kyckling__cabbage_salad",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{rodvinsstekt_kyckling__potato_mash}} på tallrikar. Toppa med {{rodvinsstekt_kyckling__sauced_chicken}}.",
+        "Servera med {{rodvinsstekt_kyckling__cabbage_salad}}."
+      ],
+      "duration": 3,
+      "tags": [
+        "master"
+      ]
+    }
+  ]
+}

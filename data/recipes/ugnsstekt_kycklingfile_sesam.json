@@ -1,0 +1,322 @@
+{
+  "masterId": "ugnsstekt_kycklingfile_sesam",
+  "source": "hellofresh",
+  "createdAt": 1791036248,
+  "basePortions": 4,
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/ugnsstekt_kycklingfile_sesam/main.jpg",
+    "byNode": {
+      "ugnsstekt_kycklingfile_sesam__diced_potato": "assets/recipes/ugnsstekt_kycklingfile_sesam/steps/diced_potato.jpg",
+      "ugnsstekt_kycklingfile_sesam__sesame_potato": "assets/recipes/ugnsstekt_kycklingfile_sesam/steps/sesame_potato.jpg",
+      "ugnsstekt_kycklingfile_sesam__cut_broccoli": "assets/recipes/ugnsstekt_kycklingfile_sesam/steps/cut_broccoli.jpg",
+      "ugnsstekt_kycklingfile_sesam__roasted_chicken_broccoli": "assets/recipes/ugnsstekt_kycklingfile_sesam/steps/roasted_chicken_broccoli.jpg",
+      "ugnsstekt_kycklingfile_sesam__rucola_salad": "assets/recipes/ugnsstekt_kycklingfile_sesam/steps/rucola_salad.jpg",
+      "ugnsstekt_kycklingfile_sesam": "assets/recipes/ugnsstekt_kycklingfile_sesam/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 588,
+    "perPortion": {
+      "energyKcal": 648,
+      "energyKj": 2710,
+      "fatG": 26.99,
+      "saturatedFatG": 5.4,
+      "carbsG": 51.87,
+      "sugarsG": 7.7,
+      "proteinG": 49.03,
+      "saltG": 1.5
+    }
+  },
+  "ratings": {
+    "average": 3.5,
+    "count": 1304,
+    "source": "hellofresh"
+  },
+  "cooked": {
+    "hfId": "635a4c9fb8d13143493e309c",
+    "at": "2026-10-03T15:12:32+02:00",
+    "source": "photo",
+    "headline": "med sesampotatis och rostad broccoli"
+  },
+  "nodes": [
+    {
+      "id": "ugnsstekt_kycklingfile_sesam__preheated_oven",
+      "name": "Värm Ugnen",
+      "outputName": "Förvärmd ugn (240°C)",
+      "inputs": [],
+      "steps": [
+        "Värm ugnen till 240°C, eller 220°C varmluft."
+      ],
+      "duration": 1,
+      "wait": 12,
+      "tags": [
+        "prep",
+        "no-timer"
+      ],
+      "tips": [
+        "HF anger 240°C/220°C varmluft — lokal ugnsnode, inte delad preheated_oven_220."
+      ]
+    },
+    {
+      "id": "ugnsstekt_kycklingfile_sesam__diced_potato",
+      "name": "Tärna Potatis",
+      "outputName": "Tärnad potatis",
+      "inputs": [
+        {
+          "id": "potato",
+          "amount": 1000,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Tärna {{potato}} (oskalad) i 2 cm stora bitar."
+      ],
+      "duration": 5,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "FLAG: potatis 1000 g är ifylld enhet (tidigare null) — granska."
+      ]
+    },
+    {
+      "id": "ugnsstekt_kycklingfile_sesam__rinsed_rucola",
+      "name": "Skölj Rucola",
+      "outputName": "Sköljd rucola",
+      "inputs": [
+        {
+          "id": "rucola",
+          "amount": 70,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Skölj {{rucola}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "FLAG: rucola 70 g är ifylld enhet. 2 portioner är 40 g, så 4 portioner är inte linjärt dubbelt — granska."
+      ]
+    },
+    {
+      "id": "ugnsstekt_kycklingfile_sesam__sesame_potato",
+      "name": "Rosta Sesampotatis",
+      "outputName": "Sesampotatis (första fasen)",
+      "inputs": [
+        {
+          "id": "ugnsstekt_kycklingfile_sesam__preheated_oven",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "ugnsstekt_kycklingfile_sesam__diced_potato",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "sesame_seeds",
+          "amount": 20,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Lägg {{ugnsstekt_kycklingfile_sesam__diced_potato}} på en plåt med bakplåtspapper. Blanda med en skvätt olivolja, en nypa salt och peppar, och strö över {{sesame_seeds}}.",
+        "Rosta i ugnen i 15 min."
+      ],
+      "duration": 3,
+      "wait": 15,
+      "tags": [],
+      "tips": [
+        "Potatisen ska totalt bli gyllene på 25–30 min. Kyckling och broccoli läggs i efter 15 min, så den här noden är bara första fasen (wait 15). Resten är 10 min plus 3–4 min i nästa noder.",
+        "FLAG: sesamfrön 20 g är ifylld enhet — granska.",
+        "Olivolja till rostningen är bara \"lite\" i steget och saknas i yields. Den kvantifierade oljan (1 msk) hör till salladen i steg 5, inte hit."
+      ]
+    },
+    {
+      "id": "ugnsstekt_kycklingfile_sesam__cut_broccoli",
+      "name": "Skär Broccoli",
+      "outputName": "Skuren broccoli",
+      "inputs": [
+        {
+          "id": "broccoli",
+          "amount": 500,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Skär {{broccoli}} i stora buketter och dela även stjälken."
+      ],
+      "duration": 4,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "FLAG: broccoli 500 g är ifylld enhet — granska.",
+        "Stegbilden visar både broccolin och kycklingen som kryddas."
+      ]
+    },
+    {
+      "id": "ugnsstekt_kycklingfile_sesam__seasoned_chicken",
+      "name": "Krydda Kyckling",
+      "outputName": "Kryddad kyckling",
+      "inputs": [
+        {
+          "id": "chicken_breast",
+          "amount": 600,
+          "unit": "g"
+        },
+        {
+          "id": "jorden_runt",
+          "amount": 8,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Blanda {{chicken_breast}} med en skvätt olivolja, {{jorden_runt}}, en nypa salt och peppar."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "VIKTIGT: Tvätta händer och köksredskap noggrant efter hantering av rå kyckling.",
+        "FLAG: kycklingbröstfilé 600 g och Jorden Runt 8 g är ifyllda enheter — granska.",
+        "Olivoljan här är \"lite\" utan mängd i yields."
+      ]
+    },
+    {
+      "id": "ugnsstekt_kycklingfile_sesam__roasted_chicken_broccoli",
+      "name": "Rosta Kyckling och Broccoli",
+      "outputName": "Ugnsrostad kyckling, potatis och broccoli",
+      "inputs": [
+        {
+          "id": "ugnsstekt_kycklingfile_sesam__sesame_potato",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "ugnsstekt_kycklingfile_sesam__cut_broccoli",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "ugnsstekt_kycklingfile_sesam__seasoned_chicken",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Ta ut plåten. Lägg {{ugnsstekt_kycklingfile_sesam__seasoned_chicken}} och {{ugnsstekt_kycklingfile_sesam__cut_broccoli}} bredvid {{ugnsstekt_kycklingfile_sesam__sesame_potato}}. Blanda broccolin med en skvätt olivolja, en nypa salt och peppar.",
+        "Rosta överst i ugnen i 10 min."
+      ],
+      "duration": 3,
+      "wait": 10,
+      "tags": [],
+      "tips": [
+        "Använd 2 plåtar till 4 portioner.",
+        "Sista steget äger 10-minuterstimern. Olivoljan till broccolin är \"lite\" utan mängd i yields."
+      ]
+    },
+    {
+      "id": "ugnsstekt_kycklingfile_sesam__cheesy_chicken",
+      "name": "Gratinera Kyckling",
+      "outputName": "Ostgratinerad kycklingplåt",
+      "inputs": [
+        {
+          "id": "ugnsstekt_kycklingfile_sesam__roasted_chicken_broccoli",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "grated_cheese",
+          "amount": 40,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Strö {{grated_cheese}} över kycklingen på plåten.",
+        "Rosta överst i ugnen i ytterligare 3–4 min, tills kycklingen är genomstekt och osten har smält."
+      ],
+      "duration": 2,
+      "wait": 4,
+      "tags": [],
+      "tips": [
+        "3–4 min → wait 4 (övre gräns). Sista steget äger timern; salladen blandas parallellt.",
+        "VIKTIGT: Kycklingen är färdiglagad när köttet inte längre är rosa i mitten.",
+        "FLAG: finriven ost 40 g är ifylld enhet — granska."
+      ]
+    },
+    {
+      "id": "ugnsstekt_kycklingfile_sesam__rucola_salad",
+      "name": "Blanda Rucolasallad",
+      "outputName": "Rucolasallad",
+      "inputs": [
+        {
+          "id": "ugnsstekt_kycklingfile_sesam__rinsed_rucola",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "balsamic_vinegar",
+          "amount": 12,
+          "unit": "ml"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "msk"
+        }
+      ],
+      "steps": [
+        "Blanda {{ugnsstekt_kycklingfile_sesam__rinsed_rucola}}, {{balsamic_vinegar}} och {{olive_oil}} i en liten skål. Krydda med en nypa salt och peppar."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "FLAG: balsamvinäger 12 ml (6 ml vid 2 portioner) är ifylld enhet. Steget säger \"1/2 paket, 2P\", vilket inte stämmer med ml-mängden — använd ml, inte paket.",
+        "FLAG: olivolja 1 msk är ifylld enhet och matchar stegets \"1/2 msk | 1 msk\" för salladen. Det är hela den kvantifierade oljan; rostoljan är separat och omätt."
+      ]
+    },
+    {
+      "id": "ugnsstekt_kycklingfile_sesam",
+      "name": "Ugnsstekt kycklingfilé",
+      "outputName": "Ugnsstekt kycklingfilé",
+      "inputs": [
+        {
+          "id": "ugnsstekt_kycklingfile_sesam__cheesy_chicken",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "ugnsstekt_kycklingfile_sesam__rucola_salad",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "aioli",
+          "amount": 80,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Lägg broccoli, potatis och kyckling från {{ugnsstekt_kycklingfile_sesam__cheesy_chicken}} på tallrikar.",
+        "Servera med en klick {{aioli}} och {{ugnsstekt_kycklingfile_sesam__rucola_salad}}."
+      ],
+      "duration": 3,
+      "tags": [
+        "master"
+      ],
+      "tips": [
+        "FLAG: aioli 80 g är ifylld enhet — granska.",
+        "Salt och peppar i receptet har ingen mängd i yields (en nypa i texten) och är inte inlagda som ingrediensrader."
+      ]
+    }
+  ]
+}

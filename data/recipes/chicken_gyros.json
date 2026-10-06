@@ -1,0 +1,215 @@
+{
+  "masterId": "chicken_gyros",
+  "source": "hellofresh",
+  "createdAt": 1790851546,
+  "basePortions": 4,
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/chicken_gyros/main.jpg",
+    "byNode": {
+      "chicken_gyros__warmed_pita": "assets/recipes/chicken_gyros/steps/warmed_pita.jpg",
+      "chicken_gyros__cooked_chicken": "assets/recipes/chicken_gyros/steps/cooked_chicken.jpg",
+      "chicken_gyros__tzatziki": "assets/recipes/chicken_gyros/steps/tzatziki.jpg",
+      "chicken_gyros": "assets/recipes/chicken_gyros/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 499,
+    "perPortion": {
+      "energyKcal": 482,
+      "energyKj": 2018,
+      "fatG": 13.6,
+      "saturatedFatG": 6.7,
+      "carbsG": 43.7,
+      "sugarsG": 10,
+      "fiberG": 3.5,
+      "proteinG": 45.3,
+      "saltG": 4.2
+    }
+  },
+  "ratings": {
+    "average": 4,
+    "count": 8,
+    "source": "hellofresh"
+  },
+  "nodes": [
+    {
+      "id": "chicken_gyros__preheated_oven_200",
+      "name": "Värm Ugnen",
+      "outputName": "Förvärmd ugn (200°C)",
+      "inputs": [],
+      "steps": [
+        "Värm ugnen till 200 °C, eller 180 °C varmluft."
+      ],
+      "duration": 1,
+      "wait": 10,
+      "tags": ["prep", "no-timer"],
+      "tips": [
+        "HF anger 200 °C / 180 °C varmluft — lokal ugnsnode, inte preheated_oven_220."
+      ]
+    },
+    {
+      "id": "chicken_gyros__warmed_pita",
+      "name": "Värm Pitabröd",
+      "outputName": "Varma pitabröd",
+      "inputs": [
+        {
+          "id": "chicken_gyros__preheated_oven_200",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "pita_bread",
+          "amount": 4,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Placera {{pita_bread}} direkt på gallret i {{chicken_gyros__preheated_oven_200}}.",
+        "Baka i 3–4 min, eller tills uppvärmda."
+      ],
+      "duration": 1,
+      "wait": 4,
+      "tags": [],
+      "tips": [
+        "Pitabröden kan ätas rätt ur påsen, men det blir godare att rosta dem."
+      ]
+    },
+    {
+      "id": "chicken_gyros__cooked_chicken",
+      "name": "Stek Kyckling",
+      "outputName": "Souvlakikryddad kyckling",
+      "inputs": [
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "chicken_breast_strips",
+          "amount": 600,
+          "unit": "g"
+        },
+        {
+          "id": "souvlaki_spice",
+          "amount": 2,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i en stor stekpanna på medelhög värme.",
+        "Tillsätt {{chicken_breast_strips}} och krydda med {{souvlaki_spice}} och {{salt}}.",
+        "Stek i 4–5 min, eller tills gyllene och genomstekt. Vänd då och då."
+      ],
+      "duration": 6,
+      "wait": 0,
+      "tags": [],
+      "tips": [
+        "Tvätta händer och köksredskap noggrant efter hantering av rå kyckling.",
+        "Kycklingen är färdig när köttet inte längre är rosa i mitten."
+      ]
+    },
+    {
+      "id": "chicken_gyros__tzatziki",
+      "name": "Gör Tzatziki",
+      "outputName": "Tzatziki",
+      "inputs": [
+        {
+          "id": "garlic",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "cucumber",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "yoghurt",
+          "amount": 300,
+          "unit": "ml"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Riv eller pressa {{garlic}} fint.",
+        "Riv {{cucumber}} grovt och pressa ur så mycket vätska som möjligt i en ren handduk.",
+        "Blanda gurka, yoghurt, vitlök, {{salt}} och en nypa {{pepper}} i en skål."
+      ],
+      "duration": 8,
+      "tags": ["prep"]
+    },
+    {
+      "id": "chicken_gyros__prepped_vegetables",
+      "name": "Skär Gurka och Tomat",
+      "outputName": "Skuren gurka och tomat",
+      "inputs": [
+        {
+          "id": "cucumber",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "tomato",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skär {{cucumber}} i halvmånar.",
+        "Grovhacka {{tomato}}."
+      ],
+      "duration": 4,
+      "tags": ["prep"]
+    },
+    {
+      "id": "chicken_gyros",
+      "name": "Grekiskinspirerade kycklinggyros",
+      "outputName": "Grekiskinspirerade kycklinggyros",
+      "inputs": [
+        {
+          "id": "chicken_gyros__warmed_pita",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "chicken_gyros__tzatziki",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "chicken_gyros__cooked_chicken",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "chicken_gyros__prepped_vegetables",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skär en öppning i {{chicken_gyros__warmed_pita}}.",
+        "Fyll med {{chicken_gyros__tzatziki}}, {{chicken_gyros__cooked_chicken}} samt {{chicken_gyros__prepped_vegetables}}."
+      ],
+      "duration": 5,
+      "wait": 0,
+      "tags": ["master"]
+    }
+  ]
+}

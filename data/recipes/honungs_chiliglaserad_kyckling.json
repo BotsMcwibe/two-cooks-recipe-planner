@@ -1,0 +1,366 @@
+{
+  "masterId": "honungs_chiliglaserad_kyckling",
+  "source": "hellofresh",
+  "createdAt": 1791041015,
+  "basePortions": 4,
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/honungs_chiliglaserad_kyckling/main.jpg",
+    "byNode": {
+      "honungs_chiliglaserad_kyckling__roasted_fries_first": "assets/recipes/honungs_chiliglaserad_kyckling/steps/rainbow_fries.jpg",
+      "honungs_chiliglaserad_kyckling__ranch_sauce": "assets/recipes/honungs_chiliglaserad_kyckling/steps/ranch_sauce.jpg",
+      "honungs_chiliglaserad_kyckling__radish_salad": "assets/recipes/honungs_chiliglaserad_kyckling/steps/radish_salad.jpg",
+      "honungs_chiliglaserad_kyckling__chili_glaze": "assets/recipes/honungs_chiliglaserad_kyckling/steps/chili_glaze.jpg",
+      "honungs_chiliglaserad_kyckling__glazed_chicken": "assets/recipes/honungs_chiliglaserad_kyckling/steps/glazed_chicken.jpg",
+      "honungs_chiliglaserad_kyckling": "assets/recipes/honungs_chiliglaserad_kyckling/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 628,
+    "perPortion": {
+      "energyKcal": 621,
+      "energyKj": 2600,
+      "fatG": 22.6,
+      "saturatedFatG": 8.9,
+      "carbsG": 63,
+      "sugarsG": 30.2,
+      "fiberG": 8.9,
+      "proteinG": 42,
+      "saltG": 3.6
+    }
+  },
+  "ratings": {
+    "average": 3.3,
+    "count": 81,
+    "source": "hellofresh"
+  },
+  "cooked": {
+    "hfId": "694309400a853ea815821225",
+    "at": "2026-10-03T15:12:32+02:00",
+    "source": "photo",
+    "headline": "med regnbågspommes och ranchsås"
+  },
+  "nodes": [
+    {
+      "id": "honungs_chiliglaserad_kyckling__preheated_oven_240",
+      "name": "Värm Ugnen",
+      "outputName": "Förvärmd ugn (240°C)",
+      "inputs": [],
+      "steps": [
+        "Värm ugnen till 240°C, eller 220°C varmluft."
+      ],
+      "duration": 1,
+      "wait": 12,
+      "tags": [
+        "prep",
+        "no-timer"
+      ],
+      "tips": [
+        "Ugnen tar vanligtvis 10–15 minuter att värmas upp.",
+        "HF anger 240°C/220°C varmluft — lokal ugnsnode, inte preheated_oven_220."
+      ]
+    },
+    {
+      "id": "honungs_chiliglaserad_kyckling__cut_fries",
+      "name": "Skär Regnbågspommes",
+      "outputName": "Råa rotfruktspommes",
+      "inputs": [
+        {
+          "id": "beetroot",
+          "amount": 4,
+          "unit": "st"
+        },
+        {
+          "id": "carrot",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "parsnip",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "potato",
+          "amount": 500,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Skär {{beetroot}}, {{carrot}}, {{parsnip}} och {{potato}} (oskalade) i 1 cm tunna pommes."
+      ],
+      "duration": 8,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "honungs_chiliglaserad_kyckling__roasted_fries_first",
+      "name": "Rosta Regnbågspommes",
+      "outputName": "Halvrostade regnbågspommes",
+      "inputs": [
+        {
+          "id": "honungs_chiliglaserad_kyckling__preheated_oven_240",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "honungs_chiliglaserad_kyckling__cut_fries",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Lägg {{honungs_chiliglaserad_kyckling__cut_fries}} på en plåt med bakplåtspapper.",
+        "Blanda med {{olive_oil}}, {{salt}} och en nypa {{pepper}}.",
+        "Rosta i {{honungs_chiliglaserad_kyckling__preheated_oven_240}} i ca 25 min, tills det återstår 10 min av totalt 25–35 min."
+      ],
+      "duration": 3,
+      "wait": 25,
+      "tags": [],
+      "tips": [
+        "Använd fler plåtar om det blir för trångt.",
+        "Första fasen är övre gränsen 35 min minus de 10 min som återstår när glazen sätts på.",
+        "Olivolja, och peppar, har ingen mängd i yields."
+      ]
+    },
+    {
+      "id": "honungs_chiliglaserad_kyckling__roasted_fries",
+      "name": "Rosta Pommes Klart",
+      "outputName": "Regnbågspommes",
+      "inputs": [
+        {
+          "id": "honungs_chiliglaserad_kyckling__roasted_fries_first",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Rosta {{honungs_chiliglaserad_kyckling__roasted_fries_first}} i ytterligare 10 min, eller tills de är gyllene och mjuka."
+      ],
+      "duration": 1,
+      "wait": 10,
+      "tags": []
+    },
+    {
+      "id": "honungs_chiliglaserad_kyckling__ranch_sauce",
+      "name": "Blanda Ranchsås",
+      "outputName": "Ranchsås",
+      "inputs": [
+        {
+          "id": "garlic",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "mayonnaise",
+          "amount": 50,
+          "unit": "g"
+        },
+        {
+          "id": "sour_cream",
+          "amount": 150,
+          "unit": "ml"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Finhacka eller pressa {{garlic}}.",
+        "Blanda {{mayonnaise}}, {{sour_cream}}, vitlök, en nypa {{salt}} och {{pepper}} i en liten skål."
+      ],
+      "duration": 4,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Ranches salt är en nypa i texten, inte saltet till sås (1 tsk), som går i glazen."
+      ]
+    },
+    {
+      "id": "honungs_chiliglaserad_kyckling__radish_salad",
+      "name": "Blanda Rädisallad",
+      "outputName": "Rädisallad",
+      "inputs": [
+        {
+          "id": "mixed_salad",
+          "amount": 100,
+          "unit": "g"
+        },
+        {
+          "id": "radish",
+          "amount": 150,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Skölj {{mixed_salad}}. Skär {{radish}} i tunna skivor.",
+        "Blanda rädisor, salladsmix och {{salt}} i en stor skål."
+      ],
+      "duration": 4,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "En skvätt olivolja precis innan servering är valfri och har ingen mängd."
+      ]
+    },
+    {
+      "id": "honungs_chiliglaserad_kyckling__chili_glaze",
+      "name": "Gör Honungs- och Chiliglaze",
+      "outputName": "Honungs- och chiliglaze",
+      "inputs": [
+        {
+          "id": "butter",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "chili_flakes",
+          "amount": 1,
+          "unit": "g"
+        },
+        {
+          "id": "honey",
+          "amount": 50,
+          "unit": "g"
+        },
+        {
+          "id": "ketchup",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "water",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Smält {{butter}} i en medelstor kastrull på medelvärme när det återstår 10 min av rotfrukternas tid i ugnen.",
+        "Tillsätt {{chili_flakes}}, {{honey}}, {{ketchup}}, {{water}} och {{salt}}. Vispa tills glazen är slät."
+      ],
+      "duration": 3,
+      "wait": 0,
+      "tags": [],
+      "tips": [
+        "Håll glazen varm till servering. Ingen minuttid, därför ingen wait.",
+        "Stegruben säger sriracha, men ingrediensen är chiliflakes 1 g, samma mängd vid 2 och 4 portioner. Inte uppskalad och inte bytt mot sriracha.",
+        "Glazen delas: kycklingen vänds i den (0,5 st) och resten toppar tallriken (0,5 st). Råreceptet anger ingen proportion."
+      ]
+    },
+    {
+      "id": "honungs_chiliglaserad_kyckling__glazed_chicken",
+      "name": "Stek Kyckling",
+      "outputName": "Chiliglaserad kyckling",
+      "inputs": [
+        {
+          "id": "chicken_inner_fillet",
+          "amount": 560,
+          "unit": "g"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "honungs_chiliglaserad_kyckling__chili_glaze",
+          "amount": 0.5,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i en stor stekpanna på medelhög värme.",
+        "Tillsätt {{chicken_inner_fillet}} och krydda med en nypa {{salt}}. Stek i 3 min per sida, eller tills den är brynt och genomstekt.",
+        "Vänd kycklingen i hälften av {{honungs_chiliglaserad_kyckling__chili_glaze}} precis innan servering."
+      ],
+      "duration": 7,
+      "wait": 0,
+      "tags": [],
+      "tips": [
+        "Tvätta händer och redskap efter rå kyckling. Kycklingen är klar när köttet inte längre är rosa i mitten.",
+        "3 min per sida är hands-on, därför duration och wait 0."
+      ]
+    },
+    {
+      "id": "honungs_chiliglaserad_kyckling",
+      "name": "Honungs- och chiliglaserad kyckling",
+      "outputName": "Honungs- och chiliglaserad kyckling",
+      "inputs": [
+        {
+          "id": "honungs_chiliglaserad_kyckling__glazed_chicken",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "honungs_chiliglaserad_kyckling__roasted_fries",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "honungs_chiliglaserad_kyckling__radish_salad",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "honungs_chiliglaserad_kyckling__chili_glaze",
+          "amount": 0.5,
+          "unit": "st"
+        },
+        {
+          "id": "honungs_chiliglaserad_kyckling__ranch_sauce",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{honungs_chiliglaserad_kyckling__glazed_chicken}}, {{honungs_chiliglaserad_kyckling__roasted_fries}} och {{honungs_chiliglaserad_kyckling__radish_salad}} på tallrikar.",
+        "Toppa kycklingen med resterande {{honungs_chiliglaserad_kyckling__chili_glaze}} och servera med {{honungs_chiliglaserad_kyckling__ranch_sauce}}."
+      ],
+      "duration": 3,
+      "tags": [
+        "master"
+      ]
+    }
+  ]
+}

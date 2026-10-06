@@ -1,0 +1,372 @@
+{
+  "masterId": "ugnsbakade_gronsaker",
+  "source": "hellofresh",
+  "createdAt": 1790795820,
+  "basePortions": 4,
+  "sharedPrep": [
+    "preheated_oven_220"
+  ],
+  "images": {
+    "main": "assets/recipes/ugnsbakade_gronsaker/main.jpg"
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 12,
+    "perPortion": {
+      "energyKcal": 15,
+      "energyKj": 64,
+      "fatG": 0.03,
+      "saturatedFatG": 0,
+      "carbsG": 3.43,
+      "sugarsG": 2.6,
+      "proteinG": 0.18,
+      "saltG": 0.2
+    }
+  },
+  "ratings": {
+    "average": 3.6,
+    "count": 8,
+    "source": "hellofresh"
+  },
+  "nodes": [
+    {
+      "id": "ugnsbakade_gronsaker__chopped_pepper",
+      "name": "Hacka Paprika",
+      "outputName": "Tärnad paprika",
+      "inputs": [
+        {
+          "id": "paprika",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Halvera {{paprika}} och ta bort kärnhus.",
+        "Tärna paprikan i små bitar."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "ugnsbakade_gronsaker__chopped_zucchini",
+      "name": "Tärna Zucchini",
+      "outputName": "Tärnad zucchini",
+      "inputs": [
+        {
+          "id": "zucchini",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Tärna {{zucchini}} i små bitar."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "ugnsbakade_gronsaker__chopped_onion",
+      "name": "Skär Rödlök",
+      "outputName": "Rödlöksklyftor",
+      "inputs": [
+        {
+          "id": "red_onion",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skala {{red_onion}} och skär varje lök i 8 klyftor."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "ugnsbakade_gronsaker__roasted_vegetables",
+      "name": "Baka Grönsaker",
+      "outputName": "Ugnsbakade grönsaker med ost",
+      "inputs": [
+        {
+          "id": "preheated_oven_220",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "ugnsbakade_gronsaker__chopped_pepper",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "ugnsbakade_gronsaker__chopped_zucchini",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "ugnsbakade_gronsaker__chopped_onion",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "feta_cheese",
+          "amount": 150,
+          "unit": "g"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Placera {{ugnsbakade_gronsaker__chopped_pepper}}, {{ugnsbakade_gronsaker__chopped_zucchini}} och {{ugnsbakade_gronsaker__chopped_onion}} i en ugnsform.",
+        "Smula {{feta_cheese}} över grönsakerna.",
+        "Ringla över {{olive_oil}} och krydda med {{salt}} och {{pepper}}.",
+        "Baka i ugnen i ca 20 min."
+      ],
+      "duration": 5,
+      "wait": 20,
+      "tags": [],
+      "tips": [
+        "Använd halva mängden salladsost här; resten går till ostdressingen."
+      ]
+    },
+    {
+      "id": "ugnsbakade_gronsaker__chopped_garlic",
+      "name": "Pressa Vitlök",
+      "outputName": "Pressad vitlök",
+      "inputs": [
+        {
+          "id": "garlic",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Pressa {{garlic}}."
+      ],
+      "duration": 1,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "ugnsbakade_gronsaker__chopped_parsley",
+      "name": "Hacka Persilja",
+      "outputName": "Finhackad persilja",
+      "inputs": [
+        {
+          "id": "parsley",
+          "amount": 1,
+          "unit": "kruka"
+        }
+      ],
+      "steps": [
+        "Finhacka {{parsley}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "ugnsbakade_gronsaker__garlic_sauce",
+      "name": "Gör Vitlökssås",
+      "outputName": "Vitlökssås",
+      "inputs": [
+        {
+          "id": "ugnsbakade_gronsaker__chopped_garlic",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "ugnsbakade_gronsaker__chopped_parsley",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "sour_cream",
+          "amount": 150,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Blanda {{ugnsbakade_gronsaker__chopped_garlic}} och {{ugnsbakade_gronsaker__chopped_parsley}} i en skål tillsammans med {{sour_cream}} tills jämn.",
+        "Krydda med {{salt}} och {{pepper}}."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Använd halva burken gräddfil här; resten går till ostdressingen."
+      ]
+    },
+    {
+      "id": "ugnsbakade_gronsaker__cheese_dressing",
+      "name": "Gör Ostdressing",
+      "outputName": "Ostdressing",
+      "inputs": [
+        {
+          "id": "feta_cheese",
+          "amount": 150,
+          "unit": "g"
+        },
+        {
+          "id": "ketchup",
+          "amount": 50,
+          "unit": "g"
+        },
+        {
+          "id": "sour_cream",
+          "amount": 150,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Mosa {{feta_cheese}} med en gaffel i en skål.",
+        "Häll i {{ketchup}} och blanda ordentligt med {{sour_cream}}.",
+        "Krydda med {{salt}} och {{pepper}} efter smak."
+      ],
+      "duration": 4,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "ugnsbakade_gronsaker__sliced_salad",
+      "name": "Skär Sallad",
+      "outputName": "Gurka, tomat och sallad",
+      "inputs": [
+        {
+          "id": "cucumber",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "tomato",
+          "amount": 4,
+          "unit": "st"
+        },
+        {
+          "id": "lettuce",
+          "amount": 180,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Skär {{cucumber}} och {{tomato}} i tunna skivor.",
+        "Grovhacka {{lettuce}}."
+      ],
+      "duration": 5,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "ugnsbakade_gronsaker__toasted_baguette",
+      "name": "Rosta Baguette",
+      "outputName": "Rostad baguette",
+      "inputs": [
+        {
+          "id": "preheated_oven_220",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "baguette",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Dela {{baguette}} först på mitten och sedan på längden.",
+        "Lägg baguetten med skärytan vänd uppåt på en bakplåt täckt med bakplåtspapper.",
+        "Rosta i ugnen i 7–8 min (gärna parallellt med grönsakernas sista minuter)."
+      ],
+      "duration": 3,
+      "wait": 8,
+      "tags": [],
+      "tips": [
+        "Sätt in baguetten när det är 7–8 minuter kvar på grönsakernas tillagningsstid."
+      ]
+    },
+    {
+      "id": "ugnsbakade_gronsaker",
+      "name": "Ugnsbakade grönsaker i baguette med ostdressing",
+      "outputName": "Ugnsbakade grönsaker i baguette med ostdressing",
+      "inputs": [
+        {
+          "id": "ugnsbakade_gronsaker__toasted_baguette",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "ugnsbakade_gronsaker__cheese_dressing",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "ugnsbakade_gronsaker__garlic_sauce",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "ugnsbakade_gronsaker__sliced_salad",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "ugnsbakade_gronsaker__roasted_vegetables",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Bre {{ugnsbakade_gronsaker__cheese_dressing}} och {{ugnsbakade_gronsaker__garlic_sauce}} på baguettens skäryta.",
+        "Lägg på gemsallad, gurka- och tomatskivor från {{ugnsbakade_gronsaker__sliced_salad}}.",
+        "Toppa med {{ugnsbakade_gronsaker__roasted_vegetables}} och servera."
+      ],
+      "duration": 5,
+      "tags": [
+        "master"
+      ],
+      "wait": 0
+    }
+  ]
+}

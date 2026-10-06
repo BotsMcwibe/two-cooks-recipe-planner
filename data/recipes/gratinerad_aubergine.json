@@ -1,0 +1,347 @@
+{
+  "masterId": "gratinerad_aubergine",
+  "source": "hellofresh",
+  "createdAt": 1790851698,
+  "basePortions": 4,
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/gratinerad_aubergine/main.jpg"
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 132,
+    "perPortion": {
+      "energyKcal": 394,
+      "energyKj": 1647,
+      "fatG": 8.99,
+      "saturatedFatG": 1.5,
+      "carbsG": 65.25,
+      "sugarsG": 4.3,
+      "proteinG": 10.63,
+      "saltG": 1.6
+    }
+  },
+  "ratings": {
+    "average": 1.3,
+    "count": 3,
+    "source": "hellofresh"
+  },
+  "nodes": [
+    {
+      "id": "gratinerad_aubergine__preheated_oven",
+      "name": "Värm Ugnen",
+      "outputName": "Förvärmd ugn (200°C)",
+      "inputs": [],
+      "steps": [
+        "Värm ugnen till 200°C."
+      ],
+      "duration": 1,
+      "wait": 10,
+      "tags": [
+        "prep",
+        "no-timer"
+      ],
+      "tips": [
+        "Ugnen tar vanligtvis 10–15 minuter att värmas upp."
+      ]
+    },
+    {
+      "id": "gratinerad_aubergine__chopped_pepper",
+      "name": "Hacka Paprika",
+      "outputName": "Hackad paprika",
+      "inputs": [
+        {
+          "id": "paprika",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Halvera {{paprika}}, ta bort kärnhus och skär i 2 cm stora bitar."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "gratinerad_aubergine__chopped_shallot",
+      "name": "Hacka Schalottenlök",
+      "outputName": "Hackad schalottenlök",
+      "inputs": [
+        {
+          "id": "shallot",
+          "amount": 4,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Halvera och skala {{shallot}}. Skär i 1 cm stora bitar."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "gratinerad_aubergine__prepped_aubergine",
+      "name": "Förbered Aubergine",
+      "outputName": "Tärnat auberginekött och förberedda auberginehalvor",
+      "inputs": [
+        {
+          "id": "aubergine",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Halvera {{aubergine}} på längden, gröp ur och spara köttet (lämna ½–1 cm kant).",
+        "Skär aubergineköttet i 1 cm stora bitar och spara till fyllningen.",
+        "Lägg auberginehalvorna med snittytan upp i en ugnsform. Ringla över {{olive_oil}} och krydda med {{salt}} och {{pepper}}."
+      ],
+      "duration": 8,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Det tärnade köttet är klart för fyllningen direkt — auberginehalvorna bakas i nästa steg medan fyllningen kan påbörjas.",
+        "Auberginerna delas: urgröpta halvor till ugnen (0,5 st) och tärnat kött till fyllningen (0,5 st). Råreceptet anger ingen proportion."
+      ]
+    },
+    {
+      "id": "gratinerad_aubergine__baked_aubergine_shells",
+      "name": "Baka Auberginehalvor",
+      "outputName": "Bakade auberginehalvor",
+      "inputs": [
+        {
+          "id": "gratinerad_aubergine__preheated_oven",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "gratinerad_aubergine__prepped_aubergine",
+          "amount": 0.5,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Sätt formen med de förberedda auberginehalvorna från {{gratinerad_aubergine__prepped_aubergine}} i ugnen och baka i 10 min."
+      ],
+      "duration": 1,
+      "wait": 10,
+      "tags": []
+    },
+    {
+      "id": "gratinerad_aubergine__sauteed_filling_base",
+      "name": "Fräs Fyllningsgrönsaker",
+      "outputName": "Frästa fyllningsgrönsaker",
+      "inputs": [
+        {
+          "id": "gratinerad_aubergine__chopped_pepper",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "gratinerad_aubergine__chopped_shallot",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "gratinerad_aubergine__prepped_aubergine",
+          "amount": 0.5,
+          "unit": "st"
+        },
+        {
+          "id": "dukkah",
+          "amount": 12,
+          "unit": "g"
+        },
+        {
+          "id": "harissa",
+          "amount": 2,
+          "unit": "g"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i en stor stekpanna på medelhög värme.",
+        "Fräs {{gratinerad_aubergine__chopped_pepper}}, {{gratinerad_aubergine__chopped_shallot}}, {{dukkah}}, {{harissa}} och det sparade aubergineköttet från {{gratinerad_aubergine__prepped_aubergine}} i 5 min."
+      ],
+      "duration": 1,
+      "wait": 5,
+      "tags": []
+    },
+    {
+      "id": "gratinerad_aubergine__vegetable_filling",
+      "name": "Gör Grönsaksfyllning",
+      "outputName": "Grönsaksfyllning",
+      "inputs": [
+        {
+          "id": "gratinerad_aubergine__sauteed_filling_base",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "canned_tomatoes",
+          "amount": 2,
+          "unit": "burk"
+        },
+        {
+          "id": "ketchup",
+          "amount": 50,
+          "unit": "g"
+        },
+        {
+          "id": "sugar",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Tillsätt {{canned_tomatoes}} och {{ketchup}} i {{gratinerad_aubergine__sauteed_filling_base}}.",
+        "Låt sjuda tills såsen har tjocknat, 5–10 min. Krydda med {{sugar}}, {{salt}} och {{pepper}}."
+      ],
+      "duration": 1,
+      "wait": 10,
+      "tags": []
+    },
+    {
+      "id": "gratinerad_aubergine__gratinated_aubergine",
+      "name": "Gratinera Aubergine",
+      "outputName": "Gratinerad aubergine",
+      "inputs": [
+        {
+          "id": "gratinerad_aubergine__baked_aubergine_shells",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "gratinerad_aubergine__vegetable_filling",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "parmesan",
+          "amount": 40,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Ta ut auberginehalvorna ur ugnen och fyll dem med {{gratinerad_aubergine__vegetable_filling}}.",
+        "Toppa med {{parmesan}} och gratinera i ugnen tills osten har blivit gyllenbrun, ca 10 min."
+      ],
+      "duration": 3,
+      "wait": 10,
+      "tags": [],
+      "tips": [
+        "Grönsakerna som blivit över kan också värmas upp i ugnsformen."
+      ]
+    },
+    {
+      "id": "gratinerad_aubergine__warmed_tortillas",
+      "name": "Värm Tortillas",
+      "outputName": "Värmda mini-tortillas",
+      "inputs": [
+        {
+          "id": "gratinerad_aubergine__preheated_oven",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "mini_tortillas",
+          "amount": 16,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Värm {{mini_tortillas}} i ugnen, 3–4 min."
+      ],
+      "duration": 1,
+      "wait": 4,
+      "tags": [],
+      "tips": [
+        "Tortillas kan värmas under tiden som auberginen gratineras."
+      ]
+    },
+    {
+      "id": "gratinerad_aubergine",
+      "name": "Gratinerad aubergine",
+      "outputName": "Gratinerad aubergine med dukkah och parmesan",
+      "inputs": [
+        {
+          "id": "gratinerad_aubergine__gratinated_aubergine",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "gratinerad_aubergine__warmed_tortillas",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "rucola",
+          "amount": 100,
+          "unit": "g"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "balsamic_vinegar",
+          "amount": 24,
+          "unit": "ml"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Blanda {{rucola}} med {{olive_oil}}, {{balsamic_vinegar}}, {{salt}} och {{pepper}} i en salladsskål.",
+        "Servera {{gratinerad_aubergine__gratinated_aubergine}} med {{gratinerad_aubergine__warmed_tortillas}} och den friska rucolasalladen."
+      ],
+      "duration": 3,
+      "tags": [
+        "master"
+      ],
+      "wait": 0
+    }
+  ]
+}

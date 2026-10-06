@@ -1,0 +1,333 @@
+{
+  "masterId": "boeuf_bourguignon_vitloksmos",
+  "source": "hellofresh",
+  "createdAt": 1791040102,
+  "basePortions": 4,
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/boeuf_bourguignon_vitloksmos/main.jpg",
+    "byNode": {
+      "boeuf_bourguignon_vitloksmos__garlic_mash": "assets/recipes/boeuf_bourguignon_vitloksmos/steps/garlic_mash.jpg",
+      "boeuf_bourguignon_vitloksmos__fried_mushrooms": "assets/recipes/boeuf_bourguignon_vitloksmos/steps/fried_mushrooms.jpg",
+      "boeuf_bourguignon_vitloksmos__fried_onion_carrot": "assets/recipes/boeuf_bourguignon_vitloksmos/steps/fried_onion_carrot.jpg",
+      "boeuf_bourguignon_vitloksmos__braised_beef": "assets/recipes/boeuf_bourguignon_vitloksmos/steps/braised_beef.jpg",
+      "boeuf_bourguignon_vitloksmos__finished_stew": "assets/recipes/boeuf_bourguignon_vitloksmos/steps/finished_stew.jpg",
+      "boeuf_bourguignon_vitloksmos": "assets/recipes/boeuf_bourguignon_vitloksmos/steps/serve.jpg"
+    }
+  },
+  "ratings": {
+    "average": 3.2,
+    "count": 354,
+    "source": "hellofresh"
+  },
+  "cooked": {
+    "hfId": "6593e328c7596f421e53b6c6",
+    "at": "2026-10-03T15:12:32+02:00",
+    "source": "photo",
+    "headline": "med stekt svamp och vitlöksmos"
+  },
+  "nodes": [
+    {
+      "id": "boeuf_bourguignon_vitloksmos__prepped_potato_garlic",
+      "name": "Tärna Potatis och Skala Vitlök",
+      "outputName": "Tärnad potatis och skalad vitlök",
+      "inputs": [
+        {
+          "id": "potato",
+          "amount": 1000,
+          "unit": "g"
+        },
+        {
+          "id": "garlic",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skala och tärna {{potato}} i 2 cm stora bitar.",
+        "Skala {{garlic}}."
+      ],
+      "duration": 6,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "boeuf_bourguignon_vitloksmos__boiled_potato_garlic",
+      "name": "Koka Potatis och Vitlök",
+      "outputName": "Kokt potatis och vitlök",
+      "inputs": [
+        {
+          "id": "boeuf_bourguignon_vitloksmos__prepped_potato_garlic",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Koka upp en medelstor kastrull med saltat vatten.",
+        "Koka {{boeuf_bourguignon_vitloksmos__prepped_potato_garlic}} i 11–13 min, eller tills bitarna enkelt kan delas med en kniv."
+      ],
+      "duration": 2,
+      "wait": 13,
+      "tags": [],
+      "tips": [
+        "Salt till kokvattnet har ingen mängd i yields. 1 tsk salt hör till moset, inte kastrullen."
+      ]
+    },
+    {
+      "id": "boeuf_bourguignon_vitloksmos__garlic_mash",
+      "name": "Mosa Vitlöksmos",
+      "outputName": "Vitlöksmos",
+      "inputs": [
+        {
+          "id": "boeuf_bourguignon_vitloksmos__boiled_potato_garlic",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "milk",
+          "amount": 6,
+          "unit": "msk"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Häll av vattnet. Mosa {{boeuf_bourguignon_vitloksmos__boiled_potato_garlic}} med {{milk}}, {{salt}} och en nypa {{pepper}}. Ställ åt sidan under lock."
+      ],
+      "duration": 4,
+      "wait": 0,
+      "tags": [],
+      "tips": [
+        "Tillsätt en klick smör om du vill ha moset extra krämigt. Smöret i yields (2 msk) går till svampen.",
+        "Under lock till servering är ingen klockad vila."
+      ]
+    },
+    {
+      "id": "boeuf_bourguignon_vitloksmos__fried_mushrooms",
+      "name": "Stek Svamp",
+      "outputName": "Stekt svamp",
+      "inputs": [
+        {
+          "id": "mushrooms",
+          "amount": 200,
+          "unit": "g"
+        },
+        {
+          "id": "butter",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "garlic_flakes",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Grovhacka {{mushrooms}}.",
+        "Hetta upp {{butter}} i en stor kastrull på medelhög värme. Stek svampen i 3–4 min, eller tills den är brynt.",
+        "Tillsätt {{garlic_flakes}} och stek i 30 sek, tills det doftar. Krydda med en nypa {{salt}} och {{pepper}} och ställ åt sidan i en skål."
+      ],
+      "duration": 6,
+      "wait": 0,
+      "tags": [],
+      "tips": [
+        "Stekningen är hands-on, inte en passiv wait. 3–4 min och 30 sek ligger i duration."
+      ]
+    },
+    {
+      "id": "boeuf_bourguignon_vitloksmos__fried_onion_carrot",
+      "name": "Stek Lök och Morot",
+      "outputName": "Stekt lök och morot",
+      "inputs": [
+        {
+          "id": "onion",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "carrot",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 2,
+          "unit": "msk"
+        }
+      ],
+      "steps": [
+        "Skär {{onion}} i tunna skivor. Finhacka {{carrot}} (oskalad).",
+        "Hetta upp {{olive_oil}} på medelhög värme i kastrullen där svampen stektes (utan att torka ur den), eller i en ny stor kastrull.",
+        "Stek lök och morot i 2–3 min, tills de är något mjuka."
+      ],
+      "duration": 6,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "boeuf_bourguignon_vitloksmos__braised_beef",
+      "name": "Sjud Boeuf Bourguignon",
+      "outputName": "Sjuden boeuf bourguignon",
+      "inputs": [
+        {
+          "id": "boeuf_bourguignon_vitloksmos__fried_onion_carrot",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "pulled_beef",
+          "amount": 600,
+          "unit": "g"
+        },
+        {
+          "id": "red_wine_sauce",
+          "amount": 120,
+          "unit": "g"
+        },
+        {
+          "id": "soy_sauce",
+          "amount": 50,
+          "unit": "ml"
+        },
+        {
+          "id": "tomato_paste",
+          "amount": 1,
+          "unit": "burk"
+        },
+        {
+          "id": "chicken_bouillon",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "id": "water",
+          "amount": 1,
+          "unit": "dl"
+        }
+      ],
+      "steps": [
+        "Sänk till medelvärme.",
+        "Tillsätt {{pulled_beef}} och sky från förpackningen, {{red_wine_sauce}}, {{soy_sauce}}, {{tomato_paste}}, {{chicken_bouillon}} och {{water}} till {{boeuf_bourguignon_vitloksmos__fried_onion_carrot}}.",
+        "Sjud under lock i 10–12 min."
+      ],
+      "duration": 3,
+      "wait": 12,
+      "tags": []
+    },
+    {
+      "id": "boeuf_bourguignon_vitloksmos__shredded_beef",
+      "name": "Riv Köttet",
+      "outputName": "Strimlad boeuf bourguignon",
+      "inputs": [
+        {
+          "id": "boeuf_bourguignon_vitloksmos__braised_beef",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Riv {{boeuf_bourguignon_vitloksmos__braised_beef}} med två gafflar tills köttet är helt strimlat."
+      ],
+      "duration": 3,
+      "wait": 0,
+      "tags": []
+    },
+    {
+      "id": "boeuf_bourguignon_vitloksmos__chopped_parsley",
+      "name": "Hacka Persilja",
+      "outputName": "Hackad persilja",
+      "inputs": [
+        {
+          "id": "parsley",
+          "amount": 1,
+          "unit": "pkt"
+        }
+      ],
+      "steps": [
+        "Grovhacka {{parsley}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "HF-enhet portionspåse, 1 påse vid både 2 och 4 portioner. Mappad till pkt, inte uppskalad."
+      ]
+    },
+    {
+      "id": "boeuf_bourguignon_vitloksmos__finished_stew",
+      "name": "Rör Ner Svamp",
+      "outputName": "Boeuf bourguignon med svamp",
+      "inputs": [
+        {
+          "id": "boeuf_bourguignon_vitloksmos__shredded_beef",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "boeuf_bourguignon_vitloksmos__fried_mushrooms",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Rör ner {{boeuf_bourguignon_vitloksmos__fried_mushrooms}} i {{boeuf_bourguignon_vitloksmos__shredded_beef}} precis innan servering."
+      ],
+      "duration": 1,
+      "wait": 0,
+      "tags": []
+    },
+    {
+      "id": "boeuf_bourguignon_vitloksmos",
+      "name": "Klassisk boeuf bourguignon",
+      "outputName": "Klassisk boeuf bourguignon",
+      "inputs": [
+        {
+          "id": "boeuf_bourguignon_vitloksmos__garlic_mash",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "boeuf_bourguignon_vitloksmos__finished_stew",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "boeuf_bourguignon_vitloksmos__chopped_parsley",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{boeuf_bourguignon_vitloksmos__garlic_mash}} och {{boeuf_bourguignon_vitloksmos__finished_stew}} i skålar.",
+        "Toppa med {{boeuf_bourguignon_vitloksmos__chopped_parsley}}."
+      ],
+      "duration": 3,
+      "tags": [
+        "master"
+      ]
+    }
+  ]
+}

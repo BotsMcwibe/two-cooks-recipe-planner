@@ -1,0 +1,402 @@
+{
+  "masterId": "gyllenstekt_kycklingschnitzel",
+  "source": "hellofresh",
+  "createdAt": 1791035248,
+  "basePortions": 4,
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/gyllenstekt_kycklingschnitzel/main.jpg",
+    "byNode": {
+      "gyllenstekt_kycklingschnitzel__boiled_potato": "assets/recipes/gyllenstekt_kycklingschnitzel/steps/boiled_potato.jpg",
+      "gyllenstekt_kycklingschnitzel__pounded_chicken": "assets/recipes/gyllenstekt_kycklingschnitzel/steps/pounded_chicken.jpg",
+      "gyllenstekt_kycklingschnitzel__breaded_chicken": "assets/recipes/gyllenstekt_kycklingschnitzel/steps/breaded_chicken.jpg",
+      "gyllenstekt_kycklingschnitzel__fried_chicken": "assets/recipes/gyllenstekt_kycklingschnitzel/steps/fried_chicken.jpg",
+      "gyllenstekt_kycklingschnitzel__potato_salad": "assets/recipes/gyllenstekt_kycklingschnitzel/steps/potato_salad.jpg",
+      "gyllenstekt_kycklingschnitzel": "assets/recipes/gyllenstekt_kycklingschnitzel/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 609,
+    "perPortion": {
+      "energyKcal": 742,
+      "energyKj": 3107,
+      "fatG": 27,
+      "saturatedFatG": 10.2,
+      "carbsG": 76,
+      "sugarsG": 6.2,
+      "fiberG": 7.4,
+      "proteinG": 49.6,
+      "saltG": 3.2
+    }
+  },
+  "ratings": {
+    "average": 3.6,
+    "count": 119,
+    "source": "hellofresh"
+  },
+  "cooked": {
+    "hfId": "67038f2002cdf0b40ec360c5",
+    "at": "2026-10-03T15:12:32+02:00",
+    "source": "photo",
+    "headline": "med färsk citron och potatissallad"
+  },
+  "nodes": [
+    {
+      "id": "gyllenstekt_kycklingschnitzel__diced_potato",
+      "name": "Tärna Potatis",
+      "outputName": "Tärnad potatis",
+      "inputs": [
+        {
+          "id": "potato",
+          "amount": 1000,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Tärna {{potato}} (oskalad) i 2 cm stora bitar."
+      ],
+      "duration": 5,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "gyllenstekt_kycklingschnitzel__boiled_potato",
+      "name": "Koka Potatis",
+      "outputName": "Kokt potatis",
+      "inputs": [
+        {
+          "id": "gyllenstekt_kycklingschnitzel__diced_potato",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Koka upp en medelstor kastrull med saltat vatten.",
+        "Koka {{gyllenstekt_kycklingschnitzel__diced_potato}} i 11–13 min, eller tills de enkelt kan delas med en kniv."
+      ],
+      "duration": 2,
+      "wait": 13,
+      "tags": [],
+      "tips": [
+        "Passiv koktid 11–13 min → wait 13 (övre gräns). Sista steget äger timern.",
+        "Salt till kokvattnet har ingen mängd i yields — grönsakssaltet (0,5 tsk) används efter avhällning."
+      ]
+    },
+    {
+      "id": "gyllenstekt_kycklingschnitzel__rinsed_spinach",
+      "name": "Skölj Spenat",
+      "outputName": "Sköljd spenat",
+      "inputs": [
+        {
+          "id": "baby_spinach",
+          "amount": 100,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Skölj {{baby_spinach}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "FLAG: HF yields anger spenat 100 st vid 4 portioner (1 st vid 2, 101 st vid 5–6) — överstyrd till 100 g babyspenat."
+      ]
+    },
+    {
+      "id": "gyllenstekt_kycklingschnitzel__potato_spinach",
+      "name": "Vänd ner Spenat",
+      "outputName": "Potatis med spenat",
+      "inputs": [
+        {
+          "id": "gyllenstekt_kycklingschnitzel__boiled_potato",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "gyllenstekt_kycklingschnitzel__rinsed_spinach",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Häll av vattnet från {{gyllenstekt_kycklingschnitzel__boiled_potato}}. Krydda med {{salt}} och {{pepper}} och vänd ner {{gyllenstekt_kycklingschnitzel__rinsed_spinach}} tills den mjuknat.",
+        "Sätt åt sidan utan lock för att svalna."
+      ],
+      "duration": 3,
+      "wait": 0,
+      "tags": [],
+      "tips": [
+        "Svalning utan klockslag är ingen wait.",
+        "FLAG: steget säger en nypa salt, yield «salt till grönsaker» är 0,5 tsk — mängden följer yield.",
+        "FLAG: peppar står i steget (en nypa) men saknas i yields."
+      ]
+    },
+    {
+      "id": "gyllenstekt_kycklingschnitzel__sliced_shallot",
+      "name": "Skiva Schalottenlök",
+      "outputName": "Saltad schalottenlök",
+      "inputs": [
+        {
+          "id": "shallot",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Skär {{shallot}} i tunna skivor.",
+        "Blanda {{shallot}} och {{salt}} i en liten skål och ställ åt sidan."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "HF namn/slug är Lök men type=shallot och steget säger schalottenlök — mappad till shallot.",
+        "Salladssaltet (0,5 tsk) blandas här, inte en gång till i salladen."
+      ]
+    },
+    {
+      "id": "gyllenstekt_kycklingschnitzel__pounded_chicken",
+      "name": "Banka Kyckling",
+      "outputName": "Bankad kyckling",
+      "inputs": [
+        {
+          "id": "chicken_breast",
+          "amount": 600,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Lägg {{chicken_breast}} mellan två bakplåtspapper och banka med kötthammare eller kavel tills den är jämntjock, ca 2 cm.",
+        "Krydda med {{salt}}."
+      ],
+      "duration": 6,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "VIKTIGT: Tvätta händer och köksredskap noggrant efter att ha hanterat rå kyckling."
+      ]
+    },
+    {
+      "id": "gyllenstekt_kycklingschnitzel__breaded_chicken",
+      "name": "Panera Kyckling",
+      "outputName": "Panerad kyckling",
+      "inputs": [
+        {
+          "id": "gyllenstekt_kycklingschnitzel__pounded_chicken",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "flour",
+          "amount": 4,
+          "unit": "msk"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "egg",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "panko",
+          "amount": 75,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Blanda {{flour}}, {{salt}} och {{pepper}} i en djup tallrik.",
+        "Vispa {{egg}} i en andra djup tallrik.",
+        "Lägg {{panko}} i en tredje djup tallrik.",
+        "Vänd {{gyllenstekt_kycklingschnitzel__pounded_chicken}} först i mjöl, sen i ägg och till sist i panko. Placera på en tallrik."
+      ],
+      "duration": 8,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Om du inte har ägg kan du använda 2 msk mjölk.",
+        "FLAG: peppar står i steget (en nypa) men saknas i yields."
+      ]
+    },
+    {
+      "id": "gyllenstekt_kycklingschnitzel__fried_chicken",
+      "name": "Stek Kyckling",
+      "outputName": "Gyllenstekt kyckling",
+      "inputs": [
+        {
+          "id": "gyllenstekt_kycklingschnitzel__breaded_chicken",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 2,
+          "unit": "msk"
+        }
+      ],
+      "steps": [
+        "Hetta upp en stor stekpanna på medelhög värme och tillsätt {{olive_oil}} så det täcker pannan.",
+        "Stek {{gyllenstekt_kycklingschnitzel__breaded_chicken}} i 3–4 min per sida, eller tills gyllene och genomstekt. Lägg över till en tallrik med hushållspapper."
+      ],
+      "duration": 9,
+      "wait": 0,
+      "tags": [],
+      "tips": [
+        "Hands-on stekning 3–4 min per sida → duration, inte wait.",
+        "Tillsätt extra olivolja vid behov.",
+        "Kycklingen är färdiglagad när köttet inte längre är rosa i mitten.",
+        "FLAG: olivolja saknas i yields — 2 msk är uppskattning så det täcker pannan (samma formulering som chicken_kiev)."
+      ]
+    },
+    {
+      "id": "gyllenstekt_kycklingschnitzel__chopped_chives",
+      "name": "Finhacka Gräslök",
+      "outputName": "Finhackad gräslök",
+      "inputs": [
+        {
+          "id": "chives",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Finhacka {{chives}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "FLAG: gräslök är 1 st vid 2–4 portioner (2 st först vid 5) — icke-linjär, behållen som 1 st."
+      ]
+    },
+    {
+      "id": "gyllenstekt_kycklingschnitzel__lemon_wedges",
+      "name": "Skär Citronklyftor",
+      "outputName": "Citronklyftor",
+      "inputs": [
+        {
+          "id": "lemon",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skär {{lemon}} i klyftor."
+      ],
+      "duration": 1,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "HF «Citrusfrukt» (type lemon) → lemon. 1 st även vid 2–4 portioner."
+      ]
+    },
+    {
+      "id": "gyllenstekt_kycklingschnitzel__potato_salad",
+      "name": "Blanda Potatissallad",
+      "outputName": "Potatissallad",
+      "inputs": [
+        {
+          "id": "gyllenstekt_kycklingschnitzel__potato_spinach",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "mayonnaise",
+          "amount": 50,
+          "unit": "g"
+        },
+        {
+          "id": "creme_fraiche",
+          "amount": 150,
+          "unit": "ml"
+        },
+        {
+          "id": "gyllenstekt_kycklingschnitzel__sliced_shallot",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "gyllenstekt_kycklingschnitzel__chopped_chives",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Vänd {{mayonnaise}}, {{creme_fraiche}}, {{gyllenstekt_kycklingschnitzel__chopped_chives}} och {{gyllenstekt_kycklingschnitzel__sliced_shallot}} med {{gyllenstekt_kycklingschnitzel__potato_spinach}} precis innan servering."
+      ],
+      "duration": 4,
+      "tags": [],
+      "tips": [
+        "Saltet i steget är det som redan blandats i schalottenlöken."
+      ]
+    },
+    {
+      "id": "gyllenstekt_kycklingschnitzel",
+      "name": "Gyllenstekt kycklingschnitzel",
+      "outputName": "Gyllenstekt kycklingschnitzel",
+      "inputs": [
+        {
+          "id": "gyllenstekt_kycklingschnitzel__fried_chicken",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "gyllenstekt_kycklingschnitzel__potato_salad",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "gyllenstekt_kycklingschnitzel__lemon_wedges",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{gyllenstekt_kycklingschnitzel__fried_chicken}} och {{gyllenstekt_kycklingschnitzel__potato_salad}} på tallrikar.",
+        "Servera med {{gyllenstekt_kycklingschnitzel__lemon_wedges}}."
+      ],
+      "duration": 3,
+      "wait": 0,
+      "tags": [
+        "master"
+      ]
+    }
+  ]
+}

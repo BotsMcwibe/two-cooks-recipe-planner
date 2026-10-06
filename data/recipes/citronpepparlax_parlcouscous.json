@@ -1,0 +1,278 @@
+{
+  "masterId": "citronpepparlax_parlcouscous",
+  "source": "hellofresh",
+  "createdAt": 1791039561,
+  "basePortions": 4,
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/citronpepparlax_parlcouscous/main.jpg",
+    "byNode": {
+      "citronpepparlax_parlcouscous__cooked_couscous": "assets/recipes/citronpepparlax_parlcouscous/steps/cooked_couscous.jpg",
+      "citronpepparlax_parlcouscous__pickled_cucumber": "assets/recipes/citronpepparlax_parlcouscous/steps/pickled_cucumber.jpg",
+      "citronpepparlax_parlcouscous__prepped_salad_veg": "assets/recipes/citronpepparlax_parlcouscous/steps/prepped_salad_veg.jpg",
+      "citronpepparlax_parlcouscous__avocado_salad": "assets/recipes/citronpepparlax_parlcouscous/steps/avocado_salad.jpg",
+      "citronpepparlax_parlcouscous": "assets/recipes/citronpepparlax_parlcouscous/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 457,
+    "perPortion": {
+      "energyKcal": 893,
+      "energyKj": 3736,
+      "fatG": 50.3,
+      "saturatedFatG": 13.6,
+      "carbsG": 67,
+      "sugarsG": 7.7,
+      "fiberG": 7.7,
+      "proteinG": 40.3,
+      "saltG": 3.7
+    }
+  },
+  "cooked": {
+    "hfId": "66548b3e56caac7d79183a8f",
+    "at": "2026-10-03T15:12:32+02:00",
+    "source": "photo",
+    "headline": "med krämig pärlcouscous och gurka"
+  },
+  "nodes": [
+    {
+      "id": "citronpepparlax_parlcouscous__cooked_couscous",
+      "name": "Koka Pärlcouscous",
+      "outputName": "Kokt pärlcouscous",
+      "inputs": [
+        {
+          "id": "pearl_couscous",
+          "amount": 335,
+          "unit": "g"
+        },
+        {
+          "id": "water",
+          "amount": 8,
+          "unit": "dl"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Koka upp en medelstor kastrull med {{water}} och {{salt}}.",
+        "Tillsätt {{pearl_couscous}}, sänk till medellåg värme och sjud i 12–15 min, tills den är al dente. Häll av vattnet."
+      ],
+      "duration": 3,
+      "wait": 15,
+      "tags": []
+    },
+    {
+      "id": "citronpepparlax_parlcouscous__pickled_cucumber",
+      "name": "Sylta Gurka",
+      "outputName": "Syltad gurka",
+      "inputs": [
+        {
+          "id": "cucumber",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "white_wine_vinegar",
+          "amount": 24,
+          "unit": "ml"
+        },
+        {
+          "id": "sugar",
+          "amount": 1,
+          "unit": "tsk"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Skär {{cucumber}} i tunna skivor.",
+        "Blanda {{white_wine_vinegar}}, {{sugar}} och {{salt}} i en liten skål. Vänd ner gurkan och ställ åt sidan."
+      ],
+      "tips": [
+        "Ingen minuttid är angiven. Häll av lagen innan servering."
+      ],
+      "duration": 4,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "citronpepparlax_parlcouscous__prepped_salad_veg",
+      "name": "Förbered Avokado och Sallad",
+      "outputName": "Skivad avokado och sköljd sallad",
+      "inputs": [
+        {
+          "id": "avocado",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "lettuce",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Halvera och kärna ur {{avocado}}. Gröp ur den med en sked och skär i tunna skivor.",
+        "Skölj {{lettuce}}."
+      ],
+      "duration": 4,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "citronpepparlax_parlcouscous__chopped_dill",
+      "name": "Hacka Dill",
+      "outputName": "Hackad dill",
+      "inputs": [
+        {
+          "id": "dill",
+          "amount": 10,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Finhacka {{dill}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "citronpepparlax_parlcouscous__fried_salmon",
+      "name": "Stek Citronpepparlax",
+      "outputName": "Citronpepparstekt lax",
+      "inputs": [
+        {
+          "id": "salmon_fillet",
+          "amount": 500,
+          "unit": "g"
+        },
+        {
+          "id": "lemon_pepper",
+          "amount": 4,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        }
+      ],
+      "steps": [
+        "Hetta upp en skvätt {{olive_oil}} i en stor stekpanna på medelhög värme. Torka av {{salmon_fillet}} med hushållspapper och krydda med {{salt}} och {{lemon_pepper}}.",
+        "Stek med skinnsidan ner i 3–4 min. Vänd laxen och stek i ytterligare 3–5 min, tills den är gyllene och genomstekt."
+      ],
+      "tips": [
+        "Laxen är färdiglagad när köttet är ogenomskinligt i mitten."
+      ],
+      "duration": 9,
+      "wait": 0,
+      "tags": []
+    },
+    {
+      "id": "citronpepparlax_parlcouscous__dressed_couscous",
+      "name": "Blanda Dilldressing",
+      "outputName": "Pärlcouscous med dilldressing",
+      "inputs": [
+        {
+          "id": "creme_fraiche",
+          "amount": 150,
+          "unit": "ml"
+        },
+        {
+          "id": "citronpepparlax_parlcouscous__chopped_dill",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "citronpepparlax_parlcouscous__cooked_couscous",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Blanda {{creme_fraiche}}, {{citronpepparlax_parlcouscous__chopped_dill}} och {{salt}} i en liten skål.",
+        "Rör ner dilldressingen i {{citronpepparlax_parlcouscous__cooked_couscous}}."
+      ],
+      "duration": 3,
+      "tags": []
+    },
+    {
+      "id": "citronpepparlax_parlcouscous__avocado_salad",
+      "name": "Blanda Sallad",
+      "outputName": "Avokadosallad med syltad gurka",
+      "inputs": [
+        {
+          "id": "citronpepparlax_parlcouscous__pickled_cucumber",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "msk"
+        },
+        {
+          "id": "citronpepparlax_parlcouscous__prepped_salad_veg",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Häll av lagen från {{citronpepparlax_parlcouscous__pickled_cucumber}}. Blanda gurkan med {{olive_oil}} och {{citronpepparlax_parlcouscous__prepped_salad_veg}} i en stor skål precis innan servering."
+      ],
+      "duration": 2,
+      "tags": []
+    },
+    {
+      "id": "citronpepparlax_parlcouscous",
+      "name": "Skandinaviskinspirerad citronpepparlax",
+      "outputName": "Skandinaviskinspirerad citronpepparlax",
+      "inputs": [
+        {
+          "id": "citronpepparlax_parlcouscous__dressed_couscous",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "citronpepparlax_parlcouscous__avocado_salad",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "citronpepparlax_parlcouscous__fried_salmon",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{citronpepparlax_parlcouscous__dressed_couscous}}, {{citronpepparlax_parlcouscous__avocado_salad}} och {{citronpepparlax_parlcouscous__fried_salmon}} i djupa tallrikar."
+      ],
+      "duration": 2,
+      "tags": [
+        "master"
+      ]
+    }
+  ]
+}

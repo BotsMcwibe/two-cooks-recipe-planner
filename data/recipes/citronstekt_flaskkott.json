@@ -1,0 +1,396 @@
+{
+  "masterId": "citronstekt_flaskkott",
+  "source": "hellofresh",
+  "createdAt": 1791038668,
+  "basePortions": 4,
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/citronstekt_flaskkott/main.jpg",
+    "byNode": {
+      "citronstekt_flaskkott__roasted_roots": "assets/recipes/citronstekt_flaskkott/steps/roasted_roots.jpg",
+      "citronstekt_flaskkott__seasoned_pork": "assets/recipes/citronstekt_flaskkott/steps/prepped_aromatics.jpg",
+      "citronstekt_flaskkott__fried_pork": "assets/recipes/citronstekt_flaskkott/steps/fried_pork.jpg",
+      "citronstekt_flaskkott__simmered_pork": "assets/recipes/citronstekt_flaskkott/steps/simmered_pork.jpg",
+      "citronstekt_flaskkott": "assets/recipes/citronstekt_flaskkott/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 754,
+    "perPortion": {
+      "energyKcal": 639,
+      "energyKj": 2675,
+      "fatG": 21.23,
+      "saturatedFatG": 7.7,
+      "carbsG": 73.21,
+      "sugarsG": 20.4,
+      "proteinG": 40.98,
+      "saltG": 3.4
+    }
+  },
+  "ratings": {
+    "average": 3.4,
+    "count": 138,
+    "source": "hellofresh"
+  },
+  "cooked": {
+    "hfId": "6333723afba4e0ef88f2d3b5",
+    "at": "2026-10-03T15:12:32+02:00",
+    "source": "photo",
+    "headline": "med rostade rotfrukter och hemlagad tzatziki"
+  },
+  "nodes": [
+    {
+      "id": "citronstekt_flaskkott__preheated_oven",
+      "name": "Värm Ugnen",
+      "outputName": "Förvärmd ugn (240°C)",
+      "inputs": [],
+      "steps": [
+        "Värm ugnen till 240°C, eller 220°C varmluft."
+      ],
+      "duration": 1,
+      "wait": 12,
+      "tags": [
+        "prep",
+        "no-timer"
+      ],
+      "tips": [
+        "Ugnen tar vanligtvis 10–15 minuter att värmas upp."
+      ]
+    },
+    {
+      "id": "citronstekt_flaskkott__prepped_roots",
+      "name": "Tärna Rotfrukter",
+      "outputName": "Tärnade rotfrukter",
+      "inputs": [
+        {
+          "id": "potato",
+          "amount": 1000,
+          "unit": "g"
+        },
+        {
+          "id": "parsnip",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "beetroot",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "carrot",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skär {{parsnip}} (oskalad) i kvartar på längden.",
+        "Tärna {{potato}} (oskalad), {{beetroot}} (oskalad) och {{carrot}} (oskalad) i 2 cm stora bitar."
+      ],
+      "duration": 8,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "citronstekt_flaskkott__roasted_roots",
+      "name": "Rosta Rotfrukter",
+      "outputName": "Rostade rotfrukter",
+      "inputs": [
+        {
+          "id": "citronstekt_flaskkott__prepped_roots",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "citronstekt_flaskkott__preheated_oven",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "sesame_seeds",
+          "amount": 20,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        }
+      ],
+      "steps": [
+        "Blanda {{citronstekt_flaskkott__prepped_roots}}, {{olive_oil}}, {{sesame_seeds}}, {{salt}} och peppar på två plåtar med bakplåtspapper.",
+        "Rosta i {{citronstekt_flaskkott__preheated_oven}} i 20–25 min, eller tills gyllene."
+      ],
+      "duration": 3,
+      "wait": 25,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "citronstekt_flaskkott__minced_garlic",
+      "name": "Hacka Vitlök",
+      "outputName": "Hackad vitlök",
+      "inputs": [
+        {
+          "id": "garlic",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Finhacka eller pressa {{garlic}}."
+      ],
+      "duration": 1,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "citronstekt_flaskkott__chopped_dill",
+      "name": "Hacka Dill",
+      "outputName": "Grovhackad dill",
+      "inputs": [
+        {
+          "id": "dill",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Grovhacka {{dill}}."
+      ],
+      "duration": 1,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Hälften av dillen går i tzatzikin och hälften är garnering (0,5 st + 0,5 st, enligt råreceptets \"hälften\")."
+      ]
+    },
+    {
+      "id": "citronstekt_flaskkott__lemon_wedges",
+      "name": "Skär Citronklyftor",
+      "outputName": "Citronklyftor",
+      "inputs": [
+        {
+          "id": "lemon",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skär {{lemon}} i klyftor."
+      ],
+      "duration": 1,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "4 msk saft pressas till buljongen och resten är garnering. Råreceptet anger ingen andel av klyftorna, så grafen delar 0,5 st + 0,5 st."
+      ]
+    },
+    {
+      "id": "citronstekt_flaskkott__seasoned_pork",
+      "name": "Skär och Krydda Fläsk",
+      "outputName": "Kryddat fläsk",
+      "inputs": [
+        {
+          "id": "pork_chop",
+          "amount": 600,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "garlic_flakes",
+          "amount": 4,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Skär {{pork_chop}} i 12 bitar (3 per person) på en separat skärbräda. Krydda med en nypa {{salt}} och {{garlic_flakes}}."
+      ],
+      "duration": 4,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Råreceptet: hälften av vitlöksflörterna (8 g) till köttet, resten till citronbuljongen, alltså 4 g + 4 g."
+      ]
+    },
+    {
+      "id": "citronstekt_flaskkott__tzatziki",
+      "name": "Blanda Tzatziki",
+      "outputName": "Tzatziki",
+      "inputs": [
+        {
+          "id": "cucumber",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "yoghurt",
+          "amount": 150,
+          "unit": "ml"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "citronstekt_flaskkott__chopped_dill",
+          "amount": 0.5,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Riv {{cucumber}} grovt och pressa ur så mycket vätska som möjligt i en ren kökshanduk eller ett durkslag.",
+        "Blanda gurkan med {{yoghurt}} och hälften av {{citronstekt_flaskkott__chopped_dill}}. Krydda med {{salt}} och peppar."
+      ],
+      "duration": 6,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "citronstekt_flaskkott__lemon_broth",
+      "name": "Blanda Citronbuljong",
+      "outputName": "Citronbuljong",
+      "inputs": [
+        {
+          "id": "water",
+          "amount": 1,
+          "unit": "dl"
+        },
+        {
+          "id": "vegetable_bouillon",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "id": "garlic_flakes",
+          "amount": 4,
+          "unit": "g"
+        },
+        {
+          "id": "citronstekt_flaskkott__minced_garlic",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "citronstekt_flaskkott__lemon_wedges",
+          "amount": 0.5,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Blanda {{water}}, {{vegetable_bouillon}}, {{garlic_flakes}} och {{citronstekt_flaskkott__minced_garlic}} i en liten skål.",
+        "Pressa 4 msk citronjuice från {{citronstekt_flaskkott__lemon_wedges}} och rör ner. Spara resterande klyftor till servering."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "citronstekt_flaskkott__fried_pork",
+      "name": "Stek Fläsket",
+      "outputName": "Brynt fläsk",
+      "inputs": [
+        {
+          "id": "citronstekt_flaskkott__seasoned_pork",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "msk"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i en stor stekpanna på medelhög värme.",
+        "Stek {{citronstekt_flaskkott__seasoned_pork}} under omrörning i 3–4 min, tills det är brynt och genomstekt."
+      ],
+      "duration": 5,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "citronstekt_flaskkott__simmered_pork",
+      "name": "Sjuda i Citronbuljong",
+      "outputName": "Citronstekt fläsk",
+      "inputs": [
+        {
+          "id": "citronstekt_flaskkott__fried_pork",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "citronstekt_flaskkott__lemon_broth",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Sänk till medelvärme. Häll ner {{citronstekt_flaskkott__lemon_broth}} i stekpannan till {{citronstekt_flaskkott__fried_pork}} och sjud i 1–2 min."
+      ],
+      "duration": 1,
+      "wait": 2
+    },
+    {
+      "id": "citronstekt_flaskkott",
+      "name": "Citronstekt fläskkött",
+      "outputName": "Citronstekt fläskkött",
+      "inputs": [
+        {
+          "id": "citronstekt_flaskkott__simmered_pork",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "citronstekt_flaskkott__roasted_roots",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "citronstekt_flaskkott__tzatziki",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "citronstekt_flaskkott__lemon_wedges",
+          "amount": 0.5,
+          "unit": "st"
+        },
+        {
+          "id": "citronstekt_flaskkott__chopped_dill",
+          "amount": 0.5,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{citronstekt_flaskkott__simmered_pork}}, {{citronstekt_flaskkott__roasted_roots}} och {{citronstekt_flaskkott__tzatziki}} på tallrikar.",
+        "Ringla citronbuljongen över köttet.",
+        "Garnera med resterande {{citronstekt_flaskkott__lemon_wedges}} och resterande {{citronstekt_flaskkott__chopped_dill}}."
+      ],
+      "duration": 3,
+      "tags": [
+        "master"
+      ]
+    }
+  ]
+}

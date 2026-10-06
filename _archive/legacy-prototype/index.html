@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">  <title>Recipe Prototype App</title>
+  <!-- Add more includes here -->
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/checkbox-styles.css">
+  <!-- jQuery CDN import with SRI -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Navigation header -->
+    <div id="navigation-header" style="max-width:600px;margin:0 auto 20px auto;padding:15px 20px;background:#f8fafc;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.1);display:flex;justify-content:space-between;align-items:center;">
+      <h1 style="margin:0;color:#2d3748;font-size:24px;">Recipe Prototype App</h1>
+      <a href="shopping-list.html" style="padding:8px 16px;background:#48bb78;color:white;text-decoration:none;border-radius:6px;font-size:14px;">🛒 Inköpslista</a>
+    </div>
+
+    <!-- Phase controls will be inserted here by PhaseManager -->
+    
+    <div id="main-recipe-selector" style="max-width:600px;margin:0 auto 20px auto;padding:15px 20px;background:#f8fafc;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+      <!-- Recipe selector will be populated by JavaScript -->
+    </div>
+
+    <div id="scheduler-options" style="max-width:600px;margin:0 auto 12px auto;padding:8px 20px 8px 20px;background:#f8fafc;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.03);display:flex;align-items:center;gap:32px;justify-content:center;">
+      <label style="display:flex;align-items:center;gap:6px;font-size:1em;">
+        <input type="checkbox" id="prep-first-toggle">
+        <span>Preppa Först</span>
+      </label>
+      <label style="display:flex;align-items:center;gap:6px;font-size:1em;">
+        <input type="checkbox" id="cooks-toggle">
+        <span>2 Kockar</span>
+      </label>
+    </div>
+    <div id="process-visualization"></div>
+    <div id="recipe-main">
+      <div id="recipe-ingredients">
+        <div id="base-ingredients"></div>
+        <div id="completed-prepared-ingredients"></div>
+        <div id="base-ingredients-left"></div>
+        <div id="used-base-ingredients"></div>
+      </div>      <div id="recipe-steps">
+        <!-- Dynamic step list will be rendered here -->
+      </div>
+    </div>
+    <div id="recipe-dev">
+      <div id="recipe-tree"></div>
+      <div id="prepared-ingredients"></div>
+    </div>      <script src="js/core/common.js"></script>
+    <script src="js/core/ui-state-manager.js"></script>
+    <script src="js/core/recipe-tree-builder.js"></script>
+    <script src="js/phases/phase-manager.js"></script>
+    <script src="js/phases/enhanced-phase-manager.js"></script>
+    <script src="js/models/models.js"></script>
+    <script src="js/data/recipes.js"></script>
+      <!-- Recipe Collections - Add new recipe files here -->    <script src="js/data/recipes/mediterranean-chicken.js"></script>
+    <script src="js/data/recipes/spaghetti-bolognese.js"></script>
+    <script src="js/data/recipes/portionspajer.js"></script>
+    <script src="js/data/recipes/spinach-feta-piroger.js"></script>
+    <script src="js/data/recipes/basilika-kyckling-rotmos.js"></script>
+    
+    <script src="js/ui/ui.js"></script>
+    <script src="js/timer.js"></script>
+    <script src="js/core/app.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>

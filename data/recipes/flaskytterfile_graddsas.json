@@ -1,0 +1,345 @@
+{
+  "masterId": "flaskytterfile_graddsas",
+  "source": "hellofresh",
+  "createdAt": 1791038389,
+  "basePortions": 4,
+  "sharedPrep": [
+    "preheated_oven_220"
+  ],
+  "images": {
+    "main": "assets/recipes/flaskytterfile_graddsas/main.jpg",
+    "byNode": {
+      "flaskytterfile_graddsas__boiled_potatoes": "assets/recipes/flaskytterfile_graddsas/steps/boiled_potatoes.jpg",
+      "flaskytterfile_graddsas__apple_salad": "assets/recipes/flaskytterfile_graddsas/steps/apple_salad.jpg",
+      "flaskytterfile_graddsas__cream_sauce": "assets/recipes/flaskytterfile_graddsas/steps/cream_sauce.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 551,
+    "perPortion": {
+      "energyKcal": 630,
+      "energyKj": 2636,
+      "fatG": 31.73,
+      "saturatedFatG": 14.2,
+      "carbsG": 45.42,
+      "sugarsG": 11.9,
+      "proteinG": 40.09,
+      "saltG": 2.2
+    }
+  },
+  "ratings": {
+    "average": 3.4,
+    "count": 1393,
+    "source": "hellofresh"
+  },
+  "cooked": {
+    "hfId": "61e7f52eb1615146202bdb64",
+    "at": "2026-10-03T15:12:32+02:00",
+    "source": "photo",
+    "headline": "med kokt potatis och frisk äppelsallad"
+  },
+  "nodes": [
+    {
+      "id": "flaskytterfile_graddsas__boiled_potatoes",
+      "name": "Koka Småpotatis",
+      "outputName": "Kokt småpotatis",
+      "inputs": [
+        {
+          "id": "small_potato",
+          "amount": 800,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Koka upp {{small_potato}} i en stor kastrull med saltat vatten.",
+        "Koka i 15 min, eller tills de enkelt kan delas med en kniv."
+      ],
+      "duration": 3,
+      "wait": 15,
+      "tags": [],
+      "tips": [
+        "Passiv koktid 15 min → wait 15. Sista steget äger timern.",
+        "FLAG: enhet ifylld — småpotatis g, 800 g vid 4 portioner. Salt till kokvattnet har ingen mängd (nypa i nästa steg, inte Salt steg 5)."
+      ]
+    },
+    {
+      "id": "flaskytterfile_graddsas__kept_potatoes",
+      "name": "Krydda Kokt Potatis",
+      "outputName": "Varm kokt potatis",
+      "inputs": [
+        {
+          "id": "flaskytterfile_graddsas__boiled_potatoes",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Häll av vattnet och lägg tillbaka {{flaskytterfile_graddsas__boiled_potatoes}} i kastrullen. Krydda med en nypa {{salt}} och {{pepper}}. Ställ åt sidan under lock så potatisen håller värmen."
+      ],
+      "duration": 2,
+      "tags": [],
+      "tips": [
+        "Under lock till servering är ingen klockad vila — ingen wait.",
+        "FLAG: salt och peppar här är ouppmätta nypor (pantry), inte yield-raden Salt (steg 5)."
+      ]
+    },
+    {
+      "id": "flaskytterfile_graddsas__seared_pork",
+      "name": "Bryn Fläskytterfilé",
+      "outputName": "Brynt fläskytterfilé",
+      "inputs": [
+        {
+          "id": "pork_tenderloin",
+          "amount": 600,
+          "unit": "g"
+        },
+        {
+          "id": "garlic_flakes",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Hetta upp en skvätt {{olive_oil}} i en stor stekpanna på hög värme. Krydda {{pork_tenderloin}} med {{garlic_flakes}} och en nypa {{salt}}.",
+        "Bryn i 1–2 min per sida."
+      ],
+      "duration": 5,
+      "tags": [],
+      "tips": [
+        "1–2 min per sida är hands-on stekning → duration, inte wait. Ugnen behöver inte vara klar förrän rostningen.",
+        "FLAG: enheter ifyllda — fläskytterfilé g (600 g) och Vitlöksflörter g (8 g) vid 4 portioner. Olivolja är pantry-skvätt (ej i yields)."
+      ]
+    },
+    {
+      "id": "flaskytterfile_graddsas__roasted_pork",
+      "name": "Rosta Fläskytterfilé",
+      "outputName": "Rostad fläskytterfilé",
+      "inputs": [
+        {
+          "id": "flaskytterfile_graddsas__seared_pork",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "preheated_oven_220",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Lägg {{flaskytterfile_graddsas__seared_pork}} på en plåt med bakplåtspapper. Rosta överst i {{preheated_oven_220}} i 12–13 min."
+      ],
+      "duration": 1,
+      "wait": 13,
+      "tags": [],
+      "tips": [
+        "Passiv rostning 12–13 min → wait 13 (övre gräns). Sista steget äger timern.",
+        "Ta ut köttet och låt det vila under folie till servering. Ingen minutsiffra — ingen extra wait."
+      ]
+    },
+    {
+      "id": "flaskytterfile_graddsas__sliced_apple",
+      "name": "Skiva Äpple",
+      "outputName": "Skivat äpple",
+      "inputs": [
+        {
+          "id": "apple",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skär {{apple}} i tunna skivor."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "FLAG: enhet ifylld — äpple st, 2 st vid 4 portioner."
+      ]
+    },
+    {
+      "id": "flaskytterfile_graddsas__chopped_basil",
+      "name": "Hacka Basilika",
+      "outputName": "Hackad basilika",
+      "inputs": [
+        {
+          "id": "fresh_basil",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Finhacka {{fresh_basil}}. Spara lite till garnering."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "FLAG: enhet ifylld som st (kan vara kruka). 1 st vid både 2 och 4 portioner — skalar inte."
+      ]
+    },
+    {
+      "id": "flaskytterfile_graddsas__apple_salad",
+      "name": "Blanda Äppelsallad",
+      "outputName": "Äppelsallad",
+      "inputs": [
+        {
+          "id": "mixed_salad",
+          "amount": 100,
+          "unit": "g"
+        },
+        {
+          "id": "flaskytterfile_graddsas__sliced_apple",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Skölj {{mixed_salad}}.",
+        "Blanda en skvätt {{olive_oil}}, en nypa {{salt}} och {{pepper}} i en stor skål. Tillsätt {{mixed_salad}} och {{flaskytterfile_graddsas__sliced_apple}}."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Blanda precis innan servering så salladen håller sig krispig.",
+        "FLAG: enhet ifylld — salladsmix g. 100 g vid 4 portioner; 2 portioner är 60 g, inte linjärt. Olivolja, salt och peppar är pantry-nypa/skvätt."
+      ]
+    },
+    {
+      "id": "flaskytterfile_graddsas__cream_sauce",
+      "name": "Gör Basilikagräddsås",
+      "outputName": "Basilikagräddsås",
+      "inputs": [
+        {
+          "id": "garlic",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "cooking_cream",
+          "amount": 2,
+          "unit": "pkt"
+        },
+        {
+          "id": "chicken_bouillon",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "id": "flaskytterfile_graddsas__chopped_basil",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Finhacka eller pressa {{garlic}}.",
+        "Hetta upp en generös klick smör och en skvätt {{olive_oil}} i stekpannan på medelvärme. Tillsätt {{garlic}} och fräs i 1–2 min.",
+        "Tillsätt {{cooking_cream}}, {{chicken_bouillon}} och {{flaskytterfile_graddsas__chopped_basil}} (spara lite basilika till garnering). Koka tills uppvärmd, 1–2 min. Krydda med {{salt}} och en generös nypa {{pepper}}."
+      ],
+      "duration": 4,
+      "wait": 2,
+      "tags": [],
+      "tips": [
+        "Fräs 1–2 min är hands-on → duration. Sista stegets uppvärmning 1–2 min är passiv → wait 2.",
+        "FLAG: smör (steg 5) är efter behov med null-mängd. Ingen mängd hittad på — nämns bara i steget, inte som input.",
+        "FLAG: enheter ifyllda — vitlöksklyfta st (2), matlagningsgrädde paket → pkt (2), kycklingbuljong g (8), salt tsk (0,5 tsk; stegets [1/4 tsk | 1/2 tsk]). Gör såsen i samma panna medan fläsket rostas."
+      ]
+    },
+    {
+      "id": "flaskytterfile_graddsas",
+      "name": "Fläskytterfilé i gräddsås",
+      "outputName": "Fläskytterfilé i gräddsås med kokt potatis och äppelsallad",
+      "inputs": [
+        {
+          "id": "flaskytterfile_graddsas__kept_potatoes",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "flaskytterfile_graddsas__roasted_pork",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "flaskytterfile_graddsas__apple_salad",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "flaskytterfile_graddsas__cream_sauce",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skär {{flaskytterfile_graddsas__roasted_pork}} i 2 cm breda skivor.",
+        "Lägg upp {{flaskytterfile_graddsas__kept_potatoes}}, köttet och {{flaskytterfile_graddsas__apple_salad}} på tallrikar. Skeda över {{flaskytterfile_graddsas__cream_sauce}}.",
+        "Garnera salladen med valnötter och köttet med resterande basilika."
+      ],
+      "duration": 4,
+      "tags": [
+        "master"
+      ],
+      "tips": [
+        "FLAG: valnötter har amount 20/40 men unit null. Ingen mängd satt. Inte i inputs. Nöt-allergen ändå, eftersom de garneras.",
+        "HF step 2 (bryn/rosta) och step 3 (hacka/skiva) saknar bild. Step 6 (servering) saknar bild."
+      ]
+    }
+  ]
+}

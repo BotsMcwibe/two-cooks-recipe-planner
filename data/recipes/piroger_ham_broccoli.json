@@ -1,0 +1,206 @@
+{
+  "masterId": "piroger_ham_broccoli",
+  "source": "hellofresh",
+  "createdAt": 1790852559,
+  "basePortions": 4,
+  "sharedPrep": [
+    "pirog_dough",
+    "egg_wash"
+  ],
+  "nodes": [
+    {
+      "id": "piroger_ham_broccoli__preheated_oven_225",
+      "name": "Värm Ugnen",
+      "outputName": "Förvärmd ugn (225°C)",
+      "inputs": [],
+      "steps": [
+        "Värm ugnen till 225°C, eller 200°C varmluft."
+      ],
+      "duration": 1,
+      "tags": [
+        "prep",
+        "no-timer"
+      ],
+      "wait": 12,
+      "tips": [
+        "Ugnen tar vanligtvis 10-15 minuter att värmas upp."
+      ]
+    },
+    {
+      "id": "piroger_ham_broccoli__chopped_broccoli",
+      "name": "Hacka Broccoli",
+      "outputName": "Hackad broccoli",
+      "inputs": [
+        {
+          "id": "broccoli",
+          "amount": 100,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Tina och hacka {{broccoli}} grovt."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "piroger_ham_broccoli__chopped_ham",
+      "name": "Hacka Skinka",
+      "outputName": "Hackad skinka",
+      "inputs": [
+        {
+          "id": "ham",
+          "amount": 100,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Hacka {{ham}} i små bitar."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "piroger_ham_broccoli__pie_filling_broccoli_ham_cheese",
+      "name": "Gör Pirogfyllning",
+      "outputName": "Pirogfyllning",
+      "inputs": [
+        {
+          "id": "piroger_ham_broccoli__chopped_broccoli",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "piroger_ham_broccoli__chopped_ham",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "grated_cheese",
+          "amount": 100,
+          "unit": "g"
+        },
+        {
+          "id": "egg",
+          "amount": 0.5,
+          "unit": "st"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Blanda {{piroger_ham_broccoli__chopped_broccoli}}, {{piroger_ham_broccoli__chopped_ham}}, {{grated_cheese}}, {{egg}} och {{pepper}} i en skål."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "piroger_ham_broccoli__rolled_dough",
+      "name": "Kavla ut Degen",
+      "outputName": "Utkavlade degbitar",
+      "inputs": [
+        {
+          "id": "pirog_dough",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Dela {{pirog_dough}} i 4-6 delar.",
+        "Kavla ut varje del till ca 0,5 cm tjocklek."
+      ],
+      "duration": 4,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "piroger_ham_broccoli__shaped_pies",
+      "name": "Forma Piroger",
+      "outputName": "Formade piroger",
+      "inputs": [
+        {
+          "id": "piroger_ham_broccoli__rolled_dough",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "piroger_ham_broccoli__pie_filling_broccoli_ham_cheese",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Klicka på {{piroger_ham_broccoli__pie_filling_broccoli_ham_cheese}} på ena halvan av varje bit av {{piroger_ham_broccoli__rolled_dough}}.",
+        "Vik ihop degen till en halvmåne och nyp kanterna ordentligt med en gaffel.",
+        "Lägg pajerna på en plåt med bakplåtspapper."
+      ],
+      "duration": 6,
+      "tags": []
+    },
+    {
+      "id": "piroger_ham_broccoli__egg_washed_pies",
+      "name": "Pensla och Jäs Piroger",
+      "outputName": "Penslade piroger (jästa)",
+      "inputs": [
+        {
+          "id": "piroger_ham_broccoli__shaped_pies",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "egg_wash",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "sesame_seeds",
+          "amount": 1,
+          "unit": "msk"
+        }
+      ],
+      "steps": [
+        "Pensla {{piroger_ham_broccoli__shaped_pies}} med {{egg_wash}}.",
+        "Strö över {{sesame_seeds}}.",
+        "Låt jäsa i ca 5 minuter."
+      ],
+      "duration": 3,
+      "wait": 5,
+      "tags": []
+    },
+    {
+      "id": "piroger_ham_broccoli",
+      "name": "Piroger med Skinka och Broccoli",
+      "outputName": "Piroger med Skinka och Broccoli",
+      "inputs": [
+        {
+          "id": "piroger_ham_broccoli__preheated_oven_225",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "piroger_ham_broccoli__egg_washed_pies",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Grädda {{piroger_ham_broccoli__egg_washed_pies}} på nedersta valsen i {{piroger_ham_broccoli__preheated_oven_225}} i ca 12 minuter tills gyllene."
+      ],
+      "duration": 1,
+      "tags": [
+        "master"
+      ],
+      "wait": 12
+    }
+  ]
+}

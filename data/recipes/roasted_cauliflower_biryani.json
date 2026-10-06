@@ -1,0 +1,335 @@
+{
+  "masterId": "roasted_cauliflower_biryani",
+  "source": "hellofresh",
+  "createdAt": 1790795820,
+  "basePortions": 4,
+  "sharedPrep": [
+    "preheated_oven_220"
+  ],
+  "images": {
+    "main": "assets/recipes/roasted_cauliflower_biryani/main.jpg"
+  },
+  "ratings": {
+    "average": 2.9,
+    "count": 46,
+    "source": "hellofresh"
+  },
+  "nodes": [
+    {
+      "id": "roasted_cauliflower_biryani__cauliflower_florets",
+      "name": "Dela Blomkål",
+      "outputName": "Blomkålsbuketter",
+      "inputs": [
+        {
+          "id": "cauliflower",
+          "amount": 450,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Skär {{cauliflower}} i 2 cm stora buketter."
+      ],
+      "duration": 4,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "roasted_cauliflower_biryani__sliced_onion",
+      "name": "Skiva Lök",
+      "outputName": "Skivad lök",
+      "inputs": [
+        {
+          "id": "onion",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Halvera och skiva {{onion}} tunt."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "roasted_cauliflower_biryani__sliced_carrot",
+      "name": "Skiva Morot",
+      "outputName": "Skivad morot",
+      "inputs": [
+        {
+          "id": "carrot",
+          "amount": 4,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skiva {{carrot}} tunt (skalning är valfritt)."
+      ],
+      "duration": 4,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "FLAG: _unitInference Morot 4 tsk (4p) / 2 st (2p) — överstyrd till 4 st (metod: skiva hela morötter)."
+      ]
+    },
+    {
+      "id": "roasted_cauliflower_biryani__roasted_cauliflower",
+      "name": "Rosta Blomkål",
+      "outputName": "Rostad blomkål",
+      "inputs": [
+        {
+          "id": "preheated_oven_220",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "roasted_cauliflower_biryani__cauliflower_florets",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Placera {{roasted_cauliflower_biryani__cauliflower_florets}} på en bakplåt täckt med bakplåtspapper.",
+        "Häll över {{olive_oil}} och krydda med {{salt}} och {{pepper}}. Blanda och sprid buketterna jämnt över plåten.",
+        "Rosta i {{preheated_oven_220}} tills möra och lätt gyllenbruna, 20–25 min."
+      ],
+      "duration": 3,
+      "wait": 25,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "roasted_cauliflower_biryani__chopped_coriander",
+      "name": "Hacka Koriander",
+      "outputName": "Hackad koriander",
+      "inputs": [
+        {
+          "id": "coriander",
+          "amount": 1,
+          "unit": "kruka"
+        }
+      ],
+      "steps": [
+        "Grovhacka bladen från {{coriander}} (spara några blad till servering)."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "FLAG: _unitInference Koriander 1 g (alla yields) — överstyrd till 1 kruka (färsk örtkuka; metod: grovhacka)."
+      ]
+    },
+    {
+      "id": "roasted_cauliflower_biryani__chopped_almonds",
+      "name": "Hacka Mandlar",
+      "outputName": "Hackade mandlar",
+      "inputs": [
+        {
+          "id": "almonds",
+          "amount": 40,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Grovhacka {{almonds}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "roasted_cauliflower_biryani__sliced_chili",
+      "name": "Skiva Chili",
+      "outputName": "Skivad chili",
+      "inputs": [
+        {
+          "id": "fresh_chili",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Halvera {{fresh_chili}}, ta bort frön och skiva tunt."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "FLAG: _unitInference Chili 2 tsk — överstyrd till 2 st (metod: halvera/skiva hela chili)."
+      ]
+    },
+    {
+      "id": "roasted_cauliflower_biryani__fried_onion_carrot",
+      "name": "Fräs Lök och Morot",
+      "outputName": "Frästa lök och morot med garam masala",
+      "inputs": [
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "roasted_cauliflower_biryani__sliced_onion",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "roasted_cauliflower_biryani__sliced_carrot",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "garam_masala",
+          "amount": 6,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i en djup medelstor stekpanna på medelvärme.",
+        "Tillsätt {{roasted_cauliflower_biryani__sliced_onion}} och {{roasted_cauliflower_biryani__sliced_carrot}}. Fräs tills löken har mjuknat, ca 5 min.",
+        "Häll i {{garam_masala}}, rör om tills doftande, ca 1 min."
+      ],
+      "duration": 6,
+      "tags": []
+    },
+    {
+      "id": "roasted_cauliflower_biryani__simmered_rice",
+      "name": "Koka Riset",
+      "outputName": "Kokt kryddris",
+      "inputs": [
+        {
+          "id": "roasted_cauliflower_biryani__fried_onion_carrot",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "basmati_rice",
+          "amount": 300,
+          "unit": "g"
+        },
+        {
+          "id": "dried_cranberries",
+          "amount": 40,
+          "unit": "g"
+        },
+        {
+          "id": "water",
+          "amount": 10,
+          "unit": "dl"
+        },
+        {
+          "id": "vegetable_bouillon",
+          "amount": 4,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Rör i {{basmati_rice}} och {{dried_cranberries}} i stekpannan med {{roasted_cauliflower_biryani__fried_onion_carrot}}. Häll i {{water}} och {{vegetable_bouillon}} och koka upp.",
+        "Sänk värmen och låt sjuda under lock tills vattnet är absorberat och riset är färdigkokt, 16–18 min."
+      ],
+      "duration": 1,
+      "wait": 18,
+      "tags": [],
+      "tips": [
+        "Häll i lite extra vatten om vätskan har absorberats innan riset är färdigt.",
+        "FLAG: _unitInference Vatten 10 ml — överstyrd till 10 dl (HF-typ water-vatten-vand-1dl; kokvätska till 300 g basmati).",
+        "FLAG: _unitInference Buljong 4 ml — överstyrd till 4 g (pulver/tärning; samma mängd som övriga masters)."
+      ]
+    },
+    {
+      "id": "roasted_cauliflower_biryani__cooked_biryani",
+      "name": "Blanda Biryani",
+      "outputName": "Kokt blomkålsbiryani",
+      "inputs": [
+        {
+          "id": "roasted_cauliflower_biryani__simmered_rice",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "roasted_cauliflower_biryani__chopped_coriander",
+          "amount": 0.9,
+          "unit": "st"
+        },
+        {
+          "id": "roasted_cauliflower_biryani__chopped_almonds",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "roasted_cauliflower_biryani__roasted_cauliflower",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Blanda i {{roasted_cauliflower_biryani__chopped_coriander}}, {{roasted_cauliflower_biryani__chopped_almonds}} och {{roasted_cauliflower_biryani__roasted_cauliflower}} i {{roasted_cauliflower_biryani__simmered_rice}} när riset är färdigt."
+      ],
+      "duration": 1,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "FLAG: koriander delad 0.9 st hit / 0.1 st till servering (HF: 'spara några blad till servering', ingen proportion angiven — uppskattning)."
+      ]
+    },
+    {
+      "id": "roasted_cauliflower_biryani",
+      "name": "Rostad blomkålsbiryani",
+      "outputName": "Rostad blomkålsbiryani",
+      "inputs": [
+        {
+          "id": "roasted_cauliflower_biryani__cooked_biryani",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "sour_cream",
+          "amount": 300,
+          "unit": "g"
+        },
+        {
+          "id": "roasted_cauliflower_biryani__sliced_chili",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "roasted_cauliflower_biryani__chopped_coriander",
+          "amount": 0.1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Fördela {{roasted_cauliflower_biryani__cooked_biryani}} i djupa tallrikar.",
+        "Toppa med {{sour_cream}} och strö över {{roasted_cauliflower_biryani__sliced_chili}} samt de sparade bladen från {{roasted_cauliflower_biryani__chopped_coriander}}."
+      ],
+      "duration": 3,
+      "wait": 0,
+      "tags": [
+        "master"
+      ]
+    }
+  ]
+}

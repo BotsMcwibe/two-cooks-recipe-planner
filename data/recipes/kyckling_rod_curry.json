@@ -1,0 +1,156 @@
+{
+  "masterId": "kyckling_rod_curry",
+  "source": "citygross",
+  "createdAt": 1791054766,
+  "basePortions": 4,
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/kyckling_rod_curry/main.jpg"
+  },
+  "nodes": [
+    {
+      "id": "kyckling_rod_curry__rice",
+      "name": "Koka Jasminris",
+      "outputName": "Kokt jasminris",
+      "inputs": [
+        {
+          "id": "jasmine_rice",
+          "amount": 4,
+          "unit": "dl"
+        }
+      ],
+      "steps": [
+        "Koka {{jasmine_rice}} enligt anvisningen på förpackningen, ca 10–12 min."
+      ],
+      "duration": 2,
+      "wait": 12,
+      "tags": [],
+      "tips": [
+        "Råsteget säger bara \"enligt anvisningarna\" och listar inget vatten. 10–12 min är en gissning så att förpackningskoket får en timer. Inte uppskalat."
+      ]
+    },
+    {
+      "id": "kyckling_rod_curry__prepped_veg",
+      "name": "Förbered Grönsaker",
+      "outputName": "Hackade grönsaker",
+      "inputs": [
+        {
+          "id": "onion",
+          "amount": 0.5,
+          "unit": "st"
+        },
+        {
+          "id": "carrot",
+          "amount": 200,
+          "unit": "g"
+        },
+        {
+          "id": "zucchini",
+          "amount": 0.5,
+          "unit": "st"
+        },
+        {
+          "id": "paprika",
+          "amount": 0.5,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skala och hacka {{onion}}.",
+        "Skala {{carrot}} och skiva i slantar.",
+        "Tärna {{zucchini}} och strimla {{paprika}}."
+      ],
+      "duration": 8,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Paprika i rådatan är röd paprika, mappad till befintlig paprika. Halva lökar, zucchini och paprika står så vid 4 portioner."
+      ]
+    },
+    {
+      "id": "kyckling_rod_curry__curry",
+      "name": "Sjuda Röd Curry",
+      "outputName": "Kyckling i röd curry",
+      "inputs": [
+        {
+          "id": "kyckling_rod_curry__prepped_veg",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "chicken_breast_strips",
+          "amount": 550,
+          "unit": "g"
+        },
+        {
+          "id": "paneng_red_curry",
+          "amount": 16,
+          "unit": "g"
+        },
+        {
+          "id": "coconut_milk",
+          "amount": 400,
+          "unit": "ml"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Stek {{chicken_breast_strips}} i {{oil}}.",
+        "Tillsätt {{kyckling_rod_curry__prepped_veg}} och fräs ytterligare någon minut.",
+        "Tillsätt {{paneng_red_curry}} och {{coconut_milk}}. Låt sjuda 10 min. Smaka av med {{salt}} och {{pepper}}."
+      ],
+      "duration": 6,
+      "wait": 10,
+      "tags": [],
+      "tips": [
+        "Olja till stekning saknade mängd (amount 0, unit null) → default 1 skvätt.",
+        "Salt och svartpeppar saknar mängd och enhet. Satta till 1 nypa var. Svartpeppar är befintlig peppar.",
+        "Strimlad kyckling är mappad till strimlad kycklingbröstfilé. \"Någon minut\" är hands-on i duration, inte en extra wait. 10 min är råstegets timer."
+      ]
+    },
+    {
+      "id": "kyckling_rod_curry",
+      "name": "Kyckling i röd curry med grönsaker",
+      "outputName": "Kyckling i röd curry med grönsaker",
+      "inputs": [
+        {
+          "id": "kyckling_rod_curry__curry",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "kyckling_rod_curry__rice",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "mixed_salad",
+          "amount": 35,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Servera {{kyckling_rod_curry__curry}} med {{kyckling_rod_curry__rice}} och {{mixed_salad}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "master"
+      ]
+    }
+  ]
+}

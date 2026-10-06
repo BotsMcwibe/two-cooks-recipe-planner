@@ -1,0 +1,251 @@
+{
+  "masterId": "rakor_i_sotsur_sas",
+  "source": "hellofresh",
+  "createdAt": 1791035806,
+  "basePortions": 4,
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/rakor_i_sotsur_sas/main.jpg",
+    "byNode": {
+      "rakor_i_sotsur_sas__cooked_udon": "assets/recipes/rakor_i_sotsur_sas/steps/cooked_udon.jpg",
+      "rakor_i_sotsur_sas__sliced_onion": "assets/recipes/rakor_i_sotsur_sas/steps/prepped_veg.jpg",
+      "rakor_i_sotsur_sas__minced_garlic": "assets/recipes/rakor_i_sotsur_sas/steps/prepped_veg.jpg",
+      "rakor_i_sotsur_sas__sliced_spring_onion": "assets/recipes/rakor_i_sotsur_sas/steps/prepped_veg.jpg",
+      "rakor_i_sotsur_sas__sweet_sour_shrimp": "assets/recipes/rakor_i_sotsur_sas/steps/sweet_sour_shrimp.jpg",
+      "rakor_i_sotsur_sas": "assets/recipes/rakor_i_sotsur_sas/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 396,
+    "perPortion": {
+      "energyKcal": 577,
+      "energyKj": 2415,
+      "fatG": 9.9,
+      "saturatedFatG": 1.9,
+      "carbsG": 92,
+      "sugarsG": 31.4,
+      "fiberG": 7.9,
+      "proteinG": 26.6,
+      "saltG": 6.8
+    }
+  },
+  "ratings": {
+    "average": 3.6,
+    "count": 22,
+    "source": "hellofresh"
+  },
+  "cooked": {
+    "hfId": "66ab66b1f66002bbd100b42c",
+    "at": "2026-10-03T15:12:32+02:00",
+    "source": "photo",
+    "headline": "med udonnudlar och knapriga jordnötter"
+  },
+  "nodes": [
+    {
+      "id": "rakor_i_sotsur_sas__cooked_udon",
+      "name": "Koka Udonnudlar",
+      "outputName": "Kokta udonnudlar",
+      "inputs": [
+        {
+          "id": "udon_noodles",
+          "amount": 300,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Koka upp en kastrull med saltat vatten.",
+        "Koka {{udon_noodles}} i 4–6 min, tills mjuka."
+      ],
+      "duration": 4,
+      "wait": 6,
+      "tags": [],
+      "tips": [
+        "Kokvattnet ska vara lika salt som havsvatten."
+      ]
+    },
+    {
+      "id": "rakor_i_sotsur_sas__drained_udon",
+      "name": "Skölj Udonnudlar",
+      "outputName": "Sköljda udonnudlar",
+      "inputs": [
+        {
+          "id": "rakor_i_sotsur_sas__cooked_udon",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Häll av vattnet och skölj {{rakor_i_sotsur_sas__cooked_udon}} i kallt vatten."
+      ],
+      "duration": 2,
+      "tags": []
+    },
+    {
+      "id": "rakor_i_sotsur_sas__sliced_onion",
+      "name": "Skiva Lök",
+      "outputName": "Skivad lök",
+      "inputs": [
+        {
+          "id": "onion",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skär {{onion}} i tunna skivor."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "rakor_i_sotsur_sas__minced_garlic",
+      "name": "Finhacka Vitlök",
+      "outputName": "Finhackad vitlök",
+      "inputs": [
+        {
+          "id": "garlic",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Finhacka eller pressa {{garlic}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "rakor_i_sotsur_sas__sliced_spring_onion",
+      "name": "Skiva Salladslök",
+      "outputName": "Skivad salladslök",
+      "inputs": [
+        {
+          "id": "spring_onion",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skär {{spring_onion}} i tunna skivor."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "rakor_i_sotsur_sas__sweet_sour_shrimp",
+      "name": "Stek Räkor i Sötsur Sås",
+      "outputName": "Räkor i sötsur sås",
+      "inputs": [
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "rakor_i_sotsur_sas__sliced_onion",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "wok_mix",
+          "amount": 400,
+          "unit": "g"
+        },
+        {
+          "id": "shrimp",
+          "amount": 300,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "rakor_i_sotsur_sas__minced_garlic",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "soy_sauce",
+          "amount": 100,
+          "unit": "ml"
+        },
+        {
+          "id": "white_wine_vinegar",
+          "amount": 24,
+          "unit": "ml"
+        },
+        {
+          "id": "chili_flakes",
+          "amount": 2,
+          "unit": "g"
+        },
+        {
+          "id": "sweet_chili_sauce",
+          "amount": 160,
+          "unit": "g"
+        },
+        {
+          "id": "rakor_i_sotsur_sas__drained_udon",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i en stekpanna på medelhög värme. Stek {{rakor_i_sotsur_sas__sliced_onion}} och {{wok_mix}} i 3–4 min, tills något mjuk.",
+        "Tillsätt {{shrimp}} och {{salt}} och stek i 3–4 min, tills genomstekta.",
+        "Rör ner {{rakor_i_sotsur_sas__minced_garlic}}, {{soy_sauce}}, {{white_wine_vinegar}}, {{chili_flakes}}, {{sweet_chili_sauce}} och {{rakor_i_sotsur_sas__drained_udon}} och sjud i 1–2 min, tills tjocknat."
+      ],
+      "duration": 9,
+      "wait": 2,
+      "tags": [],
+      "tips": [
+        "Räkorna är färdiga när de är rosa utanpå och ogenomskinliga i mitten.",
+        "Skippa chili eller använd mindre om du inte tycker om stark mat."
+      ]
+    },
+    {
+      "id": "rakor_i_sotsur_sas",
+      "name": "Räkor i sötsur sås",
+      "outputName": "Räkor i sötsur sås",
+      "inputs": [
+        {
+          "id": "rakor_i_sotsur_sas__sweet_sour_shrimp",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "salted_peanuts",
+          "amount": 40,
+          "unit": "g"
+        },
+        {
+          "id": "sesame_seeds",
+          "amount": 20,
+          "unit": "g"
+        },
+        {
+          "id": "rakor_i_sotsur_sas__sliced_spring_onion",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{rakor_i_sotsur_sas__sweet_sour_shrimp}} i skålar.",
+        "Toppa med {{salted_peanuts}}, {{sesame_seeds}} och {{rakor_i_sotsur_sas__sliced_spring_onion}}."
+      ],
+      "duration": 3,
+      "tags": [
+        "master"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,430 @@
+{
+  "masterId": "lentil_gratin",
+  "source": "hellofresh",
+  "createdAt": 1790795820,
+  "basePortions": 4,
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/lentil_gratin/main.jpg"
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 215,
+    "perPortion": {
+      "energyKcal": 245,
+      "energyKj": 1023,
+      "fatG": 6.31,
+      "saturatedFatG": 3.9,
+      "carbsG": 20.68,
+      "sugarsG": 1,
+      "proteinG": 21.73,
+      "saltG": 1.1
+    }
+  },
+  "ratings": {
+    "average": 2.8,
+    "count": 55,
+    "source": "hellofresh"
+  },
+  "nodes": [
+    {
+      "id": "lentil_gratin__preheated_oven_200",
+      "name": "Värm Ugnen",
+      "outputName": "Förvärmd ugn (200°C)",
+      "inputs": [],
+      "steps": [
+        "Sätt ugnen på 200°C."
+      ],
+      "duration": 1,
+      "wait": 12,
+      "tags": [
+        "prep",
+        "no-timer"
+      ],
+      "tips": [
+        "HF anger 200°C (inte 220) — lokal ugnsnode, inte preheated_oven_220."
+      ]
+    },
+    {
+      "id": "lentil_gratin__boiled_potato",
+      "name": "Koka Potatis",
+      "outputName": "Förkokt potatis",
+      "inputs": [
+        {
+          "id": "potato",
+          "amount": 500,
+          "unit": "g"
+        },
+        {
+          "id": "water",
+          "amount": 1.5,
+          "unit": "l"
+        }
+      ],
+      "steps": [
+        "Täck {{potato}} med {{water}} i en kastrull.",
+        "Koka på medelvärme i 10 min."
+      ],
+      "duration": 2,
+      "wait": 10,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Vi förkokar potatisen så den inte behöver gratinera för länge i ugnen.",
+        "FLAG: _unitInference Potatis 500 g — behållen (large g).",
+        "FLAG: kokvatten ej i HF yields — modellerat som pantry water 1,5 l."
+      ]
+    },
+    {
+      "id": "lentil_gratin__chopped_onion",
+      "name": "Finhacka Lök",
+      "outputName": "Finhackad lök",
+      "inputs": [
+        {
+          "id": "onion",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Halvera, skala och finhacka {{onion}}."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "FLAG: _unitInference Lök 2 st — behållen (countable)."
+      ]
+    },
+    {
+      "id": "lentil_gratin__chopped_carrot",
+      "name": "Finhacka Morot",
+      "outputName": "Finhackad morot",
+      "inputs": [
+        {
+          "id": "carrot",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Ansa och finhacka {{carrot}}."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "FLAG: _unitInference Morot 2 st — behållen (countable)."
+      ]
+    },
+    {
+      "id": "lentil_gratin__chopped_pepper",
+      "name": "Finhacka Paprika",
+      "outputName": "Finhackad paprika",
+      "inputs": [
+        {
+          "id": "paprika",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Halvera {{paprika}}, skär bort kärnhus och finhacka."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "FLAG: _unitInference Röd paprika 2 tsk — överstyrd till 2 st (metod: halvera paprika, skär bort kärnhus och finhacka)."
+      ]
+    },
+    {
+      "id": "lentil_gratin__chopped_mushrooms",
+      "name": "Grovhacka Svamp",
+      "outputName": "Grovhackad svamp",
+      "inputs": [
+        {
+          "id": "forest_mushrooms",
+          "amount": 400,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Grovhacka {{forest_mushrooms}}."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "FLAG: _unitInference Skogschampinjoner 400 g — behållen (large g)."
+      ]
+    },
+    {
+      "id": "lentil_gratin__chopped_parsley",
+      "name": "Grovhacka Persilja",
+      "outputName": "Grovhackad persilja",
+      "inputs": [
+        {
+          "id": "parsley",
+          "amount": 1,
+          "unit": "kruka"
+        }
+      ],
+      "steps": [
+        "Grovhacka {{parsley}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "FLAG: _unitInference Bladpersilja 1 g — överstyrd till 1 kruka (metod: grovhacka/toppa; cousins använder kruka).",
+        "Spara en handfull till topping vid servering."
+      ]
+    },
+    {
+      "id": "lentil_gratin__rinsed_lentils",
+      "name": "Skölj Linser",
+      "outputName": "Sköljda gröna linser",
+      "inputs": [
+        {
+          "id": "green_lentils",
+          "amount": 2,
+          "unit": "burk"
+        }
+      ],
+      "steps": [
+        "Rensa och skölj {{green_lentils}} i en sil."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "FLAG: _unitInference Gröna linser 2 g (reason dry) — överstyrd till 2 burk (metod: skölj i sil; pantry green_lentils är canned; cousins warm_lentil_salad/creamy_aubergine_curry använder 2 burk)."
+      ]
+    },
+    {
+      "id": "lentil_gratin__lentil_mix",
+      "name": "Gör Linsröra",
+      "outputName": "Linsröra",
+      "inputs": [
+        {
+          "id": "lentil_gratin__chopped_onion",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "lentil_gratin__chopped_carrot",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "lentil_gratin__chopped_pepper",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "lentil_gratin__chopped_mushrooms",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "lentil_gratin__chopped_parsley",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "lentil_gratin__rinsed_lentils",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "cajun_spice_mix",
+          "amount": 4,
+          "unit": "tsk"
+        },
+        {
+          "id": "vegetable_bouillon",
+          "amount": 4,
+          "unit": "g"
+        },
+        {
+          "id": "canned_tomatoes",
+          "amount": 2,
+          "unit": "burk"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i en stor stekpanna på medelvärme.",
+        "Fräs {{lentil_gratin__chopped_onion}} och {{lentil_gratin__chopped_carrot}} tills de blivit något mjukare, 4–5 min.",
+        "Lägg i {{lentil_gratin__chopped_pepper}} och {{lentil_gratin__chopped_mushrooms}}. Krydda med {{salt}} och {{pepper}}. Fräs under omrörning i 5 min.",
+        "Lägg i merparten av {{lentil_gratin__chopped_parsley}} (spara en handfull till topping), {{lentil_gratin__rinsed_lentils}}, {{cajun_spice_mix}}, {{vegetable_bouillon}} och {{canned_tomatoes}}. Fräs i ytterligare 5 min."
+      ],
+      "duration": 16,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "FLAG: _unitInference Ay Cajun-ba 4 tsk — behållen (small tsk / spice).",
+        "FLAG: _unitInference Buljong 4 ml — överstyrd till 4 g vegetable_bouillon (cousins potato_leek_gratin/warm_lentil_salad; HF yields-2 hade null).",
+        "FLAG: _unitInference Krossade tomater 2 burk — behållen (can).",
+        "Stekolja är pantry-skvätt (ej i HF yields)."
+      ]
+    },
+    {
+      "id": "lentil_gratin__potato_slices",
+      "name": "Skiva Potatis",
+      "outputName": "Potatisskivor",
+      "inputs": [
+        {
+          "id": "lentil_gratin__boiled_potato",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Häll av {{lentil_gratin__boiled_potato}} och skiva dem tunt."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "lentil_gratin__gratin",
+      "name": "Gratinera Linsgratäng",
+      "outputName": "Linsgratäng",
+      "inputs": [
+        {
+          "id": "lentil_gratin__preheated_oven_200",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "lentil_gratin__lentil_mix",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "lentil_gratin__potato_slices",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "grated_mozzarella",
+          "amount": 100,
+          "unit": "g"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Lägg över {{lentil_gratin__lentil_mix}} till en ugnsform.",
+        "Placera ett lager av {{lentil_gratin__potato_slices}} jämnt på toppen.",
+        "Strö {{grated_mozzarella}} ovanpå och krydda med {{pepper}}.",
+        "Gratinera i {{lentil_gratin__preheated_oven_200}}, 10–15 min."
+      ],
+      "duration": 3,
+      "wait": 15,
+      "tags": [],
+      "tips": [
+        "FLAG: _unitInference Riven mozzarella 100 g — behållen."
+      ]
+    },
+    {
+      "id": "lentil_gratin__gem_salad",
+      "name": "Gör Gemsallad",
+      "outputName": "Gemsallad",
+      "inputs": [
+        {
+          "id": "lettuce",
+          "amount": 180,
+          "unit": "g"
+        },
+        {
+          "id": "lemon",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Halvera {{lemon}}.",
+        "Dela {{lettuce}} i stora bitar och lägg i en skål.",
+        "Häll över {{olive_oil}} och citronjuice. Krydda med {{salt}} och {{pepper}}."
+      ],
+      "duration": 4,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "FLAG: _unitInference Citrusfrukt 1 tsk — överstyrd till 1 st lemon (metod: halvera citron).",
+        "FLAG: _unitInference Sallad 180 g — behållen."
+      ]
+    },
+    {
+      "id": "lentil_gratin",
+      "name": "Mustig linsgratäng",
+      "outputName": "Mustig linsgratäng",
+      "inputs": [
+        {
+          "id": "lentil_gratin__gratin",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "lentil_gratin__gem_salad",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{lentil_gratin__gratin}} i skålar med {{lentil_gratin__gem_salad}} vid sidan.",
+        "Toppa med den sparade persiljan."
+      ],
+      "duration": 3,
+      "tags": [
+        "master"
+      ],
+      "wait": 0
+    }
+  ]
+}

@@ -1,0 +1,354 @@
+{
+  "masterId": "grekisk_notfarsmoussaka",
+  "source": "hellofresh",
+  "createdAt": 1791041815,
+  "basePortions": 4,
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/grekisk_notfarsmoussaka/main.jpg",
+    "byNode": {
+      "grekisk_notfarsmoussaka__roasted_aubergine": "assets/recipes/grekisk_notfarsmoussaka/steps/roasted_aubergine.jpg",
+      "grekisk_notfarsmoussaka__browned_mince": "assets/recipes/grekisk_notfarsmoussaka/steps/browned_mince.jpg",
+      "grekisk_notfarsmoussaka__meat_sauce": "assets/recipes/grekisk_notfarsmoussaka/steps/meat_sauce.jpg",
+      "grekisk_notfarsmoussaka__gratin": "assets/recipes/grekisk_notfarsmoussaka/steps/gratin.jpg",
+      "grekisk_notfarsmoussaka__green_salad": "assets/recipes/grekisk_notfarsmoussaka/steps/green_salad.jpg",
+      "grekisk_notfarsmoussaka": "assets/recipes/grekisk_notfarsmoussaka/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 637,
+    "perPortion": {
+      "energyKcal": 477,
+      "energyKj": 1995,
+      "fatG": 25.7,
+      "saturatedFatG": 11.2,
+      "carbsG": 26.4,
+      "sugarsG": 19,
+      "fiberG": 10.3,
+      "proteinG": 34.7,
+      "saltG": 4.5
+    }
+  },
+  "ratings": {
+    "average": 3.4,
+    "count": 44,
+    "source": "hellofresh"
+  },
+  "cooked": {
+    "hfId": "68c2e7a7f65599931600e695",
+    "at": "2026-10-03T15:12:32+02:00",
+    "source": "photo",
+    "headline": "med rostad aubergine och grönsallad"
+  },
+  "nodes": [
+    {
+      "id": "grekisk_notfarsmoussaka__preheated_oven_240",
+      "name": "Värm Ugnen",
+      "outputName": "Förvärmd ugn (240°C)",
+      "inputs": [],
+      "steps": [
+        "Värm ugnen till 240°C, eller 220°C varmluft."
+      ],
+      "duration": 1,
+      "wait": 12,
+      "tags": [
+        "prep",
+        "no-timer"
+      ],
+      "tips": [
+        "Ugnen tar vanligtvis 10–15 minuter att värmas upp.",
+        "HF anger 240°C/220°C varmluft — lokal ugnsnode, inte preheated_oven_220."
+      ]
+    },
+    {
+      "id": "grekisk_notfarsmoussaka__sliced_aubergine",
+      "name": "Skiva Aubergine",
+      "outputName": "Aubergineskivor",
+      "inputs": [
+        {
+          "id": "aubergine",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skär {{aubergine}} i 1 cm tunna skivor."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "grekisk_notfarsmoussaka__roasted_aubergine",
+      "name": "Rosta Aubergine",
+      "outputName": "Rostad aubergine",
+      "inputs": [
+        {
+          "id": "grekisk_notfarsmoussaka__preheated_oven_240",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "grekisk_notfarsmoussaka__sliced_aubergine",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Lägg {{grekisk_notfarsmoussaka__sliced_aubergine}} på en plåt med bakplåtspapper.",
+        "Blanda med en generös skvätt {{olive_oil}} och krydda med {{salt}} och en nypa {{pepper}}.",
+        "Rosta i {{grekisk_notfarsmoussaka__preheated_oven_240}} i 10–12 min, eller tills auberginen är mjuk och lätt gyllene."
+      ],
+      "duration": 2,
+      "wait": 12,
+      "tags": [],
+      "tips": [
+        "Olivoljan på plåten är en skvätt, inte stekoljans 1 msk."
+      ]
+    },
+    {
+      "id": "grekisk_notfarsmoussaka__prepped_veg",
+      "name": "Hacka Zucchini, Lök och Vitlök",
+      "outputName": "Tärnad zucchini, hackad lök och vitlök",
+      "inputs": [
+        {
+          "id": "zucchini",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "onion",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "garlic",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Tärna {{zucchini}} i 1 cm stora bitar.",
+        "Finhacka {{onion}}. Finhacka eller pressa {{garlic}}."
+      ],
+      "duration": 5,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Zucchini är 1 st vid både 3 och 4 portioner."
+      ]
+    },
+    {
+      "id": "grekisk_notfarsmoussaka__browned_mince",
+      "name": "Stek Nötfärs",
+      "outputName": "Brynt nötfärs",
+      "inputs": [
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "msk"
+        },
+        {
+          "id": "ground_beef",
+          "amount": 450,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i en stor stekpanna på medelhög värme.",
+        "Stek {{ground_beef}} i 3–4 min, eller tills den är brynt."
+      ],
+      "duration": 5,
+      "wait": 0,
+      "tags": [],
+      "tips": [
+        "3–4 min är hands-on stek, därför duration och wait 0. Nötfärs är 450 g vid både 3 och 4 portioner."
+      ]
+    },
+    {
+      "id": "grekisk_notfarsmoussaka__meat_sauce",
+      "name": "Gör Tomatköttfärs",
+      "outputName": "Tomatköttfärs",
+      "inputs": [
+        {
+          "id": "grekisk_notfarsmoussaka__browned_mince",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "grekisk_notfarsmoussaka__prepped_veg",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "spicemix_pearl",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "id": "chicken_bouillon",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "id": "canned_tomatoes",
+          "amount": 780,
+          "unit": "g"
+        },
+        {
+          "id": "sugar",
+          "amount": 1,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Tillsätt lök och zucchini från {{grekisk_notfarsmoussaka__prepped_veg}} till {{grekisk_notfarsmoussaka__browned_mince}} och stek i 3–4 min, tills de är mjuka. Krydda med hälften av {{salt}} och en nypa {{pepper}}.",
+        "Tillsätt vitlöken, {{spicemix_pearl}} och {{chicken_bouillon}} och stek i 30 sek, tills vitlöken doftar.",
+        "Rör i {{canned_tomatoes}}, resten av {{salt}} och {{sugar}}. Sjud i 1 min, tills såsen tjocknat något."
+      ],
+      "duration": 5,
+      "wait": 1,
+      "tags": [],
+      "tips": [
+        "Stektiderna är hands-on i duration. Bara sjudningen på 1 min är wait, och den äger sista steget.",
+        "Salt till grönsaker och salt till sås är 0,5 tsk vardera, samlat till 1 tsk.",
+        "Krossade tomater 780 g och buljong 8 g är samma vid 3 och 4 portioner. Köttet ska vara genomstekt och utan rosa."
+      ]
+    },
+    {
+      "id": "grekisk_notfarsmoussaka__gratin",
+      "name": "Gratinera Moussaka",
+      "outputName": "Gratinerad moussaka",
+      "inputs": [
+        {
+          "id": "grekisk_notfarsmoussaka__preheated_oven_240",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "grekisk_notfarsmoussaka__meat_sauce",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "grekisk_notfarsmoussaka__roasted_aubergine",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "mornay_sauce",
+          "amount": 200,
+          "unit": "g"
+        },
+        {
+          "id": "grated_cheese",
+          "amount": 40,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Häll hälften av {{grekisk_notfarsmoussaka__meat_sauce}} i en ugnsform. Toppa med {{grekisk_notfarsmoussaka__roasted_aubergine}} och därefter resten av köttfärsen.",
+        "Bre på {{mornay_sauce}} och strö över {{grated_cheese}}.",
+        "Gratinera i {{grekisk_notfarsmoussaka__preheated_oven_240}} i 10–15 min, tills toppen bubblar och osten är gyllene."
+      ],
+      "duration": 4,
+      "wait": 15,
+      "tags": [],
+      "tips": [
+        "Mornaysås är 200 g och osten 40 g vid både 3 och 4 portioner. Salladen görs under gratineringen och väntar inte inuti den här noden."
+      ]
+    },
+    {
+      "id": "grekisk_notfarsmoussaka__green_salad",
+      "name": "Blanda Grönsallad",
+      "outputName": "Grönsallad med persilja",
+      "inputs": [
+        {
+          "id": "lettuce",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "parsley",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Ansa, skölj och grovhacka {{lettuce}}. Grovhacka blad från {{parsley}}.",
+        "Blanda sallad och persilja och krydda med en nypa {{salt}} och {{pepper}}."
+      ],
+      "duration": 4,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Persilja är 1 st från 2 till 4 portioner. Salladen är baby gem, mappad till lettuce.",
+        "En skvätt olivolja är valfri och har ingen mängd."
+      ]
+    },
+    {
+      "id": "grekisk_notfarsmoussaka",
+      "name": "Grekisk nötfärsmoussaka",
+      "outputName": "Grekisk nötfärsmoussaka",
+      "inputs": [
+        {
+          "id": "grekisk_notfarsmoussaka__gratin",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "grekisk_notfarsmoussaka__green_salad",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{grekisk_notfarsmoussaka__gratin}} i skålar och servera med {{grekisk_notfarsmoussaka__green_salad}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "master"
+      ]
+    }
+  ]
+}

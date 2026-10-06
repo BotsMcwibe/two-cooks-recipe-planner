@@ -1,0 +1,328 @@
+{
+  "masterId": "katalansk_raksoppa",
+  "source": "linas",
+  "createdAt": 1791054767,
+  "basePortions": 2,
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/katalansk_raksoppa/main.jpg"
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "perPortion": {
+      "energyKcal": 686,
+      "fatG": 24.34,
+      "carbsG": 86.51,
+      "proteinG": 30.25
+    }
+  },
+  "ratings": {
+    "average": 4.14,
+    "count": 333,
+    "source": "linas"
+  },
+  "nodes": [
+    {
+      "id": "katalansk_raksoppa__oven",
+      "name": "Värm Ugnen",
+      "outputName": "Varm ugn",
+      "inputs": [],
+      "steps": [
+        "Värm ugnen till 180°C varmluft eller 200°C vanlig."
+      ],
+      "duration": 1,
+      "tags": [
+        "prep",
+        "no-timer"
+      ],
+      "tips": [
+        "Råsteget anger ingen förvärmningstid, därför ingen wait. Inte påhittad."
+      ]
+    },
+    {
+      "id": "katalansk_raksoppa__prepped_aromatics",
+      "name": "Hacka Lök och Fänkål",
+      "outputName": "Hackad lök och fänkål",
+      "inputs": [
+        {
+          "id": "shallot",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "fennel",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Hacka {{shallot}}.",
+        "Finstrimla {{fennel}}."
+      ],
+      "duration": 5,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Bananschalottenlök är mappad till befintlig schalottenlök."
+      ]
+    },
+    {
+      "id": "katalansk_raksoppa__diced_tomato",
+      "name": "Tärna Tomat",
+      "outputName": "Tärnad tomat",
+      "inputs": [
+        {
+          "id": "tomato",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Tärna {{tomato}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "katalansk_raksoppa__drained_shrimp",
+      "name": "Häll av Räkor",
+      "outputName": "Avrunna räkor",
+      "inputs": [
+        {
+          "id": "shrimp",
+          "amount": 1,
+          "unit": "förp"
+        }
+      ],
+      "steps": [
+        "Häll av {{shrimp}}."
+      ],
+      "duration": 1,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Råenheten är förp; behållen som 1 förp. Ingen vikt i rådatan, inga gram påhittade."
+      ]
+    },
+    {
+      "id": "katalansk_raksoppa__bread",
+      "name": "Grädda Surdegsbaguette",
+      "outputName": "Gräddad surdegsbaguette",
+      "inputs": [
+        {
+          "id": "katalansk_raksoppa__oven",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "sourdough_baguette",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Tillaga {{sourdough_baguette}} enligt anvisningen på förpackningen."
+      ],
+      "duration": 3,
+      "tags": [],
+      "tips": [
+        "Råsteget har ingen minut. Ingen bak-timer påhittad, därför ingen wait."
+      ]
+    },
+    {
+      "id": "katalansk_raksoppa__sofrito",
+      "name": "Fräs Sopbas",
+      "outputName": "Fräst sopbas",
+      "inputs": [
+        {
+          "id": "katalansk_raksoppa__prepped_aromatics",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "garlic",
+          "amount": 1,
+          "unit": "klyfta"
+        },
+        {
+          "id": "saffron",
+          "amount": 1,
+          "unit": "förp"
+        },
+        {
+          "id": "smoked_chili_mix",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "dried_thyme",
+          "amount": 1,
+          "unit": "förp"
+        },
+        {
+          "id": "tomato_paste",
+          "amount": 0.5,
+          "unit": "förp"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i en stekgryta. Fräs {{katalansk_raksoppa__prepped_aromatics}} och pressad {{garlic}} ca 3 min.",
+        "Krydda med {{saffron}}, {{smoked_chili_mix}} efter egen smak, {{dried_thyme}} och {{tomato_paste}}. Fräs ytterligare ca 1 min."
+      ],
+      "duration": 5,
+      "tags": [],
+      "tips": [
+        "Olivolja saknade mängd i rådatan (unit tsk, amount null) → default 1 skvätt.",
+        "Vitlök är 1 klyfta enligt rådatan.",
+        "Saffran, timjan och tomatpuré är förp enligt rådatan. Paketstorlek saknas, inga gram påhittade.",
+        "3 min och 1 min är fräs (hands-on) och ligger i duration, inte som wait. Rökt chilimix är stark, smaka dig fram."
+      ]
+    },
+    {
+      "id": "katalansk_raksoppa__soup",
+      "name": "Sjuda Räksoppa",
+      "outputName": "Katalansk räksoppa",
+      "inputs": [
+        {
+          "id": "katalansk_raksoppa__sofrito",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "canned_tomatoes",
+          "amount": 1,
+          "unit": "förp"
+        },
+        {
+          "id": "white_wine_vinegar",
+          "amount": 15,
+          "unit": "ml"
+        },
+        {
+          "id": "honey",
+          "amount": 0.5,
+          "unit": "förp"
+        },
+        {
+          "id": "water",
+          "amount": 2,
+          "unit": "dl"
+        },
+        {
+          "id": "vegetable_bouillon",
+          "amount": 1,
+          "unit": "förp"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "krm"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "krm"
+        }
+      ],
+      "steps": [
+        "Blanda ner {{canned_tomatoes}}, {{white_wine_vinegar}}, {{honey}}, {{water}} och {{vegetable_bouillon}} i {{katalansk_raksoppa__sofrito}}. Koka upp och sjud ca 10 min. Smaka av med {{salt}} och {{pepper}}."
+      ],
+      "duration": 2,
+      "wait": 10,
+      "tags": [],
+      "tips": [
+        "Vitvinsvinäger är 1 påse i rådatan (namnet nämner 15ml). Behållen som 1 påse, inte 15 ml.",
+        "Krossade tomater, honung och buljong är förp enligt rådatan. Paketvikt saknas.",
+        "Salt och peppar hade enhet krm med amount null → 1 krm var.",
+        "10 min är sista stegets wait."
+      ]
+    },
+    {
+      "id": "katalansk_raksoppa__aioli",
+      "name": "Blanda Aioli",
+      "outputName": "Aioli",
+      "inputs": [
+        {
+          "id": "mayonnaise",
+          "amount": 0.5,
+          "unit": "dl"
+        },
+        {
+          "id": "garlic",
+          "amount": 0.5,
+          "unit": "klyfta"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "krm"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "krm"
+        }
+      ],
+      "steps": [
+        "Blanda {{mayonnaise}} med pressad {{garlic}} i en liten skål. Smaka av med {{salt}} och {{pepper}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Andra salt- och pepparraden, också utan mängd men med enhet krm, är en egen 1 krm. Inte hopslagen med soppans.",
+        "Vitlök är 0.5 klyfta enligt rådatan."
+      ]
+    },
+    {
+      "id": "katalansk_raksoppa",
+      "name": "Katalansk räksoppa med fänkål, saffran och surdegsbröd",
+      "outputName": "Katalansk räksoppa med fänkål, saffran och surdegsbröd",
+      "inputs": [
+        {
+          "id": "katalansk_raksoppa__soup",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "katalansk_raksoppa__drained_shrimp",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "katalansk_raksoppa__diced_tomato",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "katalansk_raksoppa__aioli",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "katalansk_raksoppa__bread",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Fördela {{katalansk_raksoppa__drained_shrimp}} i botten på djupa tallrikar och häll på {{katalansk_raksoppa__soup}}.",
+        "Toppa med {{katalansk_raksoppa__diced_tomato}}. Servera med {{katalansk_raksoppa__aioli}} och {{katalansk_raksoppa__bread}}."
+      ],
+      "duration": 3,
+      "tags": [
+        "master"
+      ]
+    }
+  ]
+}

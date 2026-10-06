@@ -1,0 +1,266 @@
+{
+  "masterId": "caesar_asparagus_salad",
+  "source": "hellofresh",
+  "createdAt": 1790851790,
+  "basePortions": 4,
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/caesar_asparagus_salad/main.jpg",
+    "byNode": {
+      "caesar_asparagus_salad__croutons": "assets/recipes/caesar_asparagus_salad/steps/croutons.jpg",
+      "caesar_asparagus_salad__fried_asparagus": "assets/recipes/caesar_asparagus_salad/steps/fried_asparagus.jpg",
+      "caesar_asparagus_salad__dressed_salad": "assets/recipes/caesar_asparagus_salad/steps/dressed_salad.jpg",
+      "caesar_asparagus_salad": "assets/recipes/caesar_asparagus_salad/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 343,
+    "perPortion": {
+      "energyKcal": 467,
+      "energyKj": 1954,
+      "fatG": 27.3,
+      "saturatedFatG": 7,
+      "carbsG": 44.6,
+      "sugarsG": 5.4,
+      "fiberG": 7.2,
+      "proteinG": 12.4,
+      "saltG": 3.1
+    }
+  },
+  "ratings": {
+    "average": 4,
+    "count": 5,
+    "source": "hellofresh"
+  },
+  "nodes": [
+    {
+      "id": "caesar_asparagus_salad__preheated_oven_240",
+      "name": "Värm Ugnen",
+      "outputName": "Förvärmd ugn (240°C)",
+      "inputs": [],
+      "steps": [
+        "Värm ugnen till 240°C, eller 220°C varmluft."
+      ],
+      "duration": 1,
+      "wait": 12,
+      "tags": ["prep", "no-timer"],
+      "tips": [
+        "HF anger 240°C/220°C varmluft — lokal ugnsnode, inte preheated_oven_220 (som är 220/200)."
+      ]
+    },
+    {
+      "id": "caesar_asparagus_salad__croutons",
+      "name": "Gör Krutonger",
+      "outputName": "Krutonger",
+      "inputs": [
+        {
+          "id": "caesar_asparagus_salad__preheated_oven_240",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "baguette",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Skär {{baguette}} i 2 cm stora bitar och placera dem på en plåt med bakplåtspapper.",
+        "Blanda med {{olive_oil}}, {{salt}} och {{pepper}}.",
+        "Rosta i ugnen i 8–10 min, eller tills krutongerna är gyllene och krispiga."
+      ],
+      "duration": 3,
+      "wait": 10,
+      "tags": ["prep"]
+    },
+    {
+      "id": "caesar_asparagus_salad__chopped_garlic",
+      "name": "Finhacka Vitlök",
+      "outputName": "Finhackad vitlök",
+      "inputs": [
+        {
+          "id": "garlic",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Finhacka eller pressa {{garlic}}."
+      ],
+      "duration": 1,
+      "tags": ["prep"]
+    },
+    {
+      "id": "caesar_asparagus_salad__prepped_lettuce",
+      "name": "Ansa Sallad",
+      "outputName": "Hackad romansallad",
+      "inputs": [
+        {
+          "id": "lettuce",
+          "amount": 200,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Ansa {{lettuce}} och separera och grovhacka salladsblad."
+      ],
+      "duration": 3,
+      "tags": ["prep"]
+    },
+    {
+      "id": "caesar_asparagus_salad__prepped_asparagus",
+      "name": "Ansa Sparris",
+      "outputName": "Skuren grön sparris",
+      "inputs": [
+        {
+          "id": "green_asparagus",
+          "amount": 125,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Skär bort 2 cm i botten på {{green_asparagus}}.",
+        "Skär varje sparris i 3 delar."
+      ],
+      "duration": 2,
+      "tags": ["prep"]
+    },
+    {
+      "id": "caesar_asparagus_salad__fried_asparagus",
+      "name": "Stek Sparris",
+      "outputName": "Brynt grön sparris",
+      "inputs": [
+        {
+          "id": "caesar_asparagus_salad__prepped_asparagus",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "salt",
+          "amount": 0.25,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i en stekpanna på medelhög värme.",
+        "Stek {{caesar_asparagus_salad__prepped_asparagus}} med {{salt}} i 1–2 min, eller tills lätt brynt."
+      ],
+      "duration": 1,
+      "wait": 2,
+      "tags": ["prep"]
+    },
+    {
+      "id": "caesar_asparagus_salad__dressed_salad",
+      "name": "Blanda Sallad",
+      "outputName": "Caesarsallad med krutonger",
+      "inputs": [
+        {
+          "id": "sour_cream",
+          "amount": 75,
+          "unit": "ml"
+        },
+        {
+          "id": "mayonnaise",
+          "amount": 50,
+          "unit": "g"
+        },
+        {
+          "id": "caesar_asparagus_salad__chopped_garlic",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "lemon",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "salt",
+          "amount": 0.25,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "caesar_asparagus_salad__prepped_lettuce",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "caesar_asparagus_salad__croutons",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "grated_cheese",
+          "amount": 10,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Halvera {{lemon}}.",
+        "Blanda {{sour_cream}}, {{mayonnaise}}, {{caesar_asparagus_salad__chopped_garlic}}, en skvätt citronsaft, {{salt}} och {{pepper}} i en stor skål.",
+        "Vänd ner {{caesar_asparagus_salad__prepped_lettuce}}.",
+        "Tillsätt {{caesar_asparagus_salad__croutons}} och {{grated_cheese}} och vänd runt."
+      ],
+      "duration": 4,
+      "tags": ["prep"],
+      "tips": [
+        "Hälften av osten (10 g av 20 g) går i blandningen; resten toppas vid servering."
+      ]
+    },
+    {
+      "id": "caesar_asparagus_salad",
+      "name": "Caesarsallad på grön sparris",
+      "outputName": "Caesarsallad på grön sparris",
+      "inputs": [
+        {
+          "id": "caesar_asparagus_salad__dressed_salad",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "caesar_asparagus_salad__fried_asparagus",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "grated_cheese",
+          "amount": 10,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Servera {{caesar_asparagus_salad__dressed_salad}} i en skål.",
+        "Toppa med {{grated_cheese}} och {{caesar_asparagus_salad__fried_asparagus}}."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": ["master"]
+    }
+  ]
+}

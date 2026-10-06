@@ -1,0 +1,159 @@
+{
+  "masterId": "skansk_aggakaka",
+  "source": "citygross",
+  "createdAt": 1791056383,
+  "basePortions": 4,
+  "sharedPrep": [
+    "preheated_oven_220"
+  ],
+  "images": {
+    "main": "assets/recipes/skansk_aggakaka/main.jpg"
+  },
+  "nodes": [
+    {
+      "id": "skansk_aggakaka__batter",
+      "name": "Vispa Smet",
+      "outputName": "Äggakakssmet",
+      "inputs": [
+        {
+          "id": "flour",
+          "amount": 3.5,
+          "unit": "dl"
+        },
+        {
+          "id": "milk",
+          "amount": 6,
+          "unit": "dl"
+        },
+        {
+          "id": "egg",
+          "amount": 7,
+          "unit": "st"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        },
+        {
+          "id": "white_pepper",
+          "amount": 2,
+          "unit": "krm"
+        }
+      ],
+      "steps": [
+        "Vispa ut {{flour}} i hälften av {{milk}} så att klumparna försvinner. Tillsätt resten av mjölken, vispa ner {{egg}} och rör i {{salt}} och {{white_pepper}}."
+      ],
+      "duration": 5,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Salt är 1 tsk och vitpeppar 2 krm i rådatan, inte nypa."
+      ]
+    },
+    {
+      "id": "skansk_aggakaka__bacon",
+      "name": "Stek Bacon",
+      "outputName": "Lättstekt bacon",
+      "inputs": [
+        {
+          "id": "bacon",
+          "amount": 280,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Strimla {{bacon}} och stek det lätt krispigt."
+      ],
+      "duration": 6,
+      "tags": [],
+      "tips": [
+        "Ingen tid i råsteget, därför ingen wait."
+      ]
+    },
+    {
+      "id": "skansk_aggakaka__bake",
+      "name": "Grädda Äggakakan",
+      "outputName": "Ugnsgräddad äggakaka",
+      "inputs": [
+        {
+          "id": "skansk_aggakaka__bacon",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "skansk_aggakaka__batter",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "preheated_oven_220",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Lägg {{skansk_aggakaka__bacon}} i en ugnsform.",
+        "Häll över {{skansk_aggakaka__batter}} och grädda i {{preheated_oven_220}} ca 20 min."
+      ],
+      "duration": 2,
+      "wait": 20,
+      "tags": [],
+      "tips": [
+        "Råtexten säger att tiden beror på formens storlek. 20 min är den angivna tiden, inte en gissning."
+      ]
+    },
+    {
+      "id": "skansk_aggakaka__salad",
+      "name": "Blanda Morot och Äpple",
+      "outputName": "Morots- och äppelsallad",
+      "inputs": [
+        {
+          "id": "carrot",
+          "amount": 200,
+          "unit": "g"
+        },
+        {
+          "id": "apple",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skala och riv {{carrot}}. Kärna ur och tärna {{apple}}. Blanda."
+      ],
+      "duration": 5,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "skansk_aggakaka",
+      "name": "Skånsk äggakaka i ugn",
+      "outputName": "Skånsk äggakaka i ugn",
+      "inputs": [
+        {
+          "id": "skansk_aggakaka__bake",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "skansk_aggakaka__salad",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Servera {{skansk_aggakaka__bake}} med {{skansk_aggakaka__salad}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "master"
+      ],
+      "tips": [
+        "Kommentaren föreslår grahamsmjöl i hälften av mjölet och lingon till. Inte tillagt."
+      ]
+    }
+  ]
+}

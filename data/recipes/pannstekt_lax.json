@@ -1,0 +1,299 @@
+{
+  "masterId": "pannstekt_lax",
+  "source": "hellofresh",
+  "createdAt": 1791035577,
+  "basePortions": 4,
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/pannstekt_lax/main.jpg",
+    "byNode": {
+      "pannstekt_lax__boiled_potatoes": "assets/recipes/pannstekt_lax/steps/boiled_potatoes.jpg",
+      "pannstekt_lax__pesto_herbs": "assets/recipes/pannstekt_lax/steps/prepped_veg.jpg",
+      "pannstekt_lax__parsley_pesto": "assets/recipes/pannstekt_lax/steps/parsley_pesto.jpg",
+      "pannstekt_lax__fried_salmon": "assets/recipes/pannstekt_lax/steps/fried_salmon.jpg",
+      "pannstekt_lax__mustard_sauce": "assets/recipes/pannstekt_lax/steps/mustard_sauce.jpg",
+      "pannstekt_lax": "assets/recipes/pannstekt_lax/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 507,
+    "perPortion": {
+      "energyKcal": 860,
+      "energyKj": 3599,
+      "fatG": 61.5,
+      "saturatedFatG": 17.6,
+      "carbsG": 39.7,
+      "sugarsG": 8.5,
+      "fiberG": 3.9,
+      "proteinG": 35.6,
+      "saltG": 2.4
+    }
+  },
+  "ratings": {
+    "average": 3.6,
+    "count": 97,
+    "source": "hellofresh"
+  },
+  "cooked": {
+    "hfId": "6511645eadeb498a75282ae5",
+    "at": "2026-10-03T15:12:32+02:00",
+    "source": "photo",
+    "headline": "med krämig senapssås och pestopotatis"
+  },
+  "nodes": [
+    {
+      "id": "pannstekt_lax__boiled_potatoes",
+      "name": "Koka Potatis",
+      "outputName": "Kokt småpotatis",
+      "inputs": [
+        {
+          "id": "small_potato",
+          "amount": 800,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Koka upp en medelstor kastrull med saltat vatten och lägg i {{small_potato}}.",
+        "Koka i 12–15 min, tills potatisen enkelt kan delas med en kniv. Häll av, krydda med en nypa salt och peppar och ställ åt sidan under lock."
+      ],
+      "duration": 3,
+      "wait": 15,
+      "tags": []
+    },
+    {
+      "id": "pannstekt_lax__pesto_herbs",
+      "name": "Hacka Vitlök och Persilja",
+      "outputName": "Hackad vitlök och persilja",
+      "inputs": [
+        {
+          "id": "garlic",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "parsley",
+          "amount": 1,
+          "unit": "pkt"
+        }
+      ],
+      "steps": [
+        "Finhacka eller pressa {{garlic}}.",
+        "Finhacka {{parsley}}."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "pannstekt_lax__rucola_shallot",
+      "name": "Skölj Rucola och Skiva Schalottenlök",
+      "outputName": "Sköljd rucola och saltad schalottenlök",
+      "inputs": [
+        {
+          "id": "rucola",
+          "amount": 70,
+          "unit": "g"
+        },
+        {
+          "id": "shallot",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Skölj {{rucola}}.",
+        "Skär {{shallot}} i tunna skivor och blanda med {{salt}} i en liten skål."
+      ],
+      "duration": 4,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "pannstekt_lax__lemon_wedges",
+      "name": "Skär Citronklyftor",
+      "outputName": "Citronklyftor",
+      "inputs": [
+        {
+          "id": "lemon",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skär {{lemon}} i klyftor."
+      ],
+      "duration": 1,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "pannstekt_lax__parsley_pesto",
+      "name": "Gör Persiljepesto",
+      "outputName": "Persiljepesto",
+      "inputs": [
+        {
+          "id": "pannstekt_lax__pesto_herbs",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "grated_cheese",
+          "amount": 40,
+          "unit": "g"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 4,
+          "unit": "msk"
+        }
+      ],
+      "steps": [
+        "Blanda {{pannstekt_lax__pesto_herbs}} med {{grated_cheese}} och {{olive_oil}} i en skål."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "pannstekt_lax__fried_salmon",
+      "name": "Stek Lax",
+      "outputName": "Pannstekt lax",
+      "inputs": [
+        {
+          "id": "salmon_fillet",
+          "amount": 500,
+          "unit": "g"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 2,
+          "unit": "msk"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i en stekpanna på medelhög värme.",
+        "Torka {{salmon_fillet}} med hushållspapper och krydda med en nypa salt.",
+        "Stek med skinnsidan ner i 3–4 min. Vänd och stek i ytterligare 3–5 min, tills gyllene och genomstekt. Lägg laxen åt sidan på en tallrik. Skölj inte av pannan."
+      ],
+      "duration": 10,
+      "wait": 0,
+      "tags": [],
+      "tips": [
+        "Laxen är klar när köttet är ogenomskinligt i mitten."
+      ]
+    },
+    {
+      "id": "pannstekt_lax__mustard_sauce",
+      "name": "Gör Senapssås",
+      "outputName": "Pannstekt lax med senapssås",
+      "inputs": [
+        {
+          "id": "pannstekt_lax__fried_salmon",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "butter",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "honey_mustard_dressing",
+          "amount": 40,
+          "unit": "g"
+        },
+        {
+          "id": "vegetable_bouillon",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "id": "cooking_cream",
+          "amount": 1,
+          "unit": "pkt"
+        },
+        {
+          "id": "milk",
+          "amount": 6,
+          "unit": "msk"
+        }
+      ],
+      "steps": [
+        "Smält {{butter}} i samma stekpanna på medelhög värme.",
+        "Tillsätt {{honey_mustard_dressing}}, {{vegetable_bouillon}}, {{cooking_cream}} och {{milk}}.",
+        "Sjud i 1–2 min, tills såsen är varm. Behåll laxen från {{pannstekt_lax__fried_salmon}} åt sidan."
+      ],
+      "duration": 2,
+      "wait": 2,
+      "tags": []
+    },
+    {
+      "id": "pannstekt_lax__pesto_potatoes",
+      "name": "Blanda Pestopotatis",
+      "outputName": "Pestopotatis",
+      "inputs": [
+        {
+          "id": "pannstekt_lax__boiled_potatoes",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "pannstekt_lax__parsley_pesto",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "pannstekt_lax__rucola_shallot",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Rör ned {{pannstekt_lax__parsley_pesto}}, {{pannstekt_lax__rucola_shallot}} i {{pannstekt_lax__boiled_potatoes}} precis innan servering."
+      ],
+      "duration": 2,
+      "tags": []
+    },
+    {
+      "id": "pannstekt_lax",
+      "name": "Pannstekt lax med senapssås och pestopotatis",
+      "outputName": "Pannstekt lax med senapssås och pestopotatis",
+      "inputs": [
+        {
+          "id": "pannstekt_lax__mustard_sauce",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "pannstekt_lax__pesto_potatoes",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "pannstekt_lax__lemon_wedges",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Lägg upp laxen från {{pannstekt_lax__mustard_sauce}} och {{pannstekt_lax__pesto_potatoes}} på tallrikar.",
+        "Toppa laxen med senapssåsen.",
+        "Servera med {{pannstekt_lax__lemon_wedges}}."
+      ],
+      "duration": 3,
+      "tags": [
+        "master"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,359 @@
+{
+  "masterId": "panerat_citronpepparflask",
+  "source": "hellofresh",
+  "createdAt": 1791037262,
+  "basePortions": 4,
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/panerat_citronpepparflask/main.jpg",
+    "byNode": {
+      "panerat_citronpepparflask__roasted_potato_onion": "assets/recipes/panerat_citronpepparflask/steps/roasted_potato_onion.jpg",
+      "panerat_citronpepparflask__dill_creme": "assets/recipes/panerat_citronpepparflask/steps/dill_creme.jpg",
+      "panerat_citronpepparflask__breaded_pork": "assets/recipes/panerat_citronpepparflask/steps/breaded_pork.jpg",
+      "panerat_citronpepparflask__roasted_vegetables": "assets/recipes/panerat_citronpepparflask/steps/roasted_vegetables.jpg",
+      "panerat_citronpepparflask__fried_pork": "assets/recipes/panerat_citronpepparflask/steps/fried_pork.jpg",
+      "panerat_citronpepparflask": "assets/recipes/panerat_citronpepparflask/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 515,
+    "perPortion": {
+      "energyKcal": 626,
+      "energyKj": 2620,
+      "fatG": 30.3,
+      "saturatedFatG": 12.6,
+      "carbsG": 48,
+      "sugarsG": 7.1,
+      "fiberG": 4.9,
+      "proteinG": 36.9,
+      "saltG": 3.9
+    }
+  },
+  "ratings": {
+    "average": 3.5,
+    "count": 295,
+    "source": "hellofresh"
+  },
+  "cooked": {
+    "hfId": "669a2dd69b6afed05f6419e5",
+    "at": "2026-10-03T15:12:32+02:00",
+    "source": "photo",
+    "headline": "med haricots verts och dill-crème fraiche"
+  },
+  "nodes": [
+    {
+      "id": "panerat_citronpepparflask__preheated_oven",
+      "name": "Värm Ugnen",
+      "outputName": "Förvärmd ugn (240°C)",
+      "inputs": [],
+      "steps": [
+        "Värm ugnen till 240°C, eller 220°C varmluft."
+      ],
+      "duration": 1,
+      "wait": 12,
+      "tags": [
+        "prep",
+        "no-timer"
+      ],
+      "tips": [
+        "Ugnen tar vanligtvis 10–15 minuter att värmas upp."
+      ]
+    },
+    {
+      "id": "panerat_citronpepparflask__prepped_potato_onion",
+      "name": "Förbered Potatis och Lök",
+      "outputName": "Halverad potatis och lökklyftor",
+      "inputs": [
+        {
+          "id": "small_potato",
+          "amount": 800,
+          "unit": "g"
+        },
+        {
+          "id": "red_onion",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Halvera {{small_potato}}.",
+        "Skär {{red_onion}} i 2 cm breda klyftor."
+      ],
+      "duration": 5,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "panerat_citronpepparflask__roasted_potato_onion",
+      "name": "Rosta Potatis och Lök",
+      "outputName": "Rostad potatis och lök",
+      "inputs": [
+        {
+          "id": "panerat_citronpepparflask__prepped_potato_onion",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "panerat_citronpepparflask__preheated_oven",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "garlic_flakes",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Placera {{panerat_citronpepparflask__prepped_potato_onion}} på två plåtar med bakplåtspapper.",
+        "Blanda med olivolja, {{garlic_flakes}}, {{salt}} och en nypa {{pepper}}.",
+        "Rosta i {{panerat_citronpepparflask__preheated_oven}} i ca 30 min, tills det återstår 5 min av totalt 25–35 min."
+      ],
+      "duration": 4,
+      "wait": 30,
+      "tags": []
+    },
+    {
+      "id": "panerat_citronpepparflask__prepped_beans",
+      "name": "Ansa Haricots Verts",
+      "outputName": "Halverade haricots verts",
+      "inputs": [
+        {
+          "id": "haricots_verts",
+          "amount": 150,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Ansa och halvera {{haricots_verts}}."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "panerat_citronpepparflask__roasted_vegetables",
+      "name": "Rosta Haricots Verts",
+      "outputName": "Rostade grönsaker",
+      "inputs": [
+        {
+          "id": "panerat_citronpepparflask__roasted_potato_onion",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "panerat_citronpepparflask__prepped_beans",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Lägg {{panerat_citronpepparflask__prepped_beans}} på plåten med {{panerat_citronpepparflask__roasted_potato_onion}} och vänd runt.",
+        "Rosta resterande ca 5 min."
+      ],
+      "duration": 1,
+      "wait": 5,
+      "tags": []
+    },
+    {
+      "id": "panerat_citronpepparflask__rinsed_rucola",
+      "name": "Skölj Rucola",
+      "outputName": "Sköljd rucola",
+      "inputs": [
+        {
+          "id": "rucola",
+          "amount": 70,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Skölj {{rucola}}."
+      ],
+      "duration": 1,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "panerat_citronpepparflask__chopped_dill",
+      "name": "Hacka Dill",
+      "outputName": "Hackad dill",
+      "inputs": [
+        {
+          "id": "dill",
+          "amount": 1,
+          "unit": "pkt"
+        }
+      ],
+      "steps": [
+        "Finhacka {{dill}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "panerat_citronpepparflask__dill_creme",
+      "name": "Blanda Dill-crème fraiche",
+      "outputName": "Dill-crème fraiche",
+      "inputs": [
+        {
+          "id": "creme_fraiche",
+          "amount": 150,
+          "unit": "ml"
+        },
+        {
+          "id": "panerat_citronpepparflask__chopped_dill",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Blanda {{creme_fraiche}}, {{panerat_citronpepparflask__chopped_dill}}, {{salt}} och {{pepper}} i en liten skål.",
+        "Ställ åt sidan."
+      ],
+      "duration": 2,
+      "tags": []
+    },
+    {
+      "id": "panerat_citronpepparflask__breaded_pork",
+      "name": "Panera Fläsk",
+      "outputName": "Panerat citronpepparfläsk",
+      "inputs": [
+        {
+          "id": "sliced_pork_chop",
+          "amount": 500,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "egg",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "panko",
+          "amount": 50,
+          "unit": "g"
+        },
+        {
+          "id": "lemon_pepper",
+          "amount": 4,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Krydda {{sliced_pork_chop}} med {{salt}}.",
+        "Vispa {{egg}} i en djup tallrik.",
+        "Blanda {{panko}} och {{lemon_pepper}} i en ny djup tallrik.",
+        "Vänd fläsket först i ägg och sen i panko. Lägg över till en ren tallrik."
+      ],
+      "duration": 8,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Om du inte har ägg kan du använda 2 msk mjölk istället."
+      ]
+    },
+    {
+      "id": "panerat_citronpepparflask__fried_pork",
+      "name": "Stek Fläsk",
+      "outputName": "Stekt panerat fläsk",
+      "inputs": [
+        {
+          "id": "panerat_citronpepparflask__breaded_pork",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Hetta upp en stor stekpanna på medelhög värme och tillsätt {{olive_oil}} så det täcker pannan.",
+        "Stek {{panerat_citronpepparflask__breaded_pork}} i 3–4 min per sida, eller tills gyllene och genomstekt.",
+        "Lägg åt sidan på en tallrik med hushållspapper och krydda med {{salt}}."
+      ],
+      "duration": 9,
+      "wait": 0,
+      "tags": [],
+      "tips": [
+        "Tillsätt extra olja vid behov så köttet inte fastnar. Stek i omgångar om det inte får plats i pannan.",
+        "Köttet är färdiglagat när det är utan inslag av rosa."
+      ]
+    },
+    {
+      "id": "panerat_citronpepparflask",
+      "name": "Panerat citronpepparfläsk",
+      "outputName": "Panerat citronpepparfläsk",
+      "inputs": [
+        {
+          "id": "panerat_citronpepparflask__fried_pork",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "panerat_citronpepparflask__roasted_vegetables",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "panerat_citronpepparflask__rinsed_rucola",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "panerat_citronpepparflask__dill_creme",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Vänd {{panerat_citronpepparflask__rinsed_rucola}} med {{panerat_citronpepparflask__roasted_vegetables}} precis innan servering.",
+        "Lägg upp {{panerat_citronpepparflask__fried_pork}} och grönsakerna på tallrikar.",
+        "Servera med en klick {{panerat_citronpepparflask__dill_creme}}."
+      ],
+      "duration": 3,
+      "wait": 0,
+      "tags": [
+        "master"
+      ]
+    }
+  ]
+}

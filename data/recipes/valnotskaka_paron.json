@@ -1,0 +1,172 @@
+{
+  "masterId": "valnotskaka_paron",
+  "source": "hellofresh",
+  "createdAt": 1791042125,
+  "basePortions": 8,
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/valnotskaka_paron/main.jpg",
+    "byNode": {
+      "valnotskaka_paron__chopped_walnuts": "assets/recipes/valnotskaka_paron/steps/chopped_walnuts.jpg",
+      "valnotskaka_paron__baked_cake": "assets/recipes/valnotskaka_paron/steps/baked_cake.jpg",
+      "valnotskaka_paron__browned_butter_glaze": "assets/recipes/valnotskaka_paron/steps/browned_butter_glaze.jpg",
+      "valnotskaka_paron": "assets/recipes/valnotskaka_paron/steps/serve.jpg"
+    }
+  },
+  "ratings": {
+    "average": 4.0,
+    "count": 1,
+    "source": "hellofresh"
+  },
+  "nodes": [
+    {
+      "id": "valnotskaka_paron__preheated_oven_190",
+      "name": "Värm Ugnen",
+      "outputName": "Förvärmd ugn (190°C)",
+      "inputs": [],
+      "steps": [
+        "Värm ugnen till 190°C, eller 170°C varmluft."
+      ],
+      "duration": 1,
+      "wait": 12,
+      "tags": [
+        "prep",
+        "no-timer"
+      ],
+      "tips": [
+        "Ugnen tar vanligtvis 10–15 minuter att värmas upp.",
+        "190°C/170°C varmluft är en lokal ugnsnode, inte preheated_oven_220."
+      ]
+    },
+    {
+      "id": "valnotskaka_paron__chopped_walnuts",
+      "name": "Hacka Valnötter",
+      "outputName": "Hackade valnötter och 5 hela",
+      "inputs": [
+        {
+          "id": "walnuts",
+          "amount": 80,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Finhacka {{walnuts}} och spara 5 hela nötter till topping."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Ta gärna ut bakmixen ur kylen 30 min innan den ska användas. Det är ett tips, inte en klocka i grafen.",
+        "80 g är hela kakan. Yielden är samma vid 2 och 4 portioner och är inte uppskalad. De 5 hela nötterna är inte en separat vikt.",
+        "Grafen delar nötterna 0,8 st till kakan och 0,2 st (de 5 hela) till toppingen. Andelen är en uppskattning; råreceptet anger antal, inte vikt."
+      ]
+    },
+    {
+      "id": "valnotskaka_paron__baked_cake",
+      "name": "Baka Valnötskaka",
+      "outputName": "Bakad valnötskaka",
+      "inputs": [
+        {
+          "id": "valnotskaka_paron__preheated_oven_190",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "sponge_cake_mix",
+          "amount": 600,
+          "unit": "g"
+        },
+        {
+          "id": "valnotskaka_paron__chopped_walnuts",
+          "amount": 0.8,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Häll smeten från {{sponge_cake_mix}} i en rund bakform, 20–22 cm i diameter, med bakplåtspapper.",
+        "Rör ner de hackade nötterna från {{valnotskaka_paron__chopped_walnuts}} och platta till med en slickepott.",
+        "Baka i {{valnotskaka_paron__preheated_oven_190}} i 30–35 min."
+      ],
+      "duration": 5,
+      "wait": 35,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Kakan är klar när en provsticka kommer ut torr.",
+        "Kortet säger aldrig hur mixen blir smet. Inget ägg, mjölk eller vatten finns i yielden, så inget sådant är tillagt."
+      ]
+    },
+    {
+      "id": "valnotskaka_paron__browned_butter_glaze",
+      "name": "Gör Brynt Smör-glasyr",
+      "outputName": "Brynt smör-glasyr och tärnat päron",
+      "inputs": [
+        {
+          "id": "butter",
+          "amount": 3,
+          "unit": "msk"
+        },
+        {
+          "id": "powdered_sugar",
+          "amount": 50,
+          "unit": "g"
+        },
+        {
+          "id": "pear",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{butter}} i en liten kastrull i 2–3 min, tills det börjar bubbla och får en nötaktig brun färg.",
+        "Halvera, kärna ur och tärna {{pear}} i små bitar.",
+        "Blanda {{powdered_sugar}} och det brynta smöret i en liten skål."
+      ],
+      "duration": 6,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Bryningen är hands-on, därför duration och wait 0.",
+        "Tillsätt en skvätt vatten om glasyren är för tjock. Ingen mängd är angiven."
+      ]
+    },
+    {
+      "id": "valnotskaka_paron",
+      "name": "Valnötskaka med päron",
+      "outputName": "Valnötskaka med päron",
+      "inputs": [
+        {
+          "id": "valnotskaka_paron__baked_cake",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "valnotskaka_paron__browned_butter_glaze",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "valnotskaka_paron__chopped_walnuts",
+          "amount": 0.2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Låt {{valnotskaka_paron__baked_cake}} svalna före servering.",
+        "Servera kakan med {{valnotskaka_paron__browned_butter_glaze}} och toppa med päronet och de hela valnötterna från {{valnotskaka_paron__chopped_walnuts}}."
+      ],
+      "duration": 3,
+      "wait": 0,
+      "tags": [
+        "master"
+      ],
+      "tips": [
+        "Svalningen har ingen minuttid, därför wait 0. Inte hopslagen med bakningen."
+      ]
+    }
+  ]
+}
