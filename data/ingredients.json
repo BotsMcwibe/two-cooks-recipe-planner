@@ -1964,14 +1964,16 @@
       "tags": [
         "meat",
         "fresh"
-      ]
+      ],
+      "image": "assets/ingredients/salsiccia.png"
     },
     "mozzarella": {
       "name": "Mozzarella",
       "tags": [
         "dairy",
         "fresh"
-      ]
+      ],
+      "image": "assets/ingredients/mozzarella.png"
     }
   }
 }
