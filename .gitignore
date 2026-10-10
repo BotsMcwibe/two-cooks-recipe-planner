@@ -49,3 +49,7 @@ assets/**/*.jpeg
 assets/**/*.webp
 assets/**/*.gif
 assets/**/*.avif
+
+# Ingredient images are small enough to keep in the repo
+!assets/ingredients/
+!assets/ingredients/*
