@@ -1,0 +1,297 @@
+{
+  "masterId": "pastagratang_ziti",
+  "source": "ica",
+  "createdAt": 1791654267,
+  "basePortions": 4,
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/pastagratang_ziti/main.jpg"
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "perPortion": {
+      "energyKj": 3267,
+      "energyKcal": 781,
+      "fatG": 37,
+      "carbsG": 71,
+      "proteinG": 38,
+      "saltG": 4.2
+    }
+  },
+  "ratings": {
+    "average": 4.3,
+    "count": 162,
+    "source": "ica"
+  },
+  "nodes": [
+    {
+      "id": "pastagratang_ziti__preheated_oven_200",
+      "name": "Värm Ugnen",
+      "outputName": "Förvärmd ugn (200°C)",
+      "inputs": [],
+      "steps": [
+        "Sätt ugnen på 200°C."
+      ],
+      "duration": 1,
+      "wait": 10,
+      "tags": [
+        "prep",
+        "no-timer"
+      ],
+      "tips": [
+        "ICA anger ingen uppvärmningstid; ugnen tar vanligtvis ca 10 minuter att bli varm."
+      ]
+    },
+    {
+      "id": "pastagratang_ziti__cooked_pasta",
+      "name": "Koka Pasta",
+      "outputName": "Avrunnen pasta",
+      "inputs": [
+        {
+          "id": "pasta",
+          "amount": 300,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Koka upp rikligt med vatten i en kastrull.",
+        "Koka {{pasta}} ca 2 minuter kortare än anvisningen på förpackningen, ca 8–10 min. Häll sedan av pastan i ett durkslag."
+      ],
+      "duration": 2,
+      "wait": 10,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Pastan ska vara lite för hård eftersom den tillagas färdigt i ugnen. Penne eller rigatoni passar bra."
+      ]
+    },
+    {
+      "id": "pastagratang_ziti__chopped_onion_garlic",
+      "name": "Hacka Lök och Vitlök",
+      "outputName": "Finhackad lök och vitlök",
+      "inputs": [
+        {
+          "id": "onion",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "garlic",
+          "amount": 2,
+          "unit": "klyfta"
+        }
+      ],
+      "steps": [
+        "Skala och finhacka {{onion}} och {{garlic}}."
+      ],
+      "duration": 4,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "pastagratang_ziti__fried_sausage",
+      "name": "Stek Salsiccia med Lök",
+      "outputName": "Stekt salsicciafärs med lök och vitlök",
+      "inputs": [
+        {
+          "id": "salsiccia",
+          "amount": 300,
+          "unit": "g"
+        },
+        {
+          "id": "oil",
+          "amount": 1,
+          "unit": "msk"
+        },
+        {
+          "id": "pastagratang_ziti__chopped_onion_garlic",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Klipp upp korvskinnet på {{salsiccia}}.",
+        "Hetta upp {{oil}} i en stekpanna på medelhög värme och smula ner korvfärsen. Stek ca 2 minuter.",
+        "Tillsätt {{pastagratang_ziti__chopped_onion_garlic}} och stek ytterligare 2 minuter."
+      ],
+      "duration": 6,
+      "tags": []
+    },
+    {
+      "id": "pastagratang_ziti__tomato_sauce",
+      "name": "Sjud Tomatsås",
+      "outputName": "Tomatsås med salsiccia",
+      "inputs": [
+        {
+          "id": "pastagratang_ziti__fried_sausage",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "canned_tomatoes",
+          "amount": 780,
+          "unit": "g"
+        },
+        {
+          "id": "balsamic_vinegar",
+          "amount": 2,
+          "unit": "msk"
+        }
+      ],
+      "steps": [
+        "Tillsätt {{canned_tomatoes}} och {{balsamic_vinegar}} till {{pastagratang_ziti__fried_sausage}}.",
+        "Låt småkoka på medellåg värme ca 10 minuter."
+      ],
+      "duration": 1,
+      "wait": 10,
+      "tags": [],
+      "tips": [
+        "ICA anger 2 förp krossade tomater à 390 g = 780 g."
+      ]
+    },
+    {
+      "id": "pastagratang_ziti__sliced_mozzarella",
+      "name": "Skiva Mozzarella",
+      "outputName": "Skivad mozzarella",
+      "inputs": [
+        {
+          "id": "mozzarella",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skär {{mozzarella}} i skivor."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "2 mozzarellakulor à 125 g."
+      ]
+    },
+    {
+      "id": "pastagratang_ziti__chopped_basil",
+      "name": "Grovhacka Basilika",
+      "outputName": "Grovhackad basilika",
+      "inputs": [
+        {
+          "id": "fresh_basil",
+          "amount": 1,
+          "unit": "dl"
+        }
+      ],
+      "steps": [
+        "Grovhacka {{fresh_basil}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "1 dl grovhackad basilika motsvarar ca 1 kruka."
+      ]
+    },
+    {
+      "id": "pastagratang_ziti__assembled_gratin",
+      "name": "Varva Gratängen",
+      "outputName": "Varvad pastagratäng (ogräddad)",
+      "inputs": [
+        {
+          "id": "pastagratang_ziti__tomato_sauce",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "pastagratang_ziti__cooked_pasta",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "pastagratang_ziti__sliced_mozzarella",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "pastagratang_ziti__chopped_basil",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Smaka av {{pastagratang_ziti__tomato_sauce}} med {{salt}} och {{pepper}}.",
+        "Blanda {{pastagratang_ziti__cooked_pasta}} med såsen.",
+        "Varva pastan, hälften av {{pastagratang_ziti__sliced_mozzarella}} och all {{pastagratang_ziti__chopped_basil}} i en ugnsform.",
+        "Toppa med resten av mozzarellan."
+      ],
+      "duration": 5,
+      "tags": []
+    },
+    {
+      "id": "pastagratang_ziti__baked_gratin",
+      "name": "Gratinera i Ugnen",
+      "outputName": "Gratinerad pastagratäng",
+      "inputs": [
+        {
+          "id": "pastagratang_ziti__assembled_gratin",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "pastagratang_ziti__preheated_oven_200",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Tillaga {{pastagratang_ziti__assembled_gratin}} mitt i {{pastagratang_ziti__preheated_oven_200}} 20–25 minuter."
+      ],
+      "duration": 1,
+      "wait": 25,
+      "tags": []
+    },
+    {
+      "id": "pastagratang_ziti",
+      "name": "Pastagratäng ziti",
+      "outputName": "Pastagratäng ziti",
+      "inputs": [
+        {
+          "id": "pastagratang_ziti__baked_gratin",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 3,
+          "unit": "msk"
+        }
+      ],
+      "steps": [
+        "Servera {{pastagratang_ziti__baked_gratin}} gärna med rucola och en dressing av {{olive_oil}} och balsamvinäger."
+      ],
+      "duration": 2,
+      "tags": [
+        "master"
+      ],
+      "tips": [
+        "Till servering: rucola samt dressing av olivolja och balsamvinäger är ett valfritt serveringsförslag; ICA anger ingen mängd för rucolan.",
+        "Glutenfri: välj glutenfri specialpasta och kontrollera innehållet i korven.",
+        "Laktosfri: kontrollera innehållet i korven och ersätt mozzarella med t ex laktosfri mozzarella, sallads- eller färskost. Mjölkproteinfri: ersätt mozzarella med tofu.",
+        "Äggfri: använd äggfri pasta och kontrollera innehållet i korven."
+      ]
+    }
+  ]
+}

@@ -3254,5 +3254,32 @@
     "searchText": "zaatar fläskkotlett bulgursallad apelsin yoghurt mynta",
     "ratingAverage": 3.92,
     "ratingCount": 190
+  },
+  {
+    "id": "pastagratang_ziti",
+    "source": "ica",
+    "createdAt": 1791654267,
+    "name": "Pastagratäng ziti",
+    "tags": [
+      "master",
+      "pasta",
+      "gratin",
+      "protein:pork",
+      "ica:time:over-60-min",
+      "ica:difficulty:medel"
+    ],
+    "hfTags": [],
+    "image": "assets/recipes/pastagratang_ziti/main.jpg",
+    "basePortions": 4,
+    "cuisine": "italian",
+    "allergens": [
+      "gluten",
+      "dairy"
+    ],
+    "difficulty": "medium",
+    "totalMinutes": 55,
+    "searchText": "pastagratäng ziti pasta penne rigatoni salsiccia korv tomatsås mozzarella basilika gratäng ugn italiensk",
+    "ratingAverage": 4.3,
+    "ratingCount": 162
   }
 ]

@@ -1958,6 +1958,20 @@
         "fresh"
       ],
       "image": "assets/ingredients/zucchini.png"
+    },
+    "salsiccia": {
+      "name": "Färsk salsicciakorv",
+      "tags": [
+        "meat",
+        "fresh"
+      ]
+    },
+    "mozzarella": {
+      "name": "Mozzarella",
+      "tags": [
+        "dairy",
+        "fresh"
+      ]
     }
   }
 }
