@@ -658,6 +658,7 @@ main.main-recipe {
 .overview-modal-root {
   position: fixed;
   inset: 0;
+  height: 100dvh;
   z-index: 1000;
   display: flex;
   align-items: flex-start;
@@ -679,7 +680,11 @@ main.main-recipe {
   z-index: 1;
   width: min(920px, 100%);
   max-height: calc(100vh - 48px);
+  /* dvh = visible viewport (excludes mobile browser bars); 100vh can sit under them */
+  max-height: calc(100dvh - 48px);
   overflow-y: auto;
+  overscroll-behavior: contain;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
   background: var(--surface);
   border-radius: 16px;
   box-shadow: var(--shadow-lg);
@@ -1610,6 +1615,7 @@ main.main-recipe {
   top: 12px;
   align-self: start;
   max-height: calc(100vh - 24px);
+  max-height: calc(100dvh - 24px);
   overflow-y: auto;
   background: var(--surface);
   border: 1px solid var(--border);
