@@ -1,6 +1,6 @@
 import { ShoppingListAggregator } from '../core/shopping-list.js';
 import { formatNiceAmount } from '../utils/helpers.js';
-import { escapeAttr, escapeHtml, isPantryIngredient } from '../utils/catalog-ui.js?v=20261004';
+import { escapeAttr, escapeHtml, isPantryIngredient } from '../utils/catalog-ui.js?v=20261011s';
 
 /**
  * Persistent Inköpslista sidebar: selected recipes + portion controls + aggregated list.

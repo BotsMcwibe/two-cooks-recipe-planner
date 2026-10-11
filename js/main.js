@@ -3,12 +3,13 @@ import { parseHash, setHash } from './core/router.js';
 import { loadStaticData, RecipeRepository } from './data/loader.js';
 import { AppShell } from './views/app-shell.js';
 import { RecipeChrome } from './views/recipe-selector.js';
-import { BrowseView } from './views/browse-view.js?v=20261007';
-import { OverviewModal } from './views/overview-modal.js?v=20261011';
-import { FlowGraph } from './views/flow-graph.js?v=20261011b';
-import { CookingView } from './views/cooking-view.js?v=20261011c';
-import { ShoppingSidebar } from './views/shopping-view.js?v=20261005';
+import { BrowseView } from './views/browse-view.js?v=20261011s';
+import { OverviewModal } from './views/overview-modal.js?v=20261011s';
+import { FlowGraph } from './views/flow-graph.js?v=20261011s';
+import { CookingView } from './views/cooking-view.js?v=20261011s';
+import { ShoppingSidebar } from './views/shopping-view.js?v=20261011s';
 import { Timer } from './views/timer.js';
+import * as UserState from './core/user-recipe-state.js?v=20261011s';
 import { initThemeToggle } from './utils/theme.js?v=20261011h';
 
 initThemeToggle(document.getElementById('theme-toggle'));
@@ -18,6 +19,7 @@ async function bootstrap() {
   const repository = new RecipeRepository(unitMap, baseIngredientMap);
   const baseIngredients = Object.values(baseIngredientMap);
   const catalogById = Object.fromEntries(catalog.map(c => [c.id, c]));
+  UserState.seedFromCatalog(catalog);
 
   const state = new AppState();
   state.currentPhase = 'browse';

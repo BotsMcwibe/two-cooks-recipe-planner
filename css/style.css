@@ -23,6 +23,14 @@
   --accent: #059669;
   --accent-light: #d1fae5;
   --focus-ring: var(--primary);
+  /* Personal recipe status */
+  --status-want: var(--p2);
+  --status-want-bg: var(--p2-light);
+  --status-cooking: var(--warn-text);
+  --status-cooking-bg: var(--warn-light);
+  --status-cooked: var(--primary-hover);
+  --status-cooked-bg: var(--primary-light);
+  --mine-star: var(--p2);
   /* Warnings, allergens, danger */
   --warn: #f59e0b;
   --warn-light: #fef3c7;
@@ -467,6 +475,11 @@ main.main-recipe {
   border-left: 1px solid var(--border);
 }
 
+/* Narrow screens: groups wrap onto their own rows, so drop the divider */
+@media (max-width: 520px) {
+  .filter-chip-group + .filter-chip-group { margin-left: 0; padding-left: 0; border-left: 0; }
+}
+
 .browse-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -752,35 +765,95 @@ main.main-recipe {
 
 .overview-rating { color: var(--star); margin-right: 6px; }
 
-.personal-rating {
-  display: inline-flex;
+/* === Personal recipe state (Vill laga / Lagar nu / Lagad + own stars) === */
+.rs-control {
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 4px;
-  margin-right: 6px;
-  padding: 2px 8px;
+  gap: 8px 14px;
+  margin: 10px 0;
+}
+.rs-status {
+  display: inline-flex;
+  border: 1px solid var(--border);
   border-radius: 999px;
-  background: var(--p2-light);
-  color: var(--p2);
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.01em;
+  background: var(--surface);
+  padding: 2px;
+  gap: 2px;
 }
-
-.personal-rating-kicker {
+.rs-status-btn {
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text-muted);
+  font: inherit;
+  font-size: 0.82rem;
   font-weight: 600;
+  padding: 5px 12px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color .15s ease, color .15s ease;
 }
-
-.cooked-flag {
-  display: inline-flex;
-  align-items: center;
-  margin-right: 6px;
-  padding: 2px 8px;
+.rs-status-btn:hover { color: var(--text); background: var(--surface-2); }
+.rs-status-btn.is-on.rs-want { background: var(--status-want-bg); color: var(--status-want); }
+.rs-status-btn.is-on.rs-cooking { background: var(--status-cooking-bg); color: var(--status-cooking); }
+.rs-status-btn.is-on.rs-cooked { background: var(--status-cooked-bg); color: var(--status-cooked); }
+.rs-status-btn.is-on::before { content: "✓ "; }
+.rs-status-btn:focus-visible,
+.rs-star:focus-visible,
+.rs-mark-done:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 1px; }
+.rs-stars { display: inline-flex; align-items: center; }
+.rs-star {
+  border: 0;
+  background: transparent;
+  padding: 0 1px;
+  font-size: 1.3rem;
+  line-height: 1;
+  color: var(--separator);
+  cursor: pointer;
+  border-radius: 4px;
+}
+.rs-star.is-on { color: var(--mine-star); }
+@media (hover: hover) {
+  .rs-stars:hover .rs-star { color: var(--mine-star); }
+  .rs-stars .rs-star:hover ~ .rs-star { color: var(--separator); }
+}
+.rs-stars-value { margin-left: 6px; font-size: 0.78rem; font-weight: 600; color: var(--text-muted); }
+.rs-mark-done {
+  border: 1px solid var(--primary);
   border-radius: 999px;
   background: var(--primary-light);
-  color: var(--primary);
-  font-size: 0.78rem;
+  color: var(--primary-hover);
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 5px 12px;
+  cursor: pointer;
+}
+.rs-mark-done:hover { background: var(--primary); color: var(--on-accent); }
+
+/* Card: status badge + own stars */
+.rs-card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 8px;
+  margin-top: 6px;
+}
+.rs-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 1px 8px;
+  border-radius: 999px;
+  font-size: 0.72rem;
   font-weight: 700;
 }
+.rs-badge.rs-want { background: var(--status-want-bg); color: var(--status-want); }
+.rs-badge.rs-cooking { background: var(--status-cooking-bg); color: var(--status-cooking); }
+.rs-badge.rs-cooked { background: var(--status-cooked-bg); color: var(--status-cooked); }
+.rs-card-stars { font-size: 0.85rem; letter-spacing: 1px; color: var(--mine-star); }
+.rs-card-stars-off { color: var(--separator); }
 
 .overview-tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0; }
 

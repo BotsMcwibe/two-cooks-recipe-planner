@@ -164,73 +164,6 @@ export function buildFilterChips(catalog) {
   return chips;
 }
 
-export function sourceLabel(source) {
-  const s = String(source || '').trim().toLowerCase();
-  if (!s) return '';
-  if (s === 'hellofresh') return 'HelloFresh';
-  if (s === 'ica') return 'ICA';
-  if (s === 'citygross') return 'CityGross';
-  if (s === 'linas') return 'Linas';
-  return s.charAt(0).toUpperCase() + s.slice(1);
-}
-
-const STOCKHOLM_TZ = 'Europe/Stockholm';
-
-/**
- * Inclusive Stockholm calendar window for "Senaste veckan".
- * 8 days = today's Stockholm date plus the 7 dates before it.
- */
-export const RECENT_CREATED_DAYS = 8;
-
-/** YYYY-MM-DD for an instant in Europe/Stockholm. */
-export function stockholmDayKey(date = new Date()) {
-  return new Intl.DateTimeFormat('sv-SE', {
-    timeZone: STOCKHOLM_TZ,
-    year: 'numeric',
-    month: '2-digit',
-    day: '2-digit',
-  }).format(date);
-}
-
-/** Calendar day in Europe/Stockholm for a unix-seconds createdAt. YYYY-MM-DD. */
-export function createdDayKey(createdAt) {
-  const n = Number(createdAt);
-  if (!Number.isFinite(n)) return '';
-  return stockholmDayKey(new Date(n * 1000));
-}
-
-/** Shift a YYYY-MM-DD key by whole calendar days (UTC date math, no DST drift). */
-export function shiftDayKey(dayKey, deltaDays) {
-  const [y, m, d] = String(dayKey).split('-').map(Number);
-  if (![y, m, d].every(n => Number.isFinite(n))) return '';
-  const dt = new Date(Date.UTC(y, m - 1, d + deltaDays));
-  const yy = dt.getUTCFullYear();
-  const mm = String(dt.getUTCMonth() + 1).padStart(2, '0');
-  const dd = String(dt.getUTCDate()).padStart(2, '0');
-  return `${yy}-${mm}-${dd}`;
-}
-
-/**
- * Stockholm dates included when the recent filter is on.
- * start = today minus (days-1), end = today. Both inclusive.
- */
-export function recentCreatedRange(now = new Date(), days = RECENT_CREATED_DAYS) {
-  const end = stockholmDayKey(now);
-  const start = shiftDayKey(end, -(days - 1));
-  return { start, end };
-}
-
-/**
- * True when createdAt (unix seconds) falls on a Stockholm calendar day
- * inside recentCreatedRange. Missing/invalid timestamps do not match.
- */
-export function createdInRecentWindow(createdAt, now = new Date(), days = RECENT_CREATED_DAYS) {
-  const key = createdDayKey(createdAt);
-  if (!key) return false;
-  const { start, end } = recentCreatedRange(now, days);
-  return key >= start && key <= end;
-}
-
 /**
  * kcal figure the overview and cook pages show:
  * Math.round(nutrition.perPortion.energyKcal). Null when unknown.
@@ -267,39 +200,6 @@ export function isCooked(value) {
   if (value === true) return true;
   if (value && typeof value === 'object') return true;
   return false;
-}
-
-/** Pill, not gold stars, so it does not read as the public rating. */
-export function personalRatingHtml(value) {
-  const pr = personalScore(value);
-  if (!pr) return '';
-  const text = `${pr.score}/${pr.outOf}`;
-  return `<span class="personal-rating" title="Personligt betyg, av ${pr.outOf}"><span class="personal-rating-kicker">Mitt betyg</span> ${escapeHtml(text)}</span>`;
-}
-
-export function cookedFlagHtml2(value) {
-  if (!isCooked(value)) return '';
-  return `<span class="cooked-flag" title="Tillagad">Tillagad</span>`;
-}
-
-/** Source chips from real catalog `source` values. */
-export function buildSourceChips(catalog) {
-  const seen = [];
-  for (const c of catalog) {
-    const s = c && c.source;
-    if (!s || seen.includes(s)) continue;
-    seen.push(s);
-  }
-  seen.sort((a, b) => sourceLabel(a).localeCompare(sourceLabel(b), 'sv'));
-  return seen.map(s => {
-    const label = sourceLabel(s);
-    return {
-      id: `source:${s}`,
-      label,
-      title: `Källa: ${label}`,
-      match: (entry) => entry.source === s,
-    };
-  });
 }
 
 export function starHtml(average, count) {

@@ -6,12 +6,12 @@ import {
   displayTags,
   escapeAttr,
   escapeHtml,
-  cookedFlagHtml2,
   isPantryIngredient,
-  personalRatingHtml,
   starHtml,
   subtitleFromSearchText,
-} from '../utils/catalog-ui.js?v=20261004';
+} from '../utils/catalog-ui.js?v=20261011s';
+import * as UserState from '../core/user-recipe-state.js?v=20261011s';
+import { bindStatusControls, refreshStatusControls, statusControlHtml } from './recipe-status-ui.js?v=20261011s';
 
 /**
  * HelloFresh-inspired recipe overview modal.
@@ -67,6 +67,10 @@ export class OverviewModal {
 
   _bind() {
     this.$root.on('click', '[data-close]', () => this.close());
+    bindStatusControls(this.$root);
+    UserState.subscribe((id) => {
+      if (this.isOpen()) refreshStatusControls(this.$root, id);
+    });
     this.$root.on('click', '.overview-dialog', (e) => e.stopPropagation());
     $(document).on('keydown.overviewModal', (e) => {
       if (e.key === 'Escape' && this.isOpen()) this.close();
@@ -170,8 +174,6 @@ export class OverviewModal {
     const mins = entry.totalMinutes != null ? `${entry.totalMinutes} min` : '';
     const diff = difficultyLabel(entry.difficulty);
     const rating = starHtml(entry.ratingAverage, entry.ratingCount);
-    const personal = personalRatingHtml(entry.personalRating ?? loaded?.personalRating);
-    const cooked = cookedFlagHtml2(entry.cooked ?? loaded?.cooked);
     const tags = displayTags(entry, 4).map(t => `<span class="card-tag">${escapeHtml(t)}</span>`).join('');
 
     let kcal = '';
@@ -198,13 +200,12 @@ export class OverviewModal {
         </div>
         <div class="overview-meta-row">
           ${rating ? `<span class="overview-rating">${rating}</span>` : ''}
-          ${personal}
-          ${cooked}
           ${mins ? `<span class="meta-item">${escapeHtml(mins)}</span>` : ''}
           ${kcal ? `<span class="meta-item" id="overview-kcal">${escapeHtml(kcal)}</span>` : ''}
           ${diff ? `<span class="meta-item">${escapeHtml(diff)}</span>` : ''}
         </div>
         ${tags ? `<div class="overview-tags">${tags}</div>` : ''}
+        ${statusControlHtml(entry.id)}
         ${desc ? `<p class="overview-desc">${escapeHtml(desc)}</p>` : ''}
         ${allergens ? `<div class="overview-allergens"><span class="allergens-label">Allergener:</span> ${allergens}</div>` : ''}
 

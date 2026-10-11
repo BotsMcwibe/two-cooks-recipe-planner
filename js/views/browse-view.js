@@ -1,17 +1,16 @@
 import { loadPortionEnergyKcal } from '../data/loader.js';
 import {
   buildFilterChips,
-  buildSourceChips,
-  createdInRecentWindow,
   displayTags,
   difficultyLabel,
   displayedPortionKcal,
   escapeAttr,
   escapeHtml,
-  isCooked,
   starHtml,
   subtitleFromSearchText,
-} from '../utils/catalog-ui.js?v=20261007';
+} from '../utils/catalog-ui.js?v=20261011s';
+import * as UserState from '../core/user-recipe-state.js?v=20261011s';
+import { cardStateHtml } from './recipe-status-ui.js?v=20261011s';
 
 /**
  * Browse page: searchable/filterable recipe card grid.
@@ -30,12 +29,10 @@ export class BrowseView {
     this.hooks = hooks;
     this.$container = $('#view-browse');
     this.filterChips = buildFilterChips(catalog);
-    this.sourceChips = buildSourceChips(catalog);
     this.activeFilter = 'all';
-    this.sourceFilter = null;
-    this.recentOnly = false;
     this.kcalOnly = false;
-    this.cookedOnly = false;
+    /** @type {'want'|'cooking'|'cooked'|null} personal status filter */
+    this.statusFilter = null;
     this.query = '';
     /** @type {Map<string, number>|null} raw per-portion energyKcal, null until loaded */
     this.kcalById = null;
@@ -47,33 +44,29 @@ export class BrowseView {
     this._bind();
     this.render();
     state.on('shoppingChange', () => this._syncCheckboxes());
+    UserState.subscribe(() => this.render());
   }
 
   _chipHtml(chip, group, active) {
     const title = chip.title ? ` title="${escapeAttr(chip.title)}"` : '';
-    return `<button type="button" class="filter-chip${active ? ' active' : ''}" data-group="${escapeAttr(group)}" data-filter="${escapeAttr(chip.id)}"${title}>${escapeHtml(chip.label)}</button>`;
+    const pressed = group === 'tag' ? '' : ` aria-pressed="${active}"`;
+    return `<button type="button" class="filter-chip${active ? ' active' : ''}" data-group="${escapeAttr(group)}" data-filter="${escapeAttr(chip.id)}"${title}${pressed}>${escapeHtml(chip.label)}</button>`;
   }
 
   _buildChrome() {
     const chips = this.filterChips.map((c, i) =>
       this._chipHtml(c, 'tag', i === 0)
     ).join('');
-    const source = this.sourceChips.map(c => this._chipHtml(c, 'source', false)).join('');
-    const recent = this._chipHtml(
-      { id: 'recent', label: 'Senaste veckan', title: 'Skapade de senaste 8 dagarna' },
-      'created',
-      false,
-    );
     const kcal = this._chipHtml(
       { id: 'kcal', label: 'Under 650 kcal', title: 'Under 650 kcal per portion' },
       'kcal',
       false,
     );
-    const cooked = this._chipHtml(
-      { id: 'cooked', label: 'Tillagade', title: 'Visa bara tillagade recept' },
-      'cooked',
+    const status = UserState.STATUSES.map(s => this._chipHtml(
+      { id: s, label: UserState.STATUS_LABELS[s], title: `Visa recept märkta ”${UserState.STATUS_LABELS[s]}”` },
+      'status',
       false,
-    );
+    )).join('');
 
     this.$container.html(`
       <div class="browse-toolbar">
@@ -83,10 +76,8 @@ export class BrowseView {
         </div>
         <div class="filter-chips" role="group" aria-label="Filter">${chips}</div>
         <div class="filter-chips filter-chips-extra">
-          <span class="filter-chip-group" role="group" aria-label="Källa">${source}</span>
-          <span class="filter-chip-group" role="group" aria-label="Skapad">${recent}</span>
           <span class="filter-chip-group" role="group" aria-label="Kalorier">${kcal}</span>
-          <span class="filter-chip-group" role="group" aria-label="Tillagad">${cooked}</span>
+          <span class="filter-chip-group filter-chip-group-status" role="group" aria-label="Min status">${status}</span>
         </div>
       </div>
       <div class="browse-grid" id="browse-grid"></div>
@@ -107,26 +98,22 @@ export class BrowseView {
         this.activeFilter = id;
         this.$container.find('.filter-chip[data-group="tag"]').removeClass('active');
         $btn.addClass('active');
-      } else if (group === 'source') {
-        const next = this.sourceFilter === id ? null : id;
-        this.sourceFilter = next;
-        this.$container.find('.filter-chip[data-group="source"]').removeClass('active');
-        if (next) $btn.addClass('active');
-      } else if (group === 'created') {
-        this.recentOnly = !this.recentOnly;
-        $btn.toggleClass('active', this.recentOnly);
       } else if (group === 'kcal') {
         this.kcalOnly = !this.kcalOnly;
-        $btn.toggleClass('active', this.kcalOnly);
+        $btn.toggleClass('active', this.kcalOnly).attr('aria-pressed', String(this.kcalOnly));
         if (this.kcalOnly && !this.kcalById) {
           this._kcalReady.then(() => {
             if (this.kcalOnly) this.render();
           });
           return;
         }
-      } else if (group === 'cooked') {
-        this.cookedOnly = !this.cookedOnly;
-        $btn.toggleClass('active', this.cookedOnly);
+      } else if (group === 'status') {
+        this.statusFilter = this.statusFilter === id ? null : id;
+        this.$container.find('.filter-chip[data-group="status"]').each((_, el) => {
+          const on = el.getAttribute('data-filter') === this.statusFilter;
+          el.classList.toggle('active', on);
+          el.setAttribute('aria-pressed', String(on));
+        });
       }
       this.render();
     });
@@ -177,18 +164,15 @@ export class BrowseView {
   _filtered() {
     const chip = this.filterChips.find(c => c.id === this.activeFilter);
     const matchFilter = chip ? chip.match : () => true;
-    const sourceChip = this.sourceChips.find(c => c.id === this.sourceFilter);
     const q = this.query;
     return this.catalog.filter((entry) => {
       if (!matchFilter(entry)) return false;
-      if (sourceChip && !sourceChip.match(entry)) return false;
-      if (this.recentOnly && !createdInRecentWindow(entry.createdAt)) return false;
       if (this.kcalOnly) {
         const raw = this.kcalById ? this.kcalById.get(entry.id) : undefined;
         const shown = displayedPortionKcal(raw);
         if (shown == null || shown >= 650) return false;
       }
-      if (this.cookedOnly && !isCooked(entry.cooked)) return false;
+      if (this.statusFilter && UserState.get(entry.id).status !== this.statusFilter) return false;
       if (!q) return true;
       const hay = `${entry.name || ''} ${entry.searchText || ''}`.toLowerCase();
       return hay.includes(q);
@@ -220,6 +204,7 @@ export class BrowseView {
       const rating = starHtml(c.ratingAverage, c.ratingCount);
       const selected = this.state.isShoppingRecipeSelected(c.id);
       const checked = selected ? 'checked' : '';
+      const mine = cardStateHtml(c.id);
 
       html += `
         <article class="recipe-card${selected ? ' is-shopping-selected' : ''}" data-id="${escapeAttr(c.id)}" tabindex="0" role="button"
@@ -241,6 +226,7 @@ export class BrowseView {
               ${tagHtml}
             </div>
             ${rating ? `<div class="recipe-card-rating">${rating}</div>` : ''}
+            ${mine}
           </div>
         </article>`;
     }

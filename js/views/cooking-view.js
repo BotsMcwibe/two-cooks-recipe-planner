@@ -4,13 +4,13 @@ import { formatNiceAmount } from '../utils/helpers.js';
 import {
   allergenLabel,
   difficultyLabel,
-  cookedFlagHtml2,
   displayTags,
   escapeAttr,
   escapeHtml,
-  personalRatingHtml,
   starHtml,
-} from '../utils/catalog-ui.js?v=20261004';
+} from '../utils/catalog-ui.js?v=20261011s';
+import * as UserState from '../core/user-recipe-state.js?v=20261011s';
+import { bindStatusControls, refreshStatusControls, statusControlHtml } from './recipe-status-ui.js?v=20261011s';
 import { joinStepParts, sentenceCase } from '../utils/text.js?v=20261011';
 
 /**
@@ -32,7 +32,13 @@ export class CookingView {
     this.$layout = $('#cooking-layout');
     /** @type {string|null} last hero src we rendered */
     this._heroSrc = null;
+    /** True when every step is checked (offers "Markera som lagad"). */
+    this._allDone = false;
     this._bindEvents();
+    bindStatusControls(this.$header);
+    UserState.subscribe((id) => {
+      refreshStatusControls(this.$header, id, { allDone: this._allDone });
+    });
   }
 
   /**
@@ -54,12 +60,13 @@ export class CookingView {
     const schedule = rootRecipe
       ? new Scheduler(rootRecipe, subtreeRecipes, options).getSchedule()
       : null;
+    const stepsModel = this._buildStepsModel(schedule);
+    this._allDone = stepsModel.length > 0 && stepsModel.every(s => s.completed);
     this._renderHero(meta.images, meta.recipeName || rootRecipe?.name || '');
     this._renderHeader(meta, schedule);
     this._renderNutrition(meta.nutrition, meta.portionScale ?? 1, meta.currentPortions);
     this._renderIngredients(rootRecipe, subtreeRecipes, graph, baseIngredients);
 
-    const stepsModel = this._buildStepsModel(schedule);
     const soft = meta.softUpdate === true;
     if (soft && this._canPatchSteps(stepsModel)) {
       this._patchSteps(stepsModel);
@@ -152,8 +159,6 @@ export class CookingView {
       : (entry.totalMinutes != null ? `${entry.totalMinutes} min` : '');
     const diff = difficultyLabel(entry.difficulty);
     const rating = starHtml(entry.ratingAverage, entry.ratingCount);
-    const personal = personalRatingHtml(entry.personalRating);
-    const cooked = cookedFlagHtml2(entry.cooked);
     const tags = displayTags(entry, 4).map(t => `<span class="card-tag">${escapeHtml(t)}</span>`).join('');
     const allergens = (entry.allergens || [])
       .map(a => `<span class="allergen-chip">${escapeHtml(allergenLabel(a))}</span>`)
@@ -168,8 +173,6 @@ export class CookingView {
     let html = `<h2 class="cooking-title">${escapeHtml(name)}</h2>`;
     html += '<div class="cooking-meta-bar">';
     if (rating) html += `<span class="overview-rating">${rating}</span>`;
-    if (personal) html += personal;
-    if (cooked) html += cooked;
     if (mins) html += `<span class="meta-item">${escapeHtml(mins)}</span>`;
     if (kcal) html += `<span class="meta-item">${escapeHtml(kcal)}</span>`;
     if (diff) html += `<span class="meta-item">${escapeHtml(diff)}</span>`;
@@ -178,6 +181,8 @@ export class CookingView {
     }
     html += '</div>';
     if (tags) html += `<div class="overview-tags">${tags}</div>`;
+    const statusId = entry.id || this.state.selectedRecipeId;
+    if (statusId) html += statusControlHtml(statusId, { allDone: this._allDone });
     if (allergens) {
       html += `<div class="overview-allergens"><span class="allergens-label">Allergener:</span> ${allergens}</div>`;
     }
@@ -528,6 +533,10 @@ export class CookingView {
 
   _handleStepChange(recipeId, stepIndex, checked) {
     if (checked) {
+      // Starting to cook: mark "Lagar nu" unless already cooking or cooked.
+      const id = this.state.selectedRecipeId;
+      const st = id ? UserState.get(id).status : null;
+      if (id && (st == null || st === 'want')) UserState.setStatus(id, 'cooking');
       this.state.completeStep(recipeId, parseInt(stepIndex));
     } else {
       this.state.uncompleteStep(recipeId, parseInt(stepIndex));
