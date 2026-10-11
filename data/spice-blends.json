@@ -174,7 +174,7 @@
     },
     {
       "name": "Taco",
-      "packetGrams": 8,
+      "packetGrams": 7.7,
       "spices": {
         "spiskummin": 2.0,
         "paprika": 1.8,
@@ -182,7 +182,6 @@
         "vitlok": 1.0,
         "lok": 1.0,
         "oregano": 0.5,
-        "koriander": 0.3,
         "salt": 0.2
       }
     }
