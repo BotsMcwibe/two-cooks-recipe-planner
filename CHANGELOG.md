@@ -1,3 +1,13 @@
+## 2026-10-11 — Cook page: flow graph replaces the Gantt
+
+- Matlagning shows a left-to-right dependency graph (`js/views/flow-graph.js`) instead of the Gantt: columns by depth (steg 1 … klart), curved edges, master node highlighted, names wrap (never truncated), sentence-case names
+- Progress: nodes fill green with ✓ when all their steps are checked, the node with the current step gets a thick outline, partial nodes show a thin progress bar; the graph scrolls horizontally to keep the active node in view (mobile too)
+- Click a node to jump to its step group; 2 kockar adds P1/P2 badges (P2 violet), Preppa först adds prep badges and the prep/cook time strip
+- Header time still uses the scheduler makespan
+- Step text: no stray space before punctuation (`Vitlöksklyfta.`); step group titles in sentence case
+- Hero photo frame hidden on the cook page and in Översikt when the recipe photo fails to load
+- `gantt-chart.js` is no longer imported (kept for reference)
+
 ## 2026-10-01 — GitHub Pages: app at repository root
 
 ### Changed

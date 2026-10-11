@@ -144,6 +144,16 @@ export class OverviewModal {
     return this.modalPortions / base;
   }
 
+  /** Hide the hero frame when the recipe photo fails to load (photos are not deployed). */
+  _bindHeroFallback() {
+    const $hero = this.$root.find('#overview-body .overview-hero');
+    const img = $hero.find('img.overview-hero-img')[0];
+    if (!img) return;
+    const hide = () => { $hero.attr('hidden', true).addClass('is-missing'); };
+    img.addEventListener('error', hide, { once: true });
+    if (img.complete && img.naturalWidth === 0 && img.getAttribute('src')) hide();
+  }
+
   _renderBody() {
     const entry = this._entry();
     const loaded = this.loaded;
@@ -223,6 +233,7 @@ export class OverviewModal {
       </div>`;
 
     this.$root.find('#overview-body').html(html);
+    this._bindHeroFallback();
   }
 
   /**

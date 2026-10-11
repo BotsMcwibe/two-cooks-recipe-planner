@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Recept</title>
   <link rel="icon" href="favicon.ico" sizes="any">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?v=20261011">
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"
     integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
     crossorigin="anonymous"></script>
@@ -33,12 +33,12 @@
       Inköpslista
     </button>
 
-    <!-- Cooking / Matlagning (gantt + steps) -->
+    <!-- Cooking / Matlagning (flow graph + steps) -->
     <section id="view-cooking" style="display:none">
       <div id="cooking-hero" hidden></div>
       <div id="cooking-header" hidden></div>
       <div id="cook-toggles" class="cook-toggles"></div>
-      <div id="gantt-chart"></div>
+      <div id="cook-graph" class="cook-graph"></div>
       <div id="cooking-layout" class="cooking-layout">
         <aside class="cooking-sidebar">
           <div id="cook-portions" class="cook-portions"></div>
@@ -52,6 +52,6 @@
     </section>
   </main>
 
-  <script type="module" src="js/main.js?v=20261007"></script>
+  <script type="module" src="js/main.js?v=20261011"></script>
 </body>
 </html>

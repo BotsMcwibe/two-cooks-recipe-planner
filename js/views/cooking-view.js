@@ -11,6 +11,7 @@ import {
   personalRatingHtml,
   starHtml,
 } from '../utils/catalog-ui.js?v=20261004';
+import { joinStepParts, sentenceCase } from '../utils/text.js?v=20261011';
 
 /**
  * Cooking view - rich recipe page with hero, meta, ingredients, nutrition,
@@ -44,6 +45,7 @@ export class CookingView {
    * @param {object|null} [meta.catalogEntry]
    * @param {boolean} [meta.softUpdate] — patch step DOM in place when possible
    * @param {boolean} [meta.autoScroll] — scroll to current step (default false)
+   * @returns {{ schedule: object|null, progress: { doneIds: Set<string>, activeId: string|null, counts: Map<string,{done:number,total:number}> } }}
    */
   render(rootRecipe, subtreeRecipes, graph, baseIngredients, options, meta = {}) {
     this._byNode = (meta.images && meta.images.byNode) || {};
@@ -68,11 +70,45 @@ export class CookingView {
     if (meta.autoScroll) {
       this._scrollToCurrent();
     }
+
+    return { schedule, progress: this._progressFrom(stepsModel) };
+  }
+
+  /**
+   * Per-node progress for the flow graph: done = every step checked,
+   * active = node holding the current (first unchecked, enabled) step.
+   */
+  _progressFrom(steps) {
+    const counts = new Map();
+    for (const s of steps) {
+      const c = counts.get(s.recipeId) || { done: 0, total: 0 };
+      c.total += 1;
+      if (s.completed) c.done += 1;
+      counts.set(s.recipeId, c);
+    }
+    const doneIds = new Set();
+    for (const [id, c] of counts) if (c.total && c.done === c.total) doneIds.add(id);
+    const cur = steps.find(s => !s.completed && s.enabled);
+    return { doneIds, activeId: cur ? String(cur.recipeId) : null, counts };
+  }
+
+  /** Scroll the page so the step group for a node is in view (flow-graph click). */
+  scrollToGroup(recipeId) {
+    const $g = this.$steps.find(`.recipe-group[data-recipe="${CSS.escape(String(recipeId))}"]`);
+    if (!$g.length) return;
+    const top = Math.max($g.offset().top - 16, 0);
+    window.scrollTo({ top, behavior: 'smooth' });
+    $g.removeClass('flash');
+    // restart the highlight animation
+    void $g[0].offsetWidth;
+    $g.addClass('flash');
+    setTimeout(() => $g.removeClass('flash'), 1600);
   }
 
   _renderHero(images, recipeName) {
     const main = images && typeof images.main === 'string' ? images.main.trim() : '';
-    if (!main) {
+    if (!main || this._heroFailed === main) {
+      // No photo, or it already failed to load (recipe photos are not deployed): no empty frame
       this._heroSrc = null;
       this.$hero.attr('hidden', true).empty();
       return;
@@ -87,6 +123,18 @@ export class CookingView {
     this.$hero
       .html(`<img class="cooking-hero-img" src="${escapeAttr(main)}" alt="${escapeAttr(alt)}" loading="eager" decoding="async">`)
       .removeAttr('hidden');
+    const img = this.$hero.find('img.cooking-hero-img')[0];
+    const onFail = () => {
+      this._heroFailed = main;
+      if (this._heroSrc === main) {
+        this._heroSrc = null;
+        this.$hero.attr('hidden', true).empty();
+      }
+    };
+    if (img) {
+      img.addEventListener('error', onFail, { once: true });
+      if (img.complete && img.naturalWidth === 0 && img.getAttribute('src')) onFail();
+    }
   }
 
   /**
@@ -330,7 +378,7 @@ export class CookingView {
         html += `<div class="step-node-photo"><img src="${escapeAttr(nodeImg)}" alt="" loading="lazy" decoding="async" data-node-src="${escapeAttr(nodeImg)}"></div>`;
       }
       html += `<div class="recipe-group-header${cook ? ' has-cook-badge' : ''}">`;
-      html += `<strong>${escapeHtml(first.recipeName)}</strong>`;
+      html += `<strong>${escapeHtml(sentenceCase(first.recipeName))}</strong>`;
       if (first.recipe.inputs.length) {
         html += `<span class="recipe-needs">${this._formatStepInputs(first.recipe.inputs, steps)}</span>`;
       }
@@ -413,28 +461,24 @@ export class CookingView {
 
   _stringifyStep(step) {
     if (!Array.isArray(step)) return escapeHtml(step);
-    let str = '';
-    for (let i = 0; i < step.length; i++) {
-      const part = step[i];
-      let text;
+    const texts = [];
+    const isText = [];
+    for (const part of step) {
       if (part && typeof part === 'object') {
         if (part.type === 'ingredient' && part.ingredient?.json?.name) {
-          text = `<strong>${escapeHtml(part.ingredient.json.name)}</strong>`;
+          texts.push(`<strong>${escapeHtml(part.ingredient.json.name)}</strong>`);
         } else if (part.name) {
-          text = `<strong>${escapeHtml(part.name)}</strong>`;
+          texts.push(`<strong>${escapeHtml(part.name)}</strong>`);
         } else {
-          text = escapeHtml(JSON.stringify(part));
+          texts.push(escapeHtml(JSON.stringify(part)));
         }
+        isText.push(false);
       } else {
-        text = escapeHtml(part);
-      }
-      if (i < step.length - 1 && step[i + 1] === ',') {
-        str += text;
-      } else {
-        str += text + ' ';
+        texts.push(escapeHtml(part));
+        isText.push(true);
       }
     }
-    return str.trim();
+    return joinStepParts(texts, isText);
   }
 
   _renderIngredients(rootRecipe, subtreeRecipes, graph, baseIngredients) {

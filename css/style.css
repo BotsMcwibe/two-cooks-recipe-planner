@@ -560,6 +560,11 @@ main.main-recipe {
   background: linear-gradient(135deg, #e5e7eb, #d1d5db);
 }
 
+/* Recipe photo failed to load (not deployed): hero hidden, keep the close button clear of the title row */
+.overview-hero.is-missing + .overview-content .overview-title-row {
+  padding-right: 40px;
+}
+
 .overview-content {
   padding: 20px 24px 28px;
 }
@@ -764,6 +769,175 @@ main.main-recipe {
 }
 
 .nutrition-empty { padding: 0; }
+
+/* === Flow graph (cook page; replaces the Gantt) === */
+.cook-graph {
+  padding: 4px 0 16px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+#view-cooking .cook-graph:empty {
+  display: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+.flow-scroll {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+  scrollbar-width: thin;
+  padding: 0 6px 8px;
+  outline: none;
+}
+.flow-canvas {
+  --flow-card-w: 176px;
+  --flow-col-gap: 56px;
+  --node-color: var(--gantt-p1);
+  position: relative;
+  min-height: 60px;
+  margin: 0 auto;
+}
+.flow-level {
+  position: absolute;
+  top: 0;
+  text-align: center;
+  font-size: 0.72rem;
+  color: #9aa1ab;
+  letter-spacing: 0.02em;
+  pointer-events: none;
+}
+.flow-edges {
+  position: absolute;
+  inset: 0 auto auto 0;
+  overflow: visible;
+  pointer-events: none;
+}
+.flow-edge {
+  fill: none;
+  stroke: #b8bec6;
+  stroke-width: 1.6;
+  transition: stroke 0.25s ease;
+}
+.flow-edge.is-done {
+  stroke: var(--gantt-p1);
+  stroke-width: 2;
+}
+.flow-node {
+  --node-color: var(--gantt-p1);
+  position: absolute;
+  left: 0;
+  top: 0;
+  box-sizing: border-box;
+  width: var(--flow-card-w);
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 8px 10px 9px;
+  margin: 0;
+  background: var(--surface);
+  color: var(--text);
+  border: 1.5px solid #c9ced6;
+  border-radius: 10px;
+  box-shadow: 0 1px 2px rgba(0,0,0,.05);
+  font: inherit;
+  text-align: left;
+  white-space: normal;
+  overflow: hidden;
+  cursor: pointer;
+  transition: background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, color 0.25s ease;
+}
+.flow-node.cook-p2 { --node-color: var(--gantt-p2); }
+@media (hover: hover) {
+  .flow-node:not(.is-done):not(.is-active):hover { border-color: var(--node-color); }
+}
+.flow-node:focus-visible { outline: 2px solid var(--node-color); outline-offset: 2px; }
+.flow-node.has-cook { padding-right: 40px; }
+.flow-node.is-master {
+  background: #fffbea;
+  border-color: #e0b43a;
+  border-width: 2px;
+}
+.flow-name {
+  font-size: 0.86rem;
+  font-weight: 650;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}
+.flow-check { display: none; margin-right: 4px; font-weight: 800; }
+.flow-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 8px;
+  font-size: 0.74rem;
+  color: var(--text-muted);
+  line-height: 1.2;
+}
+.flow-prep {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 1px 6px 1px 5px;
+  border-radius: 999px;
+  background: var(--primary-light);
+  color: var(--primary-hover);
+  font-size: 0.68rem;
+  font-weight: 600;
+}
+.flow-cook.cook-badge {
+  top: 7px;
+  right: 7px;
+  width: 26px;
+  height: 20px;
+  font-size: 0.64rem;
+}
+.flow-progress {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 3px;
+  background: transparent;
+}
+.flow-progress-bar {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: var(--node-color);
+  transition: width 0.3s ease;
+}
+.flow-node.is-active {
+  border: 3px solid var(--node-color);
+  padding: 6.5px 8.5px 7.5px;
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--node-color) 18%, transparent), 0 2px 8px rgba(0,0,0,.08);
+}
+.flow-node.is-active.has-cook { padding-right: 38.5px; }
+.flow-node.is-active .flow-cook.cook-badge { top: 5.5px; right: 5.5px; }
+.flow-node.is-done {
+  background: var(--node-color);
+  border-color: var(--node-color);
+  color: #fff;
+}
+.flow-node.is-done .flow-meta { color: rgba(255,255,255,.85); }
+.flow-node.is-done .flow-check { display: inline; }
+.flow-node.is-done .flow-progress { display: none; }
+.flow-node.is-done .flow-prep { background: rgba(255,255,255,.2); color: #fff; }
+.flow-node.is-done .flow-cook.cook-badge { box-shadow: 0 0 0 1.5px #fff; }
+
+/* Step group highlight when jumped to from the flow graph */
+.recipe-group.flash { animation: group-flash 1.5s ease; }
+@keyframes group-flash {
+  0%, 30% { box-shadow: 0 0 0 3px var(--gantt-p1); }
+  100% { box-shadow: 0 0 0 0 transparent; }
+}
+
+@media (max-width: 520px) {
+  .flow-canvas { --flow-card-w: 148px; --flow-col-gap: 34px; }
+  .flow-name { font-size: 0.8rem; }
+}
 
 /* === Gantt Chart === */
 #gantt-chart {

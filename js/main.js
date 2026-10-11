@@ -4,9 +4,9 @@ import { loadStaticData, RecipeRepository } from './data/loader.js';
 import { AppShell } from './views/app-shell.js';
 import { RecipeChrome } from './views/recipe-selector.js';
 import { BrowseView } from './views/browse-view.js?v=20261007';
-import { OverviewModal } from './views/overview-modal.js?v=20261005';
-import { GanttChart } from './views/gantt-chart.js';
-import { CookingView } from './views/cooking-view.js?v=20261005';
+import { OverviewModal } from './views/overview-modal.js?v=20261011';
+import { FlowGraph } from './views/flow-graph.js?v=20261011';
+import { CookingView } from './views/cooking-view.js?v=20261011';
 import { ShoppingSidebar } from './views/shopping-view.js?v=20261005';
 import { Timer } from './views/timer.js';
 
@@ -20,8 +20,10 @@ async function bootstrap() {
   state.currentPhase = 'browse';
 
   const shell = new AppShell(state);
-  const ganttChart = new GanttChart();
   const cookingView = new CookingView(state);
+  const flowGraph = new FlowGraph({
+    onNodeClick: (recipeId) => cookingView.scrollToGroup(recipeId),
+  });
   const shoppingSidebar = new ShoppingSidebar(
     state, catalog, unitMap, baseIngredientMap, ingredientTagsData, repository
   );
@@ -70,9 +72,8 @@ async function bootstrap() {
     const entry = catalogById[state.selectedRecipeId] || null;
 
     if (state.currentPhase === 'cooking') {
-      // Flödesdiagram at top of Matlagning; updates with prep-first / 2-cooks
-      ganttChart.render(root, subtree, schedOpts);
-      cookingView.render(root, subtree, scaledGraph, baseIngredients, schedOpts, {
+      // Flow graph at top of Matlagning; updates with prep-first / 2-cooks and step progress
+      const { schedule, progress } = cookingView.render(root, subtree, scaledGraph, baseIngredients, schedOpts, {
         images: current.images,
         nutrition: current.nutrition,
         recipeName: root.name,
@@ -81,7 +82,8 @@ async function bootstrap() {
         catalogEntry: entry,
         softUpdate: !!opts.softUpdate,
         autoScroll: !!opts.autoScroll,
-      });
+      }) || {};
+      flowGraph.render(root, schedule, schedOpts, progress);
       Timer.initAll($('#cooking-steps'));
     }
 
