@@ -12,8 +12,10 @@ import { ShoppingSidebar } from './views/shopping-view.js?v=20261011p';
 import { Timer } from './views/timer.js';
 import * as UserState from './core/user-recipe-state.js?v=20261011p';
 import { initThemeToggle } from './utils/theme.js?v=20261011h';
+import { initBackToTop } from './utils/back-to-top.js?v=20261011t';
 
 initThemeToggle(document.getElementById('theme-toggle'));
+initBackToTop();
 
 async function bootstrap() {
   const { unitMap, baseIngredientMap, ingredientTagsData, catalog } = await loadStaticData();
