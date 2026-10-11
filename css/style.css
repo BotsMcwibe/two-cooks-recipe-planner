@@ -68,7 +68,25 @@ header {
 .brand-mark {
   display: block;
   flex: none;
-  color: var(--primary);
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+
+.brand-text {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  column-gap: 10px;
+  row-gap: 2px;
+  min-width: 0;
+}
+
+.brand-tagline {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  line-height: 1.2;
 }
 
 .brand-word {

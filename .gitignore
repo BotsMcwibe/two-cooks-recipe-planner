@@ -53,3 +53,7 @@ assets/**/*.avif
 # Ingredient images are small enough to keep in the repo
 !assets/ingredients/
 !assets/ingredients/*
+
+# Brand images (logo, icons) are small and belong in the repo
+!assets/brand/
+!assets/brand/*
