@@ -1,4 +1,4 @@
-import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261011p';
+import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261011u';
 import { sentenceCase } from '../utils/text.js?v=20261011';
 import { prepPhaseIds, isPrepTagged } from '../utils/prep-phase.js?v=20261011b';
 

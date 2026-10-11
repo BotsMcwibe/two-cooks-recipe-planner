@@ -6,11 +6,13 @@ import {
   displayedPortionKcal,
   escapeAttr,
   escapeHtml,
+  recipeVisual,
   starHtml,
   subtitleFromSearchText,
-} from '../utils/catalog-ui.js?v=20261011p';
-import * as UserState from '../core/user-recipe-state.js?v=20261011p';
-import { cardStateHtml } from './recipe-status-ui.js?v=20261011p';
+} from '../utils/catalog-ui.js?v=20261011u';
+import * as UserState from '../core/user-recipe-state.js?v=20261011u';
+import { imgFailed, isPhotoMissing, recordPhotoFailure, recordPhotoSuccess, photosLikelyUnavailable } from '../utils/photo-fallback.js?v=20261011u';
+import { cardStateHtml } from './recipe-status-ui.js?v=20261011u';
 
 /**
  * Browse page: searchable/filterable recipe card grid.
@@ -42,6 +44,7 @@ export class BrowseView {
     });
     this._buildChrome();
     this._bind();
+    this._bindPhotoFallback();
     this.render();
     state.on('shoppingChange', () => this._syncCheckboxes());
     UserState.subscribe(() => this.render());
@@ -152,6 +155,54 @@ export class BrowseView {
     });
   }
 
+  /**
+   * Card photos: fade in on load; on error collapse the media box to the
+   * compact placeholder strip (never a broken-image icon). load/error do not
+   * bubble, so listen in the capture phase on the grid.
+   */
+  _bindPhotoFallback() {
+    const grid = this.$container.find('#browse-grid')[0];
+    if (!grid) return;
+    grid.addEventListener('load', (e) => {
+      const img = e.target;
+      if (!(img instanceof HTMLImageElement) || !img.classList.contains('recipe-card-img')) return;
+      img.classList.add('is-loaded');
+      recordPhotoSuccess(img.getAttribute('src'));
+    }, true);
+    grid.addEventListener('error', (e) => {
+      const img = e.target;
+      if (!(img instanceof HTMLImageElement) || !img.classList.contains('recipe-card-img')) return;
+      recordPhotoFailure(img.getAttribute('src'));
+      this._collapseMedia(img);
+      // Pages has no recipe photos at all: collapse the rest now, not one by one while scrolling
+      if (photosLikelyUnavailable()) {
+        grid.querySelectorAll('img.recipe-card-img:not(.is-loaded)').forEach(i => this._collapseMedia(i));
+      }
+    }, true);
+  }
+
+  _collapseMedia(img) {
+    const media = img.closest('.recipe-card-media');
+    if (!media || media.classList.contains('is-nophoto')) return;
+    const ph = document.createElement('span');
+    ph.className = 'recipe-card-ph';
+    ph.setAttribute('aria-hidden', 'true');
+    ph.textContent = media.getAttribute('data-ph-emoji') || '🍽️';
+    img.replaceWith(ph);
+    media.classList.add('is-nophoto');
+  }
+
+  _checkPhotos($grid) {
+    $grid.find('img.recipe-card-img').each((_, img) => {
+      if (imgFailed(img)) {
+        recordPhotoFailure(img.getAttribute('src'));
+        this._collapseMedia(img);
+      } else if (img.complete && img.naturalWidth > 0) {
+        img.classList.add('is-loaded');
+      }
+    });
+  }
+
   _syncCheckboxes() {
     this.$container.find('.recipe-card-shop-cb').each((_, el) => {
       const id = $(el).data('id');
@@ -193,9 +244,11 @@ export class BrowseView {
 
     let html = '';
     for (const c of list) {
-      const img = c.image
-        ? `<img class="recipe-card-img" src="${escapeAttr(c.image)}" alt="" loading="lazy" decoding="async">`
-        : `<div class="recipe-card-img recipe-card-placeholder" aria-hidden="true"></div>`;
+      const vis = recipeVisual(c);
+      const noPhoto = isPhotoMissing(c.image);
+      const img = noPhoto
+        ? `<span class="recipe-card-ph" aria-hidden="true">${vis.emoji}</span>`
+        : `<img class="recipe-card-img" src="${escapeAttr(c.image)}" alt="" loading="lazy" decoding="async">`;
       const sub = subtitleFromSearchText(c);
       const tags = displayTags(c, 2);
       const tagHtml = tags.map(t => `<span class="card-tag">${escapeHtml(t)}</span>`).join('');
@@ -209,7 +262,7 @@ export class BrowseView {
       html += `
         <article class="recipe-card${selected ? ' is-shopping-selected' : ''}" data-id="${escapeAttr(c.id)}" tabindex="0" role="button"
           aria-label="${escapeAttr(c.name)}">
-          <div class="recipe-card-media">
+          <div class="recipe-card-media${noPhoto ? ' is-nophoto' : ''}" style="--ph-h:${vis.hue}" data-ph-emoji="${escapeAttr(vis.emoji)}">
             <label class="recipe-card-shop" title="Lägg till i inköpslista">
               <input type="checkbox" class="recipe-card-shop-cb" data-id="${escapeAttr(c.id)}"
                 ${checked} aria-label="Lägg till ${escapeAttr(c.name)} i inköpslista">
@@ -231,6 +284,7 @@ export class BrowseView {
         </article>`;
     }
     $grid.html(html);
+    this._checkPhotos($grid);
   }
 
   show() {

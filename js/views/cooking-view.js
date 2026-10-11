@@ -8,9 +8,10 @@ import {
   escapeAttr,
   escapeHtml,
   starHtml,
-} from '../utils/catalog-ui.js?v=20261011p';
-import * as UserState from '../core/user-recipe-state.js?v=20261011p';
-import { bindStatusControls, refreshStatusControls, statusControlHtml } from './recipe-status-ui.js?v=20261011p';
+} from '../utils/catalog-ui.js?v=20261011u';
+import { imgFailed, isPhotoMissing, recordPhotoFailure, recordPhotoSuccess } from '../utils/photo-fallback.js?v=20261011u';
+import * as UserState from '../core/user-recipe-state.js?v=20261011u';
+import { bindStatusControls, refreshStatusControls, statusControlHtml } from './recipe-status-ui.js?v=20261011u';
 import { joinStepParts, sentenceCase } from '../utils/text.js?v=20261011';
 
 /**
@@ -114,7 +115,7 @@ export class CookingView {
 
   _renderHero(images, recipeName) {
     const main = images && typeof images.main === 'string' ? images.main.trim() : '';
-    if (!main || this._heroFailed === main) {
+    if (!main || this._heroFailed === main || isPhotoMissing(main)) {
       // No photo, or it already failed to load (recipe photos are not deployed): no empty frame
       this._heroSrc = null;
       this.$hero.attr('hidden', true).empty();
@@ -132,6 +133,7 @@ export class CookingView {
       .removeAttr('hidden');
     const img = this.$hero.find('img.cooking-hero-img')[0];
     const onFail = () => {
+      recordPhotoFailure(main);
       this._heroFailed = main;
       if (this._heroSrc === main) {
         this._heroSrc = null;
@@ -140,7 +142,8 @@ export class CookingView {
     };
     if (img) {
       img.addEventListener('error', onFail, { once: true });
-      if (img.complete && img.naturalWidth === 0 && img.getAttribute('src')) onFail();
+      img.addEventListener('load', () => recordPhotoSuccess(main), { once: true });
+      if (imgFailed(img)) onFail();
     }
   }
 
@@ -382,7 +385,7 @@ export class CookingView {
 
       const cook = first.assignedCook === 'P1' || first.assignedCook === 'P2' ? first.assignedCook : '';
       html += `<li class="${groupClass}" data-recipe="${escapeAttr(recipeId)}">`;
-      if (nodeImg) {
+      if (nodeImg && !isPhotoMissing(nodeImg)) {
         html += `<div class="step-node-photo"><img src="${escapeAttr(nodeImg)}" alt="" loading="lazy" decoding="async" data-node-src="${escapeAttr(nodeImg)}"></div>`;
       }
       html += `<div class="recipe-group-header${cook ? ' has-cook-badge' : ''}">`;
@@ -428,6 +431,14 @@ export class CookingView {
 
     html += '</ol>';
     this.$steps.html(html);
+
+    // Step photos that already failed (cached 404) before the error listener saw them
+    this.$steps.find('.step-node-photo img').each((_, img) => {
+      if (imgFailed(img)) {
+        recordPhotoFailure(img.getAttribute('data-node-src') || img.getAttribute('src'));
+        img.closest('.step-node-photo').remove();
+      }
+    });
 
     // Reuse previous <img> elements when src matches (avoids decode/layout jump)
     this.$steps.find('.recipe-group').each((_, el) => {
@@ -512,6 +523,16 @@ export class CookingView {
   }
 
   _bindEvents() {
+    // Step photos that fail to load: drop the frame (no broken-image icon)
+    const stepsEl = this.$steps[0];
+    if (stepsEl) {
+      stepsEl.addEventListener('error', (e) => {
+        const img = e.target;
+        if (!(img instanceof HTMLImageElement) || !img.closest('.step-node-photo')) return;
+        recordPhotoFailure(img.getAttribute('data-node-src') || img.getAttribute('src'));
+        img.closest('.step-node-photo').remove();
+      }, true);
+    }
     this.$steps.on('change', '.step-cb', (e) => {
       const $cb = $(e.target);
       const recipeId = $cb.data('recipe');

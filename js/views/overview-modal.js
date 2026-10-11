@@ -10,9 +10,10 @@ import {
   isScalable,
   starHtml,
   subtitleFromSearchText,
-} from '../utils/catalog-ui.js?v=20261011p';
-import * as UserState from '../core/user-recipe-state.js?v=20261011p';
-import { bindStatusControls, refreshStatusControls, statusControlHtml } from './recipe-status-ui.js?v=20261011p';
+} from '../utils/catalog-ui.js?v=20261011u';
+import { imgFailed, isPhotoMissing, recordPhotoFailure, recordPhotoSuccess } from '../utils/photo-fallback.js?v=20261011u';
+import * as UserState from '../core/user-recipe-state.js?v=20261011u';
+import { bindStatusControls, refreshStatusControls, statusControlHtml } from './recipe-status-ui.js?v=20261011u';
 
 /**
  * HelloFresh-inspired recipe overview modal.
@@ -157,9 +158,12 @@ export class OverviewModal {
     const $hero = this.$root.find('#overview-body .overview-hero');
     const img = $hero.find('img.overview-hero-img')[0];
     if (!img) return;
-    const hide = () => { $hero.attr('hidden', true).addClass('is-missing'); };
+    const src = img.getAttribute('src');
+    const hide = () => { recordPhotoFailure(src); $hero.attr('hidden', true).addClass('is-missing'); };
+    if (isPhotoMissing(src)) { $hero.attr('hidden', true).addClass('is-missing'); img.remove(); return; }
     img.addEventListener('error', hide, { once: true });
-    if (img.complete && img.naturalWidth === 0 && img.getAttribute('src')) hide();
+    img.addEventListener('load', () => recordPhotoSuccess(src), { once: true });
+    if (imgFailed(img)) hide();
   }
 
   _renderBody() {

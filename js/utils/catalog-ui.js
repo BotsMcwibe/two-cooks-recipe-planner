@@ -210,6 +210,35 @@ export function isScalable(entry) {
   return !(entry && entry.scalable === false);
 }
 
+/**
+ * Placeholder look for a recipe without a photo: an icon that carries the
+ * category (so meaning never depends on colour) and a decorative hue.
+ * Deterministic per recipe: category picks the base hue, the id hash nudges it.
+ * @returns {{ emoji: string, hue: number, label: string }}
+ */
+export function recipeVisual(entry) {
+  const tags = (entry && entry.tags) || [];
+  const has = (t) => tags.includes(t);
+  let v;
+  if (has('dessert')) v = { emoji: '🍰', hue: 320, label: 'Dessert' };
+  else if (has('smoothie')) v = { emoji: '🥤', hue: 45, label: 'Smoothie' };
+  else if (has('breakfast')) v = { emoji: '🥞', hue: 40, label: 'Frukost' };
+  else if (has('soup')) v = { emoji: '🍲', hue: 28, label: 'Soppa' };
+  else if (has('protein:fish') || has('fish')) v = { emoji: '🐟', hue: 200, label: 'Fisk' };
+  else if (has('protein:shrimp')) v = { emoji: '🦐', hue: 185, label: 'Skaldjur' };
+  else if (has('protein:chicken')) v = { emoji: '🍗', hue: 36, label: 'Kyckling' };
+  else if (has('protein:beef')) v = { emoji: '🥩', hue: 12, label: 'Nötkött' };
+  else if (has('protein:pork')) v = { emoji: '🥓', hue: 24, label: 'Fläsk' };
+  else if (has('protein:lamb')) v = { emoji: '🍖', hue: 18, label: 'Lamm' };
+  else if (has('pasta')) v = { emoji: '🍝', hue: 48, label: 'Pasta' };
+  else if (has('protein:vegetarian') || has('veggie') || has('vegetarisk')) v = { emoji: '🥦', hue: 150, label: 'Vego' };
+  else v = { emoji: '🍽️', hue: 220, label: 'Recept' };
+  let h = 0;
+  for (const ch of String(entry?.id || '')) h = (h * 31 + ch.charCodeAt(0)) | 0;
+  const nudge = (Math.abs(h) % 25) - 12;
+  return { ...v, hue: (v.hue + nudge + 360) % 360 };
+}
+
 export function starHtml(average, count) {
   if (average == null || !Number.isFinite(Number(average))) return '';
   const avg = Number(average);

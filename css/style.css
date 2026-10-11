@@ -45,6 +45,11 @@
   --placeholder-b: #d1d5db;
   --thumb-bg: #f3f3f3;
   --thumb-placeholder: #e8e8e8;
+  /* No-photo card strip (hue comes per recipe via --ph-h) */
+  --ph-s: 55%;
+  --ph-l1: 91%;
+  --ph-l2: 84%;
+  --ph-dot: rgba(0, 0, 0, 0.06);
   /* Card shopping checkbox */
   --checkbox-bg: rgba(255, 255, 255, 0.95);
   --checkbox-border: rgba(0, 0, 0, 0.18);
@@ -117,6 +122,10 @@
   --placeholder-b: #1d2229;
   --thumb-bg: #2a3038;
   --thumb-placeholder: #303740;
+  --ph-s: 28%;
+  --ph-l1: 21%;
+  --ph-l2: 16%;
+  --ph-dot: rgba(255, 255, 255, 0.06);
   --checkbox-bg: rgba(26, 30, 36, 0.92);
   --checkbox-border: rgba(255, 255, 255, 0.38);
   --checkbox-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
@@ -583,12 +592,34 @@ main.main-recipe {
   height: 100%;
   object-fit: cover;
   display: block;
+  /* Hidden until loaded so a failing photo never shows a broken-image icon */
+  opacity: 0;
+  transition: opacity .2s ease;
 }
+.recipe-card-img.is-loaded { opacity: 1; }
 
-.recipe-card-placeholder {
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, var(--placeholder-a), var(--placeholder-b));
+/* No photo (missing or failed): compact strip instead of the 4:3 box.
+   Hue is decorative (per recipe); the icon carries the category. */
+.recipe-card-media.is-nophoto {
+  aspect-ratio: auto;
+  height: 64px;
+  background:
+    radial-gradient(circle at 1px 1px, var(--ph-dot) 1px, transparent 1.5px) 0 0 / 12px 12px,
+    linear-gradient(115deg,
+      hsl(var(--ph-h, 220) var(--ph-s) var(--ph-l1)),
+      hsl(calc(var(--ph-h, 220) + 32) var(--ph-s) var(--ph-l2)));
+  border-bottom: 1px solid var(--border);
+}
+.recipe-card-media.is-nophoto .recipe-card-shop { top: 18px; left: 12px; }
+.recipe-card-ph {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 30px;
+  line-height: 1;
+  user-select: none;
+  pointer-events: none;
 }
 
 .recipe-card-body {
