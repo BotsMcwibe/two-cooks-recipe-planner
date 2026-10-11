@@ -8,9 +8,9 @@ import {
   escapeAttr,
   escapeHtml,
   starHtml,
-} from '../utils/catalog-ui.js?v=20261011s';
-import * as UserState from '../core/user-recipe-state.js?v=20261011s';
-import { bindStatusControls, refreshStatusControls, statusControlHtml } from './recipe-status-ui.js?v=20261011s';
+} from '../utils/catalog-ui.js?v=20261011p';
+import * as UserState from '../core/user-recipe-state.js?v=20261011p';
+import { bindStatusControls, refreshStatusControls, statusControlHtml } from './recipe-status-ui.js?v=20261011p';
 import { joinStepParts, sentenceCase } from '../utils/text.js?v=20261011';
 
 /**

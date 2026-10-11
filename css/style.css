@@ -1924,6 +1924,24 @@ main.main-recipe {
   .overview-title-row { flex-wrap: wrap; }
 }
 
+/* Overview: CTA goes under the title on phones so the title gets the full width */
+@media (max-width: 600px) {
+  .overview-title-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  .overview-title-row .btn-primary {
+    align-self: stretch;
+    width: 100%;
+    min-height: 44px;
+    font-size: 1rem;
+  }
+  /* No photo: only the title needs to clear the close button */
+  .overview-hero.is-missing + .overview-content .overview-title-row { padding-right: 0; }
+  .overview-hero.is-missing + .overview-content .overview-title { padding-right: 44px; }
+}
+
 @media (max-width: 520px) {
   header { padding: 12px 12px 0; }
   main { padding: 12px 12px 32px; }

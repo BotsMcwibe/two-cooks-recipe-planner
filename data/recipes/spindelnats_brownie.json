@@ -3,6 +3,7 @@
   "source": "hellofresh",
   "createdAt": 1790852117,
   "basePortions": 4,
+  "scalable": false,
   "sharedPrep": [],
   "images": {
     "main": "assets/recipes/spindelnats_brownie/main.jpg",

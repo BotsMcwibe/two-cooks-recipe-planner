@@ -7,16 +7,17 @@ import {
   escapeAttr,
   escapeHtml,
   isPantryIngredient,
+  isScalable,
   starHtml,
   subtitleFromSearchText,
-} from '../utils/catalog-ui.js?v=20261011s';
-import * as UserState from '../core/user-recipe-state.js?v=20261011s';
-import { bindStatusControls, refreshStatusControls, statusControlHtml } from './recipe-status-ui.js?v=20261011s';
+} from '../utils/catalog-ui.js?v=20261011p';
+import * as UserState from '../core/user-recipe-state.js?v=20261011p';
+import { bindStatusControls, refreshStatusControls, statusControlHtml } from './recipe-status-ui.js?v=20261011p';
 
 /**
  * HelloFresh-inspired recipe overview modal.
  * Loads master via repository without mutating the cooking "current" payload
- * until the user commits via Tillaga.
+ * until the user commits via "Dags att laga".
  */
 export class OverviewModal {
   /**
@@ -87,6 +88,7 @@ export class OverviewModal {
   }
 
   _adjustPortions(dir) {
+    if (!isScalable(this._entry())) return;
     const next = Math.max(2, Math.min(24, this.modalPortions + dir * 2));
     if (next === this.modalPortions) return;
     this.modalPortions = next;
@@ -103,7 +105,9 @@ export class OverviewModal {
     const entry = this.catalogById[recipeId];
     const base = entry?.basePortions || 4;
     // Prefer current app portions if same recipe already selected; else base
-    if (this.state.selectedRecipeId === recipeId) {
+    if (!isScalable(entry)) {
+      this.modalPortions = base;
+    } else if (this.state.selectedRecipeId === recipeId) {
       this.modalPortions = this.state.currentPortions;
     } else {
       this.modalPortions = base;
@@ -129,7 +133,7 @@ export class OverviewModal {
   }
 
   /**
-   * @param {{ silent?: boolean }} [opts] silent skips onClose (e.g. Tillaga → cook)
+   * @param {{ silent?: boolean }} [opts] silent skips onClose (e.g. Dags att laga → cook)
    */
   close(opts = {}) {
     const wasOpen = this.isOpen();
@@ -196,7 +200,7 @@ export class OverviewModal {
       <div class="overview-content">
         <div class="overview-title-row">
           <h2 id="overview-title" class="overview-title">${escapeHtml(entry.name)}</h2>
-          <button type="button" class="btn-primary" id="overview-cta-cook">Tillaga</button>
+          <button type="button" class="btn-primary" id="overview-cta-cook">Dags att laga</button>
         </div>
         <div class="overview-meta-row">
           ${rating ? `<span class="overview-rating">${rating}</span>` : ''}
@@ -209,6 +213,7 @@ export class OverviewModal {
         ${desc ? `<p class="overview-desc">${escapeHtml(desc)}</p>` : ''}
         ${allergens ? `<div class="overview-allergens"><span class="allergens-label">Allergener:</span> ${allergens}</div>` : ''}
 
+        ${isScalable(entry) ? `
         <div class="overview-portions">
           <span class="portions-label">Portioner</span>
           <div class="portion-controls">
@@ -216,7 +221,7 @@ export class OverviewModal {
             <span id="overview-portion-display">${cur} portioner</span>
             <button type="button" id="overview-portion-plus" ${cur >= 24 ? 'disabled' : ''}>+</button>
           </div>
-        </div>
+        </div>` : ''}
 
         ${this._nutritionHtml(loaded)}
 

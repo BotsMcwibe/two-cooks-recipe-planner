@@ -3,6 +3,7 @@
   "source": "hellofresh",
   "createdAt": 1790852217,
   "basePortions": 4,
+  "scalable": false,
   "sharedPrep": [],
   "images": {
     "main": "assets/recipes/morotskaka/main.jpg",

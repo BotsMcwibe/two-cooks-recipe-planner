@@ -3,6 +3,7 @@
   "source": "hellofresh",
   "createdAt": 1790854739,
   "basePortions": 4,
+  "scalable": false,
   "sharedPrep": [],
   "images": {
     "main": "assets/recipes/apelsinglaserad_chokladkaka/main.jpg",

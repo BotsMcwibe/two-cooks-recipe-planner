@@ -8,9 +8,9 @@ import {
   escapeHtml,
   starHtml,
   subtitleFromSearchText,
-} from '../utils/catalog-ui.js?v=20261011s';
-import * as UserState from '../core/user-recipe-state.js?v=20261011s';
-import { cardStateHtml } from './recipe-status-ui.js?v=20261011s';
+} from '../utils/catalog-ui.js?v=20261011p';
+import * as UserState from '../core/user-recipe-state.js?v=20261011p';
+import { cardStateHtml } from './recipe-status-ui.js?v=20261011p';
 
 /**
  * Browse page: searchable/filterable recipe card grid.

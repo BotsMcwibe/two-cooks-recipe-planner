@@ -202,6 +202,14 @@ export function isCooked(value) {
   return false;
 }
 
+/**
+ * False when the recipe has a fixed yield (catalog/recipe `scalable: false`,
+ * e.g. one cake in a fixed-size pan). Portions then stay at basePortions.
+ */
+export function isScalable(entry) {
+  return !(entry && entry.scalable === false);
+}
+
 export function starHtml(average, count) {
   if (average == null || !Number.isFinite(Number(average))) return '';
   const avg = Number(average);

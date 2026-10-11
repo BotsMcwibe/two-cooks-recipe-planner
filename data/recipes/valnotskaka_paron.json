@@ -3,6 +3,7 @@
   "source": "hellofresh",
   "createdAt": 1791042125,
   "basePortions": 8,
+  "scalable": false,
   "sharedPrep": [],
   "images": {
     "main": "assets/recipes/valnotskaka_paron/main.jpg",

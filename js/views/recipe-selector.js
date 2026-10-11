@@ -50,6 +50,11 @@ export class RecipeChrome {
     });
   }
 
+  /** Hide the portion stepper for fixed-yield recipes (scalable: false). */
+  setScalable(scalable) {
+    this.$portions.toggle(scalable !== false);
+  }
+
   _updatePortionDisplay() {
     const cur = this.state.currentPortions;
     this.$portions.find('#portion-display').text(`${cur} portioner`);

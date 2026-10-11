@@ -15,6 +15,7 @@
     ],
     "image": "assets/recipes/apelsinglaserad_chokladkaka/main.jpg",
     "basePortions": 4,
+    "scalable": false,
     "cuisine": "scandinavian",
     "allergens": [
       "gluten",
@@ -41,6 +42,7 @@
     ],
     "image": "assets/recipes/appelkaka_mandlar/main.jpg",
     "basePortions": 4,
+    "scalable": false,
     "cuisine": "scandinavian",
     "allergens": [
       "gluten",
@@ -801,6 +803,7 @@
     ],
     "image": "assets/recipes/gyllene_toscakaka/main.jpg",
     "basePortions": 4,
+    "scalable": false,
     "cuisine": "scandinavian",
     "allergens": [
       "gluten",
@@ -972,6 +975,7 @@
     ],
     "image": "assets/recipes/morotskaka/main.jpg",
     "basePortions": 4,
+    "scalable": false,
     "cuisine": "scandinavian",
     "allergens": [
       "dairy",
@@ -1371,6 +1375,7 @@
     ],
     "image": "assets/recipes/spindelnats_brownie/main.jpg",
     "basePortions": 4,
+    "scalable": false,
     "cuisine": "american",
     "allergens": [
       "gluten",
@@ -2897,6 +2902,7 @@
     ],
     "image": "assets/recipes/valnotskaka_paron/main.jpg",
     "basePortions": 8,
+    "scalable": false,
     "cuisine": "scandinavian",
     "allergens": [
       "gluten",

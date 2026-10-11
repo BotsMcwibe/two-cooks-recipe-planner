@@ -3,6 +3,7 @@
   "source": "hellofresh",
   "createdAt": 1790854273,
   "basePortions": 4,
+  "scalable": false,
   "sharedPrep": [],
   "images": {
     "main": "assets/recipes/gyllene_toscakaka/main.jpg",

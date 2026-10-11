@@ -2,14 +2,15 @@ import { AppState } from './core/state.js';
 import { parseHash, setHash } from './core/router.js';
 import { loadStaticData, RecipeRepository } from './data/loader.js';
 import { AppShell } from './views/app-shell.js';
-import { RecipeChrome } from './views/recipe-selector.js';
-import { BrowseView } from './views/browse-view.js?v=20261011s';
-import { OverviewModal } from './views/overview-modal.js?v=20261011s';
-import { FlowGraph } from './views/flow-graph.js?v=20261011s';
-import { CookingView } from './views/cooking-view.js?v=20261011s';
-import { ShoppingSidebar } from './views/shopping-view.js?v=20261011s';
+import { RecipeChrome } from './views/recipe-selector.js?v=20261011p';
+import { isScalable } from './utils/catalog-ui.js?v=20261011p';
+import { BrowseView } from './views/browse-view.js?v=20261011p';
+import { OverviewModal } from './views/overview-modal.js?v=20261011p';
+import { FlowGraph } from './views/flow-graph.js?v=20261011p';
+import { CookingView } from './views/cooking-view.js?v=20261011p';
+import { ShoppingSidebar } from './views/shopping-view.js?v=20261011p';
 import { Timer } from './views/timer.js';
-import * as UserState from './core/user-recipe-state.js?v=20261011s';
+import * as UserState from './core/user-recipe-state.js?v=20261011p';
 import { initThemeToggle } from './utils/theme.js?v=20261011h';
 
 initThemeToggle(document.getElementById('theme-toggle'));
@@ -47,12 +48,17 @@ async function bootstrap() {
     const loaded = await repository.loadMaster(masterId);
     if (token !== loadToken) return null;
     state.setBasePortions(loaded.basePortions);
+    const scalable = isScalable(catalogById[masterId]);
+    // Fixed-yield recipes (one cake per pan) always use basePortions.
+    if (!scalable && state.portionScale !== 1) state.portionScale = 1;
+    chrome.setScalable(scalable);
     current = loaded;
     return loaded;
   }
 
   function applyPortions(portions) {
     if (!Number.isFinite(portions) || portions < 2) return;
+    if (!isScalable(catalogById[state.selectedRecipeId])) return;
     const base = state.basePortions || 4;
     state.portionScale = portions / base;
   }
