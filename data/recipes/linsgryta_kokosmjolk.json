@@ -48,9 +48,7 @@
       ],
       "duration": 2,
       "wait": 10,
-      "tags": [
-        "prep"
-      ]
+      "tags": []
     },
     {
       "id": "linsgryta_kokosmjolk__oven_on",
@@ -61,9 +59,7 @@
         "Sätt på ugnen enligt anvisningen på brödförpackningen."
       ],
       "duration": 1,
-      "tags": [
-        "prep"
-      ]
+      "tags": []
     },
     {
       "id": "linsgryta_kokosmjolk__chopped_onion",
@@ -120,9 +116,7 @@
         "Pressa i {{garlic}} och tillsätt {{curry}} och {{tomato_paste}}. Fräs ytterligare någon minut."
       ],
       "duration": 4,
-      "tags": [
-        "prep"
-      ]
+      "tags": []
     },
     {
       "id": "linsgryta_kokosmjolk__halved_tomatoes",
@@ -190,9 +184,7 @@
       ],
       "duration": 2,
       "wait": 15,
-      "tags": [
-        "prep"
-      ],
+      "tags": [],
       "tips": [
         "Späd eventuellt med mer vatten om grytan är för tjock."
       ]
@@ -218,9 +210,7 @@
       ],
       "duration": 1,
       "wait": 4,
-      "tags": [
-        "prep"
-      ]
+      "tags": []
     },
     {
       "id": "linsgryta_kokosmjolk",

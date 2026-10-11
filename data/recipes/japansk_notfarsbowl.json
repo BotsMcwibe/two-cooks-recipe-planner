@@ -228,9 +228,7 @@
       ],
       "duration": 4,
       "wait": 0,
-      "tags": [
-        "prep"
-      ],
+      "tags": [],
       "tips": [
         "Omrörningen är hands-on, därför duration och wait 0. Sesam är 10 g vid både 2 och 4 portioner."
       ]

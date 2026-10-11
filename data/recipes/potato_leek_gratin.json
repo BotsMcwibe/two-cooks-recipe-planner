@@ -85,9 +85,7 @@
       ],
       "duration": 3,
       "wait": 10,
-      "tags": [
-        "prep"
-      ],
+      "tags": [],
       "tips": [
         "Potatisen ska fortfarande vara lite rå — den tillagas vidare i gratängen.",
         "Kokvatten 2 l är processmängd (ej HF yields); listat HF-vatten går till buljongreduktion."
@@ -185,9 +183,7 @@
         "Stek under regelbunden omrörning i 5 min."
       ],
       "duration": 7,
-      "tags": [
-        "prep"
-      ],
+      "tags": [],
       "tips": [
         "Vitlöken kokades tillsammans med potatisen — spara potatisen avhälld till gratängfyllningen."
       ]
@@ -220,9 +216,7 @@
       ],
       "duration": 2,
       "wait": 7,
-      "tags": [
-        "prep"
-      ],
+      "tags": [],
       "tips": [
         "FLAG: _unitInference Buljong 4 ml — överstyrd till 4 g (yield 2 var null/null; samma mönster som övriga masters).",
         "FLAG: _unitInference Vatten 2 ml — överstyrd till 2 dl (HF-typ water-vatten-vand-1dl; 'se mängd i ingredienslistan')."
@@ -364,9 +358,7 @@
         "Ta av kastrullen från värmen. Smaka av med {{salt}} och {{pepper}}."
       ],
       "duration": 5,
-      "tags": [
-        "prep"
-      ],
+      "tags": [],
       "tips": [
         "Hälften av den hackade timjan (0.5 st) går hit, resten (0.5 st) strös över vid servering — enligt HF 'hälften av timjan'."
       ]

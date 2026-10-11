@@ -49,9 +49,7 @@
         "Fräs {{spinach_feta_piroger__chopped_onion}} i {{olive_oil}} några minuter tills den mjuknar."
       ],
       "duration": 3,
-      "tags": [
-        "prep"
-      ]
+      "tags": []
     },
     {
       "id": "spinach_feta_piroger__wilted_spinach",
@@ -73,9 +71,7 @@
         "Tillsätt {{baby_spinach}} till {{spinach_feta_piroger__sauteed_onion}} och fräs tills mjuka."
       ],
       "duration": 3,
-      "tags": [
-        "prep"
-      ]
+      "tags": []
     },
     {
       "id": "spinach_feta_piroger__sliced_sun_dried_tomatoes",
@@ -128,9 +124,7 @@
         "Låt blandningen svalna något."
       ],
       "duration": 4,
-      "tags": [
-        "prep"
-      ]
+      "tags": []
     },
     {
       "id": "spinach_feta_piroger__spinach_feta_filling",
@@ -157,9 +151,7 @@
         "Smula {{feta_cheese}} och blanda med {{spinach_feta_piroger__spinach_tomato_mix}} och {{egg}}."
       ],
       "duration": 2,
-      "tags": [
-        "prep"
-      ]
+      "tags": []
     },
     {
       "id": "spinach_feta_piroger__rolled_dough",

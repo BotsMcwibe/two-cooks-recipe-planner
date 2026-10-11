@@ -38,7 +38,6 @@
       "duration": 1,
       "wait": 12,
       "tags": [
-        "prep",
         "no-timer"
       ],
       "tips": [
@@ -78,9 +77,7 @@
       ],
       "duration": 3,
       "wait": 14,
-      "tags": [
-        "prep"
-      ],
+      "tags": [],
       "tips": [
         "FLAG: HF Buljong amount=4 unit infererad som ml (yield 2 var null/null). Tolkat som 4 g grönsaksbuljong. Vatten saknades i yields — 1,5 l för kokning/avhälning av 335 g pärlcouscous (pasta-stil)."
       ]

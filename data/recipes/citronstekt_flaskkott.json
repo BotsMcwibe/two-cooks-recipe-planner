@@ -51,7 +51,6 @@
       "duration": 1,
       "wait": 12,
       "tags": [
-        "prep",
         "no-timer"
       ],
       "tips": [
@@ -130,9 +129,7 @@
       ],
       "duration": 3,
       "wait": 25,
-      "tags": [
-        "prep"
-      ]
+      "tags": []
     },
     {
       "id": "citronstekt_flaskkott__minced_garlic",
@@ -325,9 +322,7 @@
         "Stek {{citronstekt_flaskkott__seasoned_pork}} under omrörning i 3–4 min, tills det är brynt och genomstekt."
       ],
       "duration": 5,
-      "tags": [
-        "prep"
-      ]
+      "tags": []
     },
     {
       "id": "citronstekt_flaskkott__simmered_pork",

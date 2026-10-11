@@ -46,7 +46,6 @@
       "duration": 1,
       "wait": 12,
       "tags": [
-        "prep",
         "no-timer"
       ],
       "tips": [
@@ -132,9 +131,7 @@
         "Rosta {{walnuts}} i 3–4 min, eller tills gyllene. Finhacka."
       ],
       "duration": 5,
-      "tags": [
-        "prep"
-      ],
+      "tags": [],
       "tips": [
         "Hands-on rostning 3–4 min → duration 5 (inkl. finhack), ingen wait."
       ]
@@ -174,9 +171,7 @@
         "Blanda {{calabrese_pesto}}, {{salt}}, {{water}}, {{spanskinspirerad_kyckling_romesco__toasted_walnuts}} och {{smoked_paprika}} i en medelstor skål. Ställ åt sidan."
       ],
       "duration": 3,
-      "tags": [
-        "prep"
-      ]
+      "tags": []
     },
     {
       "id": "spanskinspirerad_kyckling_romesco__chopped_parsley",
@@ -405,9 +400,7 @@
         "Vänd {{spanskinspirerad_kyckling_romesco__herb_roast_potato}} med {{spanskinspirerad_kyckling_romesco__chopped_parsley}} precis innan servering."
       ],
       "duration": 1,
-      "tags": [
-        "prep"
-      ]
+      "tags": []
     },
     {
       "id": "spanskinspirerad_kyckling_romesco",

@@ -35,7 +35,6 @@
       "duration": 1,
       "wait": 10,
       "tags": [
-        "prep",
         "no-timer"
       ],
       "tips": [
@@ -59,9 +58,7 @@
       ],
       "duration": 2,
       "wait": 10,
-      "tags": [
-        "prep"
-      ],
+      "tags": [],
       "tips": [
         "Pastan ska vara lite för hård eftersom den tillagas färdigt i ugnen. Penne eller rigatoni passar bra."
       ]

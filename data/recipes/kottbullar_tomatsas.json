@@ -53,9 +53,7 @@
       ],
       "duration": 2,
       "wait": 4,
-      "tags": [
-        "prep"
-      ]
+      "tags": []
     },
     {
       "id": "kottbullar_tomatsas__pickled_shallot",
@@ -244,9 +242,7 @@
         "Blanda tomater, schalottenlök, {{kottbullar_tomatsas__roasted_pine_nuts}}, salladsmix, {{olive_oil}} och {{salt}} i en stor skål."
       ],
       "duration": 5,
-      "tags": [
-        "prep"
-      ]
+      "tags": []
     },
     {
       "id": "kottbullar_tomatsas__cooked_pasta",

@@ -38,7 +38,6 @@
       ],
       "duration": 1,
       "tags": [
-        "prep",
         "no-timer"
       ],
       "wait": 12,
@@ -156,9 +155,7 @@
       ],
       "duration": 5,
       "wait": 25,
-      "tags": [
-        "prep"
-      ]
+      "tags": []
     },
     {
       "id": "halloumi_rostade_morotter__spiced_couscous",
@@ -199,9 +196,7 @@
       ],
       "duration": 5,
       "wait": 5,
-      "tags": [
-        "prep"
-      ],
+      "tags": [],
       "tips": [
         "FLAG: HF Buljong amount=4 unit infererad som ml (yields 2 unresolved null). Tolkat som 4 g grönsaksbuljong + 4 dl vatten till 300 g couscous (HF: 'vatten se mängd i ingredienslistan')."
       ]
@@ -272,9 +267,7 @@
       ],
       "duration": 8,
       "wait": 5,
-      "tags": [
-        "prep"
-      ]
+      "tags": []
     },
     {
       "id": "halloumi_rostade_morotter__fried_halloumi",
@@ -298,9 +291,7 @@
         "Stek halloumiskivorna tills de är gyllenbruna, ca 2 min per sida."
       ],
       "duration": 8,
-      "tags": [
-        "prep"
-      ]
+      "tags": []
     },
     {
       "id": "halloumi_rostade_morotter",

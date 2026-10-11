@@ -30,7 +30,6 @@
       "duration": 1,
       "wait": 12,
       "tags": [
-        "prep",
         "no-timer"
       ],
       "tips": [
@@ -90,9 +89,7 @@
       ],
       "duration": 5,
       "wait": 35,
-      "tags": [
-        "prep"
-      ],
+      "tags": [],
       "tips": [
         "Kakan är klar när en provsticka kommer ut torr.",
         "Kortet säger aldrig hur mixen blir smet. Inget ägg, mjölk eller vatten finns i yielden, så inget sådant är tillagt."
@@ -126,9 +123,7 @@
       ],
       "duration": 6,
       "wait": 0,
-      "tags": [
-        "prep"
-      ],
+      "tags": [],
       "tips": [
         "Bryningen är hands-on, därför duration och wait 0.",
         "Tillsätt en skvätt vatten om glasyren är för tjock. Ingen mängd är angiven."

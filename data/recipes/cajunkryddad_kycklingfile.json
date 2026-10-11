@@ -47,7 +47,6 @@
       "duration": 1,
       "wait": 12,
       "tags": [
-        "prep",
         "no-timer"
       ],
       "tips": [
@@ -260,9 +259,7 @@
       ],
       "duration": 2,
       "wait": 0,
-      "tags": [
-        "prep"
-      ]
+      "tags": []
     },
     {
       "id": "cajunkryddad_kycklingfile__spinach_veg",
@@ -286,9 +283,7 @@
       ],
       "duration": 2,
       "wait": 0,
-      "tags": [
-        "prep"
-      ],
+      "tags": [],
       "tips": [
         "Spenatens korttyp är ekologisk babyspenat, mappad till baby_spinach."
       ]

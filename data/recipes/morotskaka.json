@@ -45,7 +45,6 @@
       "duration": 1,
       "wait": 10,
       "tags": [
-        "prep",
         "no-timer"
       ],
       "tips": [
@@ -107,9 +106,7 @@
       ],
       "duration": 5,
       "wait": 35,
-      "tags": [
-        "prep"
-      ],
+      "tags": [],
       "tips": [
         "Använd en provsticka: om stickan är torr är kakan färdig."
       ]
@@ -136,9 +133,7 @@
       ],
       "duration": 1,
       "wait": 5,
-      "tags": [
-        "prep"
-      ],
+      "tags": [],
       "tips": [
         "Rostningen kan göras medan kakan gräddas."
       ]
@@ -158,9 +153,7 @@
         "Grovhacka {{morotskaka__roasted_walnuts}}."
       ],
       "duration": 2,
-      "tags": [
-        "prep"
-      ]
+      "tags": []
     },
     {
       "id": "morotskaka__frosting",

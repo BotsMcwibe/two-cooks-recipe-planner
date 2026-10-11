@@ -29,7 +29,7 @@
       ],
       "duration": 1,
       "wait": 10,
-      "tags": ["prep", "no-timer"],
+      "tags": ["no-timer"],
       "tips": [
         "Ugnen tar vanligtvis 10–15 minuter att värmas upp.",
         "Ta ut bakmixen från kylskåpet 30 min innan den ska användas."
@@ -83,7 +83,7 @@
       ],
       "duration": 5,
       "wait": 30,
-      "tags": ["prep"]
+      "tags": []
     },
     {
       "id": "appelkaka_mandlar__baked_cake",
@@ -99,7 +99,7 @@
       ],
       "duration": 1,
       "wait": 5,
-      "tags": ["prep"],
+      "tags": [],
       "tips": [
         "Använd en provsticka: om stickan är torr är kakan färdig."
       ]

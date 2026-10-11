@@ -94,9 +94,7 @@
       ],
       "duration": 2,
       "wait": 20,
-      "tags": [
-        "prep"
-      ]
+      "tags": []
     },
     {
       "id": "creamy_sweet_potato_dhal__rinsed_lentils",
@@ -193,9 +191,7 @@
         "Rör i {{coconut_milk}}, {{water}} och {{vegetable_bouillon}}."
       ],
       "duration": 6,
-      "tags": [
-        "prep"
-      ]
+      "tags": []
     },
     {
       "id": "creamy_sweet_potato_dhal__simmered_dhal",
@@ -234,9 +230,7 @@
       ],
       "duration": 2,
       "wait": 25,
-      "tags": [
-        "prep"
-      ],
+      "tags": [],
       "tips": [
         "Tillsätt mer vatten om dhalen är för tjock.",
         "Smaka av efter tillagningstiden — om linserna inte är mjuka, sjud ytterligare ca 5 min."
@@ -308,9 +302,7 @@
       ],
       "duration": 3,
       "wait": 6,
-      "tags": [
-        "prep"
-      ],
+      "tags": [],
       "tips": [
         "Håll ett öga på chipsen så att de inte bränns vid.",
         "Rosta i omgångar om inte alla får plats, eller använd 2 plåtar med varmluft.",

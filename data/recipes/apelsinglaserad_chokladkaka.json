@@ -45,7 +45,6 @@
       "duration": 1,
       "wait": 10,
       "tags": [
-        "prep",
         "no-timer"
       ],
       "tips": [
@@ -80,9 +79,7 @@
       ],
       "duration": 5,
       "wait": 35,
-      "tags": [
-        "prep"
-      ],
+      "tags": [],
       "tips": [
         "Ta ut bakmixen från kylskåpet 30 min innan den ska användas.",
         "Använd en provsticka: om stickan är torr är kakan färdig."
@@ -110,9 +107,7 @@
       ],
       "duration": 1,
       "wait": 6,
-      "tags": [
-        "prep"
-      ],
+      "tags": [],
       "tips": [
         "Rostningen kan göras medan kakan gräddas."
       ]
@@ -132,9 +127,7 @@
         "Grovhacka {{apelsinglaserad_chokladkaka__roasted_hazelnuts}}."
       ],
       "duration": 2,
-      "tags": [
-        "prep"
-      ]
+      "tags": []
     },
     {
       "id": "apelsinglaserad_chokladkaka__orange_glaze",

@@ -92,9 +92,7 @@
       ],
       "duration": 1,
       "wait": 3,
-      "tags": [
-        "prep"
-      ],
+      "tags": [],
       "tips": [
         "Rör om ofta så att kokosen inte bränns."
       ]
@@ -150,9 +148,7 @@
       ],
       "duration": 12,
       "wait": 0,
-      "tags": [
-        "prep"
-      ],
+      "tags": [],
       "tips": [
         "Tillsätt mer smör vid behov mellan omgångarna.",
         "Håll färdiga pannkakor varma i ugnen vid 100 °C / 80 °C varmluft tills servering."

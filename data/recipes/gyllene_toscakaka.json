@@ -44,7 +44,7 @@
       ],
       "duration": 1,
       "wait": 10,
-      "tags": ["prep", "no-timer"],
+      "tags": ["no-timer"],
       "tips": [
         "Ugnen tar vanligtvis 10–15 minuter att värmas upp.",
         "Ta ut bakmixen från kylskåpet 30 min innan den ska användas."
@@ -81,7 +81,7 @@
       ],
       "duration": 3,
       "wait": 20,
-      "tags": ["prep"]
+      "tags": []
     },
     {
       "id": "gyllene_toscakaka__tosca_topping",
@@ -101,7 +101,7 @@
         "Rör ner {{gyllene_toscakaka__chopped_nuts}} i toscaglasen."
       ],
       "duration": 7,
-      "tags": ["prep"],
+      "tags": [],
       "tips": [
         "Toscaglasen kan göras medan kakan gräddas i första fasen."
       ]
@@ -120,7 +120,7 @@
       ],
       "duration": 2,
       "wait": 15,
-      "tags": ["prep"]
+      "tags": []
     },
     {
       "id": "gyllene_toscakaka",

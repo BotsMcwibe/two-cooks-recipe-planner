@@ -44,7 +44,7 @@
       ],
       "duration": 1,
       "wait": 10,
-      "tags": ["prep", "no-timer"],
+      "tags": ["no-timer"],
       "tips": [
         "HF anger 200 °C / 180 °C varmluft — lokal ugnsnode, inte preheated_oven_220."
       ]

@@ -21,9 +21,7 @@
         "Värm {{oil}} och {{milk}} till 37°C i en kastrull eller mikrovågsugn."
       ],
       "duration": 3,
-      "tags": [
-        "prep"
-      ],
+      "tags": [],
       "tips": [
         "Använd ett finger för att kontrollera temperaturen."
       ]

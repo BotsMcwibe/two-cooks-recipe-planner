@@ -44,7 +44,6 @@
       "duration": 1,
       "wait": 12,
       "tags": [
-        "prep",
         "no-timer"
       ],
       "tips": [
@@ -109,9 +108,7 @@
       ],
       "duration": 3,
       "wait": 30,
-      "tags": [
-        "prep"
-      ]
+      "tags": []
     },
     {
       "id": "autumn_kale_salad__toasted_walnuts",
@@ -130,9 +127,7 @@
       ],
       "duration": 4,
       "wait": 0,
-      "tags": [
-        "prep"
-      ],
+      "tags": [],
       "tips": [
         "Rosta under uppsikt och skaka pannan ibland så att nötterna inte bränns."
       ]

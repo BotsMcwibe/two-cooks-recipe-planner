@@ -63,9 +63,7 @@
       ],
       "duration": 2,
       "wait": 12,
-      "tags": [
-        "prep"
-      ],
+      "tags": [],
       "tips": [
         "Riset ska ångkoka, så tjuvkika inte."
       ]
@@ -86,9 +84,7 @@
       ],
       "duration": 1,
       "wait": 10,
-      "tags": [
-        "prep"
-      ]
+      "tags": []
     },
     {
       "id": "umami_glazed_chickpeas__drained_chickpeas",
@@ -220,9 +216,7 @@
       ],
       "duration": 7,
       "wait": 0,
-      "tags": [
-        "prep"
-      ],
+      "tags": [],
       "tips": [
         "5–7 min är hands-on stek (duration 7, övre gräns). Ingen passiv wait."
       ]
@@ -324,9 +318,7 @@
       ],
       "duration": 1,
       "wait": 3,
-      "tags": [
-        "prep"
-      ]
+      "tags": []
     },
     {
       "id": "umami_glazed_chickpeas__sriracha_yoghurt",

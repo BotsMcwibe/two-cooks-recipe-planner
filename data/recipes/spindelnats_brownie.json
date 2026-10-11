@@ -44,7 +44,6 @@
       "duration": 1,
       "wait": 10,
       "tags": [
-        "prep",
         "no-timer"
       ],
       "tips": [
@@ -67,9 +66,7 @@
         "Värm i mikrovågsugnen i 20 sekunder åt gången tills chokladen har smält. Rör om mellan varje gång."
       ],
       "duration": 3,
-      "tags": [
-        "prep"
-      ],
+      "tags": [],
       "tips": [
         "Ta ut bakmixen från kylskåpet 30 min innan den ska användas.",
         "Smält chokladen i ett vattenbad om du inte har mikrovågsugn."
@@ -133,9 +130,7 @@
       ],
       "duration": 5,
       "wait": 30,
-      "tags": [
-        "prep"
-      ],
+      "tags": [],
       "tips": [
         "Använd en provsticka: om stickan är torr är kakan färdig."
       ]

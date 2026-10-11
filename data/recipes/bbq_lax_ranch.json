@@ -47,7 +47,6 @@
       "duration": 1,
       "wait": 12,
       "tags": [
-        "prep",
         "no-timer"
       ],
       "tips": [
@@ -352,9 +351,7 @@
         "Blanda {{bbq_lax_ranch__fried_corn}}, {{bbq_lax_ranch__halved_tomatoes}}, {{bbq_lax_ranch__chopped_red_onion}}, {{bbq_lax_ranch__chopped_parsley}}, {{salted_peanuts}}, {{olive_oil}}, {{salt}} och {{pepper}} i en medelstor skål."
       ],
       "duration": 2,
-      "tags": [
-        "prep"
-      ]
+      "tags": []
     },
     {
       "id": "bbq_lax_ranch__cabbage_salad",

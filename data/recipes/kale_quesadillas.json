@@ -161,9 +161,7 @@
       ],
       "duration": 2,
       "wait": 5,
-      "tags": [
-        "prep"
-      ]
+      "tags": []
     },
     {
       "id": "kale_quesadillas__chopped_red_onion",

@@ -53,7 +53,6 @@
       "duration": 1,
       "wait": 12,
       "tags": [
-        "prep",
         "no-timer"
       ],
       "tips": [
@@ -354,9 +353,7 @@
         "Rör i {{aioli}}, {{parmesan}}, {{water}}, en nypa {{salt}} och {{pepper}}."
       ],
       "duration": 3,
-      "tags": [
-        "prep"
-      ]
+      "tags": []
     },
     {
       "id": "caesar_kycklingsallad__sliced_chicken",
@@ -374,9 +371,7 @@
       ],
       "duration": 3,
       "wait": 0,
-      "tags": [
-        "prep"
-      ],
+      "tags": [],
       "tips": [
         "\"Svalna något\" har ingen minuttid, därför ingen wait."
       ]
@@ -418,9 +413,7 @@
       ],
       "duration": 3,
       "wait": 0,
-      "tags": [
-        "prep"
-      ],
+      "tags": [],
       "tips": [
         "En skvätt olivolja i salladen är valfri och har ingen mängd."
       ]

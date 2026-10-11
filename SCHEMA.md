@@ -201,6 +201,10 @@ Catalog mirrors: `cooked` (boolean), `cookedAt` (string), `cookedCardNumber` (nu
 
 Node `inputs` are `{ id, amount, unit }`. A base ingredient (`ingredients.json` id) uses a real amount. An input whose `id` is another dish-local node (a **derived ingredient**) always uses unit `st`. **Each dish-local node output must be consumed exactly 1 st in total** across all its consumers: one consumer at `1 st`, or a split such as `0.7 st` + `0.3 st`. Shopping totals are computed through these amounts, so a double use counts the upstream ingredients twice. Shared prep outputs (`sharedPrep`) and recipe-local preheat nodes with no inputs are exempt (warning only). `validate-recipes.mjs` enforces this via `scripts/check-derived-usage.mjs`. Rules and examples: `recipes/docs/hf-to-graph-conversion.md` §4.2.
 
+## Node tags
+
+Node `tags` is a string array (`[]` when none apply). `master` marks the master node. `no-timer` hides the countdown for tip-only waits (oven preheat). `prep` drives the app's **Preppa först** mode, which runs every prep-tagged node in a Prep phase before cooking. Use `prep` only for cold mise en place (chop, slice, grate, peel, rinse, drain, measure, mix a cold marinade/dressing/sauce/spice mix, cold breading or shaping). Never on heat steps (boil, simmer, fry, roast, bake, toast, melt, warm, preheat oven) or on nodes that consume a cooked output. Rules: `recipes/docs/hf-to-graph-conversion.md` §4.4.
+
 ## Node optional field
 
 | Field | Required | Notes |

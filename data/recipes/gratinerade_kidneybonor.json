@@ -38,7 +38,6 @@
       "duration": 1,
       "wait": 12,
       "tags": [
-        "prep",
         "no-timer"
       ],
       "tips": [
@@ -72,9 +71,7 @@
       ],
       "duration": 2,
       "wait": 12,
-      "tags": [
-        "prep"
-      ],
+      "tags": [],
       "tips": [
         "FLAG: _unitInference Vatten (steg 1) 6 ml — överstyrd till 6 dl (HF-typ water-step-1-…-1dl; risvatten).",
         "FLAG: alla 30 _unitInference-fyllningar — se tips och agentrapport."
@@ -96,9 +93,7 @@
       ],
       "duration": 1,
       "wait": 10,
-      "tags": [
-        "prep"
-      ]
+      "tags": []
     },
     {
       "id": "gratinerade_kidneybonor__chopped_onion",
@@ -274,9 +269,7 @@
         "Fräs tills grönsakerna mjuknat, 6–7 min."
       ],
       "duration": 8,
-      "tags": [
-        "prep"
-      ],
+      "tags": [],
       "tips": [
         "Stekolja är pantry-skvätt (ej i HF yields; yields-olivolja går till salladen)."
       ]
@@ -328,9 +321,7 @@
         "Krydda med {{salt}} och {{pepper}}."
       ],
       "duration": 4,
-      "tags": [
-        "prep"
-      ],
+      "tags": [],
       "tips": [
         "FLAG: _unitInference Krossade tomater 2 burk — behållen; Baharat 4 tsk — behållen (krydda).",
         "FLAG: _unitInference Vatten (steg 4) 2 ml — överstyrd till 2 dl (HF-typ water-step-4-…-1dl)."

@@ -44,7 +44,6 @@
       "duration": 1,
       "wait": 10,
       "tags": [
-        "prep",
         "no-timer"
       ],
       "tips": [
@@ -117,9 +116,7 @@
       ],
       "duration": 3,
       "wait": 15,
-      "tags": [
-        "prep"
-      ],
+      "tags": [],
       "tips": [
         "Rör om var 5:e minut under rostningen så att granolan inte bränns."
       ]

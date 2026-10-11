@@ -172,9 +172,7 @@
       ],
       "duration": 3,
       "wait": 0,
-      "tags": [
-        "prep"
-      ]
+      "tags": []
     },
     {
       "id": "ugnsrostad_kyckling_brysselkal__cooked_bulgur",
@@ -308,9 +306,7 @@
       ],
       "duration": 4,
       "wait": 0,
-      "tags": [
-        "prep"
-      ],
+      "tags": [],
       "tips": [
         "2–3 min är hands-on rostning, därför duration och wait 0."
       ]

@@ -44,7 +44,7 @@
       ],
       "duration": 1,
       "wait": 12,
-      "tags": ["prep", "no-timer"],
+      "tags": ["no-timer"],
       "tips": [
         "HF anger 240°C/220°C varmluft — lokal ugnsnode, inte preheated_oven_220 (som är 220/200)."
       ]
@@ -87,7 +87,7 @@
       ],
       "duration": 3,
       "wait": 10,
-      "tags": ["prep"]
+      "tags": []
     },
     {
       "id": "caesar_asparagus_salad__chopped_garlic",
@@ -168,7 +168,7 @@
       ],
       "duration": 1,
       "wait": 2,
-      "tags": ["prep"]
+      "tags": []
     },
     {
       "id": "caesar_asparagus_salad__dressed_salad",
@@ -228,7 +228,7 @@
         "Tillsätt {{caesar_asparagus_salad__croutons}} och {{grated_cheese}} och vänd runt."
       ],
       "duration": 4,
-      "tags": ["prep"],
+      "tags": [],
       "tips": [
         "Hälften av osten (10 g av 20 g) går i blandningen; resten toppas vid servering."
       ]

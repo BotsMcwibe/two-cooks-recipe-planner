@@ -69,9 +69,7 @@
       ],
       "duration": 3,
       "wait": 10,
-      "tags": [
-        "prep"
-      ]
+      "tags": []
     },
     {
       "id": "falafel_bulgur_bowl__prepped_vegetables",
@@ -168,9 +166,7 @@
         "Stek {{falafel}} i 4–5 min, eller tills genomvarma, gyllene och spröda."
       ],
       "duration": 5,
-      "tags": [
-        "prep"
-      ],
+      "tags": [],
       "tips": [
         "Vänd falafel ofta, så de inte bränns vid."
       ]

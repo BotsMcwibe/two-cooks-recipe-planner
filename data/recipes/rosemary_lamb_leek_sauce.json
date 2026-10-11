@@ -184,9 +184,7 @@
       ],
       "duration": 3,
       "wait": 17,
-      "tags": [
-        "prep"
-      ],
+      "tags": [],
       "tips": [
         "Ta fram lammsteken så den blir rumstempererad medan potatisen kokar.",
         "Kokvatten 2 l är processmängd (ej HF yields); salt 1 tsk är HF salt till potatis (används både i kokvatten och vid krossning)."
@@ -224,9 +222,7 @@
         "Vänd tillsammans med en skvätt {{olive_oil}}, {{salt}} och en nypa {{pepper}}."
       ],
       "duration": 3,
-      "tags": [
-        "prep"
-      ]
+      "tags": []
     },
     {
       "id": "rosemary_lamb_leek_sauce__seared_lamb",

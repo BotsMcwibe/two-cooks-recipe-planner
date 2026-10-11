@@ -113,9 +113,7 @@
       ],
       "duration": 3,
       "wait": 25,
-      "tags": [
-        "prep"
-      ]
+      "tags": []
     },
     {
       "id": "roasted_cauliflower_biryani__chopped_coriander",
@@ -288,9 +286,7 @@
         "Blanda i {{roasted_cauliflower_biryani__chopped_coriander}}, {{roasted_cauliflower_biryani__chopped_almonds}} och {{roasted_cauliflower_biryani__roasted_cauliflower}} i {{roasted_cauliflower_biryani__simmered_rice}} när riset är färdigt."
       ],
       "duration": 1,
-      "tags": [
-        "prep"
-      ],
+      "tags": [],
       "tips": [
         "FLAG: koriander delad 0.9 st hit / 0.1 st till servering (HF: 'spara några blad till servering', ingen proportion angiven — uppskattning)."
       ]
