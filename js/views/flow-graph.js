@@ -24,6 +24,29 @@ const KNIFE_SVG = `<svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="
 
 const FLAME_SVG = `<svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12.1 2.4c.3 2.4-.7 4-1.8 5.2 1.5.2 3.2 1.3 4 3-1.1-.4-2-.1-2.6-1.8-.2 2.2 1.1 3.9 3 4.8 1.6 2.6 2.8 4.2 2.8 5.6 0 1.7-2.4 2.8-5.2 2.8s-5-1.1-5-2.8c0-2.4 1.5-4 2.4-5.7.5-1 .7-2 .4-3.1-1.1 1.3-1.5 2.8-1.3 4.1C7.2 13 6.8 11 7.9 8.8c1.3-2.6 3.1-4.3 4.2-6.4z"/></svg>`;
 
+/**
+ * Split the schedule's total into Prep / Tillagning minutes (see _build).
+ * Exported for tests/analysis.
+ * @returns {{ prepMin: number, cookMin: number, totalMin: number }}
+ */
+export function phaseMinutes(nodes, prepIds, totalTime) {
+  const iv = nodes
+    .filter(n => prepIds.has(n.id))
+    .map(n => [n.start, n.start + (n.activeDuration || 0)])
+    .filter(([a, b]) => b > a)
+    .sort((x, y) => x[0] - y[0]);
+  let busy = 0;
+  let end = -Infinity;
+  for (const [a, b] of iv) {
+    if (b <= end) continue;
+    busy += b - Math.max(a, end);
+    end = b;
+  }
+  const totalMin = Math.round(totalTime || 0);
+  const prepMin = Math.min(Math.round(busy), totalMin);
+  return { prepMin, cookMin: totalMin - prepMin, totalMin };
+}
+
 export class FlowGraph {
   /**
    * @param {object} hooks
@@ -165,12 +188,15 @@ export class FlowGraph {
 
     let html = '<div class="flow-scroll" tabindex="-1"><div class="flow-canvas">';
     if (phased) {
-      // Phase captions + divider. Minutes follow the schedule: prep ends when the
-      // last prep-phase node's active work ends (same split the Gantt showed).
-      const prepEnd = Math.max(0, ...nodes.filter(n => prepIds.has(n.id)).map(n => n.start + n.activeDuration));
-      const totalTime = schedule.totalTime || 0;
-      const prepMin = Math.round(prepEnd);
-      const cookMin = Math.round(Math.max(totalTime - prepEnd, 0));
+      // Phase captions + divider. With "Preppa först" the scheduler interleaves
+      // prep into waits once long steps are running, so "end of the last prep
+      // node" is not a phase boundary. Instead the total is split:
+      //   Prep       = wall-clock minutes in which someone does prep-phase work
+      //                (union of the prep nodes' hands-on intervals; for 1 cook
+      //                this is simply the sum of their hands-on minutes)
+      //   Tillagning = the rest of the total, so Prep + Tillagning = the total
+      //                minutes shown under the title.
+      const { prepMin, cookMin } = phaseMinutes(nodes, prepIds, schedule.totalTime);
       html += `<div class="flow-phase flow-phase-prep" data-from="0" data-to="${prepCols - 1}" title="Förberedelser">${KNIFE_SVG}<span>Prep</span><span class="flow-phase-min">${prepMin} min</span></div>`;
       html += `<div class="flow-phase flow-phase-cook" data-from="${prepCols}" data-to="${maxDepth}" title="Tillagning">${FLAME_SVG}<span>Tillagning</span><span class="flow-phase-min">${cookMin} min</span></div>`;
       html += `<div class="flow-divider" data-after="${prepCols - 1}" aria-hidden="true"></div>`;

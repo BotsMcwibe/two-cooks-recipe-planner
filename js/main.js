@@ -6,7 +6,7 @@ import { RecipeChrome } from './views/recipe-selector.js?v=20261011p';
 import { isScalable } from './utils/catalog-ui.js?v=20261011p';
 import { BrowseView } from './views/browse-view.js?v=20261011p';
 import { OverviewModal } from './views/overview-modal.js?v=20261011p';
-import { FlowGraph } from './views/flow-graph.js?v=20261011p';
+import { FlowGraph } from './views/flow-graph.js?v=20261011q';
 import { CookingView } from './views/cooking-view.js?v=20261011q';
 import { ShoppingSidebar } from './views/shopping-view.js?v=20261011p';
 import { Timer } from './views/timer.js';
