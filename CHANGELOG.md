@@ -1,3 +1,10 @@
+## 2026-10-11 — Flow graph: Preppa först phases
+
+- With Preppa först on, the flow graph puts the prep phase in the first column(s) and cooking after, with "Prep · N min" / "Tillagning · N min" captions and a dashed divider (replaces the separate prep/cook time strip)
+- Prep phase = `prep`-tagged nodes whose inputs are all prep too (`js/utils/prep-phase.js`); prep-tagged nodes that need cooked input (e.g. "Skiva kyckling") stay in the cook phase and keep a small prep pill
+- "Gör så här" lists the whole prep phase first when the toggle is on, so the current step, done/active nodes and auto-scroll follow that order
+- Done edges use the source cook's colour with 2 kockar; re-layout when a ✓ makes a card taller
+
 ## 2026-10-11 — Cook page: flow graph replaces the Gantt
 
 - Matlagning shows a left-to-right dependency graph (`js/views/flow-graph.js`) instead of the Gantt: columns by depth (steg 1 … klart), curved edges, master node highlighted, names wrap (never truncated), sentence-case names

@@ -5,8 +5,8 @@ import { AppShell } from './views/app-shell.js';
 import { RecipeChrome } from './views/recipe-selector.js';
 import { BrowseView } from './views/browse-view.js?v=20261007';
 import { OverviewModal } from './views/overview-modal.js?v=20261011';
-import { FlowGraph } from './views/flow-graph.js?v=20261011';
-import { CookingView } from './views/cooking-view.js?v=20261011';
+import { FlowGraph } from './views/flow-graph.js?v=20261011b';
+import { CookingView } from './views/cooking-view.js?v=20261011b';
 import { ShoppingSidebar } from './views/shopping-view.js?v=20261005';
 import { Timer } from './views/timer.js';
 

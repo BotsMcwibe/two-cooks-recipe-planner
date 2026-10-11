@@ -12,6 +12,7 @@ import {
   starHtml,
 } from '../utils/catalog-ui.js?v=20261004';
 import { joinStepParts, sentenceCase } from '../utils/text.js?v=20261011';
+import { prepPhaseIds } from '../utils/prep-phase.js?v=20261011b';
 
 /**
  * Cooking view - rich recipe page with hero, meta, ingredients, nutrition,
@@ -59,7 +60,7 @@ export class CookingView {
     this._renderNutrition(meta.nutrition, meta.portionScale ?? 1, meta.currentPortions);
     this._renderIngredients(rootRecipe, subtreeRecipes, graph, baseIngredients);
 
-    const stepsModel = this._buildStepsModel(schedule);
+    const stepsModel = this._buildStepsModel(schedule, options, rootRecipe?.outputIngredient?.id);
     const soft = meta.softUpdate === true;
     if (soft && this._canPatchSteps(stepsModel)) {
       this._patchSteps(stepsModel);
@@ -234,12 +235,18 @@ export class CookingView {
   }
 
   /**
-   * Build flat step list in schedule order (same logic as before).
+   * Build flat step list in schedule order (prep phase first with Preppa först).
    * @returns {Array<object>}
    */
-  _buildStepsModel(schedule) {
+  _buildStepsModel(schedule, options = {}, rootId = null) {
     const nodes = schedule?.nodes || [];
+    // Preppa först: the whole prep phase comes first in the list (same split as the
+    // flow graph), then cooking; schedule start order within each phase.
+    const prepIds = options.prepFirst ? prepPhaseIds(nodes, rootId) : new Set();
     const sorted = [...nodes].sort((a, b) => {
+      const pa = prepIds.has(a.id) ? 0 : 1;
+      const pb = prepIds.has(b.id) ? 0 : 1;
+      if (pa !== pb) return pa - pb;
       if (a.start !== b.start) return a.start - b.start;
       const aPrep = a.recipe.hasTag && a.recipe.hasTag('prep');
       const bPrep = b.recipe.hasTag && b.recipe.hasTag('prep');

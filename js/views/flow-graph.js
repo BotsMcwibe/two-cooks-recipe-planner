@@ -1,5 +1,6 @@
 import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261004';
 import { sentenceCase } from '../utils/text.js?v=20261011';
+import { prepPhaseIds, isPrepTagged } from '../utils/prep-phase.js?v=20261011b';
 
 /**
  * Flow graph for the cook page: a left-to-right dependency graph of the recipe's
@@ -21,7 +22,7 @@ const TOP_PAD = 26; // room for the column captions
 
 const KNIFE_SVG = `<svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M14.2 3.6c2.6 2 4 5 3.5 8.4L8.4 20.2a1.8 1.8 0 0 1-2.6-.1l-.5-.5a1.8 1.8 0 0 1 .1-2.5L14.6 6.2"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M3.8 20.6h5.2"/></svg>`;
 
-const PREP_WORDS = ['skär', 'hacka', 'skala', 'rensa', 'marinera', 'mät', 'väg'];
+const FLAME_SVG = `<svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12.1 2.4c.3 2.4-.7 4-1.8 5.2 1.5.2 3.2 1.3 4 3-1.1-.4-2-.1-2.6-1.8-.2 2.2 1.1 3.9 3 4.8 1.6 2.6 2.8 4.2 2.8 5.6 0 1.7-2.4 2.8-5.2 2.8s-5-1.1-5-2.8c0-2.4 1.5-4 2.4-5.7.5-1 .7-2 .4-3.1-1.1 1.3-1.5 2.8-1.3 4.1C7.2 13 6.8 11 7.9 8.8c1.3-2.6 3.1-4.3 4.2-6.4z"/></svg>`;
 
 export class FlowGraph {
   /**
@@ -120,40 +121,64 @@ export class FlowGraph {
       return v;
     };
     nodes.forEach(n => dist(n.id));
-    const maxDepth = Math.max(0, ...toMaster.values());
+    // Preppa först: prep phase in the first column(s), cooking after (left → right).
+    const prepIds = prepFirst ? prepPhaseIds(nodes, rootId) : new Set();
+    const phased = prepIds.size > 0;
+    const colOf = new Map();
+    let maxDepth;
+    let prepCols = 0;
+    if (!phased) {
+      maxDepth = Math.max(0, ...toMaster.values());
+      for (const n of nodes) colOf.set(n.id, maxDepth - toMaster.get(n.id));
+    } else {
+      // prep: right-aligned against the divider (longest path to a cook consumer)
+      const toSink = new Map();
+      const sinkDist = (id) => {
+        if (toSink.has(id)) return toSink.get(id);
+        toSink.set(id, 0); // cycle guard
+        const pc = (consumers.get(id) || []).filter(c => prepIds.has(c));
+        const v = pc.length ? 1 + Math.max(...pc.map(sinkDist)) : 0;
+        toSink.set(id, v);
+        return v;
+      };
+      const prepMax = Math.max(0, ...[...prepIds].map(sinkDist));
+      prepCols = prepMax + 1;
+      // cook: consumers of cook nodes are always cook nodes, so toMaster stays within the phase
+      const cookIds = nodes.map(n => n.id).filter(id => !prepIds.has(id));
+      const cookMax = Math.max(0, ...cookIds.map(id => toMaster.get(id)));
+      for (const id of prepIds) colOf.set(id, prepMax - toSink.get(id));
+      for (const id of cookIds) colOf.set(id, prepCols + cookMax - toMaster.get(id));
+      maxDepth = prepCols + cookMax;
+    }
 
     const items = new Map();
     for (const n of nodes) {
       items.set(n.id, {
         id: n.id,
         node: n,
-        col: maxDepth - toMaster.get(n.id),
+        col: colOf.get(n.id),
         children: n.deps.filter(d => byId.has(d)),
         consumers: consumers.get(n.id) || [],
         x: 0, y: 0, w: 0, h: 0,
       });
     }
 
-    let prepEnd = null;
-    if (prepFirst) {
-      prepEnd = calcPrepEnd(nodes);
-    }
-
-    let html = '';
-    if (prepEnd !== null && prepEnd > 0) {
+    let html = '<div class="flow-scroll" tabindex="-1"><div class="flow-canvas">';
+    if (phased) {
+      // Phase captions + divider. Minutes follow the schedule: prep ends when the
+      // last prep-phase node's active work ends (same split the Gantt showed).
+      const prepEnd = Math.max(0, ...nodes.filter(n => prepIds.has(n.id)).map(n => n.start + n.activeDuration));
       const totalTime = schedule.totalTime || 0;
       const prepMin = Math.round(prepEnd);
       const cookMin = Math.round(Math.max(totalTime - prepEnd, 0));
-      html += `<div class="gantt-times">
-          <span class="gantt-time"><span class="gantt-time-icon" title="Förberedelser">${KNIFE_SVG.replace(/width="12" height="12"/, 'width="18" height="18"')}</span><span>${prepMin} min</span></span>
-          <span class="gantt-time"><span class="gantt-time-icon" title="Tillagning"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12.1 2.4c.3 2.4-.7 4-1.8 5.2 1.5.2 3.2 1.3 4 3-1.1-.4-2-.1-2.6-1.8-.2 2.2 1.1 3.9 3 4.8 1.6 2.6 2.8 4.2 2.8 5.6 0 1.7-2.4 2.8-5.2 2.8s-5-1.1-5-2.8c0-2.4 1.5-4 2.4-5.7.5-1 .7-2 .4-3.1-1.1 1.3-1.5 2.8-1.3 4.1C7.2 13 6.8 11 7.9 8.8c1.3-2.6 3.1-4.3 4.2-6.4z"/></svg></span><span>${cookMin} min</span></span>
-        </div>`;
-    }
-
-    html += '<div class="flow-scroll" tabindex="-1"><div class="flow-canvas">';
-    for (let c = 0; c <= maxDepth; c++) {
-      const label = c === maxDepth ? 'klart' : `steg ${c + 1}`;
-      html += `<div class="flow-level" data-col="${c}">${label}</div>`;
+      html += `<div class="flow-phase flow-phase-prep" data-from="0" data-to="${prepCols - 1}" title="Förberedelser">${KNIFE_SVG}<span>Prep</span><span class="flow-phase-min">${prepMin} min</span></div>`;
+      html += `<div class="flow-phase flow-phase-cook" data-from="${prepCols}" data-to="${maxDepth}" title="Tillagning">${FLAME_SVG}<span>Tillagning</span><span class="flow-phase-min">${cookMin} min</span></div>`;
+      html += `<div class="flow-divider" data-after="${prepCols - 1}" aria-hidden="true"></div>`;
+    } else {
+      for (let c = 0; c <= maxDepth; c++) {
+        const label = c === maxDepth ? 'klart' : `steg ${c + 1}`;
+        html += `<div class="flow-level" data-col="${c}">${label}</div>`;
+      }
     }
     html += '<svg class="flow-edges" aria-hidden="true"></svg>';
 
@@ -162,7 +187,8 @@ export class FlowGraph {
       const r = n.recipe;
       const isMaster = n.id === rootId;
       const cook = twoCooks && (n.assignedCook === 'P1' || n.assignedCook === 'P2') ? n.assignedCook : '';
-      const isPrep = prepFirst && r.hasTag && r.hasTag('prep');
+      const isPrep = prepFirst && isPrepTagged(r);
+      const latePrep = isPrep && !prepIds.has(n.id);
       const active = Math.round(n.activeDuration);
       const wait = Math.round((n.totalDuration || 0) - (n.activeDuration || 0));
       const time = wait > 0 ? `${active} min + ${wait} vänta` : `${active} min`;
@@ -170,6 +196,7 @@ export class FlowGraph {
       if (isMaster) cls.push('is-master');
       if (cook) cls.push(cook === 'P2' ? 'cook-p2' : 'cook-p1', 'has-cook');
       if (isPrep) cls.push('is-prep');
+      if (prepIds.has(n.id)) cls.push('in-prep-phase');
       const name = sentenceCase(r.name);
       html += `<button type="button" class="${cls.join(' ')}" data-recipe="${escapeAttr(n.id)}" title="${escapeAttr(name)} – visa stegen">`;
       if (cook) {
@@ -177,7 +204,9 @@ export class FlowGraph {
       }
       html += `<span class="flow-name"><span class="flow-check" aria-hidden="true">✓</span>${escapeHtml(name)}</span>`;
       html += `<span class="flow-meta"><span class="flow-time">${escapeHtml(time)}</span>`;
-      if (isPrep) html += `<span class="flow-prep" title="Förberedelse">${KNIFE_SVG}prep</span>`;
+      // In the prep phase the column caption already says Prep; the pill only marks prep-tagged
+      // nodes that need cooked input and therefore sit in the cook phase.
+      if (latePrep) html += `<span class="flow-prep" title="Förberedelse som kräver något tillagat, görs under tillagningen">${KNIFE_SVG}prep</span>`;
       html += '</span>';
       html += '<span class="flow-progress" aria-hidden="true"><span class="flow-progress-bar"></span></span>';
       html += '</button>';
@@ -187,6 +216,8 @@ export class FlowGraph {
     this.$container.html(html);
     this._items = items;
     this._maxDepth = maxDepth;
+    this._prepCols = prepCols;
+    this._twoCooks = twoCooks;
     this._rootId = rootId;
 
     const scrollEl = this.$container.find('.flow-scroll')[0];
@@ -321,6 +352,19 @@ export class FlowGraph {
     canvas.style.width = `${width}px`;
     canvas.style.height = `${height}px`;
 
+    $canvas.find('.flow-phase').each((_, el) => {
+      const a = colX[Number(el.getAttribute('data-from'))];
+      const b = colX[Number(el.getAttribute('data-to'))];
+      if (!a || !b) return;
+      el.style.left = `${a.x}px`;
+      el.style.width = `${b.x + b.w - a.x}px`;
+    });
+    $canvas.find('.flow-divider').each((_, el) => {
+      const a = colX[Number(el.getAttribute('data-after'))];
+      if (!a) return;
+      el.style.left = `${Math.round(a.x + a.w + colGap / 2)}px`;
+      el.style.height = `${height}px`;
+    });
     $canvas.find('.flow-level').each((_, el) => {
       const c = Number(el.getAttribute('data-col'));
       if (!colX[c]) return;
@@ -373,12 +417,25 @@ export class FlowGraph {
       el.setAttribute('title', done ? `${base} (klar)` : active ? `${base} (pågår)` : base);
     });
     this._applyEdgeState();
+    // Done cards gain a ✓ which can wrap a name onto another line; re-layout if any height changed
+    if (this._items && this._layoutInfo && this._layoutInfo.measured) {
+      let changed = false;
+      this.$container.find('.flow-node').each((_, el) => {
+        const it = this._items.get(String(el.getAttribute('data-recipe')));
+        if (it && Math.abs(el.offsetHeight - it.h) > 0.5) changed = true;
+      });
+      if (changed) this._layout();
+    }
   }
 
   _applyEdgeState() {
     const doneIds = this._doneIds || new Set();
     this.$container.find('.flow-edge').each((_, el) => {
-      el.classList.toggle('is-done', doneIds.has(el.getAttribute('data-from')));
+      const from = el.getAttribute('data-from');
+      const done = doneIds.has(from);
+      const src = this._items && this._items.get(from);
+      el.classList.toggle('is-done', done);
+      el.classList.toggle('cook-p2', done && !!this._twoCooks && src?.node?.assignedCook === 'P2');
     });
   }
 
@@ -399,18 +456,4 @@ export class FlowGraph {
       scroller.scrollLeft = left;
     }
   }
-}
-
-/** End of prep work (same rule the Gantt used for its "Förb. klar" marker). */
-function calcPrepEnd(nodes) {
-  let max = 0;
-  nodes.forEach(n => {
-    const isPrep = n.recipe.hasTag && n.recipe.hasTag('prep');
-    const hasPrep = n.recipe.steps && n.recipe.steps.some(s => {
-      const txt = (typeof s === 'string' ? s : '').toLowerCase();
-      return PREP_WORDS.some(w => txt.includes(w));
-    });
-    if (isPrep || hasPrep) max = Math.max(max, n.start + n.activeDuration);
-  });
-  return max;
 }
