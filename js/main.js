@@ -9,6 +9,9 @@ import { FlowGraph } from './views/flow-graph.js?v=20261011b';
 import { CookingView } from './views/cooking-view.js?v=20261011c';
 import { ShoppingSidebar } from './views/shopping-view.js?v=20261005';
 import { Timer } from './views/timer.js';
+import { initThemeToggle } from './utils/theme.js?v=20261011h';
+
+initThemeToggle(document.getElementById('theme-toggle'));
 
 async function bootstrap() {
   const { unitMap, baseIngredientMap, ingredientTagsData, catalog } = await loadStaticData();
@@ -306,7 +309,7 @@ bootstrap().catch(err => {
   console.error('Failed to start app:', err);
   document.body.insertAdjacentHTML(
     'afterbegin',
-    `<div style="padding:1rem;background:#fee;color:#900;font-family:sans-serif;">
+    `<div style="padding:1rem;background:var(--danger-bg, #fee);color:var(--danger, #900);font-family:sans-serif;">
        Kunde inte ladda appen: ${err.message}
      </div>`
   );

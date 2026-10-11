@@ -1,28 +1,137 @@
 /* === Variables === */
 :root {
-  --bg: #f4f5f7;
-  --surface: #ffffff;
+  color-scheme: light;
+  /* Surfaces */
+  --bg: #f4f5f7;              /* page background */
+  --surface: #ffffff;         /* cards, panels, modal */
+  --surface-2: #f4f5f7;       /* inset areas on a surface (rows, controls) */
   --border: #e2e5ea;
+  --divider-soft: #eef0ef;
+  /* Text */
   --text: #1a1d21;
   --text-muted: #6b7280;
-  --primary: #067a46;
+  --text-faint: #9aa1ab;
+  --separator: #c4c9d0;
+  /* Brand / cooks */
+  --primary: #067a46;         /* P1 green: buttons, links, active chips */
   --primary-hover: #056338;
   --primary-light: #e6f5ee;
+  --on-accent: #ffffff;       /* text/icons on filled primary, P1, P2 */
+  --p1: #067a46;
+  --p2: #6d28d9;
+  --p2-light: #f3e8ff;
   --accent: #059669;
   --accent-light: #d1fae5;
+  --focus-ring: var(--primary);
+  /* Warnings, allergens, danger */
   --warn: #f59e0b;
   --warn-light: #fef3c7;
-  --gantt-active: #067a46;
+  --warn-text: #92400e;
+  --danger: #b91c1c;
+  --danger-bg: #fee2e2;
+  --danger-border: #fca5a5;
+  --star: #c4a000;
+  /* Media placeholders */
+  --media-bg: #e8ebe9;
+  --placeholder-a: #e5e7eb;
+  --placeholder-b: #d1d5db;
+  --thumb-bg: #f3f3f3;
+  --thumb-placeholder: #e8e8e8;
+  /* Card shopping checkbox */
+  --checkbox-bg: rgba(255, 255, 255, 0.95);
+  --checkbox-border: rgba(0, 0, 0, 0.18);
+  --checkbox-shadow: 0 1px 4px rgba(0, 0, 0, 0.18);
+  --checkbox-checked-shadow: 0 1px 6px rgba(5, 150, 105, 0.45);
+  /* Overlays */
+  --backdrop: rgba(17, 24, 39, 0.55);
+  --backdrop-soft: rgba(15, 23, 42, 0.35);
+  --close-bg: rgba(255, 255, 255, 0.92);
+  /* Flow graph */
+  --graph-edge: #b8bec6;
+  --graph-divider: #cfd4da;
+  --graph-node-border: #c9ced6;
+  --graph-node-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --graph-active-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --graph-master-bg: #fffbea;
+  --graph-master-border: #e0b43a;
+  --graph-cook-phase: #b45309;
+  /* Legacy Gantt (unused view, kept themable) */
+  --gantt-active: var(--p1);
   --gantt-wait: rgba(0, 0, 0, 0.22);
-  --gantt-p1: #067a46;
-  --gantt-p2: #6d28d9;
+  --gantt-p1: var(--p1);
+  --gantt-p2: var(--p2);
+  --gantt-tick: #888;
+  --gantt-ring: rgba(0, 0, 0, 0.06);
+  --gantt-label-shadow: rgba(0, 0, 0, 0.6);
+  /* Theme toggle */
+  --toggle-hover: rgba(0, 0, 0, 0.06);
+  /* Layout */
   --radius: 10px;
   --radius-sm: 6px;
   --shadow: 0 1px 3px rgba(0,0,0,.08), 0 4px 12px rgba(0,0,0,.04);
+  --shadow-hover: 0 6px 20px rgba(0,0,0,.12);
   --shadow-lg: 0 8px 30px rgba(0,0,0,.18);
   --max-browse: 1400px;
   --max-recipe: 1100px;
   --shopping-sidebar-width: 340px;
+}
+
+/* === Dark theme === */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #111418;
+  --surface: #1a1e24;
+  --surface-2: #242a32;
+  --border: #2f363f;
+  --divider-soft: #262c33;
+  --text: #e6e8eb;
+  --text-muted: #a0a8b3;
+  --text-faint: #7c8590;
+  --separator: #4a525c;
+  --primary: #3cc98a;
+  --primary-hover: #6fdcab;
+  --primary-light: #15342a;
+  --on-accent: #0b1611;
+  --p1: #3cc98a;
+  --p2: #ab8ffb;
+  --p2-light: #2d2350;
+  --accent: #34c48a;
+  --accent-light: #133a2c;
+  --warn: #f5b23d;
+  --warn-light: #3a2f14;
+  --warn-text: #f7cf6e;
+  --danger: #fca5a5;
+  --danger-bg: #3d1c1e;
+  --danger-border: #7f2f33;
+  --star: #e2c044;
+  --media-bg: #222830;
+  --placeholder-a: #262c35;
+  --placeholder-b: #1d2229;
+  --thumb-bg: #2a3038;
+  --thumb-placeholder: #303740;
+  --checkbox-bg: rgba(26, 30, 36, 0.92);
+  --checkbox-border: rgba(255, 255, 255, 0.38);
+  --checkbox-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+  --checkbox-checked-shadow: 0 1px 6px rgba(52, 196, 138, 0.35);
+  --backdrop: rgba(0, 0, 0, 0.66);
+  --backdrop-soft: rgba(0, 0, 0, 0.5);
+  --close-bg: rgba(42, 48, 57, 0.92);
+  --graph-edge: #4d5763;
+  --graph-divider: #3e4651;
+  --graph-node-border: #3b434e;
+  --graph-node-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+  --graph-active-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
+  --graph-master-bg: #2a2614;
+  --graph-master-border: #c9a23a;
+  --graph-cook-phase: #f0a74a;
+  --gantt-wait: rgba(255, 255, 255, 0.2);
+  --gantt-tick: #6b7380;
+  --gantt-ring: rgba(255, 255, 255, 0.08);
+  --toggle-hover: rgba(255, 255, 255, 0.08);
+  --shadow: 0 1px 3px rgba(0,0,0,.45), 0 4px 12px rgba(0,0,0,.25);
+  --shadow-hover: 0 6px 20px rgba(0,0,0,.5);
+  --shadow-lg: 0 8px 30px rgba(0,0,0,.6);
+  scrollbar-color: #3b434e transparent;
 }
 
 /* === Reset === */
@@ -61,7 +170,7 @@ header {
 }
 
 .brand:focus-visible {
-  outline: 2px solid var(--primary);
+  outline: 2px solid var(--focus-ring);
   outline-offset: 3px;
 }
 
@@ -72,6 +181,30 @@ header {
   height: 36px;
   object-fit: contain;
 }
+.brand-mark-dark { display: none; }
+:root[data-theme="dark"] .brand-mark-light { display: none; }
+:root[data-theme="dark"] .brand-mark-dark { display: block; }
+
+/* Theme toggle (header, right side) */
+.theme-toggle {
+  flex: none;
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: background-color .15s ease, color .15s ease;
+}
+.theme-toggle:hover { background: var(--toggle-hover); color: var(--text); }
+.theme-toggle:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
+.theme-toggle svg { display: block; }
 
 .brand-text {
   display: flex;
@@ -152,7 +285,7 @@ main.main-recipe {
 
 .btn-primary {
   background: var(--primary);
-  color: #fff;
+  color: var(--on-accent);
 }
 .btn-primary:hover { background: var(--primary-hover); }
 
@@ -161,7 +294,7 @@ main.main-recipe {
   border-color: var(--border);
   color: var(--text);
 }
-.btn-secondary:hover { background: var(--bg); }
+.btn-secondary:hover { background: var(--surface-2); }
 
 .btn-sm { padding: 6px 12px; font-size: 0.85rem; }
 
@@ -182,7 +315,7 @@ main.main-recipe {
   align-items: center;
   gap: 4px;
   padding: 4px;
-  background: var(--bg);
+  background: var(--surface-2);
   border-radius: 999px;
 }
 
@@ -197,7 +330,7 @@ main.main-recipe {
   height: 32px;
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
-  background: var(--bg);
+  background: var(--surface-2);
   cursor: pointer;
   font-size: 1.1rem;
   line-height: 1;
@@ -312,7 +445,7 @@ main.main-recipe {
 .filter-chip.active {
   background: var(--primary);
   border-color: var(--primary);
-  color: #fff;
+  color: var(--on-accent);
   font-weight: 600;
 }
 
@@ -361,14 +494,14 @@ main.main-recipe {
 .recipe-card:hover,
 .recipe-card:focus {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0,0,0,.12);
+  box-shadow: var(--shadow-hover);
   outline: none;
 }
 
 .recipe-card-media {
   position: relative;
   aspect-ratio: 4 / 3;
-  background: #e8ebe9;
+  background: var(--media-bg);
   overflow: hidden;
 }
 
@@ -398,9 +531,9 @@ main.main-recipe {
   width: 28px;
   height: 28px;
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.95);
-  border: 2px solid rgba(0, 0, 0, 0.18);
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.18);
+  background: var(--checkbox-bg);
+  border: 2px solid var(--checkbox-border);
+  box-shadow: var(--checkbox-shadow);
   transition: background .15s ease, border-color .15s ease, box-shadow .15s ease;
 }
 .recipe-card-shop-box::after {
@@ -410,7 +543,7 @@ main.main-recipe {
   top: 5px;
   width: 7px;
   height: 12px;
-  border: solid #fff;
+  border: solid var(--on-accent);
   border-width: 0 2.5px 2.5px 0;
   transform: rotate(45deg) scale(0);
   transition: transform .12s ease;
@@ -418,13 +551,13 @@ main.main-recipe {
 .recipe-card-shop-cb:checked + .recipe-card-shop-box {
   background: var(--accent);
   border-color: var(--accent);
-  box-shadow: 0 1px 6px rgba(5, 150, 105, 0.45);
+  box-shadow: var(--checkbox-checked-shadow);
 }
 .recipe-card-shop-cb:checked + .recipe-card-shop-box::after {
   transform: rotate(45deg) scale(1);
 }
 .recipe-card-shop-cb:focus-visible + .recipe-card-shop-box {
-  outline: 2px solid var(--primary);
+  outline: 2px solid var(--focus-ring);
   outline-offset: 2px;
 }
 .recipe-card.is-shopping-selected {
@@ -442,7 +575,7 @@ main.main-recipe {
 .recipe-card-placeholder {
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, #e5e7eb, #d1d5db);
+  background: linear-gradient(135deg, var(--placeholder-a), var(--placeholder-b));
 }
 
 .recipe-card-body {
@@ -487,7 +620,7 @@ main.main-recipe {
 .meta-item + .meta-item::before {
   content: "·";
   margin-right: 6px;
-  color: #c4c9d0;
+  color: var(--separator);
 }
 
 .card-tag {
@@ -502,7 +635,7 @@ main.main-recipe {
 
 .recipe-card-rating {
   font-size: 0.85rem;
-  color: #c4a000;
+  color: var(--star);
 }
 
 .rating-stars { letter-spacing: 1px; }
@@ -525,7 +658,7 @@ main.main-recipe {
 .overview-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(17, 24, 39, 0.55);
+  background: var(--backdrop);
 }
 
 .overview-dialog {
@@ -549,7 +682,7 @@ main.main-recipe {
   height: 36px;
   border-radius: 50%;
   border: none;
-  background: rgba(255,255,255,.92);
+  background: var(--close-bg);
   font-size: 1.4rem;
   line-height: 1;
   cursor: pointer;
@@ -561,7 +694,7 @@ main.main-recipe {
   aspect-ratio: 16 / 9;
   max-height: 320px;
   overflow: hidden;
-  background: #e8ebe9;
+  background: var(--media-bg);
   border-radius: 16px 16px 0 0;
 }
 
@@ -575,7 +708,7 @@ main.main-recipe {
 .overview-hero-placeholder {
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, #e5e7eb, #d1d5db);
+  background: linear-gradient(135deg, var(--placeholder-a), var(--placeholder-b));
 }
 
 /* Recipe photo failed to load (not deployed): hero hidden, keep the close button clear of the title row */
@@ -617,7 +750,7 @@ main.main-recipe {
   margin-bottom: 8px;
 }
 
-.overview-rating { color: #c4a000; margin-right: 6px; }
+.overview-rating { color: var(--star); margin-right: 6px; }
 
 .personal-rating {
   display: inline-flex;
@@ -626,8 +759,8 @@ main.main-recipe {
   margin-right: 6px;
   padding: 2px 8px;
   border-radius: 999px;
-  background: #f3e8ff;
-  color: var(--gantt-p2);
+  background: var(--p2-light);
+  color: var(--p2);
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.01em;
@@ -670,7 +803,7 @@ main.main-recipe {
 
 .allergen-chip {
   background: var(--warn-light);
-  color: #92400e;
+  color: var(--warn-text);
   padding: 2px 8px;
   border-radius: 999px;
   font-size: 0.75rem;
@@ -683,7 +816,7 @@ main.main-recipe {
   gap: 14px;
   margin: 14px 0 18px;
   padding: 10px 12px;
-  background: var(--bg);
+  background: var(--surface-2);
   border-radius: var(--radius-sm);
 }
 
@@ -732,13 +865,13 @@ main.main-recipe {
   height: 44px;
   border-radius: 50%;
   object-fit: cover;
-  background: #f3f3f3;
+  background: var(--thumb-bg);
   border: 1px solid var(--border);
 }
 
 .overview-ing-list .ing-thumb-placeholder {
   display: inline-block;
-  background: #e8e8e8;
+  background: var(--thumb-placeholder);
   border: 1px solid var(--border);
 }
 
@@ -765,7 +898,7 @@ main.main-recipe {
   height: 22px;
   border-radius: 50%;
   background: var(--primary);
-  color: #fff;
+  color: var(--on-accent);
   font-size: 0.75rem;
   font-weight: 700;
   display: inline-flex;
@@ -812,7 +945,7 @@ main.main-recipe {
 .flow-canvas {
   --flow-card-w: 176px;
   --flow-col-gap: 56px;
-  --node-color: var(--gantt-p1);
+  --node-color: var(--p1);
   position: relative;
   min-height: 60px;
   margin: 0 auto;
@@ -822,7 +955,7 @@ main.main-recipe {
   top: 0;
   text-align: center;
   font-size: 0.72rem;
-  color: #9aa1ab;
+  color: var(--text-faint);
   letter-spacing: 0.02em;
   pointer-events: none;
 }
@@ -840,12 +973,12 @@ main.main-recipe {
 }
 .flow-phase svg { flex: none; }
 .flow-phase-min { font-weight: 500; color: var(--text-muted); }
-.flow-phase-cook { color: #b45309; }
+.flow-phase-cook { color: var(--graph-cook-phase); }
 .flow-divider {
   position: absolute;
   top: 0;
   width: 0;
-  border-left: 1.5px dashed #cfd4da;
+  border-left: 1.5px dashed var(--graph-divider);
   pointer-events: none;
 }
 .flow-edges {
@@ -856,17 +989,17 @@ main.main-recipe {
 }
 .flow-edge {
   fill: none;
-  stroke: #b8bec6;
+  stroke: var(--graph-edge);
   stroke-width: 1.6;
   transition: stroke 0.25s ease;
 }
 .flow-edge.is-done {
-  stroke: var(--gantt-p1);
+  stroke: var(--p1);
   stroke-width: 2;
 }
-.flow-edge.is-done.cook-p2 { stroke: var(--gantt-p2); }
+.flow-edge.is-done.cook-p2 { stroke: var(--p2); }
 .flow-node {
-  --node-color: var(--gantt-p1);
+  --node-color: var(--p1);
   position: absolute;
   left: 0;
   top: 0;
@@ -879,9 +1012,9 @@ main.main-recipe {
   margin: 0;
   background: var(--surface);
   color: var(--text);
-  border: 1.5px solid #c9ced6;
+  border: 1.5px solid var(--graph-node-border);
   border-radius: 10px;
-  box-shadow: 0 1px 2px rgba(0,0,0,.05);
+  box-shadow: var(--graph-node-shadow);
   font: inherit;
   text-align: left;
   white-space: normal;
@@ -889,15 +1022,15 @@ main.main-recipe {
   cursor: pointer;
   transition: background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, color 0.25s ease;
 }
-.flow-node.cook-p2 { --node-color: var(--gantt-p2); }
+.flow-node.cook-p2 { --node-color: var(--p2); }
 @media (hover: hover) {
   .flow-node:not(.is-done):not(.is-active):hover { border-color: var(--node-color); }
 }
 .flow-node:focus-visible { outline: 2px solid var(--node-color); outline-offset: 2px; }
 .flow-node.has-cook { padding-right: 40px; }
 .flow-node.is-master {
-  background: #fffbea;
-  border-color: #e0b43a;
+  background: var(--graph-master-bg);
+  border-color: var(--graph-master-border);
   border-width: 2px;
 }
 .flow-name {
@@ -953,25 +1086,25 @@ main.main-recipe {
 .flow-node.is-active {
   border: 3px solid var(--node-color);
   padding: 6.5px 8.5px 7.5px;
-  box-shadow: 0 0 0 4px color-mix(in srgb, var(--node-color) 18%, transparent), 0 2px 8px rgba(0,0,0,.08);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--node-color) 18%, transparent), var(--graph-active-shadow);
 }
 .flow-node.is-active.has-cook { padding-right: 38.5px; }
 .flow-node.is-active .flow-cook.cook-badge { top: 5.5px; right: 5.5px; }
 .flow-node.is-done {
   background: var(--node-color);
   border-color: var(--node-color);
-  color: #fff;
+  color: var(--on-accent);
 }
-.flow-node.is-done .flow-meta { color: rgba(255,255,255,.85); }
+.flow-node.is-done .flow-meta { color: color-mix(in srgb, var(--on-accent) 85%, transparent); }
 .flow-node.is-done .flow-check { display: inline; }
 .flow-node.is-done .flow-progress { display: none; }
-.flow-node.is-done .flow-prep { background: rgba(255,255,255,.2); color: #fff; }
-.flow-node.is-done .flow-cook.cook-badge { box-shadow: 0 0 0 1.5px #fff; }
+.flow-node.is-done .flow-prep { background: color-mix(in srgb, var(--on-accent) 20%, transparent); color: var(--on-accent); }
+.flow-node.is-done .flow-cook.cook-badge { box-shadow: 0 0 0 1.5px var(--on-accent); }
 
 /* Step group highlight when jumped to from the flow graph */
 .recipe-group.flash { animation: group-flash 1.5s ease; }
 @keyframes group-flash {
-  0%, 30% { box-shadow: 0 0 0 3px var(--gantt-p1); }
+  0%, 30% { box-shadow: 0 0 0 3px var(--p1); }
   100% { box-shadow: 0 0 0 0 transparent; }
 }
 
@@ -1025,12 +1158,12 @@ main.main-recipe {
   position: absolute;
   border-radius: var(--radius-sm);
   overflow: hidden;
-  background: var(--gantt-p1);
-  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.06);
+  background: var(--p1);
+  box-shadow: inset 0 0 0 1px var(--gantt-ring);
 }
 
-.gantt-bar.cook-p1 { background: var(--gantt-p1); }
-.gantt-bar.cook-p2 { background: var(--gantt-p2); }
+.gantt-bar.cook-p1 { background: var(--p1); }
+.gantt-bar.cook-p2 { background: var(--p2); }
 
 .gantt-active {
   height: 100%;
@@ -1047,8 +1180,8 @@ main.main-recipe {
 .gantt-label {
   position: absolute;
   left: 8px;
-  color: #fff;
-  text-shadow: 0 0 2px rgba(0,0,0,0.6);
+  color: var(--on-accent);
+  text-shadow: 0 0 2px var(--gantt-label-shadow);
   white-space: nowrap;
   pointer-events: none;
 }
@@ -1081,7 +1214,7 @@ main.main-recipe {
   border-radius: 3px;
   font-size: 0.7rem;
   font-weight: 600;
-  color: #fff;
+  color: var(--on-accent);
   white-space: nowrap;
   z-index: 6;
 }
@@ -1100,7 +1233,7 @@ main.main-recipe {
   top: 0;
   width: 1px;
   height: 10px;
-  background: #888;
+  background: var(--gantt-tick);
 }
 
 .gantt-tick-end { height: 16px; top: -4px; }
@@ -1127,7 +1260,7 @@ main.main-recipe {
 }
 
 .ingredient-list li:nth-child(even) {
-  background: var(--bg);
+  background: var(--surface-2);
 }
 
 .ing-amount {
@@ -1159,7 +1292,7 @@ main.main-recipe {
   object-fit: cover;
   border-radius: var(--radius);
   border: 1px solid var(--border);
-  background: var(--bg);
+  background: var(--surface-2);
 }
 
 #cooking-header {
@@ -1198,7 +1331,7 @@ main.main-recipe {
 
 #cooking-nutrition {
   padding: 10px 12px;
-  background: var(--bg);
+  background: var(--surface-2);
   border: 1px solid var(--border);
   border-radius: var(--radius);
 }
@@ -1262,7 +1395,7 @@ main.main-recipe {
   width: 100%;
   max-height: 200px;
   object-fit: cover;
-  background: var(--bg);
+  background: var(--surface-2);
   transition: filter 0.2s ease;
 }
 
@@ -1273,7 +1406,7 @@ main.main-recipe {
 
 .recipe-group-header {
   padding: 8px 12px;
-  background: var(--bg);
+  background: var(--surface-2);
   border-bottom: 1px solid var(--border);
   display: flex;
   flex-wrap: wrap;
@@ -1299,12 +1432,12 @@ main.main-recipe {
   font-size: 0.68rem;
   font-weight: 700;
   letter-spacing: 0.02em;
-  color: #fff;
+  color: var(--on-accent);
   line-height: 1;
 }
 
-.cook-badge.cook-p1 { background: var(--gantt-p1); }
-.cook-badge.cook-p2 { background: var(--gantt-p2); }
+.cook-badge.cook-p1 { background: var(--p1); }
+.cook-badge.cook-p2 { background: var(--p2); }
 
 .recipe-needs, .recipe-produces {
   font-size: 0.85rem;
@@ -1345,7 +1478,7 @@ main.main-recipe {
   height: 24px;
   border-radius: 50%;
   background: var(--text);
-  color: #fff;
+  color: var(--on-accent);
   font-size: 0.75rem;
   font-weight: 700;
   display: inline-flex;
@@ -1387,14 +1520,14 @@ main.main-recipe {
   padding: 4px 10px;
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
-  background: var(--bg);
+  background: var(--surface-2);
   cursor: pointer;
   font-size: 0.85rem;
 }
 
 .timer-start { background: var(--primary-light); color: var(--primary); font-weight: 600; }
 .timer-reset { color: var(--text-muted); }
-.timer-turnoff { background: var(--warn-light); color: #92400e; font-weight: 600; }
+.timer-turnoff { background: var(--warn-light); color: var(--warn-text); font-weight: 600; }
 .timer-ringing { font-size: 1.2rem; }
 .timer-done { color: var(--accent); font-size: 1.1rem; margin-right: 4px; }
 
@@ -1447,7 +1580,7 @@ main.main-recipe {
   padding: 5px 8px;
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
-  background: var(--bg);
+  background: var(--surface-2);
   color: var(--text);
   font-size: 0.75rem;
   font-weight: 600;
@@ -1467,9 +1600,9 @@ main.main-recipe {
 }
 
 .shopping-copy-btn.is-copy-error {
-  background: #fee2e2;
-  border-color: #fca5a5;
-  color: #b91c1c;
+  background: var(--danger-bg);
+  border-color: var(--danger-border);
+  color: var(--danger);
 }
 
 .shopping-badge {
@@ -1481,7 +1614,7 @@ main.main-recipe {
   padding: 0 6px;
   border-radius: 999px;
   background: var(--accent);
-  color: #fff;
+  color: var(--on-accent);
   font-size: 0.75rem;
   font-weight: 700;
 }
@@ -1499,7 +1632,7 @@ main.main-recipe {
   border-radius: var(--radius-sm);
 }
 .shopping-sidebar-close:hover {
-  background: var(--bg);
+  background: var(--surface-2);
   color: var(--text);
 }
 
@@ -1545,8 +1678,8 @@ main.main-recipe {
   line-height: 1;
 }
 .shop-remove-btn:hover {
-  background: #fee2e2;
-  color: #b91c1c;
+  background: var(--danger-bg);
+  color: var(--danger);
 }
 
 .shop-portion-controls {
@@ -1560,7 +1693,7 @@ main.main-recipe {
   height: 28px;
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
-  background: var(--bg);
+  background: var(--surface-2);
   cursor: pointer;
   font-size: 1rem;
 }
@@ -1604,7 +1737,7 @@ main.main-recipe {
   font-size: 0.8rem;
   gap: 6px;
   line-height: 1.2;
-  border-bottom-color: #eef0ef;
+  border-bottom-color: var(--divider-soft);
 }
 
 .shopping-groups .ing-amount {
@@ -1634,7 +1767,7 @@ main.main-recipe {
   border-radius: 999px;
   border: none;
   background: var(--primary);
-  color: #fff;
+  color: var(--on-accent);
   font-weight: 700;
   font-size: 0.95rem;
   box-shadow: var(--shadow-lg);
@@ -1692,7 +1825,7 @@ main.main-recipe {
     display: block;
     position: fixed;
     inset: 0;
-    background: rgba(15, 23, 42, 0.35);
+    background: var(--backdrop-soft);
     z-index: 50;
   }
   .shopping-sidebar-backdrop[hidden] {

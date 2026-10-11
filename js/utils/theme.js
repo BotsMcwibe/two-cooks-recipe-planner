@@ -1,0 +1,59 @@
+/**
+ * Light/dark theme toggle.
+ * The initial theme is applied by an inline script in <head> (before first paint):
+ * a saved choice in localStorage wins, otherwise prefers-color-scheme.
+ */
+export const THEME_KEY = 'jesse-theme';
+const THEME_COLORS = { light: '#f4f5f7', dark: '#111418' };
+
+const SUN_SVG = '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.9"/><path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.55 1.55M17.15 17.15l1.55 1.55M5.3 18.7l1.55-1.55M17.15 6.85l1.55-1.55"/></svg>';
+const MOON_SVG = '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round" d="M20.2 14.6A8.4 8.4 0 0 1 9.4 3.8a8.4 8.4 0 1 0 10.8 10.8z"/></svg>';
+
+function readSaved() {
+  try {
+    const v = localStorage.getItem(THEME_KEY);
+    return v === 'light' || v === 'dark' ? v : null;
+  } catch { return null; }
+}
+
+function systemTheme() {
+  return window.matchMedia?.('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+}
+
+export function currentTheme() {
+  return document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light';
+}
+
+export function applyTheme(theme) {
+  const root = document.documentElement;
+  root.dataset.theme = theme;
+  root.style.colorScheme = theme;
+  const meta = document.querySelector('meta[name="theme-color"]');
+  if (meta) meta.setAttribute('content', THEME_COLORS[theme]);
+}
+
+export function initThemeToggle(button) {
+  if (!button) return;
+  const render = () => {
+    const dark = currentTheme() === 'dark';
+    // Show the theme you switch TO.
+    button.innerHTML = dark ? SUN_SVG : MOON_SVG;
+    const label = dark ? 'Byt till ljust läge' : 'Byt till mörkt läge';
+    button.setAttribute('aria-label', label);
+    button.title = label;
+  };
+  applyTheme(readSaved() || systemTheme());
+  render();
+  button.addEventListener('click', () => {
+    const next = currentTheme() === 'dark' ? 'light' : 'dark';
+    try { localStorage.setItem(THEME_KEY, next); } catch { /* private mode */ }
+    applyTheme(next);
+    render();
+  });
+  // Follow OS changes until the user has made an explicit choice.
+  window.matchMedia?.('(prefers-color-scheme: dark)').addEventListener?.('change', () => {
+    if (readSaved()) return;
+    applyTheme(systemTheme());
+    render();
+  });
+}
