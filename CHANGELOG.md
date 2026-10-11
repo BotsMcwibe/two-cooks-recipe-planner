@@ -1,3 +1,12 @@
+## 2026-10-11 — Scheduler: Preppa först without delays, smarter 2-cook assignment
+
+- Preppa först only moves cold prep ahead of steps with slack; steps on the critical path (oven preheat before a long roast, boiling, rising) keep their early start. The most prep-forward variant within 1 min of the plain schedule is used (all 107 recipes: Preppa först costs ≤ 1 min; before, 83 recipes got > 1 min slower with 1 cook, up to +27)
+- Two cooks: a step stays with the cook who made its input when they are free or free within ~2 min (3 for ≤2 min steps, 5 for same-pan continuations); critical steps never wait; otherwise the free cook with least hands-on time so far gets it (not always P1)
+- Critical lookahead: a cook doesn't start a step that would block a no-slack step becoming ready meanwhile (fills the gap with a shorter step or waits)
+- 2 cooks is never slower than 1 cook (variants compared; 0 of 107 recipes)
+- Fixed "is a second cook useful" (max parallelism): computed in dependency order and back-to-back steps no longer count as parallel (19 recipes changed; avocado_smoothie now correctly 1)
+- Step list follows schedule start order (Preppa först is now encoded in the schedule); graph keeps the Prep/Tillagning phase layout
+
 ## 2026-10-11 — Flow graph: Preppa först phases
 
 - With Preppa först on, the flow graph puts the prep phase in the first column(s) and cooking after, with "Prep · N min" / "Tillagning · N min" captions and a dashed divider (replaces the separate prep/cook time strip)
