@@ -31,12 +31,6 @@
       "jarNote": "malen"
     },
     {
-      "id": "koriander",
-      "name": "Koriander",
-      "jarGrams": 28,
-      "jarNote": "malen"
-    },
-    {
       "id": "lok",
       "name": "Lökgranulat",
       "jarGrams": 41,
@@ -148,13 +142,12 @@
     },
     {
       "name": "Ginger Ninja",
-      "packetGrams": 10,
+      "packetGrams": 9.3,
       "spices": {
         "ingefara": 4.0,
         "vitlok": 2.0,
         "lok": 1.5,
         "paprika": 0.8,
-        "koriander": 0.7,
         "chiliflakes": 0.5,
         "peppar": 0.5
       }
