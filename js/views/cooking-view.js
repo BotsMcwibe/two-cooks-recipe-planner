@@ -521,7 +521,9 @@ export class CookingView {
 
     this.$steps.on('click', '.step-item', (e) => {
       if ($(e.target).closest('.timer-row').length) return;
-      if ($(e.target).is('.step-cb')) return;
+      // Clicks inside the <label> already toggle the checkbox natively;
+      // toggling again here would undo it (tap = flash, no change).
+      if ($(e.target).is('.step-cb') || $(e.target).closest('.step-label').length) return;
       const $item = $(e.currentTarget);
       if ($item.hasClass('disabled')) return;
       const $cb = $item.find('.step-cb');
