@@ -223,6 +223,25 @@ header {
 .theme-toggle:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
 .theme-toggle svg { display: block; }
 
+/* Header icon link (Kryddskåpet), sits left of the theme toggle */
+.header-icon-link {
+  flex: none;
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  color: var(--text-muted);
+  transition: background-color .15s ease, color .15s ease;
+}
+.header-icon-link svg { display: block; }
+.header-icon-link:hover { background: var(--toggle-hover); color: var(--text); }
+.header-icon-link:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
+.header-icon-link[aria-current="page"] { color: var(--primary); background: var(--primary-light); }
+.header-icon-link + .theme-toggle { margin-left: 4px; }
+
 .brand-text {
   display: flex;
   align-items: baseline;
@@ -2064,3 +2083,195 @@ body.scroll-locked {
 .back-to-top:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
 @media (hover: hover) { .back-to-top:hover { background: var(--surface-2); } }
 @media print { .back-to-top { display: none; } }
+
+/* === Kryddskåpet (#kryddor) === */
+main.main-spices {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding-top: 12px;
+}
+.spice-head h1 {
+  font-size: 1.5rem;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+.spice-lede {
+  margin-top: 4px;
+  color: var(--text-muted);
+  max-width: 60ch;
+}
+.spice-layout {
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  gap: 20px;
+  align-items: start;
+}
+.spice-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 14px 16px 16px;
+}
+.spice-card h2 {
+  font-size: 1.05rem;
+  margin-bottom: 8px;
+}
+.spice-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.spice-card-head h2 { margin-bottom: 8px; }
+.spice-clear {
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  color: var(--text-muted);
+  border-radius: 999px;
+  padding: 3px 12px;
+  font: inherit;
+  font-size: 0.85rem;
+  cursor: pointer;
+  margin-bottom: 8px;
+}
+.spice-clear:hover { color: var(--text); }
+.spice-clear:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
+.spice-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 7px 0;
+  border-top: 1px solid var(--divider-soft);
+  cursor: text;
+}
+.spice-row:first-child { border-top: none; }
+.spice-name {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  font-weight: 500;
+  line-height: 1.25;
+}
+.spice-hint {
+  font-size: 0.78rem;
+  font-weight: 400;
+  color: var(--text-faint);
+}
+.spice-input-wrap {
+  position: relative;
+  flex: none;
+}
+.spice-input {
+  width: 96px;
+  padding: 7px 28px 7px 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
+  color: var(--text);
+  font: inherit;
+  font-size: 1rem; /* >=16px: no iOS zoom on focus */
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+.spice-input::placeholder { color: var(--text-faint); }
+.spice-input:focus {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 0;
+  border-color: transparent;
+  background: var(--surface);
+}
+.spice-input.is-invalid { border-color: var(--danger-border); background: var(--danger-bg); }
+.spice-unit {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-faint);
+  pointer-events: none;
+  font-size: 0.9rem;
+}
+.spice-blends { list-style: none; }
+.spice-blend {
+  padding: 10px 0;
+  border-top: 1px solid var(--divider-soft);
+}
+.spice-blend:first-child { border-top: none; padding-top: 2px; }
+.spice-blend-main {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.spice-count {
+  flex: none;
+  min-width: 44px;
+  height: 44px;
+  padding: 0 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  background: var(--surface-2);
+  color: var(--text-faint);
+  transition: background-color .15s ease, color .15s ease;
+}
+.spice-blend.can-make .spice-count {
+  background: var(--primary-light);
+  color: var(--primary);
+}
+.spice-blend-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.spice-blend-name { font-weight: 600; }
+.spice-blend-sub {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.3;
+}
+.spice-blend.cannot-make .spice-blend-sub { color: var(--text-faint); }
+.spice-blend-recipe {
+  margin: 4px 0 0 56px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+.spice-blend-recipe summary {
+  cursor: pointer;
+  width: max-content;
+  color: var(--text-faint);
+}
+.spice-blend-recipe summary:hover { color: var(--text-muted); }
+.spice-blend-recipe ul {
+  list-style: none;
+  margin-top: 4px;
+  max-width: 280px;
+}
+.spice-blend-recipe li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-variant-numeric: tabular-nums;
+}
+.spice-blend-recipe li.is-short span:first-child { color: var(--warn-text); font-weight: 600; }
+.spice-note {
+  margin-top: 12px;
+  font-size: 0.8rem;
+  color: var(--text-faint);
+}
+.spice-error { color: var(--danger); }
+
+@media (max-width: 760px) {
+  .spice-layout { grid-template-columns: minmax(0, 1fr); gap: 14px; }
+}
+@media (max-width: 520px) {
+  main.main-spices { padding-left: 12px; padding-right: 12px; }
+  .spice-card { padding: 12px 12px 14px; }
+  .spice-blend-recipe { margin-left: 0; }
+}

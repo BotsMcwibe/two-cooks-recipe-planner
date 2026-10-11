@@ -4,11 +4,12 @@
  * Routes:
  *   #cook/<masterId>      → Matlagning for that recipe
  *   #overview/<masterId>  → öppna översikt-modal
+ *   #kryddor              → kryddskåpet (spice blend calculator)
  *   #browse | # | empty   → receptlista (browse)
  */
 
 /**
- * @typedef {{ route: 'browse' | 'cook' | 'overview', masterId: string | null }} AppRoute
+ * @typedef {{ route: 'browse' | 'cook' | 'overview' | 'kryddor', masterId: string | null }} AppRoute
  */
 
 /**
@@ -40,6 +41,9 @@ export function parseHash(hash = typeof location !== 'undefined' ? location.hash
   if (!raw || raw === 'browse') {
     return { route: 'browse', masterId: null };
   }
+  if (raw.toLowerCase() === 'kryddor') {
+    return { route: 'kryddor', masterId: null };
+  }
 
   const m = raw.match(/^(cook|overview)\/(.+)$/i);
   if (!m) {
@@ -61,7 +65,7 @@ export function parseHash(hash = typeof location !== 'undefined' ? location.hash
 
 /**
  * Build a hash string for a route (includes leading #).
- * @param {'browse' | 'cook' | 'overview'} route
+ * @param {'browse' | 'cook' | 'overview' | 'kryddor'} route
  * @param {string | null} [masterId]
  * @returns {string}
  */
@@ -72,12 +76,13 @@ export function hashFor(route, masterId = null) {
   if (route === 'overview' && masterId) {
     return `#overview/${encodeURIComponent(masterId)}`;
   }
+  if (route === 'kryddor') return '#kryddor';
   return '#browse';
 }
 
 /**
  * Update the URL hash without looping when already matching.
- * @param {'browse' | 'cook' | 'overview'} route
+ * @param {'browse' | 'cook' | 'overview' | 'kryddor'} route
  * @param {string | null} [masterId]
  * @param {{ replace?: boolean }} [opts] replace=true → replaceState; false → pushState
  * @returns {boolean} true if the URL was changed

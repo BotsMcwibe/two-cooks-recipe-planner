@@ -1,0 +1,196 @@
+{
+  "source": "spice-mix/play.py",
+  "note": "Hemgjorda gissningar, inte HelloFreshs egna recept. Gram per påse.",
+  "spices": [
+    {
+      "id": "basilika",
+      "name": "Basilika",
+      "jarGrams": 10
+    },
+    {
+      "id": "cayenne",
+      "name": "Cayennepeppar",
+      "jarGrams": 30
+    },
+    {
+      "id": "chiliflakes",
+      "name": "Chiliflakes",
+      "jarGrams": 27,
+      "jarNote": "flingor"
+    },
+    {
+      "id": "chili",
+      "name": "Chilipeppar",
+      "jarGrams": 40,
+      "jarNote": "ICA chilipeppar malen"
+    },
+    {
+      "id": "ingefara",
+      "name": "Ingefära",
+      "jarGrams": 31,
+      "jarNote": "malen"
+    },
+    {
+      "id": "koriander",
+      "name": "Koriander",
+      "jarGrams": 28,
+      "jarNote": "malen"
+    },
+    {
+      "id": "lok",
+      "name": "Lökgranulat",
+      "jarGrams": 41,
+      "jarNote": "granulerad"
+    },
+    {
+      "id": "oregano",
+      "name": "Oregano",
+      "jarGrams": 9
+    },
+    {
+      "id": "paprika",
+      "name": "Paprika",
+      "jarGrams": 70,
+      "jarNote": "påse"
+    },
+    {
+      "id": "persilja",
+      "name": "Persilja",
+      "jarGrams": 8
+    },
+    {
+      "id": "salt",
+      "name": "Salt",
+      "jarGrams": 500,
+      "jarNote": "kök"
+    },
+    {
+      "id": "salvia",
+      "name": "Salvia",
+      "jarGrams": 12
+    },
+    {
+      "id": "senap",
+      "name": "Senapsfrö",
+      "jarGrams": 28,
+      "jarNote": "helt frö, mals"
+    },
+    {
+      "id": "spiskummin",
+      "name": "Spiskummin",
+      "jarGrams": 33
+    },
+    {
+      "id": "peppar",
+      "name": "Svartpeppar",
+      "jarGrams": 40,
+      "jarNote": "kök"
+    },
+    {
+      "id": "timjan",
+      "name": "Timjan",
+      "jarGrams": 15
+    },
+    {
+      "id": "vitlok",
+      "name": "Vitlöksgranulat",
+      "jarGrams": 49
+    }
+  ],
+  "blends": [
+    {
+      "name": "Medelhavets Pärla",
+      "packetGrams": 8,
+      "spices": {
+        "paprika": 2.4,
+        "oregano": 1.6,
+        "vitlok": 1.2,
+        "lok": 1.0,
+        "basilika": 0.8,
+        "peppar": 0.5,
+        "timjan": 0.3,
+        "salt": 0.2
+      }
+    },
+    {
+      "name": "Jorden Runt",
+      "packetGrams": 8,
+      "spices": {
+        "persilja": 1.6,
+        "oregano": 1.3,
+        "basilika": 1.2,
+        "vitlok": 1.2,
+        "lok": 1.0,
+        "senap": 0.9,
+        "paprika": 0.5,
+        "peppar": 0.3
+      }
+    },
+    {
+      "name": "Mamas Favorit",
+      "packetGrams": 8,
+      "spices": {
+        "paprika": 2.6,
+        "chili": 1.3,
+        "salt": 1.3,
+        "vitlok": 0.85,
+        "oregano": 0.65,
+        "basilika": 0.65,
+        "salvia": 0.65
+      }
+    },
+    {
+      "name": "Hello Sunrise",
+      "packetGrams": 7.5,
+      "spices": {
+        "persilja": 2.0,
+        "lok": 1.5,
+        "vitlok": 1.2,
+        "timjan": 1.0,
+        "basilika": 0.8,
+        "oregano": 0.6,
+        "senap": 0.4
+      }
+    },
+    {
+      "name": "Ginger Ninja",
+      "packetGrams": 10,
+      "spices": {
+        "ingefara": 4.0,
+        "vitlok": 2.0,
+        "lok": 1.5,
+        "paprika": 0.8,
+        "koriander": 0.7,
+        "chiliflakes": 0.5,
+        "peppar": 0.5
+      }
+    },
+    {
+      "name": "Ay Cajun-ba",
+      "packetGrams": 8,
+      "spices": {
+        "paprika": 2.0,
+        "lok": 2.0,
+        "vitlok": 1.0,
+        "oregano": 1.0,
+        "timjan": 1.0,
+        "basilika": 0.5,
+        "cayenne": 0.5
+      }
+    },
+    {
+      "name": "Taco",
+      "packetGrams": 8,
+      "spices": {
+        "spiskummin": 2.0,
+        "paprika": 1.8,
+        "chili": 1.2,
+        "vitlok": 1.0,
+        "lok": 1.0,
+        "oregano": 0.5,
+        "koriander": 0.3,
+        "salt": 0.2
+      }
+    }
+  ]
+}

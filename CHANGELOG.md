@@ -1,3 +1,11 @@
+## 2026-10-11 — Kryddskåpet (#kryddor): spice blend calculator
+
+- New page `#kryddor`, reached via the spice-jar icon left of the theme toggle in the header
+- Lists every single spice used by the homemade blends (alphabetical, Swedish names, jar size hint); type grams on hand (empty = 0, accepts "12,5")
+- For each blend: max whole packets if you made only that blend (floor of the smallest have/needed ratio), with "begränsas av: …" or, at 0, "räcker inte: …"; live update; "Per påse" shows the formula with short spices highlighted
+- Amounts are not saved (no localStorage); "Rensa" clears them
+- Data: `data/spice-blends.json`, regenerated from `spice-mix/play.py` with `python3 tools/build-spice-blends.py`; math in `js/models/spice-calc.js`
+
 ## 2026-10-11 — Scheduler: Preppa först without delays, smarter 2-cook assignment
 
 - Preppa först only moves cold prep ahead of steps with slack; steps on the critical path (oven preheat before a long roast, boiling, rising) keep their early start. The most prep-forward variant within 1 min of the plain schedule is used (all 107 recipes: Preppa först costs ≤ 1 min; before, 83 recipes got > 1 min slower with 1 cook, up to +27)

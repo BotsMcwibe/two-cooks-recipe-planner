@@ -12,6 +12,7 @@ export class AppShell {
     this.$views = {
       browse: $('#app-layout'),
       cooking: $('#view-cooking'),
+      spices: $('#view-spices'),
     };
     this.onFocusShopping = null;
     this._bind();
@@ -79,6 +80,8 @@ export class AppShell {
     const recipePhase = active === 'cooking';
     $('main').toggleClass('main-browse', active === 'browse');
     $('main').toggleClass('main-recipe', recipePhase);
+    $('main').toggleClass('main-spices', active === 'spices');
+    $('#spice-link').attr('aria-current', active === 'spices' ? 'page' : null);
     $('#app-layout').toggleClass('is-browse', active === 'browse');
   }
 }

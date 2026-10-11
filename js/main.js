@@ -1,7 +1,7 @@
 import { AppState } from './core/state.js';
-import { parseHash, setHash } from './core/router.js';
+import { parseHash, setHash } from './core/router.js?v=20261011x';
 import { loadStaticData, RecipeRepository } from './data/loader.js';
-import { AppShell } from './views/app-shell.js';
+import { AppShell } from './views/app-shell.js?v=20261011x';
 import { RecipeChrome } from './views/recipe-selector.js?v=20261011u';
 import { isScalable } from './utils/catalog-ui.js?v=20261011u';
 import { BrowseView } from './views/browse-view.js?v=20261011u';
@@ -10,6 +10,7 @@ import { FlowGraph } from './views/flow-graph.js?v=20261011u';
 import { CookingView } from './views/cooking-view.js?v=20261011u';
 import { ShoppingSidebar } from './views/shopping-view.js?v=20261011w';
 import { Timer } from './views/timer.js';
+import { SpiceView } from './views/spice-view.js?v=20261011x';
 import * as UserState from './core/user-recipe-state.js?v=20261011u';
 import { initThemeToggle } from './utils/theme.js?v=20261011h';
 import { initBackToTop } from './utils/back-to-top.js?v=20261011t';
@@ -28,6 +29,7 @@ async function bootstrap() {
   state.currentPhase = 'browse';
 
   const shell = new AppShell(state);
+  const spiceView = new SpiceView(document.getElementById('view-spices'));
   const cookingView = new CookingView(state);
   const flowGraph = new FlowGraph({
     onNodeClick: (recipeId) => cookingView.scrollToGroup(recipeId),
@@ -158,6 +160,10 @@ async function bootstrap() {
     if (applyingHash || !routingReady) return;
     const replace = opts.replace !== false;
 
+    if (state.currentPhase === 'spices') {
+      setHash('kryddor', null, { replace });
+      return;
+    }
     if (state.currentPhase === 'cooking' && state.selectedRecipeId) {
       setHash('cook', state.selectedRecipeId, { replace });
       return;
@@ -192,6 +198,15 @@ async function bootstrap() {
           state.currentPhase = 'browse';
           if (replaceUnknown) setHash('browse', null, { replace: true });
         }
+        return;
+      }
+
+      if (route === 'kryddor') {
+        if (modal.isOpen()) modal.close({ silent: true });
+        const wasSpices = state.currentPhase === 'spices';
+        state.currentPhase = 'spices';
+        await spiceView.render();
+        if (!wasSpices) window.scrollTo(0, 0);
         return;
       }
 
