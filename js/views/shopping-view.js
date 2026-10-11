@@ -28,6 +28,11 @@ export class ShoppingSidebar {
     this._rendering = false;
     this._copyPayload = { ingredienser: [], skafferi: [] };
     this._copyFeedbackTimer = null;
+    /** Drawer (≤900px) open state, saved page scroll and the element to refocus on close. */
+    this._drawerOpen = false;
+    this._savedScrollY = 0;
+    this._returnFocus = null;
+    this._drawerMq = window.matchMedia('(max-width: 900px)');
     this._bind();
     state.on('shoppingChange', () => this.render());
     state.on('phase', () => this._syncVisibility());
@@ -67,23 +72,89 @@ export class ShoppingSidebar {
     });
     // Backdrop click closes drawer on narrow screens
     $(document).on('click', '#shopping-sidebar-backdrop', () => this.closeDrawer());
+    // Escape closes; Tab stays inside the open drawer
+    $(document).on('keydown.shoppingDrawer', (e) => {
+      if (!this._drawerOpen) return;
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        this.closeDrawer();
+      } else if (e.key === 'Tab') {
+        this._trapTab(e);
+      }
+    });
+    // Widening to desktop while open: drop the drawer state (sidebar is inline there)
+    this._drawerMq.addEventListener?.('change', (e) => {
+      if (!e.matches && this._drawerOpen) this.closeDrawer({ restoreFocus: false });
+    });
+  }
+
+  _isDrawerMode() {
+    return this._drawerMq.matches;
   }
 
   openDrawer() {
-    document.body.classList.add('shopping-sidebar-open');
+    if (!this._isDrawerMode()) {
+      // Desktop: sidebar is always visible; just bring it into focus
+      this.$container.attr('tabindex', '-1').trigger('focus');
+      return;
+    }
+    if (this._drawerOpen) return;
+    this._drawerOpen = true;
+    this._returnFocus = document.activeElement;
+    // Lock page scroll (iOS-safe: fix the body in place, restore on close)
+    this._savedScrollY = window.scrollY;
+    const body = document.body;
+    body.style.top = `-${this._savedScrollY}px`;
+    body.classList.add('shopping-sidebar-open', 'scroll-locked');
     $('#shopping-sidebar-backdrop').prop('hidden', false);
-    this.$container.attr('tabindex', '-1').trigger('focus');
+    this.$container.attr({ role: 'dialog', 'aria-modal': 'true', tabindex: '-1' });
+    const scroller = this.$container.find('.shopping-sidebar-body')[0];
+    if (scroller) scroller.scrollTop = 0;
+    // Focus the panel itself (not a button) so nothing looks pre-selected
+    this.$container[0].focus({ preventScroll: true });
   }
 
-  closeDrawer() {
-    document.body.classList.remove('shopping-sidebar-open');
+  closeDrawer({ restoreFocus = true } = {}) {
+    const wasOpen = this._drawerOpen;
+    this._drawerOpen = false;
+    const body = document.body;
+    body.classList.remove('shopping-sidebar-open');
     $('#shopping-sidebar-backdrop').prop('hidden', true);
+    this.$container.removeAttr('role aria-modal');
+    if (!wasOpen) return;
+    body.classList.remove('scroll-locked');
+    body.style.top = '';
+    window.scrollTo(0, this._savedScrollY);
+    const back = this._returnFocus;
+    this._returnFocus = null;
+    if (restoreFocus && back && document.contains(back) && typeof back.focus === 'function') {
+      back.focus({ preventScroll: true });
+    } else if (restoreFocus && !this.$toggle.prop('hidden')) {
+      this.$toggle[0]?.focus({ preventScroll: true });
+    }
+  }
+
+  _trapTab(e) {
+    const root = this.$container[0];
+    const items = [...root.querySelectorAll('button:not([disabled]), [href], input, [tabindex]:not([tabindex="-1"])')]
+      .filter(el => el.offsetParent !== null);
+    if (!items.length) { e.preventDefault(); root.focus(); return; }
+    const first = items[0];
+    const last = items[items.length - 1];
+    const active = document.activeElement;
+    if (e.shiftKey && (active === first || active === root)) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && (active === last || !root.contains(active))) {
+      e.preventDefault();
+      first.focus();
+    }
   }
 
   /** Focus/open sidebar (used when Inköpslista tab is clicked). */
   focus() {
     this.openDrawer();
-    const el = this.$container.get(0);
+    const el = this.$container.find('.shopping-sidebar-body')[0];
     if (el) el.scrollTop = 0;
   }
 
@@ -231,7 +302,24 @@ export class ShoppingSidebar {
       }
 
       html += '</div>';
+      // Keep the list's scroll position and keyboard focus across re-renders
+      const prevBody = this.$container.find('.shopping-sidebar-body')[0];
+      const prevScroll = prevBody ? prevBody.scrollTop : 0;
+      const act = document.activeElement;
+      let focusSel = null;
+      if (act && this.$container[0].contains(act) && act !== this.$container[0]) {
+        const cls = [...act.classList].find(c => /^(shop-|shopping-)/.test(c));
+        const id = act.getAttribute('data-id');
+        if (cls) focusSel = `.${cls}${id ? `[data-id="${CSS.escape(id)}"]` : ''}`;
+      }
       this.$container.html(html);
+      const nextBody = this.$container.find('.shopping-sidebar-body')[0];
+      if (nextBody && prevScroll) nextBody.scrollTop = prevScroll;
+      if (focusSel) {
+        const el = this.$container[0].querySelector(focusSel);
+        if (el && !el.disabled) el.focus({ preventScroll: true });
+        else if (this._drawerOpen) this.$container[0].focus({ preventScroll: true });
+      }
       this._updateToggleBadge();
       this._syncVisibility();
     } finally {

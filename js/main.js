@@ -8,7 +8,7 @@ import { BrowseView } from './views/browse-view.js?v=20261011u';
 import { OverviewModal } from './views/overview-modal.js?v=20261011u';
 import { FlowGraph } from './views/flow-graph.js?v=20261011u';
 import { CookingView } from './views/cooking-view.js?v=20261011u';
-import { ShoppingSidebar } from './views/shopping-view.js?v=20261011u';
+import { ShoppingSidebar } from './views/shopping-view.js?v=20261011w';
 import { Timer } from './views/timer.js';
 import * as UserState from './core/user-recipe-state.js?v=20261011u';
 import { initThemeToggle } from './utils/theme.js?v=20261011h';

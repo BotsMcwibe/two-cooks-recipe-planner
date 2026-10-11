@@ -1647,7 +1647,8 @@ main.main-recipe {
   align-self: start;
   max-height: calc(100vh - 24px);
   max-height: calc(100dvh - 24px);
-  overflow-y: auto;
+  /* Header stays put; only the body scrolls */
+  overflow: hidden;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -1658,6 +1659,7 @@ main.main-recipe {
 }
 
 .shopping-sidebar-header {
+  flex: none;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1747,7 +1749,23 @@ main.main-recipe {
 }
 
 .shopping-sidebar-body {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  /* Desktop: at the list's end the wheel continues to the page (the sticky
+     sidebar can start below the fold); the mobile drawer contains it. */
+  -webkit-overflow-scrolling: touch;
   padding: 12px 16px 20px;
+}
+.shopping-sidebar:focus { outline: none; }
+
+/* Page behind the open drawer must not scroll (top is set inline to -scrollY) */
+body.scroll-locked {
+  position: fixed;
+  left: 0;
+  right: 0;
+  width: 100%;
+  overflow: hidden;
 }
 
 .shopping-recipe-list {
@@ -1907,22 +1925,38 @@ main.main-recipe {
     grid-template-columns: 1fr;
   }
 
+  /* Drawer = modal-like panel sized to the visible viewport (like Översikt) */
   .shopping-sidebar {
     position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    width: min(360px, 92vw);
-    max-height: none;
-    z-index: 60;
-    border-radius: 0;
-    transform: translateX(105%);
-    transition: transform .22s ease;
+    /* align-self:start on a fixed grid child would shrink it to its content
+       (the old drawer then ran off-screen and could not scroll) */
+    align-self: auto;
+    top: calc(16px + env(safe-area-inset-top, 0px));
+    left: 50%;
+    right: auto;
+    bottom: auto;
+    width: min(520px, calc(100vw - 24px));
+    max-height: calc(100vh - 32px);
+    max-height: calc(100dvh - 32px - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px));
+    z-index: 1000;
+    border-radius: 16px;
     box-shadow: var(--shadow-lg);
+    transform: translate(-50%, 12px);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform .2s ease, opacity .2s ease, visibility 0s linear .2s;
   }
 
   body.shopping-sidebar-open .shopping-sidebar {
-    transform: translateX(0);
+    transform: translate(-50%, 0);
+    opacity: 1;
+    visibility: visible;
+    transition: transform .2s ease, opacity .2s ease, visibility 0s;
+  }
+
+  .shopping-sidebar-body {
+    overscroll-behavior: contain;
+    padding-bottom: calc(20px + env(safe-area-inset-bottom, 0px));
   }
 
   .shopping-sidebar-close {
@@ -1935,8 +1969,8 @@ main.main-recipe {
     display: block;
     position: fixed;
     inset: 0;
-    background: var(--backdrop-soft);
-    z-index: 50;
+    background: var(--backdrop);
+    z-index: 999;
   }
   .shopping-sidebar-backdrop[hidden] {
     display: none !important;
