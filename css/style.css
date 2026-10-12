@@ -2359,3 +2359,18 @@ main.main-spices {
 .spice-mix-switch input:disabled { cursor: not-allowed; }
 .spice-mix-switch input:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
 .cook-spice-mixes .spice-mix-box { margin: 0 0 16px; }
+
+/* Cook page: tap an ingredient to jump to the next step that uses it */
+#cooking-ingredients .ing-jump { cursor: pointer; border-radius: var(--radius-sm); transition: background-color 0.15s ease, color 0.15s ease; }
+#cooking-ingredients .ing-jump:hover .ing-name,
+#cooking-ingredients .ing-jump:focus-visible .ing-name { color: var(--primary); }
+#cooking-ingredients .ing-jump:hover { background: var(--primary-light); }
+#cooking-ingredients .ing-jump:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: -2px; }
+.cook-toast {
+  position: fixed; left: 50%; bottom: calc(24px + env(safe-area-inset-bottom, 0px));
+  transform: translate(-50%, 8px); opacity: 0; pointer-events: none; z-index: 1100;
+  padding: 8px 14px; border-radius: 999px; font-size: 0.85rem;
+  background: var(--surface); color: var(--text); border: 1px solid var(--border); box-shadow: var(--shadow-lg);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.cook-toast.is-visible { opacity: 1; transform: translate(-50%, 0); }

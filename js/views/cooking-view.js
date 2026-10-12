@@ -101,6 +101,42 @@ export class CookingView {
     return { doneIds, activeId: cur ? String(cur.recipeId) : null, counts };
   }
 
+  /**
+   * Scroll to the next unchecked step (page order) whose node uses this base ingredient
+   * directly. Kryddmix components are inputs of the "Blanda …" node, so they land there.
+   */
+  jumpToIngredient(ingId) {
+    const users = new Set();
+    for (const r of this._subtree || []) {
+      if ((r.inputs || []).some(i => i.ingredient && i.ingredient.id === ingId)) users.add(String(r.outputIngredient.id));
+    }
+    const items = this.$steps.find('.step-item').toArray();
+    const next = items.find(el => users.has(String(el.dataset.recipe)) && !el.querySelector('.step-cb')?.checked);
+    if (!next) {
+      this._toast(users.size ? 'Redan använd' : 'Används inte i något steg');
+      return;
+    }
+    this.scrollToGroup(next.dataset.recipe);
+  }
+
+  _toast(text) {
+    let el = document.getElementById('cook-toast');
+    if (!el) {
+      el = document.createElement('div');
+      el.id = 'cook-toast';
+      el.className = 'cook-toast';
+      el.setAttribute('role', 'status');
+      el.setAttribute('aria-live', 'polite');
+      document.body.appendChild(el);
+    }
+    el.textContent = text;
+    el.classList.remove('is-visible');
+    void el.offsetWidth;
+    el.classList.add('is-visible');
+    clearTimeout(this._toastTimer);
+    this._toastTimer = setTimeout(() => el.classList.remove('is-visible'), 1600);
+  }
+
   /** Scroll the page so the step group for a node is in view (flow-graph click). */
   scrollToGroup(recipeId) {
     const $g = this.$steps.find(`.recipe-group[data-recipe="${CSS.escape(String(recipeId))}"]`);
@@ -495,6 +531,7 @@ export class CookingView {
   }
 
   _renderIngredients(rootRecipe, subtreeRecipes, graph, baseIngredients) {
+    this._subtree = [...subtreeRecipes];
     const baseIngs = RecipeGraph.getBaseIngredients(baseIngredients, subtreeRecipes);
     const { totals, units } = graph.computeBaseIngredientTotals(rootRecipe);
     const checked = RecipeGraph.getCheckedBaseIngredientTotals(subtreeRecipes, this.state.checkedIngredients);
@@ -507,7 +544,7 @@ export class CookingView {
       const remaining = Math.max(total - used, 0);
       const unitAbbr = units[ing.id] || '';
       if (remaining > 0) {
-        html += `<li><span class="ing-amount">${formatNiceAmount(remaining, unitAbbr)}</span><span class="ing-name">${escapeHtml(ing.name)}</span></li>`;
+        html += `<li class="ing-jump" role="button" tabindex="0" data-ing="${escapeAttr(ing.id)}" title="Visa nästa steg med ${escapeAttr(ing.name)}"><span class="ing-amount">${formatNiceAmount(remaining, unitAbbr)}</span><span class="ing-name">${escapeHtml(ing.name)}</span></li>`;
         any = true;
       }
     }
@@ -527,6 +564,14 @@ export class CookingView {
         img.closest('.step-node-photo').remove();
       }, true);
     }
+    // Tap an ingredient → next unchecked step that uses it (same scroll + flash as the flow graph)
+    this.$ingredients.on('click', '.ing-jump', (e) => this.jumpToIngredient(String(e.currentTarget.dataset.ing)));
+    this.$ingredients.on('keydown', '.ing-jump', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        this.jumpToIngredient(String(e.currentTarget.dataset.ing));
+      }
+    });
     this.$steps.on('change', '.step-cb', (e) => {
       const $cb = $(e.target);
       const recipeId = $cb.data('recipe');
