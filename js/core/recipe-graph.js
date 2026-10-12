@@ -1,6 +1,21 @@
 /**
  * Map-based recipe graph for O(1) lookups by recipe/output id.
  */
+/** Rough grams per ml for weight ↔ volume of dry pantry items (default: ground spice). */
+const GRAMS_PER_ML = { salt: 1.2, sugar: 0.8, brown_sugar: 0.8, powdered_sugar: 0.5 };
+
+/** Convert amount between units; weight ↔ volume via GRAMS_PER_ML. Null if impossible. */
+export function convertAmount(amount, from, to, ingredientId) {
+  if (!from || !to || from === to || from.abbreviation === to.abbreviation) return amount;
+  if (from.isCompatibleWith(to)) return to.fromBaseUnit(from.toBaseUnit(amount));
+  const gPerMl = GRAMS_PER_ML[ingredientId] || 0.5;
+  const isW = (u) => u.type === 'weight';
+  const isV = (u) => u.type === 'volume';
+  if (isW(from) && isV(to)) return to.fromBaseUnit(from.toBaseUnit(amount) / gPerMl);
+  if (isV(from) && isW(to)) return to.fromBaseUnit(from.toBaseUnit(amount) * gPerMl);
+  return null;
+}
+
 export class RecipeGraph {
   /**
    * @param {Iterable<import('../models/recipe.js').Recipe>|Map<string, import('../models/recipe.js').Recipe>} recipes
@@ -87,11 +102,30 @@ export class RecipeGraph {
           const batchesNeeded = (amount * multiplier) / (sub.outputAmount || 1);
           dfs(sub, batchesNeeded);
         } else {
-          totals[ingredient.id] = (totals[ingredient.id] || 0) + amount * multiplier;
-          units[ingredient.id] = unit.abbreviation;
+          const id = ingredient.id;
+          let add = amount * multiplier;
+          if (units[id] && unitObjs[id] && unitObjs[id].type === 'weight' && unit.type === 'volume') {
+            // Prefer the recipe's spoon measure over homemade-mix grams: convert what we have so far
+            const conv = convertAmount(totals[id] || 0, unitObjs[id], unit, id);
+            if (conv != null) {
+              totals[id] = conv;
+              unitObjs[id] = unit;
+              units[id] = unit.abbreviation;
+            }
+          }
+          if (units[id] && unitObjs[id] && unitObjs[id] !== unit) {
+            // Merge into the unit already in use (e.g. homemade-mix grams of salt into tsk)
+            const conv = convertAmount(add, unit, unitObjs[id], id);
+            if (conv != null) add = conv;
+          } else if (!units[id]) {
+            unitObjs[id] = unit;
+            units[id] = unit.abbreviation;
+          }
+          totals[id] = (totals[id] || 0) + add;
         }
       });
     };
+    const unitObjs = {};
     dfs(root);
     return { totals, units };
   }

@@ -5,90 +5,206 @@
     {
       "id": "basilika",
       "name": "Basilika",
+      "ingredientId": "dried_basil",
       "jarGrams": 10
     },
     {
       "id": "cayenne",
       "name": "Cayennepeppar",
+      "ingredientId": "cayenne",
       "jarGrams": 30
     },
     {
       "id": "chiliflakes",
       "name": "Chiliflakes",
+      "ingredientId": "chili_flakes",
       "jarGrams": 27,
       "jarNote": "flingor"
     },
     {
       "id": "chili",
       "name": "Chilipeppar",
+      "ingredientId": "chili_powder",
       "jarGrams": 40,
       "jarNote": "ICA chilipeppar malen"
     },
     {
+      "id": "farinsocker",
+      "name": "Farinsocker",
+      "ingredientId": "brown_sugar",
+      "jarGrams": 500,
+      "jarNote": "kök"
+    },
+    {
+      "id": "gurkmeja",
+      "name": "Gurkmeja",
+      "ingredientId": "turmeric",
+      "jarGrams": 40,
+      "jarNote": "malen, estimate"
+    },
+    {
+      "id": "hasselnot",
+      "name": "Hasselnötter",
+      "ingredientId": "hazelnuts",
+      "jarGrams": 100,
+      "jarNote": "påse, rostade, estimate"
+    },
+    {
       "id": "ingefara",
       "name": "Ingefära",
+      "ingredientId": "ground_ginger",
       "jarGrams": 31,
       "jarNote": "malen"
     },
     {
+      "id": "kanel",
+      "name": "Kanel",
+      "ingredientId": "cinnamon",
+      "jarGrams": 34,
+      "jarNote": "malen, estimate"
+    },
+    {
+      "id": "kardemumma",
+      "name": "Kardemumma",
+      "ingredientId": "cardamom",
+      "jarGrams": 28,
+      "jarNote": "malen, estimate"
+    },
+    {
+      "id": "koriander",
+      "name": "Koriander",
+      "ingredientId": "ground_coriander",
+      "jarGrams": 28,
+      "jarNote": "malen"
+    },
+    {
+      "id": "nejlika",
+      "name": "Kryddnejlika",
+      "ingredientId": "cloves",
+      "jarGrams": 25,
+      "jarNote": "malen, estimate"
+    },
+    {
+      "id": "kryddpeppar",
+      "name": "Kryddpeppar",
+      "ingredientId": "allspice",
+      "jarGrams": 32,
+      "jarNote": "malen, estimate"
+    },
+    {
       "id": "lok",
       "name": "Lökgranulat",
+      "ingredientId": "onion_powder",
       "jarGrams": 41,
       "jarNote": "granulerad"
     },
     {
+      "id": "muskot",
+      "name": "Muskot",
+      "ingredientId": "nutmeg",
+      "jarGrams": 33,
+      "jarNote": "malen, estimate"
+    },
+    {
       "id": "oregano",
       "name": "Oregano",
+      "ingredientId": "dried_oregano",
       "jarGrams": 9
     },
     {
       "id": "paprika",
       "name": "Paprika",
+      "ingredientId": "paprika_powder",
       "jarGrams": 70,
       "jarNote": "påse"
     },
     {
       "id": "persilja",
       "name": "Persilja",
+      "ingredientId": "dried_parsley",
       "jarGrams": 8
+    },
+    {
+      "id": "rosmarin",
+      "name": "Rosmarin",
+      "ingredientId": "dried_rosemary",
+      "jarGrams": 18,
+      "jarNote": "estimate"
+    },
+    {
+      "id": "rokt_paprika",
+      "name": "Rökt paprika",
+      "ingredientId": "smoked_paprika",
+      "jarGrams": 42,
+      "jarNote": "estimate"
     },
     {
       "id": "salt",
       "name": "Salt",
+      "ingredientId": "salt",
       "jarGrams": 500,
       "jarNote": "kök"
     },
     {
       "id": "senap",
       "name": "Senapsfrö",
+      "ingredientId": "mustard_seed",
       "jarGrams": 28,
       "jarNote": "helt frö, mals"
     },
     {
+      "id": "sesam",
+      "name": "Sesamfrön",
+      "ingredientId": "sesame_seeds",
+      "jarGrams": 100,
+      "jarNote": "påse, estimate"
+    },
+    {
       "id": "spiskummin",
       "name": "Spiskummin",
+      "ingredientId": "cumin",
       "jarGrams": 33
+    },
+    {
+      "id": "sumak",
+      "name": "Sumak",
+      "ingredientId": "sumac",
+      "jarGrams": 35,
+      "jarNote": "estimate"
     },
     {
       "id": "peppar",
       "name": "Svartpeppar",
+      "ingredientId": "pepper",
       "jarGrams": 40,
       "jarNote": "kök"
     },
     {
       "id": "timjan",
       "name": "Timjan",
+      "ingredientId": "dried_thyme",
       "jarGrams": 15
+    },
+    {
+      "id": "citronskal",
+      "name": "Torkat citronskal",
+      "ingredientId": "dried_lemon_peel",
+      "jarGrams": 12,
+      "jarNote": "torkat, estimate"
     },
     {
       "id": "vitlok",
       "name": "Vitlöksgranulat",
+      "ingredientId": "garlic_powder",
       "jarGrams": 49
     }
   ],
   "blends": [
     {
-      "name": "Medelhavets Pärla",
+      "id": "spicemix_pearl",
+      "name": "Medelhavskrydda med paprika",
+      "brand": "Medelhavets Pärla",
+      "ingredientId": "spicemix_pearl",
       "packetGrams": 8,
       "spices": {
         "paprika": 2.4,
@@ -102,7 +218,10 @@
       }
     },
     {
-      "name": "Jorden Runt",
+      "id": "jorden_runt",
+      "name": "Allround-kryddmix",
+      "brand": "Jorden Runt",
+      "ingredientId": "jorden_runt",
       "packetGrams": 8,
       "spices": {
         "persilja": 1.6,
@@ -116,7 +235,10 @@
       }
     },
     {
-      "name": "Mamas Favorit",
+      "id": "mamas_favorit",
+      "name": "Italiensk örtmix",
+      "brand": "Mamas Favorit",
+      "ingredientId": "mamas_favorit",
       "packetGrams": 8,
       "spices": {
         "paprika": 2.6,
@@ -128,7 +250,10 @@
       }
     },
     {
-      "name": "Hello Sunrise",
+      "id": "hello_sunrise",
+      "name": "Spansk paprikakrydda",
+      "brand": "Hello Sunrise",
+      "ingredientId": "hello_sunrise",
       "packetGrams": 7.5,
       "spices": {
         "persilja": 2.0,
@@ -141,7 +266,10 @@
       }
     },
     {
-      "name": "Ginger Ninja",
+      "id": "ginger_ninja",
+      "name": "Asiatisk ingefärsmix",
+      "brand": "Ginger Ninja",
+      "ingredientId": "ginger_ninja",
       "packetGrams": 10,
       "spices": {
         "ingefara": 4.4,
@@ -153,7 +281,10 @@
       }
     },
     {
-      "name": "Ay Cajun-ba",
+      "id": "cajun_spice_mix",
+      "name": "Cajunkrydda",
+      "brand": "Ay Cajun-ba",
+      "ingredientId": "cajun_spice_mix",
       "packetGrams": 8,
       "spices": {
         "paprika": 2.0,
@@ -166,7 +297,10 @@
       }
     },
     {
-      "name": "Taco",
+      "id": "taco_seasoning",
+      "name": "Tacokrydda",
+      "brand": "Taco",
+      "ingredientId": "taco_seasoning",
       "packetGrams": 8,
       "spices": {
         "spiskummin": 2.2,
@@ -175,6 +309,248 @@
         "vitlok": 1.0,
         "lok": 1.0,
         "oregano": 0.6,
+        "salt": 0.2
+      },
+      "bag": 28
+    },
+    {
+      "id": "tex_mex",
+      "name": "Tex-Mex-krydda",
+      "ingredientId": "tex_mex",
+      "packetGrams": 8,
+      "spices": {
+        "spiskummin": 2.0,
+        "paprika": 2.0,
+        "chili": 1.0,
+        "vitlok": 1.0,
+        "lok": 1.0,
+        "oregano": 0.6,
+        "salt": 0.4
+      }
+    },
+    {
+      "id": "souvlaki_spice",
+      "name": "Grekisk souvlakikrydda",
+      "ingredientId": "souvlaki_spice",
+      "packetGrams": 8,
+      "spices": {
+        "oregano": 2.0,
+        "vitlok": 1.5,
+        "lok": 1.0,
+        "paprika": 1.0,
+        "timjan": 0.8,
+        "citronskal": 0.7,
+        "peppar": 0.5,
+        "salt": 0.5
+      }
+    },
+    {
+      "id": "buon_appetito",
+      "name": "Italiensk tomat- & örtkrydda",
+      "ingredientId": "buon_appetito",
+      "packetGrams": 8,
+      "spices": {
+        "oregano": 1.8,
+        "basilika": 1.5,
+        "vitlok": 1.2,
+        "lok": 1.2,
+        "paprika": 1.0,
+        "timjan": 0.5,
+        "rosmarin": 0.4,
+        "chiliflakes": 0.2,
+        "peppar": 0.2
+      }
+    },
+    {
+      "id": "panamat_spice",
+      "name": "Centralamerikansk grillkrydda",
+      "ingredientId": "panamat_spice",
+      "packetGrams": 8,
+      "spices": {
+        "paprika": 2.0,
+        "rokt_paprika": 1.5,
+        "spiskummin": 1.2,
+        "vitlok": 1.0,
+        "lok": 1.0,
+        "oregano": 0.6,
+        "chili": 0.4,
+        "peppar": 0.3
+      }
+    },
+    {
+      "id": "curry_on",
+      "name": "Mild currymix",
+      "ingredientId": "curry_on",
+      "packetGrams": 8,
+      "spices": {
+        "gurkmeja": 2.0,
+        "koriander": 2.0,
+        "spiskummin": 1.5,
+        "ingefara": 1.0,
+        "kanel": 0.5,
+        "peppar": 0.4,
+        "kardemumma": 0.3,
+        "chili": 0.3
+      }
+    },
+    {
+      "id": "milda_mahal",
+      "name": "Mild indisk kryddmix",
+      "ingredientId": "milda_mahal",
+      "packetGrams": 8,
+      "spices": {
+        "koriander": 2.0,
+        "spiskummin": 1.6,
+        "gurkmeja": 1.2,
+        "paprika": 1.2,
+        "ingefara": 0.8,
+        "kanel": 0.4,
+        "kardemumma": 0.4,
+        "vitlok": 0.4
+      }
+    },
+    {
+      "id": "bbq_spice_mix",
+      "name": "BBQ-krydda",
+      "ingredientId": "bbq_spice_mix",
+      "packetGrams": 10,
+      "spices": {
+        "paprika": 2.5,
+        "rokt_paprika": 2.0,
+        "farinsocker": 2.0,
+        "vitlok": 1.0,
+        "lok": 1.0,
+        "salt": 0.8,
+        "peppar": 0.4,
+        "cayenne": 0.3
+      }
+    },
+    {
+      "id": "smoked_chili_mix",
+      "name": "Rökt chilikrydda",
+      "ingredientId": "smoked_chili_mix",
+      "packetGrams": 10,
+      "spices": {
+        "rokt_paprika": 4.0,
+        "chili": 2.5,
+        "spiskummin": 1.5,
+        "vitlok": 1.0,
+        "oregano": 0.5,
+        "salt": 0.5
+      }
+    },
+    {
+      "id": "lemon_pepper",
+      "name": "Citronpeppar",
+      "ingredientId": "lemon_pepper",
+      "packetGrams": 8,
+      "spices": {
+        "peppar": 4.0,
+        "citronskal": 2.5,
+        "salt": 1.0,
+        "vitlok": 0.5
+      }
+    },
+    {
+      "id": "garam_masala",
+      "name": "Garam masala",
+      "ingredientId": "garam_masala",
+      "packetGrams": 10,
+      "spices": {
+        "koriander": 3.0,
+        "spiskummin": 2.5,
+        "kardemumma": 1.5,
+        "peppar": 1.2,
+        "kanel": 1.0,
+        "nejlika": 0.4,
+        "muskot": 0.4
+      }
+    },
+    {
+      "id": "curry",
+      "name": "Curry",
+      "ingredientId": "curry",
+      "packetGrams": 10,
+      "spices": {
+        "gurkmeja": 3.0,
+        "koriander": 3.0,
+        "spiskummin": 1.5,
+        "ingefara": 1.0,
+        "senap": 0.5,
+        "peppar": 0.5,
+        "chili": 0.5
+      }
+    },
+    {
+      "id": "baharat",
+      "name": "Baharat",
+      "ingredientId": "baharat",
+      "packetGrams": 10,
+      "spices": {
+        "peppar": 2.0,
+        "paprika": 2.0,
+        "spiskummin": 2.0,
+        "koriander": 1.5,
+        "kanel": 1.0,
+        "kryddpeppar": 0.8,
+        "kardemumma": 0.4,
+        "muskot": 0.3
+      }
+    },
+    {
+      "id": "dukkah",
+      "name": "Dukkah",
+      "ingredientId": "dukkah",
+      "packetGrams": 12,
+      "spices": {
+        "hasselnot": 6.0,
+        "sesam": 3.0,
+        "koriander": 1.5,
+        "spiskummin": 1.0,
+        "salt": 0.3,
+        "peppar": 0.2
+      }
+    },
+    {
+      "id": "harissa",
+      "name": "Harissa (torr)",
+      "ingredientId": "harissa",
+      "packetGrams": 8,
+      "spices": {
+        "chili": 2.5,
+        "paprika": 1.5,
+        "rokt_paprika": 1.0,
+        "spiskummin": 1.0,
+        "koriander": 1.0,
+        "vitlok": 0.6,
+        "salt": 0.4
+      }
+    },
+    {
+      "id": "zaatar",
+      "name": "Za'atar",
+      "ingredientId": "zaatar",
+      "packetGrams": 10,
+      "spices": {
+        "timjan": 4.0,
+        "sumak": 3.0,
+        "sesam": 2.5,
+        "salt": 0.5
+      }
+    },
+    {
+      "id": "garlic_herb_seasoning",
+      "name": "Vitlök- & örtkrydda",
+      "ingredientId": "garlic_herb_seasoning",
+      "packetGrams": 8,
+      "spices": {
+        "vitlok": 2.5,
+        "persilja": 1.5,
+        "basilika": 1.0,
+        "oregano": 1.0,
+        "lok": 1.0,
+        "timjan": 0.5,
+        "peppar": 0.3,
         "salt": 0.2
       }
     }

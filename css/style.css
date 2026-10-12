@@ -2314,3 +2314,48 @@ main.main-spices {
   .spice-card { padding: 12px 12px 14px; }
   .spice-blend-recipe { margin-left: 0; }
 }
+
+/* === Kryddmixar (per-mix "Har inte mixen") === */
+.spice-mix-box {
+  margin-top: 16px;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+}
+.spice-mix-heading {
+  margin: 0 0 8px;
+  font-size: 0.95rem;
+}
+.spice-mix-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.spice-mix-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 0;
+  border-top: 1px solid var(--border);
+}
+.spice-mix-row:first-child { border-top: none; padding-top: 2px; }
+.spice-mix-info { display: flex; flex-direction: column; min-width: 0; }
+.spice-mix-name { font-weight: 600; font-size: 0.9rem; }
+.spice-mix-sub { font-size: 0.8rem; color: var(--text-muted); }
+.spice-mix-row.is-missing .spice-mix-sub { color: var(--primary); }
+.spice-mix-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  white-space: nowrap;
+}
+.spice-mix-switch input { accent-color: var(--primary); width: 16px; height: 16px; cursor: pointer; }
+.spice-mix-switch input:disabled { cursor: not-allowed; }
+.spice-mix-switch input:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
+.cook-spice-mixes .spice-mix-box { margin: 0 0 16px; }

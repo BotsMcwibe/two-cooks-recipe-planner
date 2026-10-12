@@ -158,11 +158,13 @@
       "image": "assets/ingredients/baguette.png"
     },
     "baharat": {
-      "name": "Baharat kryddmix",
+      "name": "Baharat",
       "tags": [
-        "spices"
+        "spices",
+        "spice_blend"
       ],
-      "image": "assets/ingredients/baharat.png"
+      "image": "assets/ingredients/baharat.png",
+      "blendId": "baharat"
     },
     "balsamic_vinegar": {
       "name": "Balsamvinäger",
@@ -195,11 +197,13 @@
       "image": "assets/ingredients/bbq_sauce.png"
     },
     "bbq_spice_mix": {
-      "name": "BBQ-kryddmix",
+      "name": "BBQ-krydda",
       "tags": [
-        "spices"
+        "spices",
+        "spice_blend"
       ],
-      "image": "assets/ingredients/bbq_spice_mix.png"
+      "image": "assets/ingredients/bbq_spice_mix.png",
+      "blendId": "bbq_spice_mix"
     },
     "beef_bouillon": {
       "name": "Köttbuljong",
@@ -280,11 +284,13 @@
       "image": "assets/ingredients/bulgur.png"
     },
     "buon_appetito": {
-      "name": "Buon Appetito",
+      "name": "Italiensk tomat- & örtkrydda",
       "tags": [
-        "spices"
+        "spices",
+        "spice_blend"
       ],
-      "image": "assets/ingredients/buon_appetito.png"
+      "image": "assets/ingredients/buon_appetito.png",
+      "blendId": "buon_appetito"
     },
     "butter": {
       "name": "Smör",
@@ -311,11 +317,13 @@
       "image": "assets/ingredients/cabbage_mix.png"
     },
     "cajun_spice_mix": {
-      "name": "Cajun-kryddmix",
+      "name": "Cajunkrydda",
       "tags": [
-        "spices"
+        "spices",
+        "spice_blend"
       ],
-      "image": "assets/ingredients/cajun_spice_mix.png"
+      "image": "assets/ingredients/cajun_spice_mix.png",
+      "blendId": "cajun_spice_mix"
     },
     "calabrese_pesto": {
       "name": "Calabresepesto",
@@ -575,15 +583,19 @@
     "curry": {
       "name": "Curry",
       "tags": [
-        "spices"
-      ]
+        "spices",
+        "spice_blend"
+      ],
+      "blendId": "curry"
     },
     "curry_on": {
-      "name": "Curry-On",
+      "name": "Mild currymix",
       "tags": [
-        "spices"
+        "spices",
+        "spice_blend"
       ],
-      "image": "assets/ingredients/curry_on.png"
+      "image": "assets/ingredients/curry_on.png",
+      "blendId": "curry_on"
     },
     "desiccated_coconut": {
       "name": "Riven kokos",
@@ -627,9 +639,11 @@
       "name": "Dukkah",
       "tags": [
         "spices",
-        "nuts_seeds"
+        "nuts_seeds",
+        "spice_blend"
       ],
-      "image": "assets/ingredients/dukkah.png"
+      "image": "assets/ingredients/dukkah.png",
+      "blendId": "dukkah"
     },
     "egg": {
       "name": "Ägg",
@@ -735,11 +749,13 @@
       "image": "assets/ingredients/fresh_thyme.png"
     },
     "garam_masala": {
-      "name": "Garam Masala",
+      "name": "Garam masala",
       "tags": [
-        "spices"
+        "spices",
+        "spice_blend"
       ],
-      "image": "assets/ingredients/garam_masala.png"
+      "image": "assets/ingredients/garam_masala.png",
+      "blendId": "garam_masala"
     },
     "garlic": {
       "name": "Vitlöksklyfta",
@@ -757,11 +773,13 @@
       ]
     },
     "garlic_herb_seasoning": {
-      "name": "Vitlök- och örtkrydda",
+      "name": "Vitlök- & örtkrydda",
       "tags": [
-        "spices"
+        "spices",
+        "spice_blend"
       ],
-      "image": "assets/ingredients/garlic_herb_seasoning.png"
+      "image": "assets/ingredients/garlic_herb_seasoning.png",
+      "blendId": "garlic_herb_seasoning"
     },
     "ginger": {
       "name": "Ingefära",
@@ -773,10 +791,12 @@
       "image": "assets/ingredients/ginger.png"
     },
     "ginger_ninja": {
-      "name": "Ginger Ninja",
+      "name": "Asiatisk ingefärsmix",
       "tags": [
-        "spices"
-      ]
+        "spices",
+        "spice_blend"
+      ],
+      "blendId": "ginger_ninja"
     },
     "ginger_paste": {
       "name": "Ingefärspasta",
@@ -876,11 +896,13 @@
       ]
     },
     "harissa": {
-      "name": "Harissakrydda",
+      "name": "Harissa (torr)",
       "tags": [
-        "spices"
+        "spices",
+        "spice_blend"
       ],
-      "image": "assets/ingredients/harissa.png"
+      "image": "assets/ingredients/harissa.png",
+      "blendId": "harissa"
     },
     "hazelnuts": {
       "name": "Hasselnötter",
@@ -890,10 +912,12 @@
       "image": "assets/ingredients/hazelnuts.png"
     },
     "hello_sunrise": {
-      "name": "Hello Sunrise",
+      "name": "Spansk paprikakrydda",
       "tags": [
-        "spices"
-      ]
+        "spices",
+        "spice_blend"
+      ],
+      "blendId": "hello_sunrise"
     },
     "hoisin_sauce": {
       "name": "Hoisinsås",
@@ -923,10 +947,12 @@
       "image": "assets/ingredients/jasmine_rice.png"
     },
     "jorden_runt": {
-      "name": "Jorden Runt",
+      "name": "Allround-kryddmix",
       "tags": [
-        "spices"
-      ]
+        "spices",
+        "spice_blend"
+      ],
+      "blendId": "jorden_runt"
     },
     "kale": {
       "name": "Grönkål",
@@ -992,8 +1018,10 @@
     "lemon_pepper": {
       "name": "Citronpeppar",
       "tags": [
-        "spices"
-      ]
+        "spices",
+        "spice_blend"
+      ],
+      "blendId": "lemon_pepper"
     },
     "lettuce": {
       "name": "Sallad",
@@ -1032,10 +1060,12 @@
       ]
     },
     "mamas_favorit": {
-      "name": "Mamas Favorit",
+      "name": "Italiensk örtmix",
       "tags": [
-        "spices"
-      ]
+        "spices",
+        "spice_blend"
+      ],
+      "blendId": "mamas_favorit"
     },
     "mango": {
       "name": "Mango",
@@ -1066,11 +1096,13 @@
       ]
     },
     "milda_mahal": {
-      "name": "Milda Mahal",
+      "name": "Mild indisk kryddmix",
       "tags": [
-        "spices"
+        "spices",
+        "spice_blend"
       ],
-      "image": "assets/ingredients/milda_mahal.png"
+      "image": "assets/ingredients/milda_mahal.png",
+      "blendId": "milda_mahal"
     },
     "milk": {
       "name": "Mjölk",
@@ -1228,11 +1260,13 @@
       ]
     },
     "panamat_spice": {
-      "name": "Panamat Central American Spice",
+      "name": "Centralamerikansk grillkrydda",
       "tags": [
-        "spices"
+        "spices",
+        "spice_blend"
       ],
-      "image": "assets/ingredients/panamat_spice.png"
+      "image": "assets/ingredients/panamat_spice.png",
+      "blendId": "panamat_spice"
     },
     "pancake_mix": {
       "name": "Pannkaksmix",
@@ -1640,10 +1674,12 @@
       ]
     },
     "smoked_chili_mix": {
-      "name": "Rökt chilimix",
+      "name": "Rökt chilikrydda",
       "tags": [
-        "spices"
-      ]
+        "spices",
+        "spice_blend"
+      ],
+      "blendId": "smoked_chili_mix"
     },
     "smoked_paprika": {
       "name": "Rökt paprikapulver",
@@ -1667,11 +1703,13 @@
       ]
     },
     "souvlaki_spice": {
-      "name": "Souvlaki-kryddmix",
+      "name": "Grekisk souvlakikrydda",
       "tags": [
-        "spices"
+        "spices",
+        "spice_blend"
       ],
-      "image": "assets/ingredients/souvlaki_spice.png"
+      "image": "assets/ingredients/souvlaki_spice.png",
+      "blendId": "souvlaki_spice"
     },
     "soy_sauce": {
       "name": "Sojasås",
@@ -1688,11 +1726,13 @@
       "image": "assets/ingredients/spaghetti.png"
     },
     "spicemix_pearl": {
-      "name": "Medelhavets Pärla",
+      "name": "Medelhavskrydda med paprika",
       "tags": [
-        "spices"
+        "spices",
+        "spice_blend"
       ],
-      "image": "assets/ingredients/spicemix_pearl.png"
+      "image": "assets/ingredients/spicemix_pearl.png",
+      "blendId": "spicemix_pearl"
     },
     "sponge_cake_mix": {
       "name": "Sockerkaksmix",
@@ -1772,8 +1812,10 @@
     "taco_seasoning": {
       "name": "Tacokrydda",
       "tags": [
-        "spices"
-      ]
+        "spices",
+        "spice_blend"
+      ],
+      "blendId": "taco_seasoning"
     },
     "tahini": {
       "name": "Tahini",
@@ -1794,9 +1836,11 @@
     "tex_mex": {
       "name": "Tex-Mex-krydda",
       "tags": [
-        "spices"
+        "spices",
+        "spice_blend"
       ],
-      "image": "assets/ingredients/tex_mex.png"
+      "image": "assets/ingredients/tex_mex.png",
+      "blendId": "tex_mex"
     },
     "tomato": {
       "name": "Tomat",
@@ -1948,8 +1992,10 @@
     "zaatar": {
       "name": "Za'atar",
       "tags": [
-        "spices"
-      ]
+        "spices",
+        "spice_blend"
+      ],
+      "blendId": "zaatar"
     },
     "zucchini": {
       "name": "Zucchini",
@@ -1974,6 +2020,127 @@
         "fresh"
       ],
       "image": "assets/ingredients/mozzarella.png"
+    },
+    "paprika_powder": {
+      "name": "Paprikapulver",
+      "tags": [
+        "spices"
+      ]
+    },
+    "garlic_powder": {
+      "name": "Vitlöksgranulat",
+      "tags": [
+        "spices"
+      ]
+    },
+    "onion_powder": {
+      "name": "Lökgranulat",
+      "tags": [
+        "spices"
+      ]
+    },
+    "dried_basil": {
+      "name": "Torkad basilika",
+      "tags": [
+        "spices"
+      ]
+    },
+    "dried_parsley": {
+      "name": "Torkad persilja",
+      "tags": [
+        "spices"
+      ]
+    },
+    "dried_sage": {
+      "name": "Torkad salvia",
+      "tags": [
+        "spices"
+      ]
+    },
+    "ground_ginger": {
+      "name": "Malen ingefära",
+      "tags": [
+        "spices"
+      ]
+    },
+    "ground_coriander": {
+      "name": "Malen koriander",
+      "tags": [
+        "spices"
+      ]
+    },
+    "cayenne": {
+      "name": "Cayennepeppar",
+      "tags": [
+        "spices"
+      ]
+    },
+    "mustard_seed": {
+      "name": "Senapsfrö",
+      "tags": [
+        "spices"
+      ]
+    },
+    "chili_powder": {
+      "name": "Chilipeppar, malen",
+      "tags": [
+        "spices"
+      ]
+    },
+    "dried_lemon_peel": {
+      "name": "Torkat citronskal",
+      "tags": [
+        "spices"
+      ]
+    },
+    "dried_rosemary": {
+      "name": "Torkad rosmarin",
+      "tags": [
+        "spices"
+      ]
+    },
+    "turmeric": {
+      "name": "Gurkmeja",
+      "tags": [
+        "spices"
+      ]
+    },
+    "cardamom": {
+      "name": "Kardemumma",
+      "tags": [
+        "spices"
+      ]
+    },
+    "brown_sugar": {
+      "name": "Farinsocker",
+      "tags": [
+        "basic",
+        "baking"
+      ]
+    },
+    "cloves": {
+      "name": "Kryddnejlika",
+      "tags": [
+        "spices"
+      ]
+    },
+    "nutmeg": {
+      "name": "Muskot",
+      "tags": [
+        "spices"
+      ]
+    },
+    "allspice": {
+      "name": "Kryddpeppar",
+      "tags": [
+        "spices"
+      ]
+    },
+    "sumac": {
+      "name": "Sumak",
+      "tags": [
+        "spices"
+      ]
     }
   }
 }

@@ -1,4 +1,4 @@
-import { RecipeGraph } from './recipe-graph.js';
+import { RecipeGraph, convertAmount } from './recipe-graph.js?v=20261012e';
 import { formatNiceAmount } from '../utils/helpers.js';
 
 /**
@@ -39,6 +39,22 @@ export class ShoppingListAggregator {
 
     // Skip anything that isn't a base pantry ingredient
     if (!this.ingredientMap[ingredientId]) return;
+
+    // Weight ↔ volume for the same spice (homemade-mix grams vs a recipe's tsk): merge into the existing row
+    for (const entry of this.aggregated.values()) {
+      if (entry.ingredientId === ingredientId && !entry.unit.isCompatibleWith(unit)) {
+        if (entry.unit.type === 'weight' && unit.type === 'volume') {
+          const back = convertAmount(entry.amount, entry.unit, unit, ingredientId);
+          if (back != null) { entry.amount = back; entry.unit = unit; }
+        }
+        const conv = convertAmount(amount, unit, entry.unit, ingredientId);
+        if (conv != null) {
+          entry.amount += conv;
+          entry.sources.add(sourceName);
+          return;
+        }
+      }
+    }
 
     let existing = null;
     let existingKey = null;

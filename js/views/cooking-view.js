@@ -1,5 +1,5 @@
 import { Scheduler } from '../models/scheduler.js?v=20261011c';
-import { RecipeGraph } from '../core/recipe-graph.js';
+import { RecipeGraph } from '../core/recipe-graph.js?v=20261012e';
 import { formatNiceAmount } from '../utils/helpers.js';
 import { formatStepInputText, producerMap } from '../utils/derived-inputs.js?v=20261012d';
 import {

@@ -1,16 +1,18 @@
 import { AppState } from './core/state.js';
 import { parseHash, setHash } from './core/router.js?v=20261012a';
-import { loadStaticData, RecipeRepository } from './data/loader.js';
+import { loadStaticData, RecipeRepository } from './data/loader.js?v=20261012e';
 import { AppShell } from './views/app-shell.js?v=20261012a';
 import { RecipeChrome } from './views/recipe-selector.js?v=20261011u';
 import { isScalable } from './utils/catalog-ui.js?v=20261011u';
 import { BrowseView } from './views/browse-view.js?v=20261011u';
-import { OverviewModal } from './views/overview-modal.js?v=20261011u';
+import { OverviewModal } from './views/overview-modal.js?v=20261012e';
 import { FlowGraph } from './views/flow-graph.js?v=20261011u';
-import { CookingView } from './views/cooking-view.js?v=20261012d';
-import { ShoppingSidebar } from './views/shopping-view.js?v=20261012b';
+import { CookingView } from './views/cooking-view.js?v=20261012e';
+import { ShoppingSidebar } from './views/shopping-view.js?v=20261012e';
 import { Timer } from './views/timer.js';
-import { SpiceView } from './views/spice-view.js?v=20261012a';
+import { spiceMixTogglesHtml } from './views/spice-mix-ui.js?v=20261012e';
+import { setMixMissing } from './core/spice-prefs.js?v=20261012e';
+import { SpiceView } from './views/spice-view.js?v=20261012e';
 import * as UserState from './core/user-recipe-state.js?v=20261011u';
 import { initThemeToggle } from './utils/theme.js?v=20261011h';
 import { initBackToTop } from './utils/back-to-top.js?v=20261011t';
@@ -19,8 +21,8 @@ initThemeToggle(document.getElementById('theme-toggle'));
 initBackToTop();
 
 async function bootstrap() {
-  const { unitMap, baseIngredientMap, ingredientTagsData, catalog } = await loadStaticData();
-  const repository = new RecipeRepository(unitMap, baseIngredientMap);
+  const { unitMap, baseIngredientMap, ingredientTagsData, catalog, spiceData } = await loadStaticData();
+  const repository = new RecipeRepository(unitMap, baseIngredientMap, spiceData);
   const baseIngredients = Object.values(baseIngredientMap);
   const catalogById = Object.fromEntries(catalog.map(c => [c.id, c]));
   UserState.seedFromCatalog(catalog);
@@ -99,6 +101,7 @@ async function bootstrap() {
         autoScroll: !!opts.autoScroll,
       }) || {};
       flowGraph.render(root, schedule, schedOpts, progress);
+      $('#cook-spice-mixes').html(spiceMixTogglesHtml(current.spiceMixes, scale));
       Timer.initAll($('#cooking-steps'));
     }
 
@@ -251,6 +254,27 @@ async function bootstrap() {
 
   const browse = new BrowseView(state, catalog, {
     onOpenOverview: (id) => modal.open(id),
+  });
+
+  // "Har inte mixen": remember per mix, rebuild graphs (mix step ↔ Blanda step) everywhere
+  $(document).on('change', '.spice-mix-missing', function () {
+    setMixMissing(String(this.getAttribute('data-mix')), this.checked);
+  });
+  window.addEventListener('spicemixchange', async () => {
+    repository.cache.clear();
+    try {
+      if (modal.isOpen()) await modal.reload();
+      if (state.currentPhase === 'cooking' && state.selectedRecipeId) {
+        const loaded = await repository.loadMaster(state.selectedRecipeId);
+        current = loaded;
+        updateUI({ softUpdate: false, preserveScroll: true });
+      } else if (current) {
+        current = await repository.loadMaster(current.masterId);
+      }
+    } catch (err) {
+      console.warn('[kryddmix] reload failed', err);
+    }
+    shoppingSidebar.render();
   });
 
   shell.setFocusShoppingHandler(() => shoppingSidebar.focus());

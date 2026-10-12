@@ -1,4 +1,4 @@
-import { RecipeGraph } from '../core/recipe-graph.js';
+import { RecipeGraph } from '../core/recipe-graph.js?v=20261012e';
 import { formatNiceAmount } from '../utils/helpers.js';
 import {
   allergenLabel,
@@ -13,6 +13,7 @@ import {
 } from '../utils/catalog-ui.js?v=20261011u';
 import { imgFailed, isPhotoMissing, recordPhotoFailure, recordPhotoSuccess } from '../utils/photo-fallback.js?v=20261011u';
 import * as UserState from '../core/user-recipe-state.js?v=20261011u';
+import { spiceMixTogglesHtml } from './spice-mix-ui.js?v=20261012e';
 import { bindStatusControls, refreshStatusControls, statusControlHtml } from './recipe-status-ui.js?v=20261011u';
 
 /**
@@ -99,6 +100,19 @@ export class OverviewModal {
 
   isOpen() {
     return !this.$root.prop('hidden');
+  }
+
+  /** Reload the graph (e.g. after a "Har inte mixen" switch) and re-render in place. */
+  async reload() {
+    if (!this.isOpen() || !this.recipeId) return;
+    const body = this.$root.find('.overview-dialog')[0];
+    const top = body ? body.scrollTop : 0;
+    const token = ++this.loadToken;
+    const loaded = await this.repository.loadMaster(this.recipeId);
+    if (token !== this.loadToken) return;
+    this.loaded = loaded;
+    this._renderBody();
+    if (body) body.scrollTop = top;
   }
 
   async open(recipeId) {
@@ -240,6 +254,7 @@ export class OverviewModal {
             ${pantryHtml}
           </div>` : ''}
         </div>
+        <div class="overview-spice-mixes">${spiceMixTogglesHtml(loaded && loaded.spiceMixes, this._portionScale())}</div>
       </div>`;
 
     this.$root.find('#overview-body').html(html);
@@ -341,6 +356,7 @@ export class OverviewModal {
     if ($display.text() !== portionLabel) $display.text(portionLabel);
     $body.find('#overview-portion-minus').prop('disabled', cur <= 2);
     $body.find('#overview-portion-plus').prop('disabled', cur >= 24);
+    $body.find('.overview-spice-mixes').html(spiceMixTogglesHtml(this.loaded && this.loaded.spiceMixes, this._portionScale()));
 
     const amounts = this._amountTextById();
     if (amounts) {

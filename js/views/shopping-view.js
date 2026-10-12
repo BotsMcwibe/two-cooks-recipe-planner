@@ -1,4 +1,4 @@
-import { ShoppingListAggregator } from '../core/shopping-list.js';
+import { ShoppingListAggregator } from '../core/shopping-list.js?v=20261012e';
 import { formatNiceAmount } from '../utils/helpers.js';
 import { escapeAttr, escapeHtml, isPantryIngredient, isScalable } from '../utils/catalog-ui.js?v=20261011u';
 

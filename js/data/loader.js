@@ -1,7 +1,9 @@
 import { Unit } from '../models/unit.js';
 import { Ingredient } from '../models/ingredient.js';
 import { Recipe } from '../models/recipe.js';
-import { RecipeGraph } from '../core/recipe-graph.js';
+import { RecipeGraph } from '../core/recipe-graph.js?v=20261012e';
+import { addSpiceMixSteps } from './spice-mix-steps.js?v=20261012e';
+import { isMixMissing } from '../core/spice-prefs.js?v=20261012e';
 
 const DATA_BASE = new URL('../../data/', import.meta.url);
 
@@ -43,10 +45,11 @@ export async function loadPortionEnergyKcal(ids) {
  * Does NOT load full recipe graphs.
  */
 export async function loadStaticData() {
-  const [unitsRaw, ingredientsRaw, catalog] = await Promise.all([
-    fetchJSON('units.json'),
-    fetchJSON('ingredients.json'),
+  const [unitsRaw, ingredientsRaw, catalog, blendsRaw] = await Promise.all([
+    fetchJSON('units.json?v=20261012e'),
+    fetchJSON('ingredients.json?v=20261012e'),
     fetchJSON('catalog.json'),
+    fetchJSON('spice-blends.json?v=20261012e').catch(() => ({ spices: [], blends: [] })),
   ]);
 
   const unitMap = {};
@@ -61,15 +64,25 @@ export async function loadStaticData() {
     baseIngredientMap[id] = new Ingredient(obj, id);
   }
 
-  return { unitMap, baseIngredientMap, ingredientTagsData, catalog };
+  // Spice mixes: ingredients with blendId, their component recipes, spice key → ingredient id
+  const mixIngredients = {};
+  for (const [id, obj] of Object.entries(ingredientsRaw.ingredients || {})) {
+    if (obj && obj.blendId) mixIngredients[id] = obj;
+  }
+  const blendsById = Object.fromEntries((blendsRaw.blends || []).filter(b => b.id).map(b => [b.id, b]));
+  const spiceIngredientId = Object.fromEntries((blendsRaw.spices || []).map(s => [s.id, s.ingredientId]));
+  const spiceData = { mixIngredients, blendsById, spiceIngredientId };
+
+  return { unitMap, baseIngredientMap, ingredientTagsData, catalog, spiceData };
 }
 
 /**
  * Lazy-loading cache for master recipe graphs (+ shared prep deps).
  */
 export class RecipeRepository {
-  constructor(unitMap, baseIngredientMap) {
+  constructor(unitMap, baseIngredientMap, spiceData = null) {
     this.unitMap = unitMap;
+    this.spiceData = spiceData;
     this.baseIngredientMap = baseIngredientMap;
     /** @type {Map<string, { graph: RecipeGraph, root: import('../models/recipe.js').Recipe, basePortions: number, resolveMap: object, outputMap: object }>} */
     this.cache = new Map();
@@ -121,6 +134,16 @@ export class RecipeRepository {
       allNodes.push(node);
     }
 
+    // Each spice mix gets its own step (or a "Blanda …" step when the user lacks the mix)
+    let spiceMixes = [];
+    if (this.spiceData) {
+      const res = addSpiceMixSteps(allNodes, recipeData.masterId, {
+        ...this.spiceData, unitMap: this.unitMap, isMissing: isMixMissing,
+      });
+      if (res.nodes !== allNodes) allNodes.splice(0, allNodes.length, ...res.nodes);
+      spiceMixes = res.mixes;
+    }
+
     // First pass: register all output ingredients so cross-refs in steps resolve
     for (const node of allNodes) {
       if (!resolveMap[node.id]) {
@@ -155,6 +178,7 @@ export class RecipeRepository {
       masterId: recipeData.masterId,
       images: recipeData.images || null,
       nutrition: recipeData.nutrition || null,
+      spiceMixes,
     };
     this.cache.set(masterId, result);
     return result;
