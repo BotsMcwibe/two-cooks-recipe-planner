@@ -127,7 +127,6 @@ def main():
         sys.exit("build-spice-blends: \n  " + "\n  ".join(errors))
     data = {
         "source": "spice-mix/play.py",
-        "note": "Hemgjorda gissningar, inte HelloFreshs egna recept. Gram per påse.",
         "spices": spices,
         "blends": blends,
     }
