@@ -4,9 +4,9 @@
  * Amounts are intentionally not saved; the page starts empty every visit.
  */
 import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261011u';
-import { allCapacities, parseGrams } from '../models/spice-calc.js?v=20261011x';
+import { allCapacities, parseGrams } from '../models/spice-calc.js?v=20261012a';
 
-const DATA_URL = 'data/spice-blends.json?v=20261011x';
+const DATA_URL = 'data/spice-blends.json?v=20261012a';
 
 const fmt = (n) => String(Math.round(n * 100) / 100).replace('.', ',');
 

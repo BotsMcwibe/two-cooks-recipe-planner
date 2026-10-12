@@ -58,6 +58,12 @@ export class ShoppingSidebar {
         this.state.toggleShoppingRecipe(id);
       }
     });
+    // Title → översikt: close the mobile drawer first so the modal is never behind it,
+    // then let the anchor's #overview/<id> hash drive the router.
+    this.$container.on('click', '.shop-recipe-link', (e) => {
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button > 0) return;
+      if (this._drawerOpen) this.closeDrawer({ restoreFocus: false });
+    });
     this.$container.on('click', '.shopping-sidebar-close', (e) => {
       e.preventDefault();
       this.closeDrawer();
@@ -249,7 +255,7 @@ export class ShoppingSidebar {
           const portions = this.state.getShoppingPortions(id);
           html += `<div class="shopping-recipe-row">`;
           html += `<div class="shopping-recipe-info">`;
-          html += `<span class="shopping-recipe-name">${escapeHtml(c.name)}</span>`;
+          html += `<a class="shopping-recipe-name shop-recipe-link" href="#overview/${encodeURIComponent(id)}" data-id="${escapeAttr(id)}" title="Öppna översikt"><span class="shop-recipe-link-text">${escapeHtml(c.name)}</span><span class="shop-recipe-link-chevron" aria-hidden="true">›</span></a>`;
           html += `<button type="button" class="shop-remove-btn" data-id="${escapeAttr(id)}" aria-label="Ta bort">×</button>`;
           html += `</div>`;
           html += `<div class="shop-portion-controls">`;
