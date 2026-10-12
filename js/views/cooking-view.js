@@ -1,6 +1,7 @@
 import { Scheduler } from '../models/scheduler.js?v=20261011c';
 import { RecipeGraph } from '../core/recipe-graph.js';
 import { formatNiceAmount } from '../utils/helpers.js';
+import { formatStepInputText, producerMap } from '../utils/derived-inputs.js?v=20261012d';
 import {
   allergenLabel,
   difficultyLabel,
@@ -464,18 +465,11 @@ export class CookingView {
 
   /**
    * Ingredient list for a step title. No "Behöver"/"Skapar" labels.
-   * Derived outputs with amount exactly 1 st omit amount and unit.
+   * Derived inputs hide their amount unless split (see utils/derived-inputs.js).
    */
   _formatStepInputs(inputs, steps) {
-    const produced = new Set(steps.map(s => s.recipeId));
-    return inputs.map(inp => {
-      const name = escapeHtml(inp.ingredient.name);
-      const abbr = inp.unit ? inp.unit.abbreviation : '';
-      const derived = produced.has(inp.ingredient.id)
-        || (inp.ingredient.hasTag && inp.ingredient.hasTag('recipe_output'));
-      if (derived && inp.amount === 1 && abbr === 'st') return name;
-      return `${inp.amount}${abbr ? ' ' + abbr : ''} ${name}`;
-    }).join(', ');
+    const producers = producerMap(steps);
+    return inputs.map(inp => escapeHtml(formatStepInputText(inp, producers))).join(', ');
   }
 
   _stringifyStep(step) {

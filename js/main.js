@@ -7,7 +7,7 @@ import { isScalable } from './utils/catalog-ui.js?v=20261011u';
 import { BrowseView } from './views/browse-view.js?v=20261011u';
 import { OverviewModal } from './views/overview-modal.js?v=20261011u';
 import { FlowGraph } from './views/flow-graph.js?v=20261011u';
-import { CookingView } from './views/cooking-view.js?v=20261011u';
+import { CookingView } from './views/cooking-view.js?v=20261012d';
 import { ShoppingSidebar } from './views/shopping-view.js?v=20261012b';
 import { Timer } from './views/timer.js';
 import { SpiceView } from './views/spice-view.js?v=20261012a';
