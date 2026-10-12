@@ -1,6 +1,6 @@
 import { ShoppingListAggregator } from '../core/shopping-list.js';
 import { formatNiceAmount } from '../utils/helpers.js';
-import { escapeAttr, escapeHtml, isPantryIngredient } from '../utils/catalog-ui.js?v=20261011u';
+import { escapeAttr, escapeHtml, isPantryIngredient, isScalable } from '../utils/catalog-ui.js?v=20261011u';
 
 /**
  * Persistent Inköpslista sidebar: selected recipes + portion controls + aggregated list.
@@ -258,11 +258,15 @@ export class ShoppingSidebar {
           html += `<a class="shopping-recipe-name shop-recipe-link" href="#overview/${encodeURIComponent(id)}" data-id="${escapeAttr(id)}" title="Öppna översikt"><span class="shop-recipe-link-text">${escapeHtml(c.name)}</span><span class="shop-recipe-link-chevron" aria-hidden="true">›</span></a>`;
           html += `<button type="button" class="shop-remove-btn" data-id="${escapeAttr(id)}" aria-label="Ta bort">×</button>`;
           html += `</div>`;
-          html += `<div class="shop-portion-controls">`;
-          html += `<button type="button" class="shop-portion-minus" data-id="${escapeAttr(id)}" ${portions <= 2 ? 'disabled' : ''}>−</button>`;
-          html += `<span class="shop-portion-display">${portions} port.</span>`;
-          html += `<button type="button" class="shop-portion-plus" data-id="${escapeAttr(id)}" ${portions >= 24 ? 'disabled' : ''}>+</button>`;
-          html += `</div></div>`;
+          // Fixed-yield recipes (scalable: false) have no portion stepper
+          if (isScalable(c)) {
+            html += `<div class="shop-portion-controls">`;
+            html += `<button type="button" class="shop-portion-minus" data-id="${escapeAttr(id)}" ${portions <= 2 ? 'disabled' : ''}>−</button>`;
+            html += `<span class="shop-portion-display">${portions} port.</span>`;
+            html += `<button type="button" class="shop-portion-plus" data-id="${escapeAttr(id)}" ${portions >= 24 ? 'disabled' : ''}>+</button>`;
+            html += `</div>`;
+          }
+          html += `</div>`;
         }
         html += '</div>';
 
@@ -273,9 +277,9 @@ export class ShoppingSidebar {
         for (const id of selectedIds) {
           const c = this.catalogById[id];
           if (!c) continue;
-          const portions = this.state.getShoppingPortions(id);
           const base = c.basePortions || 4;
-          const scale = portions / base;
+          // Fixed-yield recipes always use base amounts, ignoring any saved portion count
+          const scale = isScalable(c) ? this.state.getShoppingPortions(id) / base : 1;
           try {
             const loaded = await this.repository.loadMaster(id);
             const scaledGraph = loaded.graph.scaleAll(scale);
