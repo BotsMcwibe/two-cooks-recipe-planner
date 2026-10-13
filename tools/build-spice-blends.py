@@ -16,6 +16,7 @@ mix ingredient (blendId) in ingredients.json has no blend.
 """
 import importlib.util
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -94,6 +95,8 @@ def main():
         if jar:
             grams, _count, note = jar
             entry["jarGrams"] = grams
+            if note:
+                note = re.sub(r",?\s*verified:.*$", "", note, flags=re.I).strip(" ,")
             if note:
                 entry["jarNote"] = note
         spices.append(entry)
