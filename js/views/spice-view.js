@@ -46,7 +46,7 @@ export class SpiceView {
       <div class="spice-page spice-page-v2">
         <div class="spice-head">
           <h1>Kryddskåpet</h1>
-          <p class="spice-lede">Tryck på kryddorna du har så ser du vilka mixar du kan göra</p>
+          <p class="spice-lede">Fyll i kryddorna och se vilka mixar du kan göra</p>
         </div>
         <div class="spice-card-head">
           <h2>Mina kryddor <span class="pantry-n spice-own-n"></span></h2>
