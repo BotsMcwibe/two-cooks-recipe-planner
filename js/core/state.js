@@ -184,6 +184,16 @@ export class AppState {
     touchPref('shopping');
   }
 
+  /** Clear every recipe from the shopping list. */
+  clearShoppingList() {
+    if (!this._shoppingSelections.size) return;
+    this._shoppingSelections = new Set();
+    this._shoppingPortions = {};
+    this.bus.emit('shoppingChange');
+    this._debouncedSave();
+    touchPref('shopping');
+  }
+
   /** Shopping list as plain data (for sync). */
   getShoppingData() {
     return { selections: [...this._shoppingSelections], portions: { ...this._shoppingPortions } };

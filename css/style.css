@@ -1746,6 +1746,35 @@ main.main-recipe {
   color: var(--danger);
 }
 
+.shopping-clear-btn {
+  padding: 5px 8px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
+  color: var(--text);
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.2;
+  cursor: pointer;
+}
+
+.shopping-clear-btn:hover:not(:disabled) {
+  border-color: var(--danger, #c0392b);
+  color: var(--danger, #c0392b);
+}
+
+.shopping-clear-btn.is-confirming {
+  background: var(--danger-bg, color-mix(in srgb, #c0392b 16%, var(--surface)));
+  border-color: var(--danger, #c0392b);
+  color: var(--danger, #c0392b);
+}
+
+.shopping-copy-btn:disabled,
+.shopping-clear-btn:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
 .shopping-badge {
   display: inline-flex;
   align-items: center;

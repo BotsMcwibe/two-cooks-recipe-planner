@@ -1,4 +1,4 @@
-import { AppState } from './core/state.js?v=20261013a';
+import { AppState } from './core/state.js?v=20261013sh';
 import { parseHash, setHash } from './core/router.js?v=20261013sk';
 import { loadStaticData, RecipeRepository } from './data/loader.js?v=20261013a';
 import { AppShell } from './views/app-shell.js?v=20261013sk';
@@ -8,7 +8,7 @@ import { BrowseView } from './views/browse-view.js?v=20261013gr';
 import { OverviewModal } from './views/overview-modal.js?v=20261013f';
 import { FlowGraph } from './views/flow-graph.js?v=20261011u';
 import { CookingView } from './views/cooking-view.js?v=20261013f';
-import { ShoppingSidebar } from './views/shopping-view.js?v=20261013a';
+import { ShoppingSidebar } from './views/shopping-view.js?v=20261013sh';
 import { Timer } from './views/timer.js';
 import { spiceMixTogglesHtml } from './views/spice-mix-ui.js?v=20261012e';
 import { setMixMissing } from './core/spice-prefs.js?v=20261013a';

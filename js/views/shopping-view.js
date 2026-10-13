@@ -28,6 +28,7 @@ export class ShoppingSidebar {
     this._rendering = false;
     this._copyPayload = { ingredienser: [], skafferi: [] };
     this._copyFeedbackTimer = null;
+    this._clearConfirmTimer = null;
     /** Drawer (≤900px) open state, saved page scroll and the element to refocus on close. */
     this._drawerOpen = false;
     this._savedScrollY = 0;
@@ -71,6 +72,10 @@ export class ShoppingSidebar {
     this.$container.on('click', '.shopping-copy-btn', (e) => {
       e.preventDefault();
       this._copyShoppingList(e.currentTarget);
+    });
+    this.$container.on('click', '.shopping-clear-btn', (e) => {
+      e.preventDefault();
+      this._clearShoppingList(e.currentTarget);
     });
     this.$toggle.on('click', (e) => {
       e.preventDefault();
@@ -201,7 +206,7 @@ export class ShoppingSidebar {
   }
 
   async _copyShoppingList(button) {
-    const restoreLabel = button.dataset.defaultLabel || 'Kopiera lista';
+    const restoreLabel = button.dataset.defaultLabel || 'Kopiera';
     try {
       if (!navigator.clipboard || typeof navigator.clipboard.writeText !== 'function') {
         throw new Error('Clipboard API is unavailable');
@@ -222,6 +227,23 @@ export class ShoppingSidebar {
     }, 1500);
   }
 
+  _clearShoppingList(button) {
+    if (!this.state.shoppingSelections.size) return;
+    if (!button.classList.contains('is-confirming')) {
+      button.classList.add('is-confirming');
+      button.textContent = 'Säker?';
+      clearTimeout(this._clearConfirmTimer);
+      this._clearConfirmTimer = setTimeout(() => {
+        button.classList.remove('is-confirming');
+        button.textContent = button.dataset.defaultLabel || 'Rensa';
+      }, 2000);
+      return;
+    }
+    clearTimeout(this._clearConfirmTimer);
+    this._clearConfirmTimer = null;
+    this.state.clearShoppingList();
+  }
+
   async render() {
     if (this._rendering) return;
     this._rendering = true;
@@ -237,7 +259,8 @@ export class ShoppingSidebar {
             ${count ? `<span class="shopping-badge">${count}</span>` : ''}
           </h3>
           <div class="shopping-sidebar-actions">
-            <button type="button" class="shopping-copy-btn" data-default-label="Kopiera lista">Kopiera lista</button>
+            <button type="button" class="shopping-copy-btn" data-default-label="Kopiera"${count ? '' : ' disabled'}>Kopiera</button>
+            <button type="button" class="shopping-clear-btn" data-default-label="Rensa"${count ? '' : ' disabled'}>Rensa</button>
             <button type="button" class="shopping-sidebar-close" aria-label="Stäng inköpslista">×</button>
           </div>
         </div>
