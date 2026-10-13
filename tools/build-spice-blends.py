@@ -97,6 +97,7 @@ def main():
             entry["jarGrams"] = grams
             if note:
                 note = re.sub(r",?\s*verified:.*$", "", note, flags=re.I).strip(" ,")
+                note = re.sub(r"\bmalen\b", "mald", note)
             if note:
                 entry["jarNote"] = note
         spices.append(entry)

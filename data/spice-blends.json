@@ -25,7 +25,7 @@
       "name": "Chilipeppar",
       "ingredientId": "chili_powder",
       "jarGrams": 40,
-      "jarNote": "ICA chilipeppar malen"
+      "jarNote": "ICA chilipeppar mald"
     },
     {
       "id": "farinsocker",
@@ -38,7 +38,7 @@
       "name": "Gurkmeja",
       "ingredientId": "turmeric",
       "jarGrams": 32,
-      "jarNote": "malen"
+      "jarNote": "mald"
     },
     {
       "id": "hasselnot",
@@ -52,42 +52,42 @@
       "name": "Ingefära",
       "ingredientId": "ground_ginger",
       "jarGrams": 31,
-      "jarNote": "malen"
+      "jarNote": "mald"
     },
     {
       "id": "kanel",
       "name": "Kanel",
       "ingredientId": "cinnamon",
       "jarGrams": 40,
-      "jarNote": "malen"
+      "jarNote": "mald"
     },
     {
       "id": "kardemumma",
       "name": "Kardemumma",
       "ingredientId": "cardamom",
       "jarGrams": 28,
-      "jarNote": "malen"
+      "jarNote": "mald"
     },
     {
       "id": "koriander",
       "name": "Koriander",
       "ingredientId": "ground_coriander",
       "jarGrams": 28,
-      "jarNote": "malen"
+      "jarNote": "mald"
     },
     {
       "id": "nejlika",
       "name": "Kryddnejlika",
       "ingredientId": "cloves",
       "jarGrams": 20,
-      "jarNote": "malen"
+      "jarNote": "mald"
     },
     {
       "id": "kryddpeppar",
       "name": "Kryddpeppar",
       "ingredientId": "allspice",
       "jarGrams": 26,
-      "jarNote": "malen"
+      "jarNote": "mald"
     },
     {
       "id": "lok",
@@ -101,7 +101,7 @@
       "name": "Muskot",
       "ingredientId": "nutmeg",
       "jarGrams": 35,
-      "jarNote": "malen"
+      "jarNote": "mald"
     },
     {
       "id": "oregano",
