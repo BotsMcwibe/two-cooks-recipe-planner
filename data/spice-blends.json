@@ -443,6 +443,21 @@
       }
     },
     {
+      "id": "salladskrydda",
+      "name": "Salladskrydda",
+      "packetGrams": 8,
+      "spices": {
+        "salt": 2.0,
+        "lok": 1.5,
+        "vitlok": 1.2,
+        "persilja": 1.2,
+        "basilika": 0.8,
+        "oregano": 0.6,
+        "paprika": 0.4,
+        "peppar": 0.3
+      }
+    },
+    {
       "id": "garam_masala",
       "name": "Garam masala",
       "ingredientId": "garam_masala",

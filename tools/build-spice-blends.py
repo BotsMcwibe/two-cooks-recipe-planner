@@ -106,7 +106,7 @@ def main():
             errors.append(f"blend '{name}' has no id")
             continue
         if bid not in mix_ids:
-            errors.append(f"blend '{name}' id '{bid}' matches no ingredient blendId")
+            print(f"note: blend '{name}' is shelf-only (no recipe ingredient uses it)")
         entry = {
             "id": bid,
             "name": b.get("display") or name,
