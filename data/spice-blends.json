@@ -28,10 +28,31 @@
       "jarNote": "ICA chilipeppar mald"
     },
     {
+      "id": "citronpeppar",
+      "name": "Citronpeppar",
+      "ingredientId": "lemon_pepper",
+      "jarGrams": 53,
+      "jarNote": "färdig"
+    },
+    {
+      "id": "curry",
+      "name": "Curry",
+      "ingredientId": "curry",
+      "jarGrams": 43,
+      "jarNote": "färdig"
+    },
+    {
       "id": "farinsocker",
       "name": "Farinsocker",
       "ingredientId": "brown_sugar",
       "jarGrams": 500
+    },
+    {
+      "id": "garam_masala",
+      "name": "Garam masala",
+      "ingredientId": "garam_masala",
+      "jarGrams": 43,
+      "jarNote": "färdig"
     },
     {
       "id": "gurkmeja",
@@ -73,13 +94,6 @@
       "name": "Koriander",
       "ingredientId": "ground_coriander",
       "jarGrams": 28,
-      "jarNote": "mald"
-    },
-    {
-      "id": "nejlika",
-      "name": "Kryddnejlika",
-      "ingredientId": "cloves",
-      "jarGrams": 20,
       "jarNote": "mald"
     },
     {
@@ -133,6 +147,13 @@
       "name": "Rökt paprika",
       "ingredientId": "smoked_paprika",
       "jarGrams": 37
+    },
+    {
+      "id": "salladskrydda",
+      "name": "Salladskrydda",
+      "ingredientId": null,
+      "jarGrams": 39,
+      "jarNote": "färdig"
     },
     {
       "id": "salt",
@@ -424,63 +445,6 @@
         "vitlok": 1.0,
         "oregano": 0.5,
         "salt": 0.5
-      }
-    },
-    {
-      "id": "lemon_pepper",
-      "name": "Citronpeppar",
-      "ingredientId": "lemon_pepper",
-      "packetGrams": 8,
-      "spices": {
-        "peppar": 5.5,
-        "salt": 1.5,
-        "vitlok": 0.7,
-        "lok": 0.3
-      }
-    },
-    {
-      "id": "salladskrydda",
-      "name": "Salladskrydda",
-      "packetGrams": 8,
-      "spices": {
-        "salt": 2.0,
-        "lok": 1.5,
-        "vitlok": 1.2,
-        "persilja": 1.2,
-        "basilika": 0.8,
-        "oregano": 0.6,
-        "paprika": 0.4,
-        "peppar": 0.3
-      }
-    },
-    {
-      "id": "garam_masala",
-      "name": "Garam masala",
-      "ingredientId": "garam_masala",
-      "packetGrams": 10,
-      "spices": {
-        "koriander": 3.0,
-        "spiskummin": 2.5,
-        "kardemumma": 1.5,
-        "peppar": 1.2,
-        "kanel": 1.0,
-        "nejlika": 0.4,
-        "muskot": 0.4
-      }
-    },
-    {
-      "id": "curry",
-      "name": "Curry",
-      "ingredientId": "curry",
-      "packetGrams": 10,
-      "spices": {
-        "gurkmeja": 3.0,
-        "koriander": 3.0,
-        "spiskummin": 1.5,
-        "ingefara": 1.0,
-        "senap": 0.5,
-        "peppar": 0.5,
-        "chili": 0.5
       }
     },
     {

@@ -583,10 +583,8 @@
     "curry": {
       "name": "Curry",
       "tags": [
-        "spices",
-        "spice_blend"
-      ],
-      "blendId": "curry"
+        "spices"
+      ]
     },
     "curry_on": {
       "name": "Mild currymix",
@@ -751,11 +749,9 @@
     "garam_masala": {
       "name": "Garam masala",
       "tags": [
-        "spices",
-        "spice_blend"
+        "spices"
       ],
-      "image": "assets/ingredients/garam_masala.png",
-      "blendId": "garam_masala"
+      "image": "assets/ingredients/garam_masala.png"
     },
     "garlic": {
       "name": "Vitlöksklyfta",
@@ -1018,10 +1014,8 @@
     "lemon_pepper": {
       "name": "Citronpeppar",
       "tags": [
-        "spices",
-        "spice_blend"
-      ],
-      "blendId": "lemon_pepper"
+        "spices"
+      ]
     },
     "lettuce": {
       "name": "Sallad",

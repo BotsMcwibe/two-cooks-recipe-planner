@@ -55,6 +55,10 @@ DISPLAY = {
     "hasselnot": "Hasselnötter",
     "sesam": "Sesamfrön",
     "sumak": "Sumak",
+    "curry": "Curry",
+    "citronpeppar": "Citronpeppar",
+    "garam_masala": "Garam masala",
+    "salladskrydda": "Salladskrydda",
 }
 
 # play.py spice key -> ingredient id in data/ingredients.json
@@ -69,6 +73,8 @@ INGREDIENT = {
     "kanel": "cinnamon", "kardemumma": "cardamom", "farinsocker": "brown_sugar",
     "nejlika": "cloves", "muskot": "nutmeg", "kryddpeppar": "allspice",
     "hasselnot": "hazelnuts", "sesam": "sesame_seeds", "sumak": "sumac",
+    "curry": "curry", "citronpeppar": "lemon_pepper", "garam_masala": "garam_masala",
+    "salladskrydda": None,  # shelf-only, no recipe uses it
 }
 
 
@@ -83,13 +89,13 @@ def main():
     mod = load(SRC)
     ingredients = json.loads((ROOT / "data" / "ingredients.json").read_text(encoding="utf-8"))["ingredients"]
     errors = []
-    used = sorted({s for b in mod.BLENDS.values() for s in b["spices"]})
+    used = sorted({s for b in mod.BLENDS.values() for s in b["spices"]} | set(getattr(mod, "READY_MADE", [])))
     spices = []
     for key in used:
         entry = {"id": key, "name": DISPLAY.get(key, key), "ingredientId": INGREDIENT.get(key)}
         if key not in INGREDIENT:
             errors.append(f"spice '{key}' has no INGREDIENT mapping")
-        elif INGREDIENT[key] not in ingredients:
+        elif INGREDIENT[key] is not None and INGREDIENT[key] not in ingredients:
             errors.append(f"spice '{key}' maps to unknown ingredient '{INGREDIENT[key]}'")
         jar = getattr(mod, "JARS", {}).get(key)
         if jar:
