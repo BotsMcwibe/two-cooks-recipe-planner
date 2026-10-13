@@ -11,9 +11,9 @@
  *   mark the store dirty and a full merge runs again when back online).
  */
 import { SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, SUPABASE_JS_URL } from '../config.js?v=20261013a';
-import * as UserState from './user-recipe-state.js?v=20261013a';
+import * as UserState from './user-recipe-state.js?v=20261013b';
 import { prefTs, setPrefTs } from './prefs-meta.js?v=20261013a';
-import { missingMixes, replaceMissingMixes } from './spice-prefs.js?v=20261012e';
+import { missingMixes, replaceMissingMixes } from './spice-prefs.js?v=20261013a';
 import { savedTheme, applySyncedTheme } from '../utils/theme.js?v=20261013a';
 
 const listeners = new Set();
@@ -139,7 +139,6 @@ async function mergeAll() {
     const { data: rows, error } = await client.from('user_recipe_state').select('recipe_id,status,rating,updated_at');
     if (error) throw error;
     const remote = new Map((rows || []).map(r => [r.recipe_id, r]));
-    const local = UserState.allLocal();
     const push = [];
     applying = true;
     try {
@@ -149,6 +148,7 @@ async function mergeAll() {
     } finally {
       applying = false;
     }
+    const local = UserState.allLocal(); // after applyRemote, so seed-clears get pushed
     for (const [id, rec] of Object.entries(local)) {
       const r = remote.get(id);
       if (!r || (Number(rec.updatedAt) || 0) > Date.parse(r.updated_at)) push.push(toRow(id, rec));

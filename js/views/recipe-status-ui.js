@@ -2,7 +2,7 @@
  * Personal status control (Vill laga / Lagar nu / Lagad) + clickable 1–5 stars,
  * and the compact card badge. Backed by core/user-recipe-state.js.
  */
-import * as UserState from '../core/user-recipe-state.js?v=20261013a';
+import * as UserState from '../core/user-recipe-state.js?v=20261013b';
 import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261011u';
 
 const STATUS_ICON = { want: '☆', cooking: '◔', cooked: '✓' };
@@ -27,18 +27,28 @@ export function statusControlHtml(id, opts = {}) {
   const done = opts.allDone && status !== 'cooked'
     ? '<button type="button" class="rs-mark-done" data-status="cooked">✓ Markera som lagad</button>'
     : '';
-  return `<div class="rs-control" data-id="${escapeAttr(id)}">
+  return `${kitchenMarkHtml(id)}<div class="rs-control" data-id="${escapeAttr(id)}">
     <div class="rs-status" role="group" aria-label="Min status">${btns}</div>
     <div class="rs-stars" role="group" aria-label="Mitt betyg">${stars}${rating ? `<span class="rs-stars-value">${rating}/5</span>` : ''}</div>
     ${done}
   </div>`;
 }
 
-/** Badge + own stars for a recipe card (empty string when nothing is set). */
+/** Catalog marker line ("Testad i köket", kitchen score), separate from personal state. */
+export function kitchenMarkHtml(id) {
+  const m = UserState.catalogMark(id);
+  if (!m || (!m.tested && !m.score)) return '';
+  return `<p class="rs-kitchen">${m.tested ? '<span class="rs-tested">Testad i köket</span>' : ''}${m.score ? `<span class="rs-kitchen-score" title="Kökets betyg, inte ditt">Kökets betyg ${escapeHtml(m.score)}</span>` : ''}</p>`;
+}
+
+/** Badge + own stars for a recipe card, plus the catalog "Testad" marker (empty string when nothing is set). */
 export function cardStateHtml(id) {
   const { status, rating } = UserState.get(id);
-  if (!status && !rating) return '';
+  const m = UserState.catalogMark(id);
+  const tested = m && m.tested;
+  if (!status && !rating && !tested) return '';
   let html = '<div class="rs-card">';
+  if (tested) html += `<span class="rs-tested" title="Testad i köket${m.score ? `, kökets betyg ${escapeAttr(m.score)}` : ''}">Testad</span>`;
   if (status) html += `<span class="rs-badge rs-${status}">${STATUS_ICON[status]} ${escapeHtml(UserState.STATUS_LABELS[status])}</span>`;
   if (rating) html += `<span class="rs-card-stars" title="Mitt betyg ${rating} av 5" aria-label="Mitt betyg ${rating} av 5">${'★'.repeat(rating)}<span class="rs-card-stars-off">${'★'.repeat(5 - rating)}</span></span>`;
   return html + '</div>';

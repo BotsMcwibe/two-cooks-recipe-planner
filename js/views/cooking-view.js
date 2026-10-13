@@ -11,8 +11,8 @@ import {
   starHtml,
 } from '../utils/catalog-ui.js?v=20261011u';
 import { imgFailed, isPhotoMissing, recordPhotoFailure, recordPhotoSuccess } from '../utils/photo-fallback.js?v=20261011u';
-import * as UserState from '../core/user-recipe-state.js?v=20261013a';
-import { bindStatusControls, refreshStatusControls, statusControlHtml } from './recipe-status-ui.js?v=20261013a';
+import * as UserState from '../core/user-recipe-state.js?v=20261013b';
+import { bindStatusControls, refreshStatusControls, statusControlHtml } from './recipe-status-ui.js?v=20261013b';
 import { joinStepParts, sentenceCase } from '../utils/text.js?v=20261011';
 
 /**

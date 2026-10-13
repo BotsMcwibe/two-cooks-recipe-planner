@@ -10,9 +10,9 @@ import {
   starHtml,
   subtitleFromSearchText,
 } from '../utils/catalog-ui.js?v=20261011u';
-import * as UserState from '../core/user-recipe-state.js?v=20261013a';
+import * as UserState from '../core/user-recipe-state.js?v=20261013b';
 import { imgFailed, isPhotoMissing, recordPhotoFailure, recordPhotoSuccess, photosLikelyUnavailable } from '../utils/photo-fallback.js?v=20261011u';
-import { cardStateHtml } from './recipe-status-ui.js?v=20261013a';
+import { cardStateHtml } from './recipe-status-ui.js?v=20261013b';
 
 /**
  * Browse page: searchable/filterable recipe card grid.
@@ -69,7 +69,8 @@ export class BrowseView {
       { id: s, label: UserState.STATUS_LABELS[s], title: `Visa recept märkta ”${UserState.STATUS_LABELS[s]}”` },
       'status',
       false,
-    )).join('');
+    )).join('') + this._chipHtml(
+      { id: 'tested', label: 'Testad', title: 'Visa recept som testats i köket' }, 'status', false);
 
     this.$container.html(`
       <div class="browse-toolbar">
@@ -223,7 +224,8 @@ export class BrowseView {
         const shown = displayedPortionKcal(raw);
         if (shown == null || shown >= 650) return false;
       }
-      if (this.statusFilter && UserState.get(entry.id).status !== this.statusFilter) return false;
+      if (this.statusFilter === 'tested') { const m = UserState.catalogMark(entry.id); if (!m || !m.tested) return false; }
+      else if (this.statusFilter && UserState.get(entry.id).status !== this.statusFilter) return false;
       if (!q) return true;
       const hay = `${entry.name || ''} ${entry.searchText || ''}`.toLowerCase();
       return hay.includes(q);

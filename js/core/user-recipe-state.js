@@ -2,9 +2,9 @@
  * Personal per-recipe state (Goodreads-style): status + own 1–5 star rating.
  *
  * Stored only in this browser's localStorage (no account/server yet) under a
- * versioned key. Catalog fields `cooked` / `personalRating` act as seed values
- * for recipes the user has never touched; anything saved locally wins, including
- * an explicit "cleared" value.
+ * versioned key. Every visitor starts empty. Catalog fields `cooked` /
+ * `personalRating` used to seed statuses and ratings; they are now only used to
+ * recognise and clear those old seeded records once (see migrateSeeds).
  *
  *   get(id)                 → { status: 'want'|'cooking'|'cooked'|null, rating: 1..5|null }
  *   set(id, { status?, rating? })
@@ -19,6 +19,8 @@ export const STATUS_LABELS = { want: 'Vill laga', cooking: 'Lagar nu', cooked: '
 const listeners = new Set();
 /** @type {Record<string, {status: string|null, rating: number|null}>} */
 let seeds = {};
+/** Catalog "tested in the kitchen" markers, read-only, never stored or synced. */
+let marks = {};
 /** @type {Record<string, {status: string|null, rating: number|null, updatedAt?: number}>} */
 let local = load();
 
@@ -76,11 +78,54 @@ export function seedFromCatalog(catalog) {
       rating = cleanRating((Number(pr.score) / outOf) * 5);
     }
     if (cooked || rating) seeds[c.id] = { status: cooked ? 'cooked' : null, rating };
+    if (cooked || rating) marks[c.id] = { tested: cooked, rating, score: kitchenScore(pr) };
   }
+  migrateSeeds();
 }
 
+/** One-time migration flag: when seeded records were cleared (ms). */
+export const SEED_MIGRATION_KEY = 'yessy.seedMigration.v1';
+function migratedAt() {
+  try { return Number(localStorage.getItem(SEED_MIGRATION_KEY)) || 0; } catch { return 0; }
+}
+/** True when a record is exactly what catalog seeding produced (status and rating). */
+function isSeedCopy(id, rec) {
+  const s = seeds[id];
+  if (!s || !rec) return false;
+  if (rec.status == null && rec.rating == null) return false;
+  return rec.status === s.status && rec.rating === s.rating;
+}
+/**
+ * Clear local records that are exact copies of the old catalog seed, once.
+ * Cleared records get a fresh updatedAt so sync writes null/null over any
+ * seed-derived server rows instead of pulling them back.
+ */
+function migrateSeeds() {
+  if (migratedAt()) return;
+  const now = Date.now();
+  let changed = false;
+  for (const [id, rec] of Object.entries(local)) {
+    if (isSeedCopy(id, rec)) { local[id] = { status: null, rating: null, updatedAt: now }; changed = true; }
+  }
+  try { localStorage.setItem(SEED_MIGRATION_KEY, String(now)); } catch { /* ignore */ }
+  if (changed) { save(); emit(null); }
+}
+
+function kitchenScore(pr) {
+  if (typeof pr === 'number' && Number.isFinite(pr)) return `${pr}/10`;
+  if (pr && typeof pr === 'object' && Number.isFinite(Number(pr.score))) return `${Number(pr.score)}/${Number(pr.outOf) > 0 ? Number(pr.outOf) : 10}`;
+  return null;
+}
+
+/** Catalog marker: { tested, rating (1–5 or null), score ('8/10' or null) } or null. Not the user's state. */
+export function catalogMark(id) {
+  const m = marks[id];
+  return m ? { ...m } : null;
+}
+export const TESTED_LABEL = 'Testad';
+
 export function get(id) {
-  const rec = local[id] || seeds[id];
+  const rec = local[id];
   return { status: rec ? rec.status : null, rating: rec ? rec.rating : null };
 }
 
@@ -126,6 +171,16 @@ export function applyRemote(id, rec) {
   const ts = Number(rec.updatedAt) || 0;
   const cur = local[id];
   if (cur && (Number(cur.updatedAt) || 0) >= ts) return false;
+  // A server row created from the old seed before the migration: clear it
+  // locally with a newer timestamp so sync overwrites it with null/null.
+  const m = migratedAt();
+  const clean = { status: cleanStatus(rec.status), rating: cleanRating(rec.rating) };
+  if (m && ts < m && isSeedCopy(id, clean)) {
+    local[id] = { status: null, rating: null, updatedAt: Math.max(m, ts + 1) };
+    save();
+    emit(id);
+    return true;
+  }
   local[id] = { status: cleanStatus(rec.status), rating: cleanRating(rec.rating), updatedAt: ts };
   save();
   emit(id);

@@ -2413,7 +2413,8 @@ main.main-spices {
 }
 .auth-input:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 1px; }
 .auth-action {
-  width: 100%; padding: 9px 12px; border: none; border-radius: var(--radius-sm);
+  display: block; box-sizing: border-box; width: 100%; padding: 9px 12px; border: 1px solid transparent;
+  text-align: center; text-decoration: none; line-height: 1.3; font-size: 0.95rem; border-radius: var(--radius-sm);
   background: var(--primary); color: var(--on-accent); font: inherit; font-weight: 600; cursor: pointer;
 }
 .auth-action:hover { background: var(--primary-hover); }
@@ -2421,6 +2422,8 @@ main.main-spices {
 .auth-action:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
 .auth-logout, .auth-again { background: var(--surface-2); color: var(--text); border: 1px solid var(--border); }
 .auth-logout:hover, .auth-again:hover { background: var(--toggle-hover); }
+.auth-action + .auth-action { margin-top: 8px; }
+.auth-account-link, .auth-account-link:hover, .auth-account-link:visited { color: var(--on-accent); text-decoration: none; }
 .auth-error { margin: 8px 0 0; font-size: 0.82rem; color: var(--danger); }
 .visually-hidden { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
@@ -2572,3 +2575,14 @@ main.main-account { max-width: var(--max-browse); }
 }
 .acc-facts-email { overflow-wrap: anywhere; font-weight: 600; }
 .acc-list.is-long { max-height: 340px; overflow-y: auto; padding-right: 4px; }
+
+/* Catalog "tested in the kitchen" marker: separate from personal status */
+.rs-tested {
+  display: inline-flex; align-items: center; gap: 4px; padding: 2px 8px; border-radius: 999px;
+  font-size: 0.75rem; font-weight: 600; color: var(--text-muted);
+  border: 1px dashed var(--border); background: transparent;
+}
+.rs-tested::before { content: '🧑\200D🍳'; font-size: 0.8rem; }
+.rs-kitchen { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 0 0 8px; font-size: 0.85rem; color: var(--text-muted); }
+.rs-kitchen-score { font-weight: 600; }
+.acc-note { margin: 0 0 10px; font-size: 0.85rem; color: var(--text-muted); }

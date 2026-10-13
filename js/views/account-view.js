@@ -5,10 +5,10 @@
  * area lists what the app stores: statuses, ratings, own spice mixes, theme,
  * Inköpslista and a Data section. Works logged out (local data only).
  */
-import * as UserState from '../core/user-recipe-state.js?v=20261013a';
+import * as UserState from '../core/user-recipe-state.js?v=20261013b';
 import { missingMixes } from '../core/spice-prefs.js?v=20261013a';
 import { savedTheme } from '../utils/theme.js?v=20261013a';
-import { onAuthChange, onSyncStatus, syncStatus, lastSyncTime, signOut, currentUser, isAvailable } from '../core/sync.js?v=20261013b';
+import { onAuthChange, onSyncStatus, syncStatus, lastSyncTime, signOut, currentUser, isAvailable } from '../core/sync.js?v=20261013c';
 import { openSignIn } from './auth-ui.js?v=20261013c';
 import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261011u';
 
@@ -139,7 +139,7 @@ export class AccountView {
     const user = currentUser();
     const where = user ? 'Synkas med ditt konto' : 'Bara på den här enheten';
 
-    // Statuses + ratings from the state module (local records + catalog seeds)
+    // Statuses + ratings from the user's own state; catalog "tested" markers kept separate
     const groups = { cooking: [], want: [], cooked: [] };
     const ratings = [];
     for (const c of this.catalog) {
@@ -147,6 +147,9 @@ export class AccountView {
       if (status && groups[status]) groups[status].push({ id: c.id, rating, name: c.name });
       if (rating) ratings.push({ id: c.id, rating, name: c.name });
     }
+    const tested = this.catalog.filter(c => UserState.catalogMark(c.id)?.tested)
+      .map(c => ({ id: c.id, name: c.name, score: UserState.catalogMark(c.id).score }))
+      .sort((a, b) => a.name.localeCompare(b.name, 'sv'));
     for (const g of Object.values(groups)) g.sort((a, b) => a.name.localeCompare(b.name, 'sv'));
     const list = (arr, empty) => arr.length
       ? `<ul class="acc-list${arr.length > 10 ? ' is-long' : ''}">${arr.map(r => this._recipeLink(r.id, starsHtml(r.rating))).join('')}</ul>`
@@ -175,7 +178,7 @@ export class AccountView {
 
     const nav = [
       ['lagar', 'Lagar nu', groups.cooking.length], ['vill', 'Vill laga', groups.want.length],
-      ['lagade', 'Lagade', groups.cooked.length], ['betyg', 'Dina betyg', ratings.length],
+      ['lagade', 'Lagade', groups.cooked.length], ['testade', 'Testade i köket', tested.length], ['betyg', 'Dina betyg', ratings.length],
       ['kryddmixar', 'Kryddmixar', mixes.length], ['installningar', 'Inställningar', null],
       ['inkopslista', 'Inköpslista', shopRows.length], ['data', 'Data', null],
     ];
@@ -196,6 +199,9 @@ export class AccountView {
           ${section('lagar', 'Lagar nu', groups.cooking.length, list(groups.cooking, 'Inget på spisen just nu.'), where)}
           ${section('vill', 'Vill laga', groups.want.length, list(groups.want, 'Markera recept med ”Vill laga” så hamnar de här.'), where)}
           ${section('lagade', 'Lagade', groups.cooked.length, list(groups.cooked, 'Inga lagade recept än.'), where)}
+          ${section('testade', 'Testade i köket', tested.length, tested.length
+            ? `<p class="acc-note">Recept som testats i köket. Det här är inte dina egna markeringar och synkas inte till ditt konto.</p><ul class="acc-list${tested.length > 10 ? ' is-long' : ''}">${tested.map(r => this._recipeLink(r.id, r.score ? `<span class="acc-meta">${escapeHtml(r.score)}</span>` : '')).join('')}</ul>`
+            : '<p class="acc-empty">Inga testade recept.</p>', 'Från receptsamlingen')}
           ${section('betyg', 'Dina betyg', ratings.length, ratings.length ? `
             <div class="acc-ratings">
               <div class="acc-avg"><span class="acc-avg-num">${avg.toFixed(1).replace('.', ',')}</span><span class="acc-avg-sub">snitt av ${ratings.length} betyg</span></div>
