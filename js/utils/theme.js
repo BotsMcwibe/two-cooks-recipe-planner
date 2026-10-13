@@ -35,8 +35,8 @@ export function applyTheme(theme) {
 }
 
 export function initThemeToggle(button) {
-  if (!button) return;
   const render = () => {
+    if (!button) return;
     const dark = currentTheme() === 'dark';
     // Show the theme you switch TO.
     button.innerHTML = dark ? SUN_SVG : MOON_SVG;
@@ -46,7 +46,7 @@ export function initThemeToggle(button) {
   };
   applyTheme(readSaved() || systemTheme());
   render();
-  button.addEventListener('click', () => {
+  button?.addEventListener('click', () => {
     const next = currentTheme() === 'dark' ? 'light' : 'dark';
     try { localStorage.setItem(THEME_KEY, next); } catch { /* private mode */ }
     touchPref('theme');
@@ -60,6 +60,22 @@ export function initThemeToggle(button) {
     applyTheme(systemTheme());
     render();
   });
+}
+
+/** Menu choice: 'light' | 'dark' | 'system' (no saved choice). */
+export function themeChoice() {
+  return readSaved() || 'system';
+}
+
+/** Set from the menu switch; 'system' clears the saved choice and follows the OS. */
+export function setThemeChoice(choice) {
+  try {
+    if (choice === 'light' || choice === 'dark') localStorage.setItem(THEME_KEY, choice);
+    else localStorage.removeItem(THEME_KEY);
+  } catch { /* private mode */ }
+  touchPref('theme');
+  applyTheme(choice === 'light' || choice === 'dark' ? choice : systemTheme());
+  window.dispatchEvent(new CustomEvent('yessy:themechange'));
 }
 
 /** Saved theme choice ('light' | 'dark' | null) for sync. */

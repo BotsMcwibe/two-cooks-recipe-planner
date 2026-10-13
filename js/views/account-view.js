@@ -7,9 +7,10 @@
  */
 import * as UserState from '../core/user-recipe-state.js?v=20261013b';
 import { missingMixes } from '../core/spice-prefs.js?v=20261013a';
-import { savedTheme } from '../utils/theme.js?v=20261013a';
-import { onAuthChange, onSyncStatus, syncStatus, lastSyncTime, signOut, currentUser, isAvailable } from '../core/sync.js?v=20261013c';
-import { openSignIn } from './auth-ui.js?v=20261013c';
+import { savedTheme } from '../utils/theme.js?v=20261013b';
+import { menuExtrasHtml, bindMenuExtras } from './menu-items.js?v=20261013a';
+import { onAuthChange, onSyncStatus, syncStatus, lastSyncTime, signOut, currentUser, isAvailable } from '../core/sync.js?v=20261013d';
+import { openSignIn } from './auth-ui.js?v=20261013d';
 import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261011u';
 
 const LOCAL_KEYS = [
@@ -62,11 +63,21 @@ export class AccountView {
   show() { this.active = true; this.menuOpen = false; this.render(); }
   hide() { this.active = false; }
 
+  /** The rail is re-rendered on toggle; replay the outline→filled transition on the new circle. */
+  _animateCircle() {
+    const b = this.el.querySelector('.acc-me-btn');
+    if (!b) return;
+    b.setAttribute('aria-expanded', String(!this.menuOpen));
+    void b.offsetWidth;
+    b.setAttribute('aria-expanded', String(this.menuOpen));
+  }
+
   _bind() {
+    bindMenuExtras(this.el, () => this.render());
     this.el.addEventListener('click', async (e) => {
       const t = e.target;
       if (t.closest('.acc-signin')) { openSignIn(); return; }
-      if (t.closest('.acc-me-btn')) { this.menuOpen = !this.menuOpen; this.render(); this.el.querySelector(this.menuOpen ? '.acc-menu button, .acc-menu a' : '.acc-me-btn')?.focus(); return; }
+      if (t.closest('.acc-me-btn')) { this.menuOpen = !this.menuOpen; this.render(); this._animateCircle(); this.el.querySelector(this.menuOpen ? '.acc-menu button, .acc-menu a' : '.acc-me-btn')?.focus(); return; }
       if (t.closest('.acc-logout')) { await signOut(); this.menuOpen = false; this.render(); return; }
       if (t.closest('.acc-clear')) {
         const user = currentUser();
@@ -79,7 +90,7 @@ export class AccountView {
         location.reload();
         return;
       }
-      if (this.menuOpen && !t.closest('.acc-me')) { this.menuOpen = false; this.render(); }
+      if (this.menuOpen && t.isConnected && !t.closest('.acc-me')) { this.menuOpen = false; this.render(); }
     });
     this.el.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && this.menuOpen) { this.menuOpen = false; this.render(); this.el.querySelector('.acc-me-btn')?.focus(); }
@@ -103,6 +114,7 @@ export class AccountView {
           <span class="acc-me-sub">${dot}${SYNC_LABEL.local}</span></span>
         </div>
         ${isAvailable() ? '<button type="button" class="acc-btn acc-btn-primary acc-signin">Logga in</button>' : ''}
+        <div class="menu-rows acc-guest-extras">${menuExtrasHtml()}</div>
       </div>`;
     }
     const meta = user.user_metadata || {};
@@ -122,12 +134,13 @@ export class AccountView {
           <div><dt>Inloggning</dt><dd>${escapeHtml(METHOD[provider] || provider)}</dd></div>
           <div><dt>Synk</dt><dd>${SYNC_LABEL[status]}${last && status === 'synced' ? ` · ${fmtDateTime(last)}` : ''}</dd></div>
         </dl>
+        <div class="menu-rows">${menuExtrasHtml()}</div>
         <button type="button" class="acc-btn acc-logout" role="menuitem">Logga ut</button>
       </div>` : '';
     return `<div class="acc-me">
       ${menu}
       <button type="button" class="acc-me-btn" aria-haspopup="menu" aria-expanded="${this.menuOpen}">
-        ${av}
+        <span class="acc-avatar-wrap">${av}<span class="acc-status-dot is-${status}" aria-hidden="true"></span></span>
         <span class="acc-me-text"><span class="acc-me-name" title="${escapeAttr(user.email || '')}">${escapeHtml(user.email || '')}</span>
         <span class="acc-me-sub">${dot}${SYNC_LABEL[status]}</span></span>
         <span class="acc-me-caret" aria-hidden="true">⋯</span>

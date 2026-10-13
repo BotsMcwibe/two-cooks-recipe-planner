@@ -3,8 +3,9 @@
  * Logged out: email field → magic link. Logged in: avatar/initial, email, "Logga ut".
  * Hidden entirely if Supabase could not be loaded (app stays local-only).
  */
-import { onAuthChange, signInWithEmail, signOut, isAvailable } from '../core/sync.js?v=20261013c';
+import { onAuthChange, signInWithEmail, signOut, isAvailable, syncStatus, onSyncStatus } from '../core/sync.js?v=20261013d';
 import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261011u';
+import { accountLinkHtml, menuExtrasHtml, bindMenuExtras } from './menu-items.js?v=20261013a';
 
 const USER_SVG = '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="8.5" r="3.8"/><path d="M4.8 20.2c1.2-3.6 4-5.4 7.2-5.4s6 1.8 7.2 5.4"/></g></svg>';
 
@@ -24,7 +25,7 @@ export function initAuthUi(root) {
   };
 
   function renderButton() {
-    root.hidden = !isAvailable();
+    root.hidden = false;
     if (user) {
       const meta = user.user_metadata || {};
       const avatar = meta.avatar_url || meta.picture;
@@ -32,13 +33,14 @@ export function initAuthUi(root) {
       btn.innerHTML = avatar
         ? `<img class="auth-avatar" src="${escapeAttr(avatar)}" alt="" referrerpolicy="no-referrer">`
         : `<span class="auth-avatar auth-initial" aria-hidden="true">${escapeHtml(initial)}</span>`;
+      btn.insertAdjacentHTML('beforeend', `<span class="acc-status-dot is-${syncStatus()}" aria-hidden="true"></span>`);
       btn.setAttribute('aria-label', `Konto: ${user.email || ''}`);
       btn.title = user.email || 'Konto';
       btn.classList.add('is-signed-in');
     } else {
       btn.innerHTML = USER_SVG;
-      btn.setAttribute('aria-label', 'Logga in');
-      btn.title = 'Logga in';
+      btn.setAttribute('aria-label', isAvailable() ? 'Logga in, Kryddskåpet och tema' : 'Meny');
+      btn.title = isAvailable() ? 'Logga in' : 'Meny';
       btn.classList.remove('is-signed-in');
     }
   }
@@ -48,13 +50,19 @@ export function initAuthUi(root) {
       pop.innerHTML = `
         <p class="auth-email" title="${escapeAttr(user.email || '')}">${escapeHtml(user.email || '')}</p>
         <p class="auth-note">Dina recept, betyg och val synkas mellan enheter.</p>
-        <a class="auth-action auth-account-link" href="#konto">Mitt konto</a>
-        <button type="button" class="auth-action auth-logout">Logga ut</button>`;
+        <div class="menu-rows">
+          ${accountLinkHtml()}
+          ${menuExtrasHtml()}
+          <button type="button" class="auth-action auth-logout">Logga ut</button>
+        </div>`;
     } else if (sent) {
       pop.innerHTML = `
         <p class="auth-title">Kolla din mejl</p>
         <p class="auth-note">Vi skickade en inloggningslänk till <strong>${escapeHtml(sent)}</strong>. Öppna den på den här enheten.</p>
-        <button type="button" class="auth-action auth-again">Använd en annan adress</button>`;
+        <button type="button" class="auth-action auth-again">Använd en annan adress</button>
+        <div class="menu-rows menu-rows-sep">${menuExtrasHtml()}</div>`;
+    } else if (!isAvailable()) {
+      pop.innerHTML = `<div class="menu-rows">${menuExtrasHtml()}</div>`;
     } else {
       pop.innerHTML = `
         <form class="auth-form" novalidate>
@@ -64,12 +72,17 @@ export function initAuthUi(root) {
           <input id="auth-email" class="auth-input" type="email" inputmode="email" autocomplete="email" placeholder="din@mejl.se" required>
           <button type="submit" class="auth-action auth-send">Skicka länk</button>
           <p class="auth-error" role="alert" hidden></p>
-        </form>`;
+        </form>
+        <div class="menu-rows menu-rows-sep">${menuExtrasHtml()}</div>`;
     }
   }
 
   btn.addEventListener('click', () => (pop.hidden ? open() : close()));
-  document.addEventListener('click', (e) => { if (!pop.hidden && !root.contains(e.target)) close(); });
+  bindMenuExtras(pop, () => render());
+  // Close on navigation (Mitt konto, Kryddskåpet, or any route change)
+  window.addEventListener('hashchange', close);
+  window.addEventListener('yessy:themechange', () => { if (!pop.hidden) render(); });
+  document.addEventListener('click', (e) => { if (!pop.hidden && e.target.isConnected && !root.contains(e.target)) close(); });
   root.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !pop.hidden) { close(); btn.focus(); } });
 
   pop.addEventListener('submit', async (e) => {
@@ -99,7 +112,7 @@ export function initAuthUi(root) {
     }
   });
   pop.addEventListener('click', async (e) => {
-    if (e.target.closest('.auth-account-link')) {
+    if (e.target.closest('.auth-account-link, .menu-spice-link')) {
       close();
     } else if (e.target.closest('.auth-logout')) {
       await signOut();
@@ -111,6 +124,10 @@ export function initAuthUi(root) {
     }
   });
 
+  onSyncStatus?.((st) => {
+    const d = btn.querySelector('.acc-status-dot');
+    if (d) d.className = `acc-status-dot is-${st || syncStatus()}`;
+  });
   onAuthChange((u) => {
     user = u;
     if (u) sent = null;

@@ -1,7 +1,7 @@
 import { AppState } from './core/state.js?v=20261013a';
 import { parseHash, setHash } from './core/router.js?v=20261013b';
 import { loadStaticData, RecipeRepository } from './data/loader.js?v=20261013a';
-import { AppShell } from './views/app-shell.js?v=20261013b';
+import { AppShell } from './views/app-shell.js?v=20261013c';
 import { RecipeChrome } from './views/recipe-selector.js?v=20261011u';
 import { isScalable } from './utils/catalog-ui.js?v=20261011u';
 import { BrowseView } from './views/browse-view.js?v=20261013f';
@@ -14,13 +14,13 @@ import { spiceMixTogglesHtml } from './views/spice-mix-ui.js?v=20261012e';
 import { setMixMissing } from './core/spice-prefs.js?v=20261013a';
 import { SpiceView } from './views/spice-view.js?v=20261012e';
 import * as UserState from './core/user-recipe-state.js?v=20261013b';
-import { initSync, hasAuthRedirect } from './core/sync.js?v=20261013c';
-import { AccountView } from './views/account-view.js?v=20261013g';
-import { initAuthUi } from './views/auth-ui.js?v=20261013c';
-import { initThemeToggle } from './utils/theme.js?v=20261013a';
+import { initSync, hasAuthRedirect } from './core/sync.js?v=20261013d';
+import { AccountView } from './views/account-view.js?v=20261013h';
+import { initAuthUi } from './views/auth-ui.js?v=20261013d';
+import { initThemeToggle } from './utils/theme.js?v=20261013b';
 import { initBackToTop } from './utils/back-to-top.js?v=20261011t';
 
-initThemeToggle(document.getElementById('theme-toggle'));
+initThemeToggle(null);
 initBackToTop();
 
 async function bootstrap() {

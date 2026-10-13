@@ -83,7 +83,6 @@ export class AppShell {
     $('main').toggleClass('main-recipe', recipePhase);
     $('main').toggleClass('main-spices', active === 'spices' || active === 'account');
     $('main').toggleClass('main-account', active === 'account');
-    $('#spice-link').attr('aria-current', active === 'spices' ? 'page' : null);
     $('#app-layout').toggleClass('is-browse', active === 'browse');
   }
 }
