@@ -32,21 +32,21 @@
       "name": "Farinsocker",
       "ingredientId": "brown_sugar",
       "jarGrams": 500,
-      "jarNote": "kök"
+      "jarNote": "verified: Dansukker Farinsocker 500g, handla.ica.se/produkt/1255020"
     },
     {
       "id": "gurkmeja",
       "name": "Gurkmeja",
       "ingredientId": "turmeric",
-      "jarGrams": 40,
-      "jarNote": "malen, estimate"
+      "jarGrams": 32,
+      "jarNote": "malen, verified: Santa Maria Gurkmeja 32g, handla.ica.se/produkt/2139025"
     },
     {
       "id": "hasselnot",
       "name": "Hasselnötter",
       "ingredientId": "hazelnuts",
-      "jarGrams": 100,
-      "jarNote": "påse, rostade, estimate"
+      "jarGrams": 175,
+      "jarNote": "påse, rostade, verified: ICA Gott liv Hasselnötter rostade 175g, handla.ica.se/produkt/1383748"
     },
     {
       "id": "ingefara",
@@ -59,15 +59,15 @@
       "id": "kanel",
       "name": "Kanel",
       "ingredientId": "cinnamon",
-      "jarGrams": 34,
-      "jarNote": "malen, estimate"
+      "jarGrams": 40,
+      "jarNote": "malen, verified: Santa Maria Kanel Malen 40g, handla.ica.se/produkt/2023165"
     },
     {
       "id": "kardemumma",
       "name": "Kardemumma",
       "ingredientId": "cardamom",
       "jarGrams": 28,
-      "jarNote": "malen, estimate"
+      "jarNote": "malen, verified: Santa Maria Kardemumma Malen 28g, handla.ica.se/produkt/2023160"
     },
     {
       "id": "koriander",
@@ -80,15 +80,15 @@
       "id": "nejlika",
       "name": "Kryddnejlika",
       "ingredientId": "cloves",
-      "jarGrams": 25,
-      "jarNote": "malen, estimate"
+      "jarGrams": 20,
+      "jarNote": "malen, verified: Santa Maria Nejlika Malen påse 20g, handla.ica.se/produkt/1528678"
     },
     {
       "id": "kryddpeppar",
       "name": "Kryddpeppar",
       "ingredientId": "allspice",
-      "jarGrams": 32,
-      "jarNote": "malen, estimate"
+      "jarGrams": 26,
+      "jarNote": "malen, verified: Santa Maria Kryddpeppar Malen 26g, handla.ica.se/produkt/2023173"
     },
     {
       "id": "lok",
@@ -101,8 +101,8 @@
       "id": "muskot",
       "name": "Muskot",
       "ingredientId": "nutmeg",
-      "jarGrams": 33,
-      "jarNote": "malen, estimate"
+      "jarGrams": 35,
+      "jarNote": "malen, verified: Santa Maria Muskotnöt Malen 35g, handla.ica.se/produkt/2023248"
     },
     {
       "id": "oregano",
@@ -127,15 +127,15 @@
       "id": "rosmarin",
       "name": "Rosmarin",
       "ingredientId": "dried_rosemary",
-      "jarGrams": 18,
-      "jarNote": "estimate"
+      "jarGrams": 21,
+      "jarNote": "verified: Santa Maria Rosmarin 21g, handla.ica.se/produkt/2023127"
     },
     {
       "id": "rokt_paprika",
       "name": "Rökt paprika",
       "ingredientId": "smoked_paprika",
-      "jarGrams": 42,
-      "jarNote": "estimate"
+      "jarGrams": 37,
+      "jarNote": "verified: Santa Maria Paprika Smoked 37g, handla.ica.se/produkt/2023200"
     },
     {
       "id": "salt",
@@ -155,8 +155,8 @@
       "id": "sesam",
       "name": "Sesamfrön",
       "ingredientId": "sesame_seeds",
-      "jarGrams": 100,
-      "jarNote": "påse, estimate"
+      "jarGrams": 38,
+      "jarNote": "burk, verified: ICA Sesamfrön 38g, handla.ica.se/produkt/2098179"
     },
     {
       "id": "spiskummin",
@@ -168,8 +168,8 @@
       "id": "sumak",
       "name": "Sumak",
       "ingredientId": "sumac",
-      "jarGrams": 35,
-      "jarNote": "estimate"
+      "jarGrams": 40,
+      "jarNote": "verified: Kryddhuset Sumak 40g (EAN 7331642010069); also Årstiderna eko sumak 40g"
     },
     {
       "id": "peppar",
@@ -189,7 +189,7 @@
       "name": "Torkat citronskal",
       "ingredientId": "dried_lemon_peel",
       "jarGrams": 12,
-      "jarNote": "torkat, estimate"
+      "jarNote": "torkat, estimate (no Swedish retail torkat citronskal found; Santa Maria only sells pomeransskal 20g)"
     },
     {
       "id": "vitlok",
