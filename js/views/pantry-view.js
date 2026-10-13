@@ -1,18 +1,11 @@
 /**
- * Skafferiet (#skafferi): tick the shelf-stable staples you have at home and see
- * which recipes the pantry already covers, and which are one or two packages
- * away (with a normal store package size). Like Kryddskåpet nothing is saved;
- * the page starts empty every visit.
- *
- * Why tick-boxes instead of amounts: recipes measure staples in msk, dl, burk,
- * förp and g, so amounts can't be compared reliably. "Har hemma" answers the
- * question that matters ("can I cook this without shopping staples?").
+ * Skafferiet (#skafferi): a tile grid of shelf-stable staples with their
+ * ingredient images. Tapping a tile buries it in "Gravplatsen": every recipe
+ * using a buried ingredient is hidden in #browse. Tap a grave tile to revive it.
+ * The set lives in core/pantry-exclude.js (localStorage + Supabase prefs).
  */
 import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261011u';
-
-const DATA_URL = 'data/pantry.json?v=20261013a';
-const ORDER = ['Pasta, ris & gryn', 'Nudlar & bröd', 'Konserver', 'Baljväxter', 'Buljong & fond',
-  'Asiatiskt', 'Oljor & vinäger', 'Såser & dressing', 'Bakning & sött', 'Nötter & frön'];
+import { excludedPantry, setPantryExcluded, clearPantryExcluded, loadPantry } from '../core/pantry-exclude.js?v=20261013px';
 
 /** "380/230g" -> "380 g", "1,5kg" -> "1,5 kg", "6p/3l" -> "6 st". */
 export function prettySize(s) {
@@ -28,16 +21,14 @@ export class PantryView {
   constructor(container) {
     this.el = container;
     this.data = null;
-    this.have = new Set();
+    window.addEventListener('pantryexcludechange', () => this._renderGrids());
   }
 
   async render() {
     if (this._rendered) return;
     let data;
     try {
-      const r = await fetch(DATA_URL);
-      if (!r.ok) throw new Error(`Kunde inte ladda skafferiet (${r.status})`);
-      data = await r.json();
+      data = await loadPantry();
     } catch (err) {
       console.error(err);
       this.el.innerHTML = `<p class="spice-error">${escapeHtml(err.message)}</p>`;
@@ -45,89 +36,61 @@ export class PantryView {
     }
     this._rendered = true;
     this.data = data;
-    this.byId = Object.fromEntries(data.items.map((i) => [i.id, i]));
-    const uses = {};
-    data.recipes.forEach((r) => r.pantry.forEach((p) => { uses[p] = (uses[p] || 0) + 1; }));
-
-    const groups = ORDER.map((cat) => {
-      const items = data.items.filter((i) => i.category === cat)
-        .sort((a, b) => a.name.localeCompare(b.name, 'sv'));
-      if (!items.length) return '';
-      const rows = items.map((i) => {
-        const size = prettySize(i.size);
-        const hint = [size && `förp ${size}`, `${uses[i.id] || 0} recept`].filter(Boolean).join(' · ');
-        return `<label class="pantry-item">
-            <input type="checkbox" class="pantry-check" data-item="${escapeAttr(i.id)}">
-            <span class="pantry-item-text"><span class="pantry-item-name">${escapeHtml(i.name)}</span><span class="spice-hint">${escapeHtml(hint)}</span></span>
-          </label>`;
-      }).join('');
-      return `<fieldset class="pantry-group"><legend>${escapeHtml(cat)}</legend><div class="pantry-items">${rows}</div></fieldset>`;
-    }).join('');
+    this.uses = {};
+    data.recipes.forEach((r) => r.pantry.forEach((p) => { this.uses[p] = (this.uses[p] || 0) + 1; }));
+    this.items = [...data.items].sort((a, b) => a.name.localeCompare(b.name, 'sv'));
 
     this.el.innerHTML = `
       <div class="spice-page pantry-page">
         <div class="spice-head">
           <h1>Skafferiet</h1>
-          <p class="spice-lede">Bocka för det du har hemma. Då ser du vilka recept skafferiet räcker till och vad som saknas. Färskvaror, mejeri och kryddor räknas inte med här.</p>
+          <p class="spice-lede">Tryck på en ingrediens du inte vill ha så hamnar den på Gravplatsen. Recept med den visas inte längre bland recepten. Tryck på den igen på Gravplatsen för att väcka den till liv.</p>
         </div>
-        <div class="spice-layout">
-          <section class="spice-card" aria-labelledby="pantry-have-h">
-            <div class="spice-card-head">
-              <h2 id="pantry-have-h">Har hemma</h2>
-              <button type="button" class="spice-clear" hidden>Rensa</button>
-            </div>
-            ${groups}
-          </section>
-          <section class="spice-card" aria-labelledby="pantry-res-h">
-            <h2 id="pantry-res-h">Recept</h2>
-            <div class="pantry-results" aria-live="polite"></div>
-          </section>
-        </div>
+        <section class="pantry-grave" aria-labelledby="pantry-grave-h" hidden>
+          <div class="spice-card-head">
+            <h2 id="pantry-grave-h">🪦 Gravplatsen <span class="pantry-n"></span></h2>
+            <button type="button" class="spice-clear pantry-revive-all">Väck alla</button>
+          </div>
+          <p class="pantry-grave-sub"></p>
+          <div class="pantry-tiles pantry-tiles-grave"></div>
+        </section>
+        <div class="pantry-tiles pantry-tiles-live"></div>
       </div>`;
 
-    this.$clear = this.el.querySelector('.spice-clear');
-    this.el.addEventListener('change', (e) => {
-      const c = e.target.closest?.('.pantry-check');
-      if (!c) return;
-      if (c.checked) this.have.add(c.dataset.item); else this.have.delete(c.dataset.item);
-      this._renderResults();
+    this.el.addEventListener('click', (e) => {
+      if (e.target.closest('.pantry-revive-all')) { clearPantryExcluded(); return; }
+      const t = e.target.closest('.pantry-tile');
+      if (!t) return;
+      setPantryExcluded(t.dataset.item, t.getAttribute('aria-pressed') !== 'true');
     });
-    this.$clear.addEventListener('click', () => {
-      this.el.querySelectorAll('.pantry-check').forEach((c) => { c.checked = false; });
-      this.have.clear();
-      this._renderResults();
-    });
-    this._renderResults();
+    this._renderGrids();
   }
 
-  _recipeLi(r, missing) {
-    const buy = missing.map((id) => {
-      const i = this.byId[id];
-      const size = prettySize(i.size);
-      return `${escapeHtml(i.name)}${size ? ` <span class="pantry-size">(${escapeHtml(size)})</span>` : ''}`;
-    }).join(', ');
-    return `<li class="pantry-recipe">
-        <a href="#overview/${encodeURIComponent(r.id)}" class="pantry-recipe-name">${escapeHtml(r.name)}</a>
-        <span class="spice-blend-sub">${missing.length ? `Köp: ${buy}` : `${r.pantry.length} ${r.pantry.length === 1 ? "skafferivara" : "skafferivaror"}`}</span>
-      </li>`;
+  _tile(i, buried) {
+    const size = prettySize(i.size);
+    const media = i.image
+      ? `<img src="${escapeAttr(i.image)}" alt="" loading="lazy" decoding="async">`
+      : `<span class="pantry-tile-ph" aria-hidden="true">${escapeHtml(i.name.charAt(0))}</span>`;
+    const label = buried ? `Väck ${i.name}` : `Begrav ${i.name}`;
+    return `<button type="button" class="pantry-tile${buried ? ' is-buried' : ''}" data-item="${escapeAttr(i.id)}"
+        aria-pressed="${buried}" aria-label="${escapeAttr(label)}" title="${escapeAttr(i.product || i.name)}">
+        <span class="pantry-tile-img">${media}</span>
+        <span class="pantry-tile-name">${escapeHtml(i.name)}</span>
+        ${size ? `<span class="pantry-tile-size">${escapeHtml(size)}</span>` : ''}
+      </button>`;
   }
 
-  _renderResults() {
-    const box = this.el.querySelector('.pantry-results');
-    if (!box) return;
-    this.$clear.hidden = this.have.size === 0;
-    if (!this.have.size) {
-      box.innerHTML = '<p class="pantry-empty">Bocka för några varor så visas recepten här.</p>';
-      return;
-    }
-    const rows = this.data.recipes.map((r) => ({ r, missing: r.pantry.filter((p) => !this.have.has(p)) }));
-    const ready = rows.filter((x) => !x.missing.length);
-    const near = rows.filter((x) => x.missing.length > 0 && x.missing.length <= 2)
-      .sort((a, b) => a.missing.length - b.missing.length || a.r.name.localeCompare(b.r.name, 'sv'));
-    const section = (title, list, empty) => `
-      <h3 class="pantry-sub">${title} <span class="pantry-n">${list.length}</span></h3>
-      ${list.length ? `<ul class="pantry-list">${list.map((x) => this._recipeLi(x.r, x.missing)).join('')}</ul>` : `<p class="pantry-empty">${empty}</p>`}`;
-    box.innerHTML = section('Skafferiet räcker', ready, 'Inget recept ännu.')
-      + section('Saknar 1–2 varor', near, 'Inga recept är nära.');
+  _renderGrids() {
+    if (!this.data) return;
+    const ex = excludedPantry();
+    const live = this.items.filter((i) => !ex.has(i.id));
+    const dead = this.items.filter((i) => ex.has(i.id));
+    this.el.querySelector('.pantry-tiles-live').innerHTML = live.map((i) => this._tile(i, false)).join('');
+    const grave = this.el.querySelector('.pantry-grave');
+    grave.hidden = !dead.length;
+    grave.querySelector('.pantry-n').textContent = String(dead.length);
+    const hidden = this.data.recipes.filter((r) => r.pantry.some((p) => ex.has(p))).length;
+    grave.querySelector('.pantry-grave-sub').textContent = `${hidden} ${hidden === 1 ? 'recept döljs' : 'recept döljs'} bland recepten.`;
+    grave.querySelector('.pantry-tiles-grave').innerHTML = dead.map((i) => this._tile(i, true)).join('');
   }
 }

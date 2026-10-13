@@ -2663,24 +2663,40 @@ img.auth-avatar, img.acc-avatar { box-shadow: 0 0 0 1.25px var(--border); transi
 .auth .auth-btn:not(.is-signed-in) svg { width: 22px; height: 22px; }
 .auth-btn.is-signed-in > .acc-status-dot { width: 11px; height: 11px; }
 
-/* Skafferiet (#skafferi) — reuses .spice-* card layout */
-.pantry-group { border: none; margin: 0 0 14px; padding: 0; }
-.pantry-group legend { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; color: var(--text-muted); margin-bottom: 4px; }
-.pantry-items { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 2px 12px; }
-.pantry-item { display: flex; align-items: flex-start; gap: 10px; padding: 8px 4px; border-radius: 8px; cursor: pointer; min-height: 44px; }
-.pantry-item:hover { background: var(--toggle-hover); }
-.pantry-check { width: 18px; height: 18px; margin-top: 2px; flex: none; accent-color: var(--primary); }
-.pantry-item-text { display: flex; flex-direction: column; min-width: 0; }
-.pantry-item-name { font-weight: 500; }
-.pantry-item:has(.pantry-check:checked) .pantry-item-name { font-weight: 700; }
-.pantry-sub { font-size: 0.95rem; margin: 14px 0 6px; display: flex; gap: 8px; align-items: center; }
-.pantry-sub:first-child { margin-top: 0; }
-.pantry-n { font-size: 0.78rem; color: var(--text-muted); border: 1px solid var(--border); border-radius: 999px; padding: 0 8px; }
-.pantry-list { list-style: none; margin: 0; padding: 0; }
-.pantry-recipe { display: flex; flex-direction: column; padding: 8px 0; border-top: 1px solid var(--border); }
-.pantry-recipe:first-child { border-top: none; }
-.pantry-recipe-name { color: var(--text); font-weight: 600; text-decoration: none; }
-.pantry-recipe-name:hover { text-decoration: underline; }
-.pantry-size { color: var(--text-faint); }
-.pantry-empty { color: var(--text-muted); font-size: 0.9rem; }
-@media (max-width: 560px) { .pantry-items { grid-template-columns: 1fr 1fr; } }
+/* Header account circle: dot sits on the bottom-right rim, letter centered */
+.auth-btn.is-signed-in { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; line-height: 1; vertical-align: middle; }
+.auth-btn.is-signed-in .auth-initial { width: 40px; height: 40px; line-height: 1; padding: 0; text-align: center; }
+.auth-btn.is-signed-in > .acc-status-dot { right: 1px; bottom: 1px; width: 10px; height: 10px; box-shadow: 0 0 0 2px var(--bg); }
+
+/* Skafferiet (#skafferi): tile picker + Gravplatsen */
+.pantry-tiles { display: grid; grid-template-columns: repeat(auto-fill, minmax(96px, 1fr)); gap: 10px; }
+.pantry-tile {
+  display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 10px 6px 8px;
+  background: var(--surface); color: var(--text); border: 1px solid var(--border); border-radius: 14px;
+  cursor: pointer; font: inherit; text-align: center; min-height: 44px;
+  transition: transform .12s ease, border-color .15s ease, background-color .15s ease;
+}
+.pantry-tile:hover { border-color: color-mix(in srgb, var(--primary) 50%, var(--border)); }
+.pantry-tile:active { transform: scale(.96); }
+.pantry-tile:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+.pantry-tile-img { width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; }
+.pantry-tile-img img { width: 100%; height: 100%; object-fit: contain; }
+.pantry-tile-ph { width: 56px; height: 56px; border-radius: 999px; background: var(--surface-2); color: var(--text-muted); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.4rem; }
+.pantry-tile-name { font-size: 0.85rem; font-weight: 600; line-height: 1.2; overflow-wrap: anywhere; }
+.pantry-tile-size { font-size: 0.72rem; color: var(--text-faint); }
+.pantry-grave { margin: 0 0 18px; padding: 12px; border-radius: 16px; border: 1px dashed var(--border); background: color-mix(in srgb, var(--surface-2) 70%, transparent); }
+.pantry-grave h2 { font-size: 1rem; display: flex; gap: 8px; align-items: center; margin: 0; }
+.pantry-grave-sub { margin: 2px 0 10px; font-size: 0.85rem; color: var(--text-muted); }
+.pantry-tile.is-buried { background: transparent; border-style: dashed; border-radius: 40px 40px 12px 12px; }
+.pantry-tile.is-buried .pantry-tile-img { filter: grayscale(1); opacity: .45; }
+.pantry-tile.is-buried .pantry-tile-name { color: var(--text-muted); text-decoration: line-through; text-decoration-color: color-mix(in srgb, var(--text-muted) 60%, transparent); }
+.pantry-tile.is-buried:hover .pantry-tile-img { filter: none; opacity: .9; }
+.pantry-n { font-size: 0.78rem; color: var(--text-muted); border: 1px solid var(--border); border-radius: 999px; padding: 0 8px; font-weight: 500; }
+@media (max-width: 560px) { .pantry-tiles { grid-template-columns: repeat(3, 1fr); gap: 8px; } .pantry-tile-img { width: 56px; height: 56px; } }
+
+/* Browse: graveyard indicator */
+.browse-grave { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin: 0 0 12px; }
+.browse-grave[hidden] { display: none; }
+.browse-grave-link { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 999px; background: var(--surface-2); color: var(--text); border: 1px dashed var(--border); text-decoration: none; font-size: 0.85rem; font-weight: 600; }
+.browse-grave-clear { border: none; background: none; color: var(--text-muted); font: inherit; font-size: 0.82rem; cursor: pointer; padding: 6px 4px; }
+.browse-grave-clear:hover { color: var(--text); }

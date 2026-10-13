@@ -29,6 +29,28 @@ missing = ids - used_any
 if missing:
     raise SystemExit(f"pantry items used by no recipe: {sorted(missing)}")
 recipes.sort(key=lambda r: r["name"].lower())
-out = {"items": src["items"], "recipes": recipes}
+# Tile image: the ingredient's own image, else a close look-alike, else none (letter tile)
+ING = json.loads((ROOT / "data" / "ingredients.json").read_text())["ingredients"]
+LOOKALIKE = {"rigatoni": "pasta", "long_grain_rice": "rice", "mie_noodles": "noodles",
+             "udon_noodles": "noodles", "naan_bread": "flatbread", "ready_daal": "red_lentils",
+             "chicken_bouillon": "vegetable_bouillon", "fish_sauce": "soy_sauce",
+             "hoisin_sauce": "bbq_sauce", "sambal_oelek": "sweet_chili_sauce",
+             "paneng_red_curry": "yellow_curry_paste", "asian_wok_sauce": "umami_sauce",
+             "sesame_oil": "oil", "vinegar_spirit": "white_wine_vinegar",
+             "wholegrain_mustard": "mustard"}
+def image_for(iid):
+    for cand in (iid, LOOKALIKE.get(iid)):
+        img = cand and ING.get(cand, {}).get("image")
+        if img and (ROOT / img).exists():
+            return img
+    return None
+items = []
+for i in src["items"]:
+    i = dict(i)
+    img = image_for(i["id"])
+    if img:
+        i["image"] = img
+    items.append(i)
+out = {"items": items, "recipes": recipes}
 (ROOT / "data" / "pantry.json").write_text(json.dumps(out, ensure_ascii=False, indent=1) + "\n")
 print(f"{len(src['items'])} varor, {len(recipes)} recept -> data/pantry.json")

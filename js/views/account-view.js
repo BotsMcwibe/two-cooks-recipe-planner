@@ -9,13 +9,13 @@ import * as UserState from '../core/user-recipe-state.js?v=20261013b';
 import { missingMixes } from '../core/spice-prefs.js?v=20261013a';
 import { savedTheme } from '../utils/theme.js?v=20261013b';
 import { menuExtrasHtml, bindMenuExtras } from './menu-items.js?v=20261013sk';
-import { onAuthChange, onSyncStatus, syncStatus, lastSyncTime, signOut, currentUser, isAvailable } from '../core/sync.js?v=20261013d';
+import { onAuthChange, onSyncStatus, syncStatus, lastSyncTime, signOut, currentUser, isAvailable } from '../core/sync.js?v=20261013px';
 import { openSignIn } from './auth-ui.js?v=20261013sk';
 import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261011u';
 
 const LOCAL_KEYS = [
   'jesse.recipeState.v1', 'yessy.spiceMixMissing.v1', 'jesse-theme',
-  'recipeApp.state.v3', 'yessy.prefsMeta.v1', 'yessy.photoAvailability.v1',
+  'recipeApp.state.v3', 'yessy.pantryExcluded.v1', 'yessy.prefsMeta.v1', 'yessy.photoAvailability.v1',
 ];
 
 const SYNC_LABEL = {

@@ -12,6 +12,7 @@ import {
 } from '../utils/catalog-ui.js?v=20261011u';
 import * as UserState from '../core/user-recipe-state.js?v=20261013b';
 import { imgFailed, isPhotoMissing, recordPhotoFailure, recordPhotoSuccess, photosLikelyUnavailable } from '../utils/photo-fallback.js?v=20261011u';
+import { excludedPantry, clearPantryExcluded, loadPantry } from '../core/pantry-exclude.js?v=20261013px';
 import { cardStateHtml } from './recipe-status-ui.js?v=20261013b';
 
 /**
@@ -43,6 +44,14 @@ export class BrowseView {
       this.kcalById = map;
       if (this.kcalOnly) this.render();
     });
+    /** @type {Map<string, string[]>} recipe id -> pantry ingredient ids */
+    this.pantryById = new Map();
+    this.excluded = excludedPantry();
+    loadPantry().then((d) => {
+      this.pantryById = new Map(d.recipes.map((r) => [r.id, r.pantry]));
+      if (this.excluded.size) this.render();
+    }).catch((e) => console.warn('[browse] pantry data', e));
+    window.addEventListener('pantryexcludechange', () => { this.excluded = excludedPantry(); this.render(); });
     this._buildChrome();
     this._bind();
     this._bindPhotoFallback();
@@ -86,6 +95,7 @@ export class BrowseView {
           <span class="filter-chip-group filter-chip-group-status" role="group" aria-label="Min status">${status}</span>
         </div>
       </div>
+      <div class="browse-grave" id="browse-grave" hidden></div>
       <div class="browse-grid" id="browse-grid"></div>
       <p class="browse-empty" id="browse-empty" hidden>Inga recept matchade.</p>
     `);
@@ -96,6 +106,7 @@ export class BrowseView {
       this.query = (e.target.value || '').trim().toLowerCase();
       this.render();
     });
+    this.$container.on('click', '.browse-grave-clear', () => clearPantryExcluded());
     this.$container.on('click', '.filter-chip', (e) => {
       const $btn = $(e.currentTarget);
       const group = $btn.attr('data-group') || 'tag';
@@ -229,6 +240,7 @@ export class BrowseView {
         const shown = displayedPortionKcal(raw);
         if (shown == null || shown >= 650) return false;
       }
+      if (this.excluded.size) { const p = this.pantryById.get(entry.id); if (p && p.some((x) => this.excluded.has(x))) return false; }
       if (this.testedOnly) { const m = UserState.catalogMark(entry.id); if (!m || !m.tested) return false; }
       if (this.statusFilter && UserState.get(entry.id).status !== this.statusFilter) return false;
       if (!q) return true;
@@ -239,6 +251,10 @@ export class BrowseView {
 
   render() {
     const list = this._filtered();
+    const n = this.excluded.size;
+    this.$container.find('#browse-grave').prop('hidden', !n).html(n ? `
+      <a href="#skafferi" class="browse-grave-link">🪦 ${n} ${n === 1 ? 'ingrediens' : 'ingredienser'} på gravplatsen</a>
+      <button type="button" class="browse-grave-clear" aria-label="Väck alla ingredienser">Väck alla ✕</button>` : '');
     const $grid = this.$container.find('#browse-grid');
     const $empty = this.$container.find('#browse-empty');
 
