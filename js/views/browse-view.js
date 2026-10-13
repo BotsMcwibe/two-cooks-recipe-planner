@@ -137,23 +137,20 @@ export class BrowseView {
       }
       this.render();
     });
-    this.$container.on('click', '.recipe-card', (e) => {
-      // Ignore clicks that originated on the shopping checkbox
-      if ($(e.target).closest('.recipe-card-shop').length) return;
-      const id = $(e.currentTarget).data('id');
+    // Body = open översikt; hero = toggle Inköpslista checkbox.
+    const openOv = (el) => {
+      const id = $(el).closest('.recipe-card').data('id');
       if (id && this.hooks.onOpenOverview) this.hooks.onOpenOverview(id);
+    };
+    this.$container.on('click', '.recipe-card-body', (e) => openOv(e.currentTarget));
+    this.$container.on('keydown', '.recipe-card-body', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openOv(e.currentTarget); }
     });
-    this.$container.on('keydown', '.recipe-card', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        if ($(e.target).closest('.recipe-card-shop').length) return;
-        e.preventDefault();
-        const id = $(e.currentTarget).data('id');
-        if (id && this.hooks.onOpenOverview) this.hooks.onOpenOverview(id);
-      }
-    });
-    // Checkbox: stopPropagation so card click does not open modal
-    this.$container.on('click', '.recipe-card-shop', (e) => {
-      e.stopPropagation();
+    this.$container.on('click', '.recipe-card-media', (e) => {
+      // The label/checkbox toggles natively; avoid double toggling.
+      if ($(e.target).closest('.recipe-card-shop').length) return;
+      const cb = e.currentTarget.querySelector('.recipe-card-shop-cb');
+      if (cb) cb.click();
     });
     this.$container.on('change', '.recipe-card-shop-cb', (e) => {
       e.stopPropagation();
@@ -283,17 +280,17 @@ export class BrowseView {
       const mine = cardStateHtml(c.id);
 
       html += `
-        <article class="recipe-card${selected ? ' is-shopping-selected' : ''}" data-id="${escapeAttr(c.id)}" tabindex="0" role="button"
-          aria-label="${escapeAttr(c.name)}">
+        <article class="recipe-card${selected ? ' is-shopping-selected' : ''}" data-id="${escapeAttr(c.id)}">
           <div class="recipe-card-media${noPhoto ? ' is-nophoto' : ''}" style="--ph-h:${vis.hue}" data-ph-emoji="${escapeAttr(vis.emoji)}">
             <label class="recipe-card-shop" title="Lägg till i inköpslista">
               <input type="checkbox" class="recipe-card-shop-cb" data-id="${escapeAttr(c.id)}"
                 ${checked} aria-label="Lägg till ${escapeAttr(c.name)} i inköpslista">
               <span class="recipe-card-shop-box" aria-hidden="true"></span>
             </label>
+            <span class="recipe-card-hint" aria-hidden="true"><span class="hint-add">+ Inköpslista</span><span class="hint-in">✓ I listan</span></span>
             ${img}
           </div>
-          <div class="recipe-card-body">
+          <div class="recipe-card-body" role="link" tabindex="0" aria-label="Öppna översikt: ${escapeAttr(c.name)}">
             <h2 class="recipe-card-title">${escapeHtml(c.name)}</h2>
             ${sub ? `<p class="recipe-card-sub">${escapeHtml(sub)}</p>` : ''}
             <div class="recipe-card-meta">
@@ -303,6 +300,7 @@ export class BrowseView {
             </div>
             ${rating ? `<div class="recipe-card-rating">${rating}</div>` : ''}
             ${mine}
+            <span class="recipe-card-ov" aria-hidden="true">Översikt ›</span>
           </div>
         </article>`;
     }

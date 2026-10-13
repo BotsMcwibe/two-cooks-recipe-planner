@@ -540,16 +540,13 @@ main.main-recipe {
   transition: transform .15s ease, box-shadow .15s ease;
 }
 
-.recipe-card:hover,
-.recipe-card:focus {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-hover);
-  outline: none;
-}
+.recipe-card:hover { box-shadow: var(--shadow-hover); }
 
 .recipe-card-media {
   position: relative;
-  aspect-ratio: 4 / 3;
+  height: 64px;
+  cursor: pointer;
+  border-bottom: 1px solid var(--border);
   background: var(--media-bg);
   overflow: hidden;
 }
@@ -2625,3 +2622,39 @@ img.auth-avatar, img.acc-avatar { box-shadow: 0 0 0 1.25px var(--border); transi
   .spice-tile, .kmix, .spice-check, .spice-tile .pantry-tile-img { transition: none; }
   .spice-tile.just-owned, .kmix.just-ready, .kmix.just-ready .kmix-icon { animation: none; }
 }
+
+/* ---- Card split: hero = Inköpslista, body = Översikt ---- */
+.recipe-card { cursor: default; }
+.recipe-card-media .recipe-card-shop { top: 18px; left: 12px; }
+.recipe-card-media::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: #fff; opacity: 0; transition: opacity .15s ease; z-index: 1;
+}
+.recipe-card-hint {
+  position: absolute; left: 48px; top: 50%; transform: translateY(-50%);
+  z-index: 2; pointer-events: none; font-size: 12px; font-weight: 700;
+  padding: 3px 8px; border-radius: 999px;
+  background: var(--surface); color: var(--text); border: 1px solid var(--border);
+  opacity: 0; transition: opacity .15s ease;
+}
+.recipe-card-hint .hint-in { display: none; }
+.recipe-card.is-shopping-selected .recipe-card-hint .hint-add { display: none; }
+.recipe-card.is-shopping-selected .recipe-card-hint .hint-in { display: inline; }
+.recipe-card-body { cursor: pointer; position: relative; transition: background .15s ease; border-radius: 0 0 var(--radius) var(--radius); }
+.recipe-card-ov {
+  align-self: flex-end; font-size: 12px; font-weight: 700; color: var(--text-muted, var(--text));
+  opacity: .55; transition: opacity .15s ease, transform .15s ease;
+}
+.recipe-card-body:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: -2px; }
+@media (hover: hover) {
+  .recipe-card-media:hover::after { opacity: .18; }
+  .recipe-card-media:hover .recipe-card-hint { opacity: 1; }
+  .recipe-card-media:hover .recipe-card-shop-box { border-color: var(--accent); border-width: 3px; transform: scale(1.08); }
+  .recipe-card-body:hover { background: var(--surface-2, var(--media-bg)); }
+  .recipe-card-body:hover .recipe-card-title { text-decoration: underline; text-underline-offset: 3px; }
+  .recipe-card-body:hover .recipe-card-ov { opacity: 1; transform: translateX(3px); }
+}
+.recipe-card-shop-box { transition: background .15s ease, border-color .15s ease, box-shadow .15s ease, transform .15s ease; }
+.recipe-card-media:active::after { opacity: .28; }
+.recipe-card-body:active { background: var(--surface-2, var(--media-bg)); }
+.recipe-card-media:focus-within .recipe-card-hint { opacity: 1; }
