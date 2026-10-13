@@ -26,8 +26,8 @@ OUT = ROOT / "data" / "spice-blends.json"
 
 DISPLAY = {
     "paprika": "Paprika",
-    "vitlok": "Vitlöksgranulat",
-    "lok": "Lökgranulat",
+    "vitlok": "Vitlökspulver",
+    "lok": "Lökpulver",
     "oregano": "Oregano",
     "basilika": "Basilika",
     "timjan": "Timjan",

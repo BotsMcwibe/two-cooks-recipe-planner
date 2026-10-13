@@ -99,7 +99,7 @@ export class SpiceView {
       tiles.innerHTML = this.data.spices.map((s) => this._tile(s, owned.has(s.id))).join('');
     }
     const known = this.data.spices.filter((s) => owned.has(s.id)).length;
-    this.el.querySelector('.spice-own-n').textContent = known ? String(known) : '';
+    this.el.querySelector('.spice-own-n').textContent = String(known);
     this.el.querySelector('.spice-clear-all').hidden = !known;
 
     const rows = this.data.blends.map((b) => {

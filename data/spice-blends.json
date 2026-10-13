@@ -28,7 +28,7 @@
       "name": "Chilipeppar",
       "ingredientId": "chili_powder",
       "jarGrams": 40,
-      "jarNote": "ICA chilipeppar mald",
+      "jarNote": "mald",
       "image": "assets/ingredients/fresh_chili.png"
     },
     {
@@ -36,15 +36,13 @@
       "name": "Citronpeppar",
       "ingredientId": "lemon_pepper",
       "jarGrams": 53,
-      "jarNote": "färdig",
       "image": "assets/ingredients/lemon.png"
     },
     {
       "id": "curry",
       "name": "Curry",
       "ingredientId": "curry",
-      "jarGrams": 43,
-      "jarNote": "färdig"
+      "jarGrams": 43
     },
     {
       "id": "farinsocker",
@@ -58,7 +56,6 @@
       "name": "Garam masala",
       "ingredientId": "garam_masala",
       "jarGrams": 43,
-      "jarNote": "färdig",
       "image": "assets/ingredients/garam_masala.png"
     },
     {
@@ -73,7 +70,7 @@
       "name": "Hasselnötter",
       "ingredientId": "hazelnuts",
       "jarGrams": 175,
-      "jarNote": "påse, rostade",
+      "jarNote": "rostade",
       "image": "assets/ingredients/hazelnuts.png"
     },
     {
@@ -116,10 +113,9 @@
     },
     {
       "id": "lok",
-      "name": "Lökgranulat",
+      "name": "Lökpulver",
       "ingredientId": "onion_powder",
       "jarGrams": 41,
-      "jarNote": "granulerad",
       "image": "assets/ingredients/onion.png"
     },
     {
@@ -141,7 +137,6 @@
       "name": "Paprika",
       "ingredientId": "paprika_powder",
       "jarGrams": 70,
-      "jarNote": "påse",
       "image": "assets/ingredients/paprika.png"
     },
     {
@@ -169,15 +164,13 @@
       "id": "salladskrydda",
       "name": "Salladskrydda",
       "ingredientId": null,
-      "jarGrams": 39,
-      "jarNote": "färdig"
+      "jarGrams": 39
     },
     {
       "id": "salt",
       "name": "Salt",
       "ingredientId": "salt",
       "jarGrams": 500,
-      "jarNote": "kök",
       "image": "assets/ingredients/salt.png"
     },
     {
@@ -193,7 +186,6 @@
       "name": "Sesamfrön",
       "ingredientId": "sesame_seeds",
       "jarGrams": 38,
-      "jarNote": "burk",
       "image": "assets/ingredients/sesame_seeds.png"
     },
     {
@@ -213,7 +205,6 @@
       "name": "Svartpeppar",
       "ingredientId": "pepper",
       "jarGrams": 40,
-      "jarNote": "kök",
       "image": "assets/ingredients/pepper.png"
     },
     {
@@ -225,7 +216,7 @@
     },
     {
       "id": "vitlok",
-      "name": "Vitlöksgranulat",
+      "name": "Vitlökspulver",
       "ingredientId": "garlic_powder",
       "jarGrams": 49,
       "image": "assets/ingredients/garlic.png"
@@ -332,7 +323,7 @@
       "id": "taco_seasoning",
       "name": "Tacokrydda",
       "brand": "Taco",
-      "ingredientId": "taco_seasoning",
+      "ingredientId": "tex_mex",
       "packetGrams": 8,
       "spices": {
         "spiskummin": 2.2,
@@ -344,21 +335,6 @@
         "salt": 0.2
       },
       "bag": 28
-    },
-    {
-      "id": "tex_mex",
-      "name": "Tex-Mex-krydda",
-      "ingredientId": "tex_mex",
-      "packetGrams": 8,
-      "spices": {
-        "spiskummin": 2.0,
-        "paprika": 2.0,
-        "chili": 1.0,
-        "vitlok": 1.0,
-        "lok": 1.0,
-        "oregano": 0.6,
-        "salt": 0.4
-      }
     },
     {
       "id": "souvlaki_spice",

@@ -1828,13 +1828,13 @@
       "image": "assets/ingredients/tarragon.png"
     },
     "tex_mex": {
-      "name": "Tex-Mex-krydda",
+      "name": "Tacokrydda",
       "tags": [
         "spices",
         "spice_blend"
       ],
       "image": "assets/ingredients/tex_mex.png",
-      "blendId": "tex_mex"
+      "blendId": "taco_seasoning"
     },
     "tomato": {
       "name": "Tomat",
@@ -2022,13 +2022,13 @@
       ]
     },
     "garlic_powder": {
-      "name": "Vitlöksgranulat",
+      "name": "Vitlökspulver",
       "tags": [
         "spices"
       ]
     },
     "onion_powder": {
-      "name": "Lökgranulat",
+      "name": "Lökpulver",
       "tags": [
         "spices"
       ]

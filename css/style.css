@@ -2658,3 +2658,11 @@ img.auth-avatar, img.acc-avatar { box-shadow: 0 0 0 1.25px var(--border); transi
 .recipe-card-media:active::after { opacity: .28; }
 .recipe-card-body:active { background: var(--surface-2, var(--media-bg)); }
 .recipe-card-media:focus-within .recipe-card-hint { opacity: 1; }
+
+/* Spice tiles: 2-line clamp, no mid-word breaks, shorter tiles; centred count pill */
+.spice-tile { padding: 8px 6px 6px; gap: 2px; }
+.spice-tile .pantry-tile-img { width: 52px; height: 52px; }
+.spice-tile .pantry-tile-ph { width: 46px; height: 46px; font-size: 1.2rem; }
+.spice-tile .pantry-tile-name { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; line-clamp: 2; overflow: hidden; text-overflow: ellipsis; word-break: normal; overflow-wrap: normal; hyphens: none; max-width: 100%; }
+.spice-card-head h2, .kmixes h2 { display: flex; align-items: center; gap: 8px; }
+.spice-card-head .pantry-n, .kmixes .pantry-n { display: inline-flex; align-items: center; justify-content: center; min-width: 24px; height: 22px; line-height: 1; }
