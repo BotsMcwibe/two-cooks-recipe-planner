@@ -78,6 +78,10 @@
   --gantt-label-shadow: rgba(0, 0, 0, 0.6);
   /* Theme toggle */
   --toggle-hover: rgba(0, 0, 0, 0.06);
+  --step-num-bg: var(--text);
+  --step-num-fg: var(--on-accent);
+  --group-rule: var(--primary);
+  --photo-filter: brightness(1);
   /* Layout */
   --radius: 10px;
   --radius-sm: 6px;
@@ -145,6 +149,10 @@
   --gantt-tick: #6b7380;
   --gantt-ring: rgba(255, 255, 255, 0.08);
   --toggle-hover: rgba(255, 255, 255, 0.08);
+  --step-num-bg: #3a424d;
+  --step-num-fg: var(--text);
+  --group-rule: color-mix(in srgb, var(--primary) 55%, var(--border));
+  --photo-filter: brightness(0.8) contrast(1.05);
   --shadow: 0 1px 3px rgba(0,0,0,.45), 0 4px 12px rgba(0,0,0,.25);
   --shadow-hover: 0 6px 20px rgba(0,0,0,.5);
   --shadow-lg: 0 8px 30px rgba(0,0,0,.6);
@@ -1529,7 +1537,7 @@ main.main-recipe {
 
 /* Grayscale section photo when no steps can be started (all done / none actionable) */
 .recipe-group.no-startable .step-node-photo img {
-  filter: grayscale(1);
+  filter: grayscale(1) var(--photo-filter);
 }
 
 .recipe-group-header {
@@ -1605,8 +1613,8 @@ main.main-recipe {
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background: var(--text);
-  color: var(--on-accent);
+  background: var(--step-num-bg);
+  color: var(--step-num-fg);
   font-size: 0.75rem;
   font-weight: 700;
   display: inline-flex;
@@ -1617,9 +1625,11 @@ main.main-recipe {
 
 .step-item.current-step .step-number {
   background: var(--primary);
+  color: var(--on-accent);
 }
 
 .step-cb {
+  accent-color: var(--primary);
   margin-top: 4px;
   flex-shrink: 0;
 }
@@ -1911,7 +1921,7 @@ body.scroll-locked {
   font-weight: 700;
   margin: 0;
   padding: 0 0 1px;
-  border-bottom: 1.5px solid var(--primary);
+  border-bottom: 1.5px solid var(--group-rule);
   letter-spacing: 0.01em;
   text-transform: none;
   line-height: 1.2;
@@ -2413,3 +2423,11 @@ main.main-spices {
 .auth-logout:hover, .auth-again:hover { background: var(--toggle-hover); }
 .auth-error { margin: 8px 0 0; font-size: 0.82rem; color: var(--danger); }
 .visually-hidden { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* === Dark-mode polish === */
+/* One consistent focus ring for everything without its own (no UA white/black halo). */
+:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
+/* Step photos and ingredient thumbnails are shot on white/marble: take the glare off in dark. */
+.step-node-photo img,
+.overview-ing-row img,
+#cooking-ingredients img { filter: var(--photo-filter); }
