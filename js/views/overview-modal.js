@@ -12,9 +12,9 @@ import {
   subtitleFromSearchText,
 } from '../utils/catalog-ui.js?v=20261011u';
 import { imgFailed, isPhotoMissing, recordPhotoFailure, recordPhotoSuccess } from '../utils/photo-fallback.js?v=20261011u';
-import * as UserState from '../core/user-recipe-state.js?v=20261011u';
+import * as UserState from '../core/user-recipe-state.js?v=20261013a';
 import { spiceMixTogglesHtml } from './spice-mix-ui.js?v=20261012e';
-import { bindStatusControls, refreshStatusControls, statusControlHtml } from './recipe-status-ui.js?v=20261011u';
+import { bindStatusControls, refreshStatusControls, statusControlHtml } from './recipe-status-ui.js?v=20261013a';
 
 /**
  * HelloFresh-inspired recipe overview modal.
@@ -25,7 +25,7 @@ export class OverviewModal {
   /**
    * @param {import('../core/state.js').AppState} state
    * @param {Array<object>} catalog
-   * @param {import('../data/loader.js').RecipeRepository} repository
+   * @param {import('../data/loader.js?v=20261013a').RecipeRepository} repository
    * @param {Array} baseIngredients
    * @param {{
    *   onCook: (id: string, portions: number) => void,

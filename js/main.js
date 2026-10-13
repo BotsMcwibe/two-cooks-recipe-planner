@@ -1,20 +1,22 @@
-import { AppState } from './core/state.js';
+import { AppState } from './core/state.js?v=20261013a';
 import { parseHash, setHash } from './core/router.js?v=20261012a';
-import { loadStaticData, RecipeRepository } from './data/loader.js?v=20261012e';
+import { loadStaticData, RecipeRepository } from './data/loader.js?v=20261013a';
 import { AppShell } from './views/app-shell.js?v=20261012a';
 import { RecipeChrome } from './views/recipe-selector.js?v=20261011u';
 import { isScalable } from './utils/catalog-ui.js?v=20261011u';
-import { BrowseView } from './views/browse-view.js?v=20261011u';
-import { OverviewModal } from './views/overview-modal.js?v=20261012e';
+import { BrowseView } from './views/browse-view.js?v=20261013a';
+import { OverviewModal } from './views/overview-modal.js?v=20261013a';
 import { FlowGraph } from './views/flow-graph.js?v=20261011u';
-import { CookingView } from './views/cooking-view.js?v=20261012f';
-import { ShoppingSidebar } from './views/shopping-view.js?v=20261012e';
+import { CookingView } from './views/cooking-view.js?v=20261013a';
+import { ShoppingSidebar } from './views/shopping-view.js?v=20261013a';
 import { Timer } from './views/timer.js';
 import { spiceMixTogglesHtml } from './views/spice-mix-ui.js?v=20261012e';
-import { setMixMissing } from './core/spice-prefs.js?v=20261012e';
+import { setMixMissing } from './core/spice-prefs.js?v=20261013a';
 import { SpiceView } from './views/spice-view.js?v=20261012e';
-import * as UserState from './core/user-recipe-state.js?v=20261011u';
-import { initThemeToggle } from './utils/theme.js?v=20261011h';
+import * as UserState from './core/user-recipe-state.js?v=20261013a';
+import { initSync, hasAuthRedirect } from './core/sync.js?v=20261013a';
+import { initAuthUi } from './views/auth-ui.js?v=20261013a';
+import { initThemeToggle } from './utils/theme.js?v=20261013a';
 import { initBackToTop } from './utils/back-to-top.js?v=20261011t';
 
 initThemeToggle(document.getElementById('theme-toggle'));
@@ -29,6 +31,14 @@ async function bootstrap() {
 
   const state = new AppState();
   state.currentPhase = 'browse';
+
+  // Account sync (optional). If we are returning from a magic link, wait for the
+  // session exchange and URL cleanup before the hash router runs.
+  const syncReady = initSync({ state });
+  initAuthUi(document.getElementById('auth'));
+  if (hasAuthRedirect()) {
+    await Promise.race([syncReady, new Promise(r => setTimeout(r, 6000))]);
+  }
 
   const shell = new AppShell(state);
   const spiceView = new SpiceView(document.getElementById('view-spices'));

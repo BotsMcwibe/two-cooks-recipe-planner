@@ -3,6 +3,8 @@
  * The initial theme is applied by an inline script in <head> (before first paint):
  * a saved choice in localStorage wins, otherwise prefers-color-scheme.
  */
+import { touchPref } from '../core/prefs-meta.js?v=20261013a';
+
 export const THEME_KEY = 'jesse-theme';
 const THEME_COLORS = { light: '#f4f5f7', dark: '#111418' };
 
@@ -47,13 +49,28 @@ export function initThemeToggle(button) {
   button.addEventListener('click', () => {
     const next = currentTheme() === 'dark' ? 'light' : 'dark';
     try { localStorage.setItem(THEME_KEY, next); } catch { /* private mode */ }
+    touchPref('theme');
     applyTheme(next);
     render();
   });
+  window.addEventListener('yessy:themechange', render);
   // Follow OS changes until the user has made an explicit choice.
   window.matchMedia?.('(prefers-color-scheme: dark)').addEventListener?.('change', () => {
     if (readSaved()) return;
     applyTheme(systemTheme());
     render();
   });
+}
+
+/** Saved theme choice ('light' | 'dark' | null) for sync. */
+export function savedTheme() {
+  return readSaved();
+}
+
+/** Apply a theme coming from sync (not marked as a local change). */
+export function applySyncedTheme(theme) {
+  if (theme !== 'light' && theme !== 'dark') return;
+  try { localStorage.setItem(THEME_KEY, theme); } catch { /* private mode */ }
+  applyTheme(theme);
+  window.dispatchEvent(new CustomEvent('yessy:themechange'));
 }

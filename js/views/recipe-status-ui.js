@@ -2,7 +2,7 @@
  * Personal status control (Vill laga / Lagar nu / Lagad) + clickable 1–5 stars,
  * and the compact card badge. Backed by core/user-recipe-state.js.
  */
-import * as UserState from '../core/user-recipe-state.js?v=20261011u';
+import * as UserState from '../core/user-recipe-state.js?v=20261013a';
 import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261011u';
 
 const STATUS_ICON = { want: '☆', cooking: '◔', cooked: '✓' };

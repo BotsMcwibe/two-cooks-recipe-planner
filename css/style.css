@@ -2374,3 +2374,42 @@ main.main-spices {
   transition: opacity 0.2s ease, transform 0.2s ease;
 }
 .cook-toast.is-visible { opacity: 1; transform: translate(-50%, 0); }
+
+/* === Account (Supabase magic link) === */
+.auth { position: relative; flex: none; margin-left: 4px; }
+.auth[hidden] { display: none; }
+.auth + .theme-toggle { margin-left: 4px; }
+.auth .auth-btn { margin-left: 0; border: none; background: none; cursor: pointer; padding: 0; }
+.auth-avatar { width: 28px; height: 28px; border-radius: 999px; object-fit: cover; display: block; }
+.auth-initial {
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--primary); color: var(--on-accent); font-weight: 700; font-size: 0.85rem;
+}
+.auth-pop {
+  position: absolute; right: 0; top: calc(100% + 8px); z-index: 1200;
+  width: min(300px, calc(100vw - 24px));
+  padding: 14px; border-radius: var(--radius);
+  background: var(--surface); color: var(--text);
+  border: 1px solid var(--border); box-shadow: var(--shadow-lg);
+}
+.auth-pop[hidden] { display: none; }
+.auth-title { margin: 0 0 4px; font-weight: 700; }
+.auth-email { margin: 0 0 4px; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.auth-note { margin: 0 0 10px; font-size: 0.85rem; color: var(--text-muted); line-height: 1.4; }
+.auth-input {
+  width: 100%; box-sizing: border-box; margin-bottom: 8px; padding: 9px 10px;
+  border: 1px solid var(--border); border-radius: var(--radius-sm);
+  background: var(--surface-2); color: var(--text); font: inherit;
+}
+.auth-input:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 1px; }
+.auth-action {
+  width: 100%; padding: 9px 12px; border: none; border-radius: var(--radius-sm);
+  background: var(--primary); color: var(--on-accent); font: inherit; font-weight: 600; cursor: pointer;
+}
+.auth-action:hover { background: var(--primary-hover); }
+.auth-action:disabled { opacity: 0.6; cursor: default; }
+.auth-action:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
+.auth-logout, .auth-again { background: var(--surface-2); color: var(--text); border: 1px solid var(--border); }
+.auth-logout:hover, .auth-again:hover { background: var(--toggle-hover); }
+.auth-error { margin: 8px 0 0; font-size: 0.82rem; color: var(--danger); }
+.visually-hidden { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }

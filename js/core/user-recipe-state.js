@@ -111,3 +111,23 @@ window.addEventListener('storage', (e) => {
   local = load();
   emit(null);
 });
+
+/** Every locally stored record (not seeds), for sync. */
+export function allLocal() {
+  return Object.fromEntries(Object.entries(local).map(([id, v]) => [id, { ...v }]));
+}
+
+/**
+ * Apply a record from the server when it is newer than the local one.
+ * @returns {boolean} true if applied
+ */
+export function applyRemote(id, rec) {
+  if (!id || !rec) return false;
+  const ts = Number(rec.updatedAt) || 0;
+  const cur = local[id];
+  if (cur && (Number(cur.updatedAt) || 0) >= ts) return false;
+  local[id] = { status: cleanStatus(rec.status), rating: cleanRating(rec.rating), updatedAt: ts };
+  save();
+  emit(id);
+  return true;
+}

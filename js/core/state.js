@@ -1,5 +1,6 @@
 import { EventBus } from './event-bus.js';
 import { debounce } from '../utils/helpers.js';
+import { touchPref } from './prefs-meta.js?v=20261013a';
 
 const STORAGE_KEY = 'recipeApp.state.v3';
 
@@ -158,6 +159,7 @@ export class AppState {
     }
     this.bus.emit('shoppingChange');
     this._debouncedSave();
+    touchPref('shopping');
   }
 
   isShoppingRecipeSelected(recipeId) {
@@ -179,6 +181,21 @@ export class AppState {
     this._shoppingPortions[recipeId] = portions;
     this.bus.emit('shoppingChange');
     this._debouncedSave();
+    touchPref('shopping');
+  }
+
+  /** Shopping list as plain data (for sync). */
+  getShoppingData() {
+    return { selections: [...this._shoppingSelections], portions: { ...this._shoppingPortions } };
+  }
+
+  /** Replace the shopping list from sync (not marked as a local change). */
+  replaceShoppingData(data) {
+    if (!data || typeof data !== 'object') return;
+    this._shoppingSelections = new Set(Array.isArray(data.selections) ? data.selections.map(String) : []);
+    this._shoppingPortions = data.portions && typeof data.portions === 'object' ? { ...data.portions } : {};
+    this.bus.emit('shoppingChange');
+    this._saveToStorage();
   }
 
   // --- Reset cooking state ---

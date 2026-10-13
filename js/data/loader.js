@@ -3,7 +3,7 @@ import { Ingredient } from '../models/ingredient.js';
 import { Recipe } from '../models/recipe.js';
 import { RecipeGraph } from '../core/recipe-graph.js?v=20261012e';
 import { addSpiceMixSteps } from './spice-mix-steps.js?v=20261012e';
-import { isMixMissing } from '../core/spice-prefs.js?v=20261012e';
+import { isMixMissing } from '../core/spice-prefs.js?v=20261013a';
 
 const DATA_BASE = new URL('../../data/', import.meta.url);
 
