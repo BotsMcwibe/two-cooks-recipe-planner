@@ -185,13 +185,6 @@
       "jarGrams": 15
     },
     {
-      "id": "citronskal",
-      "name": "Torkat citronskal",
-      "ingredientId": "dried_lemon_peel",
-      "jarGrams": 12,
-      "jarNote": "torkat, estimate (no Swedish retail torkat citronskal found; Santa Maria only sells pomeransskal 20g)"
-    },
-    {
       "id": "vitlok",
       "name": "Vitlöksgranulat",
       "ingredientId": "garlic_powder",
@@ -333,12 +326,11 @@
       "ingredientId": "souvlaki_spice",
       "packetGrams": 8,
       "spices": {
-        "oregano": 2.0,
+        "oregano": 2.4,
         "vitlok": 1.5,
         "lok": 1.0,
         "paprika": 1.0,
-        "timjan": 0.8,
-        "citronskal": 0.7,
+        "timjan": 1.1,
         "peppar": 0.5,
         "salt": 0.5
       }
@@ -444,10 +436,10 @@
       "ingredientId": "lemon_pepper",
       "packetGrams": 8,
       "spices": {
-        "peppar": 4.0,
-        "citronskal": 2.5,
-        "salt": 1.0,
-        "vitlok": 0.5
+        "peppar": 5.5,
+        "salt": 1.5,
+        "vitlok": 0.7,
+        "lok": 0.3
       }
     },
     {
