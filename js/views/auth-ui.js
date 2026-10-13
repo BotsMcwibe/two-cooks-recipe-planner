@@ -3,7 +3,7 @@
  * Logged out: email field → magic link. Logged in: avatar/initial, email, "Logga ut".
  * Hidden entirely if Supabase could not be loaded (app stays local-only).
  */
-import { onAuthChange, signInWithEmail, signOut, isAvailable } from '../core/sync.js?v=20261013a';
+import { onAuthChange, signInWithEmail, signOut, isAvailable } from '../core/sync.js?v=20261013b';
 import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261011u';
 
 const USER_SVG = '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="8.5" r="3.8"/><path d="M4.8 20.2c1.2-3.6 4-5.4 7.2-5.4s6 1.8 7.2 5.4"/></g></svg>';
@@ -48,6 +48,7 @@ export function initAuthUi(root) {
       pop.innerHTML = `
         <p class="auth-email" title="${escapeAttr(user.email || '')}">${escapeHtml(user.email || '')}</p>
         <p class="auth-note">Dina recept, betyg och val synkas mellan enheter.</p>
+        <a class="auth-action auth-account-link" href="#konto">Mitt konto</a>
         <button type="button" class="auth-action auth-logout">Logga ut</button>`;
     } else if (sent) {
       pop.innerHTML = `
@@ -98,7 +99,9 @@ export function initAuthUi(root) {
     }
   });
   pop.addEventListener('click', async (e) => {
-    if (e.target.closest('.auth-logout')) {
+    if (e.target.closest('.auth-account-link')) {
+      close();
+    } else if (e.target.closest('.auth-logout')) {
       await signOut();
       close();
     } else if (e.target.closest('.auth-again')) {
@@ -114,4 +117,15 @@ export function initAuthUi(root) {
     renderButton();
     if (!pop.hidden) render();
   });
+}
+
+/** Open the header sign-in popover (used by the account page's logged-out prompt). */
+export function openSignIn() {
+  const btn = document.querySelector('#auth .auth-btn');
+  const pop = document.querySelector('#auth .auth-pop');
+  if (!btn || !pop) return false;
+  // Defer so the click that triggered this doesn't reach the outside-click closer
+  setTimeout(() => { if (pop.hidden) btn.click(); }, 0);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  return true;
 }

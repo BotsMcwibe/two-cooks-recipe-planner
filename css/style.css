@@ -2431,3 +2431,144 @@ main.main-spices {
 .step-node-photo img,
 .overview-ing-row img,
 #cooking-ingredients img { filter: var(--photo-filter); }
+
+/* === Mitt konto (#konto) — left rail with account block pinned bottom-left === */
+main.main-account { max-width: var(--max-browse); }
+.acc-layout {
+  display: grid;
+  grid-template-columns: 248px minmax(0, 1fr);
+  gap: 28px;
+  align-items: start;
+}
+.acc-rail {
+  position: sticky;
+  top: 12px;
+  height: calc(100dvh - 24px);
+  max-height: calc(100vh - 24px);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px 10px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.acc-rail-title { font-size: 0.75rem; font-weight: 700; color: var(--text-muted); letter-spacing: 0.04em; text-transform: uppercase; padding: 4px 10px 6px; }
+.acc-nav { display: flex; flex-direction: column; gap: 1px; overflow-y: auto; }
+.acc-nav a {
+  display: flex; justify-content: space-between; align-items: center; gap: 8px;
+  padding: 7px 10px; border-radius: var(--radius-sm);
+  color: var(--text); text-decoration: none; font-size: 0.9rem;
+}
+.acc-nav a:hover { background: var(--toggle-hover); }
+.acc-nav-count { color: var(--text-muted); font-size: 0.78rem; font-variant-numeric: tabular-nums; }
+
+/* Account block at the bottom of the rail */
+.acc-me { position: relative; margin-top: auto; padding-top: 8px; border-top: 1px solid var(--border); }
+.acc-me-btn, .acc-me-row {
+  display: flex; align-items: center; gap: 10px; width: 100%;
+  padding: 8px; border: none; border-radius: var(--radius-sm);
+  background: none; color: var(--text); font: inherit; text-align: left;
+}
+.acc-me-btn { cursor: pointer; }
+.acc-me-btn:hover, .acc-me-btn[aria-expanded="true"] { background: var(--toggle-hover); }
+.acc-avatar { width: 34px; height: 34px; flex: none; border-radius: 999px; object-fit: cover; }
+.acc-initial { display: inline-flex; align-items: center; justify-content: center; background: var(--primary); color: var(--on-accent); font-weight: 700; }
+.is-guest .acc-initial { background: var(--surface-2); color: var(--text-muted); border: 1px solid var(--border); }
+.acc-me-text { display: flex; flex-direction: column; min-width: 0; flex: 1; }
+.acc-me-name { font-weight: 600; font-size: 0.88rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.acc-me-sub { display: inline-flex; align-items: center; gap: 6px; font-size: 0.76rem; color: var(--text-muted); }
+.acc-me-caret { color: var(--text-muted); font-weight: 700; }
+.acc-sync-dot { width: 8px; height: 8px; border-radius: 999px; flex: none; background: var(--text-faint); }
+.acc-sync-dot.is-synced { background: var(--primary); }
+.acc-sync-dot.is-pending { background: var(--warn); }
+.acc-sync-dot.is-offline { background: transparent; box-shadow: inset 0 0 0 1.5px var(--text-muted); }
+.acc-menu {
+  position: absolute; left: 0; right: 0; bottom: calc(100% + 6px); z-index: 20;
+  padding: 12px; border-radius: var(--radius);
+  background: var(--surface); border: 1px solid var(--border); box-shadow: var(--shadow-lg);
+}
+.acc-facts { display: grid; gap: 8px; margin-bottom: 12px; }
+.acc-facts dt { font-size: 0.72rem; color: var(--text-muted); }
+.acc-facts dd { font-size: 0.86rem; margin: 0; }
+.acc-me.is-guest .acc-btn { width: 100%; margin-top: 6px; }
+
+/* Buttons */
+.acc-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 8px 14px; border-radius: var(--radius-sm); cursor: pointer;
+  font: inherit; font-weight: 600; font-size: 0.88rem;
+  background: var(--surface-2); color: var(--text); border: 1px solid var(--border);
+}
+.acc-btn:hover { background: var(--toggle-hover); }
+.acc-menu .acc-btn { width: 100%; }
+.acc-btn-primary { background: var(--primary); color: var(--on-accent); border-color: var(--primary); }
+.acc-btn-primary:hover { background: var(--primary-hover); border-color: var(--primary-hover); }
+.acc-btn-danger { color: var(--danger); border-color: var(--danger-border); background: var(--danger-bg); }
+.acc-btn-danger:hover { background: var(--danger-bg); filter: brightness(0.97); }
+
+/* Main area */
+.acc-main { min-width: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; align-content: start; }
+.acc-head { grid-column: 1 / -1; padding: 4px 0 4px; }
+.acc-head h1 { font-size: 1.6rem; letter-spacing: -0.02em; }
+.acc-lede { margin-top: 4px; color: var(--text-muted); max-width: 62ch; line-height: 1.45; }
+.acc-signin-hero { margin-top: 12px; }
+.acc-section {
+  padding: 16px 18px; background: var(--surface);
+  border: 1px solid var(--border); border-radius: var(--radius);
+  scroll-margin-top: 12px;
+}
+#acc-betyg, #acc-data { grid-column: 1 / -1; }
+.acc-section-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 10px; flex-wrap: wrap; }
+.acc-section-head h2 { font-size: 1.05rem; }
+.acc-count { display: inline-block; min-width: 22px; padding: 1px 7px; margin-left: 4px; border-radius: 999px; background: var(--surface-2); color: var(--text-muted); font-size: 0.78rem; font-weight: 600; text-align: center; vertical-align: 2px; }
+.acc-where { font-size: 0.74rem; color: var(--text-muted); }
+.acc-list { list-style: none; display: flex; flex-direction: column; }
+.acc-recipe { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 7px 0; border-top: 1px solid var(--divider-soft); }
+.acc-recipe:first-child { border-top: none; }
+.acc-recipe a { color: var(--text); text-decoration: none; font-weight: 500; min-width: 0; }
+.acc-recipe a:hover { color: var(--primary); text-decoration: underline; text-underline-offset: 3px; }
+.acc-meta { font-size: 0.8rem; color: var(--text-muted); white-space: nowrap; }
+.acc-stars { color: var(--mine-star); white-space: nowrap; letter-spacing: 1px; font-size: 0.85rem; }
+.acc-stars-off { color: var(--separator); }
+.acc-empty, .acc-hint { color: var(--text-muted); font-size: 0.9rem; line-height: 1.45; }
+.acc-hint { margin-top: 10px; font-size: 0.82rem; }
+.acc-sub { font-size: 0.85rem; margin: 16px 0 4px; color: var(--text-muted); }
+.acc-ratings { display: flex; gap: 28px; align-items: center; flex-wrap: wrap; }
+.acc-avg { display: flex; flex-direction: column; }
+.acc-avg-num { font-size: 2.2rem; font-weight: 700; color: var(--mine-star); line-height: 1; }
+.acc-avg-sub { font-size: 0.8rem; color: var(--text-muted); margin-top: 4px; }
+.acc-dist { list-style: none; flex: 1; min-width: 220px; display: grid; gap: 4px; }
+.acc-dist li { display: grid; grid-template-columns: 32px 1fr 24px; align-items: center; gap: 8px; font-size: 0.8rem; }
+.acc-dist-label { color: var(--text-muted); }
+.acc-dist-n { text-align: right; color: var(--text-muted); font-variant-numeric: tabular-nums; }
+.acc-bar { height: 8px; border-radius: 999px; background: var(--surface-2); overflow: hidden; }
+.acc-bar span { display: block; height: 100%; background: var(--mine-star); border-radius: 999px; }
+.acc-chips { list-style: none; display: flex; flex-wrap: wrap; gap: 6px; }
+.acc-chips li { padding: 4px 10px; border-radius: 999px; background: var(--primary-light); color: var(--text); font-size: 0.85rem; }
+.acc-kv div { display: flex; justify-content: space-between; padding: 6px 0; }
+.acc-kv dt { color: var(--text-muted); }
+.acc-kv dd { margin: 0; font-weight: 600; }
+.acc-data { list-style: none; display: grid; gap: 8px; margin-bottom: 14px; font-size: 0.9rem; line-height: 1.45; }
+
+/* Phone / narrow: content stacked; the account is just a small initial circle in the
+   bottom-left corner that opens the same menu (guests use the Logga in button in the page). */
+@media (max-width: 900px) {
+  .acc-layout { display: block; }
+  .acc-rail {
+    position: fixed; left: 12px; bottom: calc(12px + env(safe-area-inset-bottom, 0px)); top: auto;
+    z-index: 30; height: auto; max-height: none; width: auto;
+    padding: 0; border: none; background: none;
+  }
+  .acc-rail-title, .acc-nav, .acc-me-text, .acc-me-caret, .acc-me.is-guest { display: none; }
+  .acc-me { margin: 0; padding: 0; border: none; }
+  .acc-me-btn { width: auto; padding: 0; border-radius: 999px; box-shadow: var(--shadow-lg); }
+  .acc-me-btn:hover, .acc-me-btn[aria-expanded="true"] { background: none; }
+  .acc-me-btn .acc-avatar { width: 44px; height: 44px; font-size: 1.05rem; }
+  .acc-menu { left: 0; right: auto; width: min(280px, calc(100vw - 24px)); bottom: calc(100% + 8px); }
+  /* Show the account email inside the menu on phones, since the label is hidden */
+  .acc-main { grid-template-columns: 1fr; gap: 12px; padding-bottom: 64px; }
+  .acc-section { padding: 14px; }
+}
+.acc-facts-email { overflow-wrap: anywhere; font-weight: 600; }
+.acc-list.is-long { max-height: 340px; overflow-y: auto; padding-right: 4px; }

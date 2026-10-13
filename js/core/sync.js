@@ -23,6 +23,39 @@ let appState = null;
 let applying = false;
 let dirty = false;
 let readyPromise = null;
+let lastSyncAt = 0;
+const statusListeners = new Set();
+
+function setDirty(v) {
+  dirty = v;
+  if (!v) lastSyncAt = Date.now();
+  notifyStatus();
+}
+
+function notifyStatus() {
+  for (const fn of statusListeners) { try { fn(syncStatus()); } catch (err) { console.error(err); } }
+}
+
+function markWritten() {
+  lastSyncAt = Date.now();
+  notifyStatus();
+}
+
+/**
+ * 'local' (not signed in) | 'offline' | 'pending' (a write failed, will retry) | 'synced'
+ */
+export function syncStatus() {
+  if (!user) return 'local';
+  if (typeof navigator !== 'undefined' && navigator.onLine === false) return 'offline';
+  return dirty ? 'pending' : 'synced';
+}
+
+export function lastSyncTime() { return lastSyncAt; }
+
+export function onSyncStatus(fn) {
+  statusListeners.add(fn);
+  return () => statusListeners.delete(fn);
+}
 
 const AUTH_HASH_RE = /(^|[#&])(access_token|refresh_token|error|error_description|error_code)=/;
 
@@ -153,9 +186,9 @@ async function mergeAll() {
       }
     }
     if (changed) await writePrefs(merged);
-    dirty = false;
+    setDirty(false);
   } catch (err) {
-    dirty = true;
+    setDirty(true);
     console.warn('[sync] merge failed (will retry when online)', err);
   }
 }
@@ -164,6 +197,7 @@ async function writePrefs(prefs) {
   const { error } = await client.from('user_preferences')
     .upsert({ prefs, updated_at: new Date().toISOString() }, { onConflict: 'user_id' });
   if (error) throw error;
+  markWritten();
 }
 
 async function pushRecipe(id) {
@@ -173,8 +207,9 @@ async function pushRecipe(id) {
   try {
     const { error } = await client.from('user_recipe_state').upsert(toRow(id, rec), { onConflict: 'user_id,recipe_id' });
     if (error) throw error;
+    markWritten();
   } catch (err) {
-    dirty = true;
+    setDirty(true);
     console.warn('[sync] recipe write failed, queued', err);
   }
 }
@@ -196,7 +231,7 @@ function schedulePrefPush() {
       }
       await writePrefs(merged);
     } catch (err) {
-      dirty = true;
+      setDirty(true);
       console.warn('[sync] preferences write failed, queued', err);
     }
   }, 400);
@@ -229,6 +264,7 @@ export function initSync({ state } = {}) {
         const prev = user && user.id;
         user = session ? session.user : null;
         emit();
+        notifyStatus();
         if (user && user.id !== prev) mergeAll();
       });
       emit();
@@ -244,7 +280,8 @@ export function initSync({ state } = {}) {
 
   UserState.subscribe((id) => { if (id) pushRecipe(id); });
   window.addEventListener('yessy:prefchange', () => schedulePrefPush());
-  window.addEventListener('online', () => { if (dirty) mergeAll(); });
+  window.addEventListener('online', () => { setDirty(dirty); if (dirty) mergeAll(); });
+  window.addEventListener('offline', () => setDirty(dirty));
   return readyPromise;
 }
 

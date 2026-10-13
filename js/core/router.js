@@ -44,6 +44,9 @@ export function parseHash(hash = typeof location !== 'undefined' ? location.hash
   if (raw.toLowerCase() === 'kryddor') {
     return { route: 'kryddor', masterId: null };
   }
+  if (raw.toLowerCase() === 'konto') {
+    return { route: 'konto', masterId: null };
+  }
 
   const m = raw.match(/^(cook|overview)\/(.+)$/i);
   if (!m) {
@@ -77,6 +80,7 @@ export function hashFor(route, masterId = null) {
     return `#overview/${encodeURIComponent(masterId)}`;
   }
   if (route === 'kryddor') return '#kryddor';
+  if (route === 'konto') return '#konto';
   return '#browse';
 }
 

@@ -1,7 +1,7 @@
 import { AppState } from './core/state.js?v=20261013a';
-import { parseHash, setHash } from './core/router.js?v=20261012a';
+import { parseHash, setHash } from './core/router.js?v=20261013b';
 import { loadStaticData, RecipeRepository } from './data/loader.js?v=20261013a';
-import { AppShell } from './views/app-shell.js?v=20261012a';
+import { AppShell } from './views/app-shell.js?v=20261013b';
 import { RecipeChrome } from './views/recipe-selector.js?v=20261011u';
 import { isScalable } from './utils/catalog-ui.js?v=20261011u';
 import { BrowseView } from './views/browse-view.js?v=20261013a';
@@ -14,8 +14,9 @@ import { spiceMixTogglesHtml } from './views/spice-mix-ui.js?v=20261012e';
 import { setMixMissing } from './core/spice-prefs.js?v=20261013a';
 import { SpiceView } from './views/spice-view.js?v=20261012e';
 import * as UserState from './core/user-recipe-state.js?v=20261013a';
-import { initSync, hasAuthRedirect } from './core/sync.js?v=20261013a';
-import { initAuthUi } from './views/auth-ui.js?v=20261013a';
+import { initSync, hasAuthRedirect } from './core/sync.js?v=20261013b';
+import { AccountView } from './views/account-view.js?v=20261013d';
+import { initAuthUi } from './views/auth-ui.js?v=20261013c';
 import { initThemeToggle } from './utils/theme.js?v=20261013a';
 import { initBackToTop } from './utils/back-to-top.js?v=20261011t';
 
@@ -42,6 +43,9 @@ async function bootstrap() {
 
   const shell = new AppShell(state);
   const spiceView = new SpiceView(document.getElementById('view-spices'));
+  const mixNames = Object.fromEntries(Object.entries(spiceData.mixIngredients || {}).map(([id, m]) => [id, m.name]));
+  const accountView = new AccountView(document.getElementById('view-account'), { state, catalog, mixNames });
+  state.on('phase', (p) => { if (p !== 'account') accountView.hide(); });
   const cookingView = new CookingView(state);
   const flowGraph = new FlowGraph({
     onNodeClick: (recipeId) => cookingView.scrollToGroup(recipeId),
@@ -177,6 +181,10 @@ async function bootstrap() {
       setHash('kryddor', null, { replace });
       return;
     }
+    if (state.currentPhase === 'account') {
+      setHash('konto', null, { replace });
+      return;
+    }
     if (state.currentPhase === 'cooking' && state.selectedRecipeId) {
       setHash('cook', state.selectedRecipeId, { replace });
       return;
@@ -211,6 +219,15 @@ async function bootstrap() {
           state.currentPhase = 'browse';
           if (replaceUnknown) setHash('browse', null, { replace: true });
         }
+        return;
+      }
+
+      if (route === 'konto') {
+        if (modal.isOpen()) modal.close({ silent: true });
+        const was = state.currentPhase === 'account';
+        state.currentPhase = 'account';
+        accountView.show();
+        if (!was) window.scrollTo(0, 0);
         return;
       }
 
