@@ -44,7 +44,7 @@ export class PantryView {
       <div class="spice-page pantry-page">
         <div class="spice-head">
           <h1>Skafferiet</h1>
-          <p class="spice-lede">Något du inte tål? Tryck på en ingrediens du inte vill ha så hamnar den på Gravplatsen.</p>
+          <p class="spice-lede">Tryck på ingredienser du inte tål så tar vi bort dem</p>
         </div>
         <div class="pantry-tiles pantry-tiles-live"></div>
         <section class="pantry-grave" aria-labelledby="pantry-grave-h" hidden>
