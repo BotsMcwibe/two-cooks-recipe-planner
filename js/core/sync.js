@@ -14,7 +14,7 @@ import { SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, SUPABASE_JS_URL } from '../conf
 import * as UserState from './user-recipe-state.js?v=20261013b';
 import { prefTs, setPrefTs } from './prefs-meta.js?v=20261013a';
 import { missingMixes, replaceMissingMixes } from './spice-prefs.js?v=20261013a';
-import { excludedPantry, replacePantryExcluded } from './pantry-exclude.js?v=20261013px';
+import { excludedPantry, replacePantryExcluded } from './pantry-exclude.js?v=20261013gr';
 import { savedTheme, applySyncedTheme } from '../utils/theme.js?v=20261013b';
 
 const listeners = new Set();

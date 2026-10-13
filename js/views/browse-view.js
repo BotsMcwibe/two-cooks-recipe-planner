@@ -12,7 +12,7 @@ import {
 } from '../utils/catalog-ui.js?v=20261011u';
 import * as UserState from '../core/user-recipe-state.js?v=20261013b';
 import { imgFailed, isPhotoMissing, recordPhotoFailure, recordPhotoSuccess, photosLikelyUnavailable } from '../utils/photo-fallback.js?v=20261011u';
-import { excludedPantry, clearPantryExcluded, loadPantry } from '../core/pantry-exclude.js?v=20261013px';
+import { excludedPantry, clearPantryExcluded, loadPantry } from '../core/pantry-exclude.js?v=20261013gr';
 import { cardStateHtml } from './recipe-status-ui.js?v=20261013b';
 
 /**

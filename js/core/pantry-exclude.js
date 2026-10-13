@@ -7,7 +7,7 @@
 import { touchPref } from './prefs-meta.js?v=20261013a';
 
 const KEY = 'yessy.pantryExcluded.v1';
-export const PANTRY_URL = 'data/pantry.json?v=20261013px';
+export const PANTRY_URL = 'data/pantry.json?v=20261013gr';
 
 function read() {
   try {
