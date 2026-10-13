@@ -35,6 +35,7 @@ export class BrowseView {
     this.kcalOnly = false;
     /** @type {'want'|'cooking'|'cooked'|null} personal status filter */
     this.statusFilter = null;
+    this.testedOnly = false;
     this.query = '';
     /** @type {Map<string, number>|null} raw per-portion energyKcal, null until loaded */
     this.kcalById = null;
@@ -69,8 +70,9 @@ export class BrowseView {
       { id: s, label: UserState.STATUS_LABELS[s], title: `Visa recept märkta ”${UserState.STATUS_LABELS[s]}”` },
       'status',
       false,
-    )).join('') + this._chipHtml(
-      { id: 'tested', label: 'Testad', title: 'Visa recept som testats i köket' }, 'status', false);
+    )).join('');
+    const tested = this._chipHtml(
+      { id: 'tested', label: 'Testad', title: 'Visa recept som testats i köket' }, 'tested', false);
 
     this.$container.html(`
       <div class="browse-toolbar">
@@ -80,7 +82,7 @@ export class BrowseView {
         </div>
         <div class="filter-chips" role="group" aria-label="Filter">${chips}</div>
         <div class="filter-chips filter-chips-extra">
-          <span class="filter-chip-group" role="group" aria-label="Kalorier">${kcal}</span>
+          <span class="filter-chip-group" role="group" aria-label="Kalorier">${kcal}${tested}</span>
           <span class="filter-chip-group filter-chip-group-status" role="group" aria-label="Min status">${status}</span>
         </div>
       </div>
@@ -111,6 +113,9 @@ export class BrowseView {
           });
           return;
         }
+      } else if (group === 'tested') {
+        this.testedOnly = !this.testedOnly;
+        $btn.toggleClass('active', this.testedOnly).attr('aria-pressed', String(this.testedOnly));
       } else if (group === 'status') {
         this.statusFilter = this.statusFilter === id ? null : id;
         this.$container.find('.filter-chip[data-group="status"]').each((_, el) => {
@@ -224,8 +229,8 @@ export class BrowseView {
         const shown = displayedPortionKcal(raw);
         if (shown == null || shown >= 650) return false;
       }
-      if (this.statusFilter === 'tested') { const m = UserState.catalogMark(entry.id); if (!m || !m.tested) return false; }
-      else if (this.statusFilter && UserState.get(entry.id).status !== this.statusFilter) return false;
+      if (this.testedOnly) { const m = UserState.catalogMark(entry.id); if (!m || !m.tested) return false; }
+      if (this.statusFilter && UserState.get(entry.id).status !== this.statusFilter) return false;
       if (!q) return true;
       const hay = `${entry.name || ''} ${entry.searchText || ''}`.toLowerCase();
       return hay.includes(q);
