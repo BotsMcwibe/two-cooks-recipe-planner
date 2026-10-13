@@ -85,6 +85,24 @@ def load(path):
     return mod
 
 
+# Tile image for Kryddskåpet: own ingredient image, else a close look-alike.
+LOOKALIKE = {"dried_basil": "basil", "paprika_powder": "paprika", "dried_oregano": "oregano",
+             "dried_parsley": "parsley", "dried_rosemary": "rosemary", "ground_coriander": "coriander",
+             "garlic_powder": "garlic", "onion_powder": "onion", "ground_ginger": "ginger",
+             "brown_sugar": "sugar", "mustard_seed": "mustard", "chili_powder": "fresh_chili",
+             "cayenne": "fresh_chili", "lemon_pepper": "lemon"}
+
+
+def image_for(ingredients, iid):
+    for cand in (iid, LOOKALIKE.get(iid)):
+        if not cand:
+            continue
+        img = ingredients.get(cand, {}).get("image") or f"assets/ingredients/{cand}.png"
+        if (ROOT / img).exists():
+            return img
+    return None
+
+
 def main():
     mod = load(SRC)
     ingredients = json.loads((ROOT / "data" / "ingredients.json").read_text(encoding="utf-8"))["ingredients"]
@@ -106,6 +124,9 @@ def main():
                 note = re.sub(r"\bmalen\b", "mald", note)
             if note:
                 entry["jarNote"] = note
+        img = image_for(ingredients, entry["ingredientId"])
+        if img:
+            entry["image"] = img
         spices.append(entry)
     spices.sort(key=lambda s: s["name"].lower())
     mix_ids = {ing.get("blendId"): iid for iid, ing in ingredients.items() if ing.get("blendId")}

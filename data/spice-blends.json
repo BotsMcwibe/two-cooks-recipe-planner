@@ -5,34 +5,39 @@
       "id": "basilika",
       "name": "Basilika",
       "ingredientId": "dried_basil",
-      "jarGrams": 10
+      "jarGrams": 10,
+      "image": "assets/ingredients/basil.png"
     },
     {
       "id": "cayenne",
       "name": "Cayennepeppar",
       "ingredientId": "cayenne",
-      "jarGrams": 30
+      "jarGrams": 30,
+      "image": "assets/ingredients/fresh_chili.png"
     },
     {
       "id": "chiliflakes",
       "name": "Chiliflakes",
       "ingredientId": "chili_flakes",
       "jarGrams": 27,
-      "jarNote": "flingor"
+      "jarNote": "flingor",
+      "image": "assets/ingredients/chili_flakes.png"
     },
     {
       "id": "chili",
       "name": "Chilipeppar",
       "ingredientId": "chili_powder",
       "jarGrams": 40,
-      "jarNote": "ICA chilipeppar mald"
+      "jarNote": "ICA chilipeppar mald",
+      "image": "assets/ingredients/fresh_chili.png"
     },
     {
       "id": "citronpeppar",
       "name": "Citronpeppar",
       "ingredientId": "lemon_pepper",
       "jarGrams": 53,
-      "jarNote": "färdig"
+      "jarNote": "färdig",
+      "image": "assets/ingredients/lemon.png"
     },
     {
       "id": "curry",
@@ -45,14 +50,16 @@
       "id": "farinsocker",
       "name": "Farinsocker",
       "ingredientId": "brown_sugar",
-      "jarGrams": 500
+      "jarGrams": 500,
+      "image": "assets/ingredients/sugar.png"
     },
     {
       "id": "garam_masala",
       "name": "Garam masala",
       "ingredientId": "garam_masala",
       "jarGrams": 43,
-      "jarNote": "färdig"
+      "jarNote": "färdig",
+      "image": "assets/ingredients/garam_masala.png"
     },
     {
       "id": "gurkmeja",
@@ -66,21 +73,24 @@
       "name": "Hasselnötter",
       "ingredientId": "hazelnuts",
       "jarGrams": 175,
-      "jarNote": "påse, rostade"
+      "jarNote": "påse, rostade",
+      "image": "assets/ingredients/hazelnuts.png"
     },
     {
       "id": "ingefara",
       "name": "Ingefära",
       "ingredientId": "ground_ginger",
       "jarGrams": 31,
-      "jarNote": "mald"
+      "jarNote": "mald",
+      "image": "assets/ingredients/ginger.png"
     },
     {
       "id": "kanel",
       "name": "Kanel",
       "ingredientId": "cinnamon",
       "jarGrams": 40,
-      "jarNote": "mald"
+      "jarNote": "mald",
+      "image": "assets/ingredients/cinnamon.png"
     },
     {
       "id": "kardemumma",
@@ -94,7 +104,8 @@
       "name": "Koriander",
       "ingredientId": "ground_coriander",
       "jarGrams": 28,
-      "jarNote": "mald"
+      "jarNote": "mald",
+      "image": "assets/ingredients/coriander.png"
     },
     {
       "id": "kryddpeppar",
@@ -108,7 +119,8 @@
       "name": "Lökgranulat",
       "ingredientId": "onion_powder",
       "jarGrams": 41,
-      "jarNote": "granulerad"
+      "jarNote": "granulerad",
+      "image": "assets/ingredients/onion.png"
     },
     {
       "id": "muskot",
@@ -121,32 +133,37 @@
       "id": "oregano",
       "name": "Oregano",
       "ingredientId": "dried_oregano",
-      "jarGrams": 9
+      "jarGrams": 9,
+      "image": "assets/ingredients/oregano.png"
     },
     {
       "id": "paprika",
       "name": "Paprika",
       "ingredientId": "paprika_powder",
       "jarGrams": 70,
-      "jarNote": "påse"
+      "jarNote": "påse",
+      "image": "assets/ingredients/paprika.png"
     },
     {
       "id": "persilja",
       "name": "Persilja",
       "ingredientId": "dried_parsley",
-      "jarGrams": 8
+      "jarGrams": 8,
+      "image": "assets/ingredients/parsley.png"
     },
     {
       "id": "rosmarin",
       "name": "Rosmarin",
       "ingredientId": "dried_rosemary",
-      "jarGrams": 21
+      "jarGrams": 21,
+      "image": "assets/ingredients/rosemary.png"
     },
     {
       "id": "rokt_paprika",
       "name": "Rökt paprika",
       "ingredientId": "smoked_paprika",
-      "jarGrams": 37
+      "jarGrams": 37,
+      "image": "assets/ingredients/smoked_paprika.png"
     },
     {
       "id": "salladskrydda",
@@ -160,21 +177,24 @@
       "name": "Salt",
       "ingredientId": "salt",
       "jarGrams": 500,
-      "jarNote": "kök"
+      "jarNote": "kök",
+      "image": "assets/ingredients/salt.png"
     },
     {
       "id": "senap",
       "name": "Senapsfrö",
       "ingredientId": "mustard_seed",
       "jarGrams": 28,
-      "jarNote": "helt frö, mals"
+      "jarNote": "helt frö, mals",
+      "image": "assets/ingredients/mustard.png"
     },
     {
       "id": "sesam",
       "name": "Sesamfrön",
       "ingredientId": "sesame_seeds",
       "jarGrams": 38,
-      "jarNote": "burk"
+      "jarNote": "burk",
+      "image": "assets/ingredients/sesame_seeds.png"
     },
     {
       "id": "spiskummin",
@@ -193,19 +213,22 @@
       "name": "Svartpeppar",
       "ingredientId": "pepper",
       "jarGrams": 40,
-      "jarNote": "kök"
+      "jarNote": "kök",
+      "image": "assets/ingredients/pepper.png"
     },
     {
       "id": "timjan",
       "name": "Timjan",
       "ingredientId": "dried_thyme",
-      "jarGrams": 15
+      "jarGrams": 15,
+      "image": "assets/ingredients/dried_thyme.png"
     },
     {
       "id": "vitlok",
       "name": "Vitlöksgranulat",
       "ingredientId": "garlic_powder",
-      "jarGrams": 49
+      "jarGrams": 49,
+      "image": "assets/ingredients/garlic.png"
     }
   ],
   "blends": [

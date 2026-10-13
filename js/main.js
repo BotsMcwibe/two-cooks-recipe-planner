@@ -12,12 +12,12 @@ import { ShoppingSidebar } from './views/shopping-view.js?v=20261013a';
 import { Timer } from './views/timer.js';
 import { spiceMixTogglesHtml } from './views/spice-mix-ui.js?v=20261012e';
 import { setMixMissing } from './core/spice-prefs.js?v=20261013a';
-import { SpiceView } from './views/spice-view.js?v=20261012e';
+import { SpiceView } from './views/spice-view.js?v=20261013ko';
 import { PantryView } from './views/pantry-view.js?v=20261013tx2';
 import * as UserState from './core/user-recipe-state.js?v=20261013b';
-import { initSync, hasAuthRedirect } from './core/sync.js?v=20261013gr';
-import { AccountView } from './views/account-view.js?v=20261013sk';
-import { initAuthUi } from './views/auth-ui.js?v=20261013sk';
+import { initSync, hasAuthRedirect } from './core/sync.js?v=20261013ko';
+import { AccountView } from './views/account-view.js?v=20261013ko';
+import { initAuthUi } from './views/auth-ui.js?v=20261013ko';
 import { initThemeToggle } from './utils/theme.js?v=20261013b';
 import { initBackToTop } from './utils/back-to-top.js?v=20261011t';
 
