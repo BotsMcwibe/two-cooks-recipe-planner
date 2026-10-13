@@ -5,7 +5,7 @@
  */
 import { onAuthChange, signInWithEmail, signOut, isAvailable, syncStatus, onSyncStatus } from '../core/sync.js?v=20261013d';
 import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261011u';
-import { accountLinkHtml, menuExtrasHtml, bindMenuExtras } from './menu-items.js?v=20261013a';
+import { accountLinkHtml, menuExtrasHtml, bindMenuExtras } from './menu-items.js?v=20261013sk';
 
 const USER_SVG = '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="8.5" r="3.8"/><path d="M4.8 20.2c1.2-3.6 4-5.4 7.2-5.4s6 1.8 7.2 5.4"/></g></svg>';
 
@@ -112,7 +112,7 @@ export function initAuthUi(root) {
     }
   });
   pop.addEventListener('click', async (e) => {
-    if (e.target.closest('.auth-account-link, .menu-spice-link')) {
+    if (e.target.closest('.auth-account-link, .menu-spice-link, .menu-pantry-link')) {
       close();
     } else if (e.target.closest('.auth-logout')) {
       await signOut();

@@ -1,7 +1,7 @@
 import { AppState } from './core/state.js?v=20261013a';
-import { parseHash, setHash } from './core/router.js?v=20261013b';
+import { parseHash, setHash } from './core/router.js?v=20261013sk';
 import { loadStaticData, RecipeRepository } from './data/loader.js?v=20261013a';
-import { AppShell } from './views/app-shell.js?v=20261013c';
+import { AppShell } from './views/app-shell.js?v=20261013sk';
 import { RecipeChrome } from './views/recipe-selector.js?v=20261011u';
 import { isScalable } from './utils/catalog-ui.js?v=20261011u';
 import { BrowseView } from './views/browse-view.js?v=20261013z';
@@ -13,10 +13,11 @@ import { Timer } from './views/timer.js';
 import { spiceMixTogglesHtml } from './views/spice-mix-ui.js?v=20261012e';
 import { setMixMissing } from './core/spice-prefs.js?v=20261013a';
 import { SpiceView } from './views/spice-view.js?v=20261012e';
+import { PantryView } from './views/pantry-view.js?v=20261013a';
 import * as UserState from './core/user-recipe-state.js?v=20261013b';
 import { initSync, hasAuthRedirect } from './core/sync.js?v=20261013d';
-import { AccountView } from './views/account-view.js?v=20261013h';
-import { initAuthUi } from './views/auth-ui.js?v=20261013d';
+import { AccountView } from './views/account-view.js?v=20261013sk';
+import { initAuthUi } from './views/auth-ui.js?v=20261013sk';
 import { initThemeToggle } from './utils/theme.js?v=20261013b';
 import { initBackToTop } from './utils/back-to-top.js?v=20261011t';
 
@@ -43,6 +44,7 @@ async function bootstrap() {
 
   const shell = new AppShell(state);
   const spiceView = new SpiceView(document.getElementById('view-spices'));
+  const pantryView = new PantryView(document.getElementById('view-pantry'));
   const mixNames = Object.fromEntries(Object.entries(spiceData.mixIngredients || {}).map(([id, m]) => [id, m.name]));
   const accountView = new AccountView(document.getElementById('view-account'), { state, catalog, mixNames });
   state.on('phase', (p) => { if (p !== 'account') accountView.hide(); });
@@ -181,6 +183,10 @@ async function bootstrap() {
       setHash('kryddor', null, { replace });
       return;
     }
+    if (state.currentPhase === 'pantry') {
+      setHash('skafferi', null, { replace });
+      return;
+    }
     if (state.currentPhase === 'account') {
       setHash('konto', null, { replace });
       return;
@@ -227,6 +233,15 @@ async function bootstrap() {
         const was = state.currentPhase === 'account';
         state.currentPhase = 'account';
         accountView.show();
+        if (!was) window.scrollTo(0, 0);
+        return;
+      }
+
+      if (route === 'skafferi') {
+        if (modal.isOpen()) modal.close({ silent: true });
+        const was = state.currentPhase === 'pantry';
+        state.currentPhase = 'pantry';
+        await pantryView.render();
         if (!was) window.scrollTo(0, 0);
         return;
       }

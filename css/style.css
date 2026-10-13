@@ -2662,3 +2662,25 @@ img.auth-avatar, img.acc-avatar { box-shadow: 0 0 0 1.25px var(--border); transi
 .auth .auth-btn:not(.is-signed-in) { width: 40px; height: 40px; }
 .auth .auth-btn:not(.is-signed-in) svg { width: 22px; height: 22px; }
 .auth-btn.is-signed-in > .acc-status-dot { width: 11px; height: 11px; }
+
+/* Skafferiet (#skafferi) — reuses .spice-* card layout */
+.pantry-group { border: none; margin: 0 0 14px; padding: 0; }
+.pantry-group legend { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; color: var(--text-muted); margin-bottom: 4px; }
+.pantry-items { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 2px 12px; }
+.pantry-item { display: flex; align-items: flex-start; gap: 10px; padding: 8px 4px; border-radius: 8px; cursor: pointer; min-height: 44px; }
+.pantry-item:hover { background: var(--toggle-hover); }
+.pantry-check { width: 18px; height: 18px; margin-top: 2px; flex: none; accent-color: var(--primary); }
+.pantry-item-text { display: flex; flex-direction: column; min-width: 0; }
+.pantry-item-name { font-weight: 500; }
+.pantry-item:has(.pantry-check:checked) .pantry-item-name { font-weight: 700; }
+.pantry-sub { font-size: 0.95rem; margin: 14px 0 6px; display: flex; gap: 8px; align-items: center; }
+.pantry-sub:first-child { margin-top: 0; }
+.pantry-n { font-size: 0.78rem; color: var(--text-muted); border: 1px solid var(--border); border-radius: 999px; padding: 0 8px; }
+.pantry-list { list-style: none; margin: 0; padding: 0; }
+.pantry-recipe { display: flex; flex-direction: column; padding: 8px 0; border-top: 1px solid var(--border); }
+.pantry-recipe:first-child { border-top: none; }
+.pantry-recipe-name { color: var(--text); font-weight: 600; text-decoration: none; }
+.pantry-recipe-name:hover { text-decoration: underline; }
+.pantry-size { color: var(--text-faint); }
+.pantry-empty { color: var(--text-muted); font-size: 0.9rem; }
+@media (max-width: 560px) { .pantry-items { grid-template-columns: 1fr 1fr; } }

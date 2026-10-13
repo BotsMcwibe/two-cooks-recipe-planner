@@ -1,0 +1,1697 @@
+{
+ "items": [
+  {
+   "id": "pasta",
+   "name": "Pasta",
+   "category": "Pasta, ris & gryn",
+   "size": "500g",
+   "product": "Penne Rigate Pasta (Monte Castello)",
+   "source": "https://www.willys.se/produkt/Penne-Rigate-Pasta-101240218_ST"
+  },
+  {
+   "id": "spaghetti",
+   "name": "Spaghetti",
+   "category": "Pasta, ris & gryn",
+   "size": "1kg",
+   "product": "Spaghetti Pasta (Barilla)",
+   "source": "https://www.willys.se/produkt/Spaghetti-Pasta-100087978_ST"
+  },
+  {
+   "id": "linguine",
+   "name": "Linguine",
+   "category": "Pasta, ris & gryn",
+   "size": "1kg",
+   "product": "Linguine Pasta (Garant)",
+   "source": "https://www.willys.se/produkt/Linguine-Pasta-101469947_ST"
+  },
+  {
+   "id": "rigatoni",
+   "name": "Rigatoni",
+   "category": "Pasta, ris & gryn",
+   "size": "500g",
+   "product": "Mezzi Rigatoni Pasta (La Molisana)",
+   "source": "https://www.willys.se/produkt/Mezzi-Rigatoni-Pasta-101531959_ST"
+  },
+  {
+   "id": "basmati_rice",
+   "name": "Basmatiris",
+   "category": "Pasta, ris & gryn",
+   "size": "1kg",
+   "product": "Basmatiris (Garant)",
+   "source": "https://www.willys.se/produkt/Basmatiris-101488798_ST"
+  },
+  {
+   "id": "jasmine_rice",
+   "name": "Jasminris",
+   "category": "Pasta, ris & gryn",
+   "size": "1kg",
+   "product": "Jasminris (Garant)",
+   "source": "https://www.willys.se/produkt/Jasminris-101488555_ST"
+  },
+  {
+   "id": "long_grain_rice",
+   "name": "Långkornigt vitt ris",
+   "category": "Pasta, ris & gryn",
+   "size": "2kg",
+   "product": "Ris Långkornigt (Eldorado)",
+   "source": "https://www.willys.se/produkt/Ris-Långkornigt-101234821_ST"
+  },
+  {
+   "id": "rice",
+   "name": "Ris",
+   "category": "Pasta, ris & gryn",
+   "size": "2kg",
+   "product": "Jasminris (Eldorado)",
+   "source": "https://www.willys.se/produkt/Jasminris-101220577_ST",
+   "note": "jasminris"
+  },
+  {
+   "id": "risotto_rice",
+   "name": "Risottoris",
+   "category": "Pasta, ris & gryn",
+   "size": "1kg",
+   "product": "Avorio Risottoris (Risenta)",
+   "source": "https://www.willys.se/produkt/Avorio-Risottoris-100221644_ST"
+  },
+  {
+   "id": "bulgur",
+   "name": "Bulgur",
+   "category": "Pasta, ris & gryn",
+   "size": "500g",
+   "product": "Bulgur av Durumvete (Garant)",
+   "source": "https://www.willys.se/produkt/Bulgur-av-Durumvete-101656403_ST"
+  },
+  {
+   "id": "couscous",
+   "name": "Couscous",
+   "category": "Pasta, ris & gryn",
+   "size": "1kg",
+   "product": "Couscous (Garant)",
+   "source": "https://www.willys.se/produkt/Couscous-101547064_ST"
+  },
+  {
+   "id": "pearl_couscous",
+   "name": "Pärlcouscous",
+   "category": "Pasta, ris & gryn",
+   "size": "500g",
+   "product": "Pärlcouscous (Garant)",
+   "source": "https://www.willys.se/produkt/Pärlcouscous-101550908_ST"
+  },
+  {
+   "id": "oats",
+   "name": "Havregryn",
+   "category": "Pasta, ris & gryn",
+   "size": "1,5kg",
+   "product": "Havregryn (Garant)",
+   "source": "https://www.willys.se/produkt/Havregryn-101833307_ST"
+  },
+  {
+   "id": "noodles",
+   "name": "Nudlar",
+   "category": "Nudlar & bröd",
+   "size": "1kg",
+   "product": "Äggnudlar (Spicefield)",
+   "source": "https://www.willys.se/produkt/Äggnudlar-101498815_ST"
+  },
+  {
+   "id": "mie_noodles",
+   "name": "Mie-nudlar",
+   "category": "Nudlar & bröd",
+   "size": null,
+   "flag": "Hittade inga mie-nudlar i butikens sortiment"
+  },
+  {
+   "id": "udon_noodles",
+   "name": "Udonnudlar",
+   "category": "Nudlar & bröd",
+   "size": "200g",
+   "product": "Udonnudlar Färska (Twin Dragon)",
+   "source": "https://www.willys.se/produkt/Udonnudlar-Färska-101824298_ST",
+   "note": "färska, kylvara"
+  },
+  {
+   "id": "tortillas",
+   "name": "Tortillabröd",
+   "category": "Nudlar & bröd",
+   "size": "320g",
+   "product": "Tortilla Original Medium 8-pack (Santa Maria)",
+   "source": "https://www.willys.se/produkt/Tortilla-Original-Medium-8-pack-101295571_ST"
+  },
+  {
+   "id": "mini_tortillas",
+   "name": "Minitortillas",
+   "category": "Nudlar & bröd",
+   "size": "200g",
+   "product": "Tortilla Mini 8-pack (Banderos)",
+   "source": "https://www.willys.se/produkt/Tortilla-Mini-8-pack-101273934_ST"
+  },
+  {
+   "id": "pita_bread",
+   "name": "Pitabröd",
+   "category": "Nudlar & bröd",
+   "size": "350g",
+   "product": "Pitabröd 5-pack (Schysst Käk)",
+   "source": "https://www.willys.se/produkt/Pitabröd-5-pack-101418787_ST"
+  },
+  {
+   "id": "naan_bread",
+   "name": "Naanbröd",
+   "category": "Nudlar & bröd",
+   "size": "260g",
+   "product": "Naan Bread Original (Santa Maria)",
+   "source": "https://www.willys.se/produkt/Naan-Bread-Original-101584093_ST"
+  },
+  {
+   "id": "flatbread",
+   "name": "Tunnbröd",
+   "category": "Nudlar & bröd",
+   "size": "375g",
+   "product": "Tunnbröd 8p (Garant)",
+   "source": "https://www.willys.se/produkt/Tunnbröd-8p-101822187_ST"
+  },
+  {
+   "id": "breadcrumbs",
+   "name": "Ströbröd",
+   "category": "Nudlar & bröd",
+   "size": "400g",
+   "product": "Ströbröd (Eldorado)",
+   "source": "https://www.willys.se/produkt/Ströbröd-100878819_ST"
+  },
+  {
+   "id": "panko",
+   "name": "Pankoströbröd",
+   "category": "Nudlar & bröd",
+   "size": "200g",
+   "product": "Panko (Garant)",
+   "source": "https://www.willys.se/produkt/Panko-101716021_ST"
+  },
+  {
+   "id": "canned_tomatoes",
+   "name": "Krossade tomater",
+   "category": "Konserver",
+   "size": "1,17kg",
+   "product": "Tomater Finkrossade 3-pack (Garant)",
+   "source": "https://www.willys.se/produkt/Tomater-Finkrossade-3-pack-101310245_ST",
+   "note": "3-pack à 390 g"
+  },
+  {
+   "id": "passata",
+   "name": "Passata",
+   "category": "Konserver",
+   "size": "500g",
+   "product": "Passata Passerade Tomater (Mutti)",
+   "source": "https://www.willys.se/produkt/Passata-Passerade-Tomater-101523019_ST"
+  },
+  {
+   "id": "tomato_paste",
+   "name": "Tomatpuré",
+   "category": "Konserver",
+   "size": "300g",
+   "product": "Tomatpuré (Felix)",
+   "source": "https://www.willys.se/produkt/Tomatpur-100819401_ST"
+  },
+  {
+   "id": "coconut_milk",
+   "name": "Kokosmjölk",
+   "category": "Konserver",
+   "size": "250ml",
+   "product": "Kokosmjölk 17-18% (Garant)",
+   "source": "https://www.willys.se/produkt/Kokosmjölk-17-18-101708173_ST"
+  },
+  {
+   "id": "canned_corn",
+   "name": "Majs",
+   "category": "Konserver",
+   "size": "540/435g",
+   "product": "Majskorn 3-pack (Eldorado)",
+   "source": "https://www.willys.se/produkt/Majskorn-3-pack-101355552_ST",
+   "note": "3-pack"
+  },
+  {
+   "id": "water_chestnuts",
+   "name": "Vattenkastanjer",
+   "category": "Konserver",
+   "size": "220/140g",
+   "product": "Water Chestnut Slices Vattenkastanj (Spicefield)",
+   "source": "https://www.willys.se/produkt/Water-Chestnut-Slices-Vattenkastanj-101285963_ST"
+  },
+  {
+   "id": "black_beans",
+   "name": "Svarta bönor",
+   "category": "Baljväxter",
+   "size": "380/230g",
+   "product": "Svarta Bönor Naturella (Garant)",
+   "source": "https://www.willys.se/produkt/Svarta-Bönor-Naturella-101245204_ST"
+  },
+  {
+   "id": "kidney_beans",
+   "name": "Kidneybönor",
+   "category": "Baljväxter",
+   "size": "380/230g",
+   "product": "Kidneybönor Naturella (Garant)",
+   "source": "https://www.willys.se/produkt/Kidneybönor-Naturella-101316741_ST"
+  },
+  {
+   "id": "chickpeas",
+   "name": "Kikärtor",
+   "category": "Baljväxter",
+   "size": "380/230g",
+   "product": "Kikärter Naturella (Garant)",
+   "source": "https://www.willys.se/produkt/Kikärter-Naturella-101281323_ST"
+  },
+  {
+   "id": "green_lentils",
+   "name": "Gröna linser",
+   "category": "Baljväxter",
+   "size": "380/230g",
+   "product": "Gröna Linser Ekologiska (Zeta)",
+   "source": "https://www.willys.se/produkt/Gröna-Linser-Ekologiska-101082793_ST"
+  },
+  {
+   "id": "red_lentils",
+   "name": "Röda linser",
+   "category": "Baljväxter",
+   "size": "500g",
+   "product": "Röda Linser (Garant Eko)",
+   "source": "https://www.willys.se/produkt/Röda-Linser-101543074_ST"
+  },
+  {
+   "id": "ready_daal",
+   "name": "Färdig daal",
+   "category": "Baljväxter",
+   "size": null,
+   "flag": "Hittade ingen färdig daal i butikens sortiment"
+  },
+  {
+   "id": "vegetable_bouillon",
+   "name": "Grönsaksbuljong",
+   "category": "Buljong & fond",
+   "size": "6p/3l",
+   "product": "Grönsaks Buljong Tärningar (Garant Eko)",
+   "source": "https://www.willys.se/produkt/Grönsaks-Buljong-Tärningar-101231767_ST"
+  },
+  {
+   "id": "chicken_bouillon",
+   "name": "Kycklingbuljong",
+   "category": "Buljong & fond",
+   "size": "6p/3l",
+   "product": "Kyckling Buljong Tärningar (Garant Eko)",
+   "source": "https://www.willys.se/produkt/Kyckling-Buljong-Tärningar-101231766_ST"
+  },
+  {
+   "id": "beef_bouillon",
+   "name": "Köttbuljong",
+   "category": "Buljong & fond",
+   "size": "10p/5l",
+   "product": "Köttbuljong Tärningar (Knorr)",
+   "source": "https://www.willys.se/produkt/Köttbuljong-Tärningar-101269275_ST"
+  },
+  {
+   "id": "soy_sauce",
+   "name": "Sojasås",
+   "category": "Asiatiskt",
+   "size": "150ml",
+   "product": "Sojasås Japansk Vegan (Kikkoman)",
+   "source": "https://www.willys.se/produkt/Sojasås-Japansk-Vegan-100450655_ST"
+  },
+  {
+   "id": "fish_sauce",
+   "name": "Fisksås",
+   "category": "Asiatiskt",
+   "size": "700ml",
+   "product": "Fisksås Fish Sauce (Oyster Brand)",
+   "source": "https://www.willys.se/produkt/Fisksås-Fish-Sauce-101186860_ST"
+  },
+  {
+   "id": "hoisin_sauce",
+   "name": "Hoisinsås",
+   "category": "Asiatiskt",
+   "size": "250ml",
+   "product": "Hoisin Sauce (Spicefield)",
+   "source": "https://www.willys.se/produkt/Hoisin-Sauce-101491410_ST"
+  },
+  {
+   "id": "sweet_chili_sauce",
+   "name": "Sweet chilisås",
+   "category": "Asiatiskt",
+   "size": "500ml",
+   "product": "Sweet Chili Sauce Original (Santa Maria)",
+   "source": "https://www.willys.se/produkt/Sweet-Chili-Sauce-Original-101240305_ST"
+  },
+  {
+   "id": "sriracha",
+   "name": "Sriracha",
+   "category": "Asiatiskt",
+   "size": "455ml",
+   "product": "Sriracha Hot Chilli Sauce (Flying Goose)",
+   "source": "https://www.willys.se/produkt/Sriracha-Hot-Chilli-Sauce-101336349_ST"
+  },
+  {
+   "id": "sambal_oelek",
+   "name": "Sambal oelek",
+   "category": "Asiatiskt",
+   "size": "200g",
+   "product": "Sambal Oelek Smaksättare (Lucullus)",
+   "source": "https://www.willys.se/produkt/Sambal-Oelek-Smaksättare-100646730_ST"
+  },
+  {
+   "id": "yellow_curry_paste",
+   "name": "Gul currypasta",
+   "category": "Asiatiskt",
+   "size": null,
+   "flag": "Hittade ingen gul currypasta (bara röd, grön och panang)"
+  },
+  {
+   "id": "paneng_red_curry",
+   "name": "Paneng red curry",
+   "category": "Asiatiskt",
+   "size": "110g",
+   "product": "Paneng Currypasta (Garant)",
+   "source": "https://www.willys.se/produkt/Paneng-Currypasta-101553947_ST"
+  },
+  {
+   "id": "asian_wok_sauce",
+   "name": "Asiatisk woksås",
+   "category": "Asiatiskt",
+   "size": "300ml",
+   "product": "Woksås Vitlök (Spicefield)",
+   "source": "https://www.willys.se/produkt/Woksås-Vitlök-101745395_ST"
+  },
+  {
+   "id": "ponzu_dressing",
+   "name": "Ponzudressing",
+   "category": "Asiatiskt",
+   "size": "150ml",
+   "product": "Ponzu Citrus Seasoned Soy Sauce (Twin Dragon)",
+   "source": "https://www.willys.se/produkt/Ponzu-Citrus-Seasoned-Soy-Sauce-101444942_ST"
+  },
+  {
+   "id": "umami_sauce",
+   "name": "Umamisås",
+   "category": "Asiatiskt",
+   "size": "200ml",
+   "product": "Oyster Sauce (Santa Maria)",
+   "source": "https://www.willys.se/produkt/Oyster-Sauce-101386140_ST",
+   "note": "ostronsås som närmaste motsvarighet"
+  },
+  {
+   "id": "sesame_oil",
+   "name": "Sesamolja",
+   "category": "Oljor & vinäger",
+   "size": "150ml",
+   "product": "Sesamolja (Garant)",
+   "source": "https://www.willys.se/produkt/Sesamolja-101716024_ST"
+  },
+  {
+   "id": "olive_oil",
+   "name": "Olivolja",
+   "category": "Oljor & vinäger",
+   "size": "750ml",
+   "product": "Olivolja Classico Extra Virgin (Garant)",
+   "source": "https://www.willys.se/produkt/Olivolja-Classico-Extra-Virgin-101290880_ST"
+  },
+  {
+   "id": "oil",
+   "name": "Matolja",
+   "category": "Oljor & vinäger",
+   "size": "1l",
+   "product": "Rapsolja (Eldorado)",
+   "source": "https://www.willys.se/produkt/Rapsolja-101298386_ST"
+  },
+  {
+   "id": "truffle_oil",
+   "name": "Tryffelolja",
+   "category": "Oljor & vinäger",
+   "size": "250ml",
+   "product": "Olivolja Tryffel (Levante)",
+   "source": "https://www.willys.se/produkt/Olivolja-Tryffel-101357695_ST"
+  },
+  {
+   "id": "balsamic_vinegar",
+   "name": "Balsamvinäger",
+   "category": "Oljor & vinäger",
+   "size": "500ml",
+   "product": "Balsamvinäger Från Modena (Garant)",
+   "source": "https://www.willys.se/produkt/Balsamvinäger-Från-Modena-101182139_ST"
+  },
+  {
+   "id": "white_wine_vinegar",
+   "name": "Vitvinsvinäger",
+   "category": "Oljor & vinäger",
+   "size": "250ml",
+   "product": "Vitvinsvinäger (Garant)",
+   "source": "https://www.willys.se/produkt/Vitvinsvinäger-101708067_ST"
+  },
+  {
+   "id": "vinegar_spirit",
+   "name": "Ättiksprit (12%)",
+   "category": "Oljor & vinäger",
+   "size": null,
+   "flag": "Bara ättiksprit som städprodukt (Kryddhuset 500 ml); matättika finns som Ättika 24 % 500 ml (Garant)"
+  },
+  {
+   "id": "ketchup",
+   "name": "Ketchup",
+   "category": "Såser & dressing",
+   "size": "1,25kg",
+   "product": "Ketchup Magnum (Felix)",
+   "source": "https://www.willys.se/produkt/Ketchup-Magnum-101222173_ST"
+  },
+  {
+   "id": "mustard",
+   "name": "Senap",
+   "category": "Såser & dressing",
+   "size": "500g",
+   "product": "Senap Sötstark (Johnny's)",
+   "source": "https://www.willys.se/produkt/Senap-Sötstark-100125561_ST"
+  },
+  {
+   "id": "wholegrain_mustard",
+   "name": "Grov senap",
+   "category": "Såser & dressing",
+   "size": "500g",
+   "product": "Senap Grovstark (Johnny's)",
+   "source": "https://www.willys.se/produkt/Senap-Grovstark-100390284_ST"
+  },
+  {
+   "id": "mayonnaise",
+   "name": "Majonnäs",
+   "category": "Såser & dressing",
+   "size": "275g",
+   "product": "Äkta Majonnäs (Kavli)",
+   "source": "https://www.willys.se/produkt/Äkta-Majonnäs-100451529_ST"
+  },
+  {
+   "id": "bbq_sauce",
+   "name": "BBQ-sås",
+   "category": "Såser & dressing",
+   "size": "335ml",
+   "product": "Bbq Orig Sås Glaze (Felix)",
+   "source": "https://www.willys.se/produkt/Bbq-Orig-Sås-Glaze-101677016_ST"
+  },
+  {
+   "id": "calabrese_pesto",
+   "name": "Calabresepesto",
+   "category": "Såser & dressing",
+   "size": "200g",
+   "product": "Pesto Bomba Calabrese (Garant)",
+   "source": "https://www.willys.se/produkt/Pesto-Bomba-Calabrese-101268109_ST"
+  },
+  {
+   "id": "tahini",
+   "name": "Tahini",
+   "category": "Såser & dressing",
+   "size": "360g",
+   "product": "Tahini Sesampasta (Kung Markatta)",
+   "source": "https://www.willys.se/produkt/Tahini-Sesampasta-101289307_ST"
+  },
+  {
+   "id": "lingon_jam",
+   "name": "Lingonsylt",
+   "category": "Såser & dressing",
+   "size": "365g",
+   "product": "Lingonsylt Lättsockrad (Garant)",
+   "source": "https://www.willys.se/produkt/Lingonsylt-Lättsockrad-101308239_ST"
+  },
+  {
+   "id": "flour",
+   "name": "Vetemjöl",
+   "category": "Bakning & sött",
+   "size": "2kg",
+   "product": "Vetemjöl (Garant)",
+   "source": "https://www.willys.se/produkt/Vetemjöl-101145716_ST"
+  },
+  {
+   "id": "sugar",
+   "name": "Socker",
+   "category": "Bakning & sött",
+   "size": "2kg",
+   "product": "Strösocker (Garant)",
+   "source": "https://www.willys.se/produkt/Strösocker-101553903_ST"
+  },
+  {
+   "id": "powdered_sugar",
+   "name": "Florsocker",
+   "category": "Bakning & sött",
+   "size": "500g",
+   "product": "Florsocker (Garant)",
+   "source": "https://www.willys.se/produkt/Florsocker-101841856_ST"
+  },
+  {
+   "id": "cocoa_powder",
+   "name": "Kakaopulver",
+   "category": "Bakning & sött",
+   "size": "200g",
+   "product": "Kakao (Garant)",
+   "source": "https://www.willys.se/produkt/Kakao-101734464_ST"
+  },
+  {
+   "id": "honey",
+   "name": "Honung",
+   "category": "Bakning & sött",
+   "size": "500g",
+   "product": "Honung Flytande (Eldorado)",
+   "source": "https://www.willys.se/produkt/Honung-Flytande-101262047_ST"
+  },
+  {
+   "id": "syrup",
+   "name": "Sirap",
+   "category": "Bakning & sött",
+   "size": "750g",
+   "product": "Ljus Sirap (Garant)",
+   "source": "https://www.willys.se/produkt/Ljus-Sirap-101278213_ST"
+  },
+  {
+   "id": "desiccated_coconut",
+   "name": "Riven kokos",
+   "category": "Bakning & sött",
+   "size": "200g",
+   "product": "Kokos Riven (Eldorado)",
+   "source": "https://www.willys.se/produkt/Kokos-Riven-101329669_ST"
+  },
+  {
+   "id": "almonds",
+   "name": "Mandlar",
+   "category": "Nötter & frön",
+   "size": "400g",
+   "product": "Sötmandel Hel (Eldorado)",
+   "source": "https://www.willys.se/produkt/Sötmandel-Hel-101736612_ST"
+  },
+  {
+   "id": "cashews",
+   "name": "Cashewnötter",
+   "category": "Nötter & frön",
+   "size": "400g",
+   "product": "Cashewnötter Rostade & Saltade (Eldorado)",
+   "source": "https://www.willys.se/produkt/Cashewnötter-Rostade-Saltade-101343041_ST",
+   "note": "rostade och saltade"
+  },
+  {
+   "id": "hazelnuts",
+   "name": "Hasselnötter",
+   "category": "Nötter & frön",
+   "size": "500g",
+   "product": "Hasselnötter Hela (Eldorado)",
+   "source": "https://www.willys.se/produkt/Hasselnötter-Hela-101354384_ST"
+  },
+  {
+   "id": "peanuts",
+   "name": "Jordnötter",
+   "category": "Nötter & frön",
+   "size": "200g",
+   "product": "Jordnötter Osaltade (Eldorado)",
+   "source": "https://www.willys.se/produkt/Jordnötter-Osaltade-101273451_ST"
+  },
+  {
+   "id": "salted_peanuts",
+   "name": "Saltade jordnötter",
+   "category": "Nötter & frön",
+   "size": "275g",
+   "product": "Jordnötter Salta (Estrella)",
+   "source": "https://www.willys.se/produkt/Jordnötter-Salta-101116338_ST"
+  },
+  {
+   "id": "pine_nuts",
+   "name": "Pinjenötter",
+   "category": "Nötter & frön",
+   "size": "40g",
+   "product": "Pinjenötter Ekologiska (Garant Eko)",
+   "source": "https://www.willys.se/produkt/Pinjenötter-Ekologiska-101263469_ST"
+  },
+  {
+   "id": "pistachios",
+   "name": "Pistagenötter",
+   "category": "Nötter & frön",
+   "size": "300g",
+   "product": "Pistaschnötter Rostade Saltade (Eldorado)",
+   "source": "https://www.willys.se/produkt/Pistaschnötter-Rostade-Saltade-101331258_ST",
+   "note": "rostade och saltade"
+  },
+  {
+   "id": "walnuts",
+   "name": "Valnötter",
+   "category": "Nötter & frön",
+   "size": "400g",
+   "product": "Valnötter Naturella (Eldorado)",
+   "source": "https://www.willys.se/produkt/Valnötter-Naturella-101824434_ST"
+  },
+  {
+   "id": "pumpkin_seeds",
+   "name": "Pumpakärnor",
+   "category": "Nötter & frön",
+   "size": "300g",
+   "product": "Pumpakärnor (Garant Eko)",
+   "source": "https://www.willys.se/produkt/Pumpakärnor-101245076_ST"
+  },
+  {
+   "id": "sunflower_seeds",
+   "name": "Solroskärnor",
+   "category": "Nötter & frön",
+   "size": "800g",
+   "product": "Solroskärnor Skalade (Eldorado)",
+   "source": "https://www.willys.se/produkt/Solroskärnor-Skalade-101250208_ST"
+  },
+  {
+   "id": "sesame_seeds",
+   "name": "Sesamfrön",
+   "category": "Nötter & frön",
+   "size": "400g",
+   "product": "Sesamfrön Skalade (Garant Eko)",
+   "source": "https://www.willys.se/produkt/Sesamfrön-Skalade-101543072_ST"
+  }
+ ],
+ "recipes": [
+  {
+   "id": "apelsinglaserad_chokladkaka",
+   "name": "Apelsinglaserad chokladkaka",
+   "pantry": [
+    "hazelnuts",
+    "powdered_sugar"
+   ]
+  },
+  {
+   "id": "asiatisk_rakwok",
+   "name": "Asiatisk räkwok",
+   "pantry": [
+    "asian_wok_sauce",
+    "long_grain_rice",
+    "olive_oil",
+    "sesame_seeds",
+    "soy_sauce"
+   ]
+  },
+  {
+   "id": "asiatiska_raktacos",
+   "name": "Asiatiska räktacos",
+   "pantry": [
+    "mini_tortillas",
+    "olive_oil",
+    "sweet_chili_sauce"
+   ]
+  },
+  {
+   "id": "avocado_smoothie",
+   "name": "Avokadosmoothie",
+   "pantry": [
+    "honey"
+   ]
+  },
+  {
+   "id": "bacon_tortelloni_tomato",
+   "name": "Bacon-tortelloni med tomatsås och ost",
+   "pantry": [
+    "olive_oil",
+    "passata",
+    "walnuts"
+   ]
+  },
+  {
+   "id": "basil_chicken_root_mash",
+   "name": "Basilikakyckling med Rotmos och Zucchinisallad",
+   "pantry": [
+    "honey",
+    "olive_oil",
+    "soy_sauce"
+   ]
+  },
+  {
+   "id": "ugnsrostad_kyckling_brysselkal",
+   "name": "Bowl på ugnsrostad kyckling och brysselkål",
+   "pantry": [
+    "bulgur",
+    "olive_oil",
+    "walnuts"
+   ]
+  },
+  {
+   "id": "caesar_kycklingsallad",
+   "name": "Caesarinspirerad kycklingsallad",
+   "pantry": [
+    "olive_oil",
+    "panko"
+   ]
+  },
+  {
+   "id": "caesar_asparagus_salad",
+   "name": "Caesarsallad på grön sparris",
+   "pantry": [
+    "mayonnaise",
+    "olive_oil"
+   ]
+  },
+  {
+   "id": "cajun_bacon_linguine",
+   "name": "Cajunkryddad baconlinguine",
+   "pantry": [
+    "linguine",
+    "tomato_paste",
+    "vegetable_bouillon"
+   ]
+  },
+  {
+   "id": "cajunkryddad_kycklingfile",
+   "name": "Cajunkryddad kycklingfilé",
+   "pantry": [
+    "canned_corn",
+    "olive_oil"
+   ]
+  },
+  {
+   "id": "cajunpanerad_kyckling",
+   "name": "Cajunpanerad kyckling",
+   "pantry": [
+    "balsamic_vinegar",
+    "olive_oil",
+    "panko",
+    "sugar"
+   ]
+  },
+  {
+   "id": "chorizo_rigatoni_calabrese",
+   "name": "Chorizo-rigatoni med calabresepesto",
+   "pantry": [
+    "calabrese_pesto",
+    "olive_oil",
+    "rigatoni",
+    "walnuts"
+   ]
+  },
+  {
+   "id": "citronstekt_flaskkott",
+   "name": "Citronstekt fläskkött",
+   "pantry": [
+    "olive_oil",
+    "sesame_seeds",
+    "vegetable_bouillon"
+   ]
+  },
+  {
+   "id": "citronstekt_lax",
+   "name": "Citronstekt lax",
+   "pantry": [
+    "olive_oil",
+    "sesame_seeds",
+    "vegetable_bouillon"
+   ]
+  },
+  {
+   "id": "curry_chickpea_wraps",
+   "name": "Currykryddade kikärtswraps",
+   "pantry": [
+    "almonds",
+    "chickpeas",
+    "mayonnaise",
+    "sriracha",
+    "tortillas"
+   ]
+  },
+  {
+   "id": "bbq_lax_ranch",
+   "name": "Festlig BBQ-lax och ranchdressing",
+   "pantry": [
+    "bbq_sauce",
+    "canned_corn",
+    "mayonnaise",
+    "olive_oil",
+    "salted_peanuts"
+   ]
+  },
+  {
+   "id": "flaskytterfile_graddsas",
+   "name": "Fläskytterfilé i gräddsås med kokt potatis och äppelsallad",
+   "pantry": [
+    "chicken_bouillon",
+    "olive_oil"
+   ]
+  },
+  {
+   "id": "fransk_chevre_chaud",
+   "name": "Fransk chèvre chaud-sallad",
+   "pantry": [
+    "balsamic_vinegar",
+    "honey",
+    "olive_oil",
+    "sugar",
+    "walnuts"
+   ]
+  },
+  {
+   "id": "fardig_daal_kachumber",
+   "name": "Färdig daal med basmatiris, kachumber och yoghurt",
+   "pantry": [
+    "basmati_rice",
+    "ready_daal"
+   ]
+  },
+  {
+   "id": "girasoli_creamy_paprika",
+   "name": "Girasoli i krämig paprikasås",
+   "pantry": [
+    "olive_oil",
+    "soy_sauce",
+    "tomato_paste"
+   ]
+  },
+  {
+   "id": "gratinerad_aubergine",
+   "name": "Gratinerad aubergine med dukkah och parmesan",
+   "pantry": [
+    "balsamic_vinegar",
+    "canned_tomatoes",
+    "ketchup",
+    "mini_tortillas",
+    "olive_oil",
+    "sugar"
+   ]
+  },
+  {
+   "id": "gratinerade_kidneybonor",
+   "name": "Gratinerade kidneybönor i tomatsås",
+   "pantry": [
+    "canned_tomatoes",
+    "jasmine_rice",
+    "kidney_beans",
+    "olive_oil"
+   ]
+  },
+  {
+   "id": "grekisk_notfarsmoussaka",
+   "name": "Grekisk nötfärsmoussaka",
+   "pantry": [
+    "canned_tomatoes",
+    "chicken_bouillon",
+    "olive_oil",
+    "sugar"
+   ]
+  },
+  {
+   "id": "chicken_gyros",
+   "name": "Grekiskinspirerade kycklinggyros",
+   "pantry": [
+    "olive_oil",
+    "pita_bread"
+   ]
+  },
+  {
+   "id": "cowboy_steak_burger",
+   "name": "Grillad cowboy steak burger och BBQ-sås",
+   "pantry": [
+    "bbq_sauce",
+    "flour",
+    "olive_oil"
+   ]
+  },
+  {
+   "id": "kale_quesadillas",
+   "name": "Grönkålsquesadillas med svart bönröra",
+   "pantry": [
+    "black_beans",
+    "mini_tortillas",
+    "olive_oil"
+   ]
+  },
+  {
+   "id": "gronsaksfyllda_paprikor",
+   "name": "Grönsaksfyllda paprikor med mozzarella och crème fraîche",
+   "pantry": [
+    "canned_tomatoes",
+    "olive_oil",
+    "pearl_couscous",
+    "pumpkin_seeds",
+    "sugar",
+    "vegetable_bouillon"
+   ]
+  },
+  {
+   "id": "gyllene_toscakaka",
+   "name": "Gyllene toscakaka med en twist",
+   "pantry": [
+    "almonds",
+    "flour",
+    "hazelnuts",
+    "powdered_sugar",
+    "syrup"
+   ]
+  },
+  {
+   "id": "chicken_kiev",
+   "name": "Gyllenstekt Kyckling Kiev",
+   "pantry": [
+    "olive_oil",
+    "panko"
+   ]
+  },
+  {
+   "id": "gyllenstekt_kycklingschnitzel",
+   "name": "Gyllenstekt kycklingschnitzel",
+   "pantry": [
+    "flour",
+    "mayonnaise",
+    "olive_oil",
+    "panko"
+   ]
+  },
+  {
+   "id": "halloumi_rostade_morotter",
+   "name": "Halloumi och rostade morötter",
+   "pantry": [
+    "almonds",
+    "couscous",
+    "honey",
+    "olive_oil",
+    "vegetable_bouillon"
+   ]
+  },
+  {
+   "id": "hoisin_sticky_pork",
+   "name": "Hoisin med sticky pork",
+   "pantry": [
+    "hoisin_sauce",
+    "noodles",
+    "sesame_seeds",
+    "water_chestnuts"
+   ]
+  },
+  {
+   "id": "honungs_chiliglaserad_kyckling",
+   "name": "Honungs- och chiliglaserad kyckling",
+   "pantry": [
+    "honey",
+    "ketchup",
+    "mayonnaise",
+    "olive_oil"
+   ]
+  },
+  {
+   "id": "honungsstekt_grillost_tzatziki",
+   "name": "Honungsstekt grillost med mild tzatziki",
+   "pantry": [
+    "honey",
+    "olive_oil"
+   ]
+  },
+  {
+   "id": "autumn_kale_salad",
+   "name": "Höstig grönkålssallad med butternutpumpa och valnöt",
+   "pantry": [
+    "olive_oil",
+    "walnuts"
+   ]
+  },
+  {
+   "id": "japansk_notfarsbowl",
+   "name": "Japansk nötfärsbowl",
+   "pantry": [
+    "asian_wok_sauce",
+    "jasmine_rice",
+    "olive_oil",
+    "sesame_seeds",
+    "sugar",
+    "white_wine_vinegar"
+   ]
+  },
+  {
+   "id": "kallrokt_lax_dillpotatis",
+   "name": "Kallrökt lax och dillpotatis",
+   "pantry": [
+    "olive_oil",
+    "sugar"
+   ]
+  },
+  {
+   "id": "katalansk_raksoppa",
+   "name": "Katalansk räksoppa med fänkål, saffran och surdegsbröd",
+   "pantry": [
+    "canned_tomatoes",
+    "honey",
+    "mayonnaise",
+    "olive_oil",
+    "tomato_paste",
+    "vegetable_bouillon",
+    "white_wine_vinegar"
+   ]
+  },
+  {
+   "id": "boeuf_bourguignon_vitloksmos",
+   "name": "Klassisk boeuf bourguignon",
+   "pantry": [
+    "chicken_bouillon",
+    "olive_oil",
+    "soy_sauce",
+    "tomato_paste"
+   ]
+  },
+  {
+   "id": "coconut_soup",
+   "name": "Kokossoppa med skogschampinjoner, koriander och jordnötter",
+   "pantry": [
+    "coconut_milk",
+    "noodles",
+    "oil",
+    "peanuts",
+    "soy_sauce",
+    "vegetable_bouillon",
+    "yellow_curry_paste"
+   ]
+  },
+  {
+   "id": "crispy_bbq_chicken",
+   "name": "Krispig BBQ-kyckling",
+   "pantry": [
+    "bbq_sauce",
+    "mayonnaise",
+    "olive_oil",
+    "panko"
+   ]
+  },
+  {
+   "id": "creamy_aubergine_curry",
+   "name": "Krämig auberginecurry med gröna linser och koriander",
+   "pantry": [
+    "coconut_milk",
+    "green_lentils",
+    "olive_oil",
+    "soy_sauce"
+   ]
+  },
+  {
+   "id": "kramig_basilikakyckling",
+   "name": "Krämig basilikakyckling",
+   "pantry": [
+    "olive_oil",
+    "vegetable_bouillon"
+   ]
+  },
+  {
+   "id": "kramig_medelhavs_kyckling",
+   "name": "Krämig medelhavs-inspirerad kyckling",
+   "pantry": [
+    "bulgur",
+    "chicken_bouillon",
+    "olive_oil"
+   ]
+  },
+  {
+   "id": "kramig_medelhavs_rakpasta",
+   "name": "Krämig medelhavs-inspirerad räkpasta",
+   "pantry": [
+    "olive_oil",
+    "pumpkin_seeds",
+    "spaghetti",
+    "vegetable_bouillon"
+   ]
+  },
+  {
+   "id": "kramig_prosciuttopasta",
+   "name": "Krämig prosciuttopasta",
+   "pantry": [
+    "chicken_bouillon",
+    "olive_oil",
+    "rigatoni"
+   ]
+  },
+  {
+   "id": "creamy_mushroom_bruschetta",
+   "name": "Krämig svampbruschetta",
+   "pantry": [
+    "olive_oil",
+    "truffle_oil"
+   ]
+  },
+  {
+   "id": "creamy_sweet_potato_dhal",
+   "name": "Krämig sötpotatisdhal",
+   "pantry": [
+    "coconut_milk",
+    "olive_oil",
+    "red_lentils",
+    "soy_sauce",
+    "tortillas",
+    "vegetable_bouillon"
+   ]
+  },
+  {
+   "id": "kyckling_rod_curry",
+   "name": "Kyckling i röd curry med grönsaker",
+   "pantry": [
+    "coconut_milk",
+    "jasmine_rice",
+    "oil",
+    "paneng_red_curry"
+   ]
+  },
+  {
+   "id": "kottbullar_tomatsas",
+   "name": "Köttbullar i tomatsås",
+   "pantry": [
+    "beef_bouillon",
+    "breadcrumbs",
+    "canned_tomatoes",
+    "olive_oil",
+    "pine_nuts",
+    "sugar"
+   ]
+  },
+  {
+   "id": "linsgryta_kokosmjolk",
+   "name": "Linsgryta med kokosmjölk",
+   "pantry": [
+    "coconut_milk",
+    "naan_bread",
+    "oil",
+    "red_lentils",
+    "rice",
+    "sambal_oelek",
+    "tomato_paste",
+    "vegetable_bouillon"
+   ]
+  },
+  {
+   "id": "chocolate_granola",
+   "name": "Lyxig chokladgranola",
+   "pantry": [
+    "cocoa_powder",
+    "hazelnuts",
+    "honey",
+    "oats"
+   ]
+  },
+  {
+   "id": "chicken_bulgur_mediterranean",
+   "name": "Medelhavs-inspirerad Kyckling",
+   "pantry": [
+    "bulgur",
+    "olive_oil",
+    "pumpkin_seeds",
+    "vegetable_bouillon"
+   ]
+  },
+  {
+   "id": "falafel_bulgur_bowl",
+   "name": "Medelhavsbowl på falafel och bulgur",
+   "pantry": [
+    "bulgur",
+    "olive_oil",
+    "sugar",
+    "tahini"
+   ]
+  },
+  {
+   "id": "medelhavskryddad_kyckling",
+   "name": "Medelhavskryddad kyckling",
+   "pantry": [
+    "olive_oil"
+   ]
+  },
+  {
+   "id": "morotskaka",
+   "name": "Morotskaka",
+   "pantry": [
+    "powdered_sugar",
+    "walnuts"
+   ]
+  },
+  {
+   "id": "lentil_gratin",
+   "name": "Mustig linsgratäng med potatis, persilja och gemsallad",
+   "pantry": [
+    "canned_tomatoes",
+    "green_lentils",
+    "olive_oil",
+    "vegetable_bouillon"
+   ]
+  },
+  {
+   "id": "norska_kottbullar",
+   "name": "Norska köttbullar",
+   "pantry": [
+    "beef_bouillon",
+    "breadcrumbs",
+    "lingon_jam",
+    "olive_oil"
+   ]
+  },
+  {
+   "id": "beef_kofta_greek_salad",
+   "name": "Nötfärskoftas och grekisk sallad",
+   "pantry": [
+    "breadcrumbs",
+    "flatbread",
+    "olive_oil"
+   ]
+  },
+  {
+   "id": "palak_chicken",
+   "name": "Palak chicken med färsk spenat, tomat och basmatiris",
+   "pantry": [
+    "basmati_rice",
+    "oil",
+    "sugar",
+    "tomato_paste"
+   ]
+  },
+  {
+   "id": "panerat_citronpepparflask",
+   "name": "Panerat citronpepparfläsk",
+   "pantry": [
+    "olive_oil",
+    "panko"
+   ]
+  },
+  {
+   "id": "pannkakor_lime_mango",
+   "name": "Pannkakor med limemarinerad mango",
+   "pantry": [
+    "desiccated_coconut",
+    "sugar",
+    "syrup"
+   ]
+  },
+  {
+   "id": "pannstekt_lax",
+   "name": "Pannstekt lax med senapssås och pestopotatis",
+   "pantry": [
+    "olive_oil",
+    "vegetable_bouillon"
+   ]
+  },
+  {
+   "id": "pastagratang_ziti",
+   "name": "Pastagratäng ziti",
+   "pantry": [
+    "balsamic_vinegar",
+    "canned_tomatoes",
+    "oil",
+    "olive_oil",
+    "pasta"
+   ]
+  },
+  {
+   "id": "spinach_feta_piroger",
+   "name": "Piroger med Fetaost och Spenat",
+   "pantry": [
+    "olive_oil",
+    "sesame_seeds"
+   ]
+  },
+  {
+   "id": "piroger_ham_broccoli",
+   "name": "Piroger med Skinka och Broccoli",
+   "pantry": [
+    "sesame_seeds"
+   ]
+  },
+  {
+   "id": "potato_leek_gratin",
+   "name": "Potatis- och purjolöksgratäng med mozzarella",
+   "pantry": [
+    "honey",
+    "mustard",
+    "oil",
+    "olive_oil",
+    "panko",
+    "sunflower_seeds",
+    "vegetable_bouillon"
+   ]
+  },
+  {
+   "id": "potatis_purjolokssoppa",
+   "name": "Potatis- och purjolökssoppa med kryddig korv",
+   "pantry": [
+    "chicken_bouillon"
+   ]
+  },
+  {
+   "id": "prosciutto_pita_pizza",
+   "name": "Prosciuttotoppad pitapizza",
+   "pantry": [
+    "olive_oil",
+    "pita_bread",
+    "walnuts"
+   ]
+  },
+  {
+   "id": "pulled_pork_taquitos",
+   "name": "Pulled pork-taquitos",
+   "pantry": [
+    "canned_tomatoes",
+    "mini_tortillas",
+    "olive_oil"
+   ]
+  },
+  {
+   "id": "pear_goat_cheese_bruschetta",
+   "name": "Päron- och getostbruschetta",
+   "pantry": [
+    "honey",
+    "olive_oil",
+    "walnuts"
+   ]
+  },
+  {
+   "id": "rosemary_lamb_leek_sauce",
+   "name": "Rosmarinkryddad lammstek med purjolökssås",
+   "pantry": [
+    "mustard",
+    "olive_oil",
+    "pistachios"
+   ]
+  },
+  {
+   "id": "roasted_cauliflower_biryani",
+   "name": "Rostad blomkålsbiryani",
+   "pantry": [
+    "almonds",
+    "basmati_rice",
+    "olive_oil",
+    "vegetable_bouillon"
+   ]
+  },
+  {
+   "id": "rakbowl_krispig_kal",
+   "name": "Räkbowl med krispig kål, rostade sesamfrön, picklad gurka och sojamajonnäs",
+   "pantry": [
+    "jasmine_rice",
+    "mayonnaise",
+    "sesame_oil",
+    "sesame_seeds",
+    "soy_sauce",
+    "sugar",
+    "vinegar_spirit",
+    "white_wine_vinegar"
+   ]
+  },
+  {
+   "id": "rakor_i_sotsur_sas",
+   "name": "Räkor i sötsur sås",
+   "pantry": [
+    "olive_oil",
+    "salted_peanuts",
+    "sesame_seeds",
+    "soy_sauce",
+    "sweet_chili_sauce",
+    "udon_noodles",
+    "white_wine_vinegar"
+   ]
+  },
+  {
+   "id": "rodvinsstekt_kyckling",
+   "name": "Rödvinsstekt kyckling",
+   "pantry": [
+    "chicken_bouillon",
+    "honey",
+    "olive_oil",
+    "wholegrain_mustard"
+   ]
+  },
+  {
+   "id": "krispiga_kikartor_salladsbowl",
+   "name": "Salladsbowl på krispiga kikärtor",
+   "pantry": [
+    "chickpeas",
+    "olive_oil",
+    "pine_nuts"
+   ]
+  },
+  {
+   "id": "sej_sweet_chili_sojaglaze",
+   "name": "Sej i sweet chili- och sojaglaze",
+   "pantry": [
+    "jasmine_rice",
+    "olive_oil",
+    "sesame_seeds",
+    "soy_sauce",
+    "sweet_chili_sauce"
+   ]
+  },
+  {
+   "id": "citronpepparlax_parlcouscous",
+   "name": "Skandinaviskinspirerad citronpepparlax",
+   "pantry": [
+    "olive_oil",
+    "pearl_couscous",
+    "sugar",
+    "white_wine_vinegar"
+   ]
+  },
+  {
+   "id": "skansk_aggakaka",
+   "name": "Skånsk äggakaka i ugn",
+   "pantry": [
+    "flour"
+   ]
+  },
+  {
+   "id": "mango_smoothie_bowl",
+   "name": "Smoothiebowl på mango",
+   "pantry": [
+    "cashews",
+    "coconut_milk",
+    "honey"
+   ]
+  },
+  {
+   "id": "spaghetti_bolognese",
+   "name": "Spaghetti Bolognese",
+   "pantry": [
+    "canned_tomatoes",
+    "olive_oil",
+    "pasta"
+   ]
+  },
+  {
+   "id": "spaghetti_courgette_sauce",
+   "name": "Spaghetti och courgettesås",
+   "pantry": [
+    "canned_tomatoes",
+    "olive_oil",
+    "panko",
+    "spaghetti"
+   ]
+  },
+  {
+   "id": "spanskinspirerad_kyckling_romesco",
+   "name": "Spanskinspirerad kyckling och romescosås",
+   "pantry": [
+    "calabrese_pesto",
+    "olive_oil",
+    "walnuts"
+   ]
+  },
+  {
+   "id": "spindelnats_brownie",
+   "name": "Spindelnätsbrownie",
+   "pantry": [
+    "hazelnuts",
+    "powdered_sugar"
+   ]
+  },
+  {
+   "id": "stekt_flask_graslokssas",
+   "name": "Stekt fläsk i gräslökssås",
+   "pantry": [
+    "chicken_bouillon",
+    "olive_oil"
+   ]
+  },
+  {
+   "id": "rump_steak_basil_sauce",
+   "name": "Stekt rumpstek och krämig basilikasås",
+   "pantry": [
+    "olive_oil",
+    "pine_nuts",
+    "soy_sauce",
+    "sugar"
+   ]
+  },
+  {
+   "id": "stekt_kolja_dragonsas",
+   "name": "Stekt vit fisk med rostade rädisor och dragonsås",
+   "pantry": [
+    "olive_oil",
+    "vegetable_bouillon"
+   ]
+  },
+  {
+   "id": "mushroom_risotto",
+   "name": "Svamprisotto med oreganoäpplen",
+   "pantry": [
+    "hazelnuts",
+    "olive_oil",
+    "risotto_rice",
+    "vegetable_bouillon",
+    "white_wine_vinegar"
+   ]
+  },
+  {
+   "id": "sweet_chili_pork_chop",
+   "name": "Sweet chili-glaserad fläskkotlett",
+   "pantry": [
+    "jasmine_rice",
+    "olive_oil",
+    "soy_sauce",
+    "sweet_chili_sauce",
+    "vegetable_bouillon"
+   ]
+  },
+  {
+   "id": "tex_mex_pork_burrito",
+   "name": "Tex-Mex-kryddad fläskköttsburrito",
+   "pantry": [
+    "mayonnaise",
+    "olive_oil",
+    "sriracha",
+    "tortillas"
+   ]
+  },
+  {
+   "id": "tomato_pepper_soup",
+   "name": "Tomat- och paprikasoppa med pärlcouscous och dragon",
+   "pantry": [
+    "oil",
+    "pearl_couscous",
+    "sugar",
+    "vegetable_bouillon"
+   ]
+  },
+  {
+   "id": "torsk_currykokos",
+   "name": "Torsk i currykokos med grönsaksris",
+   "pantry": [
+    "coconut_milk",
+    "rice"
+   ]
+  },
+  {
+   "id": "ugnsbakad_lax_chiligurka",
+   "name": "Ugnsbakad lax med chilipicklad gurka, limesyrlig kålrabbi och sojamajonnäs",
+   "pantry": [
+    "jasmine_rice",
+    "mayonnaise",
+    "soy_sauce",
+    "sugar",
+    "tomato_paste",
+    "vinegar_spirit"
+   ]
+  },
+  {
+   "id": "ugnsbakade_gronsaker",
+   "name": "Ugnsbakade grönsaker i baguette med ostdressing",
+   "pantry": [
+    "ketchup",
+    "olive_oil"
+   ]
+  },
+  {
+   "id": "ugnsstekt_kycklingfile_sesam",
+   "name": "Ugnsstekt kycklingfilé",
+   "pantry": [
+    "balsamic_vinegar",
+    "olive_oil",
+    "sesame_seeds"
+   ]
+  },
+  {
+   "id": "umami_glazed_chickpeas",
+   "name": "Umamiglaserade kikärtor",
+   "pantry": [
+    "chickpeas",
+    "flour",
+    "honey",
+    "jasmine_rice",
+    "olive_oil",
+    "ponzu_dressing",
+    "salted_peanuts",
+    "soy_sauce",
+    "sriracha",
+    "umami_sauce"
+   ]
+  },
+  {
+   "id": "valnotskaka_paron",
+   "name": "Valnötskaka med päron",
+   "pantry": [
+    "powdered_sugar",
+    "walnuts"
+   ]
+  },
+  {
+   "id": "warm_lentil_salad",
+   "name": "Varm linssallad med rostade grönsaker och mint",
+   "pantry": [
+    "bulgur",
+    "green_lentils",
+    "olive_oil",
+    "vegetable_bouillon"
+   ]
+  },
+  {
+   "id": "vietnamesisk_kycklingbowl_vitloksris",
+   "name": "Vietnamesisk kycklingbowl",
+   "pantry": [
+    "asian_wok_sauce",
+    "jasmine_rice",
+    "olive_oil",
+    "sugar",
+    "white_wine_vinegar"
+   ]
+  },
+  {
+   "id": "vietnamesisk_rakbowl",
+   "name": "Vietnamesisk räkbowl",
+   "pantry": [
+    "desiccated_coconut",
+    "long_grain_rice",
+    "olive_oil",
+    "soy_sauce",
+    "sugar"
+   ]
+  },
+  {
+   "id": "vietnamesisk_rakbowl_vitloksnudlar",
+   "name": "Vietnamesisk räkbowl med vitlöksnudlar",
+   "pantry": [
+    "fish_sauce",
+    "mie_noodles",
+    "olive_oil",
+    "salted_peanuts",
+    "soy_sauce",
+    "sugar"
+   ]
+  },
+  {
+   "id": "wraps_tacokyckling_keso",
+   "name": "Wraps med tacokyckling och keso",
+   "pantry": [
+    "canned_corn",
+    "tortillas"
+   ]
+  },
+  {
+   "id": "zaatar_flaskkotlett",
+   "name": "Zaatarstekt fläskkotlett med bulgursallad, apelsin och yoghurt",
+   "pantry": [
+    "balsamic_vinegar",
+    "bulgur",
+    "oil",
+    "olive_oil"
+   ]
+  },
+  {
+   "id": "appelkaka_mandlar",
+   "name": "Äppelkaka med mandlar",
+   "pantry": [
+    "almonds",
+    "sugar"
+   ]
+  },
+  {
+   "id": "appel_pannbiff",
+   "name": "Äppelpannbiff med kålsallad",
+   "pantry": [
+    "breadcrumbs",
+    "olive_oil"
+   ]
+  }
+ ]
+}

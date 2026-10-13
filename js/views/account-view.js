@@ -8,9 +8,9 @@
 import * as UserState from '../core/user-recipe-state.js?v=20261013b';
 import { missingMixes } from '../core/spice-prefs.js?v=20261013a';
 import { savedTheme } from '../utils/theme.js?v=20261013b';
-import { menuExtrasHtml, bindMenuExtras } from './menu-items.js?v=20261013a';
+import { menuExtrasHtml, bindMenuExtras } from './menu-items.js?v=20261013sk';
 import { onAuthChange, onSyncStatus, syncStatus, lastSyncTime, signOut, currentUser, isAvailable } from '../core/sync.js?v=20261013d';
-import { openSignIn } from './auth-ui.js?v=20261013d';
+import { openSignIn } from './auth-ui.js?v=20261013sk';
 import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261011u';
 
 const LOCAL_KEYS = [

@@ -1,0 +1,665 @@
+{
+ "checked": "2026-10-13",
+ "retailer": "Willys (handla.ica.se kräver butiksinloggning och gick inte att hämta)",
+ "items": [
+  {
+   "id": "pasta",
+   "name": "Pasta",
+   "category": "Pasta, ris & gryn",
+   "size": "500g",
+   "product": "Penne Rigate Pasta (Monte Castello)",
+   "source": "https://www.willys.se/produkt/Penne-Rigate-Pasta-101240218_ST"
+  },
+  {
+   "id": "spaghetti",
+   "name": "Spaghetti",
+   "category": "Pasta, ris & gryn",
+   "size": "1kg",
+   "product": "Spaghetti Pasta (Barilla)",
+   "source": "https://www.willys.se/produkt/Spaghetti-Pasta-100087978_ST"
+  },
+  {
+   "id": "linguine",
+   "name": "Linguine",
+   "category": "Pasta, ris & gryn",
+   "size": "1kg",
+   "product": "Linguine Pasta (Garant)",
+   "source": "https://www.willys.se/produkt/Linguine-Pasta-101469947_ST"
+  },
+  {
+   "id": "rigatoni",
+   "name": "Rigatoni",
+   "category": "Pasta, ris & gryn",
+   "size": "500g",
+   "product": "Mezzi Rigatoni Pasta (La Molisana)",
+   "source": "https://www.willys.se/produkt/Mezzi-Rigatoni-Pasta-101531959_ST"
+  },
+  {
+   "id": "basmati_rice",
+   "name": "Basmatiris",
+   "category": "Pasta, ris & gryn",
+   "size": "1kg",
+   "product": "Basmatiris (Garant)",
+   "source": "https://www.willys.se/produkt/Basmatiris-101488798_ST"
+  },
+  {
+   "id": "jasmine_rice",
+   "name": "Jasminris",
+   "category": "Pasta, ris & gryn",
+   "size": "1kg",
+   "product": "Jasminris (Garant)",
+   "source": "https://www.willys.se/produkt/Jasminris-101488555_ST"
+  },
+  {
+   "id": "long_grain_rice",
+   "name": "Långkornigt vitt ris",
+   "category": "Pasta, ris & gryn",
+   "size": "2kg",
+   "product": "Ris Långkornigt (Eldorado)",
+   "source": "https://www.willys.se/produkt/Ris-Långkornigt-101234821_ST"
+  },
+  {
+   "id": "rice",
+   "name": "Ris",
+   "category": "Pasta, ris & gryn",
+   "size": "2kg",
+   "product": "Jasminris (Eldorado)",
+   "source": "https://www.willys.se/produkt/Jasminris-101220577_ST",
+   "note": "jasminris"
+  },
+  {
+   "id": "risotto_rice",
+   "name": "Risottoris",
+   "category": "Pasta, ris & gryn",
+   "size": "1kg",
+   "product": "Avorio Risottoris (Risenta)",
+   "source": "https://www.willys.se/produkt/Avorio-Risottoris-100221644_ST"
+  },
+  {
+   "id": "bulgur",
+   "name": "Bulgur",
+   "category": "Pasta, ris & gryn",
+   "size": "500g",
+   "product": "Bulgur av Durumvete (Garant)",
+   "source": "https://www.willys.se/produkt/Bulgur-av-Durumvete-101656403_ST"
+  },
+  {
+   "id": "couscous",
+   "name": "Couscous",
+   "category": "Pasta, ris & gryn",
+   "size": "1kg",
+   "product": "Couscous (Garant)",
+   "source": "https://www.willys.se/produkt/Couscous-101547064_ST"
+  },
+  {
+   "id": "pearl_couscous",
+   "name": "Pärlcouscous",
+   "category": "Pasta, ris & gryn",
+   "size": "500g",
+   "product": "Pärlcouscous (Garant)",
+   "source": "https://www.willys.se/produkt/Pärlcouscous-101550908_ST"
+  },
+  {
+   "id": "oats",
+   "name": "Havregryn",
+   "category": "Pasta, ris & gryn",
+   "size": "1,5kg",
+   "product": "Havregryn (Garant)",
+   "source": "https://www.willys.se/produkt/Havregryn-101833307_ST"
+  },
+  {
+   "id": "noodles",
+   "name": "Nudlar",
+   "category": "Nudlar & bröd",
+   "size": "1kg",
+   "product": "Äggnudlar (Spicefield)",
+   "source": "https://www.willys.se/produkt/Äggnudlar-101498815_ST"
+  },
+  {
+   "id": "mie_noodles",
+   "name": "Mie-nudlar",
+   "category": "Nudlar & bröd",
+   "size": null,
+   "flag": "Hittade inga mie-nudlar i butikens sortiment"
+  },
+  {
+   "id": "udon_noodles",
+   "name": "Udonnudlar",
+   "category": "Nudlar & bröd",
+   "size": "200g",
+   "product": "Udonnudlar Färska (Twin Dragon)",
+   "source": "https://www.willys.se/produkt/Udonnudlar-Färska-101824298_ST",
+   "note": "färska, kylvara"
+  },
+  {
+   "id": "tortillas",
+   "name": "Tortillabröd",
+   "category": "Nudlar & bröd",
+   "size": "320g",
+   "product": "Tortilla Original Medium 8-pack (Santa Maria)",
+   "source": "https://www.willys.se/produkt/Tortilla-Original-Medium-8-pack-101295571_ST"
+  },
+  {
+   "id": "mini_tortillas",
+   "name": "Minitortillas",
+   "category": "Nudlar & bröd",
+   "size": "200g",
+   "product": "Tortilla Mini 8-pack (Banderos)",
+   "source": "https://www.willys.se/produkt/Tortilla-Mini-8-pack-101273934_ST"
+  },
+  {
+   "id": "pita_bread",
+   "name": "Pitabröd",
+   "category": "Nudlar & bröd",
+   "size": "350g",
+   "product": "Pitabröd 5-pack (Schysst Käk)",
+   "source": "https://www.willys.se/produkt/Pitabröd-5-pack-101418787_ST"
+  },
+  {
+   "id": "naan_bread",
+   "name": "Naanbröd",
+   "category": "Nudlar & bröd",
+   "size": "260g",
+   "product": "Naan Bread Original (Santa Maria)",
+   "source": "https://www.willys.se/produkt/Naan-Bread-Original-101584093_ST"
+  },
+  {
+   "id": "flatbread",
+   "name": "Tunnbröd",
+   "category": "Nudlar & bröd",
+   "size": "375g",
+   "product": "Tunnbröd 8p (Garant)",
+   "source": "https://www.willys.se/produkt/Tunnbröd-8p-101822187_ST"
+  },
+  {
+   "id": "breadcrumbs",
+   "name": "Ströbröd",
+   "category": "Nudlar & bröd",
+   "size": "400g",
+   "product": "Ströbröd (Eldorado)",
+   "source": "https://www.willys.se/produkt/Ströbröd-100878819_ST"
+  },
+  {
+   "id": "panko",
+   "name": "Pankoströbröd",
+   "category": "Nudlar & bröd",
+   "size": "200g",
+   "product": "Panko (Garant)",
+   "source": "https://www.willys.se/produkt/Panko-101716021_ST"
+  },
+  {
+   "id": "canned_tomatoes",
+   "name": "Krossade tomater",
+   "category": "Konserver",
+   "size": "1,17kg",
+   "product": "Tomater Finkrossade 3-pack (Garant)",
+   "source": "https://www.willys.se/produkt/Tomater-Finkrossade-3-pack-101310245_ST",
+   "note": "3-pack à 390 g"
+  },
+  {
+   "id": "passata",
+   "name": "Passata",
+   "category": "Konserver",
+   "size": "500g",
+   "product": "Passata Passerade Tomater (Mutti)",
+   "source": "https://www.willys.se/produkt/Passata-Passerade-Tomater-101523019_ST"
+  },
+  {
+   "id": "tomato_paste",
+   "name": "Tomatpuré",
+   "category": "Konserver",
+   "size": "300g",
+   "product": "Tomatpuré (Felix)",
+   "source": "https://www.willys.se/produkt/Tomatpur-100819401_ST"
+  },
+  {
+   "id": "coconut_milk",
+   "name": "Kokosmjölk",
+   "category": "Konserver",
+   "size": "250ml",
+   "product": "Kokosmjölk 17-18% (Garant)",
+   "source": "https://www.willys.se/produkt/Kokosmjölk-17-18-101708173_ST"
+  },
+  {
+   "id": "canned_corn",
+   "name": "Majs",
+   "category": "Konserver",
+   "size": "540/435g",
+   "product": "Majskorn 3-pack (Eldorado)",
+   "source": "https://www.willys.se/produkt/Majskorn-3-pack-101355552_ST",
+   "note": "3-pack"
+  },
+  {
+   "id": "water_chestnuts",
+   "name": "Vattenkastanjer",
+   "category": "Konserver",
+   "size": "220/140g",
+   "product": "Water Chestnut Slices Vattenkastanj (Spicefield)",
+   "source": "https://www.willys.se/produkt/Water-Chestnut-Slices-Vattenkastanj-101285963_ST"
+  },
+  {
+   "id": "black_beans",
+   "name": "Svarta bönor",
+   "category": "Baljväxter",
+   "size": "380/230g",
+   "product": "Svarta Bönor Naturella (Garant)",
+   "source": "https://www.willys.se/produkt/Svarta-Bönor-Naturella-101245204_ST"
+  },
+  {
+   "id": "kidney_beans",
+   "name": "Kidneybönor",
+   "category": "Baljväxter",
+   "size": "380/230g",
+   "product": "Kidneybönor Naturella (Garant)",
+   "source": "https://www.willys.se/produkt/Kidneybönor-Naturella-101316741_ST"
+  },
+  {
+   "id": "chickpeas",
+   "name": "Kikärtor",
+   "category": "Baljväxter",
+   "size": "380/230g",
+   "product": "Kikärter Naturella (Garant)",
+   "source": "https://www.willys.se/produkt/Kikärter-Naturella-101281323_ST"
+  },
+  {
+   "id": "green_lentils",
+   "name": "Gröna linser",
+   "category": "Baljväxter",
+   "size": "380/230g",
+   "product": "Gröna Linser Ekologiska (Zeta)",
+   "source": "https://www.willys.se/produkt/Gröna-Linser-Ekologiska-101082793_ST"
+  },
+  {
+   "id": "red_lentils",
+   "name": "Röda linser",
+   "category": "Baljväxter",
+   "size": "500g",
+   "product": "Röda Linser (Garant Eko)",
+   "source": "https://www.willys.se/produkt/Röda-Linser-101543074_ST"
+  },
+  {
+   "id": "ready_daal",
+   "name": "Färdig daal",
+   "category": "Baljväxter",
+   "size": null,
+   "flag": "Hittade ingen färdig daal i butikens sortiment"
+  },
+  {
+   "id": "vegetable_bouillon",
+   "name": "Grönsaksbuljong",
+   "category": "Buljong & fond",
+   "size": "6p/3l",
+   "product": "Grönsaks Buljong Tärningar (Garant Eko)",
+   "source": "https://www.willys.se/produkt/Grönsaks-Buljong-Tärningar-101231767_ST"
+  },
+  {
+   "id": "chicken_bouillon",
+   "name": "Kycklingbuljong",
+   "category": "Buljong & fond",
+   "size": "6p/3l",
+   "product": "Kyckling Buljong Tärningar (Garant Eko)",
+   "source": "https://www.willys.se/produkt/Kyckling-Buljong-Tärningar-101231766_ST"
+  },
+  {
+   "id": "beef_bouillon",
+   "name": "Köttbuljong",
+   "category": "Buljong & fond",
+   "size": "10p/5l",
+   "product": "Köttbuljong Tärningar (Knorr)",
+   "source": "https://www.willys.se/produkt/Köttbuljong-Tärningar-101269275_ST"
+  },
+  {
+   "id": "soy_sauce",
+   "name": "Sojasås",
+   "category": "Asiatiskt",
+   "size": "150ml",
+   "product": "Sojasås Japansk Vegan (Kikkoman)",
+   "source": "https://www.willys.se/produkt/Sojasås-Japansk-Vegan-100450655_ST"
+  },
+  {
+   "id": "fish_sauce",
+   "name": "Fisksås",
+   "category": "Asiatiskt",
+   "size": "700ml",
+   "product": "Fisksås Fish Sauce (Oyster Brand)",
+   "source": "https://www.willys.se/produkt/Fisksås-Fish-Sauce-101186860_ST"
+  },
+  {
+   "id": "hoisin_sauce",
+   "name": "Hoisinsås",
+   "category": "Asiatiskt",
+   "size": "250ml",
+   "product": "Hoisin Sauce (Spicefield)",
+   "source": "https://www.willys.se/produkt/Hoisin-Sauce-101491410_ST"
+  },
+  {
+   "id": "sweet_chili_sauce",
+   "name": "Sweet chilisås",
+   "category": "Asiatiskt",
+   "size": "500ml",
+   "product": "Sweet Chili Sauce Original (Santa Maria)",
+   "source": "https://www.willys.se/produkt/Sweet-Chili-Sauce-Original-101240305_ST"
+  },
+  {
+   "id": "sriracha",
+   "name": "Sriracha",
+   "category": "Asiatiskt",
+   "size": "455ml",
+   "product": "Sriracha Hot Chilli Sauce (Flying Goose)",
+   "source": "https://www.willys.se/produkt/Sriracha-Hot-Chilli-Sauce-101336349_ST"
+  },
+  {
+   "id": "sambal_oelek",
+   "name": "Sambal oelek",
+   "category": "Asiatiskt",
+   "size": "200g",
+   "product": "Sambal Oelek Smaksättare (Lucullus)",
+   "source": "https://www.willys.se/produkt/Sambal-Oelek-Smaksättare-100646730_ST"
+  },
+  {
+   "id": "yellow_curry_paste",
+   "name": "Gul currypasta",
+   "category": "Asiatiskt",
+   "size": null,
+   "flag": "Hittade ingen gul currypasta (bara röd, grön och panang)"
+  },
+  {
+   "id": "paneng_red_curry",
+   "name": "Paneng red curry",
+   "category": "Asiatiskt",
+   "size": "110g",
+   "product": "Paneng Currypasta (Garant)",
+   "source": "https://www.willys.se/produkt/Paneng-Currypasta-101553947_ST"
+  },
+  {
+   "id": "asian_wok_sauce",
+   "name": "Asiatisk woksås",
+   "category": "Asiatiskt",
+   "size": "300ml",
+   "product": "Woksås Vitlök (Spicefield)",
+   "source": "https://www.willys.se/produkt/Woksås-Vitlök-101745395_ST"
+  },
+  {
+   "id": "ponzu_dressing",
+   "name": "Ponzudressing",
+   "category": "Asiatiskt",
+   "size": "150ml",
+   "product": "Ponzu Citrus Seasoned Soy Sauce (Twin Dragon)",
+   "source": "https://www.willys.se/produkt/Ponzu-Citrus-Seasoned-Soy-Sauce-101444942_ST"
+  },
+  {
+   "id": "umami_sauce",
+   "name": "Umamisås",
+   "category": "Asiatiskt",
+   "size": "200ml",
+   "product": "Oyster Sauce (Santa Maria)",
+   "source": "https://www.willys.se/produkt/Oyster-Sauce-101386140_ST",
+   "note": "ostronsås som närmaste motsvarighet"
+  },
+  {
+   "id": "sesame_oil",
+   "name": "Sesamolja",
+   "category": "Oljor & vinäger",
+   "size": "150ml",
+   "product": "Sesamolja (Garant)",
+   "source": "https://www.willys.se/produkt/Sesamolja-101716024_ST"
+  },
+  {
+   "id": "olive_oil",
+   "name": "Olivolja",
+   "category": "Oljor & vinäger",
+   "size": "750ml",
+   "product": "Olivolja Classico Extra Virgin (Garant)",
+   "source": "https://www.willys.se/produkt/Olivolja-Classico-Extra-Virgin-101290880_ST"
+  },
+  {
+   "id": "oil",
+   "name": "Matolja",
+   "category": "Oljor & vinäger",
+   "size": "1l",
+   "product": "Rapsolja (Eldorado)",
+   "source": "https://www.willys.se/produkt/Rapsolja-101298386_ST"
+  },
+  {
+   "id": "truffle_oil",
+   "name": "Tryffelolja",
+   "category": "Oljor & vinäger",
+   "size": "250ml",
+   "product": "Olivolja Tryffel (Levante)",
+   "source": "https://www.willys.se/produkt/Olivolja-Tryffel-101357695_ST"
+  },
+  {
+   "id": "balsamic_vinegar",
+   "name": "Balsamvinäger",
+   "category": "Oljor & vinäger",
+   "size": "500ml",
+   "product": "Balsamvinäger Från Modena (Garant)",
+   "source": "https://www.willys.se/produkt/Balsamvinäger-Från-Modena-101182139_ST"
+  },
+  {
+   "id": "white_wine_vinegar",
+   "name": "Vitvinsvinäger",
+   "category": "Oljor & vinäger",
+   "size": "250ml",
+   "product": "Vitvinsvinäger (Garant)",
+   "source": "https://www.willys.se/produkt/Vitvinsvinäger-101708067_ST"
+  },
+  {
+   "id": "vinegar_spirit",
+   "name": "Ättiksprit (12%)",
+   "category": "Oljor & vinäger",
+   "size": null,
+   "flag": "Bara ättiksprit som städprodukt (Kryddhuset 500 ml); matättika finns som Ättika 24 % 500 ml (Garant)"
+  },
+  {
+   "id": "ketchup",
+   "name": "Ketchup",
+   "category": "Såser & dressing",
+   "size": "1,25kg",
+   "product": "Ketchup Magnum (Felix)",
+   "source": "https://www.willys.se/produkt/Ketchup-Magnum-101222173_ST"
+  },
+  {
+   "id": "mustard",
+   "name": "Senap",
+   "category": "Såser & dressing",
+   "size": "500g",
+   "product": "Senap Sötstark (Johnny's)",
+   "source": "https://www.willys.se/produkt/Senap-Sötstark-100125561_ST"
+  },
+  {
+   "id": "wholegrain_mustard",
+   "name": "Grov senap",
+   "category": "Såser & dressing",
+   "size": "500g",
+   "product": "Senap Grovstark (Johnny's)",
+   "source": "https://www.willys.se/produkt/Senap-Grovstark-100390284_ST"
+  },
+  {
+   "id": "mayonnaise",
+   "name": "Majonnäs",
+   "category": "Såser & dressing",
+   "size": "275g",
+   "product": "Äkta Majonnäs (Kavli)",
+   "source": "https://www.willys.se/produkt/Äkta-Majonnäs-100451529_ST"
+  },
+  {
+   "id": "bbq_sauce",
+   "name": "BBQ-sås",
+   "category": "Såser & dressing",
+   "size": "335ml",
+   "product": "Bbq Orig Sås Glaze (Felix)",
+   "source": "https://www.willys.se/produkt/Bbq-Orig-Sås-Glaze-101677016_ST"
+  },
+  {
+   "id": "calabrese_pesto",
+   "name": "Calabresepesto",
+   "category": "Såser & dressing",
+   "size": "200g",
+   "product": "Pesto Bomba Calabrese (Garant)",
+   "source": "https://www.willys.se/produkt/Pesto-Bomba-Calabrese-101268109_ST"
+  },
+  {
+   "id": "tahini",
+   "name": "Tahini",
+   "category": "Såser & dressing",
+   "size": "360g",
+   "product": "Tahini Sesampasta (Kung Markatta)",
+   "source": "https://www.willys.se/produkt/Tahini-Sesampasta-101289307_ST"
+  },
+  {
+   "id": "lingon_jam",
+   "name": "Lingonsylt",
+   "category": "Såser & dressing",
+   "size": "365g",
+   "product": "Lingonsylt Lättsockrad (Garant)",
+   "source": "https://www.willys.se/produkt/Lingonsylt-Lättsockrad-101308239_ST"
+  },
+  {
+   "id": "flour",
+   "name": "Vetemjöl",
+   "category": "Bakning & sött",
+   "size": "2kg",
+   "product": "Vetemjöl (Garant)",
+   "source": "https://www.willys.se/produkt/Vetemjöl-101145716_ST"
+  },
+  {
+   "id": "sugar",
+   "name": "Socker",
+   "category": "Bakning & sött",
+   "size": "2kg",
+   "product": "Strösocker (Garant)",
+   "source": "https://www.willys.se/produkt/Strösocker-101553903_ST"
+  },
+  {
+   "id": "powdered_sugar",
+   "name": "Florsocker",
+   "category": "Bakning & sött",
+   "size": "500g",
+   "product": "Florsocker (Garant)",
+   "source": "https://www.willys.se/produkt/Florsocker-101841856_ST"
+  },
+  {
+   "id": "cocoa_powder",
+   "name": "Kakaopulver",
+   "category": "Bakning & sött",
+   "size": "200g",
+   "product": "Kakao (Garant)",
+   "source": "https://www.willys.se/produkt/Kakao-101734464_ST"
+  },
+  {
+   "id": "honey",
+   "name": "Honung",
+   "category": "Bakning & sött",
+   "size": "500g",
+   "product": "Honung Flytande (Eldorado)",
+   "source": "https://www.willys.se/produkt/Honung-Flytande-101262047_ST"
+  },
+  {
+   "id": "syrup",
+   "name": "Sirap",
+   "category": "Bakning & sött",
+   "size": "750g",
+   "product": "Ljus Sirap (Garant)",
+   "source": "https://www.willys.se/produkt/Ljus-Sirap-101278213_ST"
+  },
+  {
+   "id": "desiccated_coconut",
+   "name": "Riven kokos",
+   "category": "Bakning & sött",
+   "size": "200g",
+   "product": "Kokos Riven (Eldorado)",
+   "source": "https://www.willys.se/produkt/Kokos-Riven-101329669_ST"
+  },
+  {
+   "id": "almonds",
+   "name": "Mandlar",
+   "category": "Nötter & frön",
+   "size": "400g",
+   "product": "Sötmandel Hel (Eldorado)",
+   "source": "https://www.willys.se/produkt/Sötmandel-Hel-101736612_ST"
+  },
+  {
+   "id": "cashews",
+   "name": "Cashewnötter",
+   "category": "Nötter & frön",
+   "size": "400g",
+   "product": "Cashewnötter Rostade & Saltade (Eldorado)",
+   "source": "https://www.willys.se/produkt/Cashewnötter-Rostade-Saltade-101343041_ST",
+   "note": "rostade och saltade"
+  },
+  {
+   "id": "hazelnuts",
+   "name": "Hasselnötter",
+   "category": "Nötter & frön",
+   "size": "500g",
+   "product": "Hasselnötter Hela (Eldorado)",
+   "source": "https://www.willys.se/produkt/Hasselnötter-Hela-101354384_ST"
+  },
+  {
+   "id": "peanuts",
+   "name": "Jordnötter",
+   "category": "Nötter & frön",
+   "size": "200g",
+   "product": "Jordnötter Osaltade (Eldorado)",
+   "source": "https://www.willys.se/produkt/Jordnötter-Osaltade-101273451_ST"
+  },
+  {
+   "id": "salted_peanuts",
+   "name": "Saltade jordnötter",
+   "category": "Nötter & frön",
+   "size": "275g",
+   "product": "Jordnötter Salta (Estrella)",
+   "source": "https://www.willys.se/produkt/Jordnötter-Salta-101116338_ST"
+  },
+  {
+   "id": "pine_nuts",
+   "name": "Pinjenötter",
+   "category": "Nötter & frön",
+   "size": "40g",
+   "product": "Pinjenötter Ekologiska (Garant Eko)",
+   "source": "https://www.willys.se/produkt/Pinjenötter-Ekologiska-101263469_ST"
+  },
+  {
+   "id": "pistachios",
+   "name": "Pistagenötter",
+   "category": "Nötter & frön",
+   "size": "300g",
+   "product": "Pistaschnötter Rostade Saltade (Eldorado)",
+   "source": "https://www.willys.se/produkt/Pistaschnötter-Rostade-Saltade-101331258_ST",
+   "note": "rostade och saltade"
+  },
+  {
+   "id": "walnuts",
+   "name": "Valnötter",
+   "category": "Nötter & frön",
+   "size": "400g",
+   "product": "Valnötter Naturella (Eldorado)",
+   "source": "https://www.willys.se/produkt/Valnötter-Naturella-101824434_ST"
+  },
+  {
+   "id": "pumpkin_seeds",
+   "name": "Pumpakärnor",
+   "category": "Nötter & frön",
+   "size": "300g",
+   "product": "Pumpakärnor (Garant Eko)",
+   "source": "https://www.willys.se/produkt/Pumpakärnor-101245076_ST"
+  },
+  {
+   "id": "sunflower_seeds",
+   "name": "Solroskärnor",
+   "category": "Nötter & frön",
+   "size": "800g",
+   "product": "Solroskärnor Skalade (Eldorado)",
+   "source": "https://www.willys.se/produkt/Solroskärnor-Skalade-101250208_ST"
+  },
+  {
+   "id": "sesame_seeds",
+   "name": "Sesamfrön",
+   "category": "Nötter & frön",
+   "size": "400g",
+   "product": "Sesamfrön Skalade (Garant Eko)",
+   "source": "https://www.willys.se/produkt/Sesamfrön-Skalade-101543072_ST"
+  }
+ ]
+}
