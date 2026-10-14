@@ -12,7 +12,7 @@ import { ShoppingSidebar } from './views/shopping-view.js?v=20261013sh';
 import { Timer } from './views/timer.js';
 import { spiceMixTogglesHtml } from './views/spice-mix-ui.js?v=20261012e';
 import { setMixMissing } from './core/spice-prefs.js?v=20261013a';
-import { SpiceView } from './views/spice-view.js?v=20261013cu';
+import { SpiceView } from './views/spice-view.js?v=20261014a';
 import { PantryView } from './views/pantry-view.js?v=20261013tx2';
 import * as UserState from './core/user-recipe-state.js?v=20261013b';
 import { initSync, hasAuthRedirect } from './core/sync.js?v=20261013ko';
