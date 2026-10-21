@@ -5,7 +5,7 @@
  */
 import { onAuthChange, signInWithEmail, signOut, isAvailable, syncStatus, onSyncStatus } from '../core/sync.js?v=20261021eq';
 import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261011u';
-import { accountLinkHtml, menuExtrasHtml, bindMenuExtras } from './menu-items.js?v=20261013sk';
+import { accountLinkHtml, menuExtrasHtml } from './menu-items.js?v=20261021tm';
 
 const USER_SVG = '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="8.5" r="3.8"/><path d="M4.8 20.2c1.2-3.6 4-5.4 7.2-5.4s6 1.8 7.2 5.4"/></g></svg>';
 
@@ -39,7 +39,7 @@ export function initAuthUi(root) {
       btn.classList.add('is-signed-in');
     } else {
       btn.innerHTML = USER_SVG;
-      btn.setAttribute('aria-label', isAvailable() ? 'Logga in, Kryddskåpet och tema' : 'Meny');
+      btn.setAttribute('aria-label', isAvailable() ? 'Logga in, Kryddskåpet och Skafferiet' : 'Meny');
       btn.title = isAvailable() ? 'Logga in' : 'Meny';
       btn.classList.remove('is-signed-in');
     }
@@ -78,10 +78,8 @@ export function initAuthUi(root) {
   }
 
   btn.addEventListener('click', () => (pop.hidden ? open() : close()));
-  bindMenuExtras(pop, () => render());
   // Close on navigation (Mitt konto, Kryddskåpet, or any route change)
   window.addEventListener('hashchange', close);
-  window.addEventListener('yessy:themechange', () => { if (!pop.hidden) render(); });
   document.addEventListener('click', (e) => { if (!pop.hidden && e.target.isConnected && !root.contains(e.target)) close(); });
   root.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !pop.hidden) { close(); btn.focus(); } });
 

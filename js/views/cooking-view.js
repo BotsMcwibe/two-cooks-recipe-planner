@@ -1,6 +1,6 @@
 import { Scheduler } from '../models/scheduler.js?v=20261021eq';
 import { RecipeGraph } from '../core/recipe-graph.js?v=20261021eq';
-import { equipmentListHtml, isResource, nodeEquipmentHtml, stepHeatHtml } from '../core/equipment.js?v=20261021eq';
+import { equipmentSummary, isResource, nodeEquipmentHtml, stepHeatHtml } from '../core/equipment.js?v=20261021eq';
 import { kitchenProfile } from '../core/kitchen-prefs.js?v=20261021eq';
 import { formatNiceAmount } from '../utils/helpers.js';
 import { formatStepInputText, producerMap } from '../utils/derived-inputs.js?v=20261021eq';
@@ -559,9 +559,33 @@ export class CookingView {
     }
     if (!any) html += '<li>Alla ingredienser förbrukade</li>';
     html += '</ul>';
-    const eq = equipmentListHtml(this._subtree, this._kitchen || kitchenProfile());
+    const eq = this._equipmentRowsHtml(this._subtree, this._kitchen || kitchenProfile());
     if (eq) html += `<div class="eq-section"><h3>Utrustning</h3>${eq}</div>`;
     this.$ingredients.html(html);
+  }
+
+  /** Utrustning as rows in the same style as Ingredienser kvar (amount column + name). */
+  _equipmentRowsHtml(recipes, kitchen) {
+    const items = equipmentSummary(recipes, kitchen);
+    if (!items.length) return '';
+    const guess = '<span class="eq-guess" title="Storleken är gissad" aria-label="Storleken är gissad">?</span>';
+    const rows = items.map(it => {
+      let amount = `${it.count} st`;
+      let name = escapeHtml(it.label);
+      if (it.kind === 'oven') {
+        const m = /^Ugn (ca )?(\d+) °C( varmluft)?(.*)$/.exec(it.label);
+        if (m) {
+          amount = `${m[1] || ''}${m[2]} °C`;
+          name = escapeHtml(`Ugn${m[3] ? ', varmluft' : ''}${m[4] || ''}`);
+        } else {
+          amount = '';
+        }
+      } else if (it.guess) {
+        name += guess;
+      }
+      return `<li class="eq-row eq-${it.kind}"><span class="ing-amount">${amount}</span><span class="ing-name">${name}</span></li>`;
+    }).join('');
+    return `<ul class="ingredient-list eq-rows">${rows}</ul>`;
   }
 
   _bindEvents() {

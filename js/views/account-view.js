@@ -7,10 +7,9 @@
  */
 import * as UserState from '../core/user-recipe-state.js?v=20261013b';
 import { missingMixes } from '../core/spice-prefs.js?v=20261013a';
-import { savedTheme } from '../utils/theme.js?v=20261013b';
-import { menuExtrasHtml, bindMenuExtras } from './menu-items.js?v=20261013sk';
+import { menuExtrasHtml, themeSegHtml, bindThemeSeg } from './menu-items.js?v=20261021tm';
 import { onAuthChange, onSyncStatus, syncStatus, lastSyncTime, signOut, currentUser, isAvailable } from '../core/sync.js?v=20261021eq';
-import { openSignIn } from './auth-ui.js?v=20261021eq';
+import { openSignIn } from './auth-ui.js?v=20261021tm';
 import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261011u';
 import { kitchenProfile, setKitchen, MAX_OVEN_TRAYS } from '../core/kitchen-prefs.js?v=20261021eq';
 
@@ -86,7 +85,7 @@ export class AccountView {
   }
 
   _bind() {
-    bindMenuExtras(this.el, () => this.render());
+    bindThemeSeg(this.el, () => this.render());
     this.el.addEventListener('click', async (e) => {
       const t = e.target;
       if (t.closest('.acc-signin')) { openSignIn(); return; }
@@ -123,6 +122,16 @@ export class AccountView {
     this.el.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && this.menuOpen) { this.menuOpen = false; this.render(); this.el.querySelector('.acc-me-btn')?.focus(); }
     });
+  }
+
+  /** Tema: Ljust / Mörkt / System (System follows the device). */
+  _themeHtml() {
+    return `
+      <div class="kitchen-row theme-row">
+        <div class="kitchen-text" id="theme-label"><span class="kitchen-label">Tema</span>
+          <span class="kitchen-help">System följer enhetens inställning.</span></div>
+        ${themeSegHtml('theme-label')}
+      </div>`;
   }
 
   /** Ditt kök: how many plåtar the oven takes at once, and varmluft ja/nej. */
@@ -224,8 +233,6 @@ export class AccountView {
     const top = [...ratings].sort((a, b) => b.rating - a.rating || a.name.localeCompare(b.name, 'sv')).slice(0, 5);
 
     const mixes = [...missingMixes()].map(id => this.mixNames[id] || id).sort((a, b) => a.localeCompare(b, 'sv'));
-    const theme = savedTheme();
-    const themeLabel = theme === 'dark' ? 'Mörkt' : theme === 'light' ? 'Ljust' : 'Följer systemet';
     const shop = this.state.getShoppingData();
     const shopRows = shop.selections.filter(id => this.byId[id]).map(id => {
       const c = this.byId[id];
@@ -272,7 +279,7 @@ export class AccountView {
           ${section('kryddmixar', 'Kryddmixar du blandar själv', mixes.length, mixes.length
             ? `<ul class="acc-chips">${mixes.map(m => `<li>${escapeHtml(m)}</li>`).join('')}</ul><p class="acc-hint">Slå av och på med ”Har inte mixen” i ett recept.</p>`
             : '<p class="acc-empty">Du använder färdiga mixar. Välj ”Har inte mixen” i ett recept för att blanda själv.</p>', where)}
-          ${section('installningar', 'Inställningar', null, `<dl class="acc-kv"><div><dt>Tema</dt><dd>${themeLabel}</dd></div></dl>
+          ${section('installningar', 'Inställningar', null, `${this._themeHtml()}
             ${this._kitchenHtml()}`, where)}
           ${section('inkopslista', 'Inköpslista', shopRows.length, shopRows.length
             ? `<ul class="acc-list">${shopRows.join('')}</ul>`

@@ -2314,17 +2314,22 @@ main.main-spices {
 
 /* === Mitt konto (#konto) — left rail with account block pinned bottom-left === */
 main.main-account { max-width: var(--max-browse); }
+@media (min-width: 901px) { main.main-account { padding-bottom: 12px; } }
 .acc-layout {
   display: grid;
   grid-template-columns: 248px minmax(0, 1fr);
   gap: 28px;
   align-items: start;
 }
+/* The rail sits below the 64px header + 12px main padding (76px). Its height is the
+   viewport minus that offset and a 12px bottom gap, and main gets a matching 12px bottom
+   padding, so the rail alone never makes the page scroll. Sticky at its own offset so the
+   account block stays pinned bottom-left while the content scrolls. */
 .acc-rail {
   position: sticky;
-  top: 12px;
-  height: calc(100dvh - 24px);
-  max-height: calc(100vh - 24px);
+  top: 76px;
+  height: calc(100dvh - 88px);
+  max-height: calc(100vh - 88px);
   display: flex;
   flex-direction: column;
   gap: 4px;
@@ -2475,20 +2480,11 @@ main.main-account { max-width: var(--max-browse); }
   text-decoration: none; cursor: pointer;
 }
 .menu-row:hover { background: var(--toggle-hover); color: var(--text); }
-.menu-row:focus-visible, .theme-seg-btn:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
+.menu-row:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
 .menu-row svg { flex: none; }
 .menu-row.menu-row-primary, .menu-row.menu-row-primary:hover, .menu-row.menu-row-primary:visited { background: var(--primary); border-color: transparent; color: var(--on-accent); }
 .menu-row.menu-row-primary:hover { background: var(--primary-hover); }
 .menu-row.is-active { color: var(--primary); background: var(--primary-light); border-color: var(--primary); }
-.menu-theme { display: flex; flex-direction: column; gap: 6px; }
-.menu-theme-label { display: inline-flex; align-items: center; gap: 6px; font-size: 0.82rem; font-weight: 600; color: var(--text-muted); }
-.theme-seg { display: grid; grid-template-columns: repeat(3, 1fr); padding: 3px; gap: 3px; border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--surface-2); }
-.theme-seg-btn {
-  min-height: 36px; padding: 6px 4px; border: none; border-radius: calc(var(--radius-sm) - 2px);
-  background: transparent; color: var(--text-muted); font: inherit; font-size: 0.88rem; font-weight: 600; cursor: pointer;
-}
-.theme-seg-btn:hover { color: var(--text); }
-.theme-seg-btn.is-on { background: var(--surface); color: var(--text); box-shadow: 0 1px 2px rgba(0,0,0,.15); }
 .auth-pop .menu-rows .auth-action { margin-top: 0; }
 .acc-menu .menu-rows { margin: 4px 0 10px; }
 .acc-guest-extras { margin-top: 10px; }
@@ -2813,5 +2809,6 @@ img.auth-avatar, img.acc-avatar { box-shadow: 0 0 0 1.25px var(--border); transi
   cursor: pointer;
 }
 .kitchen-seg button + button { border-left: 1px solid var(--border); }
+.theme-row { border-top: 0; padding-top: 0; }
 .kitchen-seg button[aria-pressed="true"] { background: var(--primary); color: var(--on-accent); font-weight: 600; }
 .kitchen-seg button:focus-visible, .kitchen-stepper button:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: -2px; }
