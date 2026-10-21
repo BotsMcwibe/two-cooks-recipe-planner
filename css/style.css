@@ -3401,3 +3401,32 @@ p.eq-serving { font-size: 0.85rem; margin: 8px 0 0; }
 .hh-rev-vis { font-size: 0.72rem; font-weight: 600; color: var(--text-muted); }
 .hh-rev-input { width: 100%; box-sizing: border-box; margin: 8px 0; padding: 8px 10px; font: inherit; font-size: 0.92rem; border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--surface); color: var(--text); resize: vertical; }
 .hh-rev-input:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 1px; }
+
+/* Senast i köket (feed-ui.js) */
+.browse-feed { margin: 0 0 12px; }
+.browse-feed[hidden] { display: none; }
+.fd-strip { border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--surface); }
+.fd-strip > summary { list-style: none; display: flex; align-items: center; gap: 10px; padding: 8px 12px; cursor: pointer; min-height: 40px; font-size: 0.9rem; }
+.fd-strip > summary::-webkit-details-marker { display: none; }
+.fd-strip[open] > summary .cl-chev { transform: rotate(180deg); }
+.fd-strip > summary:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; border-radius: var(--radius-sm); }
+.fd-h { font-weight: 700; white-space: nowrap; }
+.fd-peek { display: inline-flex; align-items: center; gap: 6px; min-width: 0; color: var(--text-muted); }
+.fd-peek > span:last-child { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.fd-strip[open] .fd-peek { visibility: hidden; }
+.fd-more-n { font-size: 0.75rem; font-weight: 600; color: var(--text-muted); margin-left: auto; }
+.fd-strip > summary .cl-chev { margin-left: auto; }
+.fd-more-n + .cl-chev { margin-left: 0; }
+.fd-list { list-style: none; margin: 0; padding: 0 12px 8px; display: grid; gap: 2px; }
+.fd-strip .fd-all { display: inline-block; margin: 0 12px 10px; }
+.fd-item { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; padding: 7px 0; border-top: 1px solid var(--divider-soft); font-size: 0.9rem; }
+.fd-list-full { padding: 0; }
+.fd-list-full .fd-item:first-child { border-top: 0; }
+.fd-text { flex: 1 1 200px; min-width: 0; }
+.fd-link { color: var(--text); font-weight: 600; }
+.fd-when { color: var(--text-muted); font-size: 0.82rem; white-space: nowrap; }
+.fd-stars { color: var(--text-muted); font-size: 0.8rem; white-space: nowrap; }
+.fd-tag { font-size: 0.7rem; font-weight: 600; padding: 1px 7px; border-radius: 999px; border: 1px solid var(--border); color: var(--text-muted); }
+.fd-saved { font-size: 0.8rem; color: var(--text-muted); }
+.fd-load-more { margin-top: 10px; }
+.fd-strip[open] .fd-more-n { visibility: hidden; }

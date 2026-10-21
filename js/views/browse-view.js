@@ -1,4 +1,4 @@
-import { loadPortionEnergyKcal } from '../data/loader.js?v=20261021g16';
+import { loadPortionEnergyKcal } from '../data/loader.js?v=20261021g17';
 import {
   buildFilterChips,
   displayTags,
@@ -9,12 +9,13 @@ import {
   recipeVisual,
   starHtml,
   subtitleFromSearchText,
-} from '../utils/catalog-ui.js?v=20261021g16';
-import * as UserState from '../core/user-recipe-state.js?v=20261021g16';
-import { imgFailed, isPhotoMissing, recordPhotoFailure, recordPhotoSuccess, photosLikelyUnavailable } from '../utils/photo-fallback.js?v=20261021g16';
-import { excludedPantry, clearPantryExcluded, loadPantry } from '../core/pantry-exclude.js?v=20261021g16';
-import * as Journal from '../core/recipe-journal.js?v=20261021g16';
-import { cardStateHtml } from './recipe-status-ui.js?v=20261021g16';
+} from '../utils/catalog-ui.js?v=20261021g17';
+import * as UserState from '../core/user-recipe-state.js?v=20261021g17';
+import { imgFailed, isPhotoMissing, recordPhotoFailure, recordPhotoSuccess, photosLikelyUnavailable } from '../utils/photo-fallback.js?v=20261021g17';
+import { excludedPantry, clearPantryExcluded, loadPantry } from '../core/pantry-exclude.js?v=20261021g17';
+import * as Journal from '../core/recipe-journal.js?v=20261021g17';
+import { cardStateHtml } from './recipe-status-ui.js?v=20261021g17';
+import { feedStripHtml, handleFeedClick, rememberStripOpen } from './feed-ui.js?v=20261021g17';
 
 /** localStorage key: '0' when the user turned the Godkänd filter off (on by default). */
 const GODKAND_KEY = 'yessy.browse.godkandOnly';
@@ -83,9 +84,23 @@ export class BrowseView {
     let hhT = 0;
     window.addEventListener('householdchange', (e) => {
       const w = e.detail && e.detail.what;
+      if (w === 'feed' || w === 'all' || w === 'mode' || w === 'household' || w === 'profile') this._renderFeed();
       if (w === 'feed' || w === 'profile' || w === 'invites') return;
       clearTimeout(hhT); hhT = setTimeout(() => this.render(), 150);
     });
+    UserState.subscribe(() => { if (this.$container.find('#browse-feed [data-fd-want], #browse-feed .fd-saved').length) this._renderFeed(); });
+    this.$container.on('click', '#browse-feed', (e) => { if (handleFeedClick(e.target)) e.preventDefault(); });
+    this.$container[0].addEventListener('toggle', (e) => { if (e.target.matches && e.target.matches('.fd-strip')) rememberStripOpen(e.target.open); }, true);
+    this._renderFeed();
+  }
+
+  /** "Senast i köket" row (household + friends' latest cooks). */
+  _renderFeed() {
+    const $f = this.$container.find('#browse-feed');
+    if (!$f.length) return;
+    const byId = this._byId || (this._byId = new Map(this.catalog.map((c) => [c.id, c])));
+    const html = feedStripHtml((id) => (byId.get(id) || {}).name || '');
+    $f.prop('hidden', !html).html(html);
   }
 
   /** Vill laga, Lagad, then one chip per own list. */
@@ -156,6 +171,7 @@ export class BrowseView {
           <span class="filter-chip-group filter-chip-group-status" role="group" aria-label="Min status och mina listor">${status}</span>
         </div>
       </div>
+      <div class="browse-feed" id="browse-feed" hidden></div>
       <div class="browse-notices">
         <div class="browse-grave" id="browse-grave" hidden></div>
         <div class="browse-grave browse-nfu" id="browse-nfu" hidden></div>

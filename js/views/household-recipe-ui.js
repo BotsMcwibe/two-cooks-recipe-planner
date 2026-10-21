@@ -4,10 +4,10 @@
  * private (journal-ui.js). Always returns one .hh-rev element so it can be
  * refreshed in place.
  */
-import * as Household from '../core/household.js?v=20261021g16';
-import * as UserState from '../core/user-recipe-state.js?v=20261021g16';
-import { saveReview } from '../core/table-sync.js?v=20261021g16';
-import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261021g16';
+import * as Household from '../core/household.js?v=20261021g17';
+import * as UserState from '../core/user-recipe-state.js?v=20261021g17';
+import { saveReview } from '../core/table-sync.js?v=20261021g17';
+import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261021g17';
 
 const fmt = new Intl.DateTimeFormat('sv-SE', { day: 'numeric', month: 'short' });
 const day = (iso) => { const t = Date.parse(iso || ''); return t > 0 ? fmt.format(new Date(t)) : ''; };

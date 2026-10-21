@@ -1,6 +1,6 @@
-import { RecipeGraph } from '../core/recipe-graph.js?v=20261021g16';
-import { equipmentListHtml, servingLineHtml } from '../core/equipment.js?v=20261021g16';
-import { kitchenProfile } from '../core/kitchen-prefs.js?v=20261021g16';
+import { RecipeGraph } from '../core/recipe-graph.js?v=20261021g17';
+import { equipmentListHtml, servingLineHtml } from '../core/equipment.js?v=20261021g17';
+import { kitchenProfile } from '../core/kitchen-prefs.js?v=20261021g17';
 import { formatNiceAmount } from '../utils/helpers.js';
 import {
   allergenLabel,
@@ -12,13 +12,13 @@ import {
   isScalable,
   starHtml,
   subtitleFromSearchText,
-} from '../utils/catalog-ui.js?v=20261021g16';
-import { imgFailed, isPhotoMissing, recordPhotoFailure, recordPhotoSuccess } from '../utils/photo-fallback.js?v=20261021g16';
-import * as UserState from '../core/user-recipe-state.js?v=20261021g16';
-import { spiceMixTogglesHtml } from './spice-mix-ui.js?v=20261021g16';
-import { bindStatusControls, cookLogHtml, kitchenMarkHtml, refreshStatusControls, statusControlHtml } from './recipe-status-ui.js?v=20261021g16';
-import { notesHtml, bindNotes } from './journal-ui.js?v=20261021g16';
-import { householdReviewsHtml, bindHouseholdReviews, refreshHouseholdReviews } from './household-recipe-ui.js?v=20261021g16';
+} from '../utils/catalog-ui.js?v=20261021g17';
+import { imgFailed, isPhotoMissing, recordPhotoFailure, recordPhotoSuccess } from '../utils/photo-fallback.js?v=20261021g17';
+import * as UserState from '../core/user-recipe-state.js?v=20261021g17';
+import { spiceMixTogglesHtml } from './spice-mix-ui.js?v=20261021g17';
+import { bindStatusControls, cookLogHtml, kitchenMarkHtml, refreshStatusControls, statusControlHtml } from './recipe-status-ui.js?v=20261021g17';
+import { notesHtml, bindNotes } from './journal-ui.js?v=20261021g17';
+import { householdReviewsHtml, bindHouseholdReviews, refreshHouseholdReviews } from './household-recipe-ui.js?v=20261021g17';
 
 /**
  * HelloFresh-inspired recipe overview modal.
@@ -29,7 +29,7 @@ export class OverviewModal {
   /**
    * @param {import('../core/state.js').AppState} state
    * @param {Array<object>} catalog
-   * @param {import('../data/loader.js?v=20261021g16').RecipeRepository} repository
+   * @param {import('../data/loader.js?v=20261021g17').RecipeRepository} repository
    * @param {Array} baseIngredients
    * @param {{
    *   onCook: (id: string, portions: number) => void,

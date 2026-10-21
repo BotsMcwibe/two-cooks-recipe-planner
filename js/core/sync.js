@@ -10,18 +10,18 @@
  *   preference key), then write-through on every local change (optimistic; failures
  *   mark the store dirty and a full merge runs again when back online).
  */
-import { SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, SUPABASE_JS_URL } from '../config.js?v=20261021g16';
-import * as UserState from './user-recipe-state.js?v=20261021g16';
-import { prefTs, setPrefTs } from './prefs-meta.js?v=20261021g16';
-import { missingMixes, replaceMissingMixes } from './spice-prefs.js?v=20261021g16';
-import { excludedPantry, replacePantryExcluded } from './pantry-exclude.js?v=20261021g16';
-import { ownedSpices, replaceSpicesOwned } from './spices-owned.js?v=20261021g16';
-import { savedTheme, applySyncedTheme } from '../utils/theme.js?v=20261021g16';
-import { storedKitchen, replaceKitchen } from './kitchen-prefs.js?v=20261021g16';
-import { storedSettings as storedWeekSettings, replaceSettings as replaceWeekSettings, storedPlan as storedWeekPlan, replacePlan as replaceWeekPlan } from './week-plan.js?v=20261021g16';
-import { JOURNAL_KEYS, journalValue, replaceJournal, mergeJournal, setActor } from './recipe-journal.js?v=20261021g16';
-import * as Household from './household.js?v=20261021g16';
-import * as Tables from './table-sync.js?v=20261021g16';
+import { SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, SUPABASE_JS_URL } from '../config.js?v=20261021g17';
+import * as UserState from './user-recipe-state.js?v=20261021g17';
+import { prefTs, setPrefTs } from './prefs-meta.js?v=20261021g17';
+import { missingMixes, replaceMissingMixes } from './spice-prefs.js?v=20261021g17';
+import { excludedPantry, replacePantryExcluded } from './pantry-exclude.js?v=20261021g17';
+import { ownedSpices, replaceSpicesOwned } from './spices-owned.js?v=20261021g17';
+import { savedTheme, applySyncedTheme } from '../utils/theme.js?v=20261021g17';
+import { storedKitchen, replaceKitchen } from './kitchen-prefs.js?v=20261021g17';
+import { storedSettings as storedWeekSettings, replaceSettings as replaceWeekSettings, storedPlan as storedWeekPlan, replacePlan as replaceWeekPlan } from './week-plan.js?v=20261021g17';
+import { JOURNAL_KEYS, journalValue, replaceJournal, mergeJournal, setActor } from './recipe-journal.js?v=20261021g17';
+import * as Household from './household.js?v=20261021g17';
+import * as Tables from './table-sync.js?v=20261021g17';
 
 /**
  * Household tables (0002+): when the project has them, statuses, stars, the cook
@@ -191,6 +191,8 @@ async function mergeOnce() {
     if (hid) await Household.refresh(hid).catch((err) => console.warn('[household] refresh failed', err));
     if (tablesMode) {
       await Tables.syncAll(hid);
+      subscribeLive(hid);
+      Household.loadFeed().catch((err) => console.warn('[feed] load failed', err));
     } else {
       await mergeLegacyRecipeState();
     }
@@ -200,6 +202,54 @@ async function mergeOnce() {
     setDirty(true);
     console.warn('[sync] merge failed (will retry when online)', err);
   }
+}
+
+// ---------------------------------------------------------------------------
+// Live updates (Supabase Realtime, migration 0004): another member's change
+// triggers a debounced full sync + feed reload. RLS decides which rows arrive.
+// ---------------------------------------------------------------------------
+let liveChannel = null;
+let liveHid = null;
+let liveTimer = 0;
+const LIVE_TABLES = ['household_recipe_state', 'cook_log', 'recipe_lists', 'recipe_list_items', 'recipe_ratings'];
+
+function fromMe(table, row) {
+  const me = user && user.id;
+  if (!row || !me) return false;
+  if (table === 'household_recipe_state') return row.updated_by === me;
+  if (table === 'recipe_ratings') return row.user_id === me;
+  return false;
+}
+function onLive(payload) {
+  const row = payload && (payload.new && Object.keys(payload.new).length ? payload.new : payload.old);
+  if (fromMe(payload && payload.table, row)) return; // echo of my own write
+  clearTimeout(liveTimer);
+  liveTimer = setTimeout(() => mergeAll(), 1200);
+}
+function subscribeLive(hid) {
+  if (!client || typeof client.channel !== 'function') return;
+  if (liveChannel && liveHid === hid) return;
+  unsubscribeLive();
+  liveHid = hid;
+  try {
+    let ch = client.channel(`hh-${hid}`);
+    for (const table of LIVE_TABLES) {
+      const opts = { event: '*', schema: 'public', table };
+      if (['household_recipe_state', 'cook_log', 'recipe_lists'].includes(table)) opts.filter = `household_id=eq.${hid}`;
+      ch = ch.on('postgres_changes', opts, onLive);
+    }
+    liveChannel = ch.subscribe((status) => {
+      if (status === 'CHANNEL_ERROR' || status === 'TIMED_OUT') console.info('[live] realtime unavailable, syncing on focus instead');
+    });
+  } catch (err) {
+    console.info('[live] realtime unavailable', err);
+    liveChannel = null; liveHid = null;
+  }
+}
+function unsubscribeLive() {
+  if (liveChannel && client) { try { client.removeChannel(liveChannel); } catch {} }
+  liveChannel = null; liveHid = null;
+  clearTimeout(liveTimer);
 }
 
 async function mergeLegacyRecipeState() {
@@ -395,7 +445,7 @@ export function initSync({ state } = {}) {
         user = session ? session.user : null;
         setActor(user && user.id);
         Household.attach(client, user);
-        if (!user) { tablesMode = false; Tables.detach(); Household.setMode('local'); }
+        if (!user) { tablesMode = false; Tables.detach(); unsubscribeLive(); Household.setMode('local'); }
         emit();
         notifyStatus();
         if (user && user.id !== prev) mergeAll();
