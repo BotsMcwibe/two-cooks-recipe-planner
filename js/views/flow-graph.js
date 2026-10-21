@@ -1,6 +1,8 @@
 import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261011u';
 import { sentenceCase } from '../utils/text.js?v=20261011';
-import { prepPhaseIds, isPrepTagged } from '../utils/prep-phase.js?v=20261011b';
+import { prepPhaseIds, isPrepTagged } from '../utils/prep-phase.js?v=20261021eq';
+import { effectiveOven, isResource } from '../core/equipment.js?v=20261021eq';
+import { kitchenProfile } from '../core/kitchen-prefs.js?v=20261021eq';
 
 /**
  * Flow graph for the cook page: a left-to-right dependency graph of the recipe's
@@ -11,6 +13,9 @@ import { prepPhaseIds, isPrepTagged } from '../utils/prep-phase.js?v=20261011b';
  * pass where leaves take sequential slots and parents centre on their inputs, then
  * per-column overlap resolution. Cards are HTML (so names wrap and are never
  * truncated); their measured heights feed the layout; edges are an SVG layer.
+ *
+ * Equipment ordering (equipment[].after: preheated oven → bake, previous user of a reused
+ * pan → next user) is drawn as a dashed edge; it is not food flowing between steps.
  *
  * Progress: render() is called on every UI update with { doneIds, activeId,
  * progress }. When the structure is unchanged only state classes are patched;
@@ -97,8 +102,10 @@ export class FlowGraph {
     const rootId = rootRecipe.outputIngredient.id;
     const twoCooks = options.cooks === 2;
     const prepFirst = !!options.prepFirst;
+    const kitchen = kitchenProfile();
+    this._kitchen = kitchen;
     const key = JSON.stringify([
-      rootId, twoCooks, prepFirst,
+      rootId, twoCooks, prepFirst, kitchen.ovenFan,
       schedule.nodes.map(n => [n.id, n.deps, twoCooks ? n.assignedCook : '', n.activeDuration, n.totalDuration]),
     ]);
 
@@ -223,6 +230,8 @@ export class FlowGraph {
       if (cook) cls.push(cook === 'P2' ? 'cook-p2' : 'cook-p1', 'has-cook');
       if (isPrep) cls.push('is-prep');
       if (prepIds.has(n.id)) cls.push('in-prep-phase');
+      const resource = isResource(r);
+      if (resource) cls.push('is-resource');
       const name = sentenceCase(r.name);
       html += `<button type="button" class="${cls.join(' ')}" data-recipe="${escapeAttr(n.id)}" title="${escapeAttr(name)} – visa stegen">`;
       if (cook) {
@@ -230,6 +239,7 @@ export class FlowGraph {
       }
       html += `<span class="flow-name"><span class="flow-check" aria-hidden="true">✓</span>${escapeHtml(name)}</span>`;
       html += `<span class="flow-meta"><span class="flow-time">${escapeHtml(time)}</span>`;
+      if (resource && r.oven) html += `<span class="flow-oven">${escapeHtml(effectiveOven(r.oven, this._kitchen).text)}</span>`;
       // In the prep phase the column caption already says Prep; the pill only marks prep-tagged
       // nodes that need cooked input and therefore sit in the cook phase.
       if (latePrep) html += `<span class="flow-prep" title="Förberedelse som kräver något tillagat, görs under tillagningen">${KNIFE_SVG}prep</span>`;
@@ -406,7 +416,8 @@ export class FlowGraph {
         if (!b) continue;
         const x1 = it.x + it.w, y1 = it.y, x2 = b.x, y2 = b.y;
         const dx = Math.max(18, (x2 - x1) / 2);
-        paths += `<path class="flow-edge" data-from="${escapeAttr(it.id)}" data-to="${escapeAttr(cid)}" d="M${x1},${y1} C${x1 + dx},${y1} ${x2 - dx},${y2} ${x2},${y2}"/>`;
+        const eqEdge = (b.node.eqDeps || []).includes(it.id);
+        paths += `<path class="flow-edge${eqEdge ? ' is-equipment' : ''}" data-from="${escapeAttr(it.id)}" data-to="${escapeAttr(cid)}" d="M${x1},${y1} C${x1 + dx},${y1} ${x2 - dx},${y2} ${x2},${y2}"/>`;
       }
     }
     const svg = $canvas.find('.flow-edges')[0];

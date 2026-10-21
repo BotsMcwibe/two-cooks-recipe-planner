@@ -1,6 +1,7 @@
 {
   "masterId": "potato_leek_gratin",
   "source": "hellofresh",
+  "rawId": "5d6910a0764e8b00156660c2",
   "createdAt": 1790795820,
   "basePortions": 4,
   "sharedPrep": [
@@ -89,6 +90,13 @@
       "tips": [
         "Potatisen ska fortfarande vara lite rå — den tillagas vidare i gratängen.",
         "Kokvatten 2 l är processmängd (ej HF yields); listat HF-vatten går till buljongreduktion."
+      ],
+      "heat": "hög",
+      "heatSource": "inferred",
+      "equipment": [
+        {
+          "type": "kastrull_stor"
+        }
       ]
     },
     {
@@ -186,6 +194,14 @@
       "tags": [],
       "tips": [
         "Vitlöken kokades tillsammans med potatisen — spara potatisen avhälld till gratängfyllningen."
+      ],
+      "heat": "medel",
+      "equipment": [
+        {
+          "type": "kastrull_stor",
+          "ref": "kastrull_2",
+          "sizeSource": "inferred"
+        }
       ]
     },
     {
@@ -220,6 +236,16 @@
       "tips": [
         "FLAG: _unitInference Buljong 4 ml — överstyrd till 4 g (yield 2 var null/null; samma mönster som övriga masters).",
         "FLAG: _unitInference Vatten 2 ml — överstyrd till 2 dl (HF-typ water-vatten-vand-1dl; 'se mängd i ingredienslistan')."
+      ],
+      "heat": "medellåg",
+      "heatSource": "inferred",
+      "equipment": [
+        {
+          "type": "kastrull_stor",
+          "ref": "kastrull_2",
+          "transition": "keep",
+          "sizeSource": "inferred"
+        }
       ]
     },
     {
@@ -361,6 +387,16 @@
       "tags": [],
       "tips": [
         "Hälften av den hackade timjan (0.5 st) går hit, resten (0.5 st) strös över vid servering — enligt HF 'hälften av timjan'."
+      ],
+      "heat": "medel",
+      "heatSource": "inferred",
+      "equipment": [
+        {
+          "type": "kastrull_stor",
+          "ref": "kastrull_2",
+          "transition": "keep",
+          "sizeSource": "inferred"
+        }
       ]
     },
     {
@@ -368,11 +404,6 @@
       "name": "Gratinera Gratäng",
       "outputName": "Gratinerad gratäng",
       "inputs": [
-        {
-          "id": "preheated_oven_220",
-          "amount": 1,
-          "unit": "st"
-        },
         {
           "id": "potato_leek_gratin__gratin_filling",
           "amount": 1,
@@ -392,7 +423,7 @@
       "steps": [
         "För över {{potato_leek_gratin__gratin_filling}} i en ugnsform.",
         "Strö först över {{grated_mozzarella}} och sedan {{potato_leek_gratin__panko_mix}}.",
-        "Gratinera i {{preheated_oven_220}} med grillfunktion i 3–5 min tills osten har smält och pankomixen blivit gyllenbrun."
+        "Gratinera i ugnen med grillfunktion i 3–5 min tills osten har smält och pankomixen blivit gyllenbrun."
       ],
       "duration": 4,
       "wait": 5,
@@ -400,6 +431,20 @@
       "tips": [
         "Viktigt: håll ett öga på gratängen så ytan inte bränns.",
         "HF anger 220°C grillfunktion — shared preheated_oven_220 används (exakt 220°C)."
+      ],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "preheated_oven_220",
+          "slots": 1,
+          "temp": 220,
+          "fanTemp": 200,
+          "mode": "grill"
+        },
+        {
+          "type": "ugnsform_stor",
+          "sizeSource": "inferred"
+        }
       ]
     },
     {

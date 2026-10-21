@@ -1,6 +1,7 @@
 {
   "masterId": "cowboy_steak_burger",
   "source": "hellofresh",
+  "rawId": "6807d3b436fada069711ca10",
   "createdAt": 1790852559,
   "basePortions": 4,
   "sharedPrep": [],
@@ -46,11 +47,39 @@
       ],
       "duration": 1,
       "tags": [
-        "no-timer"
+        "no-timer",
+        "resource"
       ],
       "wait": 12,
       "tips": [
         "HF anger 240°C/220°C varmluft — lokal ugnsnode, inte preheated_oven_220 (220/200)."
+      ],
+      "oven": {
+        "temp": 240,
+        "fanTemp": 220
+      }
+    },
+    {
+      "id": "cowboy_steak_burger__roomtemp_meat",
+      "name": "Ta fram köttet",
+      "outputName": "Rumstempererat kött",
+      "inputs": [
+        {
+          "id": "rump_steak",
+          "amount": 600,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Ta fram {{rump_steak}} ur kylen så att det blir rumstempererat."
+      ],
+      "duration": 1,
+      "wait": 30,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Ca 30 min i rumstemperatur ger jämnare stekning."
       ]
     },
     {
@@ -59,9 +88,9 @@
       "outputName": "Kryddad rumpstek",
       "inputs": [
         {
-          "id": "rump_steak",
-          "amount": 600,
-          "unit": "g"
+          "id": "cowboy_steak_burger__roomtemp_meat",
+          "amount": 1,
+          "unit": "st"
         },
         {
           "id": "salt",
@@ -75,14 +104,20 @@
         }
       ],
       "steps": [
-        "Ta fram {{rump_steak}} så den blir rumstempererad.",
-        "Krydda med {{salt}} och {{panamat_spice}}.",
+        "Krydda {{cowboy_steak_burger__roomtemp_meat}} med {{salt}} och {{panamat_spice}}.",
         "Värm grillen till hög värme."
       ],
       "duration": 3,
       "tags": [],
       "tips": [
         "Låt köttet ligga framme medan övrig prep pågår."
+      ],
+      "heat": "hög",
+      "equipment": [
+        {
+          "type": "grill",
+          "ref": "grill_1"
+        }
       ]
     },
     {
@@ -148,11 +183,6 @@
       "outputName": "Potatis under rostning",
       "inputs": [
         {
-          "id": "cowboy_steak_burger__preheated_oven_240",
-          "amount": 1,
-          "unit": "st"
-        },
-        {
           "id": "cowboy_steak_burger__diced_potato",
           "amount": 1,
           "unit": "st"
@@ -183,6 +213,19 @@
       "tags": [],
       "tips": [
         "Totalt rostas potatisen 25–35 min; bacon går in de sista 12 min på samma plåt."
+      ],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "cowboy_steak_burger__preheated_oven_240",
+          "slots": 1,
+          "temp": 240,
+          "fanTemp": 220
+        },
+        {
+          "type": "plat",
+          "ref": "plat_1"
+        }
       ]
     },
     {
@@ -210,6 +253,20 @@
       "tags": [],
       "tips": [
         "Bacon och potatis delar plåt de sista 12 minuterna."
+      ],
+      "equipment": [
+        {
+          "type": "plat",
+          "ref": "plat_1",
+          "transition": "keep"
+        },
+        {
+          "type": "ugn",
+          "after": "cowboy_steak_burger__preheated_oven_240",
+          "slots": 1,
+          "temp": 240,
+          "fanTemp": 220
+        }
       ]
     },
     {
@@ -280,6 +337,13 @@
       "tags": [],
       "tips": [
         "Lägg färdiga lökringar på hushållspapper så överflödig olja sugs upp."
+      ],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "stekpanna_medelstor",
+          "sizeSource": "inferred"
+        }
       ]
     },
     {
@@ -301,18 +365,21 @@
       "tags": [],
       "tips": [
         "2–3 min per sida ger medium vid rumstempererat kött; justera efter tjocklek."
-      ]
+      ],
+      "equipment": [
+        {
+          "type": "grill",
+          "ref": "grill_1",
+          "transition": "keep"
+        }
+      ],
+      "heat": "hög"
     },
     {
       "id": "cowboy_steak_burger__warmed_buns",
       "name": "Värm Briochebröd",
       "outputName": "Uppvärmda briochebröd",
       "inputs": [
-        {
-          "id": "cowboy_steak_burger__preheated_oven_240",
-          "amount": 1,
-          "unit": "st"
-        },
         {
           "id": "brioche_bun",
           "amount": 4,
@@ -328,6 +395,18 @@
       "tags": [],
       "tips": [
         "Starta gärna när det återstår ca 5 min av potatis/bacon-rostningen."
+      ],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "cowboy_steak_burger__preheated_oven_240",
+          "slots": 1,
+          "temp": 240,
+          "fanTemp": 220
+        },
+        {
+          "type": "galler"
+        }
       ]
     },
     {

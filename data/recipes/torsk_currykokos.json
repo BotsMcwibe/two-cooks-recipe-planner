@@ -1,6 +1,7 @@
 {
   "masterId": "torsk_currykokos",
   "source": "citygross",
+  "rawId": "citygross-R00022",
   "createdAt": 1791056383,
   "basePortions": 4,
   "sharedPrep": [],
@@ -73,6 +74,14 @@
       "tips": [
         "1 min är hands-on stek, inte en passiv wait.",
         "Ingefäran står som redan riven, mängden 0.75 msk är behållen. Vitlök är 1 st klyfta."
+      ],
+      "heat": "medelhög",
+      "heatSource": "inferred",
+      "equipment": [
+        {
+          "type": "stekpanna_medelstor",
+          "sizeSource": "inferred"
+        }
       ]
     },
     {

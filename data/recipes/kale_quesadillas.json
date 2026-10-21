@@ -1,6 +1,7 @@
 {
   "masterId": "kale_quesadillas",
   "source": "hellofresh",
+  "rawId": "5d76140b965c9800143495bd",
   "createdAt": 1790795820,
   "basePortions": 4,
   "sharedPrep": [],
@@ -115,6 +116,11 @@
         "Om du inte har en mixer: mosa bönorna med en gaffel och pressa vitlöken. Det är okej om röran fortfarande har bitar.",
         "FLAG: _unitInference Citrusfrukt (lime) 2 tsk — överstyrd till 2 st (metod: pressa juice till bönröra + sallad). 1 st här, 1 st i salladen.",
         "FLAG: _unitInference Gräddfil 150 g samma vid 2 och 4 portioner (icke-linjär). 1 msk till bönröra; resten till mexi-gräddfil."
+      ],
+      "equipment": [
+        {
+          "type": "mixer"
+        }
       ]
     },
     {
@@ -161,7 +167,14 @@
       ],
       "duration": 2,
       "wait": 5,
-      "tags": []
+      "tags": [],
+      "heat": "medel",
+      "equipment": [
+        {
+          "type": "stekpanna_liten",
+          "sizeSource": "inferred"
+        }
+      ]
     },
     {
       "id": "kale_quesadillas__chopped_red_onion",
@@ -373,6 +386,12 @@
         "FLAG: _unitInference Riven mozzarella 100 g — behållen.",
         "Reuse: mini_tortillas (finns i pantry; gratinerad_aubergine).",
         "FLAG: smör saknas i HF yields (shipped false / *) — 1 klick pantry."
+      ],
+      "heat": "medel",
+      "equipment": [
+        {
+          "type": "stekpanna_stor"
+        }
       ]
     },
     {

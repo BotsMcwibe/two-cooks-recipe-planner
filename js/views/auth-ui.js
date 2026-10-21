@@ -3,7 +3,7 @@
  * Logged out: email field → magic link. Logged in: avatar/initial, email, "Logga ut".
  * Hidden entirely if Supabase could not be loaded (app stays local-only).
  */
-import { onAuthChange, signInWithEmail, signOut, isAvailable, syncStatus, onSyncStatus } from '../core/sync.js?v=20261013ko';
+import { onAuthChange, signInWithEmail, signOut, isAvailable, syncStatus, onSyncStatus } from '../core/sync.js?v=20261021eq';
 import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261011u';
 import { accountLinkHtml, menuExtrasHtml, bindMenuExtras } from './menu-items.js?v=20261013sk';
 

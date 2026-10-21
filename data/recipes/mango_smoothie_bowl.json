@@ -1,6 +1,7 @@
 {
   "masterId": "mango_smoothie_bowl",
   "source": "hellofresh",
+  "rawId": "693056779351d52b5c2635e8",
   "createdAt": 1790852665,
   "basePortions": 4,
   "sharedPrep": [],
@@ -77,6 +78,12 @@
       "tags": [],
       "tips": [
         "Rör om under rostningen så att nötterna inte bränns."
+      ],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "stekpanna_stor"
+        }
       ]
     },
     {
@@ -112,6 +119,11 @@
       "tips": [
         "Lägg honung i en skål med varmt vatten i 1 min om den har stelnat.",
         "Tillsätt några isbitar när du mixar för en kallare och fylligare smoothie."
+      ],
+      "equipment": [
+        {
+          "type": "mixer"
+        }
       ]
     },
     {

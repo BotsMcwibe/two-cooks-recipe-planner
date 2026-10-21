@@ -199,11 +199,66 @@ Catalog mirrors: `cooked` (boolean), `cookedAt` (string), `cookedCardNumber` (nu
 
 ## Node inputs (derived ingredients)
 
-Node `inputs` are `{ id, amount, unit }`. A base ingredient (`ingredients.json` id) uses a real amount. An input whose `id` is another dish-local node (a **derived ingredient**) always uses unit `st`. **Each dish-local node output must be consumed exactly 1 st in total** across all its consumers: one consumer at `1 st`, or a split such as `0.7 st` + `0.3 st`. Shopping totals are computed through these amounts, so a double use counts the upstream ingredients twice. Shared prep outputs (`sharedPrep`) and recipe-local preheat nodes with no inputs are exempt (warning only). `validate-recipes.mjs` enforces this via `scripts/check-derived-usage.mjs`. Rules and examples: `recipes/docs/hf-to-graph-conversion.md` §4.2.
+Node `inputs` are `{ id, amount, unit }`. A base ingredient (`ingredients.json` id) uses a real amount. An input whose `id` is another dish-local node (a **derived ingredient**) always uses unit `st`. **Each dish-local node output must be consumed exactly 1 st in total** across all its consumers: one consumer at `1 st`, or a split such as `0.7 st` + `0.3 st`. Shopping totals are computed through these amounts, so a double use counts the upstream ingredients twice. Shared prep outputs (`sharedPrep`) used by several nodes are a warning only. **Resources** (preheated ovens, tag `resource`) are never inputs and are not part of this rule; see *Equipment, heat & resources* below. `validate-recipes.mjs` enforces this via `scripts/check-derived-usage.mjs`. Rules and examples: `recipes/docs/hf-to-graph-conversion.md` §4.2.
 
 ## Node tags
 
-Node `tags` is a string array (`[]` when none apply). `master` marks the master node. `no-timer` hides the countdown for tip-only waits (oven preheat). `prep` drives the app's **Preppa först** mode, which runs every prep-tagged node in a Prep phase before cooking. Use `prep` only for cold mise en place (chop, slice, grate, peel, rinse, drain, measure, mix a cold marinade/dressing/sauce/spice mix, cold breading or shaping). Never on heat steps (boil, simmer, fry, roast, bake, toast, melt, warm, preheat oven) or on nodes that consume a cooked output. Rules: `recipes/docs/hf-to-graph-conversion.md` §4.4.
+Node `tags` is a string array (`[]` when none apply). `master` marks the master node. `no-timer` hides the countdown for tip-only waits (oven preheat). `resource` marks a node that produces a piece of ready equipment rather than food (today: oven preheat nodes); see below. `prep` drives the app's **Preppa först** mode, which runs every prep-tagged node in a Prep phase before cooking. Use `prep` only for cold mise en place (chop, slice, grate, peel, rinse, drain, measure, mix a cold marinade/dressing/sauce/spice mix, cold breading or shaping). Never on heat steps (boil, simmer, fry, roast, bake, toast, melt, warm, preheat oven) or on nodes that consume a cooked output. Rules: `recipes/docs/hf-to-graph-conversion.md` §4.4.
+
+## Equipment, heat & resources
+
+Vocabulary: `data/equipment.json` (types, labels, `kind`, capacity, burner size, aliases). Kinds: `stovetop` (needs a burner and a heat level), `oven`, `ovenware` (1 oven slot each), `bowl`, `tool`. Rules for converters: `recipes/docs/hf-to-graph-conversion.md` §4.6. Checker: `scripts/check-equipment.mjs` (run by `validate-recipes.mjs`).
+
+| Field | Where | Notes |
+|-------|-------|-------|
+| `rawId` | master top level | Raw recipe stem the master was converted from (`<24-hex>` HelloFresh, `ica-…`, `citygross-R…`, `linas-…`), or `null` when no raw exists (legacy prototypes). Provenance only. |
+| `equipment` | node | Array of equipment entries the node uses (below). Omit when none. |
+| `heat` | node | Default heat for the node's stovetop vessel: `låg` \| `medellåg` \| `medel` \| `medelhög` \| `hög`. |
+| `stepHeat` | node | Per-step override, `{ "<0-based step index>": "<level>" }`, for "sänk till medellåg", "höj till hög". |
+| `heatSource` | node | `"inferred"` when the level was guessed from the verb (koka → hög, stek → medelhög, sjud → medellåg); absent = stated in the raw. |
+| `oven` | resource node | `{ "temp": 240, "fanTemp": 220 }`: preheat temperature for vanlig ugn and varmluft (°C). `"fanTempSource": "derived"` when the raw gave no varmluft temperature and it was set to temp − 20. `temp: null` + `note` when the raw says "enligt förpackningen". |
+
+Equipment entry:
+
+```json
+{ "type": "stekpanna_stor", "ref": "stekpanna_1", "transition": "wipe", "after": "x__toasted_nuts", "sizeSource": "inferred" }
+{ "type": "ugn", "after": "x__preheated_oven_240", "slots": 1, "temp": 240, "fanTemp": 220 }
+{ "type": "ugn", "after": "x__preheated_oven_200", "slots": 2, "temp": 200, "fanTemp": 180, "fanTempSource": "derived" }
+{ "type": "plat", "ref": "plat_1", "shared": true }
+```
+
+| Key | Notes |
+|-----|-------|
+| `type` | Id in `equipment.json`. Sizes are part of the type: `kastrull_liten` (1.5 l), `kastrull_medelstor` (2.5 l), `kastrull_stor` (4 l), `stekpanna_liten` (20 cm), `stekpanna_medelstor` (24 cm), `stekpanna_stor` (28 cm), `wok`, `gryta`, `grill`, `plat`, `ugnsform`, `ugnsform_stor`, `springform`, `bakform`, `galler`, `skal_medelstor`, `skal_stor`, `mixer`, `stavmixer`, … The word is **medelstor** (alias: mellanstor). |
+| `ref` | Dish-local instance name. The same `ref` on several nodes is the same physical pot/pan/tray, reused in order. Only written when a vessel is used by 2+ nodes. |
+| `transition` | State before this use of a reused vessel: `keep` (samma panna, torka inte ur / behåll skyn), `wipe` (torka ur den först), `wash` (diska ur). Absent = `fresh` (first use). |
+| `after` | Node id (or array) the equipment waits for. For `ugn` it is the preheat resource. For a reused vessel it is the previous user when no ingredient edge already orders them. This is a **resource ordering**, not a food edge, so it never counts as an input. |
+| `shared` | Ovenware used at the same time by several nodes (two things side by side on one plåt). Counted as one oven slot. |
+| `hold` | The output stays in the vessel (e.g. "Ställ åt sidan under lock") until its consumer takes it. |
+| `offHeat` | A stovetop vessel used off the burner (mash in the pot, toss in the pan). No heat needed. |
+| `slots` | **`ugn` entries, required.** Number of oven trays/levels this oven use needs at the same time (each plåt, ugnsform, galler, bakform = 1). Compared against the kitchen profile's `ovenTrays`. |
+| `temp` | **`ugn` entries, required.** Temperature for a vanlig ugn (°C) for this use. `null` only when the raw gives none ("enligt förpackningen"). |
+| `fanTemp` | **`ugn` entries, required when `temp` is a number.** Varmluft temperature (°C): the raw's value, or temp − 20 when the raw states none. |
+| `fanTempSource` | `"derived"` when `fanTemp` was computed (temp − 20) rather than read from the raw. Absent = from the raw. |
+| `mode` | Oven mode for this use, e.g. `"grill"` (gratinera med grillfunktion). |
+| `sizeSource` | `"inferred"` when the raw named no size and the size was guessed from the content volume. |
+
+**Resources.** An oven preheat node is tagged `resource` and carries `oven`. It is never a node input, never part of the sum-to-1 rule, and is never shown as an ingredient. Every node that bakes or roasts references it via `{ "type": "ugn", "after": "<preheat id>", "slots", "temp", "fanTemp" }`. The oven runs one temperature at a time. Its capacity is **not fixed**: it comes from the kitchen profile below. The burner size follows from the vessel (`equipment.json` → `burner`) and is not stored.
+
+### Kitchen profile (per account)
+
+Recipes describe what they need; the user's kitchen decides how that is cooked. The profile is a per-account setting stored by the app (not in recipe files):
+
+```json
+{ "kitchen": { "ovenTrays": 2, "ovenFan": false } }
+```
+
+| Field | Type | Default | Meaning |
+|-------|------|---------|---------|
+| `ovenTrays` | integer ≥ 1 | 2 | How many plåtar/formar the oven takes at once with an acceptable result. |
+| `ovenFan` | boolean | false | true = the user cooks with varmluft. The app then shows `fanTemp`, otherwise `temp`. |
+
+The default lives in `data/equipment.json` → `defaultKitchen` and is what `validate-recipes.mjs` checks against. `node scripts/check-equipment.mjs --trays 1 --fan` checks a different profile. When concurrent oven uses need more than `ovenTrays`, or two different effective temperatures overlap, the app must serialise those uses (later use waits for the earlier one: start later / longer total time). It reports the same situations as `oven-slots` / `oven-temp`.
 
 ## Node optional field
 
@@ -218,7 +273,7 @@ When both `node.image` and `images.byNode[nodeId]` exist, **`images.byNode` wins
 ## What stays out of the graph
 
 - Ingredient icons / allergen icons (HF wrapper `ing_*`, `allergens/`) — not in app schema yet
-- Marketing copy, utensils, videos
+- Marketing copy, videos (utensils now live in node `equipment`, see above)
 - Blobs / data URLs
 
 ---

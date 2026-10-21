@@ -1,6 +1,7 @@
 {
   "masterId": "katalansk_raksoppa",
   "source": "linas",
+  "rawId": "linas-46431",
   "createdAt": 1791054767,
   "basePortions": 2,
   "sharedPrep": [],
@@ -32,11 +33,16 @@
       ],
       "duration": 1,
       "tags": [
-        "no-timer"
+        "no-timer",
+        "resource"
       ],
       "tips": [
         "Råsteget anger ingen förvärmningstid, därför ingen wait. Inte påhittad."
-      ]
+      ],
+      "oven": {
+        "temp": 200,
+        "fanTemp": 180
+      }
     },
     {
       "id": "katalansk_raksoppa__prepped_aromatics",
@@ -113,11 +119,6 @@
       "outputName": "Gräddad surdegsbaguette",
       "inputs": [
         {
-          "id": "katalansk_raksoppa__oven",
-          "amount": 1,
-          "unit": "st"
-        },
-        {
           "id": "sourdough_baguette",
           "amount": 1,
           "unit": "st"
@@ -130,6 +131,15 @@
       "tags": [],
       "tips": [
         "Råsteget har ingen minut. Ingen bak-timer påhittad, därför ingen wait."
+      ],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "katalansk_raksoppa__oven",
+          "slots": 1,
+          "temp": 200,
+          "fanTemp": 180
+        }
       ]
     },
     {
@@ -184,6 +194,14 @@
         "Vitlök är 1 klyfta enligt rådatan.",
         "Saffran, timjan och tomatpuré är förp enligt rådatan. Paketstorlek saknas, inga gram påhittade.",
         "3 min och 1 min är fräs (hands-on) och ligger i duration, inte som wait. Rökt chilimix är stark, smaka dig fram."
+      ],
+      "heat": "medelhög",
+      "heatSource": "inferred",
+      "equipment": [
+        {
+          "type": "gryta",
+          "ref": "gryta_1"
+        }
       ]
     },
     {
@@ -243,6 +261,15 @@
         "Krossade tomater, honung och buljong är förp enligt rådatan. Paketvikt saknas.",
         "Salt och peppar hade enhet krm med amount null → 1 krm var.",
         "10 min är sista stegets wait."
+      ],
+      "heat": "hög",
+      "heatSource": "inferred",
+      "equipment": [
+        {
+          "type": "gryta",
+          "ref": "gryta_1",
+          "transition": "keep"
+        }
       ]
     },
     {

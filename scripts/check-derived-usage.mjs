@@ -17,10 +17,12 @@
  *   placeholder     a {{ref}} in a node's steps that is not one of that node's inputs
  *
  * Warnings (exit 0 if only warnings):
- *   shared-multi-use     a sharedPrep output (e.g. preheated_oven_220) is used by 2+ nodes
- *                        in this recipe (exempt from the sum rule: an oven can heat two things)
- *   equipment-multi-use  a dish-local node with no inputs (e.g. <id>__preheated_oven_240)
- *                        is used by 2+ nodes (exempt from the sum rule, same reason)
+ *   shared-multi-use     a sharedPrep output is used by 2+ nodes in this recipe
+ *   equipment-multi-use  a dish-local node with no inputs (not a resource) is used by 2+ nodes
+ *
+ * Resources (nodes tagged "resource", e.g. preheated ovens) are NOT derived ingredients: they are
+ * excluded from the sum rule and from the multi-use warnings. They must be referenced through
+ * node.equipment[].after (see check-equipment.mjs); a resource with no such reference is "no-use".
  *   shared-unused        a sharedPrep pack is listed but no local node uses its output
  *   unmentioned-input    an input is never referenced as {{id}} in that node's steps
  *   duplicate-input      the same input id is listed twice in one node
@@ -163,10 +165,17 @@ function checkRecipe(mid, data, ctx) {
   }
 
   const isMaster = n => n.id === mid || (n.tags || []).includes('master');
+  const isResource = n => (n.tags || []).includes('resource');
+  const afterRefs = new Set();
+  for (const n of resolved) for (const e of n.equipment || []) for (const a of [].concat(e.after ?? [])) afterRefs.add(a);
 
   // Dish-local derived ingredients: sum-to-1-st rule
   for (const n of localNodes) {
     if (sharedById.has(n.id)) continue;
+    if (isResource(n)) {
+      if (!afterRefs.has(n.id)) add('error', 'no-use', n.id, 'resource is not referenced by any node equipment[].after', { consumers: [] });
+      continue; // never an ingredient: no sum rule, no multi-use warning (inputs use is an error in check-equipment)
+    }
     const list = uses.get(n.id) || [];
     const consumers = [...new Set(list.map(u => u.consumer))];
     if (isMaster(n)) {
@@ -203,7 +212,8 @@ function checkRecipe(mid, data, ctx) {
   const usedPacks = new Set();
   for (const [id, packId] of sharedNodes) {
     const consumers = [...new Set((uses.get(id) || []).map(u => u.consumer))];
-    if (consumers.some(c => !sharedNodes.has(c))) usedPacks.add(packId);
+    if (consumers.some(c => !sharedNodes.has(c)) || afterRefs.has(id)) usedPacks.add(packId);
+    if (isResource(sharedById.get(id))) continue;
     if (consumers.length >= 2) {
       add('warning', 'shared-multi-use', id,
         `shared prep (${packId}) used by ${consumers.length} nodes: ${consumers.join(', ')}`, { consumers, pack: packId });

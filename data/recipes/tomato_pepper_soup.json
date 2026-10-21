@@ -1,6 +1,7 @@
 {
   "masterId": "tomato_pepper_soup",
   "source": "hellofresh",
+  "rawId": "5d69112d1ff897000a53000a",
   "createdAt": 1790795820,
   "basePortions": 4,
   "sharedPrep": [
@@ -106,6 +107,14 @@
       "tags": [],
       "tips": [
         "FLAG: couscous-vatten 1 l är processmängd (ej HF yields 8 ml)."
+      ],
+      "heat": "hög",
+      "heatSource": "inferred",
+      "equipment": [
+        {
+          "type": "kastrull_medelstor",
+          "sizeSource": "inferred"
+        }
       ]
     },
     {
@@ -146,6 +155,12 @@
         "FLAG: _unitInference Buljong 4 ml — överstyrd till 4 g (yield 2 var null/null; samma mönster som övriga masters).",
         "FLAG: _unitInference Vatten 8 ml — överstyrd till 8 dl (HF-steg: 200 ml kokande vatten per person).",
         "FLAG: olja till fräsning saknas i HF yields — 1 skvätt pantry."
+      ],
+      "heat": "medellåg",
+      "equipment": [
+        {
+          "type": "kastrull_stor"
+        }
       ]
     },
     {
@@ -195,6 +210,34 @@
         "FLAG: _unitInference Socker 1 g — överstyrd till 1 nypa (efter smak).",
         "Häll i en skvätt extra kokande vatten om soppan känns för tjock.",
         "Resterande crème fraiche (150 ml) sparas till servering."
+      ],
+      "equipment": [
+        {
+          "type": "stavmixer"
+        }
+      ]
+    },
+    {
+      "id": "tomato_pepper_soup__softened_butter",
+      "name": "Ta fram smöret",
+      "outputName": "Rumstempererat smör",
+      "inputs": [
+        {
+          "id": "butter",
+          "amount": 40,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Ta fram {{butter}} ur kylen så att det blir rumstempererat och mjukt."
+      ],
+      "duration": 1,
+      "wait": 30,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Ta fram smöret i god tid, ca 30 min innan det ska användas. Mjukt smör går att mosa med gaffel."
       ]
     },
     {
@@ -203,9 +246,9 @@
       "outputName": "Vitlökssmör",
       "inputs": [
         {
-          "id": "butter",
-          "amount": 40,
-          "unit": "g"
+          "id": "tomato_pepper_soup__softened_butter",
+          "amount": 1,
+          "unit": "st"
         },
         {
           "id": "garlic",
@@ -214,8 +257,7 @@
         }
       ],
       "steps": [
-        "Ta fram {{butter}} i rumstemperatur.",
-        "Skala och pressa {{garlic}}. Blanda med smöret i en skål."
+        "Skala och pressa {{garlic}}. Blanda med {{tomato_pepper_soup__softened_butter}} i en skål."
       ],
       "duration": 2,
       "tags": [
@@ -230,11 +272,6 @@
       "name": "Baka Vitlöksbröd",
       "outputName": "Vitlöksbröd",
       "inputs": [
-        {
-          "id": "preheated_oven_220",
-          "amount": 1,
-          "unit": "st"
-        },
         {
           "id": "ciabatta",
           "amount": 1,
@@ -254,7 +291,7 @@
       "steps": [
         "Halvera {{ciabatta}} på längden och skär i ca 5 cm breda skivor.",
         "Lägg brödet på en bakplåt med bakplåtspapper. Bre med {{tomato_pepper_soup__garlic_butter}} och ringla över {{oil}}.",
-        "Baka i den förvärmda ugnen ({{preheated_oven_220}}) i 6–8 min tills gyllenbruna."
+        "Baka i den förvärmda ugnen i 6–8 min tills gyllenbruna."
       ],
       "duration": 3,
       "wait": 7,
@@ -263,6 +300,18 @@
         "FLAG: _unitInference Ciabatta 1 tsk — överstyrd till 1 st (metod: halvera ciabatta).",
         "FLAG: olja över brödet saknas i HF yields — 1 skvätt pantry.",
         "Sätt ugnen på 220°C i början (shared preheated_oven_220)."
+      ],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "preheated_oven_220",
+          "slots": 1,
+          "temp": 220,
+          "fanTemp": 200
+        },
+        {
+          "type": "plat"
+        }
       ]
     },
     {

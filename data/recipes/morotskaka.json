@@ -1,6 +1,7 @@
 {
   "masterId": "morotskaka",
   "source": "hellofresh",
+  "rawId": "6881e52e7299475a5b065202",
   "createdAt": 1790852217,
   "basePortions": 4,
   "scalable": false,
@@ -46,11 +47,16 @@
       "duration": 1,
       "wait": 10,
       "tags": [
-        "no-timer"
+        "no-timer",
+        "resource"
       ],
       "tips": [
         "Ugnen tar vanligtvis 10–15 minuter att värmas upp."
-      ]
+      ],
+      "oven": {
+        "temp": 190,
+        "fanTemp": 170
+      }
     },
     {
       "id": "morotskaka__grated_carrot",
@@ -80,11 +86,6 @@
       "outputName": "Gräddad morotskaka",
       "inputs": [
         {
-          "id": "morotskaka__preheated_oven",
-          "amount": 1,
-          "unit": "st"
-        },
-        {
           "id": "sponge_cake_mix",
           "amount": 600,
           "unit": "g"
@@ -110,6 +111,18 @@
       "tags": [],
       "tips": [
         "Använd en provsticka: om stickan är torr är kakan färdig."
+      ],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "morotskaka__preheated_oven",
+          "slots": 1,
+          "temp": 190,
+          "fanTemp": 170
+        },
+        {
+          "type": "bakform"
+        }
       ]
     },
     {
@@ -117,11 +130,6 @@
       "name": "Rosta Valnötter",
       "outputName": "Rostade valnötter",
       "inputs": [
-        {
-          "id": "morotskaka__preheated_oven",
-          "amount": 1,
-          "unit": "st"
-        },
         {
           "id": "walnuts",
           "amount": 40,
@@ -137,6 +145,18 @@
       "tags": [],
       "tips": [
         "Rostningen kan göras medan kakan gräddas."
+      ],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "morotskaka__preheated_oven",
+          "slots": 1,
+          "temp": 190,
+          "fanTemp": 170
+        },
+        {
+          "type": "plat"
+        }
       ]
     },
     {
@@ -187,6 +207,11 @@
       ],
       "tips": [
         "Glasyren kan göras medan kakan gräddas."
+      ],
+      "equipment": [
+        {
+          "type": "skal_medelstor"
+        }
       ]
     },
     {

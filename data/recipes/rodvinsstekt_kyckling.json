@@ -1,6 +1,7 @@
 {
   "masterId": "rodvinsstekt_kyckling",
   "source": "hellofresh",
+  "rawId": "63e6bbd311d6aa361e490747",
   "createdAt": 1791037081,
   "basePortions": 4,
   "sharedPrep": [],
@@ -77,7 +78,16 @@
       ],
       "duration": 3,
       "wait": 12,
-      "tags": []
+      "tags": [],
+      "heat": "hög",
+      "heatSource": "inferred",
+      "equipment": [
+        {
+          "type": "kastrull_stor",
+          "ref": "kastrull_1",
+          "sizeSource": "inferred"
+        }
+      ]
     },
     {
       "id": "rodvinsstekt_kyckling__potato_mash",
@@ -108,6 +118,15 @@
       "tags": [],
       "tips": [
         "Låt stå under lock tills servering. Det är ingen tidsatt vila."
+      ],
+      "equipment": [
+        {
+          "type": "kastrull_stor",
+          "ref": "kastrull_1",
+          "transition": "keep",
+          "sizeSource": "inferred",
+          "offHeat": true
+        }
       ]
     },
     {
@@ -137,6 +156,11 @@
       "duration": 2,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skal_stor"
+        }
       ]
     },
     {
@@ -213,6 +237,13 @@
       "tags": [],
       "tips": [
         "Tvätta händer och redskap efter rå kyckling. Den är klar när köttet inte längre är rosa i mitten."
+      ],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1"
+        }
       ]
     },
     {
@@ -257,7 +288,16 @@
       ],
       "duration": 2,
       "wait": 3,
-      "tags": []
+      "tags": [],
+      "heat": "medel",
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1",
+          "transition": "keep",
+          "after": "rodvinsstekt_kyckling__fried_chicken"
+        }
+      ]
     },
     {
       "id": "rodvinsstekt_kyckling__sauced_chicken",

@@ -1,6 +1,7 @@
 {
   "masterId": "bbq_lax_ranch",
   "source": "hellofresh",
+  "rawId": "6655aaded9c97d64003b1def",
   "createdAt": 1790853297,
   "basePortions": 4,
   "sharedPrep": [],
@@ -47,11 +48,16 @@
       "duration": 1,
       "wait": 12,
       "tags": [
-        "no-timer"
+        "no-timer",
+        "resource"
       ],
       "tips": [
         "HF anger 240°C/220°C varmluft — lokal ugnsnode, inte preheated_oven_220 (220/200)."
-      ]
+      ],
+      "oven": {
+        "temp": 240,
+        "fanTemp": 220
+      }
     },
     {
       "id": "bbq_lax_ranch__potato_wedges",
@@ -77,11 +83,6 @@
       "name": "Rosta BBQ-potatis",
       "outputName": "Rostad BBQ-potatis",
       "inputs": [
-        {
-          "id": "bbq_lax_ranch__preheated_oven_240",
-          "amount": 1,
-          "unit": "st"
-        },
         {
           "id": "bbq_lax_ranch__potato_wedges",
           "amount": 1,
@@ -115,7 +116,19 @@
       ],
       "duration": 3,
       "wait": 35,
-      "tags": []
+      "tags": [],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "bbq_lax_ranch__preheated_oven_240",
+          "slots": 1,
+          "temp": 240,
+          "fanTemp": 220
+        },
+        {
+          "type": "plat"
+        }
+      ]
     },
     {
       "id": "bbq_lax_ranch__chopped_chives",
@@ -181,11 +194,6 @@
       "outputName": "Ugnsbakad BBQ-lax",
       "inputs": [
         {
-          "id": "bbq_lax_ranch__preheated_oven_240",
-          "amount": 1,
-          "unit": "st"
-        },
-        {
           "id": "salmon_fillet",
           "amount": 800,
           "unit": "g"
@@ -217,6 +225,19 @@
       "tags": [],
       "tips": [
         "Laxen är färdiglagad när köttet är ogenomskinligt i mitten."
+      ],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "bbq_lax_ranch__preheated_oven_240",
+          "slots": 1,
+          "temp": 240,
+          "fanTemp": 220
+        },
+        {
+          "type": "ugnsform",
+          "sizeSource": "inferred"
+        }
       ]
     },
     {
@@ -299,7 +320,13 @@
       ],
       "duration": 5,
       "wait": 0,
-      "tags": []
+      "tags": [],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "stekpanna_medelstor"
+        }
+      ]
     },
     {
       "id": "bbq_lax_ranch__corn_salsa",
@@ -351,7 +378,12 @@
         "Blanda {{bbq_lax_ranch__fried_corn}}, {{bbq_lax_ranch__halved_tomatoes}}, {{bbq_lax_ranch__chopped_red_onion}}, {{bbq_lax_ranch__chopped_parsley}}, {{salted_peanuts}}, {{olive_oil}}, {{salt}} och {{pepper}} i en medelstor skål."
       ],
       "duration": 2,
-      "tags": []
+      "tags": [],
+      "equipment": [
+        {
+          "type": "skal_medelstor"
+        }
+      ]
     },
     {
       "id": "bbq_lax_ranch__cabbage_salad",
@@ -401,6 +433,11 @@
       "duration": 3,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skal_medelstor"
+        }
       ]
     },
     {

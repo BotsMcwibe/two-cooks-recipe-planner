@@ -1,6 +1,7 @@
 {
   "masterId": "cajunkryddad_kycklingfile",
   "source": "hellofresh",
+  "rawId": "6a4fb291c80ad488c9bd0581",
   "createdAt": 1791041990,
   "basePortions": 4,
   "sharedPrep": [],
@@ -47,12 +48,17 @@
       "duration": 1,
       "wait": 12,
       "tags": [
-        "no-timer"
+        "no-timer",
+        "resource"
       ],
       "tips": [
         "Ugnen tar vanligtvis 10–15 minuter att värmas upp.",
         "HF anger 240°C/220°C varmluft — lokal ugnsnode, inte preheated_oven_220."
-      ]
+      ],
+      "oven": {
+        "temp": 240,
+        "fanTemp": 220
+      }
     },
     {
       "id": "cajunkryddad_kycklingfile__prepped_veg",
@@ -98,11 +104,6 @@
       "outputName": "Halvrostade grönsaker",
       "inputs": [
         {
-          "id": "cajunkryddad_kycklingfile__preheated_oven_240",
-          "amount": 1,
-          "unit": "st"
-        },
-        {
           "id": "cajunkryddad_kycklingfile__prepped_veg",
           "amount": 1,
           "unit": "st"
@@ -125,7 +126,7 @@
       ],
       "steps": [
         "Lägg {{cajunkryddad_kycklingfile__prepped_veg}} på en plåt med bakplåtspapper. Blanda med {{olive_oil}}, {{salt}} och en nypa {{pepper}}.",
-        "Rosta i {{cajunkryddad_kycklingfile__preheated_oven_240}} i ca 25 min, tills det återstår 10 min av totalt 25–35 min."
+        "Rosta i ugnen i ca 25 min, tills det återstår 10 min av totalt 25–35 min."
       ],
       "duration": 3,
       "wait": 25,
@@ -133,6 +134,19 @@
       "tips": [
         "Använd fler plåtar om det blir för trångt.",
         "Första fasen är övre gränsen 35 min minus de 10 min som återstår när majsen läggs på. Olivolja och peppar har ingen yield."
+      ],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "cajunkryddad_kycklingfile__preheated_oven_240",
+          "slots": 1,
+          "temp": 240,
+          "fanTemp": 220
+        },
+        {
+          "type": "plat",
+          "ref": "plat_1"
+        }
       ]
     },
     {
@@ -160,6 +174,20 @@
       "tags": [],
       "tips": [
         "Majs är 300 g vid både 3 och 4 portioner. Inte uppskalad."
+      ],
+      "equipment": [
+        {
+          "type": "plat",
+          "ref": "plat_1",
+          "transition": "keep"
+        },
+        {
+          "type": "ugn",
+          "after": "cajunkryddad_kycklingfile__preheated_oven_240",
+          "slots": 1,
+          "temp": 240,
+          "fanTemp": 220
+        }
       ]
     },
     {
@@ -241,6 +269,15 @@
       "tips": [
         "Tvätta händer och redskap efter rå kyckling. Kycklingen är klar när köttet inte längre är rosa i mitten.",
         "Båda stegomgångarna är hands-on, därför duration 11 och wait 0. Inte hopslagen med ugnen."
+      ],
+      "heat": "medelhög",
+      "stepHeat": {
+        "2": "medel"
+      },
+      "equipment": [
+        {
+          "type": "stekpanna_stor"
+        }
       ]
     },
     {
@@ -286,6 +323,13 @@
       "tags": [],
       "tips": [
         "Spenatens korttyp är ekologisk babyspenat, mappad till baby_spinach."
+      ],
+      "equipment": [
+        {
+          "type": "plat",
+          "ref": "plat_1",
+          "transition": "keep"
+        }
       ]
     },
     {

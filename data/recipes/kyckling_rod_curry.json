@@ -1,6 +1,7 @@
 {
   "masterId": "kyckling_rod_curry",
   "source": "citygross",
+  "rawId": "citygross-R40988",
   "createdAt": 1791054766,
   "basePortions": 4,
   "sharedPrep": [],
@@ -121,6 +122,14 @@
         "Olja till stekning saknade mängd (amount 0, unit null) → default 1 skvätt.",
         "Salt och svartpeppar saknar mängd och enhet. Satta till 1 nypa var. Svartpeppar är befintlig peppar.",
         "Strimlad kyckling är mappad till strimlad kycklingbröstfilé. \"Någon minut\" är hands-on i duration, inte en extra wait. 10 min är råstegets timer."
+      ],
+      "heat": "medelhög",
+      "heatSource": "inferred",
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "sizeSource": "inferred"
+        }
       ]
     },
     {

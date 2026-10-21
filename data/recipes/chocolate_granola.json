@@ -1,6 +1,7 @@
 {
   "masterId": "chocolate_granola",
   "source": "hellofresh",
+  "rawId": "6853f90d5bd0c1208002a235",
   "createdAt": 1790852363,
   "basePortions": 4,
   "sharedPrep": [],
@@ -44,12 +45,17 @@
       "duration": 1,
       "wait": 10,
       "tags": [
-        "no-timer"
+        "no-timer",
+        "resource"
       ],
       "tips": [
         "Ugnen tar vanligtvis 10–15 minuter att värmas upp.",
         "HF anger 180°C/160°C varmluft — lokal ugnsnode, inte preheated_oven_220."
-      ]
+      ],
+      "oven": {
+        "temp": 180,
+        "fanTemp": 160
+      }
     },
     {
       "id": "chocolate_granola__mixed",
@@ -92,6 +98,11 @@
       ],
       "tips": [
         "Lägg honung i en skål med varmt vatten i 1 min om den har stelnat."
+      ],
+      "equipment": [
+        {
+          "type": "skal_stor"
+        }
       ]
     },
     {
@@ -100,11 +111,6 @@
       "outputName": "Rostad chokladgranola",
       "inputs": [
         {
-          "id": "chocolate_granola__preheated_oven",
-          "amount": 1,
-          "unit": "st"
-        },
-        {
           "id": "chocolate_granola__mixed",
           "amount": 1,
           "unit": "st"
@@ -112,13 +118,25 @@
       ],
       "steps": [
         "Sprid ut {{chocolate_granola__mixed}} i ett jämnt lager på en plåt med bakplåtspapper.",
-        "Rosta i {{chocolate_granola__preheated_oven}} i 10–15 min. Rör om var 5:e minut, tills granolan är jämnt rostad."
+        "Rosta i ugnen i 10–15 min. Rör om var 5:e minut, tills granolan är jämnt rostad."
       ],
       "duration": 3,
       "wait": 15,
       "tags": [],
       "tips": [
         "Rör om var 5:e minut under rostningen så att granolan inte bränns."
+      ],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "chocolate_granola__preheated_oven",
+          "slots": 1,
+          "temp": 180,
+          "fanTemp": 160
+        },
+        {
+          "type": "plat"
+        }
       ]
     },
     {

@@ -1,6 +1,7 @@
 {
   "masterId": "gratinerade_kidneybonor",
   "source": "hellofresh",
+  "rawId": "5d753d6c965c98000f09a6b1",
   "createdAt": 1790852559,
   "basePortions": 4,
   "sharedPrep": [],
@@ -38,11 +39,17 @@
       "duration": 1,
       "wait": 12,
       "tags": [
-        "no-timer"
+        "no-timer",
+        "resource"
       ],
       "tips": [
         "HF anger 200°C (inte 220) — lokal ugnsnode, inte preheated_oven_220."
-      ]
+      ],
+      "oven": {
+        "temp": 200,
+        "fanTemp": 180,
+        "fanTempSource": "derived"
+      }
     },
     {
       "id": "gratinerade_kidneybonor__simmered_rice",
@@ -75,6 +82,13 @@
       "tips": [
         "FLAG: _unitInference Vatten (steg 1) 6 ml — överstyrd till 6 dl (HF-typ water-step-1-…-1dl; risvatten).",
         "FLAG: alla 30 _unitInference-fyllningar — se tips och agentrapport."
+      ],
+      "heat": "låg",
+      "equipment": [
+        {
+          "type": "kastrull_medelstor",
+          "sizeSource": "inferred"
+        }
       ]
     },
     {
@@ -272,6 +286,13 @@
       "tags": [],
       "tips": [
         "Stekolja är pantry-skvätt (ej i HF yields; yields-olivolja går till salladen)."
+      ],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1"
+        }
       ]
     },
     {
@@ -325,6 +346,15 @@
       "tips": [
         "FLAG: _unitInference Krossade tomater 2 burk — behållen; Baharat 4 tsk — behållen (krydda).",
         "FLAG: _unitInference Vatten (steg 4) 2 ml — överstyrd till 2 dl (HF-typ water-step-4-…-1dl)."
+      ],
+      "heat": "medelhög",
+      "heatSource": "inferred",
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1",
+          "transition": "keep"
+        }
       ]
     },
     {
@@ -332,11 +362,6 @@
       "name": "Gratinera Bönröran",
       "outputName": "Gratinerade kidneybönor",
       "inputs": [
-        {
-          "id": "gratinerade_kidneybonor__preheated_oven_200",
-          "amount": 1,
-          "unit": "st"
-        },
         {
           "id": "gratinerade_kidneybonor__bean_tomato_mix",
           "amount": 1,
@@ -351,13 +376,27 @@
       "steps": [
         "För över {{gratinerade_kidneybonor__bean_tomato_mix}} till en ugnsform.",
         "Strö över ett jämnt lager {{grated_mozzarella}}.",
-        "Gratinera i {{gratinerade_kidneybonor__preheated_oven_200}} tills osten har smält och är gyllenbrun, 10–12 min."
+        "Gratinera i ugnen tills osten har smält och är gyllenbrun, 10–12 min."
       ],
       "duration": 3,
       "wait": 12,
       "tags": [],
       "tips": [
         "FLAG: _unitInference Riven mozzarella 100 g — behållen."
+      ],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "gratinerade_kidneybonor__preheated_oven_200",
+          "slots": 1,
+          "temp": 200,
+          "fanTemp": 180,
+          "fanTempSource": "derived"
+        },
+        {
+          "type": "ugnsform_stor",
+          "sizeSource": "inferred"
+        }
       ]
     },
     {

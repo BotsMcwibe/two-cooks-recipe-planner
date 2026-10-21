@@ -1,6 +1,7 @@
 {
   "masterId": "kramig_basilikakyckling",
   "source": "hellofresh",
+  "rawId": "687a28d4c30d33981f9ad5b5",
   "createdAt": 1791041146,
   "basePortions": 4,
   "sharedPrep": [],
@@ -103,6 +104,13 @@
       "tags": [],
       "tips": [
         "Kokvattnets salt har ingen mängd. Kryddningen efter avhällning är en egen nypa, inte salladens salt."
+      ],
+      "heat": "hög",
+      "heatSource": "inferred",
+      "equipment": [
+        {
+          "type": "kastrull_stor"
+        }
       ]
     },
     {
@@ -178,6 +186,16 @@
       "tips": [
         "Tvätta händer och redskap efter rå kyckling. Kycklingen är klar när köttet inte längre är rosa i mitten.",
         "3 min per sida är hands-on, därför duration och wait 0. Marinadoljan är 2 msk. Skvätten i pannan har ingen yield."
+      ],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1"
+        },
+        {
+          "type": "skal_stor"
+        }
       ]
     },
     {
@@ -234,6 +252,11 @@
       "tips": [
         "4 portioner är 300 g spetskål. 2 och 3 portioner står kvar på 150 g och är inte rättade.",
         "Gurka är 1 st från 2 till 4 portioner. Massagen är 30 sek hands-on, inte en wait."
+      ],
+      "equipment": [
+        {
+          "type": "skal_stor"
+        }
       ]
     },
     {
@@ -287,6 +310,15 @@
       "tags": [],
       "tips": [
         "Vitlökssteken på 1 min är hands-on i duration. Sjudningen 1–2 min är sista stegets wait 2, inte hopslagen med stektiden."
+      ],
+      "heat": "medel",
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1",
+          "transition": "keep",
+          "after": "kramig_basilikakyckling__fried_chicken"
+        }
       ]
     },
     {

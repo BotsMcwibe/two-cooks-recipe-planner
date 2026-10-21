@@ -1,7 +1,12 @@
-import { Scheduler } from '../models/scheduler.js';
+import { Scheduler } from '../models/scheduler.js?v=20261021eq';
+import { isResource } from '../core/equipment.js?v=20261021eq';
+import { kitchenProfile } from '../core/kitchen-prefs.js?v=20261021eq';
 
 /**
  * Gantt chart view - renders the process visualization as positioned DOM divs.
+ * (Legacy: not mounted at runtime; the cook page uses flow-graph.js.)
+ * Resource bars (preheat oven) are dashed, and bars that wait for equipment
+ * (equipment[].after) carry a dashed left edge, the Gantt form of an equipment edge.
  */
 export class GanttChart {
   constructor() {
@@ -9,7 +14,7 @@ export class GanttChart {
   }
 
   render(rootRecipe, subtreeRecipes, options) {
-    const sched = new Scheduler(rootRecipe, subtreeRecipes, options);
+    const sched = new Scheduler(rootRecipe, subtreeRecipes, { ...options, kitchen: kitchenProfile() });
     const { nodes, rows, totalTime } = sched.getSchedule();
     const rowHeight = 40;
     const THRESHOLD_PCT = 2;
@@ -37,7 +42,8 @@ export class GanttChart {
         : '';
 
       const barGap = 6;
-      const $bar = $('<div>').addClass(`gantt-bar ${cookClass}`).css({
+      const eqClass = `${isResource(node.recipe) ? ' gantt-resource' : ''}${(node.eqDeps || []).length ? ' gantt-after-equipment' : ''}`;
+      const $bar = $('<div>').addClass(`gantt-bar ${cookClass}${eqClass}`).css({
         position: 'absolute',
         left: `${leftPct}%`,
         top: `${node.row * rowHeight + barGap / 2}px`,

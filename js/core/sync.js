@@ -17,6 +17,7 @@ import { missingMixes, replaceMissingMixes } from './spice-prefs.js?v=20261013a'
 import { excludedPantry, replacePantryExcluded } from './pantry-exclude.js?v=20261013gr';
 import { ownedSpices, replaceSpicesOwned } from './spices-owned.js?v=20261013ko';
 import { savedTheme, applySyncedTheme } from '../utils/theme.js?v=20261013b';
+import { storedKitchen, replaceKitchen } from './kitchen-prefs.js?v=20261021eq';
 
 const listeners = new Set();
 let client = null;
@@ -109,6 +110,7 @@ function prefAdapters() {
     spiceMixMissing: { get: () => [...missingMixes()].sort(), set: (v) => replaceMissingMixes(v) },
     pantryExcluded: { get: () => [...excludedPantry()].sort(), set: (v) => replacePantryExcluded(v) },
     spicesOwned: { get: () => [...ownedSpices()].sort(), set: (v) => replaceSpicesOwned(v) },
+    kitchen: { get: () => storedKitchen(), set: (v) => replaceKitchen(v) },
     shopping: {
       get: () => (appState ? appState.getShoppingData() : null),
       set: (v) => appState && appState.replaceShoppingData(v),

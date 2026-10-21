@@ -1,6 +1,7 @@
 {
   "masterId": "citronpepparlax_parlcouscous",
   "source": "hellofresh",
+  "rawId": "66548b3e56caac7d79183a8f",
   "createdAt": 1791039561,
   "basePortions": 4,
   "sharedPrep": [],
@@ -63,7 +64,13 @@
       ],
       "duration": 3,
       "wait": 15,
-      "tags": []
+      "tags": [],
+      "heat": "medellåg",
+      "equipment": [
+        {
+          "type": "kastrull_medelstor"
+        }
+      ]
     },
     {
       "id": "citronpepparlax_parlcouscous__pickled_cucumber",
@@ -183,7 +190,13 @@
       ],
       "duration": 9,
       "wait": 0,
-      "tags": []
+      "tags": [],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "stekpanna_stor"
+        }
+      ]
     },
     {
       "id": "citronpepparlax_parlcouscous__dressed_couscous",
@@ -243,7 +256,12 @@
         "Häll av lagen från {{citronpepparlax_parlcouscous__pickled_cucumber}}. Blanda gurkan med {{olive_oil}} och {{citronpepparlax_parlcouscous__prepped_salad_veg}} i en stor skål precis innan servering."
       ],
       "duration": 2,
-      "tags": []
+      "tags": [],
+      "equipment": [
+        {
+          "type": "skal_stor"
+        }
+      ]
     },
     {
       "id": "citronpepparlax_parlcouscous",

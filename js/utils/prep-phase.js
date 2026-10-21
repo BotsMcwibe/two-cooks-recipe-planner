@@ -37,3 +37,15 @@ export function prepPhaseIds(nodes, rootId) {
 export function isPrepTagged(recipe) {
   return !!(recipe && recipe.hasTag && recipe.hasTag('prep'));
 }
+
+/**
+ * "Ta fram" node: take butter/meat out of the fridge (prep tag, a long wait, ~1 min hands-on),
+ * e.g. `<master>__softened_butter`, `<master>__roomtemp_meat`. Preppa först starts these first
+ * so their timer runs while the rest is prepped.
+ */
+export function isTakeOutNode(recipe) {
+  if (!isPrepTagged(recipe)) return false;
+  const id = String(recipe.id || recipe.outputIngredient?.id || '');
+  if (/__(softened_butter|roomtemp_meat)$/.test(id)) return true;
+  return /^ta fram\b/i.test(String(recipe.name || '')) && (recipe.wait || 0) >= 15 && (recipe.duration || 0) <= 2;
+}

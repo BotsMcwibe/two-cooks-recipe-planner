@@ -1,6 +1,7 @@
 {
   "masterId": "roasted_cauliflower_biryani",
   "source": "hellofresh",
+  "rawId": "5d691026528457000b49b6b2",
   "createdAt": 1790795820,
   "basePortions": 4,
   "sharedPrep": [
@@ -81,11 +82,6 @@
       "outputName": "Rostad blomkål",
       "inputs": [
         {
-          "id": "preheated_oven_220",
-          "amount": 1,
-          "unit": "st"
-        },
-        {
           "id": "roasted_cauliflower_biryani__cauliflower_florets",
           "amount": 1,
           "unit": "st"
@@ -109,11 +105,23 @@
       "steps": [
         "Placera {{roasted_cauliflower_biryani__cauliflower_florets}} på en bakplåt täckt med bakplåtspapper.",
         "Häll över {{olive_oil}} och krydda med {{salt}} och {{pepper}}. Blanda och sprid buketterna jämnt över plåten.",
-        "Rosta i {{preheated_oven_220}} tills möra och lätt gyllenbruna, 20–25 min."
+        "Rosta i ugnen tills möra och lätt gyllenbruna, 20–25 min."
       ],
       "duration": 3,
       "wait": 25,
-      "tags": []
+      "tags": [],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "preheated_oven_220",
+          "slots": 1,
+          "temp": 220,
+          "fanTemp": 200
+        },
+        {
+          "type": "plat"
+        }
+      ]
     },
     {
       "id": "roasted_cauliflower_biryani__chopped_coriander",
@@ -210,7 +218,14 @@
         "Häll i {{garam_masala}}, rör om tills doftande, ca 1 min."
       ],
       "duration": 6,
-      "tags": []
+      "tags": [],
+      "heat": "medel",
+      "equipment": [
+        {
+          "type": "stekpanna_medelstor",
+          "ref": "stekpanna_1"
+        }
+      ]
     },
     {
       "id": "roasted_cauliflower_biryani__simmered_rice",
@@ -254,6 +269,15 @@
         "Häll i lite extra vatten om vätskan har absorberats innan riset är färdigt.",
         "FLAG: _unitInference Vatten 10 ml — överstyrd till 10 dl (HF-typ water-vatten-vand-1dl; kokvätska till 300 g basmati).",
         "FLAG: _unitInference Buljong 4 ml — överstyrd till 4 g (pulver/tärning; samma mängd som övriga masters)."
+      ],
+      "heat": "medelhög",
+      "heatSource": "inferred",
+      "equipment": [
+        {
+          "type": "stekpanna_medelstor",
+          "ref": "stekpanna_1",
+          "transition": "keep"
+        }
       ]
     },
     {

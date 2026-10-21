@@ -1,3 +1,12 @@
+## 2026-10-21 — Utrustning, värme och ugn (equipment/heat/oven model)
+
+- Data migrated to the equipment model (SCHEMA.md "Equipment, heat & resources", `data/equipment.json`, `scripts/check-equipment.mjs`): ovens are resource nodes referenced via `equipment[].after`, never ingredient inputs
+- App loads `equipment`, `heat`, `stepHeat`, `heatSource`, resource `oven` and master `rawId`; subtree, scheduler and cook gating follow `equipment[].after`, so "Värm ugnen" is back in the cook flow, the oven is never a main dish and "½ Förvärmd ugn" is gone
+- Kitchen profile per account (`prefs.kitchen = { ovenTrays, ovenFan }`, Mitt konto → Inställningar → Ditt kök): oven temperatures follow varmluft (derived varmluft shown as "ca"); the scheduler never puts more trays in the oven than `ovenTrays` (a shared plåt counts once) and never overlaps different temperatures/modes, delaying the later use
+- Utrustning list on översikt and the cook page; per-step chips ("Stor stekpanna · stor platta · medelhög" with colour-blind-safe heat bars + word), stepHeat on its step, reuse hints ("Använd samma stekpanna"), guessed sizes/heat marked "?"/"ca"
+- Same-pan continuation for 2 cooks uses equipment refs instead of step-text regexes; Preppa först starts "Ta fram" (smör/kött) first
+- Flow graph draws equipment ordering as dashed edges; resource card dashed with its oven temperature
+
 ## 2026-10-11 — Kryddskåpet (#kryddor): spice blend calculator
 
 - New page `#kryddor`, reached via the spice-jar icon left of the theme toggle in the header

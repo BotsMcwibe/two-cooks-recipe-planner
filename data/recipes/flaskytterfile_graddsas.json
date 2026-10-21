@@ -1,6 +1,7 @@
 {
   "masterId": "flaskytterfile_graddsas",
   "source": "hellofresh",
+  "rawId": "61e7f52eb1615146202bdb64",
   "createdAt": 1791038389,
   "basePortions": 4,
   "sharedPrep": [
@@ -61,6 +62,14 @@
       "tips": [
         "Passiv koktid 15 min → wait 15. Sista steget äger timern.",
         "FLAG: enhet ifylld — småpotatis g, 800 g vid 4 portioner. Salt till kokvattnet har ingen mängd (nypa i nästa steg, inte Salt steg 5)."
+      ],
+      "heat": "hög",
+      "heatSource": "inferred",
+      "equipment": [
+        {
+          "type": "kastrull_stor",
+          "ref": "kastrull_1"
+        }
       ]
     },
     {
@@ -92,6 +101,14 @@
       "tips": [
         "Under lock till servering är ingen klockad vila — ingen wait.",
         "FLAG: salt och peppar här är ouppmätta nypor (pantry), inte yield-raden Salt (steg 5)."
+      ],
+      "equipment": [
+        {
+          "type": "kastrull_stor",
+          "ref": "kastrull_1",
+          "transition": "keep",
+          "offHeat": true
+        }
       ]
     },
     {
@@ -129,6 +146,13 @@
       "tips": [
         "1–2 min per sida är hands-on stekning → duration, inte wait. Ugnen behöver inte vara klar förrän rostningen.",
         "FLAG: enheter ifyllda — fläskytterfilé g (600 g) och Vitlöksflörter g (8 g) vid 4 portioner. Olivolja är pantry-skvätt (ej i yields)."
+      ],
+      "heat": "hög",
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1"
+        }
       ]
     },
     {
@@ -140,15 +164,10 @@
           "id": "flaskytterfile_graddsas__seared_pork",
           "amount": 1,
           "unit": "st"
-        },
-        {
-          "id": "preheated_oven_220",
-          "amount": 1,
-          "unit": "st"
         }
       ],
       "steps": [
-        "Lägg {{flaskytterfile_graddsas__seared_pork}} på en plåt med bakplåtspapper. Rosta överst i {{preheated_oven_220}} i 12–13 min."
+        "Lägg {{flaskytterfile_graddsas__seared_pork}} på en plåt med bakplåtspapper. Rosta överst i ugnen i 12–13 min."
       ],
       "duration": 1,
       "wait": 13,
@@ -156,6 +175,18 @@
       "tips": [
         "Passiv rostning 12–13 min → wait 13 (övre gräns). Sista steget äger timern.",
         "Ta ut köttet och låt det vila under folie till servering. Ingen minutsiffra — ingen extra wait."
+      ],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "preheated_oven_220",
+          "slots": 1,
+          "temp": 220,
+          "fanTemp": 200
+        },
+        {
+          "type": "plat"
+        }
       ]
     },
     {
@@ -244,6 +275,11 @@
       "tips": [
         "Blanda precis innan servering så salladen håller sig krispig.",
         "FLAG: enhet ifylld — salladsmix g. 100 g vid 4 portioner; 2 portioner är 60 g, inte linjärt. Olivolja, salt och peppar är pantry-nypa/skvätt."
+      ],
+      "equipment": [
+        {
+          "type": "skal_stor"
+        }
       ]
     },
     {
@@ -299,6 +335,15 @@
         "Fräs 1–2 min är hands-on → duration. Sista stegets uppvärmning 1–2 min är passiv → wait 2.",
         "FLAG: smör (steg 5) är efter behov med null-mängd. Ingen mängd hittad på — nämns bara i steget, inte som input.",
         "FLAG: enheter ifyllda — vitlöksklyfta st (2), matlagningsgrädde paket → pkt (2), kycklingbuljong g (8), salt tsk (0,5 tsk; stegets [1/4 tsk | 1/2 tsk]). Gör såsen i samma panna medan fläsket rostas."
+      ],
+      "heat": "medel",
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1",
+          "transition": "keep",
+          "after": "flaskytterfile_graddsas__seared_pork"
+        }
       ]
     },
     {

@@ -1,6 +1,7 @@
 {
   "masterId": "potatis_purjolokssoppa",
   "source": "citygross",
+  "rawId": "citygross-R00103",
   "createdAt": 1791056383,
   "basePortions": 4,
   "sharedPrep": [],
@@ -41,6 +42,15 @@
       "tags": [],
       "tips": [
         "\"Ett par minuter\" är hands-on, ingen wait."
+      ],
+      "heat": "medelhög",
+      "heatSource": "inferred",
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1",
+          "sizeSource": "inferred"
+        }
       ]
     },
     {
@@ -72,6 +82,16 @@
       "tags": [],
       "tips": [
         "Buljong står som 2 st tärningar. Inte omräknat till gram."
+      ],
+      "heat": "hög",
+      "heatSource": "inferred",
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1",
+          "transition": "keep",
+          "sizeSource": "inferred"
+        }
       ]
     },
     {
@@ -107,6 +127,11 @@
       "tags": [],
       "tips": [
         "Salt och vitpeppar har mängd 2 krm i rådatan, så de är inte 1 nypa. Vispgrädde är ny ingrediens, inte matlagningsgrädde."
+      ],
+      "equipment": [
+        {
+          "type": "mixer"
+        }
       ]
     },
     {
@@ -127,6 +152,14 @@
       "tags": [],
       "tips": [
         "Ingen tid i råsteget, därför ingen wait. \"Kryddig korv\" är mappad till ny generisk korv."
+      ],
+      "heat": "medelhög",
+      "heatSource": "inferred",
+      "equipment": [
+        {
+          "type": "stekpanna_liten",
+          "sizeSource": "inferred"
+        }
       ]
     },
     {

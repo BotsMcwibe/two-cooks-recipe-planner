@@ -1,6 +1,7 @@
 {
   "masterId": "citronstekt_lax",
   "source": "hellofresh",
+  "rawId": "677659581d65e30dd089145a",
   "createdAt": 1791034710,
   "basePortions": 4,
   "sharedPrep": [],
@@ -53,11 +54,16 @@
       "duration": 1,
       "wait": 12,
       "tags": [
-        "no-timer"
+        "no-timer",
+        "resource"
       ],
       "tips": [
         "HF anger 240°C/220°C varmluft — lokal ugnsnode, inte delad preheated_oven_220."
-      ]
+      ],
+      "oven": {
+        "temp": 240,
+        "fanTemp": 220
+      }
     },
     {
       "id": "citronstekt_lax__diced_potato",
@@ -84,11 +90,6 @@
       "outputName": "Förstekt potatis",
       "inputs": [
         {
-          "id": "citronstekt_lax__preheated_oven",
-          "amount": 1,
-          "unit": "st"
-        },
-        {
           "id": "citronstekt_lax__diced_potato",
           "amount": 1,
           "unit": "st"
@@ -109,6 +110,19 @@
       "tips": [
         "Potatisen ska totalt rosta 20–30 min. Broccoli i när 15 min återstår, så den här noden är bara första fasen (övre gräns 30 minus 15).",
         "Använd fler plåtar om det blir för trångt."
+      ],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "citronstekt_lax__preheated_oven",
+          "slots": 1,
+          "temp": 240,
+          "fanTemp": 220
+        },
+        {
+          "type": "plat",
+          "ref": "plat_1"
+        }
       ]
     },
     {
@@ -244,6 +258,20 @@
       "tags": [],
       "tips": [
         "Det är de sista 15 minuterna av potatisens 20–30 min."
+      ],
+      "equipment": [
+        {
+          "type": "plat",
+          "ref": "plat_1",
+          "transition": "keep"
+        },
+        {
+          "type": "ugn",
+          "after": "citronstekt_lax__preheated_oven",
+          "slots": 1,
+          "temp": 240,
+          "fanTemp": 220
+        }
       ]
     },
     {
@@ -276,6 +304,13 @@
       "tags": [],
       "tips": [
         "Sätt igång när det återstår ca 10 min av potatisens och broccolins ugnstid. Stektiden är hands-on och ligger i duration, inte wait."
+      ],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1"
+        }
       ]
     },
     {
@@ -307,6 +342,15 @@
       "tags": [],
       "tips": [
         "Laxen är färdiglagad när köttet är ogenomskinligt i mitten. Andra stekningen är hands-on och ligger i duration."
+      ],
+      "heat": "medelhög",
+      "heatSource": "inferred",
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1",
+          "transition": "keep"
+        }
       ]
     },
     {

@@ -1,6 +1,7 @@
 {
   "masterId": "autumn_kale_salad",
   "source": "hellofresh",
+  "rawId": "66bf587011ecbd46e2d07668",
   "createdAt": 1790854064,
   "basePortions": 4,
   "sharedPrep": [],
@@ -44,11 +45,16 @@
       "duration": 1,
       "wait": 12,
       "tags": [
-        "no-timer"
+        "no-timer",
+        "resource"
       ],
       "tips": [
         "HF anger 240°C/220°C varmluft — lokal ugnsnode, inte preheated_oven_220 (som är 220/200)."
-      ]
+      ],
+      "oven": {
+        "temp": 240,
+        "fanTemp": 220
+      }
     },
     {
       "id": "autumn_kale_salad__sliced_butternut",
@@ -76,11 +82,6 @@
       "outputName": "Rostad butternutpumpa",
       "inputs": [
         {
-          "id": "autumn_kale_salad__preheated_oven_240",
-          "amount": 1,
-          "unit": "st"
-        },
-        {
           "id": "autumn_kale_salad__sliced_butternut",
           "amount": 1,
           "unit": "st"
@@ -104,11 +105,23 @@
       "steps": [
         "Placera {{autumn_kale_salad__sliced_butternut}} på en plåt med bakplåtspapper.",
         "Ringla över {{olive_oil}} och krydda med {{salt}} och {{pepper}}.",
-        "Rosta i {{autumn_kale_salad__preheated_oven_240}} i 20–30 min, eller tills mjuk och gyllene."
+        "Rosta i ugnen i 20–30 min, eller tills mjuk och gyllene."
       ],
       "duration": 3,
       "wait": 30,
-      "tags": []
+      "tags": [],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "autumn_kale_salad__preheated_oven_240",
+          "slots": 1,
+          "temp": 240,
+          "fanTemp": 220
+        },
+        {
+          "type": "plat"
+        }
+      ]
     },
     {
       "id": "autumn_kale_salad__toasted_walnuts",
@@ -130,6 +143,12 @@
       "tags": [],
       "tips": [
         "Rosta under uppsikt och skaka pannan ibland så att nötterna inte bränns."
+      ],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "stekpanna_stor"
+        }
       ]
     },
     {
@@ -163,6 +182,11 @@
       ],
       "tips": [
         "HF levererar skuren grönkål — ingen separat hackningsnod."
+      ],
+      "equipment": [
+        {
+          "type": "skal_stor"
+        }
       ]
     },
     {

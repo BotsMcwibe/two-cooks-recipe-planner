@@ -1,6 +1,7 @@
 {
   "masterId": "gratinerad_aubergine",
   "source": "hellofresh",
+  "rawId": "5d40602aefe87800104ac67a",
   "createdAt": 1790851698,
   "basePortions": 4,
   "sharedPrep": [],
@@ -38,11 +39,17 @@
       "duration": 1,
       "wait": 10,
       "tags": [
-        "no-timer"
+        "no-timer",
+        "resource"
       ],
       "tips": [
         "Ugnen tar vanligtvis 10–15 minuter att värmas upp."
-      ]
+      ],
+      "oven": {
+        "temp": 200,
+        "fanTemp": 180,
+        "fanTempSource": "derived"
+      }
     },
     {
       "id": "gratinerad_aubergine__chopped_pepper",
@@ -120,6 +127,12 @@
       "tips": [
         "Det tärnade köttet är klart för fyllningen direkt — auberginehalvorna bakas i nästa steg medan fyllningen kan påbörjas.",
         "Auberginerna delas: urgröpta halvor till ugnen (0,5 st) och tärnat kött till fyllningen (0,5 st). Råreceptet anger ingen proportion."
+      ],
+      "equipment": [
+        {
+          "type": "ugnsform",
+          "sizeSource": "inferred"
+        }
       ]
     },
     {
@@ -127,11 +140,6 @@
       "name": "Baka Auberginehalvor",
       "outputName": "Bakade auberginehalvor",
       "inputs": [
-        {
-          "id": "gratinerad_aubergine__preheated_oven",
-          "amount": 1,
-          "unit": "st"
-        },
         {
           "id": "gratinerad_aubergine__prepped_aubergine",
           "amount": 0.5,
@@ -143,7 +151,21 @@
       ],
       "duration": 1,
       "wait": 10,
-      "tags": []
+      "tags": [],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "gratinerad_aubergine__preheated_oven",
+          "slots": 1,
+          "temp": 200,
+          "fanTemp": 180,
+          "fanTempSource": "derived"
+        },
+        {
+          "type": "ugnsform",
+          "sizeSource": "inferred"
+        }
+      ]
     },
     {
       "id": "gratinerad_aubergine__sauteed_filling_base",
@@ -187,7 +209,13 @@
       ],
       "duration": 1,
       "wait": 5,
-      "tags": []
+      "tags": [],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "stekpanna_stor"
+        }
+      ]
     },
     {
       "id": "gratinerad_aubergine__vegetable_filling",
@@ -231,7 +259,15 @@
       ],
       "duration": 1,
       "wait": 10,
-      "tags": []
+      "tags": [],
+      "heat": "medellåg",
+      "heatSource": "inferred",
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "sizeSource": "inferred"
+        }
+      ]
     },
     {
       "id": "gratinerad_aubergine__gratinated_aubergine",
@@ -271,11 +307,6 @@
       "outputName": "Värmda mini-tortillas",
       "inputs": [
         {
-          "id": "gratinerad_aubergine__preheated_oven",
-          "amount": 1,
-          "unit": "st"
-        },
-        {
           "id": "mini_tortillas",
           "amount": 16,
           "unit": "st"
@@ -289,6 +320,16 @@
       "tags": [],
       "tips": [
         "Tortillas kan värmas under tiden som auberginen gratineras."
+      ],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "gratinerad_aubergine__preheated_oven",
+          "slots": 1,
+          "temp": 200,
+          "fanTemp": 180,
+          "fanTempSource": "derived"
+        }
       ]
     },
     {

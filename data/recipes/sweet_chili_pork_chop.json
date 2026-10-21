@@ -1,6 +1,7 @@
 {
   "masterId": "sweet_chili_pork_chop",
   "source": "hellofresh",
+  "rawId": "6a915db5f3876e995cfb58f9",
   "createdAt": 1790852559,
   "basePortions": 4,
   "sharedPrep": [],
@@ -230,6 +231,14 @@
       "tags": [],
       "tips": [
         "Riset ska ångkoka, så tjuvkika inte!"
+      ],
+      "heat": "medellåg",
+      "equipment": [
+        {
+          "type": "kastrull_medelstor",
+          "ref": "kastrull_1",
+          "sizeSource": "inferred"
+        }
       ]
     },
     {
@@ -248,7 +257,16 @@
       ],
       "duration": 1,
       "wait": 10,
-      "tags": []
+      "tags": [],
+      "equipment": [
+        {
+          "type": "kastrull_medelstor",
+          "ref": "kastrull_1",
+          "transition": "keep",
+          "sizeSource": "inferred",
+          "offHeat": true
+        }
+      ]
     },
     {
       "id": "sweet_chili_pork_chop__fried_vegetables",
@@ -303,7 +321,14 @@
         "Krydda med {{salt}} och {{pepper}}. Lägg över grönsakerna i en skål och håll varma under lock."
       ],
       "duration": 6,
-      "tags": []
+      "tags": [],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1"
+        }
+      ]
     },
     {
       "id": "sweet_chili_pork_chop__sweet_chili_glaze",
@@ -366,7 +391,19 @@
         "Tillsätt {{sweet_chili_pork_chop__sweet_chili_glaze}} när det återstår 30 sek av stektiden och rör om tills allt är genomvarmt och ingefäran väldoftande."
       ],
       "duration": 5,
-      "tags": []
+      "tags": [],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1",
+          "transition": "keep",
+          "after": "sweet_chili_pork_chop__fried_vegetables"
+        },
+        {
+          "type": "stekpanna_stor"
+        }
+      ]
     },
     {
       "id": "sweet_chili_pork_chop",

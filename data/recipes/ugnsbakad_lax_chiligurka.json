@@ -1,6 +1,7 @@
 {
   "masterId": "ugnsbakad_lax_chiligurka",
   "source": "linas",
+  "rawId": "linas-131123",
   "createdAt": 1791056876,
   "basePortions": 4,
   "sharedPrep": [],
@@ -32,11 +33,16 @@
       ],
       "duration": 1,
       "tags": [
-        "no-timer"
+        "no-timer",
+        "resource"
       ],
       "tips": [
         "Råsteget anger ingen förvärmningstid, därför ingen wait."
-      ]
+      ],
+      "oven": {
+        "temp": 225,
+        "fanTemp": 200
+      }
     },
     {
       "id": "ugnsbakad_lax_chiligurka__rice",
@@ -143,11 +149,6 @@
       "outputName": "Ugnsbakad lax",
       "inputs": [
         {
-          "id": "ugnsbakad_lax_chiligurka__oven",
-          "amount": 1,
-          "unit": "st"
-        },
-        {
           "id": "grated_ginger",
           "amount": 1,
           "unit": "förp"
@@ -180,7 +181,7 @@
       ],
       "steps": [
         "Blanda {{grated_ginger}} med {{soy_sauce}}, {{sugar}}, {{tomato_paste}} och {{salt}}.",
-        "Lägg {{salmon_fillet}} i en ugnsform och bred över marinaden. Baka i {{ugnsbakad_lax_chiligurka__oven}}, i mitten, ca 15 min."
+        "Lägg {{salmon_fillet}} i en ugnsform och bred över marinaden. Baka i ugnen, i mitten, ca 15 min."
       ],
       "duration": 3,
       "tags": [],
@@ -189,6 +190,19 @@
         "Råtexten säger smord form men listan har ingen olja. Ingen mängd påhittad.",
         "Lax är 4 st utan vikt. Riven ingefära är 1 förp, inga gram.",
         "Japansk soja är mappad till sojasås. 15 min är sista stegets wait."
+      ],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "ugnsbakad_lax_chiligurka__oven",
+          "slots": 1,
+          "temp": 225,
+          "fanTemp": 200
+        },
+        {
+          "type": "ugnsform",
+          "sizeSource": "inferred"
+        }
       ]
     },
     {

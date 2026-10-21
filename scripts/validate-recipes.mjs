@@ -12,6 +12,7 @@ import { readFileSync, readdirSync, existsSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { checkDerivedUsage, formatProblem } from './check-derived-usage.mjs';
+import { checkEquipment, formatProblem as formatEqProblem } from './check-equipment.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..');
@@ -248,6 +249,13 @@ function main() {
   for (const p of derived.problems) {
     if (p.level === 'error') fail(`derived-usage ${formatProblem(p)}`);
     else warn(`derived-usage ${formatProblem(p)}`);
+  }
+
+  // --- Equipment, heat & oven resources (see scripts/check-equipment.mjs) ---
+  const eq = checkEquipment({ ...loaded, equipment: readJSON(join(DATA, 'equipment.json')) });
+  for (const p of eq.problems) {
+    if (p.level === 'error') fail(`equipment ${formatEqProblem(p)}`);
+    else warn(`equipment ${formatEqProblem(p)}`);
   }
 
   // --- Optional images / nutrition / ratings (SCHEMA.md) ---

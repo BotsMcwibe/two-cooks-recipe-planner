@@ -1,6 +1,7 @@
 {
   "masterId": "curry_chickpea_wraps",
   "source": "hellofresh",
+  "rawId": "665987945a85f96229972b8f",
   "createdAt": 1790853630,
   "basePortions": 4,
   "sharedPrep": [],
@@ -102,6 +103,11 @@
       "wait": 0,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skal_stor"
+        }
       ]
     },
     {

@@ -1,6 +1,7 @@
 {
   "masterId": "rakor_i_sotsur_sas",
   "source": "hellofresh",
+  "rawId": "66ab66b1f66002bbd100b42c",
   "createdAt": 1791035806,
   "basePortions": 4,
   "sharedPrep": [],
@@ -62,6 +63,14 @@
       "tags": [],
       "tips": [
         "Kokvattnet ska vara lika salt som havsvatten."
+      ],
+      "heat": "hög",
+      "heatSource": "inferred",
+      "equipment": [
+        {
+          "type": "kastrull_medelstor",
+          "sizeSource": "inferred"
+        }
       ]
     },
     {
@@ -210,6 +219,13 @@
       "tips": [
         "Räkorna är färdiga när de är rosa utanpå och ogenomskinliga i mitten.",
         "Skippa chili eller använd mindre om du inte tycker om stark mat."
+      ],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "sizeSource": "inferred"
+        }
       ]
     },
     {

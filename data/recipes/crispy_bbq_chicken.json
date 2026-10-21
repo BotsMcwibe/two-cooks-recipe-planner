@@ -1,6 +1,7 @@
 {
   "masterId": "crispy_bbq_chicken",
   "source": "hellofresh",
+  "rawId": "6551ee4b53b95b70f99733b8",
   "createdAt": 1790853043,
   "basePortions": 4,
   "sharedPrep": [],
@@ -98,6 +99,12 @@
       "tags": [],
       "tips": [
         "Kycklingen är färdiglagad när köttet inte längre är rosa i mitten."
+      ],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "stekpanna_stor"
+        }
       ]
     },
     {

@@ -1,3 +1,5 @@
+import { isResource, recipeAfterIds } from './equipment.js?v=20261021eq';
+
 /**
  * Map-based recipe graph for O(1) lookups by recipe/output id.
  */
@@ -18,7 +20,7 @@ export function convertAmount(amount, from, to, ingredientId) {
 
 export class RecipeGraph {
   /**
-   * @param {Iterable<import('../models/recipe.js').Recipe>|Map<string, import('../models/recipe.js').Recipe>} recipes
+   * @param {Iterable<import('../models/recipe.js?v=20261021eq').Recipe>|Map<string, import('../models/recipe.js?v=20261021eq').Recipe>} recipes
    */
   constructor(recipes) {
     this.byId = new Map();
@@ -82,6 +84,11 @@ export class RecipeGraph {
         const sub = this.byId.get(ingredient.id);
         if (sub) dfs(sub);
       });
+      // Resource ordering (preheated oven, previous user of a reused pan) is part of the dish
+      for (const aid of recipeAfterIds(r)) {
+        const sub = this.byId.get(aid);
+        if (sub) dfs(sub);
+      }
     };
     dfs(root);
     return Array.from(map.values());
@@ -130,12 +137,14 @@ export class RecipeGraph {
     return { totals, units };
   }
 
+  /** Dishes nothing else consumes. Resource nodes (preheated oven) are equipment, never a dish. */
   getMainRecipes() {
     const inputIds = new Set();
     for (const r of this.byId.values()) {
       for (const i of r.inputs) inputIds.add(i.ingredient.id);
+      for (const aid of recipeAfterIds(r)) inputIds.add(aid);
     }
-    return this.recipes.filter(r => !inputIds.has(r.outputIngredient.id));
+    return this.recipes.filter(r => !isResource(r) && !inputIds.has(r.outputIngredient.id));
   }
 
   getMasters() {

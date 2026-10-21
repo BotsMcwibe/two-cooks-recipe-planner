@@ -1,6 +1,7 @@
 {
   "masterId": "wraps_tacokyckling_keso",
   "source": "citygross",
+  "rawId": "citygross-R00031",
   "createdAt": 1791056383,
   "basePortions": 4,
   "sharedPrep": [],
@@ -71,6 +72,14 @@
       "tips": [
         "Ingen olja i rålistan, så ingen skvätt är tillagd.",
         "\"Ett par minuter\" är hands-on i duration. 5 min är råstegets timer."
+      ],
+      "heat": "medelhög",
+      "heatSource": "inferred",
+      "equipment": [
+        {
+          "type": "stekpanna_medelstor",
+          "sizeSource": "inferred"
+        }
       ]
     },
     {

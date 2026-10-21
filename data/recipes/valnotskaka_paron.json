@@ -1,6 +1,7 @@
 {
   "masterId": "valnotskaka_paron",
   "source": "hellofresh",
+  "rawId": "65cf61fa52f6e2fd05ccdd00",
   "createdAt": 1791042125,
   "basePortions": 8,
   "scalable": false,
@@ -31,12 +32,17 @@
       "duration": 1,
       "wait": 12,
       "tags": [
-        "no-timer"
+        "no-timer",
+        "resource"
       ],
       "tips": [
         "Ugnen tar vanligtvis 10–15 minuter att värmas upp.",
         "190°C/170°C varmluft är en lokal ugnsnode, inte preheated_oven_220."
-      ]
+      ],
+      "oven": {
+        "temp": 190,
+        "fanTemp": 170
+      }
     },
     {
       "id": "valnotskaka_paron__chopped_walnuts",
@@ -68,11 +74,6 @@
       "outputName": "Bakad valnötskaka",
       "inputs": [
         {
-          "id": "valnotskaka_paron__preheated_oven_190",
-          "amount": 1,
-          "unit": "st"
-        },
-        {
           "id": "sponge_cake_mix",
           "amount": 600,
           "unit": "g"
@@ -86,7 +87,7 @@
       "steps": [
         "Häll smeten från {{sponge_cake_mix}} i en rund bakform, 20–22 cm i diameter, med bakplåtspapper.",
         "Rör ner de hackade nötterna från {{valnotskaka_paron__chopped_walnuts}} och platta till med en slickepott.",
-        "Baka i {{valnotskaka_paron__preheated_oven_190}} i 30–35 min."
+        "Baka i ugnen i 30–35 min."
       ],
       "duration": 5,
       "wait": 35,
@@ -94,6 +95,18 @@
       "tips": [
         "Kakan är klar när en provsticka kommer ut torr.",
         "Kortet säger aldrig hur mixen blir smet. Inget ägg, mjölk eller vatten finns i yielden, så inget sådant är tillagt."
+      ],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "valnotskaka_paron__preheated_oven_190",
+          "slots": 1,
+          "temp": 190,
+          "fanTemp": 170
+        },
+        {
+          "type": "bakform"
+        }
       ]
     },
     {
@@ -128,6 +141,13 @@
       "tips": [
         "Bryningen är hands-on, därför duration och wait 0.",
         "Tillsätt en skvätt vatten om glasyren är för tjock. Ingen mängd är angiven."
+      ],
+      "heat": "medelhög",
+      "heatSource": "inferred",
+      "equipment": [
+        {
+          "type": "kastrull_liten"
+        }
       ]
     },
     {

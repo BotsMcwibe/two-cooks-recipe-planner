@@ -11,12 +11,17 @@
       ],
       "duration": 1,
       "tags": [
-        "no-timer"
+        "no-timer",
+        "resource"
       ],
       "wait": 12,
       "tips": [
         "Ugnen tar vanligtvis 10-15 minuter att värmas upp."
-      ]
+      ],
+      "oven": {
+        "temp": 220,
+        "fanTemp": 200
+      }
     }
   ]
 }

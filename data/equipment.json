@@ -1,0 +1,261 @@
+{
+  "_doc": "Kitchen equipment vocabulary. See SCHEMA.md 'Equipment, heat & resources' and hf-to-graph-conversion.md §4.6. kind: stovetop = on a burner (needs heat), oven = the oven itself (shared, capacity in slots), ovenware = goes in the oven (uses 1 slot), bowl/tool = no heat. capacityL = usable volume in litres; oneLayerG = rough max food weight for frying in one layer. offHeat on an equipment entry = vessel used off the burner (mash in the pot, toss in the pan); no heat needed.",
+  "defaultKitchen": {
+    "ovenTrays": 2,
+    "ovenFan": false,
+    "_doc": "Default kitchen profile used by the checker (and the app when the account has none). Per-account values override it."
+  },
+  "burners": {
+    "liten": {
+      "label": "Liten platta",
+      "cm": 14
+    },
+    "mellan": {
+      "label": "Mellanstor platta",
+      "cm": 18
+    },
+    "stor": {
+      "label": "Stor platta",
+      "cm": 21
+    }
+  },
+  "heatLevels": [
+    "låg",
+    "medellåg",
+    "medel",
+    "medelhög",
+    "hög"
+  ],
+  "transitions": {
+    "fresh": "Ren/ny (första användningen)",
+    "keep": "Samma kärl, torka inte ur (behåll stekfett/sky)",
+    "wipe": "Samma kärl, torka ur den först",
+    "wash": "Samma kärl, diska ur den först"
+  },
+  "types": {
+    "kastrull_liten": {
+      "label": "Liten kastrull",
+      "kind": "stovetop",
+      "exclusive": true,
+      "capacityL": 1.5,
+      "burner": "liten"
+    },
+    "kastrull_medelstor": {
+      "label": "Medelstor kastrull",
+      "kind": "stovetop",
+      "exclusive": true,
+      "capacityL": 2.5,
+      "burner": "mellan"
+    },
+    "kastrull_stor": {
+      "label": "Stor kastrull",
+      "kind": "stovetop",
+      "exclusive": true,
+      "capacityL": 4,
+      "burner": "stor"
+    },
+    "gryta": {
+      "label": "Gryta (gjutjärn)",
+      "kind": "stovetop",
+      "exclusive": true,
+      "capacityL": 5,
+      "burner": "stor",
+      "ovenSafe": true,
+      "ovenSlots": 1
+    },
+    "stekpanna_liten": {
+      "label": "Liten stekpanna",
+      "kind": "stovetop",
+      "exclusive": true,
+      "cm": 20,
+      "capacityL": 1.0,
+      "oneLayerG": 250,
+      "burner": "liten"
+    },
+    "stekpanna_medelstor": {
+      "label": "Medelstor stekpanna",
+      "kind": "stovetop",
+      "exclusive": true,
+      "cm": 24,
+      "capacityL": 2.0,
+      "oneLayerG": 450,
+      "burner": "mellan"
+    },
+    "stekpanna_stor": {
+      "label": "Stor stekpanna",
+      "kind": "stovetop",
+      "exclusive": true,
+      "cm": 28,
+      "capacityL": 3.0,
+      "oneLayerG": 650,
+      "burner": "stor"
+    },
+    "sauterpanna": {
+      "label": "Sauterpanna (hög kant)",
+      "kind": "stovetop",
+      "exclusive": true,
+      "cm": 28,
+      "capacityL": 3.5,
+      "oneLayerG": 650,
+      "burner": "stor"
+    },
+    "wok": {
+      "label": "Wok",
+      "kind": "stovetop",
+      "exclusive": true,
+      "cm": 32,
+      "capacityL": 4,
+      "oneLayerG": 700,
+      "burner": "stor"
+    },
+    "grillpanna": {
+      "label": "Grillpanna",
+      "kind": "stovetop",
+      "exclusive": true,
+      "cm": 28,
+      "capacityL": 1.5,
+      "oneLayerG": 600,
+      "burner": "stor"
+    },
+    "ugn": {
+      "label": "Ugn",
+      "kind": "oven",
+      "exclusive": false,
+      "note": "Kapacitet (antal plåtar) och varmluft kommer från användarens kökprofil (kitchen.ovenTrays, kitchen.ovenFan). En temperatur åt gången. Plåt, ugnsform, galler och bakform tar 1 plats var."
+    },
+    "plat": {
+      "label": "Ugnsplåt",
+      "kind": "ovenware",
+      "exclusive": true,
+      "ovenSlots": 1,
+      "capacityL": 3,
+      "oneLayerG": 1000,
+      "note": "Med bakplåtspapper. ~40×30 cm."
+    },
+    "ugnsform": {
+      "label": "Ugnsform",
+      "kind": "ovenware",
+      "exclusive": true,
+      "ovenSlots": 1,
+      "capacityL": 2.5,
+      "note": "~25×20 cm"
+    },
+    "ugnsform_stor": {
+      "label": "Stor ugnsform",
+      "kind": "ovenware",
+      "exclusive": true,
+      "ovenSlots": 1,
+      "capacityL": 4,
+      "note": "~30×25 cm / långpanna"
+    },
+    "springform": {
+      "label": "Springform",
+      "kind": "ovenware",
+      "exclusive": true,
+      "ovenSlots": 1,
+      "capacityL": 2.5,
+      "cm": 24
+    },
+    "bakform": {
+      "label": "Bakform / brödform",
+      "kind": "ovenware",
+      "exclusive": true,
+      "ovenSlots": 1,
+      "capacityL": 1.5
+    },
+    "muffinsplat": {
+      "label": "Muffinsplåt",
+      "kind": "ovenware",
+      "exclusive": true,
+      "ovenSlots": 1
+    },
+    "galler": {
+      "label": "Ugnsgaller",
+      "kind": "ovenware",
+      "exclusive": true,
+      "ovenSlots": 1,
+      "note": "Direkt på gallret (bröd, pitabröd)"
+    },
+    "skal_liten": {
+      "label": "Liten skål",
+      "kind": "bowl",
+      "exclusive": true,
+      "capacityL": 0.5
+    },
+    "skal_medelstor": {
+      "label": "Medelstor skål",
+      "kind": "bowl",
+      "exclusive": true,
+      "capacityL": 1.5
+    },
+    "skal_stor": {
+      "label": "Stor skål",
+      "kind": "bowl",
+      "exclusive": true,
+      "capacityL": 3
+    },
+    "mixer": {
+      "label": "Mixer",
+      "kind": "tool",
+      "exclusive": true,
+      "capacityL": 1.5
+    },
+    "stavmixer": {
+      "label": "Stavmixer",
+      "kind": "tool",
+      "exclusive": false
+    },
+    "matberedare": {
+      "label": "Matberedare",
+      "kind": "tool",
+      "exclusive": true,
+      "capacityL": 2
+    },
+    "elvisp": {
+      "label": "Elvisp",
+      "kind": "tool",
+      "exclusive": false
+    },
+    "sil": {
+      "label": "Sil / durkslag",
+      "kind": "tool",
+      "exclusive": false
+    },
+    "rivjarn": {
+      "label": "Rivjärn",
+      "kind": "tool",
+      "exclusive": false
+    },
+    "mortel": {
+      "label": "Mortel",
+      "kind": "tool",
+      "exclusive": false
+    },
+    "mikro": {
+      "label": "Mikrovågsugn",
+      "kind": "tool",
+      "exclusive": true
+    },
+    "brodrost": {
+      "label": "Brödrost",
+      "kind": "tool",
+      "exclusive": true
+    },
+    "grill": {
+      "label": "Grill / grillpanna utomhus",
+      "kind": "stovetop",
+      "exclusive": true,
+      "note": "HF 'Värm grillen'. Värmenivå som för spisen.",
+      "burner": null
+    }
+  },
+  "aliases": {
+    "mellanstor kastrull": "kastrull_medelstor",
+    "medelstor kastrull": "kastrull_medelstor",
+    "mellanstor stekpanna": "stekpanna_medelstor",
+    "bakplåt": "plat",
+    "långpanna": "ugnsform_stor",
+    "durkslag": "sil",
+    "gjutjärnsgryta": "gryta"
+  }
+}

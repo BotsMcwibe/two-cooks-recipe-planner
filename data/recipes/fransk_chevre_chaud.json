@@ -1,6 +1,7 @@
 {
   "masterId": "fransk_chevre_chaud",
   "source": "hellofresh",
+  "rawId": "660ff2ca9064812f617082c7",
   "createdAt": 1791042265,
   "basePortions": 2,
   "sharedPrep": [
@@ -42,11 +43,6 @@
       "outputName": "Getostbaguette",
       "inputs": [
         {
-          "id": "preheated_oven_220",
-          "amount": 1,
-          "unit": "st"
-        },
-        {
           "id": "baguette",
           "amount": 1,
           "unit": "st"
@@ -65,13 +61,25 @@
       "steps": [
         "Dela {{baguette}} på längden och sedan på hälften så det blir 4 bitar.",
         "Lägg bitarna på en plåt med bakplåtspapper, ringla över olivolja, bre på {{goat_cheese}} och krydda med {{pepper}}.",
-        "Rosta i {{preheated_oven_220}} i 8–10 min, tills gyllene."
+        "Rosta i ugnen i 8–10 min, tills gyllene."
       ],
       "duration": 4,
       "wait": 10,
       "tags": [],
       "tips": [
         "Olivoljan på baguetten har ingen mängd på kortet. Den uppmätta olivoljan, 1/2 msk, hör till dressingen."
+      ],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "preheated_oven_220",
+          "slots": 1,
+          "temp": 220,
+          "fanTemp": 200
+        },
+        {
+          "type": "plat"
+        }
       ]
     },
     {
@@ -114,6 +122,11 @@
       "duration": 6,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skal_stor"
+        }
       ]
     },
     {

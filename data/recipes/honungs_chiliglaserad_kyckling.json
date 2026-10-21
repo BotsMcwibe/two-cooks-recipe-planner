@@ -1,6 +1,7 @@
 {
   "masterId": "honungs_chiliglaserad_kyckling",
   "source": "hellofresh",
+  "rawId": "694309400a853ea815821225",
   "createdAt": 1791041015,
   "basePortions": 4,
   "sharedPrep": [],
@@ -53,12 +54,17 @@
       "duration": 1,
       "wait": 12,
       "tags": [
-        "no-timer"
+        "no-timer",
+        "resource"
       ],
       "tips": [
         "Ugnen tar vanligtvis 10–15 minuter att värmas upp.",
         "HF anger 240°C/220°C varmluft — lokal ugnsnode, inte preheated_oven_220."
-      ]
+      ],
+      "oven": {
+        "temp": 240,
+        "fanTemp": 220
+      }
     },
     {
       "id": "honungs_chiliglaserad_kyckling__cut_fries",
@@ -100,11 +106,6 @@
       "outputName": "Halvrostade regnbågspommes",
       "inputs": [
         {
-          "id": "honungs_chiliglaserad_kyckling__preheated_oven_240",
-          "amount": 1,
-          "unit": "st"
-        },
-        {
           "id": "honungs_chiliglaserad_kyckling__cut_fries",
           "amount": 1,
           "unit": "st"
@@ -128,7 +129,7 @@
       "steps": [
         "Lägg {{honungs_chiliglaserad_kyckling__cut_fries}} på en plåt med bakplåtspapper.",
         "Blanda med {{olive_oil}}, {{salt}} och en nypa {{pepper}}.",
-        "Rosta i {{honungs_chiliglaserad_kyckling__preheated_oven_240}} i ca 25 min, tills det återstår 10 min av totalt 25–35 min."
+        "Rosta i ugnen i ca 25 min, tills det återstår 10 min av totalt 25–35 min."
       ],
       "duration": 3,
       "wait": 25,
@@ -137,6 +138,18 @@
         "Använd fler plåtar om det blir för trångt.",
         "Första fasen är övre gränsen 35 min minus de 10 min som återstår när glazen sätts på.",
         "Olivolja, och peppar, har ingen mängd i yields."
+      ],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "honungs_chiliglaserad_kyckling__preheated_oven_240",
+          "slots": 1,
+          "temp": 240,
+          "fanTemp": 220
+        },
+        {
+          "type": "plat"
+        }
       ]
     },
     {
@@ -231,6 +244,11 @@
       ],
       "tips": [
         "En skvätt olivolja precis innan servering är valfri och har ingen mängd."
+      ],
+      "equipment": [
+        {
+          "type": "skal_stor"
+        }
       ]
     },
     {
@@ -280,6 +298,12 @@
         "Håll glazen varm till servering. Ingen minuttid, därför ingen wait.",
         "Stegruben säger sriracha, men ingrediensen är chiliflakes 1 g, samma mängd vid 2 och 4 portioner. Inte uppskalad och inte bytt mot sriracha.",
         "Glazen delas: kycklingen vänds i den (0,5 st) och resten toppar tallriken (0,5 st). Råreceptet anger ingen proportion."
+      ],
+      "heat": "medel",
+      "equipment": [
+        {
+          "type": "kastrull_medelstor"
+        }
       ]
     },
     {
@@ -319,6 +343,12 @@
       "tips": [
         "Tvätta händer och redskap efter rå kyckling. Kycklingen är klar när köttet inte längre är rosa i mitten.",
         "3 min per sida är hands-on, därför duration och wait 0."
+      ],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "stekpanna_stor"
+        }
       ]
     },
     {

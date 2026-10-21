@@ -1,6 +1,7 @@
 {
   "masterId": "rosemary_lamb_leek_sauce",
   "source": "hellofresh",
+  "rawId": "6a6891ae97f1e0220917468f",
   "createdAt": 1790852559,
   "basePortions": 4,
   "sharedPrep": [
@@ -188,6 +189,13 @@
       "tips": [
         "Ta fram lammsteken så den blir rumstempererad medan potatisen kokar.",
         "Kokvatten 2 l är processmängd (ej HF yields); salt 1 tsk är HF salt till potatis (används både i kokvatten och vid krossning)."
+      ],
+      "heat": "hög",
+      "heatSource": "inferred",
+      "equipment": [
+        {
+          "type": "kastrull_medelstor"
+        }
       ]
     },
     {
@@ -222,7 +230,36 @@
         "Vänd tillsammans med en skvätt {{olive_oil}}, {{salt}} och en nypa {{pepper}}."
       ],
       "duration": 3,
-      "tags": []
+      "tags": [],
+      "equipment": [
+        {
+          "type": "plat",
+          "ref": "plat_1"
+        }
+      ]
+    },
+    {
+      "id": "rosemary_lamb_leek_sauce__roomtemp_meat",
+      "name": "Ta fram köttet",
+      "outputName": "Rumstempererat kött",
+      "inputs": [
+        {
+          "id": "lamb_rump",
+          "amount": 600,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Ta fram {{lamb_rump}} ur kylen så att det blir rumstempererat."
+      ],
+      "duration": 1,
+      "wait": 30,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Ca 30 min i rumstemperatur ger jämnare stekning."
+      ]
     },
     {
       "id": "rosemary_lamb_leek_sauce__seared_lamb",
@@ -230,9 +267,9 @@
       "outputName": "Brynt lammstek",
       "inputs": [
         {
-          "id": "lamb_rump",
-          "amount": 600,
-          "unit": "g"
+          "id": "rosemary_lamb_leek_sauce__roomtemp_meat",
+          "amount": 1,
+          "unit": "st"
         },
         {
           "id": "salt",
@@ -241,23 +278,27 @@
         }
       ],
       "steps": [
-        "Skär fettsidan av {{lamb_rump}} i ett 1 cm djupt zickzackmönster och krydda med {{salt}}.",
+        "Skär fettsidan av {{rosemary_lamb_leek_sauce__roomtemp_meat}} i ett 1 cm djupt zickzackmönster och krydda med {{salt}}.",
         "Placera köttet med fettsidan ner i en medelstor stekpanna. Värm upp stekpannan på medelvärme och stek oavbrutet i 8–9 min, eller tills gyllene.",
         "Höj till hög värme och bryn köttet på alla sidor i 30 sek."
       ],
       "duration": 10,
-      "tags": []
+      "tags": [],
+      "heat": "medel",
+      "stepHeat": {
+        "2": "hög"
+      },
+      "equipment": [
+        {
+          "type": "stekpanna_medelstor"
+        }
+      ]
     },
     {
       "id": "rosemary_lamb_leek_sauce__roasted_lamb",
       "name": "Tillaga Lammstek",
       "outputName": "Rosmarinkryddad lammstek",
       "inputs": [
-        {
-          "id": "preheated_oven_220",
-          "amount": 1,
-          "unit": "st"
-        },
         {
           "id": "rosemary_lamb_leek_sauce__seared_lamb",
           "amount": 1,
@@ -276,7 +317,7 @@
       ],
       "steps": [
         "Lägg över {{rosemary_lamb_leek_sauce__seared_lamb}} på en bakplåt med bakplåtspapper med fettsidan upp. Bre ovansidan med {{mustard}} och tryck försiktigt fast {{rosemary_lamb_leek_sauce__chopped_rosemary}}.",
-        "Rosta i ugnen ({{preheated_oven_220}}) i 15 min eller tills genomstekt."
+        "Rosta i ugnen i 15 min eller tills genomstekt."
       ],
       "duration": 2,
       "wait": 15,
@@ -284,6 +325,18 @@
       "tips": [
         "Låt köttet vila i ett foliepaket till servering — det fortsätter tillagas något under vilan.",
         "Sätt in potatisplåten i ugnen samtidigt som lammsteken rostas."
+      ],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "preheated_oven_220",
+          "slots": 1,
+          "temp": 220,
+          "fanTemp": 200
+        },
+        {
+          "type": "plat"
+        }
       ]
     },
     {
@@ -291,11 +344,6 @@
       "name": "Rosta Potatis och Broccoli",
       "outputName": "Rostat potatis och broccoli",
       "inputs": [
-        {
-          "id": "preheated_oven_220",
-          "amount": 1,
-          "unit": "st"
-        },
         {
           "id": "rosemary_lamb_leek_sauce__crushed_potato",
           "amount": 1,
@@ -316,6 +364,20 @@
       "tags": [],
       "tips": [
         "Använd fler plåtar om det blir för trångt."
+      ],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "preheated_oven_220",
+          "slots": 1,
+          "temp": 220,
+          "fanTemp": 200
+        },
+        {
+          "type": "plat",
+          "ref": "plat_1",
+          "transition": "keep"
+        }
       ]
     },
     {
@@ -351,7 +413,14 @@
       ],
       "duration": 3,
       "wait": 4,
-      "tags": []
+      "tags": [],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "kastrull_medelstor",
+          "ref": "kastrull_2"
+        }
+      ]
     },
     {
       "id": "rosemary_lamb_leek_sauce__leek_sauce",
@@ -384,6 +453,18 @@
       "tips": [
         "Om du inte har en mixer, hacka purjolöken riktigt fint så såsen får en rustik konsistens.",
         "Tillsätt en skvätt vatten om såsen blir för tjock."
+      ],
+      "heat": "medellåg",
+      "heatSource": "inferred",
+      "equipment": [
+        {
+          "type": "kastrull_medelstor",
+          "ref": "kastrull_2",
+          "transition": "keep"
+        },
+        {
+          "type": "stavmixer"
+        }
       ]
     },
     {

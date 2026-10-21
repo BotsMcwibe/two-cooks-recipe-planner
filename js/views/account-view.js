@@ -9,13 +9,15 @@ import * as UserState from '../core/user-recipe-state.js?v=20261013b';
 import { missingMixes } from '../core/spice-prefs.js?v=20261013a';
 import { savedTheme } from '../utils/theme.js?v=20261013b';
 import { menuExtrasHtml, bindMenuExtras } from './menu-items.js?v=20261013sk';
-import { onAuthChange, onSyncStatus, syncStatus, lastSyncTime, signOut, currentUser, isAvailable } from '../core/sync.js?v=20261013ko';
-import { openSignIn } from './auth-ui.js?v=20261013ko';
+import { onAuthChange, onSyncStatus, syncStatus, lastSyncTime, signOut, currentUser, isAvailable } from '../core/sync.js?v=20261021eq';
+import { openSignIn } from './auth-ui.js?v=20261021eq';
 import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261011u';
+import { kitchenProfile, setKitchen, MAX_OVEN_TRAYS } from '../core/kitchen-prefs.js?v=20261021eq';
 
 const LOCAL_KEYS = [
   'jesse.recipeState.v1', 'yessy.spiceMixMissing.v1', 'jesse-theme',
   'recipeApp.state.v3', 'yessy.pantryExcluded.v1', 'yessy.spicesOwned.v1', 'yessy.prefsMeta.v1', 'yessy.photoAvailability.v1',
+  'yessy.kitchen.v1',
 ];
 
 const SYNC_LABEL = {
@@ -57,10 +59,21 @@ export class AccountView {
     window.addEventListener('spicemixchange', rerender);
     window.addEventListener('yessy:themechange', rerender);
     window.addEventListener('yessy:prefchange', rerender);
+    window.addEventListener('kitchenchange', rerender);
+    // "Ändra" links (Utrustning → Ditt kök) jump to a section once #konto is shown
+    document.addEventListener('click', (e) => {
+      const a = e.target.closest && e.target.closest('[data-acc-target]');
+      if (a) this._pendingTarget = a.getAttribute('data-acc-target');
+    }, true); // capture: the overview dialog stops click propagation
     this._bind();
   }
 
-  show() { this.active = true; this.menuOpen = false; this.render(); }
+  show() {
+    this.active = true; this.menuOpen = false; this.render();
+    const target = this._pendingTarget;
+    this._pendingTarget = null;
+    if (target) setTimeout(() => document.getElementById(target)?.scrollIntoView({ behavior: 'auto', block: 'start' }), 60);
+  }
   hide() { this.active = false; }
 
   /** The rail is re-rendered on toggle; replay the outline→filled transition on the new circle. */
@@ -77,6 +90,21 @@ export class AccountView {
     this.el.addEventListener('click', async (e) => {
       const t = e.target;
       if (t.closest('.acc-signin')) { openSignIn(); return; }
+      const tray = t.closest('[data-kitchen-trays]');
+      if (tray) {
+        const k = kitchenProfile();
+        const next = Math.max(1, Math.min(MAX_OVEN_TRAYS, k.ovenTrays + Number(tray.getAttribute('data-kitchen-trays'))));
+        if (next !== k.ovenTrays) setKitchen({ ovenTrays: next });
+        this.el.querySelector(`[data-kitchen-trays="${tray.getAttribute('data-kitchen-trays')}"]`)?.focus();
+        return;
+      }
+      const fan = t.closest('[data-kitchen-fan]');
+      if (fan) {
+        const on = fan.getAttribute('data-kitchen-fan') === '1';
+        if (on !== kitchenProfile().ovenFan) setKitchen({ ovenFan: on });
+        this.el.querySelector(`[data-kitchen-fan="${on ? 1 : 0}"]`)?.focus();
+        return;
+      }
       if (t.closest('.acc-me-btn')) { this.menuOpen = !this.menuOpen; this.render(); this._animateCircle(); this.el.querySelector(this.menuOpen ? '.acc-menu button, .acc-menu a' : '.acc-me-btn')?.focus(); return; }
       if (t.closest('.acc-logout')) { await signOut(); this.menuOpen = false; this.render(); return; }
       if (t.closest('.acc-clear')) {
@@ -95,6 +123,31 @@ export class AccountView {
     this.el.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && this.menuOpen) { this.menuOpen = false; this.render(); this.el.querySelector('.acc-me-btn')?.focus(); }
     });
+  }
+
+  /** Ditt kök: how many plåtar the oven takes at once, and varmluft ja/nej. */
+  _kitchenHtml() {
+    const k = kitchenProfile();
+    const t = k.ovenTrays;
+    return `
+      <h3 class="acc-sub">Ditt kök</h3>
+      <div class="kitchen-row">
+        <div class="kitchen-text" id="kitchen-trays-label"><span class="kitchen-label">Plåtar i ugnen samtidigt</span>
+          <span class="kitchen-help">Så många plåtar eller formar som blir bra på en gång. Fler än så tillagas efter varandra.</span></div>
+        <div class="portion-controls kitchen-stepper" role="group" aria-labelledby="kitchen-trays-label">
+          <button type="button" data-kitchen-trays="-1" aria-label="Färre plåtar" ${t <= 1 ? 'disabled' : ''}>−</button>
+          <span class="kitchen-value" aria-live="polite">${t} ${t === 1 ? 'plåt' : 'plåtar'}</span>
+          <button type="button" data-kitchen-trays="1" aria-label="Fler plåtar" ${t >= MAX_OVEN_TRAYS ? 'disabled' : ''}>+</button>
+        </div>
+      </div>
+      <div class="kitchen-row">
+        <div class="kitchen-text" id="kitchen-fan-label"><span class="kitchen-label">Varmluft</span>
+          <span class="kitchen-help">Med varmluft visas varmluftstemperaturen. ”ca” betyder att receptet inte angav någon och att den är 20 °C lägre än vanlig ugn.</span></div>
+        <div class="kitchen-seg" role="group" aria-labelledby="kitchen-fan-label">
+          <button type="button" data-kitchen-fan="1" aria-pressed="${k.ovenFan}">Ja</button>
+          <button type="button" data-kitchen-fan="0" aria-pressed="${!k.ovenFan}">Nej</button>
+        </div>
+      </div>`;
   }
 
   _recipeLink(id, extra = '') {
@@ -219,14 +272,15 @@ export class AccountView {
           ${section('kryddmixar', 'Kryddmixar du blandar själv', mixes.length, mixes.length
             ? `<ul class="acc-chips">${mixes.map(m => `<li>${escapeHtml(m)}</li>`).join('')}</ul><p class="acc-hint">Slå av och på med ”Har inte mixen” i ett recept.</p>`
             : '<p class="acc-empty">Du använder färdiga mixar. Välj ”Har inte mixen” i ett recept för att blanda själv.</p>', where)}
-          ${section('installningar', 'Inställningar', null, `<dl class="acc-kv"><div><dt>Tema</dt><dd>${themeLabel}</dd></div></dl>`, where)}
+          ${section('installningar', 'Inställningar', null, `<dl class="acc-kv"><div><dt>Tema</dt><dd>${themeLabel}</dd></div></dl>
+            ${this._kitchenHtml()}`, where)}
           ${section('inkopslista', 'Inköpslista', shopRows.length, shopRows.length
             ? `<ul class="acc-list">${shopRows.join('')}</ul>`
             : '<p class="acc-empty">Inköpslistan är tom. Kryssa i recept i receptlistan.</p>', where)}
           ${section('data', 'Data', null, `
             <ul class="acc-data">
-              <li><strong>I den här webbläsaren</strong> (localStorage): statusar, betyg, kryddval, tema, inköpslista och var du är i matlagningen.</li>
-              <li><strong>${user ? 'På ditt konto' : 'Med ett konto'}</strong>: statusar och betyg, kryddval, tema och inköpslista synkas${user ? '' : ' när du loggar in'}. Matlagningens bockar stannar på enheten.</li>
+              <li><strong>I den här webbläsaren</strong> (localStorage): statusar, betyg, kryddval, tema, ditt kök, inköpslista och var du är i matlagningen.</li>
+              <li><strong>${user ? 'På ditt konto' : 'Med ett konto'}</strong>: statusar och betyg, kryddval, tema, ditt kök och inköpslista synkas${user ? '' : ' när du loggar in'}. Matlagningens bockar stannar på enheten.</li>
             </ul>
             <button type="button" class="acc-btn acc-btn-danger acc-clear">Rensa lokal data</button>`)}
         </div>

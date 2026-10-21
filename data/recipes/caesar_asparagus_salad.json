@@ -1,6 +1,7 @@
 {
   "masterId": "caesar_asparagus_salad",
   "source": "hellofresh",
+  "rawId": "67f7d1d9853dfb1d75b4931d",
   "createdAt": 1790851790,
   "basePortions": 4,
   "sharedPrep": [],
@@ -44,21 +45,23 @@
       ],
       "duration": 1,
       "wait": 12,
-      "tags": ["no-timer"],
+      "tags": [
+        "no-timer",
+        "resource"
+      ],
       "tips": [
         "HF anger 240°C/220°C varmluft — lokal ugnsnode, inte preheated_oven_220 (som är 220/200)."
-      ]
+      ],
+      "oven": {
+        "temp": 240,
+        "fanTemp": 220
+      }
     },
     {
       "id": "caesar_asparagus_salad__croutons",
       "name": "Gör Krutonger",
       "outputName": "Krutonger",
       "inputs": [
-        {
-          "id": "caesar_asparagus_salad__preheated_oven_240",
-          "amount": 1,
-          "unit": "st"
-        },
         {
           "id": "baguette",
           "amount": 1,
@@ -87,7 +90,19 @@
       ],
       "duration": 3,
       "wait": 10,
-      "tags": []
+      "tags": [],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "caesar_asparagus_salad__preheated_oven_240",
+          "slots": 1,
+          "temp": 240,
+          "fanTemp": 220
+        },
+        {
+          "type": "plat"
+        }
+      ]
     },
     {
       "id": "caesar_asparagus_salad__chopped_garlic",
@@ -104,7 +119,9 @@
         "Finhacka eller pressa {{garlic}}."
       ],
       "duration": 1,
-      "tags": ["prep"]
+      "tags": [
+        "prep"
+      ]
     },
     {
       "id": "caesar_asparagus_salad__prepped_lettuce",
@@ -121,7 +138,9 @@
         "Ansa {{lettuce}} och separera och grovhacka salladsblad."
       ],
       "duration": 3,
-      "tags": ["prep"]
+      "tags": [
+        "prep"
+      ]
     },
     {
       "id": "caesar_asparagus_salad__prepped_asparagus",
@@ -139,7 +158,9 @@
         "Skär varje sparris i 3 delar."
       ],
       "duration": 2,
-      "tags": ["prep"]
+      "tags": [
+        "prep"
+      ]
     },
     {
       "id": "caesar_asparagus_salad__fried_asparagus",
@@ -168,7 +189,14 @@
       ],
       "duration": 1,
       "wait": 2,
-      "tags": []
+      "tags": [],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "stekpanna_liten",
+          "sizeSource": "inferred"
+        }
+      ]
     },
     {
       "id": "caesar_asparagus_salad__dressed_salad",
@@ -231,6 +259,11 @@
       "tags": [],
       "tips": [
         "Hälften av osten (10 g av 20 g) går i blandningen; resten toppas vid servering."
+      ],
+      "equipment": [
+        {
+          "type": "skal_stor"
+        }
       ]
     },
     {
@@ -260,7 +293,9 @@
       ],
       "duration": 2,
       "wait": 0,
-      "tags": ["master"]
+      "tags": [
+        "master"
+      ]
     }
   ]
 }

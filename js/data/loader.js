@@ -1,7 +1,9 @@
 import { Unit } from '../models/unit.js';
 import { Ingredient } from '../models/ingredient.js';
-import { Recipe } from '../models/recipe.js';
-import { RecipeGraph } from '../core/recipe-graph.js?v=20261012e';
+import { Recipe } from '../models/recipe.js?v=20261021eq';
+import { setEquipmentVocab } from '../core/equipment.js?v=20261021eq';
+import { setKitchenDefaults } from '../core/kitchen-prefs.js?v=20261021eq';
+import { RecipeGraph } from '../core/recipe-graph.js?v=20261021eq';
 import { addSpiceMixSteps } from './spice-mix-steps.js?v=20261012e';
 import { isMixMissing } from '../core/spice-prefs.js?v=20261013a';
 
@@ -45,12 +47,17 @@ export async function loadPortionEnergyKcal(ids) {
  * Does NOT load full recipe graphs.
  */
 export async function loadStaticData() {
-  const [unitsRaw, ingredientsRaw, catalog, blendsRaw] = await Promise.all([
+  const [unitsRaw, ingredientsRaw, catalog, blendsRaw, equipmentRaw] = await Promise.all([
     fetchJSON('units.json?v=20261012e'),
     fetchJSON('ingredients.json?v=20261012e'),
     fetchJSON('catalog.json'),
     fetchJSON('spice-blends.json?v=20261012e').catch(() => ({ spices: [], blends: [] })),
+    fetchJSON('equipment.json?v=20261021eq').catch(() => null),
   ]);
+  if (equipmentRaw) {
+    setEquipmentVocab(equipmentRaw);
+    setKitchenDefaults(equipmentRaw.defaultKitchen);
+  }
 
   const unitMap = {};
   for (const [abbr, cfg] of Object.entries(unitsRaw)) {
@@ -84,7 +91,7 @@ export class RecipeRepository {
     this.unitMap = unitMap;
     this.spiceData = spiceData;
     this.baseIngredientMap = baseIngredientMap;
-    /** @type {Map<string, { graph: RecipeGraph, root: import('../models/recipe.js').Recipe, basePortions: number, resolveMap: object, outputMap: object }>} */
+    /** @type {Map<string, { graph: RecipeGraph, root: import('../models/recipe.js?v=20261021eq').Recipe, basePortions: number, resolveMap: object, outputMap: object }>} */
     this.cache = new Map();
     /** @type {Map<string, object>} shared prep pack cache (raw JSON) */
     this.prepCache = new Map();
@@ -157,7 +164,7 @@ export class RecipeRepository {
     for (const node of allNodes) {
       // Attach basePortions only on the master node
       const nodeData = node.id === recipeData.masterId
-        ? { ...node, basePortions: recipeData.basePortions }
+        ? { ...node, basePortions: recipeData.basePortions, rawId: recipeData.rawId ?? null }
         : node;
       recipes.push(Recipe.fromJSON(nodeData, resolveMap, this.unitMap, outputMap));
     }
@@ -179,6 +186,7 @@ export class RecipeRepository {
       images: recipeData.images || null,
       nutrition: recipeData.nutrition || null,
       spiceMixes,
+      rawId: recipeData.rawId ?? null,
     };
     this.cache.set(masterId, result);
     return result;

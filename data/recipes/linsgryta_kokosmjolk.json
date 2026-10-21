@@ -1,6 +1,7 @@
 {
   "masterId": "linsgryta_kokosmjolk",
   "source": "ica",
+  "rawId": "ica-724788",
   "createdAt": 1791049875,
   "basePortions": 4,
   "sharedPrep": [],
@@ -59,7 +60,13 @@
         "Sätt på ugnen enligt anvisningen på brödförpackningen."
       ],
       "duration": 1,
-      "tags": []
+      "tags": [
+        "resource"
+      ],
+      "oven": {
+        "temp": null,
+        "note": "enligt förpackning"
+      }
     },
     {
       "id": "linsgryta_kokosmjolk__chopped_onion",
@@ -116,7 +123,15 @@
         "Pressa i {{garlic}} och tillsätt {{curry}} och {{tomato_paste}}. Fräs ytterligare någon minut."
       ],
       "duration": 4,
-      "tags": []
+      "tags": [],
+      "heat": "medelhög",
+      "heatSource": "inferred",
+      "equipment": [
+        {
+          "type": "gryta",
+          "ref": "gryta_1"
+        }
+      ]
     },
     {
       "id": "linsgryta_kokosmjolk__halved_tomatoes",
@@ -187,6 +202,15 @@
       "tags": [],
       "tips": [
         "Späd eventuellt med mer vatten om grytan är för tjock."
+      ],
+      "heat": "hög",
+      "heatSource": "inferred",
+      "equipment": [
+        {
+          "type": "gryta",
+          "ref": "gryta_1",
+          "transition": "keep"
+        }
       ]
     },
     {
@@ -195,22 +219,25 @@
       "outputName": "Tillagat naanbröd",
       "inputs": [
         {
-          "id": "linsgryta_kokosmjolk__oven_on",
-          "amount": 1,
-          "unit": "st"
-        },
-        {
           "id": "naan_bread",
           "amount": 2,
           "unit": "pkt"
         }
       ],
       "steps": [
-        "Tillaga {{naan_bread}} i {{linsgryta_kokosmjolk__oven_on}} enligt anvisningen på förpackningen, ca 2–4 min."
+        "Tillaga {{naan_bread}} i ugnen enligt anvisningen på förpackningen, ca 2–4 min."
       ],
       "duration": 1,
       "wait": 4,
-      "tags": []
+      "tags": [],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "linsgryta_kokosmjolk__oven_on",
+          "slots": 1,
+          "temp": null
+        }
+      ]
     },
     {
       "id": "linsgryta_kokosmjolk",
@@ -266,6 +293,14 @@
         "Fri från ägg. Glutenfri: välj ris eller annat glutenfritt gryn och byt naanbröd mot glutenfritt bröd.",
         "Laktosfri: byt naanbröd mot laktosfritt bröd. Mjölkproteinfri: byt naanbröd mot mjölkproteinfritt bröd.",
         "Smaksätt gärna med färsk eller torkad ingefära och lite extra sambal oelek."
+      ],
+      "equipment": [
+        {
+          "type": "gryta",
+          "ref": "gryta_1",
+          "transition": "keep",
+          "offHeat": true
+        }
       ]
     }
   ]

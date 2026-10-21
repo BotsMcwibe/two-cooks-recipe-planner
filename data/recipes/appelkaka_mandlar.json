@@ -1,6 +1,7 @@
 {
   "masterId": "appelkaka_mandlar",
   "source": "hellofresh",
+  "rawId": "65b393e1d1da3988cdd88799",
   "createdAt": 1790852805,
   "basePortions": 4,
   "scalable": false,
@@ -30,40 +31,67 @@
       ],
       "duration": 1,
       "wait": 10,
-      "tags": ["no-timer"],
+      "tags": [
+        "no-timer",
+        "resource"
+      ],
       "tips": [
         "Ugnen tar vanligtvis 10–15 minuter att värmas upp.",
         "Ta ut bakmixen från kylskåpet 30 min innan den ska användas."
-      ]
+      ],
+      "oven": {
+        "temp": 190,
+        "fanTemp": 170
+      }
     },
     {
       "id": "appelkaka_mandlar__sliced_apple",
       "name": "Skär Äpple",
       "outputName": "Äppelskivor",
       "inputs": [
-        { "id": "apple", "amount": 2, "unit": "st" }
+        {
+          "id": "apple",
+          "amount": 2,
+          "unit": "st"
+        }
       ],
       "steps": [
         "Halvera, kärna ur och skär {{apple}} i tunna skivor."
       ],
       "duration": 4,
-      "tags": ["prep"]
+      "tags": [
+        "prep"
+      ]
     },
     {
       "id": "appelkaka_mandlar__almond_topping",
       "name": "Gör Mandeltoppning",
       "outputName": "Mandeltoppning",
       "inputs": [
-        { "id": "almonds", "amount": 40, "unit": "g" },
-        { "id": "cinnamon", "amount": 1, "unit": "tsk" },
-        { "id": "sugar", "amount": 2, "unit": "tsk" }
+        {
+          "id": "almonds",
+          "amount": 40,
+          "unit": "g"
+        },
+        {
+          "id": "cinnamon",
+          "amount": 1,
+          "unit": "tsk"
+        },
+        {
+          "id": "sugar",
+          "amount": 2,
+          "unit": "tsk"
+        }
       ],
       "steps": [
         "Grovhacka {{almonds}}.",
         "Blanda mandel, {{cinnamon}} och {{sugar}} i en liten skål."
       ],
       "duration": 3,
-      "tags": ["prep"],
+      "tags": [
+        "prep"
+      ],
       "tips": [
         "Mandeltoppningen kan göras medan kakan gräddas."
       ]
@@ -73,9 +101,16 @@
       "name": "Forma och Börja Baka",
       "outputName": "Äppelkaka (första fasen)",
       "inputs": [
-        { "id": "appelkaka_mandlar__preheated_oven", "amount": 1, "unit": "st" },
-        { "id": "sponge_cake_mix", "amount": 600, "unit": "g" },
-        { "id": "appelkaka_mandlar__sliced_apple", "amount": 1, "unit": "st" }
+        {
+          "id": "sponge_cake_mix",
+          "amount": 600,
+          "unit": "g"
+        },
+        {
+          "id": "appelkaka_mandlar__sliced_apple",
+          "amount": 1,
+          "unit": "st"
+        }
       ],
       "steps": [
         "Häll {{sponge_cake_mix}} i en rund bakform (20–22 cm i diameter) med bakplåtspapper och platta till med en slickepott.",
@@ -84,15 +119,35 @@
       ],
       "duration": 5,
       "wait": 30,
-      "tags": []
+      "tags": [],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "appelkaka_mandlar__preheated_oven",
+          "slots": 1,
+          "temp": 190,
+          "fanTemp": 170
+        },
+        {
+          "type": "bakform"
+        }
+      ]
     },
     {
       "id": "appelkaka_mandlar__baked_cake",
       "name": "Toppa och Grädda Färdigt",
       "outputName": "Gräddad äppelkaka",
       "inputs": [
-        { "id": "appelkaka_mandlar__cake_first_bake", "amount": 1, "unit": "st" },
-        { "id": "appelkaka_mandlar__almond_topping", "amount": 1, "unit": "st" }
+        {
+          "id": "appelkaka_mandlar__cake_first_bake",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "appelkaka_mandlar__almond_topping",
+          "amount": 1,
+          "unit": "st"
+        }
       ],
       "steps": [
         "Toppa kakan med {{appelkaka_mandlar__almond_topping}}.",
@@ -110,8 +165,16 @@
       "name": "Äppelkaka med mandlar",
       "outputName": "Äppelkaka med mandlar",
       "inputs": [
-        { "id": "appelkaka_mandlar__baked_cake", "amount": 1, "unit": "st" },
-        { "id": "creme_fraiche", "amount": 1, "unit": "pkt" }
+        {
+          "id": "appelkaka_mandlar__baked_cake",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "creme_fraiche",
+          "amount": 1,
+          "unit": "pkt"
+        }
       ],
       "steps": [
         "Låt {{appelkaka_mandlar__baked_cake}} svalna innan servering.",
@@ -119,7 +182,9 @@
       ],
       "duration": 3,
       "wait": 0,
-      "tags": ["master"],
+      "tags": [
+        "master"
+      ],
       "tips": [
         "Låt kakan svalna innan servering."
       ]

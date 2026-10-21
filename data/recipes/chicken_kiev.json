@@ -1,6 +1,7 @@
 {
   "masterId": "chicken_kiev",
   "source": "hellofresh",
+  "rawId": "6a68914fd5e939e3a7ce5844",
   "createdAt": 1790852559,
   "basePortions": 4,
   "sharedPrep": [],
@@ -46,12 +47,17 @@
       ],
       "duration": 1,
       "tags": [
-        "no-timer"
+        "no-timer",
+        "resource"
       ],
       "wait": 12,
       "tips": [
         "HF anger 240°C/220°C varmluft — lokal ugnsnode, inte preheated_oven_220 (220/200)."
-      ]
+      ],
+      "oven": {
+        "temp": 240,
+        "fanTemp": 220
+      }
     },
     {
       "id": "chicken_kiev__chopped_root_veg",
@@ -160,14 +166,37 @@
       ]
     },
     {
-      "id": "chicken_kiev__garlic_butter",
-      "name": "Gör Vitlökssmör",
-      "outputName": "Vitlökssmör",
+      "id": "chicken_kiev__softened_butter",
+      "name": "Ta fram smöret",
+      "outputName": "Rumstempererat smör",
       "inputs": [
         {
           "id": "butter",
           "amount": 6,
           "unit": "msk"
+        }
+      ],
+      "steps": [
+        "Ta fram {{butter}} ur kylen så att det blir rumstempererat och mjukt."
+      ],
+      "duration": 1,
+      "wait": 30,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Ta fram smöret i god tid, ca 30 min innan det ska användas. Mjukt smör går att mosa med gaffel."
+      ]
+    },
+    {
+      "id": "chicken_kiev__garlic_butter",
+      "name": "Gör Vitlökssmör",
+      "outputName": "Vitlökssmör",
+      "inputs": [
+        {
+          "id": "chicken_kiev__softened_butter",
+          "amount": 1,
+          "unit": "st"
         },
         {
           "id": "chicken_kiev__minced_garlic",
@@ -191,9 +220,8 @@
         }
       ],
       "steps": [
-        "Ta ut {{butter}} ur kylen så det blir rumstempererat.",
         "Finhacka {{parsley}}.",
-        "Mosa {{butter}}, {{chicken_kiev__minced_garlic}}, den finhackade persiljan, {{salt}} och {{pepper}} med en gaffel i en skål.",
+        "Mosa {{chicken_kiev__softened_butter}}, {{chicken_kiev__minced_garlic}}, den finhackade persiljan, {{salt}} och {{pepper}} med en gaffel i en skål.",
         "Ställ åt sidan."
       ],
       "duration": 4,
@@ -206,11 +234,6 @@
       "name": "Rosta Rotfrukter",
       "outputName": "Rotfrukter under rostning",
       "inputs": [
-        {
-          "id": "chicken_kiev__preheated_oven_240",
-          "amount": 1,
-          "unit": "st"
-        },
         {
           "id": "chicken_kiev__chopped_root_veg",
           "amount": 1,
@@ -247,6 +270,19 @@
       "tags": [],
       "tips": [
         "Totalt rostas rotfrukterna 20–30 min; broccolini går in de sista 12 min."
+      ],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "chicken_kiev__preheated_oven_240",
+          "slots": 1,
+          "temp": 240,
+          "fanTemp": 220
+        },
+        {
+          "type": "plat",
+          "ref": "plat_1"
+        }
       ]
     },
     {
@@ -274,6 +310,20 @@
       "tags": [],
       "tips": [
         "Använd fler plåtar om det blir för trångt."
+      ],
+      "equipment": [
+        {
+          "type": "plat",
+          "ref": "plat_1",
+          "transition": "keep"
+        },
+        {
+          "type": "ugn",
+          "after": "chicken_kiev__preheated_oven_240",
+          "slots": 1,
+          "temp": 240,
+          "fanTemp": 220
+        }
       ]
     },
     {
@@ -390,11 +440,6 @@
           "unit": "st"
         },
         {
-          "id": "chicken_kiev__preheated_oven_240",
-          "amount": 1,
-          "unit": "st"
-        },
-        {
           "id": "olive_oil",
           "amount": 2,
           "unit": "msk"
@@ -412,7 +457,23 @@
       "tips": [
         "Kycklingen är färdiglagad när köttet inte längre är rosa i mitten.",
         "En del av vitlökssmöret kommer att rinna ut – servera det vid sidan av!"
-      ]
+      ],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "chicken_kiev__preheated_oven_240",
+          "slots": 1,
+          "temp": 240,
+          "fanTemp": 220
+        },
+        {
+          "type": "stekpanna_stor"
+        },
+        {
+          "type": "plat"
+        }
+      ],
+      "heat": "medelhög"
     },
     {
       "id": "chicken_kiev__veg_salad",
@@ -435,7 +496,14 @@
         "Blanda {{chicken_kiev__roasted_vegetables}} med {{mixed_salad}} på plåten och vänd runt tills salladen har mjuknat något."
       ],
       "duration": 3,
-      "tags": []
+      "tags": [],
+      "equipment": [
+        {
+          "type": "plat",
+          "ref": "plat_1",
+          "transition": "keep"
+        }
+      ]
     },
     {
       "id": "chicken_kiev",

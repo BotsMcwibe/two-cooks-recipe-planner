@@ -1,6 +1,7 @@
 {
   "masterId": "falafel_bulgur_bowl",
   "source": "hellofresh",
+  "rawId": "6a6890f5640e6eb29c2ac42f",
   "createdAt": 1790851435,
   "basePortions": 4,
   "sharedPrep": [],
@@ -69,7 +70,14 @@
       ],
       "duration": 3,
       "wait": 10,
-      "tags": []
+      "tags": [],
+      "heat": "medellåg",
+      "equipment": [
+        {
+          "type": "kastrull_medelstor",
+          "sizeSource": "inferred"
+        }
+      ]
     },
     {
       "id": "falafel_bulgur_bowl__prepped_vegetables",
@@ -169,6 +177,12 @@
       "tags": [],
       "tips": [
         "Vänd falafel ofta, så de inte bränns vid."
+      ],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "stekpanna_stor"
+        }
       ]
     },
     {

@@ -1,6 +1,7 @@
 {
   "masterId": "vietnamesisk_rakbowl",
   "source": "hellofresh",
+  "rawId": "6a689117640e6eb29c2ac576",
   "createdAt": 1791034509,
   "basePortions": 4,
   "sharedPrep": [],
@@ -81,6 +82,16 @@
       "tags": [],
       "tips": [
         "Riset ska ångkoka, så tjuvkika inte."
+      ],
+      "heat": "medel",
+      "stepHeat": {
+        "1": "medellåg"
+      },
+      "equipment": [
+        {
+          "type": "kastrull_medelstor",
+          "ref": "kastrull_1"
+        }
       ]
     },
     {
@@ -99,7 +110,15 @@
       ],
       "duration": 1,
       "wait": 10,
-      "tags": []
+      "tags": [],
+      "equipment": [
+        {
+          "type": "kastrull_medelstor",
+          "ref": "kastrull_1",
+          "transition": "keep",
+          "offHeat": true
+        }
+      ]
     },
     {
       "id": "vietnamesisk_rakbowl__prepped_aromatics",
@@ -237,6 +256,11 @@
       ],
       "tips": [
         "Tillsätt eventuellt en skvätt olivolja till salladen."
+      ],
+      "equipment": [
+        {
+          "type": "skal_stor"
+        }
       ]
     },
     {
@@ -269,6 +293,12 @@
       "tags": [],
       "tips": [
         "Räkorna är färdiga när de är rosa utanpå och ogenomskinliga i mitten."
+      ],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "stekpanna_stor"
+        }
       ]
     },
     {

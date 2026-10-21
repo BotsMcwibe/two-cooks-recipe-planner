@@ -1,6 +1,7 @@
 {
   "masterId": "gyllenstekt_kycklingschnitzel",
   "source": "hellofresh",
+  "rawId": "67038f2002cdf0b40ec360c5",
   "createdAt": 1791035248,
   "basePortions": 4,
   "sharedPrep": [],
@@ -82,6 +83,13 @@
       "tips": [
         "Passiv koktid 11–13 min → wait 13 (övre gräns). Sista steget äger timern.",
         "Salt till kokvattnet har ingen mängd i yields — grönsakssaltet (0,5 tsk) används efter avhällning."
+      ],
+      "heat": "hög",
+      "heatSource": "inferred",
+      "equipment": [
+        {
+          "type": "kastrull_medelstor"
+        }
       ]
     },
     {
@@ -281,6 +289,12 @@
         "Tillsätt extra olivolja vid behov.",
         "Kycklingen är färdiglagad när köttet inte längre är rosa i mitten.",
         "FLAG: olivolja saknas i yields — 2 msk är uppskattning så det täcker pannan (samma formulering som chicken_kiev)."
+      ],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "stekpanna_stor"
+        }
       ]
     },
     {

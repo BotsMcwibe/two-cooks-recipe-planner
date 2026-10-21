@@ -1,6 +1,7 @@
 {
   "masterId": "creamy_aubergine_curry",
   "source": "hellofresh",
+  "rawId": "5d442b17abe2d8000d2cc8a9",
   "createdAt": 1790852559,
   "basePortions": 4,
   "sharedPrep": [],
@@ -38,11 +39,17 @@
       "duration": 1,
       "wait": 10,
       "tags": [
-        "no-timer"
+        "no-timer",
+        "resource"
       ],
       "tips": [
         "Ugnen tar vanligtvis 10–15 minuter att värmas upp."
-      ]
+      ],
+      "oven": {
+        "temp": 200,
+        "fanTemp": 180,
+        "fanTempSource": "derived"
+      }
     },
     {
       "id": "creamy_aubergine_curry__chopped_aromatics",
@@ -197,6 +204,13 @@
       "tags": [],
       "tips": [
         "Rör om då och då under sjudningen så att det inte bränner vid."
+      ],
+      "heat": "medel",
+      "equipment": [
+        {
+          "type": "kastrull_stor",
+          "ref": "kastrull_1"
+        }
       ]
     },
     {
@@ -242,18 +256,22 @@
       ],
       "duration": 3,
       "wait": 10,
-      "tags": []
+      "tags": [],
+      "heat": "medellåg",
+      "heatSource": "inferred",
+      "equipment": [
+        {
+          "type": "kastrull_stor",
+          "ref": "kastrull_1",
+          "transition": "keep"
+        }
+      ]
     },
     {
       "id": "creamy_aubergine_curry__warmed_baguette",
       "name": "Värm Baguette",
       "outputName": "Värmd baguette",
       "inputs": [
-        {
-          "id": "creamy_aubergine_curry__preheated_oven",
-          "amount": 1,
-          "unit": "st"
-        },
         {
           "id": "baguette",
           "amount": 1,
@@ -265,7 +283,17 @@
       ],
       "duration": 1,
       "wait": 8,
-      "tags": []
+      "tags": [],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "creamy_aubergine_curry__preheated_oven",
+          "slots": 1,
+          "temp": 200,
+          "fanTemp": 180,
+          "fanTempSource": "derived"
+        }
+      ]
     },
     {
       "id": "creamy_aubergine_curry",

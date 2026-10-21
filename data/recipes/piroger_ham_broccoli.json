@@ -1,6 +1,7 @@
 {
   "masterId": "piroger_ham_broccoli",
   "source": "hellofresh",
+  "rawId": null,
   "createdAt": 1790852559,
   "basePortions": 4,
   "sharedPrep": [
@@ -18,12 +19,17 @@
       ],
       "duration": 1,
       "tags": [
-        "no-timer"
+        "no-timer",
+        "resource"
       ],
       "wait": 12,
       "tips": [
         "Ugnen tar vanligtvis 10-15 minuter att värmas upp."
-      ]
+      ],
+      "oven": {
+        "temp": 225,
+        "fanTemp": 200
+      }
     },
     {
       "id": "piroger_ham_broccoli__chopped_broccoli",
@@ -144,7 +150,12 @@
         "Lägg pajerna på en plåt med bakplåtspapper."
       ],
       "duration": 6,
-      "tags": []
+      "tags": [],
+      "equipment": [
+        {
+          "type": "plat"
+        }
+      ]
     },
     {
       "id": "piroger_ham_broccoli__egg_washed_pies",
@@ -182,24 +193,28 @@
       "outputName": "Piroger med Skinka och Broccoli",
       "inputs": [
         {
-          "id": "piroger_ham_broccoli__preheated_oven_225",
-          "amount": 1,
-          "unit": "st"
-        },
-        {
           "id": "piroger_ham_broccoli__egg_washed_pies",
           "amount": 1,
           "unit": "st"
         }
       ],
       "steps": [
-        "Grädda {{piroger_ham_broccoli__egg_washed_pies}} på nedersta valsen i {{piroger_ham_broccoli__preheated_oven_225}} i ca 12 minuter tills gyllene."
+        "Grädda {{piroger_ham_broccoli__egg_washed_pies}} på nedersta valsen i ugnen i ca 12 minuter tills gyllene."
       ],
       "duration": 1,
       "tags": [
         "master"
       ],
-      "wait": 12
+      "wait": 12,
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "piroger_ham_broccoli__preheated_oven_225",
+          "slots": 1,
+          "temp": 225,
+          "fanTemp": 200
+        }
+      ]
     }
   ]
 }

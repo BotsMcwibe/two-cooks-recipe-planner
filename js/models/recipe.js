@@ -65,6 +65,11 @@ export class RecipeBuilder {
   }
 }
 
+const EQUIPMENT_FIELDS = ['equipment', 'heat', 'stepHeat', 'heatSource', 'oven', 'rawId'];
+function copyEquipmentFields(from, to) {
+  for (const k of EQUIPMENT_FIELDS) to[k] = from[k] !== undefined ? from[k] : null;
+}
+
 export class Recipe {
   constructor(name, inputs = [], outputId = null, outputConfig = {}, steps = [], duration = 0, outputAmount = 1, tips = [], tags = [], ingredientMap = null) {
     this.name = name;
@@ -107,6 +112,7 @@ export class Recipe {
     scaledRecipe.wait = this.wait;
     scaledRecipe.id = this.id;
     scaledRecipe.basePortions = this.basePortions;
+    copyEquipmentFields(this, scaledRecipe);
     return scaledRecipe;
   }
 
@@ -163,6 +169,13 @@ export class Recipe {
     });
     rec.tips = data.tips || [];
     rec.tags = data.tags || [];
+    // Equipment, heat & resources (SCHEMA.md). Kept as plain data; never used as inputs.
+    rec.equipment = Array.isArray(data.equipment) ? data.equipment.map(e => ({ ...e })) : null;
+    rec.heat = data.heat || null;
+    rec.stepHeat = data.stepHeat && typeof data.stepHeat === 'object' ? { ...data.stepHeat } : null;
+    rec.heatSource = data.heatSource || null;
+    rec.oven = data.oven && typeof data.oven === 'object' ? { ...data.oven } : null;
+    rec.rawId = data.rawId !== undefined ? data.rawId : null;
     return rec;
   }
 

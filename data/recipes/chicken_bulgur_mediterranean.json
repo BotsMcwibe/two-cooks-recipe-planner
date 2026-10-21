@@ -1,6 +1,7 @@
 {
   "masterId": "chicken_bulgur_mediterranean",
   "source": "hellofresh",
+  "rawId": "655373681b313a369d6182a5",
   "createdAt": 1791037352,
   "basePortions": 4,
   "sharedPrep": [
@@ -62,11 +63,6 @@
       "outputName": "Rostade Grönsaker",
       "inputs": [
         {
-          "id": "preheated_oven_220",
-          "amount": 1,
-          "unit": "st"
-        },
-        {
           "id": "chicken_bulgur_mediterranean__diced_vegetables",
           "amount": 1,
           "unit": "st"
@@ -104,13 +100,25 @@
       ],
       "steps": [
         "Placera {{chicken_bulgur_mediterranean__diced_vegetables}} och {{chicken_bulgur_mediterranean__red_onion_wedges}} på en plåt med bakplåtspapper. Blanda med {{olive_oil}}, {{spicemix_pearl}}, {{vegetable_bouillon}}, {{salt}} och en nypa {{pepper}}.",
-        "Rosta i {{preheated_oven_220}} i 10-15 minuter, eller tills mjuka."
+        "Rosta i ugnen i 10-15 minuter, eller tills mjuka."
       ],
       "duration": 5,
       "tags": [],
       "wait": 10,
       "tips": [
         "Använd fler plåtar om det blir för trångt."
+      ],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "preheated_oven_220",
+          "slots": 1,
+          "temp": 220,
+          "fanTemp": 200
+        },
+        {
+          "type": "plat"
+        }
       ]
     },
     {
@@ -140,7 +148,14 @@
       ],
       "duration": 2,
       "tags": [],
-      "wait": 9
+      "wait": 9,
+      "heat": "medellåg",
+      "equipment": [
+        {
+          "type": "kastrull_medelstor",
+          "sizeSource": "inferred"
+        }
+      ]
     },
     {
       "id": "chicken_bulgur_mediterranean__chopped_parsley",
@@ -274,6 +289,12 @@
       ],
       "tips": [
         "Kyckling är färdiglagad när köttet inte längre är rosa i mitten."
+      ],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "stekpanna_stor"
+        }
       ]
     },
     {

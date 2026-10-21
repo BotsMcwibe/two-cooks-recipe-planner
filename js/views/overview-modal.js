@@ -1,4 +1,6 @@
-import { RecipeGraph } from '../core/recipe-graph.js?v=20261012e';
+import { RecipeGraph } from '../core/recipe-graph.js?v=20261021eq';
+import { equipmentListHtml } from '../core/equipment.js?v=20261021eq';
+import { kitchenProfile } from '../core/kitchen-prefs.js?v=20261021eq';
 import { formatNiceAmount } from '../utils/helpers.js';
 import {
   allergenLabel,
@@ -25,7 +27,7 @@ export class OverviewModal {
   /**
    * @param {import('../core/state.js').AppState} state
    * @param {Array<object>} catalog
-   * @param {import('../data/loader.js?v=20261013a').RecipeRepository} repository
+   * @param {import('../data/loader.js?v=20261021eq').RecipeRepository} repository
    * @param {Array} baseIngredients
    * @param {{
    *   onCook: (id: string, portions: number) => void,
@@ -254,6 +256,7 @@ export class OverviewModal {
             ${pantryHtml}
           </div>` : ''}
         </div>
+        ${this._equipmentHtml(loaded)}
         <div class="overview-spice-mixes">${spiceMixTogglesHtml(loaded && loaded.spiceMixes, this._portionScale())}</div>
       </div>`;
 
@@ -298,6 +301,23 @@ export class OverviewModal {
       ? `<ul class="ingredient-list overview-ing-list">${pantry.join('')}</ul>`
       : '';
     return { mainHtml, pantryHtml, hasPantry: pantry.length > 0 };
+  }
+
+  /** Utrustning: pots/pans/plåtar per type and the oven temperature for the user's kitchen. */
+  _equipmentHtml(loaded) {
+    if (!loaded) return '';
+    const root = loaded.graph.get(this.recipeId);
+    if (!root) return '';
+    const list = equipmentListHtml(loaded.graph.getSubtreeRecipes(root), kitchenProfile());
+    return list ? `<div class="overview-equipment eq-section"><h3>Utrustning</h3>${list}</div>` : '';
+  }
+
+  /** Kitchen profile changed (plåtar / varmluft): refresh the Utrustning block in place. */
+  refreshEquipment() {
+    if (!this.isOpen() || !this.loaded) return;
+    const $eq = this.$root.find('.overview-equipment');
+    const html = this._equipmentHtml(this.loaded);
+    if ($eq.length) $eq.replaceWith(html);
   }
 
   _nutritionItems(loaded) {

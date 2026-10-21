@@ -1,6 +1,7 @@
 {
   "masterId": "basil_chicken_root_mash",
   "source": "hellofresh",
+  "rawId": "615423e65a080c14d80dd54e",
   "createdAt": 1790852559,
   "basePortions": 4,
   "sharedPrep": [],
@@ -52,7 +53,15 @@
       ],
       "duration": 2,
       "tags": [],
-      "wait": 12
+      "wait": 12,
+      "heat": "hög",
+      "heatSource": "inferred",
+      "equipment": [
+        {
+          "type": "kastrull_stor",
+          "sizeSource": "inferred"
+        }
+      ]
     },
     {
       "id": "basil_chicken_root_mash__fried_chicken",
@@ -75,7 +84,14 @@
         "Bryn {{chicken_inner_fillet}} 4–5 minuter tills gyllene."
       ],
       "duration": 6,
-      "tags": []
+      "tags": [],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1"
+        }
+      ]
     },
     {
       "id": "basil_chicken_root_mash__chopped_basil",
@@ -149,7 +165,15 @@
       "tips": [
         "Tillsätt vatten om såsen blir för tjock."
       ],
-      "wait": 10
+      "wait": 10,
+      "heat": "låg",
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1",
+          "transition": "keep"
+        }
+      ]
     },
     {
       "id": "basil_chicken_root_mash__grated_zucchini",

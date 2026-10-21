@@ -1,6 +1,7 @@
 {
   "masterId": "chicken_gyros",
   "source": "hellofresh",
+  "rawId": "660ff2df9064812f61708339",
   "createdAt": 1790851546,
   "basePortions": 4,
   "sharedPrep": [],
@@ -44,10 +45,17 @@
       ],
       "duration": 1,
       "wait": 10,
-      "tags": ["no-timer"],
+      "tags": [
+        "no-timer",
+        "resource"
+      ],
       "tips": [
         "HF anger 200 °C / 180 °C varmluft — lokal ugnsnode, inte preheated_oven_220."
-      ]
+      ],
+      "oven": {
+        "temp": 200,
+        "fanTemp": 180
+      }
     },
     {
       "id": "chicken_gyros__warmed_pita",
@@ -55,18 +63,13 @@
       "outputName": "Varma pitabröd",
       "inputs": [
         {
-          "id": "chicken_gyros__preheated_oven_200",
-          "amount": 1,
-          "unit": "st"
-        },
-        {
           "id": "pita_bread",
           "amount": 4,
           "unit": "st"
         }
       ],
       "steps": [
-        "Placera {{pita_bread}} direkt på gallret i {{chicken_gyros__preheated_oven_200}}.",
+        "Placera {{pita_bread}} direkt på gallret i ugnen.",
         "Baka i 3–4 min, eller tills uppvärmda."
       ],
       "duration": 1,
@@ -74,6 +77,18 @@
       "tags": [],
       "tips": [
         "Pitabröden kan ätas rätt ur påsen, men det blir godare att rosta dem."
+      ],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "chicken_gyros__preheated_oven_200",
+          "slots": 1,
+          "temp": 200,
+          "fanTemp": 180
+        },
+        {
+          "type": "galler"
+        }
       ]
     },
     {
@@ -113,6 +128,12 @@
       "tips": [
         "Tvätta händer och köksredskap noggrant efter hantering av rå kyckling.",
         "Kycklingen är färdig när köttet inte längre är rosa i mitten."
+      ],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "stekpanna_stor"
+        }
       ]
     },
     {
@@ -152,7 +173,9 @@
         "Blanda gurka, yoghurt, vitlök, {{salt}} och en nypa {{pepper}} i en skål."
       ],
       "duration": 8,
-      "tags": ["prep"]
+      "tags": [
+        "prep"
+      ]
     },
     {
       "id": "chicken_gyros__prepped_vegetables",
@@ -175,7 +198,9 @@
         "Grovhacka {{tomato}}."
       ],
       "duration": 4,
-      "tags": ["prep"]
+      "tags": [
+        "prep"
+      ]
     },
     {
       "id": "chicken_gyros",
@@ -209,7 +234,9 @@
       ],
       "duration": 5,
       "wait": 0,
-      "tags": ["master"]
+      "tags": [
+        "master"
+      ]
     }
   ]
 }

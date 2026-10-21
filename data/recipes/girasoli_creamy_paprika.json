@@ -1,6 +1,7 @@
 {
   "masterId": "girasoli_creamy_paprika",
   "source": "hellofresh",
+  "rawId": "6a689121d5e939e3a7ce577c",
   "createdAt": 1790795941,
   "basePortions": 4,
   "sharedPrep": [],
@@ -144,7 +145,14 @@
       ],
       "duration": 2,
       "wait": 5,
-      "tags": []
+      "tags": [],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1"
+        }
+      ]
     },
     {
       "id": "girasoli_creamy_paprika__cooked_pasta",
@@ -179,6 +187,13 @@
       "tips": [
         "Kokvattnet ska vara lika salt som havsvatten.",
         "Al dente betyder att pastan är genomkokt men fortfarande har tuggmotstånd."
+      ],
+      "heat": "hög",
+      "heatSource": "inferred",
+      "equipment": [
+        {
+          "type": "kastrull_stor"
+        }
       ]
     },
     {
@@ -230,7 +245,18 @@
       ],
       "duration": 3,
       "wait": 2,
-      "tags": []
+      "tags": [],
+      "heat": "medelhög",
+      "stepHeat": {
+        "2": "medel"
+      },
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1",
+          "transition": "keep"
+        }
+      ]
     },
     {
       "id": "girasoli_creamy_paprika",

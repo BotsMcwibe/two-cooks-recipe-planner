@@ -1,6 +1,7 @@
 {
   "masterId": "lentil_gratin",
   "source": "hellofresh",
+  "rawId": "5d7b7ed61191fd4861353734",
   "createdAt": 1790795820,
   "basePortions": 4,
   "sharedPrep": [],
@@ -38,11 +39,17 @@
       "duration": 1,
       "wait": 12,
       "tags": [
-        "no-timer"
+        "no-timer",
+        "resource"
       ],
       "tips": [
         "HF anger 200°C (inte 220) — lokal ugnsnode, inte preheated_oven_220."
-      ]
+      ],
+      "oven": {
+        "temp": 200,
+        "fanTemp": 180,
+        "fanTempSource": "derived"
+      }
     },
     {
       "id": "lentil_gratin__boiled_potato",
@@ -71,6 +78,13 @@
         "Vi förkokar potatisen så den inte behöver gratinera för länge i ugnen.",
         "FLAG: _unitInference Potatis 500 g — behållen (large g).",
         "FLAG: kokvatten ej i HF yields — modellerat som pantry water 1,5 l."
+      ],
+      "heat": "medel",
+      "equipment": [
+        {
+          "type": "kastrull_stor",
+          "sizeSource": "inferred"
+        }
       ]
     },
     {
@@ -285,6 +299,12 @@
         "FLAG: _unitInference Buljong 4 ml — överstyrd till 4 g vegetable_bouillon (cousins potato_leek_gratin/warm_lentil_salad; HF yields-2 hade null).",
         "FLAG: _unitInference Krossade tomater 2 burk — behållen (can).",
         "Stekolja är pantry-skvätt (ej i HF yields)."
+      ],
+      "heat": "medel",
+      "equipment": [
+        {
+          "type": "stekpanna_stor"
+        }
       ]
     },
     {
@@ -310,11 +330,6 @@
       "outputName": "Linsgratäng",
       "inputs": [
         {
-          "id": "lentil_gratin__preheated_oven_200",
-          "amount": 1,
-          "unit": "st"
-        },
-        {
           "id": "lentil_gratin__lentil_mix",
           "amount": 1,
           "unit": "st"
@@ -339,13 +354,27 @@
         "Lägg över {{lentil_gratin__lentil_mix}} till en ugnsform.",
         "Placera ett lager av {{lentil_gratin__potato_slices}} jämnt på toppen.",
         "Strö {{grated_mozzarella}} ovanpå och krydda med {{pepper}}.",
-        "Gratinera i {{lentil_gratin__preheated_oven_200}}, 10–15 min."
+        "Gratinera i ugnen, 10–15 min."
       ],
       "duration": 3,
       "wait": 15,
       "tags": [],
       "tips": [
         "FLAG: _unitInference Riven mozzarella 100 g — behållen."
+      ],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "lentil_gratin__preheated_oven_200",
+          "slots": 1,
+          "temp": 200,
+          "fanTemp": 180,
+          "fanTempSource": "derived"
+        },
+        {
+          "type": "ugnsform_stor",
+          "sizeSource": "inferred"
+        }
       ]
     },
     {

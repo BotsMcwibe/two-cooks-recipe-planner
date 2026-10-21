@@ -1,6 +1,7 @@
 {
   "masterId": "citronstekt_flaskkott",
   "source": "hellofresh",
+  "rawId": "6333723afba4e0ef88f2d3b5",
   "createdAt": 1791038668,
   "basePortions": 4,
   "sharedPrep": [],
@@ -51,11 +52,16 @@
       "duration": 1,
       "wait": 12,
       "tags": [
-        "no-timer"
+        "no-timer",
+        "resource"
       ],
       "tips": [
         "Ugnen tar vanligtvis 10–15 minuter att värmas upp."
-      ]
+      ],
+      "oven": {
+        "temp": 240,
+        "fanTemp": 220
+      }
     },
     {
       "id": "citronstekt_flaskkott__prepped_roots",
@@ -103,11 +109,6 @@
           "unit": "st"
         },
         {
-          "id": "citronstekt_flaskkott__preheated_oven",
-          "amount": 1,
-          "unit": "st"
-        },
-        {
           "id": "sesame_seeds",
           "amount": 20,
           "unit": "g"
@@ -125,11 +126,23 @@
       ],
       "steps": [
         "Blanda {{citronstekt_flaskkott__prepped_roots}}, {{olive_oil}}, {{sesame_seeds}}, {{salt}} och peppar på två plåtar med bakplåtspapper.",
-        "Rosta i {{citronstekt_flaskkott__preheated_oven}} i 20–25 min, eller tills gyllene."
+        "Rosta i ugnen i 20–25 min, eller tills gyllene."
       ],
       "duration": 3,
       "wait": 25,
-      "tags": []
+      "tags": [],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "citronstekt_flaskkott__preheated_oven",
+          "slots": 1,
+          "temp": 240,
+          "fanTemp": 220
+        },
+        {
+          "type": "plat"
+        }
+      ]
     },
     {
       "id": "citronstekt_flaskkott__minced_garlic",
@@ -322,7 +335,14 @@
         "Stek {{citronstekt_flaskkott__seasoned_pork}} under omrörning i 3–4 min, tills det är brynt och genomstekt."
       ],
       "duration": 5,
-      "tags": []
+      "tags": [],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1"
+        }
+      ]
     },
     {
       "id": "citronstekt_flaskkott__simmered_pork",
@@ -344,7 +364,15 @@
         "Sänk till medelvärme. Häll ner {{citronstekt_flaskkott__lemon_broth}} i stekpannan till {{citronstekt_flaskkott__fried_pork}} och sjud i 1–2 min."
       ],
       "duration": 1,
-      "wait": 2
+      "wait": 2,
+      "heat": "medel",
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1",
+          "transition": "keep"
+        }
+      ]
     },
     {
       "id": "citronstekt_flaskkott",

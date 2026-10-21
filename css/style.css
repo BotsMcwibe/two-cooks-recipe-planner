@@ -2666,3 +2666,152 @@ img.auth-avatar, img.acc-avatar { box-shadow: 0 0 0 1.25px var(--border); transi
 .spice-tile .pantry-tile-name { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; line-clamp: 2; overflow: hidden; text-overflow: ellipsis; word-break: normal; overflow-wrap: normal; hyphens: none; max-width: 100%; }
 .spice-card-head h2, .kmixes h2 { display: flex; align-items: center; gap: 8px; }
 .spice-card-head .pantry-n, .kmixes .pantry-n { display: inline-flex; align-items: center; justify-content: center; min-width: 24px; height: 22px; line-height: 1; }
+
+/* === Equipment, heat & oven (SCHEMA.md "Equipment, heat & resources") ===
+   Heat uses a cividis-style ramp (colour-blind safe, dark blue → yellow) and ALWAYS
+   pairs it with bar count/height and the word, so colour is never the only cue. */
+:root {
+  --heat-1: #2a4471;
+  --heat-2: #56607a;
+  --heat-3: #847f76;
+  --heat-4: #b7a45c;
+  --heat-5: #e3c62f;
+  --heat-outline: rgba(26, 29, 33, 0.45);
+}
+:root[data-theme="dark"] {
+  --heat-1: #4f6fa8;
+  --heat-2: #7a84a0;
+  --heat-3: #a5a08e;
+  --heat-4: #d1bc6a;
+  --heat-5: #fbe14a;
+  --heat-outline: rgba(230, 232, 235, 0.35);
+}
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+.eq-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 6px;
+  flex-basis: 100%;
+  align-items: center;
+}
+.eq-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.78rem;
+  line-height: 1.3;
+  padding: 2px 8px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text);
+  white-space: nowrap;
+}
+.eq-chip.eq-oven { font-weight: 600; }
+.eq-sep { color: var(--text-faint); }
+.eq-burner, .eq-muted, .eq-offheat { color: var(--text-muted); }
+.eq-guess {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  margin-left: -2px;
+  cursor: help;
+}
+.eq-reuse {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+.heat { display: inline-flex; align-items: center; gap: 4px; }
+.heat-bars { display: inline-flex; align-items: flex-end; gap: 1px; height: 13px; }
+.heat-bar {
+  width: 5px;
+  border: 1px solid var(--heat-outline);
+  border-radius: 1px;
+  box-sizing: border-box;
+  background: transparent;
+  opacity: 0.55;
+}
+.heat-bar:nth-child(1) { height: 5px; }
+.heat-bar:nth-child(2) { height: 7px; }
+.heat-bar:nth-child(3) { height: 9px; }
+.heat-bar:nth-child(4) { height: 11px; }
+.heat-bar:nth-child(5) { height: 13px; }
+.heat-bar.is-on { opacity: 1; }
+.heat-1 .heat-bar.is-on { background: var(--heat-1); }
+.heat-2 .heat-bar.is-on { background: var(--heat-2); }
+.heat-3 .heat-bar.is-on { background: var(--heat-3); }
+.heat-4 .heat-bar.is-on { background: var(--heat-4); }
+.heat-5 .heat-bar.is-on { background: var(--heat-5); }
+.heat-word { font-variant-numeric: tabular-nums; }
+.step-heat {
+  display: inline-flex;
+  margin-left: 6px;
+  padding: 0 6px;
+  font-size: 0.78rem;
+  font-weight: 400;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  vertical-align: 1px;
+  white-space: nowrap;
+}
+.eq-section h3 { font-size: 1.1rem; margin: 16px 0 8px; }
+.overview-equipment { margin-top: 8px; }
+.overview-equipment h3 { font-size: 1rem; }
+.eq-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.eq-item {
+  font-size: 0.85rem;
+  padding: 4px 10px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface-2);
+}
+.eq-item.eq-oven { font-weight: 600; }
+.eq-count { font-weight: 700; font-variant-numeric: tabular-nums; }
+.eq-profile { font-size: 0.78rem; color: var(--text-muted); margin: 8px 0 0; }
+.eq-profile a { color: var(--primary); }
+.flow-edge.is-equipment { stroke-dasharray: 5 4; }
+.flow-node.is-resource { border-style: dashed; }
+.flow-oven { font-size: 0.72rem; color: var(--text-muted); }
+.gantt-bar.gantt-resource { outline: 1.5px dashed var(--graph-edge); outline-offset: -1px; }
+.gantt-bar.gantt-after-equipment { border-left: 2px dashed var(--graph-edge); }
+
+/* Mitt konto → Ditt kök */
+.kitchen-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 16px;
+  padding: 8px 0;
+  border-top: 1px solid var(--divider-soft);
+  flex-wrap: wrap;
+}
+.kitchen-text { display: flex; flex-direction: column; gap: 2px; flex: 1 1 220px; min-width: 0; }
+.kitchen-label { font-weight: 600; }
+.kitchen-help { font-size: 0.78rem; color: var(--text-muted); }
+.kitchen-stepper button { color: var(--text); }
+.kitchen-value { min-width: 72px; text-align: center; font-weight: 600; font-variant-numeric: tabular-nums; }
+.kitchen-seg { display: inline-flex; border: 1px solid var(--border); border-radius: var(--radius-sm); overflow: hidden; }
+.kitchen-seg button {
+  min-width: 52px;
+  height: 32px;
+  padding: 0 12px;
+  border: 0;
+  background: var(--surface-2);
+  color: var(--text);
+  font: inherit;
+  cursor: pointer;
+}
+.kitchen-seg button + button { border-left: 1px solid var(--border); }
+.kitchen-seg button[aria-pressed="true"] { background: var(--primary); color: var(--on-accent); font-weight: 600; }
+.kitchen-seg button:focus-visible, .kitchen-stepper button:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: -2px; }

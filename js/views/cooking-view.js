@@ -1,7 +1,9 @@
-import { Scheduler } from '../models/scheduler.js?v=20261011c';
-import { RecipeGraph } from '../core/recipe-graph.js?v=20261012e';
+import { Scheduler } from '../models/scheduler.js?v=20261021eq';
+import { RecipeGraph } from '../core/recipe-graph.js?v=20261021eq';
+import { equipmentListHtml, isResource, nodeEquipmentHtml, stepHeatHtml } from '../core/equipment.js?v=20261021eq';
+import { kitchenProfile } from '../core/kitchen-prefs.js?v=20261021eq';
 import { formatNiceAmount } from '../utils/helpers.js';
-import { formatStepInputText, producerMap } from '../utils/derived-inputs.js?v=20261012d';
+import { formatStepInputText, producerMap } from '../utils/derived-inputs.js?v=20261021eq';
 import {
   allergenLabel,
   difficultyLabel,
@@ -57,10 +59,11 @@ export class CookingView {
    */
   render(rootRecipe, subtreeRecipes, graph, baseIngredients, options, meta = {}) {
     this._byNode = (meta.images && meta.images.byNode) || {};
-    // Same scheduler the gantt uses. Header minutes follow this makespan
-    // (prep-first / 2 cooks included), not catalog totalMinutes.
+    this._kitchen = kitchenProfile();
+    // Same scheduler the flow graph uses. Header minutes follow this makespan
+    // (prep-first / 2 cooks / kitchen profile included), not catalog totalMinutes.
     const schedule = rootRecipe
-      ? new Scheduler(rootRecipe, subtreeRecipes, options).getSchedule()
+      ? new Scheduler(rootRecipe, subtreeRecipes, { ...options, kitchen: this._kitchen }).getSchedule()
       : null;
     const stepsModel = this._buildStepsModel(schedule);
     this._allDone = stepsModel.length > 0 && stepsModel.every(s => s.completed);
@@ -302,7 +305,7 @@ export class CookingView {
       const inputsReady = recipe.inputs.every(input => {
         const isBase = !nodes.some(n => n.recipe.outputIngredient.id === input.ingredient.id);
         return isBase || checkedIds.includes(input.ingredient.id);
-      });
+      }) && (node.eqDeps || []).every(id => checkedIds.includes(id)); // preheated oven, previous pan user
 
       recipe.steps.forEach((step, idx) => {
         const prevDone = idx === 0 || Array.from({ length: idx }, (_, i) => i)
@@ -427,9 +430,12 @@ export class CookingView {
       }
       html += `<div class="recipe-group-header${cook ? ' has-cook-badge' : ''}">`;
       html += `<strong>${escapeHtml(sentenceCase(first.recipeName))}</strong>`;
-      if (first.recipe.inputs.length) {
-        html += `<span class="recipe-needs">${this._formatStepInputs(first.recipe.inputs, steps)}</span>`;
+      const needs = this._formatStepInputs(first.recipe.inputs, steps);
+      if (needs) {
+        html += `<span class="recipe-needs">${needs}</span>`;
       }
+      const eqHtml = nodeEquipmentHtml(first.recipe, this._kitchen);
+      if (eqHtml) html += eqHtml;
       if (cook) {
         const cookClass = cook === 'P1' ? 'cook-p1' : 'cook-p2';
         const cookTitle = cook === 'P1' ? 'Kock 1' : 'Kock 2';
@@ -446,7 +452,7 @@ export class CookingView {
         html += `<label class="step-label">`;
         html += `<span class="step-number">${globalNum}</span>`;
         html += `<input type="checkbox" class="step-cb" data-recipe="${escapeAttr(s.recipeId)}" data-step="${s.stepIndex}" ${s.completed ? 'checked' : ''} ${s.enabled ? '' : 'disabled'}>`;
-        html += `<span class="step-text">${this._stringifyStep(s.step)}</span>`;
+        html += `<span class="step-text">${this._stringifyStep(s.step)}${stepHeatHtml(s.recipe, s.stepIndex)}</span>`;
         html += `</label>`;
 
         if (s.hasTimer) {
@@ -505,7 +511,10 @@ export class CookingView {
    */
   _formatStepInputs(inputs, steps) {
     const producers = producerMap(steps);
-    return inputs.map(inp => escapeHtml(formatStepInputText(inp, producers))).join(', ');
+    // A resource (preheated oven) is equipment, shown as a chip, never as an ingredient
+    return inputs
+      .filter(inp => !isResource(producers.get(inp.ingredient?.id)))
+      .map(inp => escapeHtml(formatStepInputText(inp, producers))).join(', ');
   }
 
   _stringifyStep(step) {
@@ -550,6 +559,8 @@ export class CookingView {
     }
     if (!any) html += '<li>Alla ingredienser förbrukade</li>';
     html += '</ul>';
+    const eq = equipmentListHtml(this._subtree, this._kitchen || kitchenProfile());
+    if (eq) html += `<div class="eq-section"><h3>Utrustning</h3>${eq}</div>`;
     this.$ingredients.html(html);
   }
 

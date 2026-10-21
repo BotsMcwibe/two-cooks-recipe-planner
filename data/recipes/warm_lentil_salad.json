@@ -1,6 +1,7 @@
 {
   "masterId": "warm_lentil_salad",
   "source": "hellofresh",
+  "rawId": "5d59338b44341b000e2dbc45",
   "createdAt": 1790795820,
   "basePortions": 4,
   "sharedPrep": [],
@@ -24,11 +25,17 @@
       "duration": 1,
       "wait": 12,
       "tags": [
-        "no-timer"
+        "no-timer",
+        "resource"
       ],
       "tips": [
         "HF anger 200°C (inte 220) — lokal ugnsnode, inte preheated_oven_220."
-      ]
+      ],
+      "oven": {
+        "temp": 200,
+        "fanTemp": 180,
+        "fanTempSource": "derived"
+      }
     },
     {
       "id": "warm_lentil_salad__diced_butternut",
@@ -78,11 +85,6 @@
       "outputName": "Rostad butternutpumpa och aubergine",
       "inputs": [
         {
-          "id": "warm_lentil_salad__preheated_oven_200",
-          "amount": 1,
-          "unit": "st"
-        },
-        {
           "id": "warm_lentil_salad__diced_butternut",
           "amount": 1,
           "unit": "st"
@@ -111,11 +113,24 @@
       "steps": [
         "Placera {{warm_lentil_salad__diced_butternut}} och {{warm_lentil_salad__diced_aubergine}} på en stor bakplåt täckt med bakplåtspapper.",
         "Häll över {{olive_oil}}, {{salt}} och {{pepper}}. Blanda så att bitarna täcks.",
-        "Rosta på översta hyllan i {{warm_lentil_salad__preheated_oven_200}} tills grönsakerna är gyllenbruna och mjuka, 30–35 min. Vänd halvvägs."
+        "Rosta på översta hyllan i ugnen tills grönsakerna är gyllenbruna och mjuka, 30–35 min. Vänd halvvägs."
       ],
       "duration": 3,
       "wait": 35,
-      "tags": []
+      "tags": [],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "warm_lentil_salad__preheated_oven_200",
+          "slots": 1,
+          "temp": 200,
+          "fanTemp": 180,
+          "fanTempSource": "derived"
+        },
+        {
+          "type": "plat"
+        }
+      ]
     },
     {
       "id": "warm_lentil_salad__sliced_red_onion",
@@ -275,6 +290,13 @@
       "tags": [],
       "tips": [
         "FLAG: _unitInference Vatten 3 ml — överstyrd till 3 dl (HF ingredient type slug water-…-1dl; behåller numeral 3). Buljong 4 ml → 4 g (samma mönster som halloumi/paprikor)."
+      ],
+      "heat": "hög",
+      "heatSource": "inferred",
+      "equipment": [
+        {
+          "type": "kastrull_stor"
+        }
       ]
     },
     {
@@ -304,7 +326,15 @@
         "Tillsätt {{warm_lentil_salad__pressed_garlic}} och fräs i 1 min."
       ],
       "duration": 7,
-      "tags": []
+      "tags": [],
+      "heat": "hög",
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1",
+          "sizeSource": "inferred"
+        }
+      ]
     },
     {
       "id": "warm_lentil_salad__fried_lentils",
@@ -327,7 +357,16 @@
         "Täck stekpannan med lock och sätt åt sidan."
       ],
       "duration": 3,
-      "tags": []
+      "tags": [],
+      "heat": "medel",
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1",
+          "transition": "keep",
+          "sizeSource": "inferred"
+        }
+      ]
     },
     {
       "id": "warm_lentil_salad__minty_feta",
@@ -418,6 +457,16 @@
       "duration": 5,
       "tags": [
         "master"
+      ],
+      "heat": "medelhög",
+      "heatSource": "inferred",
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1",
+          "transition": "keep",
+          "sizeSource": "inferred"
+        }
       ]
     }
   ]

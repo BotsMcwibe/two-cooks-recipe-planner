@@ -1,6 +1,7 @@
 {
   "masterId": "sej_sweet_chili_sojaglaze",
   "source": "hellofresh",
+  "rawId": "6707d8119e048437c2cbc158",
   "createdAt": 1791039978,
   "basePortions": 4,
   "sharedPrep": [],
@@ -68,6 +69,13 @@
       "tags": [],
       "tips": [
         "Riset ska ångkoka, så tjuvkika inte."
+      ],
+      "heat": "medellåg",
+      "equipment": [
+        {
+          "type": "kastrull_medelstor",
+          "ref": "kastrull_1"
+        }
       ]
     },
     {
@@ -86,7 +94,15 @@
       ],
       "duration": 1,
       "wait": 10,
-      "tags": []
+      "tags": [],
+      "equipment": [
+        {
+          "type": "kastrull_medelstor",
+          "ref": "kastrull_1",
+          "transition": "keep",
+          "offHeat": true
+        }
+      ]
     },
     {
       "id": "sej_sweet_chili_sojaglaze__dressing",
@@ -143,6 +159,12 @@
       "tags": [],
       "tips": [
         "Hacka salladen under tiden fröna rostas."
+      ],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "stekpanna_stor"
+        }
       ]
     },
     {
@@ -223,6 +245,17 @@
       "tags": [],
       "tips": [
         "Fisken är klar när fiskköttet är vitt och ogenomskinligt och lätt faller isär."
+      ],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "stekpanna_medelstor",
+          "ref": "stekpanna_1",
+          "sizeSource": "inferred"
+        },
+        {
+          "type": "stekpanna_stor"
+        }
       ]
     },
     {
@@ -270,6 +303,15 @@
       "tags": [],
       "tips": [
         "Skippa chili eller använd mindre om du inte tycker om stark mat."
+      ],
+      "equipment": [
+        {
+          "type": "stekpanna_medelstor",
+          "ref": "stekpanna_1",
+          "transition": "keep",
+          "sizeSource": "inferred",
+          "offHeat": true
+        }
       ]
     },
     {

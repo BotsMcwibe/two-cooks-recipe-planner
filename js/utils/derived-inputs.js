@@ -9,6 +9,9 @@
  * portion scale since input and output scale together. Steps that each use the
  * whole output (an oven shared by two bakes) are not a split.
  * Non-derived (raw) inputs always keep amount + unit.
+ *
+ * Resource nodes (preheated oven, tag `resource`) are not ingredients: they are never inputs
+ * and are left out of the consumption totals here (shown as equipment chips instead).
  */
 
 const FRACTIONS = [
@@ -65,6 +68,7 @@ export function producerMap(recipes) {
   // Total amount consumed per produced id, across all steps
   const consumed = new Map();
   for (const rec of m.values()) {
+    if (rec.tags && rec.tags.includes('resource')) continue;
     for (const inp of rec.inputs || []) {
       const iid = inp.ingredient?.id;
       if (iid && m.has(iid)) consumed.set(iid, (consumed.get(iid) || 0) + (Number(inp.amount) || 0));

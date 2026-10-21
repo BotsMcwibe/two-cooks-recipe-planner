@@ -1,6 +1,7 @@
 {
   "masterId": "caesar_kycklingsallad",
   "source": "hellofresh",
+  "rawId": "695b77565c0be345fe765ab3",
   "createdAt": 1791040883,
   "basePortions": 4,
   "sharedPrep": [],
@@ -53,12 +54,17 @@
       "duration": 1,
       "wait": 12,
       "tags": [
-        "no-timer"
+        "no-timer",
+        "resource"
       ],
       "tips": [
         "Ugnen tar vanligtvis 10–15 minuter att värmas upp.",
         "HF anger 240°C/220°C varmluft — lokal ugnsnode, inte preheated_oven_220."
-      ]
+      ],
+      "oven": {
+        "temp": 240,
+        "fanTemp": 220
+      }
     },
     {
       "id": "caesar_kycklingsallad__diced_potato",
@@ -104,11 +110,6 @@
       "outputName": "Halvrostad potatis",
       "inputs": [
         {
-          "id": "caesar_kycklingsallad__preheated_oven_240",
-          "amount": 1,
-          "unit": "st"
-        },
-        {
           "id": "caesar_kycklingsallad__diced_potato",
           "amount": 1,
           "unit": "st"
@@ -131,7 +132,7 @@
       ],
       "steps": [
         "Lägg {{caesar_kycklingsallad__diced_potato}} på en plåt med bakplåtspapper. Blanda med {{olive_oil}}, {{salt}} och en nypa {{pepper}}.",
-        "Rosta i {{caesar_kycklingsallad__preheated_oven_240}} i ca 23 min, tills det återstår 12 min av totalt 25–35 min."
+        "Rosta i ugnen i ca 23 min, tills det återstår 12 min av totalt 25–35 min."
       ],
       "duration": 3,
       "wait": 23,
@@ -140,6 +141,20 @@
         "Använd fler plåtar om det blir för trångt.",
         "Första fasen är övre gränsen 35 min minus de 12 min som återstår när broccolin läggs på.",
         "Olivoljan är en skvätt, inte stekoljans 2 msk."
+      ],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "caesar_kycklingsallad__preheated_oven_240",
+          "slots": 1,
+          "temp": 240,
+          "fanTemp": 220
+        },
+        {
+          "type": "plat",
+          "ref": "plat_1",
+          "shared": true
+        }
       ]
     },
     {
@@ -148,11 +163,6 @@
       "outputName": "Rostad vitlök",
       "inputs": [
         {
-          "id": "caesar_kycklingsallad__preheated_oven_240",
-          "amount": 1,
-          "unit": "st"
-        },
-        {
           "id": "garlic",
           "amount": 3,
           "unit": "st"
@@ -160,7 +170,7 @@
       ],
       "steps": [
         "Lägg {{garlic}} (oskalad) på ena sidan av plåten med potatisen.",
-        "Rosta i {{caesar_kycklingsallad__preheated_oven_240}} i ca 27 min och ta ut vitlöksklyftorna när det återstår 8 min av potatisens tid, samtidigt som kycklingen läggs på plåten."
+        "Rosta i ugnen i ca 27 min och ta ut vitlöksklyftorna när det återstår 8 min av potatisens tid, samtidigt som kycklingen läggs på plåten."
       ],
       "duration": 1,
       "wait": 27,
@@ -168,6 +178,21 @@
       "tips": [
         "Vitlök är 3 klyftor vid både 3 och 4 portioner.",
         "Rostas på samma plåt som potatisen. 27 min är övre gränsen 35 min minus de 8 min som återstår när vitlöken tas ut."
+      ],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "caesar_kycklingsallad__preheated_oven_240",
+          "slots": 1,
+          "temp": 240,
+          "fanTemp": 220
+        },
+        {
+          "type": "plat",
+          "ref": "plat_1",
+          "transition": "keep",
+          "shared": true
+        }
       ]
     },
     {
@@ -192,7 +217,22 @@
       ],
       "duration": 1,
       "wait": 4,
-      "tags": []
+      "tags": [],
+      "equipment": [
+        {
+          "type": "plat",
+          "ref": "plat_1",
+          "transition": "keep",
+          "shared": true
+        },
+        {
+          "type": "ugn",
+          "after": "caesar_kycklingsallad__preheated_oven_240",
+          "slots": 1,
+          "temp": 240,
+          "fanTemp": 220
+        }
+      ]
     },
     {
       "id": "caesar_kycklingsallad__breaded_chicken",
@@ -265,6 +305,12 @@
       "tags": [],
       "tips": [
         "Tillsätt mer olivolja om kycklingen fastnar. 3–4 min per sida är hands-on, därför duration och wait 0."
+      ],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "stekpanna_stor"
+        }
       ]
     },
     {
@@ -276,22 +322,32 @@
           "id": "caesar_kycklingsallad__fried_chicken",
           "amount": 1,
           "unit": "st"
-        },
-        {
-          "id": "caesar_kycklingsallad__preheated_oven_240",
-          "amount": 1,
-          "unit": "st"
         }
       ],
       "steps": [
         "Lägg över {{caesar_kycklingsallad__fried_chicken}} på plåten med potatis och broccoli när det återstår 8 min av potatisens tid.",
-        "Rosta i {{caesar_kycklingsallad__preheated_oven_240}} i 8 min, tills kycklingen är genomstekt."
+        "Rosta i ugnen i 8 min, tills kycklingen är genomstekt."
       ],
       "duration": 2,
       "wait": 8,
       "tags": [],
       "tips": [
         "Kycklingen är klar när köttet inte längre är rosa i mitten."
+      ],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "caesar_kycklingsallad__preheated_oven_240",
+          "slots": 1,
+          "temp": 240,
+          "fanTemp": 220
+        },
+        {
+          "type": "plat",
+          "ref": "plat_1",
+          "transition": "keep",
+          "shared": true
+        }
       ]
     },
     {
@@ -416,6 +472,11 @@
       "tags": [],
       "tips": [
         "En skvätt olivolja i salladen är valfri och har ingen mängd."
+      ],
+      "equipment": [
+        {
+          "type": "skal_stor"
+        }
       ]
     },
     {

@@ -1,6 +1,7 @@
 {
   "masterId": "zaatar_flaskkotlett",
   "source": "linas",
+  "rawId": "linas-131199",
   "createdAt": 1791056876,
   "basePortions": 4,
   "sharedPrep": [],
@@ -157,6 +158,13 @@
         "3 min per sida är hands-on och ligger i duration, inte som wait. Ingen vilotid är angiven.",
         "Za'atar är 1 förp utan vikt. Olja är angiven som 1 tsk, inte 1 skvätt.",
         "Salt och peppar här är egna rader, inte hopslagna med salladens."
+      ],
+      "heat": "medel",
+      "equipment": [
+        {
+          "type": "stekpanna_medelstor",
+          "sizeSource": "inferred"
+        }
       ]
     },
     {

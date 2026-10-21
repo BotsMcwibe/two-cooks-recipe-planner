@@ -1,6 +1,7 @@
 {
   "masterId": "halloumi_rostade_morotter",
   "source": "hellofresh",
+  "rawId": "5d58494d3ebaf50011354155",
   "createdAt": 1790795820,
   "basePortions": 4,
   "sharedPrep": [],
@@ -38,12 +39,18 @@
       ],
       "duration": 1,
       "tags": [
-        "no-timer"
+        "no-timer",
+        "resource"
       ],
       "wait": 12,
       "tips": [
         "HF anger 200°C (inte 220) — lokal ugnsnode, inte preheated_oven_220."
-      ]
+      ],
+      "oven": {
+        "temp": 200,
+        "fanTemp": 180,
+        "fanTempSource": "derived"
+      }
     },
     {
       "id": "halloumi_rostade_morotter__prepped_carrots",
@@ -112,11 +119,6 @@
       "outputName": "Rostade grönsaker",
       "inputs": [
         {
-          "id": "halloumi_rostade_morotter__preheated_oven_200",
-          "amount": 1,
-          "unit": "st"
-        },
-        {
           "id": "halloumi_rostade_morotter__prepped_carrots",
           "amount": 1,
           "unit": "st"
@@ -151,11 +153,24 @@
         "Lägg {{halloumi_rostade_morotter__prepped_carrots}}, {{halloumi_rostade_morotter__diced_zucchini}} och {{halloumi_rostade_morotter__onion_wedges}} i en skål.",
         "Häll på {{olive_oil}}, krydda med {{salt}} och {{pepper}} och blanda ordentligt.",
         "Sprid ut grönsakerna jämnt på en bakplåt täckt med bakplåtspapper.",
-        "Baka i {{halloumi_rostade_morotter__preheated_oven_200}} i 20–25 min tills de är gyllenbruna och möra."
+        "Baka i ugnen i 20–25 min tills de är gyllenbruna och möra."
       ],
       "duration": 5,
       "wait": 25,
-      "tags": []
+      "tags": [],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "halloumi_rostade_morotter__preheated_oven_200",
+          "slots": 1,
+          "temp": 200,
+          "fanTemp": 180,
+          "fanTempSource": "derived"
+        },
+        {
+          "type": "plat"
+        }
+      ]
     },
     {
       "id": "halloumi_rostade_morotter__spiced_couscous",
@@ -199,6 +214,13 @@
       "tags": [],
       "tips": [
         "FLAG: HF Buljong amount=4 unit infererad som ml (yields 2 unresolved null). Tolkat som 4 g grönsaksbuljong + 4 dl vatten till 300 g couscous (HF: 'vatten se mängd i ingredienslistan')."
+      ],
+      "heat": "hög",
+      "heatSource": "inferred",
+      "equipment": [
+        {
+          "type": "kastrull_medelstor"
+        }
       ]
     },
     {
@@ -267,7 +289,15 @@
       ],
       "duration": 8,
       "wait": 5,
-      "tags": []
+      "tags": [],
+      "heat": "medel",
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1",
+          "sizeSource": "inferred"
+        }
+      ]
     },
     {
       "id": "halloumi_rostade_morotter__fried_halloumi",
@@ -291,7 +321,17 @@
         "Stek halloumiskivorna tills de är gyllenbruna, ca 2 min per sida."
       ],
       "duration": 8,
-      "tags": []
+      "tags": [],
+      "heat": "medel",
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1",
+          "transition": "keep",
+          "sizeSource": "inferred",
+          "after": "halloumi_rostade_morotter__roasted_almonds"
+        }
+      ]
     },
     {
       "id": "halloumi_rostade_morotter",

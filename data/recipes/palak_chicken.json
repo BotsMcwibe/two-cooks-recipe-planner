@@ -1,6 +1,7 @@
 {
   "masterId": "palak_chicken",
   "source": "linas",
+  "rawId": "linas-135012",
   "createdAt": 1791056876,
   "basePortions": 4,
   "sharedPrep": [],
@@ -99,6 +100,14 @@
         "2 min och 3 min är hands-on och ligger i duration, inte som wait.",
         "Olja är angiven som 2 tsk, inte 1 skvätt. Garam masala och tomatpuré är förp utan vikt.",
         "Kommentaren säger smaka av hettan. Listan har 1 tsk chili, ingen extra mängd påhittad."
+      ],
+      "heat": "medelhög",
+      "heatSource": "inferred",
+      "equipment": [
+        {
+          "type": "gryta",
+          "ref": "gryta_1"
+        }
       ]
     },
     {
@@ -146,6 +155,14 @@
       "tips": [
         "Listan har bara 1 tsk salt, redan i fräset. Ingen extra salt till avsmakningen.",
         "Spenaten är vikt in i sista steget så wait 5 hör till sjudet."
+      ],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "gryta",
+          "ref": "gryta_1",
+          "transition": "keep"
+        }
       ]
     },
     {

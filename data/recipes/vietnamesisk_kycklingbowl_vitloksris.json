@@ -1,6 +1,7 @@
 {
   "masterId": "vietnamesisk_kycklingbowl_vitloksris",
   "source": "hellofresh",
+  "rawId": "6273d44cfabd8854209415df",
   "createdAt": 1791039326,
   "basePortions": 4,
   "sharedPrep": [],
@@ -115,6 +116,16 @@
       "wait": 12,
       "tips": [
         "Riset ska ångkoka, så tjuvkika inte."
+      ],
+      "heat": "medel",
+      "stepHeat": {
+        "1": "medellåg"
+      },
+      "equipment": [
+        {
+          "type": "kastrull_stor",
+          "ref": "kastrull_1"
+        }
       ]
     },
     {
@@ -133,7 +144,15 @@
       ],
       "duration": 1,
       "tags": [],
-      "wait": 10
+      "wait": 10,
+      "equipment": [
+        {
+          "type": "kastrull_stor",
+          "ref": "kastrull_1",
+          "transition": "keep",
+          "offHeat": true
+        }
+      ]
     },
     {
       "id": "vietnamesisk_kycklingbowl_vitloksris__pickled_cucumber",
@@ -206,7 +225,14 @@
       ],
       "duration": 5,
       "tags": [],
-      "wait": 0
+      "wait": 0,
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1"
+        }
+      ]
     },
     {
       "id": "vietnamesisk_kycklingbowl_vitloksris__fried_chicken",
@@ -234,6 +260,15 @@
       "tips": [
         "Tvätta händer och köksredskap noggrant efter hantering av rå kyckling.",
         "Kycklingen är färdiglagad när köttet inte längre är rosa i mitten."
+      ],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1",
+          "transition": "keep",
+          "after": "vietnamesisk_kycklingbowl_vitloksris__fried_veg"
+        }
       ]
     },
     {

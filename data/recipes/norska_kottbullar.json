@@ -1,6 +1,7 @@
 {
   "masterId": "norska_kottbullar",
   "source": "hellofresh",
+  "rawId": "64ae8ce6565e2133abaa5178",
   "createdAt": 1791040287,
   "basePortions": 4,
   "sharedPrep": [],
@@ -80,6 +81,14 @@
       "tags": [],
       "tips": [
         "Salt till kokvattnet har ingen mängd. 1 tsk salt hör till moset."
+      ],
+      "heat": "hög",
+      "heatSource": "inferred",
+      "equipment": [
+        {
+          "type": "kastrull_medelstor",
+          "ref": "kastrull_1"
+        }
       ]
     },
     {
@@ -116,6 +125,14 @@
       "tags": [],
       "tips": [
         "En klick smör gör moset krämigare. Ingen mängd är angiven, så det är bara ett tips. Under lock är ingen klockad vila."
+      ],
+      "equipment": [
+        {
+          "type": "kastrull_medelstor",
+          "ref": "kastrull_1",
+          "transition": "keep",
+          "offHeat": true
+        }
       ]
     },
     {
@@ -154,6 +171,11 @@
       ],
       "tips": [
         "Nötfärs är mappad till ground_beef (Köttfärs), inte blandfärs."
+      ],
+      "equipment": [
+        {
+          "type": "skal_stor"
+        }
       ]
     },
     {
@@ -182,6 +204,16 @@
       "tips": [
         "Köttbullarna är klara när de inte längre är rosa i mitten.",
         "12–14 min är hands-on vändning, därför duration 14 och wait 0. Oljan är en skvätt, inte den 1 msk som hör till såsen."
+      ],
+      "heat": "medelhög",
+      "stepHeat": {
+        "1": "medel"
+      },
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1"
+        }
       ]
     },
     {
@@ -249,6 +281,16 @@
       "tags": [],
       "tips": [
         "De 3–4 min är rörande stek, inte passiv wait."
+      ],
+      "heat": "medel",
+      "stepHeat": {
+        "0": "medellåg"
+      },
+      "equipment": [
+        {
+          "type": "kastrull_liten",
+          "sizeSource": "inferred"
+        }
       ]
     },
     {
@@ -307,6 +349,17 @@
       "tags": [],
       "tips": [
         "Löken steks hands-on (duration). Sjudningen 2–3 min är sista stegets wait 3, inte hopslagen med stektiden."
+      ],
+      "heat": "medelhög",
+      "stepHeat": {
+        "2": "medellåg"
+      },
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1",
+          "transition": "keep"
+        }
       ]
     },
     {

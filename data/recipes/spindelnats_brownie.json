@@ -1,6 +1,7 @@
 {
   "masterId": "spindelnats_brownie",
   "source": "hellofresh",
+  "rawId": "68c1989cf6559993160089dc",
   "createdAt": 1790852117,
   "basePortions": 4,
   "scalable": false,
@@ -45,11 +46,16 @@
       "duration": 1,
       "wait": 10,
       "tags": [
-        "no-timer"
+        "no-timer",
+        "resource"
       ],
       "tips": [
         "Ugnen tar vanligtvis 10–15 minuter att värmas upp."
-      ]
+      ],
+      "oven": {
+        "temp": 190,
+        "fanTemp": 170
+      }
     },
     {
       "id": "spindelnats_brownie__melted_chocolate",
@@ -98,11 +104,6 @@
       "outputName": "Gräddad brownie",
       "inputs": [
         {
-          "id": "spindelnats_brownie__preheated_oven",
-          "amount": 1,
-          "unit": "st"
-        },
-        {
           "id": "chocolate_cake_mix",
           "amount": 600,
           "unit": "g"
@@ -134,6 +135,21 @@
       "tags": [],
       "tips": [
         "Använd en provsticka: om stickan är torr är kakan färdig."
+      ],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "spindelnats_brownie__preheated_oven",
+          "slots": 1,
+          "temp": 190,
+          "fanTemp": 170
+        },
+        {
+          "type": "skal_stor"
+        },
+        {
+          "type": "bakform"
+        }
       ]
     },
     {

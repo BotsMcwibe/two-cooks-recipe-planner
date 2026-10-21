@@ -1,6 +1,7 @@
 {
   "masterId": "panerat_citronpepparflask",
   "source": "hellofresh",
+  "rawId": "669a2dd69b6afed05f6419e5",
   "createdAt": 1791037262,
   "basePortions": 4,
   "sharedPrep": [],
@@ -53,11 +54,16 @@
       "duration": 1,
       "wait": 12,
       "tags": [
-        "no-timer"
+        "no-timer",
+        "resource"
       ],
       "tips": [
         "Ugnen tar vanligtvis 10–15 minuter att värmas upp."
-      ]
+      ],
+      "oven": {
+        "temp": 240,
+        "fanTemp": 220
+      }
     },
     {
       "id": "panerat_citronpepparflask__prepped_potato_onion",
@@ -95,11 +101,6 @@
           "unit": "st"
         },
         {
-          "id": "panerat_citronpepparflask__preheated_oven",
-          "amount": 1,
-          "unit": "st"
-        },
-        {
           "id": "garlic_flakes",
           "amount": 8,
           "unit": "g"
@@ -118,11 +119,24 @@
       "steps": [
         "Placera {{panerat_citronpepparflask__prepped_potato_onion}} på två plåtar med bakplåtspapper.",
         "Blanda med olivolja, {{garlic_flakes}}, {{salt}} och en nypa {{pepper}}.",
-        "Rosta i {{panerat_citronpepparflask__preheated_oven}} i ca 30 min, tills det återstår 5 min av totalt 25–35 min."
+        "Rosta i ugnen i ca 30 min, tills det återstår 5 min av totalt 25–35 min."
       ],
       "duration": 4,
       "wait": 30,
-      "tags": []
+      "tags": [],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "panerat_citronpepparflask__preheated_oven",
+          "slots": 1,
+          "temp": 240,
+          "fanTemp": 220
+        },
+        {
+          "type": "plat",
+          "ref": "plat_1"
+        }
+      ]
     },
     {
       "id": "panerat_citronpepparflask__prepped_beans",
@@ -165,7 +179,14 @@
       ],
       "duration": 1,
       "wait": 5,
-      "tags": []
+      "tags": [],
+      "equipment": [
+        {
+          "type": "plat",
+          "ref": "plat_1",
+          "transition": "keep"
+        }
+      ]
     },
     {
       "id": "panerat_citronpepparflask__rinsed_rucola",
@@ -315,6 +336,13 @@
       "tips": [
         "Tillsätt extra olja vid behov så köttet inte fastnar. Stek i omgångar om det inte får plats i pannan.",
         "Köttet är färdiglagat när det är utan inslag av rosa."
+      ],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1"
+        }
       ]
     },
     {
@@ -352,6 +380,14 @@
       "wait": 0,
       "tags": [
         "master"
+      ],
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1",
+          "transition": "keep",
+          "offHeat": true
+        }
       ]
     }
   ]

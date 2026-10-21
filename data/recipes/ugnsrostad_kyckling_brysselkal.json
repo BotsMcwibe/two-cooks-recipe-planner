@@ -1,6 +1,7 @@
 {
   "masterId": "ugnsrostad_kyckling_brysselkal",
   "source": "hellofresh",
+  "rawId": "6a68917497f1e022091745d2",
   "createdAt": 1791040742,
   "basePortions": 4,
   "sharedPrep": [
@@ -72,11 +73,6 @@
       "outputName": "Ugnsrostad brysselkål",
       "inputs": [
         {
-          "id": "preheated_oven_220",
-          "amount": 1,
-          "unit": "st"
-        },
-        {
           "id": "ugnsrostad_kyckling_brysselkal__sliced_sprouts",
           "amount": 1,
           "unit": "st"
@@ -99,13 +95,27 @@
       ],
       "steps": [
         "Lägg {{ugnsrostad_kyckling_brysselkal__sliced_sprouts}} på en plåt med bakplåtspapper. Blanda med en skvätt {{olive_oil}}, {{salt}} och en nypa {{pepper}}.",
-        "Rosta i {{preheated_oven_220}} i 10–12 min, eller tills brysselkålen är gyllene."
+        "Rosta i ugnen i 10–12 min, eller tills brysselkålen är gyllene."
       ],
       "duration": 2,
       "wait": 12,
       "tags": [],
       "tips": [
         "Kycklingen rostas på samma plåt. Salt till grönsaker är 0,5 tsk. Olivoljan på plåten är skvätt, inte salladens 1 msk."
+      ],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "preheated_oven_220",
+          "slots": 1,
+          "temp": 220,
+          "fanTemp": 200
+        },
+        {
+          "type": "plat",
+          "ref": "plat_1",
+          "shared": true
+        }
       ]
     },
     {
@@ -113,11 +123,6 @@
       "name": "Rosta Kyckling",
       "outputName": "Ugnsrostad kyckling",
       "inputs": [
-        {
-          "id": "preheated_oven_220",
-          "amount": 1,
-          "unit": "st"
-        },
         {
           "id": "chicken_breast",
           "amount": 600,
@@ -146,7 +151,7 @@
       ],
       "steps": [
         "Lägg {{chicken_breast}} på plåten bredvid brysselkålen. Ringla över en skvätt {{olive_oil}} och krydda med {{jorden_runt}}, {{salt}} och en nypa {{pepper}}.",
-        "Rosta i {{preheated_oven_220}} i 10–12 min, eller tills kycklingen är genomstekt."
+        "Rosta i ugnen i 10–12 min, eller tills kycklingen är genomstekt."
       ],
       "duration": 2,
       "wait": 12,
@@ -154,6 +159,21 @@
       "tips": [
         "Jorden Runt är 8 g totalt och delas på mitten: 4 g här, 4 g i bulgur. 8 g är samma vid 3 och 4 portioner.",
         "Rostas på samma plåt som brysselkålen. Salt till kött är 0,5 tsk."
+      ],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "preheated_oven_220",
+          "slots": 1,
+          "temp": 220,
+          "fanTemp": 200
+        },
+        {
+          "type": "plat",
+          "ref": "plat_1",
+          "transition": "keep",
+          "shared": true
+        }
       ]
     },
     {
@@ -206,7 +226,14 @@
       ],
       "duration": 3,
       "wait": 10,
-      "tags": []
+      "tags": [],
+      "heat": "medellåg",
+      "equipment": [
+        {
+          "type": "kastrull_medelstor",
+          "sizeSource": "inferred"
+        }
+      ]
     },
     {
       "id": "ugnsrostad_kyckling_brysselkal__cabbage_apple_salad",
@@ -254,6 +281,11 @@
       ],
       "tips": [
         "Rödkål är 300 g vid både 3 och 4 portioner."
+      ],
+      "equipment": [
+        {
+          "type": "skal_stor"
+        }
       ]
     },
     {
@@ -309,6 +341,13 @@
       "tags": [],
       "tips": [
         "2–3 min är hands-on rostning, därför duration och wait 0."
+      ],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "stekpanna_liten",
+          "sizeSource": "inferred"
+        }
       ]
     },
     {

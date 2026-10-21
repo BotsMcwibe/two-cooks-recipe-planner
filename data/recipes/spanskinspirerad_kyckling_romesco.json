@@ -1,6 +1,7 @@
 {
   "masterId": "spanskinspirerad_kyckling_romesco",
   "source": "hellofresh",
+  "rawId": "66e968c7fc7cbf38fecf2d3f",
   "createdAt": 1791039093,
   "basePortions": 4,
   "sharedPrep": [],
@@ -46,11 +47,16 @@
       "duration": 1,
       "wait": 12,
       "tags": [
-        "no-timer"
+        "no-timer",
+        "resource"
       ],
       "tips": [
         "HF anger 240°C/220°C varmluft — lokal ugnsnode, inte preheated_oven_220 (220/200)."
-      ]
+      ],
+      "oven": {
+        "temp": 240,
+        "fanTemp": 220
+      }
     },
     {
       "id": "spanskinspirerad_kyckling_romesco__diced_potato",
@@ -77,11 +83,6 @@
       "outputName": "Örtrostad potatis",
       "inputs": [
         {
-          "id": "spanskinspirerad_kyckling_romesco__preheated_oven",
-          "amount": 1,
-          "unit": "st"
-        },
-        {
           "id": "spanskinspirerad_kyckling_romesco__diced_potato",
           "amount": 1,
           "unit": "st"
@@ -105,7 +106,7 @@
       "steps": [
         "Lägg {{spanskinspirerad_kyckling_romesco__diced_potato}} på en plåt med bakplåtspapper (använd flera plåtar om det blir för trångt).",
         "Blanda med olivolja, {{salt}}, {{dried_oregano}} och {{pepper}}.",
-        "Rosta i {{spanskinspirerad_kyckling_romesco__preheated_oven}} i 25–35 min, eller tills potatisen är gyllene."
+        "Rosta i ugnen i 25–35 min, eller tills potatisen är gyllene."
       ],
       "duration": 3,
       "wait": 35,
@@ -113,6 +114,18 @@
       "tips": [
         "Passiv rosttid 25–35 min → wait 35 (övre gräns). Sista steget äger timern.",
         "FLAG: olivolja till potatisen saknar mängd i yields (enda oljan 1 msk är märkt till stekning)."
+      ],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "spanskinspirerad_kyckling_romesco__preheated_oven",
+          "slots": 1,
+          "temp": 240,
+          "fanTemp": 220
+        },
+        {
+          "type": "plat"
+        }
       ]
     },
     {
@@ -134,6 +147,12 @@
       "tags": [],
       "tips": [
         "Hands-on rostning 3–4 min → duration 5 (inkl. finhack), ingen wait."
+      ],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "stekpanna_stor"
+        }
       ]
     },
     {
@@ -343,6 +362,12 @@
       "tips": [
         "Hands-on stekning (2+2+1–2 min) → duration 8, ingen wait.",
         "Kycklingen är färdiglagad när köttet inte längre är rosa i mitten."
+      ],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "stekpanna_stor"
+        }
       ]
     },
     {
@@ -378,6 +403,11 @@
       "duration": 3,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skal_stor"
+        }
       ]
     },
     {

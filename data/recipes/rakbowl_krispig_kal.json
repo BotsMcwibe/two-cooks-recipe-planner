@@ -1,6 +1,7 @@
 {
   "masterId": "rakbowl_krispig_kal",
   "source": "linas",
+  "rawId": "linas-131127",
   "createdAt": 1791056876,
   "basePortions": 4,
   "sharedPrep": [],
@@ -80,6 +81,13 @@
       "tips": [
         "Två rårader, 270 g och 135 g, är samma kastrull och är summerade till 405 g.",
         "5 min skölj är aktiv och ligger i duration. 10 min är sista stegets wait."
+      ],
+      "heat": "låg",
+      "equipment": [
+        {
+          "type": "kastrull_medelstor",
+          "sizeSource": "inferred"
+        }
       ]
     },
     {
@@ -248,6 +256,14 @@
       "tips": [
         "Varken rostning eller isbad har en minut, därför ingen wait.",
         "Sesam är 2 förp utan vikt. Rödkål är hel 300 g, inte den förskurna varianten."
+      ],
+      "heat": "medelhög",
+      "heatSource": "inferred",
+      "equipment": [
+        {
+          "type": "stekpanna_liten",
+          "sizeSource": "inferred"
+        }
       ]
     },
     {

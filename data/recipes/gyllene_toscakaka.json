@@ -1,6 +1,7 @@
 {
   "masterId": "gyllene_toscakaka",
   "source": "hellofresh",
+  "rawId": "66f569a1afc789d8d72bd02b",
   "createdAt": 1790854273,
   "basePortions": 4,
   "scalable": false,
@@ -45,25 +46,42 @@
       ],
       "duration": 1,
       "wait": 10,
-      "tags": ["no-timer"],
+      "tags": [
+        "no-timer",
+        "resource"
+      ],
       "tips": [
         "Ugnen tar vanligtvis 10–15 minuter att värmas upp.",
         "Ta ut bakmixen från kylskåpet 30 min innan den ska användas."
-      ]
+      ],
+      "oven": {
+        "temp": 190,
+        "fanTemp": 170
+      }
     },
     {
       "id": "gyllene_toscakaka__chopped_nuts",
       "name": "Hacka Nötter",
       "outputName": "Grovhackade mandlar och hasselnötter",
       "inputs": [
-        { "id": "almonds", "amount": 80, "unit": "g" },
-        { "id": "hazelnuts", "amount": 40, "unit": "g" }
+        {
+          "id": "almonds",
+          "amount": 80,
+          "unit": "g"
+        },
+        {
+          "id": "hazelnuts",
+          "amount": 40,
+          "unit": "g"
+        }
       ],
       "steps": [
         "Grovhacka {{almonds}} och {{hazelnuts}}."
       ],
       "duration": 3,
-      "tags": ["prep"],
+      "tags": [
+        "prep"
+      ],
       "tips": [
         "Nöthackningen kan göras medan kakan gräddas i första fasen."
       ]
@@ -73,8 +91,11 @@
       "name": "Forma och Börja Baka",
       "outputName": "Toscakaka (första fasen)",
       "inputs": [
-        { "id": "gyllene_toscakaka__preheated_oven", "amount": 1, "unit": "st" },
-        { "id": "sponge_cake_mix", "amount": 600, "unit": "g" }
+        {
+          "id": "sponge_cake_mix",
+          "amount": 600,
+          "unit": "g"
+        }
       ],
       "steps": [
         "Häll {{sponge_cake_mix}} i en rund bakform (20–22 cm i diameter) med bakplåtspapper och platta till med en slickepott.",
@@ -82,19 +103,55 @@
       ],
       "duration": 3,
       "wait": 20,
-      "tags": []
+      "tags": [],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "gyllene_toscakaka__preheated_oven",
+          "slots": 1,
+          "temp": 190,
+          "fanTemp": 170
+        },
+        {
+          "type": "bakform"
+        }
+      ]
     },
     {
       "id": "gyllene_toscakaka__tosca_topping",
       "name": "Gör Toscaglas",
       "outputName": "Toscaglas med nötter",
       "inputs": [
-        { "id": "butter", "amount": 4, "unit": "msk" },
-        { "id": "powdered_sugar", "amount": 50, "unit": "g" },
-        { "id": "syrup", "amount": 100, "unit": "g" },
-        { "id": "flour", "amount": 1, "unit": "msk" },
-        { "id": "milk", "amount": 1, "unit": "msk" },
-        { "id": "gyllene_toscakaka__chopped_nuts", "amount": 1, "unit": "st" }
+        {
+          "id": "butter",
+          "amount": 4,
+          "unit": "msk"
+        },
+        {
+          "id": "powdered_sugar",
+          "amount": 50,
+          "unit": "g"
+        },
+        {
+          "id": "syrup",
+          "amount": 100,
+          "unit": "g"
+        },
+        {
+          "id": "flour",
+          "amount": 1,
+          "unit": "msk"
+        },
+        {
+          "id": "milk",
+          "amount": 1,
+          "unit": "msk"
+        },
+        {
+          "id": "gyllene_toscakaka__chopped_nuts",
+          "amount": 1,
+          "unit": "st"
+        }
       ],
       "steps": [
         "Smält {{butter}} i en stor stekpanna på medelhög värme.",
@@ -105,6 +162,12 @@
       "tags": [],
       "tips": [
         "Toscaglasen kan göras medan kakan gräddas i första fasen."
+      ],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "stekpanna_stor"
+        }
       ]
     },
     {
@@ -112,8 +175,16 @@
       "name": "Toppa och Grädda Färdigt",
       "outputName": "Gräddad toscakaka",
       "inputs": [
-        { "id": "gyllene_toscakaka__cake_first_bake", "amount": 1, "unit": "st" },
-        { "id": "gyllene_toscakaka__tosca_topping", "amount": 1, "unit": "st" }
+        {
+          "id": "gyllene_toscakaka__cake_first_bake",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "gyllene_toscakaka__tosca_topping",
+          "amount": 1,
+          "unit": "st"
+        }
       ],
       "steps": [
         "Bre {{gyllene_toscakaka__tosca_topping}} över kakan.",
@@ -128,7 +199,11 @@
       "name": "Gyllene toscakaka med en twist",
       "outputName": "Gyllene toscakaka med en twist",
       "inputs": [
-        { "id": "gyllene_toscakaka__baked_cake", "amount": 1, "unit": "st" }
+        {
+          "id": "gyllene_toscakaka__baked_cake",
+          "amount": 1,
+          "unit": "st"
+        }
       ],
       "steps": [
         "Låt {{gyllene_toscakaka__baked_cake}} svalna innan servering.",
@@ -136,7 +211,9 @@
       ],
       "duration": 3,
       "wait": 0,
-      "tags": ["master"],
+      "tags": [
+        "master"
+      ],
       "tips": [
         "Låt kakan svalna innan servering så att toscaglasen sätter sig."
       ]

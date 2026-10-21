@@ -1,6 +1,7 @@
 {
   "masterId": "spaghetti_bolognese",
   "source": "hellofresh",
+  "rawId": "679b3dc933196a355d1e4a32",
   "createdAt": 1790852559,
   "basePortions": 4,
   "sharedPrep": [],
@@ -51,7 +52,14 @@
         "Tillsätt {{ground_beef}} och stek i 5 minuter."
       ],
       "duration": 9,
-      "tags": []
+      "tags": [],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "kastrull_stor",
+          "ref": "kastrull_2"
+        }
+      ]
     },
     {
       "id": "spaghetti_bolognese__bolognese_sauce",
@@ -85,7 +93,15 @@
       ],
       "duration": 1,
       "tags": [],
-      "wait": 20
+      "wait": 20,
+      "heat": "låg",
+      "equipment": [
+        {
+          "type": "kastrull_stor",
+          "ref": "kastrull_2",
+          "transition": "keep"
+        }
+      ]
     },
     {
       "id": "spaghetti_bolognese__cooked_pasta",
@@ -115,7 +131,14 @@
       ],
       "duration": 2,
       "tags": [],
-      "wait": 10
+      "wait": 10,
+      "heat": "hög",
+      "heatSource": "inferred",
+      "equipment": [
+        {
+          "type": "kastrull_stor"
+        }
+      ]
     },
     {
       "id": "spaghetti_bolognese",

@@ -1,6 +1,7 @@
 {
   "masterId": "asiatiska_raktacos",
   "source": "hellofresh",
+  "rawId": "6a71a469e8e5c2a7fd0dcfe2",
   "createdAt": 1791041462,
   "basePortions": 4,
   "sharedPrep": [],
@@ -154,6 +155,11 @@
       "duration": 3,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skal_medelstor"
+        }
       ]
     },
     {
@@ -194,6 +200,12 @@
         "Räkorna är klara när de är rosa utanpå och ogenomskinliga i mitten.",
         "2–3 min är hands-on, därför duration och wait 0. Olivoljan har ingen mängd i yields.",
         "Jorden Runt är 4 g vid både 3 och 4 portioner."
+      ],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "stekpanna_stor"
+        }
       ]
     },
     {

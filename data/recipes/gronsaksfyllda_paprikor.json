@@ -1,6 +1,7 @@
 {
   "masterId": "gronsaksfyllda_paprikor",
   "source": "hellofresh",
+  "rawId": "5d5924920b44ec001425eadd",
   "createdAt": 1790795820,
   "basePortions": 4,
   "sharedPrep": [],
@@ -38,11 +39,17 @@
       "duration": 1,
       "wait": 12,
       "tags": [
-        "no-timer"
+        "no-timer",
+        "resource"
       ],
       "tips": [
         "HF anger 200°C (inte 220) — lokal ugnsnode, inte preheated_oven_220."
-      ]
+      ],
+      "oven": {
+        "temp": 200,
+        "fanTemp": 180,
+        "fanTempSource": "derived"
+      }
     },
     {
       "id": "gronsaksfyllda_paprikor__cooked_pearl_couscous",
@@ -80,6 +87,14 @@
       "tags": [],
       "tips": [
         "FLAG: HF Buljong amount=4 unit infererad som ml (yield 2 var null/null). Tolkat som 4 g grönsaksbuljong. Vatten saknades i yields — 1,5 l för kokning/avhälning av 335 g pärlcouscous (pasta-stil)."
+      ],
+      "heat": "hög",
+      "heatSource": "inferred",
+      "equipment": [
+        {
+          "type": "kastrull_medelstor",
+          "sizeSource": "inferred"
+        }
       ]
     },
     {
@@ -103,6 +118,13 @@
       ],
       "tips": [
         "FLAG: HF Röd paprika amount=4 unit infererad som tsk (reason spice) — overridden till st; metoden kräver hela paprikor."
+      ],
+      "equipment": [
+        {
+          "type": "ugnsform",
+          "ref": "ugnsform_1",
+          "sizeSource": "inferred"
+        }
       ]
     },
     {
@@ -260,6 +282,12 @@
       "tags": [],
       "tips": [
         "FLAG: Pumpakärnor 1 tsk för både 2- och 4-portions yields (icke-linjär). Tex-Mex 6 tsk vid 4 portioner — HF-värde behållet."
+      ],
+      "heat": "medel",
+      "equipment": [
+        {
+          "type": "stekpanna_stor"
+        }
       ]
     },
     {
@@ -267,11 +295,6 @@
       "name": "Gratinera Fyllda Paprikor",
       "outputName": "Gratinerade fyllda paprikor",
       "inputs": [
-        {
-          "id": "gronsaksfyllda_paprikor__preheated_oven_200",
-          "amount": 1,
-          "unit": "st"
-        },
         {
           "id": "gronsaksfyllda_paprikor__prepped_peppers",
           "amount": 1,
@@ -301,13 +324,29 @@
       "steps": [
         "Fyll paprikahalvorna ({{gronsaksfyllda_paprikor__prepped_peppers}}) med {{gronsaksfyllda_paprikor__vegetable_filling}}. Pressa i fyllningen ordentligt så att du får plats med så mycket som möjligt.",
         "Toppa med {{grated_mozzarella}}, {{salt}} och {{pepper}}.",
-        "Gratinera på mellersta hyllan i {{gronsaksfyllda_paprikor__preheated_oven_200}} tills osten har blivit gyllenbrun, ca 20 min."
+        "Gratinera på mellersta hyllan i ugnen tills osten har blivit gyllenbrun, ca 20 min."
       ],
       "duration": 8,
       "wait": 20,
       "tags": [],
       "tips": [
         "Lägg även fyllning som blir över i ugnsformen."
+      ],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "gronsaksfyllda_paprikor__preheated_oven_200",
+          "slots": 1,
+          "temp": 200,
+          "fanTemp": 180,
+          "fanTempSource": "derived"
+        },
+        {
+          "type": "ugnsform",
+          "ref": "ugnsform_1",
+          "transition": "keep",
+          "sizeSource": "inferred"
+        }
       ]
     },
     {

@@ -1,6 +1,7 @@
 {
   "masterId": "pulled_pork_taquitos",
   "source": "hellofresh",
+  "rawId": "67af1ef728cb4b22b5761e52",
   "createdAt": 1790854403,
   "basePortions": 4,
   "sharedPrep": [],
@@ -45,11 +46,16 @@
       "duration": 1,
       "wait": 12,
       "tags": [
-        "no-timer"
+        "no-timer",
+        "resource"
       ],
       "tips": [
         "Ugnen tar vanligtvis 10–15 minuter att värmas upp."
-      ]
+      ],
+      "oven": {
+        "temp": 240,
+        "fanTemp": 220
+      }
     },
     {
       "id": "pulled_pork_taquitos__simmered_pork",
@@ -68,7 +74,14 @@
       ],
       "duration": 2,
       "wait": 12,
-      "tags": []
+      "tags": [],
+      "heat": "medel",
+      "equipment": [
+        {
+          "type": "kastrull_liten",
+          "sizeSource": "inferred"
+        }
+      ]
     },
     {
       "id": "pulled_pork_taquitos__pork_filling",
@@ -141,11 +154,6 @@
       "outputName": "Gräddade taquitos",
       "inputs": [
         {
-          "id": "pulled_pork_taquitos__preheated_oven",
-          "amount": 1,
-          "unit": "st"
-        },
-        {
           "id": "pulled_pork_taquitos__pork_filling",
           "amount": 1,
           "unit": "st"
@@ -173,7 +181,19 @@
       ],
       "duration": 5,
       "wait": 9,
-      "tags": []
+      "tags": [],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "pulled_pork_taquitos__preheated_oven",
+          "slots": 1,
+          "temp": 240,
+          "fanTemp": 220
+        },
+        {
+          "type": "plat"
+        }
+      ]
     },
     {
       "id": "pulled_pork_taquitos",

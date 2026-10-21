@@ -1,6 +1,7 @@
 {
   "masterId": "grekisk_notfarsmoussaka",
   "source": "hellofresh",
+  "rawId": "68c2e7a7f65599931600e695",
   "createdAt": 1791041815,
   "basePortions": 4,
   "sharedPrep": [],
@@ -53,12 +54,17 @@
       "duration": 1,
       "wait": 12,
       "tags": [
-        "no-timer"
+        "no-timer",
+        "resource"
       ],
       "tips": [
         "Ugnen tar vanligtvis 10–15 minuter att värmas upp.",
         "HF anger 240°C/220°C varmluft — lokal ugnsnode, inte preheated_oven_220."
-      ]
+      ],
+      "oven": {
+        "temp": 240,
+        "fanTemp": 220
+      }
     },
     {
       "id": "grekisk_notfarsmoussaka__sliced_aubergine",
@@ -85,11 +91,6 @@
       "outputName": "Rostad aubergine",
       "inputs": [
         {
-          "id": "grekisk_notfarsmoussaka__preheated_oven_240",
-          "amount": 1,
-          "unit": "st"
-        },
-        {
           "id": "grekisk_notfarsmoussaka__sliced_aubergine",
           "amount": 1,
           "unit": "st"
@@ -113,13 +114,25 @@
       "steps": [
         "Lägg {{grekisk_notfarsmoussaka__sliced_aubergine}} på en plåt med bakplåtspapper.",
         "Blanda med en generös skvätt {{olive_oil}} och krydda med {{salt}} och en nypa {{pepper}}.",
-        "Rosta i {{grekisk_notfarsmoussaka__preheated_oven_240}} i 10–12 min, eller tills auberginen är mjuk och lätt gyllene."
+        "Rosta i ugnen i 10–12 min, eller tills auberginen är mjuk och lätt gyllene."
       ],
       "duration": 2,
       "wait": 12,
       "tags": [],
       "tips": [
         "Olivoljan på plåten är en skvätt, inte stekoljans 1 msk."
+      ],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "grekisk_notfarsmoussaka__preheated_oven_240",
+          "slots": 1,
+          "temp": 240,
+          "fanTemp": 220
+        },
+        {
+          "type": "plat"
+        }
       ]
     },
     {
@@ -180,6 +193,13 @@
       "tags": [],
       "tips": [
         "3–4 min är hands-on stek, därför duration och wait 0. Nötfärs är 450 g vid både 3 och 4 portioner."
+      ],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1"
+        }
       ]
     },
     {
@@ -240,6 +260,15 @@
         "Stektiderna är hands-on i duration. Bara sjudningen på 1 min är wait, och den äger sista steget.",
         "Salt till grönsaker och salt till sås är 0,5 tsk vardera, samlat till 1 tsk.",
         "Krossade tomater 780 g och buljong 8 g är samma vid 3 och 4 portioner. Köttet ska vara genomstekt och utan rosa."
+      ],
+      "heat": "medelhög",
+      "heatSource": "inferred",
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1",
+          "transition": "keep"
+        }
       ]
     },
     {
@@ -247,11 +276,6 @@
       "name": "Gratinera Moussaka",
       "outputName": "Gratinerad moussaka",
       "inputs": [
-        {
-          "id": "grekisk_notfarsmoussaka__preheated_oven_240",
-          "amount": 1,
-          "unit": "st"
-        },
         {
           "id": "grekisk_notfarsmoussaka__meat_sauce",
           "amount": 1,
@@ -276,13 +300,26 @@
       "steps": [
         "Häll hälften av {{grekisk_notfarsmoussaka__meat_sauce}} i en ugnsform. Toppa med {{grekisk_notfarsmoussaka__roasted_aubergine}} och därefter resten av köttfärsen.",
         "Bre på {{mornay_sauce}} och strö över {{grated_cheese}}.",
-        "Gratinera i {{grekisk_notfarsmoussaka__preheated_oven_240}} i 10–15 min, tills toppen bubblar och osten är gyllene."
+        "Gratinera i ugnen i 10–15 min, tills toppen bubblar och osten är gyllene."
       ],
       "duration": 4,
       "wait": 15,
       "tags": [],
       "tips": [
         "Mornaysås är 200 g och osten 40 g vid både 3 och 4 portioner. Salladen görs under gratineringen och väntar inte inuti den här noden."
+      ],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "grekisk_notfarsmoussaka__preheated_oven_240",
+          "slots": 1,
+          "temp": 240,
+          "fanTemp": 220
+        },
+        {
+          "type": "ugnsform_stor",
+          "sizeSource": "inferred"
+        }
       ]
     },
     {

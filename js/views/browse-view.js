@@ -1,4 +1,4 @@
-import { loadPortionEnergyKcal } from '../data/loader.js?v=20261013a';
+import { loadPortionEnergyKcal } from '../data/loader.js?v=20261021eq';
 import {
   buildFilterChips,
   displayTags,

@@ -1,6 +1,7 @@
 {
   "masterId": "pastagratang_ziti",
   "source": "ica",
+  "rawId": "ica-715607",
   "createdAt": 1791654267,
   "basePortions": 4,
   "sharedPrep": [],
@@ -35,11 +36,17 @@
       "duration": 1,
       "wait": 10,
       "tags": [
-        "no-timer"
+        "no-timer",
+        "resource"
       ],
       "tips": [
         "ICA anger ingen uppvärmningstid; ugnen tar vanligtvis ca 10 minuter att bli varm."
-      ]
+      ],
+      "oven": {
+        "temp": 200,
+        "fanTemp": 180,
+        "fanTempSource": "derived"
+      }
     },
     {
       "id": "pastagratang_ziti__cooked_pasta",
@@ -61,6 +68,14 @@
       "tags": [],
       "tips": [
         "Pastan ska vara lite för hård eftersom den tillagas färdigt i ugnen. Penne eller rigatoni passar bra."
+      ],
+      "heat": "hög",
+      "heatSource": "inferred",
+      "equipment": [
+        {
+          "type": "kastrull_stor",
+          "sizeSource": "inferred"
+        }
       ]
     },
     {
@@ -114,7 +129,15 @@
         "Tillsätt {{pastagratang_ziti__chopped_onion_garlic}} och stek ytterligare 2 minuter."
       ],
       "duration": 6,
-      "tags": []
+      "tags": [],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1",
+          "sizeSource": "inferred"
+        }
+      ]
     },
     {
       "id": "pastagratang_ziti__tomato_sauce",
@@ -146,6 +169,15 @@
       "tags": [],
       "tips": [
         "ICA anger 2 förp krossade tomater à 390 g = 780 g."
+      ],
+      "heat": "medellåg",
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1",
+          "transition": "keep",
+          "sizeSource": "inferred"
+        }
       ]
     },
     {
@@ -235,7 +267,14 @@
         "Toppa med resten av mozzarellan."
       ],
       "duration": 5,
-      "tags": []
+      "tags": [],
+      "equipment": [
+        {
+          "type": "ugnsform_stor",
+          "ref": "ugnsform_1",
+          "sizeSource": "inferred"
+        }
+      ]
     },
     {
       "id": "pastagratang_ziti__baked_gratin",
@@ -246,19 +285,30 @@
           "id": "pastagratang_ziti__assembled_gratin",
           "amount": 1,
           "unit": "st"
-        },
-        {
-          "id": "pastagratang_ziti__preheated_oven_200",
-          "amount": 1,
-          "unit": "st"
         }
       ],
       "steps": [
-        "Tillaga {{pastagratang_ziti__assembled_gratin}} mitt i {{pastagratang_ziti__preheated_oven_200}} 20–25 minuter."
+        "Tillaga {{pastagratang_ziti__assembled_gratin}} mitt i ugnen 20–25 minuter."
       ],
       "duration": 1,
       "wait": 25,
-      "tags": []
+      "tags": [],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "pastagratang_ziti__preheated_oven_200",
+          "slots": 1,
+          "temp": 200,
+          "fanTemp": 180,
+          "fanTempSource": "derived"
+        },
+        {
+          "type": "ugnsform_stor",
+          "ref": "ugnsform_1",
+          "transition": "keep",
+          "sizeSource": "inferred"
+        }
+      ]
     },
     {
       "id": "pastagratang_ziti",

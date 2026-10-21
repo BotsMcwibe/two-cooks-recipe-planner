@@ -1,6 +1,7 @@
 {
   "masterId": "asiatisk_rakwok",
   "source": "hellofresh",
+  "rawId": "67f924eea3ffaf7fe8736639",
   "createdAt": 1791041301,
   "basePortions": 4,
   "sharedPrep": [],
@@ -104,6 +105,16 @@
       "tags": [],
       "tips": [
         "Riset ska ångkoka, så tjuvkika inte. 30 sek vitlöksfräs är hands-on i duration. 14 min är sista stegets wait."
+      ],
+      "heat": "medelhög",
+      "stepHeat": {
+        "1": "medellåg"
+      },
+      "equipment": [
+        {
+          "type": "kastrull_medelstor",
+          "ref": "kastrull_1"
+        }
       ]
     },
     {
@@ -130,6 +141,14 @@
       "tags": [],
       "tips": [
         "Vilan tills servering har ingen minuttid, därför wait 0. Inte hopslagen med de 14 minuterna."
+      ],
+      "equipment": [
+        {
+          "type": "kastrull_medelstor",
+          "ref": "kastrull_1",
+          "transition": "keep",
+          "offHeat": true
+        }
       ]
     },
     {
@@ -252,6 +271,12 @@
         "Sesam är 10 g totalt enligt råreceptet; en nypa av dem har redan gått till avokadon.",
         "Soja är 50 ml totalt, samma vid 3 och 4 portioner. Skvätten och resten är samma mängd, inte delad i påhittade milliliter.",
         "Räkorna är klara när de är rosa utanpå och ogenomskinliga i mitten."
+      ],
+      "heat": "medel",
+      "equipment": [
+        {
+          "type": "stekpanna_stor"
+        }
       ]
     },
     {

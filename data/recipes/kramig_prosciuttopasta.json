@@ -1,6 +1,7 @@
 {
   "masterId": "kramig_prosciuttopasta",
   "source": "hellofresh",
+  "rawId": "61b9c556dc65d108172fd87a",
   "createdAt": 1791036048,
   "basePortions": 4,
   "sharedPrep": [],
@@ -211,6 +212,14 @@
       "tips": [
         "Kokvattnet ska vara lika salt som havsvatten.",
         "Al dente betyder att pastan är genomkokt men fortfarande har tuggmotstånd."
+      ],
+      "heat": "hög",
+      "heatSource": "inferred",
+      "equipment": [
+        {
+          "type": "kastrull_stor",
+          "ref": "kastrull_1"
+        }
       ]
     },
     {
@@ -233,7 +242,15 @@
         "Häll av vattnet och lägg tillbaka {{kramig_prosciuttopasta__cooked_rigatoni}} i kastrullen tillsammans med lite {{olive_oil}}."
       ],
       "duration": 1,
-      "tags": []
+      "tags": [],
+      "equipment": [
+        {
+          "type": "kastrull_stor",
+          "ref": "kastrull_1",
+          "transition": "keep",
+          "offHeat": true
+        }
+      ]
     },
     {
       "id": "kramig_prosciuttopasta__fried_prosciutto",
@@ -257,7 +274,14 @@
       ],
       "duration": 4,
       "wait": 0,
-      "tags": []
+      "tags": [],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1"
+        }
+      ]
     },
     {
       "id": "kramig_prosciuttopasta__sauteed_veg",
@@ -301,7 +325,16 @@
       ],
       "duration": 1,
       "wait": 5,
-      "tags": []
+      "tags": [],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1",
+          "transition": "keep",
+          "after": "kramig_prosciuttopasta__fried_prosciutto"
+        }
+      ]
     },
     {
       "id": "kramig_prosciuttopasta__cream_sauce",

@@ -1,6 +1,7 @@
 {
   "masterId": "creamy_sweet_potato_dhal",
   "source": "hellofresh",
+  "rawId": "62873208890fcc7432e452fc",
   "createdAt": 1790854640,
   "basePortions": 4,
   "sharedPrep": [
@@ -63,11 +64,6 @@
       "outputName": "Rostad sötpotatis",
       "inputs": [
         {
-          "id": "preheated_oven_220",
-          "amount": 1,
-          "unit": "st"
-        },
-        {
           "id": "creamy_sweet_potato_dhal__diced_sweet_potato",
           "amount": 1,
           "unit": "st"
@@ -94,7 +90,19 @@
       ],
       "duration": 2,
       "wait": 20,
-      "tags": []
+      "tags": [],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "preheated_oven_220",
+          "slots": 1,
+          "temp": 220,
+          "fanTemp": 200
+        },
+        {
+          "type": "plat"
+        }
+      ]
     },
     {
       "id": "creamy_sweet_potato_dhal__rinsed_lentils",
@@ -191,7 +199,15 @@
         "Rör i {{coconut_milk}}, {{water}} och {{vegetable_bouillon}}."
       ],
       "duration": 6,
-      "tags": []
+      "tags": [],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "kastrull_medelstor",
+          "ref": "kastrull_1",
+          "sizeSource": "inferred"
+        }
+      ]
     },
     {
       "id": "creamy_sweet_potato_dhal__simmered_dhal",
@@ -234,6 +250,16 @@
       "tips": [
         "Tillsätt mer vatten om dhalen är för tjock.",
         "Smaka av efter tillagningstiden — om linserna inte är mjuka, sjud ytterligare ca 5 min."
+      ],
+      "heat": "hög",
+      "heatSource": "inferred",
+      "equipment": [
+        {
+          "type": "kastrull_medelstor",
+          "ref": "kastrull_1",
+          "transition": "keep",
+          "sizeSource": "inferred"
+        }
       ]
     },
     {
@@ -280,11 +306,6 @@
       "outputName": "Krispiga korianderchips",
       "inputs": [
         {
-          "id": "preheated_oven_220",
-          "amount": 1,
-          "unit": "st"
-        },
-        {
           "id": "tortillas",
           "amount": 4,
           "unit": "st"
@@ -307,6 +328,18 @@
         "Håll ett öga på chipsen så att de inte bränns vid.",
         "Rosta i omgångar om inte alla får plats, eller använd 2 plåtar med varmluft.",
         "Börja gärna när det återstår ca 10 min på dhalen."
+      ],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "preheated_oven_220",
+          "slots": 1,
+          "temp": 220,
+          "fanTemp": 200
+        },
+        {
+          "type": "plat"
+        }
       ]
     },
     {

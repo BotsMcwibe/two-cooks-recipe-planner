@@ -1,6 +1,7 @@
 {
   "masterId": "kottbullar_tomatsas",
   "source": "hellofresh",
+  "rawId": "6a8398386a08324360c8e062",
   "createdAt": 1790796736,
   "basePortions": 4,
   "sharedPrep": [],
@@ -53,7 +54,13 @@
       ],
       "duration": 2,
       "wait": 4,
-      "tags": []
+      "tags": [],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "stekpanna_stor"
+        }
+      ]
     },
     {
       "id": "kottbullar_tomatsas__pickled_shallot",
@@ -129,7 +136,17 @@
       ],
       "duration": 10,
       "wait": 4,
-      "tags": []
+      "tags": [],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "skal_stor"
+        },
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_2"
+        }
+      ]
     },
     {
       "id": "kottbullar_tomatsas__meatballs_tomato_sauce",
@@ -197,6 +214,14 @@
       "tags": [],
       "tips": [
         "Köttbullarna är färdiglagade när de inte längre är rosa i mitten."
+      ],
+      "heat": "medellåg",
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_2",
+          "transition": "keep"
+        }
       ]
     },
     {
@@ -242,7 +267,12 @@
         "Blanda tomater, schalottenlök, {{kottbullar_tomatsas__roasted_pine_nuts}}, salladsmix, {{olive_oil}} och {{salt}} i en stor skål."
       ],
       "duration": 5,
-      "tags": []
+      "tags": [],
+      "equipment": [
+        {
+          "type": "skal_stor"
+        }
+      ]
     },
     {
       "id": "kottbullar_tomatsas__cooked_pasta",
@@ -276,6 +306,13 @@
       "tips": [
         "Kokvattnet ska vara lika salt som havsvatten.",
         "Al dente betyder att pastan är genomkokt men fortfarande har tuggmotstånd."
+      ],
+      "heat": "hög",
+      "heatSource": "inferred",
+      "equipment": [
+        {
+          "type": "kastrull_stor"
+        }
       ]
     },
     {

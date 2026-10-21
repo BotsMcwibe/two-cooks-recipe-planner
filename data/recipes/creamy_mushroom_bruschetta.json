@@ -1,6 +1,7 @@
 {
   "masterId": "creamy_mushroom_bruschetta",
   "source": "hellofresh",
+  "rawId": "68de2747396adcc61a3ebf91",
   "createdAt": 1790852912,
   "basePortions": 4,
   "sharedPrep": [
@@ -98,11 +99,6 @@
       "outputName": "Rostad ciabatta",
       "inputs": [
         {
-          "id": "preheated_oven_220",
-          "amount": 1,
-          "unit": "st"
-        },
-        {
           "id": "ciabatta",
           "amount": 250,
           "unit": "g"
@@ -121,11 +117,23 @@
       "steps": [
         "Skär {{ciabatta}} i 1,5 cm tjocka skivor.",
         "Placera skivorna på en plåt med bakplåtspapper, ringla över {{olive_oil}} och krydda med {{salt}}.",
-        "Rosta i mitten av den förvärmda ugnen ({{preheated_oven_220}}) i 6–8 min, tills spröda och gyllene."
+        "Rosta i mitten av den förvärmda ugnen i 6–8 min, tills spröda och gyllene."
       ],
       "duration": 3,
       "wait": 8,
-      "tags": []
+      "tags": [],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "preheated_oven_220",
+          "slots": 1,
+          "temp": 220,
+          "fanTemp": 200
+        },
+        {
+          "type": "plat"
+        }
+      ]
     },
     {
       "id": "creamy_mushroom_bruschetta__mushroom_cream",
@@ -179,6 +187,12 @@
       "tags": [],
       "tips": [
         "Stekningen är hands-on (duration); sjuda är passiv wait med persilja i sista steget."
+      ],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "stekpanna_stor"
+        }
       ]
     },
     {

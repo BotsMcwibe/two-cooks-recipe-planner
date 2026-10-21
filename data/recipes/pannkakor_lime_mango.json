@@ -1,6 +1,7 @@
 {
   "masterId": "pannkakor_lime_mango",
   "source": "hellofresh",
+  "rawId": "65fd4ca578b19ca7c0a951f6",
   "createdAt": 1790852541,
   "basePortions": 4,
   "sharedPrep": [],
@@ -73,6 +74,11 @@
       ],
       "tips": [
         "Mangon marineras passivt medan du rostade kokos, blandar smet och steker pannkakor."
+      ],
+      "equipment": [
+        {
+          "type": "skal_medelstor"
+        }
       ]
     },
     {
@@ -95,6 +101,13 @@
       "tags": [],
       "tips": [
         "Rör om ofta så att kokosen inte bränns."
+      ],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1"
+        }
       ]
     },
     {
@@ -123,6 +136,11 @@
       ],
       "tips": [
         "HF anger ingen vila för smeten — blanda tills slät och stek direkt. Kan göras under rostningen av kokos."
+      ],
+      "equipment": [
+        {
+          "type": "skal_stor"
+        }
       ]
     },
     {
@@ -152,6 +170,15 @@
       "tips": [
         "Tillsätt mer smör vid behov mellan omgångarna.",
         "Håll färdiga pannkakor varma i ugnen vid 100 °C / 80 °C varmluft tills servering."
+      ],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1",
+          "transition": "keep",
+          "after": "pannkakor_lime_mango__roasted_coconut"
+        }
       ]
     },
     {

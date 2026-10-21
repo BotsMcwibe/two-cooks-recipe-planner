@@ -1,6 +1,7 @@
 {
   "masterId": "skansk_aggakaka",
   "source": "citygross",
+  "rawId": "citygross-R00585",
   "createdAt": 1791056383,
   "basePortions": 4,
   "sharedPrep": [
@@ -70,6 +71,14 @@
       "tags": [],
       "tips": [
         "Ingen tid i råsteget, därför ingen wait."
+      ],
+      "heat": "medelhög",
+      "heatSource": "inferred",
+      "equipment": [
+        {
+          "type": "stekpanna_liten",
+          "sizeSource": "inferred"
+        }
       ]
     },
     {
@@ -86,22 +95,30 @@
           "id": "skansk_aggakaka__batter",
           "amount": 1,
           "unit": "st"
-        },
-        {
-          "id": "preheated_oven_220",
-          "amount": 1,
-          "unit": "st"
         }
       ],
       "steps": [
         "Lägg {{skansk_aggakaka__bacon}} i en ugnsform.",
-        "Häll över {{skansk_aggakaka__batter}} och grädda i {{preheated_oven_220}} ca 20 min."
+        "Häll över {{skansk_aggakaka__batter}} och grädda i ugnen ca 20 min."
       ],
       "duration": 2,
       "wait": 20,
       "tags": [],
       "tips": [
         "Råtexten säger att tiden beror på formens storlek. 20 min är den angivna tiden, inte en gissning."
+      ],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "preheated_oven_220",
+          "slots": 1,
+          "temp": 220,
+          "fanTemp": 200
+        },
+        {
+          "type": "ugnsform",
+          "sizeSource": "inferred"
+        }
       ]
     },
     {

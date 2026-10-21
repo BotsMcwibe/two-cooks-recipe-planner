@@ -1,6 +1,7 @@
 {
   "masterId": "krispiga_kikartor_salladsbowl",
   "source": "hellofresh",
+  "rawId": "669a2dd39b6afed05f6419af",
   "createdAt": 1791040446,
   "basePortions": 4,
   "sharedPrep": [],
@@ -53,12 +54,17 @@
       "duration": 1,
       "wait": 12,
       "tags": [
-        "no-timer"
+        "no-timer",
+        "resource"
       ],
       "tips": [
         "Ugnen tar vanligtvis 10–15 minuter att värmas upp.",
         "HF anger 240°C/220°C varmluft — lokal ugnsnode, inte preheated_oven_220."
-      ]
+      ],
+      "oven": {
+        "temp": 240,
+        "fanTemp": 220
+      }
     },
     {
       "id": "krispiga_kikartor_salladsbowl__potato_chunks",
@@ -84,11 +90,6 @@
       "name": "Rosta Potatis",
       "outputName": "Rostad vitlökspotatis",
       "inputs": [
-        {
-          "id": "krispiga_kikartor_salladsbowl__preheated_oven_240",
-          "amount": 1,
-          "unit": "st"
-        },
         {
           "id": "krispiga_kikartor_salladsbowl__potato_chunks",
           "amount": 1,
@@ -118,13 +119,22 @@
       "steps": [
         "Lägg {{krispiga_kikartor_salladsbowl__potato_chunks}} på två plåtar med bakplåtspapper.",
         "Blanda med {{olive_oil}}, {{garlic_flakes}}, {{salt}} och en nypa {{pepper}}.",
-        "Rosta i {{krispiga_kikartor_salladsbowl__preheated_oven_240}} i 25–35 min, eller tills potatisen är gyllene."
+        "Rosta i ugnen i 25–35 min, eller tills potatisen är gyllene."
       ],
       "duration": 3,
       "wait": 35,
       "tags": [],
       "tips": [
         "Olivolja har ingen mängd i yields — 1 skvätt. Salt (steg 1) är 1 tsk."
+      ],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "krispiga_kikartor_salladsbowl__preheated_oven_240",
+          "slots": 1,
+          "temp": 240,
+          "fanTemp": 220
+        }
       ]
     },
     {
@@ -147,6 +157,12 @@
       "tags": [],
       "tips": [
         "Rostningen är hands-on så den inte bränner. 3–4 min ligger i duration, inte wait."
+      ],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "stekpanna_stor"
+        }
       ]
     },
     {
@@ -154,11 +170,6 @@
       "name": "Rosta Kikärtor",
       "outputName": "Krispiga kikärtor",
       "inputs": [
-        {
-          "id": "krispiga_kikartor_salladsbowl__preheated_oven_240",
-          "amount": 1,
-          "unit": "st"
-        },
         {
           "id": "chickpeas",
           "amount": 1,
@@ -183,7 +194,7 @@
       "steps": [
         "Häll av {{chickpeas}} och lägg dem på en plåt med bakplåtspapper. Platta till dem med en sked eller stekspade.",
         "Ringla över {{olive_oil}} och krydda med {{salt}} och en nypa {{pepper}}.",
-        "Rosta i {{krispiga_kikartor_salladsbowl__preheated_oven_240}} i 12–15 min, eller tills de är krispiga."
+        "Rosta i ugnen i 12–15 min, eller tills de är krispiga."
       ],
       "duration": 3,
       "wait": 15,
@@ -192,6 +203,18 @@
         "Kikärtorna delar ugn med potatisen men har egen klocka. Inte inbakade i potatisens 25–35 min.",
         "Yield Salt (steg 3) är 1 tsk. Stegtexten skriver ½ tsk vid 4 portioner. Yielden är använd.",
         "Enhet paket → pkt. Olivolja är 1 skvätt, ingen mängd i yields."
+      ],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "krispiga_kikartor_salladsbowl__preheated_oven_240",
+          "slots": 1,
+          "temp": 240,
+          "fanTemp": 220
+        },
+        {
+          "type": "plat"
+        }
       ]
     },
     {

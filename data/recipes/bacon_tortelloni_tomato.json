@@ -1,6 +1,7 @@
 {
   "masterId": "bacon_tortelloni_tomato",
   "source": "hellofresh",
+  "rawId": "6a68913797f1e02209174497",
   "createdAt": 1790795819,
   "basePortions": 4,
   "sharedPrep": [],
@@ -128,6 +129,13 @@
       "tags": [],
       "tips": [
         "Tillsätt en skvätt vatten om såsen blir för tjock."
+      ],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "stekpanna_medelstor",
+          "ref": "stekpanna_1"
+        }
       ]
     },
     {
@@ -169,6 +177,13 @@
       "tips": [
         "Kokvattnet ska vara lika salt som havsvatten.",
         "Al dente betyder att pastan är genomkokt men fortfarande har tuggmotstånd."
+      ],
+      "heat": "hög",
+      "heatSource": "inferred",
+      "equipment": [
+        {
+          "type": "kastrull_medelstor"
+        }
       ]
     },
     {
@@ -226,7 +241,16 @@
         "Rör ner det sparade pastavattnet ({{water}})."
       ],
       "duration": 2,
-      "tags": []
+      "tags": [],
+      "heat": "medelhög",
+      "heatSource": "inferred",
+      "equipment": [
+        {
+          "type": "stekpanna_medelstor",
+          "ref": "stekpanna_1",
+          "transition": "keep"
+        }
+      ]
     },
     {
       "id": "bacon_tortelloni_tomato",

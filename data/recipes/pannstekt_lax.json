@@ -1,6 +1,7 @@
 {
   "masterId": "pannstekt_lax",
   "source": "hellofresh",
+  "rawId": "6511645eadeb498a75282ae5",
   "createdAt": 1791035577,
   "basePortions": 4,
   "sharedPrep": [],
@@ -59,7 +60,15 @@
       ],
       "duration": 3,
       "wait": 15,
-      "tags": []
+      "tags": [],
+      "heat": "hög",
+      "heatSource": "inferred",
+      "equipment": [
+        {
+          "type": "kastrull_medelstor",
+          "ref": "kastrull_1"
+        }
+      ]
     },
     {
       "id": "pannstekt_lax__pesto_herbs",
@@ -190,6 +199,14 @@
       "tags": [],
       "tips": [
         "Laxen är klar när köttet är ogenomskinligt i mitten."
+      ],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "stekpanna_medelstor",
+          "ref": "stekpanna_1",
+          "sizeSource": "inferred"
+        }
       ]
     },
     {
@@ -235,7 +252,16 @@
       ],
       "duration": 2,
       "wait": 2,
-      "tags": []
+      "tags": [],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "stekpanna_medelstor",
+          "ref": "stekpanna_1",
+          "transition": "keep",
+          "sizeSource": "inferred"
+        }
+      ]
     },
     {
       "id": "pannstekt_lax__pesto_potatoes",
@@ -262,7 +288,15 @@
         "Rör ned {{pannstekt_lax__parsley_pesto}}, {{pannstekt_lax__rucola_shallot}} i {{pannstekt_lax__boiled_potatoes}} precis innan servering."
       ],
       "duration": 2,
-      "tags": []
+      "tags": [],
+      "equipment": [
+        {
+          "type": "kastrull_medelstor",
+          "ref": "kastrull_1",
+          "transition": "keep",
+          "offHeat": true
+        }
+      ]
     },
     {
       "id": "pannstekt_lax",

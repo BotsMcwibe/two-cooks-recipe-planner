@@ -1,6 +1,7 @@
 {
   "masterId": "fardig_daal_kachumber",
   "source": "linas",
+  "rawId": "linas-135102",
   "createdAt": 1791056876,
   "basePortions": 4,
   "sharedPrep": [],
@@ -113,6 +114,13 @@
       "tips": [
         "Daal är 4 förp utan vikt. \"Späd med lite vatten\" har ingen mängd, inget extra vatten påhittat.",
         "5–7 min ger wait 7, övre gränsen i sista steget."
+      ],
+      "heat": "medel",
+      "equipment": [
+        {
+          "type": "kastrull_liten",
+          "sizeSource": "inferred"
+        }
       ]
     },
     {

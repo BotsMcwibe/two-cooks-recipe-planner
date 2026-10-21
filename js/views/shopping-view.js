@@ -1,4 +1,4 @@
-import { ShoppingListAggregator } from '../core/shopping-list.js?v=20261012e';
+import { ShoppingListAggregator } from '../core/shopping-list.js?v=20261021eq';
 import { formatNiceAmount } from '../utils/helpers.js';
 import { escapeAttr, escapeHtml, isPantryIngredient, isScalable } from '../utils/catalog-ui.js?v=20261011u';
 
@@ -13,7 +13,7 @@ export class ShoppingSidebar {
    * @param {object} unitMap
    * @param {object} baseIngredientMap
    * @param {object} tagsData
-   * @param {import('../data/loader.js?v=20261013a').RecipeRepository} repository
+   * @param {import('../data/loader.js?v=20261021eq').RecipeRepository} repository
    */
   constructor(state, catalog, unitMap, baseIngredientMap, tagsData, repository) {
     this.state = state;

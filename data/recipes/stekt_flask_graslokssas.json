@@ -1,6 +1,7 @@
 {
   "masterId": "stekt_flask_graslokssas",
   "source": "hellofresh",
+  "rawId": "6481815cf0b225130ecebcf9",
   "createdAt": 1791035037,
   "basePortions": 4,
   "sharedPrep": [],
@@ -89,6 +90,14 @@
       "tips": [
         "Passiv koktid 11–13 min → wait 13 (övre gräns). Sista steget äger timern.",
         "Salt till kokvattnet har ingen mängd i yields — skriv inte över mosets 1 tsk."
+      ],
+      "heat": "hög",
+      "heatSource": "inferred",
+      "equipment": [
+        {
+          "type": "kastrull_medelstor",
+          "ref": "kastrull_1"
+        }
       ]
     },
     {
@@ -125,6 +134,15 @@
       "tips": [
         "FLAG: enheter ifyllda — mjölk msk (6 msk), smör msk (2 msk till moset), salt tsk (1 tsk) vid 4 portioner.",
         "Under lock till servering är ingen klockad vila — ingen wait."
+      ],
+      "heat": "medelhög",
+      "heatSource": "inferred",
+      "equipment": [
+        {
+          "type": "kastrull_medelstor",
+          "ref": "kastrull_1",
+          "transition": "keep"
+        }
       ]
     },
     {
@@ -227,6 +245,13 @@
       "tips": [
         "Stektiden 3–4 min är hands-on och ligger i duration, inte wait. Ställ-åt-sidan är invikt i sista steget så ingen kort sidohandling äger en timer.",
         "FLAG: smör msk (steg 3) ifylld — 2 msk vid 4 portioner, utöver mosets smör."
+      ],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1"
+        }
       ]
     },
     {
@@ -254,6 +279,15 @@
       "tips": [
         "2–3 min per sida är hands-on (vändning) och ligger i duration, inte wait.",
         "FLAG: olivolja saknas i yields — bara 'en skvätt vid behov'. Satt till 1 skvätt."
+      ],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1",
+          "transition": "keep",
+          "after": "stekt_flask_graslokssas__sauteed_mushrooms"
+        }
       ]
     },
     {
@@ -287,6 +321,15 @@
       "tips": [
         "Första sjudningen (1 min) är egen nod. Fläsk, crème fraiche och gräslök kommer i nästa nod så att den andra minuten inte blandas ihop med den här.",
         "FLAG: enheter ifyllda — vatten dl (1 dl), kycklingbuljong g (8 g vid 4 portioner; 4 g vid 2), salt tsk (1/2 tsk till såsen)."
+      ],
+      "heat": "medel",
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1",
+          "transition": "keep",
+          "after": "stekt_flask_graslokssas__seared_pork"
+        }
       ]
     },
     {

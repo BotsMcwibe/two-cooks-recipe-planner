@@ -1,6 +1,7 @@
 {
   "masterId": "beef_kofta_greek_salad",
   "source": "hellofresh",
+  "rawId": "6a6891b8640e6eb29c2ac8ec",
   "createdAt": 1790796623,
   "basePortions": 4,
   "sharedPrep": [],
@@ -47,11 +48,16 @@
       "duration": 1,
       "wait": 12,
       "tags": [
-        "no-timer"
+        "no-timer",
+        "resource"
       ],
       "tips": [
         "HF anger 240 °C / 220 °C varmluft — lokal ugnsnode, inte preheated_oven_220."
-      ]
+      ],
+      "oven": {
+        "temp": 240,
+        "fanTemp": 220
+      }
     },
     {
       "id": "beef_kofta_greek_salad__cut_fries",
@@ -77,11 +83,6 @@
       "name": "Rosta Pommes",
       "outputName": "Rostade kryddiga pommes",
       "inputs": [
-        {
-          "id": "beef_kofta_greek_salad__preheated_oven_240",
-          "amount": 1,
-          "unit": "st"
-        },
         {
           "id": "beef_kofta_greek_salad__cut_fries",
           "amount": 1,
@@ -111,11 +112,23 @@
       "steps": [
         "Placera {{beef_kofta_greek_salad__cut_fries}} på en plåt med bakplåtspapper.",
         "Blanda med {{olive_oil}}, {{buon_appetito}}, {{salt}} och en nypa {{pepper}}.",
-        "Rosta i {{beef_kofta_greek_salad__preheated_oven_240}} i 25–35 min, eller tills gyllene och mjuka."
+        "Rosta i ugnen i 25–35 min, eller tills gyllene och mjuka."
       ],
       "duration": 3,
       "wait": 30,
-      "tags": []
+      "tags": [],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "beef_kofta_greek_salad__preheated_oven_240",
+          "slots": 1,
+          "temp": 240,
+          "fanTemp": 220
+        },
+        {
+          "type": "plat"
+        }
+      ]
     },
     {
       "id": "beef_kofta_greek_salad__tzatziki",
@@ -286,6 +299,18 @@
       "tags": [],
       "tips": [
         "Köttet är färdiglagat när det inte längre är rosa i mitten."
+      ],
+      "heat": "medelhög",
+      "stepHeat": {
+        "3": "medel"
+      },
+      "equipment": [
+        {
+          "type": "skal_stor"
+        },
+        {
+          "type": "stekpanna_stor"
+        }
       ]
     },
     {
@@ -293,11 +318,6 @@
       "name": "Rosta Tunnbröd",
       "outputName": "Rostade tunnbröd med myntaolja",
       "inputs": [
-        {
-          "id": "beef_kofta_greek_salad__preheated_oven_240",
-          "amount": 1,
-          "unit": "st"
-        },
         {
           "id": "mint",
           "amount": 1,
@@ -323,11 +343,23 @@
         "Finhacka bladen från {{mint}}.",
         "Blanda mynta, {{olive_oil}} och {{salt}} i en liten skål.",
         "Placera {{flatbread}} på en plåt med bakplåtspapper och bre med myntaolja.",
-        "Värm i {{beef_kofta_greek_salad__preheated_oven_240}} i 2–3 min, eller tills rostat. Skär i kvartar."
+        "Värm i ugnen i 2–3 min, eller tills rostat. Skär i kvartar."
       ],
       "duration": 5,
       "wait": 3,
-      "tags": []
+      "tags": [],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "beef_kofta_greek_salad__preheated_oven_240",
+          "slots": 1,
+          "temp": 240,
+          "fanTemp": 220
+        },
+        {
+          "type": "plat"
+        }
+      ]
     },
     {
       "id": "beef_kofta_greek_salad",

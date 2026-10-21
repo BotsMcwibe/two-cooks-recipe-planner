@@ -1,6 +1,7 @@
 {
   "masterId": "coconut_soup",
   "source": "hellofresh",
+  "rawId": "5d592c2d3ebaf5000f127a21",
   "createdAt": 1790795820,
   "basePortions": 4,
   "sharedPrep": [],
@@ -97,6 +98,14 @@
       "tags": [],
       "tips": [
         "Använd inte mer nudlar än angivet — de sväller kraftigt."
+      ],
+      "heat": "hög",
+      "heatSource": "inferred",
+      "equipment": [
+        {
+          "type": "kastrull_medelstor",
+          "sizeSource": "inferred"
+        }
       ]
     },
     {
@@ -162,6 +171,13 @@
       "tags": [],
       "tips": [
         "Chili är stark — justera mängden efter smak."
+      ],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "kastrull_stor",
+          "ref": "kastrull_2"
+        }
       ]
     },
     {
@@ -208,7 +224,16 @@
       ],
       "duration": 3,
       "wait": 4,
-      "tags": []
+      "tags": [],
+      "heat": "medellåg",
+      "heatSource": "inferred",
+      "equipment": [
+        {
+          "type": "kastrull_stor",
+          "ref": "kastrull_2",
+          "transition": "keep"
+        }
+      ]
     },
     {
       "id": "coconut_soup__garnish",

@@ -1,6 +1,7 @@
 {
   "masterId": "ugnsbakade_gronsaker",
   "source": "hellofresh",
+  "rawId": "5d4431928ad74400140fcf54",
   "createdAt": 1790795820,
   "basePortions": 4,
   "sharedPrep": [
@@ -93,11 +94,6 @@
       "outputName": "Ugnsbakade grönsaker med ost",
       "inputs": [
         {
-          "id": "preheated_oven_220",
-          "amount": 1,
-          "unit": "st"
-        },
-        {
           "id": "ugnsbakade_gronsaker__chopped_pepper",
           "amount": 1,
           "unit": "st"
@@ -144,6 +140,19 @@
       "tags": [],
       "tips": [
         "Använd halva mängden salladsost här; resten går till ostdressingen."
+      ],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "preheated_oven_220",
+          "slots": 1,
+          "temp": 220,
+          "fanTemp": 200
+        },
+        {
+          "type": "ugnsform",
+          "sizeSource": "inferred"
+        }
       ]
     },
     {
@@ -304,11 +313,6 @@
       "outputName": "Rostad baguette",
       "inputs": [
         {
-          "id": "preheated_oven_220",
-          "amount": 1,
-          "unit": "st"
-        },
-        {
           "id": "baguette",
           "amount": 2,
           "unit": "st"
@@ -324,6 +328,18 @@
       "tags": [],
       "tips": [
         "Sätt in baguetten när det är 7–8 minuter kvar på grönsakernas tillagningsstid."
+      ],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "preheated_oven_220",
+          "slots": 1,
+          "temp": 220,
+          "fanTemp": 200
+        },
+        {
+          "type": "plat"
+        }
       ]
     },
     {

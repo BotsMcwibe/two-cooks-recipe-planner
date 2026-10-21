@@ -1,6 +1,7 @@
 {
   "masterId": "pear_goat_cheese_bruschetta",
   "source": "hellofresh",
+  "rawId": "66ed2fcb58baf82d2a964bf6",
   "createdAt": 1790854164,
   "basePortions": 4,
   "sharedPrep": [
@@ -114,7 +115,14 @@
       ],
       "duration": 4,
       "wait": 0,
-      "tags": []
+      "tags": [],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1"
+        }
+      ]
     },
     {
       "id": "pear_goat_cheese_bruschetta__fried_pear",
@@ -146,6 +154,15 @@
       "tags": [],
       "tips": [
         "Stekningen är hands-on (duration); ingen passiv wait."
+      ],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1",
+          "transition": "keep",
+          "after": "pear_goat_cheese_bruschetta__toasted_walnuts"
+        }
       ]
     },
     {
@@ -153,11 +170,6 @@
       "name": "Rosta Ciabatta med Getost",
       "outputName": "Rostad getostciabatta",
       "inputs": [
-        {
-          "id": "preheated_oven_220",
-          "amount": 1,
-          "unit": "st"
-        },
         {
           "id": "ciabatta",
           "amount": 250,
@@ -183,11 +195,23 @@
         "Halvera {{ciabatta}} på längden och sen ytterligare en gång till trekanter.",
         "Placera ciabatta på en plåt med bakplåtspapper och ringla över {{olive_oil}}.",
         "Bre {{goat_cheese}} på ciabatta och krydda med {{pepper}}.",
-        "Rosta i den förvärmda ugnen ({{preheated_oven_220}}) i 8–10 min, tills gyllene."
+        "Rosta i den förvärmda ugnen i 8–10 min, tills gyllene."
       ],
       "duration": 3,
       "wait": 10,
-      "tags": []
+      "tags": [],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "preheated_oven_220",
+          "slots": 1,
+          "temp": 220,
+          "fanTemp": 200
+        },
+        {
+          "type": "plat"
+        }
+      ]
     },
     {
       "id": "pear_goat_cheese_bruschetta",

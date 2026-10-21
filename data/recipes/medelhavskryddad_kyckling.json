@@ -1,6 +1,7 @@
 {
   "masterId": "medelhavskryddad_kyckling",
   "source": "hellofresh",
+  "rawId": "65fc563709492af87e81517f",
   "createdAt": 1791035423,
   "basePortions": 4,
   "sharedPrep": [],
@@ -53,11 +54,16 @@
       "duration": 1,
       "wait": 12,
       "tags": [
-        "no-timer"
+        "no-timer",
+        "resource"
       ],
       "tips": [
         "HF anger 240°C/220°C varmluft — lokal ugnsnode, inte preheated_oven_220 (220/200)."
-      ]
+      ],
+      "oven": {
+        "temp": 240,
+        "fanTemp": 220
+      }
     },
     {
       "id": "medelhavskryddad_kyckling__halved_potato",
@@ -83,11 +89,6 @@
       "name": "Rosta Potatis",
       "outputName": "Halvrostad souvlakipotatis",
       "inputs": [
-        {
-          "id": "medelhavskryddad_kyckling__preheated_oven",
-          "amount": 1,
-          "unit": "st"
-        },
         {
           "id": "medelhavskryddad_kyckling__halved_potato",
           "amount": 1,
@@ -124,6 +125,19 @@
       "tags": [],
       "tips": [
         "Övre gränsen av 25–35 min minus de sista 15 min ger 20 min i första fasen."
+      ],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "medelhavskryddad_kyckling__preheated_oven",
+          "slots": 1,
+          "temp": 240,
+          "fanTemp": 220
+        },
+        {
+          "type": "plat",
+          "ref": "plat_1"
+        }
       ]
     },
     {
@@ -234,7 +248,14 @@
       ],
       "duration": 2,
       "wait": 15,
-      "tags": []
+      "tags": [],
+      "equipment": [
+        {
+          "type": "plat",
+          "ref": "plat_1",
+          "transition": "keep"
+        }
+      ]
     },
     {
       "id": "medelhavskryddad_kyckling__seasoned_chicken",
@@ -276,11 +297,6 @@
           "unit": "st"
         },
         {
-          "id": "medelhavskryddad_kyckling__preheated_oven",
-          "amount": 1,
-          "unit": "st"
-        },
-        {
           "id": "olive_oil",
           "amount": 1,
           "unit": "skvätt"
@@ -298,7 +314,23 @@
       "tips": [
         "Tvätta händer och köksredskap noggrant efter hantering av rå kyckling.",
         "Kycklingen är färdiglagad när köttet inte längre är rosa i mitten."
-      ]
+      ],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "medelhavskryddad_kyckling__preheated_oven",
+          "slots": 1,
+          "temp": 240,
+          "fanTemp": 220
+        },
+        {
+          "type": "stekpanna_stor"
+        },
+        {
+          "type": "plat"
+        }
+      ],
+      "heat": "medelhög"
     },
     {
       "id": "medelhavskryddad_kyckling__lemon_yoghurt",
@@ -370,6 +402,13 @@
       "wait": 0,
       "tags": [
         "master"
+      ],
+      "equipment": [
+        {
+          "type": "plat",
+          "ref": "plat_1",
+          "transition": "keep"
+        }
       ]
     }
   ]

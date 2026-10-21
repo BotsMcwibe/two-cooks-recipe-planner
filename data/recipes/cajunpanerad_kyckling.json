@@ -1,6 +1,7 @@
 {
   "masterId": "cajunpanerad_kyckling",
   "source": "hellofresh",
+  "rawId": "6593e313aa12a55eb352a27b",
   "createdAt": 1791036641,
   "basePortions": 4,
   "sharedPrep": [
@@ -74,11 +75,6 @@
           "unit": "st"
         },
         {
-          "id": "preheated_oven_220",
-          "amount": 1,
-          "unit": "st"
-        },
-        {
           "id": "mamas_favorit",
           "amount": 8,
           "unit": "g"
@@ -86,7 +82,7 @@
       ],
       "steps": [
         "Lägg {{cajunpanerad_kyckling__diced_potato}} på en plåt med bakplåtspapper (2 plåtar för 4 portioner). Blanda med olivolja, {{mamas_favorit}}, salt och peppar.",
-        "Rosta i {{preheated_oven_220}} i 25–35 min, eller tills potatisen är gyllene."
+        "Rosta i ugnen i 25–35 min, eller tills potatisen är gyllene."
       ],
       "duration": 3,
       "wait": 35,
@@ -94,6 +90,18 @@
       "tips": [
         "Passiv rosttid 25–35 min → wait 35 (övre gräns). Sista steget äger timern.",
         "FLAG: olivolja, salt och peppar till potatisen saknar mängd i yields. Den enda olivoljan (2 msk) är märkt steg 4 och används till stekningen."
+      ],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "preheated_oven_220",
+          "slots": 1,
+          "temp": 220,
+          "fanTemp": 200
+        },
+        {
+          "type": "plat"
+        }
       ]
     },
     {
@@ -227,6 +235,12 @@
       "tips": [
         "Aktiv stektid (3–4 min per sida) ligger i duration, inte wait.",
         "Kycklingen är klar när köttet är vitt och utan rosa."
+      ],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "stekpanna_stor"
+        }
       ]
     },
     {

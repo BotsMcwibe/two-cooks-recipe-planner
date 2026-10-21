@@ -1,6 +1,7 @@
 {
   "masterId": "prosciutto_pita_pizza",
   "source": "hellofresh",
+  "rawId": "66b5fb06b70d6250be604d13",
   "createdAt": 1790853972,
   "basePortions": 4,
   "sharedPrep": [],
@@ -44,12 +45,17 @@
       "duration": 1,
       "wait": 12,
       "tags": [
-        "no-timer"
+        "no-timer",
+        "resource"
       ],
       "tips": [
         "HF anger 200°C/180°C varmluft — lokal ugnsnode, inte preheated_oven_220.",
         "Ugnen tar vanligtvis 10–15 minuter att värmas upp."
-      ]
+      ],
+      "oven": {
+        "temp": 200,
+        "fanTemp": 180
+      }
     },
     {
       "id": "prosciutto_pita_pizza__chopped_walnuts",
@@ -143,11 +149,6 @@
       "outputName": "Rostade pitabröd med ost",
       "inputs": [
         {
-          "id": "prosciutto_pita_pizza__preheated_oven_200",
-          "amount": 1,
-          "unit": "st"
-        },
-        {
           "id": "pita_bread",
           "amount": 2,
           "unit": "st"
@@ -161,11 +162,23 @@
       "steps": [
         "Placera {{pita_bread}} på bakplåtspapper direkt på gallret.",
         "Strö över {{grated_cheese}}.",
-        "Rosta i den förvärmda ugnen ({{prosciutto_pita_pizza__preheated_oven_200}}) i 3–4 min, eller tills uppvärmda."
+        "Rosta i den förvärmda ugnen i 3–4 min, eller tills uppvärmda."
       ],
       "duration": 2,
       "wait": 4,
-      "tags": []
+      "tags": [],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "prosciutto_pita_pizza__preheated_oven_200",
+          "slots": 1,
+          "temp": 200,
+          "fanTemp": 180
+        },
+        {
+          "type": "galler"
+        }
+      ]
     },
     {
       "id": "prosciutto_pita_pizza",

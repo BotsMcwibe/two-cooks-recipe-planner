@@ -1,6 +1,7 @@
 {
   "masterId": "stekt_kolja_dragonsas",
   "source": "hellofresh",
+  "rawId": "63be847d7c361f9347ada82b",
   "createdAt": 1791039812,
   "basePortions": 4,
   "sharedPrep": [],
@@ -48,12 +49,17 @@
       "duration": 1,
       "wait": 12,
       "tags": [
-        "no-timer"
+        "no-timer",
+        "resource"
       ],
       "tips": [
         "Ugnen tar vanligtvis 10–15 minuter att värmas upp.",
         "HF anger 240°C/220°C varmluft — lokal ugnsnode, inte preheated_oven_220 (220/200)."
-      ]
+      ],
+      "oven": {
+        "temp": 240,
+        "fanTemp": 220
+      }
     },
     {
       "id": "stekt_kolja_dragonsas__potato_wedges",
@@ -80,11 +86,6 @@
       "outputName": "Halvrostad potatis",
       "inputs": [
         {
-          "id": "stekt_kolja_dragonsas__preheated_oven_240",
-          "amount": 1,
-          "unit": "st"
-        },
-        {
           "id": "stekt_kolja_dragonsas__potato_wedges",
           "amount": 1,
           "unit": "st"
@@ -108,7 +109,7 @@
       "steps": [
         "Placera {{stekt_kolja_dragonsas__potato_wedges}} på ena sidan av en plåt med bakplåtspapper.",
         "Blanda med {{olive_oil}}, {{salt}} och en nypa {{pepper}}.",
-        "Rosta i {{stekt_kolja_dragonsas__preheated_oven_240}} i ca 20 min, tills det återstår 15 min av totalt 25–35 min."
+        "Rosta i ugnen i ca 20 min, tills det återstår 15 min av totalt 25–35 min."
       ],
       "duration": 3,
       "wait": 20,
@@ -116,6 +117,19 @@
       "tips": [
         "Använd fler plåtar om det blir för trångt.",
         "Första fasen är övre gränsen 35 min minus de 15 min som återstår när broccoli och rädisor läggs på."
+      ],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "stekt_kolja_dragonsas__preheated_oven_240",
+          "slots": 1,
+          "temp": 240,
+          "fanTemp": 220
+        },
+        {
+          "type": "plat",
+          "ref": "plat_1"
+        }
       ]
     },
     {
@@ -254,7 +268,21 @@
       ],
       "duration": 2,
       "wait": 15,
-      "tags": []
+      "tags": [],
+      "equipment": [
+        {
+          "type": "plat",
+          "ref": "plat_1",
+          "transition": "keep"
+        },
+        {
+          "type": "ugn",
+          "after": "stekt_kolja_dragonsas__preheated_oven_240",
+          "slots": 1,
+          "temp": 240,
+          "fanTemp": 220
+        }
+      ]
     },
     {
       "id": "stekt_kolja_dragonsas__pan_fried_haddock",
@@ -309,6 +337,15 @@
       "tips": [
         "Fisken är klar när fiskköttet är vitt och ogenomskinligt och lätt faller isär.",
         "Starta stekningen när broccoli och rädisor sätts in — den behöver inte vänta på att ugnen är klar."
+      ],
+      "heat": "medelhög",
+      "stepHeat": {
+        "3": "medel"
+      },
+      "equipment": [
+        {
+          "type": "stekpanna_stor"
+        }
       ]
     },
     {

@@ -1,6 +1,7 @@
 {
   "masterId": "avocado_smoothie",
   "source": "hellofresh",
+  "rawId": "67c08a226c214d706c770c24",
   "createdAt": 1790854508,
   "basePortions": 4,
   "sharedPrep": [],
@@ -102,6 +103,11 @@
       ],
       "tips": [
         "Tillsätt några isbitar när du mixar för en kallare och fylligare smoothie."
+      ],
+      "equipment": [
+        {
+          "type": "mixer"
+        }
       ]
     },
     {

@@ -1,6 +1,7 @@
 {
   "masterId": "kramig_medelhavs_kyckling",
   "source": "hellofresh",
+  "rawId": "6511645d3e0981e84af20618",
   "createdAt": 1791038921,
   "basePortions": 4,
   "sharedPrep": [],
@@ -104,7 +105,14 @@
       ],
       "duration": 3,
       "wait": 10,
-      "tags": []
+      "tags": [],
+      "heat": "medel",
+      "equipment": [
+        {
+          "type": "kastrull_medelstor",
+          "sizeSource": "inferred"
+        }
+      ]
     },
     {
       "id": "kramig_medelhavs_kyckling__chopped_tomato",
@@ -197,6 +205,14 @@
       "tags": [],
       "tips": [
         "Tvätta händer och redskap efter rå kyckling. Färdig när köttet inte längre är rosa i mitten."
+      ],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1",
+          "sizeSource": "inferred"
+        }
       ]
     },
     {
@@ -251,7 +267,17 @@
       ],
       "duration": 1,
       "wait": 2,
-      "tags": []
+      "tags": [],
+      "heat": "medellåg",
+      "heatSource": "inferred",
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1",
+          "transition": "keep",
+          "sizeSource": "inferred"
+        }
+      ]
     },
     {
       "id": "kramig_medelhavs_kyckling__bulgur_med_gronsaker",

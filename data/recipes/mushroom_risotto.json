@@ -1,6 +1,7 @@
 {
   "masterId": "mushroom_risotto",
   "source": "hellofresh",
+  "rawId": "5d4054bc9fe95c000e6a0b11",
   "createdAt": 1790852559,
   "basePortions": 4,
   "sharedPrep": [],
@@ -208,7 +209,13 @@
         "Häll i {{risotto_rice}} och {{vegetable_bouillon}}, och fräs i 1 min."
       ],
       "duration": 8,
-      "tags": []
+      "tags": [],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "stekpanna_stor"
+        }
+      ]
     },
     {
       "id": "mushroom_risotto__cooked_risotto",

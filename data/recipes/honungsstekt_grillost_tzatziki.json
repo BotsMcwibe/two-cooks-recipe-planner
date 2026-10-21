@@ -1,6 +1,7 @@
 {
   "masterId": "honungsstekt_grillost_tzatziki",
   "source": "hellofresh",
+  "rawId": "6502f25453d80a036210ed91",
   "createdAt": 1791040575,
   "basePortions": 4,
   "sharedPrep": [
@@ -65,11 +66,6 @@
       "outputName": "Halvrostade oreganopommes",
       "inputs": [
         {
-          "id": "preheated_oven_220",
-          "amount": 1,
-          "unit": "st"
-        },
-        {
           "id": "honungsstekt_grillost_tzatziki__cut_fries",
           "amount": 1,
           "unit": "st"
@@ -98,7 +94,7 @@
       "steps": [
         "Lägg {{honungsstekt_grillost_tzatziki__cut_fries}} på en plåt med bakplåtspapper.",
         "Blanda med {{olive_oil}}, {{dried_oregano}}, en nypa {{salt}} och {{pepper}}.",
-        "Rosta i {{preheated_oven_220}} i ca 25 min, tills det återstår 5 min av totalt 25–30 min."
+        "Rosta i ugnen i ca 25 min, tills det återstår 5 min av totalt 25–30 min."
       ],
       "duration": 3,
       "wait": 25,
@@ -106,6 +102,18 @@
       "tips": [
         "Första fasen är övre gränsen 30 min minus de 5 min som återstår när halloumin steks.",
         "Oregano är 1 g (fylld enhet). Stegtexten säger 1/2 paket vid 2 portioner. Olivolja, salt och peppar är stjärnmärkta utan mängd."
+      ],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "preheated_oven_220",
+          "slots": 1,
+          "temp": 220,
+          "fanTemp": 200
+        },
+        {
+          "type": "plat"
+        }
       ]
     },
     {
@@ -151,11 +159,6 @@
       "outputName": "Rostade körsbärstomater",
       "inputs": [
         {
-          "id": "preheated_oven_220",
-          "amount": 1,
-          "unit": "st"
-        },
-        {
           "id": "honungsstekt_grillost_tzatziki__halved_tomatoes",
           "amount": 1,
           "unit": "st"
@@ -179,13 +182,25 @@
       "steps": [
         "Lägg {{honungsstekt_grillost_tzatziki__halved_tomatoes}} på en ny plåt med bakplåtspapper.",
         "Blanda med en generös skvätt {{olive_oil}}, en nypa {{salt}} och {{pepper}}.",
-        "Rosta i {{preheated_oven_220}} i 15–20 min."
+        "Rosta i ugnen i 15–20 min."
       ],
       "duration": 2,
       "wait": 20,
       "tags": [],
       "tips": [
         "Egen klocka, inte hopslagen med pommesens 25–30 min."
+      ],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "preheated_oven_220",
+          "slots": 1,
+          "temp": 220,
+          "fanTemp": 200
+        },
+        {
+          "type": "plat"
+        }
       ]
     },
     {
@@ -383,6 +398,12 @@
       "tags": [],
       "tips": [
         "2 min per sida är hands-on stek, därför duration och wait 0. Honungen går på under sista minuten, inte som egen klocka."
+      ],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "stekpanna_stor"
+        }
       ]
     },
     {

@@ -1,23 +1,23 @@
 import { AppState } from './core/state.js?v=20261013sh';
 import { parseHash, setHash } from './core/router.js?v=20261013sk';
-import { loadStaticData, RecipeRepository } from './data/loader.js?v=20261013a';
+import { loadStaticData, RecipeRepository } from './data/loader.js?v=20261021eq';
 import { AppShell } from './views/app-shell.js?v=20261013sk';
 import { RecipeChrome } from './views/recipe-selector.js?v=20261011u';
 import { isScalable } from './utils/catalog-ui.js?v=20261011u';
-import { BrowseView } from './views/browse-view.js?v=20261013ct';
-import { OverviewModal } from './views/overview-modal.js?v=20261013f';
-import { FlowGraph } from './views/flow-graph.js?v=20261011u';
-import { CookingView } from './views/cooking-view.js?v=20261013f';
-import { ShoppingSidebar } from './views/shopping-view.js?v=20261013sh';
+import { BrowseView } from './views/browse-view.js?v=20261021eq';
+import { OverviewModal } from './views/overview-modal.js?v=20261021eq';
+import { FlowGraph } from './views/flow-graph.js?v=20261021eq';
+import { CookingView } from './views/cooking-view.js?v=20261021eq';
+import { ShoppingSidebar } from './views/shopping-view.js?v=20261021eq';
 import { Timer } from './views/timer.js';
 import { spiceMixTogglesHtml } from './views/spice-mix-ui.js?v=20261012e';
 import { setMixMissing } from './core/spice-prefs.js?v=20261013a';
 import { SpiceView } from './views/spice-view.js?v=20261014a';
 import { PantryView } from './views/pantry-view.js?v=20261013tx2';
 import * as UserState from './core/user-recipe-state.js?v=20261013b';
-import { initSync, hasAuthRedirect } from './core/sync.js?v=20261013ko';
-import { AccountView } from './views/account-view.js?v=20261013ko';
-import { initAuthUi } from './views/auth-ui.js?v=20261013ko';
+import { initSync, hasAuthRedirect } from './core/sync.js?v=20261021eq';
+import { AccountView } from './views/account-view.js?v=20261021eq';
+import { initAuthUi } from './views/auth-ui.js?v=20261021eq';
 import { initThemeToggle } from './utils/theme.js?v=20261013b';
 import { initBackToTop } from './utils/back-to-top.js?v=20261011t';
 
@@ -317,6 +317,12 @@ async function bootstrap() {
       console.warn('[kryddmix] reload failed', err);
     }
     shoppingSidebar.render();
+  });
+
+  // Kitchen profile (plåtar / varmluft) changes the cook schedule and oven temperatures
+  window.addEventListener('kitchenchange', () => {
+    modal.refreshEquipment();
+    if (state.currentPhase === 'cooking') updateUI({ softUpdate: false, preserveScroll: true });
   });
 
   shell.setFocusShoppingHandler(() => shoppingSidebar.focus());

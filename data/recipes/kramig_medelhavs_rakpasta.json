@@ -1,6 +1,7 @@
 {
   "masterId": "kramig_medelhavs_rakpasta",
   "source": "hellofresh",
+  "rawId": "64fb1e6771b62ce12834188d",
   "createdAt": 1791036851,
   "basePortions": 4,
   "sharedPrep": [],
@@ -123,6 +124,14 @@
       "tips": [
         "Kokvattnet ska vara lika salt som havsvatten.",
         "Al dente betyder att pastan är genomkokt men fortfarande har tuggmotstånd."
+      ],
+      "heat": "hög",
+      "heatSource": "inferred",
+      "equipment": [
+        {
+          "type": "kastrull_stor",
+          "ref": "kastrull_1"
+        }
       ]
     },
     {
@@ -140,7 +149,15 @@
         "Skopa upp ca 2 dl pastavatten och ställ åt sidan. Häll av resten och lägg tillbaka {{kramig_medelhavs_rakpasta__cooked_spaghetti}} i kastrullen."
       ],
       "duration": 1,
-      "tags": []
+      "tags": [],
+      "equipment": [
+        {
+          "type": "kastrull_stor",
+          "ref": "kastrull_1",
+          "transition": "keep",
+          "offHeat": true
+        }
+      ]
     },
     {
       "id": "kramig_medelhavs_rakpasta__fried_shrimp",
@@ -197,6 +214,13 @@
       "tags": [],
       "tips": [
         "Räkorna är färdiga när de är rosa utanpå och ogenomskinliga i mitten."
+      ],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1"
+        }
       ]
     },
     {
@@ -236,7 +260,15 @@
       ],
       "duration": 1,
       "wait": 2,
-      "tags": []
+      "tags": [],
+      "heat": "medel",
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1",
+          "transition": "keep"
+        }
+      ]
     },
     {
       "id": "kramig_medelhavs_rakpasta",

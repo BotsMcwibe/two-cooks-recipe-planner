@@ -1,6 +1,7 @@
 {
   "masterId": "vietnamesisk_rakbowl_vitloksnudlar",
   "source": "hellofresh",
+  "rawId": "66e9435b00a3edabf7af994c",
   "createdAt": 1791038018,
   "basePortions": 4,
   "sharedPrep": [],
@@ -65,6 +66,13 @@
       "tags": [],
       "tips": [
         "Vattnet ska vara lika salt som havsvatten."
+      ],
+      "heat": "hög",
+      "heatSource": "inferred",
+      "equipment": [
+        {
+          "type": "kastrull_stor"
+        }
       ]
     },
     {
@@ -213,6 +221,11 @@
       "duration": 8,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skal_stor"
+        }
       ]
     },
     {
@@ -301,6 +314,12 @@
       "tags": [],
       "tips": [
         "Räkorna är färdiga när de är rosa utanpå och ogenomskinliga i mitten."
+      ],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "stekpanna_stor"
+        }
       ]
     },
     {

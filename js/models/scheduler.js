@@ -14,9 +14,21 @@
  *   for trivial ≤2 min steps). Otherwise it goes to the free cook with the least
  *   hands-on time so far (P1 on a full tie). If keeping steps with their cook would
  *   cost more than AFFINITY_TOLERANCE minutes overall, the plain assignment is used.
+ * - Equipment (SCHEMA.md "Equipment, heat & resources"): equipment[].after is a dependency
+ *   like an input (preheated oven before baking, previous user of a reused pan), but not food.
+ *   Oven uses are limited by the kitchen profile (config.kitchen = { ovenTrays, ovenFan }):
+ *   concurrent uses may not need more than ovenTrays trays (a `ref`'d plåt counts once), and
+ *   uses at different effective temperatures/modes may not overlap. A later use waits for the
+ *   earlier one (same rule and [start, end) intervals as scripts/check-equipment.mjs).
+ * - Preppa först: "Ta fram" nodes (soften butter, bring meat to room temperature) go first so
+ *   their 30 min wait starts early.
  */
 
+import { effectiveOven, isResource, recipeAfterIds, typeInfo } from '../core/equipment.js?v=20261021eq';
+import { isTakeOutNode } from '../utils/prep-phase.js?v=20261021eq';
+
 const PREP_TOLERANCE = 1;
+const DEFAULT_KITCHEN = { ovenTrays: 2, ovenFan: false };
 const AFFINITY_TOLERANCE = 1;
 /** Urgency thresholds (minutes of slack) tried for Preppa först, most prep-forward first. */
 const PREP_THRESHOLDS = [0, 1, 2, 4, 8, 'tie'];
@@ -33,6 +45,7 @@ export class Scheduler {
           ? allRecipes.byId
           : new Map((allRecipes || []).map(r => [r.outputIngredient.id, r])));
     this.config = config;
+    this.kitchen = { ...DEFAULT_KITCHEN, ...(config.kitchen || {}) };
     this.threads = config.cooks || 1;
     this._init();
   }
@@ -59,26 +72,88 @@ export class Scheduler {
           const sub = this.recipeMap.get(inp.ingredient.id);
           if (sub) queue.push(sub);
         }
+        // Equipment ordering: preheat resource, previous user of a reused vessel
+        for (const aid of recipeAfterIds(r)) {
+          const sub = this.recipeMap.get(aid);
+          if (sub) queue.push(sub);
+        }
       }
     }
     return Array.from(needed).map(id => {
       const recipe = this.recipeMap.get(id);
       const active = recipe.duration || 1;
       const wait = recipe.wait || 0;
+      const inputDeps = [...new Set(recipe.inputs
+        .map(i => i.ingredient.id)
+        .filter(iid => this.recipeMap.has(iid)))];
+      const eqDeps = recipeAfterIds(recipe)
+        .filter(aid => this.recipeMap.has(aid) && !inputDeps.includes(aid));
       return {
         id,
         recipe,
         totalDuration: active + wait,
         activeDuration: active,
-        deps: recipe.inputs
-          .map(i => i.ingredient.id)
-          .filter(iid => this.recipeMap.has(iid)),
+        deps: [...inputDeps, ...eqDeps],
+        /** deps that are equipment ordering only (drawn dashed in the flow graph) */
+        eqDeps,
+        oven: this._ovenUse(recipe),
         start: 0,
         activeEnd: 0,
         end: 0,
         row: 0
       };
     });
+  }
+
+  /**
+   * Oven use of a node: trays it occupies (a ref'd plåt/form is one key, so two nodes on
+   * the same shared plåt count once) and its effective setting under the kitchen profile.
+   * @returns {{ keys: string[], setting: string, text: string }|null}
+   */
+  _ovenUse(recipe) {
+    if (isResource(recipe)) return null;
+    const eq = recipe.equipment || [];
+    const ov = eq.find(e => e.type === 'ugn');
+    if (!ov) return null;
+    const keys = [];
+    for (const e of eq) {
+      const t = typeInfo(e.type);
+      if (!t || !e.ref) continue;
+      if (t.kind === 'ovenware' || t.ovenSafe) {
+        for (let k = 0; k < (t.ovenSlots || 1); k++) keys.push(`${e.ref}#${k}`);
+      }
+    }
+    const need = Math.max(1, Number.isInteger(ov.slots) ? ov.slots : 1);
+    while (keys.length < need) keys.push(`${recipe.outputIngredient.id}:slot${keys.length}`);
+    const o = effectiveOven(ov, this.kitchen);
+    return { keys, setting: o.key, text: o.text };
+  }
+
+  /** Can n use the oven during [s, s + totalDuration) next to the already placed uses? */
+  _ovenFits(n, s, ovenPlaced) {
+    const e = s + n.totalDuration;
+    if (!(e > s)) return true;
+    const cap = Math.max(1, Number(this.kitchen.ovenTrays) || 1);
+    const overlap = ovenPlaced.filter(o => o.s < e - 1e-9 && o.e > s + 1e-9);
+    if (!overlap.length) return true;
+    if (overlap.some(o => o.setting !== n.oven.setting)) return false;
+    if (n.oven.keys.length > cap) return false; // needs the whole oven (and more): run alone
+    const points = [s, ...overlap.map(o => o.s).filter(p => p > s && p < e)];
+    for (const p of points) {
+      const live = overlap.filter(o => o.s <= p + 1e-9 && o.e > p + 1e-9);
+      const keys = new Set(n.oven.keys);
+      for (const o of live) for (const k of o.keys) keys.add(k);
+      if (keys.size > cap) return false;
+    }
+    return true;
+  }
+
+  /** Earliest t' ≥ t at which n's oven use fits (t itself for nodes without an oven use). */
+  _ovenStart(n, t, ovenPlaced) {
+    if (!n.oven || !ovenPlaced.length) return t;
+    const times = [t, ...ovenPlaced.map(o => o.e).filter(x => x > t)].sort((a, b) => a - b);
+    for (const c of times) if (this._ovenFits(n, c, ovenPlaced)) return c;
+    return times[times.length - 1];
   }
 
   /** Unlimited-cook ASAP schedule (dependency order) → max useful parallelism. */
@@ -154,8 +229,19 @@ export class Scheduler {
     return node._text;
   }
 
-  /** n continues in the vessel dep was cooked in (e.g. Stek salsiccia → Sjud tomatsås). */
+  /**
+   * n continues in the vessel dep was cooked in (e.g. Stek salsiccia → Sjud tomatsås).
+   * Uses equipment refs (same `ref` = same physical pan/pot/plåt). Nodes without any
+   * equipment data (e.g. generated spice-mix steps) fall back to the step text.
+   */
   _sameVessel(dep, n) {
+    const dEq = dep.recipe.equipment;
+    const nEq = n.recipe.equipment;
+    if (Array.isArray(dEq) || Array.isArray(nEq)) {
+      const isVessel = (e) => { const k = typeInfo(e.type)?.kind; return k === 'stovetop' || k === 'ovenware'; };
+      const refs = new Set((dEq || []).filter(e => e.ref && isVessel(e)).map(e => e.ref));
+      return (nEq || []).some(e => e.ref && refs.has(e.ref));
+    }
     if (!VESSEL_RE.test(this._text(dep))) return false;
     const t = this._text(n);
     if (CONTINUE_RE.test(t)) return true;
@@ -164,7 +250,7 @@ export class Scheduler {
 
   /**
    * Cook who should preferably continue with n: the cook of its most recently
-   * finished input (equipment-only inputs such as a preheated oven do not count).
+   * finished input (resource nodes such as a preheated oven do not count).
    * @returns {{ cook: string, tol: number }|null}
    */
   _preferredCook(n, placed) {
@@ -173,6 +259,7 @@ export class Scheduler {
       const dn = this.nodeById.get(d);
       const p = placed.get(d);
       if (!dn || !p || !p.cook) continue;
+      if (isResource(dn.recipe)) continue;
       if (!dn.recipe.inputs || dn.recipe.inputs.length === 0) continue;
       if (!best || p.activeEnd > best.p.activeEnd ||
           (p.activeEnd === best.p.activeEnd && dn.activeDuration > best.dn.activeDuration)) {
@@ -191,9 +278,11 @@ export class Scheduler {
     const bl = -this.bottomLevel[node.id];
     if (prepK == null) return [slack, bl];
     const prep = this._isPrep(node);
-    if (prepK === 'tie') return [slack, prep ? 0 : 1, bl];
+    // "Ta fram" (soften butter / bring meat to room temp) first: its long wait starts early
+    const takeOut = prep && isTakeOutNode(node.recipe) ? 0 : 1;
+    if (prepK === 'tie') return [takeOut, slack, prep ? 0 : 1, bl];
     const group = prep ? 1 : (slack <= prepK ? 0 : 2);
-    return [group, slack, bl];
+    return [takeOut, group, slack, bl];
   }
 
   /**
@@ -206,8 +295,10 @@ export class Scheduler {
     const free = { P1: 0, P2: 0 };
     const hands = { P1: 0, P2: 0 };
     const placed = new Map();
+    const ovenPlaced = [];
     const remaining = new Set(this.nodes.map(n => n.id));
-    const readyAt = (n) => n.deps.length ? Math.max(...n.deps.map(d => placed.get(d).end)) : 0;
+    const depsReady = (n) => n.deps.length ? Math.max(...n.deps.map(d => placed.get(d).end)) : 0;
+    const readyAt = (n) => this._ovenStart(n, depsReady(n), ovenPlaced);
     const cmp = (a, b) => { for (let i = 0; i < a.length; i++) if (a[i] !== b[i]) return a[i] - b[i]; return 0; };
 
     while (remaining.size) {
@@ -256,9 +347,10 @@ export class Scheduler {
           cook = freeCooks[0];
         }
       }
-      const start = Math.max(free[cook], r);
+      const start = this._ovenStart(n, Math.max(free[cook], r), ovenPlaced);
       const activeEnd = start + n.activeDuration;
       placed.set(n.id, { start, activeEnd, end: start + n.totalDuration, cook: cooks.length > 1 ? cook : null });
+      if (n.oven) ovenPlaced.push({ id: n.id, s: start, e: start + n.totalDuration, keys: n.oven.keys, setting: n.oven.setting });
       free[cook] = activeEnd;
       hands[cook] += n.activeDuration;
       remaining.delete(n.id);

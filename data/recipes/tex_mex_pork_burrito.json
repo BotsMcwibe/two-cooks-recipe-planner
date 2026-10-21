@@ -1,6 +1,7 @@
 {
   "masterId": "tex_mex_pork_burrito",
   "source": "hellofresh",
+  "rawId": "66472569db12ba3a5e0ff999",
   "createdAt": 1790853154,
   "basePortions": 4,
   "sharedPrep": [],
@@ -111,6 +112,12 @@
       "tags": [],
       "tips": [
         "Köttet är färdiglagat när det är utan inslag av rosa."
+      ],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "stekpanna_stor"
+        }
       ]
     },
     {
@@ -176,6 +183,11 @@
       "duration": 3,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skal_stor"
+        }
       ]
     },
     {

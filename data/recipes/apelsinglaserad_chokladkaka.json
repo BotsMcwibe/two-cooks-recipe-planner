@@ -1,6 +1,7 @@
 {
   "masterId": "apelsinglaserad_chokladkaka",
   "source": "hellofresh",
+  "rawId": "6597e8ea6b4bf2cf1c67e276",
   "createdAt": 1790854739,
   "basePortions": 4,
   "scalable": false,
@@ -46,22 +47,22 @@
       "duration": 1,
       "wait": 10,
       "tags": [
-        "no-timer"
+        "no-timer",
+        "resource"
       ],
       "tips": [
         "Ugnen tar vanligtvis 10–15 minuter att värmas upp."
-      ]
+      ],
+      "oven": {
+        "temp": 190,
+        "fanTemp": 170
+      }
     },
     {
       "id": "apelsinglaserad_chokladkaka__baked_cake",
       "name": "Baka Chokladkaka",
       "outputName": "Gräddad chokladkaka",
       "inputs": [
-        {
-          "id": "apelsinglaserad_chokladkaka__preheated_oven",
-          "amount": 1,
-          "unit": "st"
-        },
         {
           "id": "chocolate_cake_mix",
           "amount": 600,
@@ -84,6 +85,18 @@
       "tips": [
         "Ta ut bakmixen från kylskåpet 30 min innan den ska användas.",
         "Använd en provsticka: om stickan är torr är kakan färdig."
+      ],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "apelsinglaserad_chokladkaka__preheated_oven",
+          "slots": 1,
+          "temp": 190,
+          "fanTemp": 170
+        },
+        {
+          "type": "bakform"
+        }
       ]
     },
     {
@@ -91,11 +104,6 @@
       "name": "Rosta Hasselnötter",
       "outputName": "Rostade hasselnötter",
       "inputs": [
-        {
-          "id": "apelsinglaserad_chokladkaka__preheated_oven",
-          "amount": 1,
-          "unit": "st"
-        },
         {
           "id": "hazelnuts",
           "amount": 40,
@@ -111,6 +119,18 @@
       "tags": [],
       "tips": [
         "Rostningen kan göras medan kakan gräddas."
+      ],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "apelsinglaserad_chokladkaka__preheated_oven",
+          "slots": 1,
+          "temp": 190,
+          "fanTemp": 170
+        },
+        {
+          "type": "plat"
+        }
       ]
     },
     {
@@ -157,6 +177,11 @@
       "tips": [
         "Tillsätt mer apelsinsaft om glasyren är för tjock.",
         "Glasyren kan göras medan kakan gräddas."
+      ],
+      "equipment": [
+        {
+          "type": "skal_medelstor"
+        }
       ]
     },
     {

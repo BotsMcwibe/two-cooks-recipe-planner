@@ -1,6 +1,7 @@
 {
   "masterId": "hoisin_sticky_pork",
   "source": "citygross",
+  "rawId": "citygross-R45884",
   "createdAt": 1791056383,
   "basePortions": 4,
   "sharedPrep": [],
@@ -64,6 +65,14 @@
       "tips": [
         "Ingen olja i rålistan, så ingen skvätt är tillagd.",
         "Ingen tid står på stekningen, därför ingen wait. Karré är ny ingrediens, inte fläskkotlett."
+      ],
+      "heat": "medelhög",
+      "heatSource": "inferred",
+      "equipment": [
+        {
+          "type": "stekpanna_medelstor",
+          "sizeSource": "inferred"
+        }
       ]
     },
     {

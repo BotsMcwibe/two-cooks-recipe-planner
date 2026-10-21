@@ -1,6 +1,7 @@
 {
   "masterId": "boeuf_bourguignon_vitloksmos",
   "source": "hellofresh",
+  "rawId": "6593e328c7596f421e53b6c6",
   "createdAt": 1791040102,
   "basePortions": 4,
   "sharedPrep": [],
@@ -72,6 +73,14 @@
       "tags": [],
       "tips": [
         "Salt till kokvattnet har ingen mängd i yields. 1 tsk salt hör till moset, inte kastrullen."
+      ],
+      "heat": "hög",
+      "heatSource": "inferred",
+      "equipment": [
+        {
+          "type": "kastrull_medelstor",
+          "ref": "kastrull_1"
+        }
       ]
     },
     {
@@ -109,6 +118,14 @@
       "tips": [
         "Tillsätt en klick smör om du vill ha moset extra krämigt. Smöret i yields (2 msk) går till svampen.",
         "Under lock till servering är ingen klockad vila."
+      ],
+      "equipment": [
+        {
+          "type": "kastrull_medelstor",
+          "ref": "kastrull_1",
+          "transition": "keep",
+          "offHeat": true
+        }
       ]
     },
     {
@@ -152,6 +169,13 @@
       "tags": [],
       "tips": [
         "Stekningen är hands-on, inte en passiv wait. 3–4 min och 30 sek ligger i duration."
+      ],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "kastrull_stor",
+          "ref": "kastrull_2"
+        }
       ]
     },
     {
@@ -182,7 +206,16 @@
       ],
       "duration": 6,
       "wait": 0,
-      "tags": []
+      "tags": [],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "kastrull_stor",
+          "ref": "kastrull_2",
+          "transition": "keep",
+          "after": "boeuf_bourguignon_vitloksmos__fried_mushrooms"
+        }
+      ]
     },
     {
       "id": "boeuf_bourguignon_vitloksmos__braised_beef",
@@ -232,7 +265,15 @@
       ],
       "duration": 3,
       "wait": 12,
-      "tags": []
+      "tags": [],
+      "heat": "medel",
+      "equipment": [
+        {
+          "type": "kastrull_stor",
+          "ref": "kastrull_2",
+          "transition": "keep"
+        }
+      ]
     },
     {
       "id": "boeuf_bourguignon_vitloksmos__shredded_beef",
@@ -295,7 +336,15 @@
       ],
       "duration": 1,
       "wait": 0,
-      "tags": []
+      "tags": [],
+      "equipment": [
+        {
+          "type": "kastrull_stor",
+          "ref": "kastrull_2",
+          "transition": "keep",
+          "offHeat": true
+        }
+      ]
     },
     {
       "id": "boeuf_bourguignon_vitloksmos",

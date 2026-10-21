@@ -1,6 +1,7 @@
 {
   "masterId": "appel_pannbiff",
   "source": "hellofresh",
+  "rawId": "64ae8cefb22c4a8c5919a9c8",
   "createdAt": 1791037531,
   "basePortions": 4,
   "sharedPrep": [],
@@ -51,11 +52,16 @@
       "duration": 1,
       "wait": 12,
       "tags": [
-        "no-timer"
+        "no-timer",
+        "resource"
       ],
       "tips": [
         "HF anger 240°C / 220°C varmluft — lokal ugnsnode, inte preheated_oven_220."
-      ]
+      ],
+      "oven": {
+        "temp": 240,
+        "fanTemp": 220
+      }
     },
     {
       "id": "appel_pannbiff__cut_potatoes",
@@ -81,11 +87,6 @@
       "name": "Rosta Potatis",
       "outputName": "Kryddad klyftpotatis",
       "inputs": [
-        {
-          "id": "appel_pannbiff__preheated_oven",
-          "amount": 1,
-          "unit": "st"
-        },
         {
           "id": "appel_pannbiff__cut_potatoes",
           "amount": 1,
@@ -119,7 +120,19 @@
       ],
       "duration": 4,
       "wait": 35,
-      "tags": []
+      "tags": [],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "appel_pannbiff__preheated_oven",
+          "slots": 1,
+          "temp": 240,
+          "fanTemp": 220
+        },
+        {
+          "type": "plat"
+        }
+      ]
     },
     {
       "id": "appel_pannbiff__sliced_onion",
@@ -162,7 +175,14 @@
       ],
       "duration": 2,
       "wait": 10,
-      "tags": []
+      "tags": [],
+      "heat": "medel",
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1"
+        }
+      ]
     },
     {
       "id": "appel_pannbiff__caramelized_onion",
@@ -185,7 +205,16 @@
       ],
       "duration": 1,
       "wait": 5,
-      "tags": []
+      "tags": [],
+      "heat": "medelhög",
+      "heatSource": "inferred",
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1",
+          "transition": "keep"
+        }
+      ]
     },
     {
       "id": "appel_pannbiff__grated_apple",
@@ -244,6 +273,11 @@
       "duration": 8,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skal_stor"
+        }
       ]
     },
     {
@@ -271,6 +305,12 @@
       "tags": [],
       "tips": [
         "Biffarna är klara när de inte längre är rosa i mitten. Vändningen är hands-on, ingen passiv timer."
+      ],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "stekpanna_stor"
+        }
       ]
     },
     {
@@ -377,6 +417,11 @@
       "duration": 4,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skal_stor"
+        }
       ]
     },
     {
