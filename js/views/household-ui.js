@@ -4,10 +4,10 @@
  * invite panel for #join/CODE. Rendering returns HTML strings; AccountView
  * forwards clicks/submits/changes to handle*() and re-renders on householdchange.
  */
-import * as Household from '../core/household.js?v=20261021g17';
-import { syncNow, currentUser } from '../core/sync.js?v=20261021g17';
-import { openSignIn } from './auth-ui.js?v=20261021g17';
-import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261021g17';
+import * as Household from '../core/household.js?v=20261021g18';
+import { syncNow, currentUser } from '../core/sync.js?v=20261021g18';
+import { openSignIn } from './auth-ui.js?v=20261021g18';
+import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261021g18';
 
 const fmtDay = new Intl.DateTimeFormat('sv-SE', { day: 'numeric', month: 'short' });
 /** 'Anna', 'Anna och Bo', 'Anna, Bo och Cia' */
@@ -22,7 +22,7 @@ export const AVATAR_EMOJI = ['🍋', '🧄', '🌶️', '🥕', '🍅', '🧀', 
 
 const ui = {
   profileMsg: '', hhMsg: '', joinMsg: '', renaming: false, leaving: false, leaveCopy: true,
-  lastCode: null, copied: '',
+  lastCode: null, copied: '', frMsg: '',
   /** #join / #friend panel: { kind, code, preview, state: 'loading'|'ready'|'error'|'done', error, merge, busy } */
   invite: null,
 };
@@ -75,6 +75,7 @@ async function saveProfile(patch, view) {
 /** Click inside Mitt konto. Returns true when handled. */
 export function handleClick(t, view) {
   if (handleHouseholdClick(t, view)) return true;
+  if (handleFriendClick(t, view)) return true;
   const em = t.closest('[data-hh-emoji]');
   if (em) {
     const v = em.getAttribute('data-hh-emoji') || null;
@@ -87,6 +88,7 @@ export function handleClick(t, view) {
 /** Form submit inside Mitt konto. Returns true when handled. */
 export function handleSubmit(f, view) {
   if (handleHouseholdSubmit(f, view)) return true;
+  if (handleFriendSubmit(f, view)) return true;
   if (f.matches('.hh-name-form')) {
     const v = f.querySelector('input').value;
     saveProfile({ display_name: v }, view).then(() => view.el.querySelector('#hh-name')?.focus());
@@ -215,6 +217,7 @@ export function ensureInvitePreview(view) {
 
 export function invitePanelHtml() {
   const inv = ui.invite;
+  if (inv && inv.kind === 'friend') return friendPanelHtml(inv);
   if (!inv || inv.kind !== 'join') return '';
   const code = Household.prettyCode(inv.code);
   let body;
@@ -272,7 +275,7 @@ async function copyText(text) {
 
 async function run(view, key, fn, okText = '') {
   ui[key] = '';
-  try { await fn(); ui[key] = okText; } catch (err) { console.warn('[hushåll]', err); ui[key] = Household.errorText(err); }
+  try { await fn(); if (okText) ui[key] = okText; } catch (err) { console.warn('[hushåll]', err); ui[key] = Household.errorText(err); }
   view.render();
 }
 
@@ -353,4 +356,131 @@ export function handleHouseholdChange(t, view) {
   return false;
 }
 
-export function handleChange(t, view) { return handleHouseholdChange(t, view); }
+export function handleChange(t, view) { return handleHouseholdChange(t, view) || handleFriendChange(t, view); }
+
+// ---------------------------------------------------------------------------
+// Vänner (phase 4): friend code/link, requests, list, share toggle
+// ---------------------------------------------------------------------------
+const FRIEND_SEES = 'vad du lagat och dina stjärnor';
+
+export function friendsCount() { return Household.friends().filter((f) => f.status === 'accepted').length; }
+
+export function friendsSectionBody() {
+  const p = Household.profile();
+  if (!Household.isTables() || !p) return `<p class="acc-empty">${Household.mode() === 'local' ? 'Logga in för att lägga till vänner.' : 'Hämtar…'}</p>`;
+  const me = Household.myId();
+  const all = Household.friends();
+  const incoming = all.filter((f) => f.status === 'pending' && f.requested_by !== me);
+  const sent = all.filter((f) => f.status === 'pending' && f.requested_by === me);
+  const friends = all.filter((f) => f.status === 'accepted');
+  const name = (f) => escapeHtml(f.display_name || 'Någon');
+  let html = `<p class="hh-lede">Vänner ser ${FRIEND_SEES} i ”Senast i köket”. Aldrig anteckningar, listor eller hushållets Vill laga.</p>`;
+  if (incoming.length) {
+    html += `<h3 class="hh-sub">Vill bli din vän</h3><ul class="hh-members">${incoming.map((f) => `<li class="hh-member">${Household.avatarHtml(f.user_id)}<span class="hh-member-name">${name(f)}</span><span class="hh-member-act"><button type="button" class="acc-btn acc-btn-primary" data-fr-accept="${escapeAttr(f.user_id)}">Godkänn</button> <button type="button" class="acc-btn" data-fr-decline="${escapeAttr(f.user_id)}">Avböj</button></span></li>`).join('')}</ul>`;
+  }
+  html += friends.length
+    ? `<h3 class="hh-sub">Dina vänner (${friends.length})</h3><ul class="hh-members">${friends.map((f) => `<li class="hh-member">${Household.avatarHtml(f.user_id)}<span class="hh-member-name">${name(f)}</span>${f.share ? '' : '<span class="hh-tag">visar inte sin matlagning</span>'}<span class="hh-member-act"><button type="button" class="acc-link-btn" data-fr-remove="${escapeAttr(f.user_id)}">Ta bort</button></span></li>`).join('')}</ul>`
+    : '<p class="acc-empty">Inga vänner än. Skicka din vänkod till någon, eller skriv in deras.</p>';
+  if (sent.length) {
+    html += `<details class="hh-invites"><summary>Skickade förfrågningar (${sent.length})</summary><ul class="acc-list">${sent.map((f) => `<li class="acc-recipe"><span>${Household.avatarHtml(f.user_id, 'hh-av-sm')} ${name(f)} <span class="acc-meta">väntar på svar</span></span><button type="button" class="acc-link-btn" data-fr-remove="${escapeAttr(f.user_id)}">Ångra</button></li>`).join('')}</ul></details>`;
+  }
+  // My code
+  const code = p.friend_code || '';
+  const link = code ? Household.friendLink(code) : '';
+  if (code) {
+    html += `<div class="hh-invite-card"><p class="hh-label">Din vänkod</p>
+        <p class="hh-code-big" aria-label="Vänkod ${escapeAttr(Household.prettyCode(code))}">${escapeHtml(Household.prettyCode(code))}</p>
+        <input class="hh-input hh-link" type="text" readonly value="${escapeAttr(link)}" aria-label="Vänlänk">
+        <div class="hh-inline hh-share-row">
+          <button type="button" class="acc-btn" data-hh-copy="${escapeAttr(link)}">${ui.copied === link ? '✓ Kopierad' : 'Kopiera länk'}</button>
+          <button type="button" class="acc-btn" data-fr-share="${escapeAttr(code)}">Dela…</button>
+        </div></div>`;
+  }
+  html += `<form class="fr-add-form"><label class="hh-label" for="fr-code">Lägg till med deras vänkod</label><div class="hh-inline"><input id="fr-code" class="hh-input hh-code-input" type="text" maxlength="12" placeholder="K7QM-2XRA" autocomplete="off" autocapitalize="characters" spellcheck="false"><button type="submit" class="acc-btn">Skicka förfrågan</button></div></form>`;
+  if (ui.frMsg) html += `<p class="hh-msg" role="status" aria-live="polite">${escapeHtml(ui.frMsg)}</p>`;
+  html += `<label class="hh-check fr-share"><input type="checkbox" data-fr-share-toggle ${p.share_with_friends !== false ? 'checked' : ''}> Visa vad jag lagar för mina vänner</label>
+    <p class="acc-hint">${p.share_with_friends !== false ? `Dina vänner ser ${FRIEND_SEES}.` : 'Av: dina vänner ser inget av det du lagar. Du ser fortfarande deras.'}</p>`;
+  return html;
+}
+
+function friendPanelHtml(inv) {
+  const code = Household.prettyCode(inv.code);
+  const p = Household.profile();
+  let body;
+  if (!currentUser()) {
+    body = `<p>Någon vill bli vän med dig på Yessy (vänkod <span class="hh-code">${escapeHtml(code)}</span>). Ni ser vad den andra lagar.</p>
+      <div class="hh-inline"><button type="button" class="acc-btn acc-btn-primary" data-hh-signin>Logga in för att svara</button><button type="button" class="acc-btn" data-hh-invite-close>Inte nu</button></div>`;
+  } else if (p && Household.normCode(p.friend_code) === inv.code) {
+    body = `<p>Det här är din egen vänkod. Skicka länken till någon du vill följa.</p><div class="hh-inline"><button type="button" class="acc-btn" data-hh-invite-close>Stäng</button></div>`;
+  } else if (inv.state === 'done') {
+    body = `<p role="status"><strong>${escapeHtml(inv.result === 'accepted' ? 'Ni är vänner nu!' : 'Förfrågan skickad.')}</strong> ${inv.result === 'accepted' ? 'Ni ser vad den andra lagar i ”Senast i köket”.' : 'När de godkänner ser ni vad den andra lagar.'}</p>
+      <div class="hh-inline"><button type="button" class="acc-btn" data-hh-invite-close>Stäng</button></div>`;
+  } else if (inv.state === 'error') {
+    body = `<p role="alert">${escapeHtml(inv.error)}</p><div class="hh-inline"><button type="button" class="acc-btn" data-hh-invite-close>Stäng</button></div>`;
+  } else {
+    body = `<p class="hh-invite-q">Bli vän med den som delade vänkoden <span class="hh-code">${escapeHtml(code)}</span>?</p>
+      <p class="acc-hint">Ni ser ${FRIEND_SEES.replace('du', 'den andra').replace('dina', 'deras')} i ”Senast i köket”. Anteckningar och listor syns aldrig.</p>
+      <div class="hh-inline"><button type="button" class="acc-btn acc-btn-primary" data-fr-request="${escapeAttr(inv.code)}" ${inv.busy ? 'disabled' : ''}>${inv.busy ? 'Skickar…' : 'Skicka vänförfrågan'}</button><button type="button" class="acc-btn" data-hh-invite-close>Avbryt</button></div>`;
+  }
+  return `<section class="acc-section hh-invite-panel" id="acc-inbjudan" aria-labelledby="acc-h-inbjudan">
+      <div class="acc-section-head"><h2 id="acc-h-inbjudan"><span aria-hidden="true">🤝</span> Vänförfrågan</h2></div>
+      ${body}
+    </section>`;
+}
+
+const FR_RESULT = { pending: 'Förfrågan skickad.', accepted: 'Ni är vänner nu!' };
+
+export function handleFriendClick(t, view) {
+  const rq = t.closest('[data-fr-request]');
+  if (rq) {
+    const inv = ui.invite;
+    if (!inv || inv.busy) return true;
+    inv.busy = true; view.render();
+    Household.requestFriend(inv.code).then((res) => { inv.state = 'done'; inv.result = res; })
+      .catch((err) => { inv.state = 'error'; inv.error = Household.errorText(err); })
+      .finally(() => { inv.busy = false; view.render(); view.el.querySelector('#acc-inbjudan .acc-btn')?.focus(); });
+    return true;
+  }
+  const ac = t.closest('[data-fr-accept]');
+  if (ac) { run(view, 'frMsg', () => Household.respondFriend(ac.getAttribute('data-fr-accept'), true).then(() => Household.loadFeed()), 'Ni är vänner nu!'); return true; }
+  const de = t.closest('[data-fr-decline]');
+  if (de) { run(view, 'frMsg', () => Household.respondFriend(de.getAttribute('data-fr-decline'), false), 'Förfrågan avböjd.'); return true; }
+  const rm = t.closest('[data-fr-remove]');
+  if (rm) {
+    const id = rm.getAttribute('data-fr-remove');
+    const f = Household.friends().find((x) => x.user_id === id);
+    const pending = f && f.status === 'pending';
+    if (pending || window.confirm(`Ta bort ${(f && f.display_name) || 'vännen'} som vän? Ni slutar se vad den andra lagar.`)) {
+      run(view, 'frMsg', () => Household.removeFriend(id).then(() => Household.loadFeed()), pending ? 'Förfrågan borttagen.' : 'Borttagen som vän.');
+    }
+    return true;
+  }
+  const sh = t.closest('[data-fr-share]');
+  if (sh) {
+    const code = sh.getAttribute('data-fr-share');
+    const url = Household.friendLink(code);
+    if (navigator.share) navigator.share({ title: 'Yessy', text: `Bli min vän på Yessy (vänkod ${Household.prettyCode(code)})`, url }).catch(() => {});
+    else copyText(url).then((ok) => { if (ok) { ui.copied = url; view.render(); } });
+    return true;
+  }
+  return false;
+}
+
+export function handleFriendSubmit(f, view) {
+  if (!f.matches('.fr-add-form')) return false;
+  const code = Household.normCode(f.querySelector('input').value);
+  const p = Household.profile();
+  if (code.length < 6) { ui.frMsg = 'Skriv deras vänkod, till exempel K7QM-2XRA.'; view.render(); view.el.querySelector('#fr-code')?.focus(); return true; }
+  if (p && Household.normCode(p.friend_code) === code) { ui.frMsg = 'Det är din egen vänkod.'; view.render(); view.el.querySelector('#fr-code')?.focus(); return true; }
+  run(view, 'frMsg', async () => { const res = await Household.requestFriend(code); ui.frMsg = FR_RESULT[res] || 'Klart.'; if (res === 'accepted') await Household.loadFeed(); })
+    .then(() => view.el.querySelector('#fr-code')?.focus());
+  return true;
+}
+
+export function handleFriendChange(t, view) {
+  if (!t.matches('[data-fr-share-toggle]')) return false;
+  const on = t.checked;
+  run(view, 'frMsg', () => Household.updateProfile({ share_with_friends: on }), on ? 'Dina vänner ser vad du lagar.' : 'Dina vänner ser inte längre vad du lagar.')
+    .then(() => view.el.querySelector('[data-fr-share-toggle]')?.focus());
+  return true;
+}

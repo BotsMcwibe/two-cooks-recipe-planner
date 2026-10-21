@@ -4,10 +4,10 @@
  * on the recipe list and as the full list in Mitt konto. Who and where are
  * always in words (name + "Hushållet" / "Vän"), never colour alone.
  */
-import * as Household from '../core/household.js?v=20261021g17';
-import * as UserState from '../core/user-recipe-state.js?v=20261021g17';
-import { agoLabel } from './recipe-status-ui.js?v=20261021g17';
-import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261021g17';
+import * as Household from '../core/household.js?v=20261021g18';
+import * as UserState from '../core/user-recipe-state.js?v=20261021g18';
+import { agoLabel } from './recipe-status-ui.js?v=20261021g18';
+import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261021g18';
 
 const OPEN_KEY = 'yessy.feedOpen.v1';
 const esc = (s) => escapeHtml(String(s ?? ''));

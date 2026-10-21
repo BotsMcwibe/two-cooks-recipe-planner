@@ -5,18 +5,18 @@
  * area lists what the app stores: statuses, ratings, own spice mixes, theme,
  * Inköpslista and a Data section. Works logged out (local data only).
  */
-import * as UserState from '../core/user-recipe-state.js?v=20261021g17';
-import { menuExtrasHtml, themeSegHtml, bindThemeSeg } from './menu-items.js?v=20261021g17';
-import { onAuthChange, onSyncStatus, syncStatus, lastSyncTime, signOut, currentUser, isAvailable } from '../core/sync.js?v=20261021g17';
-import { openSignIn } from './auth-ui.js?v=20261021g17';
-import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261021g17';
-import { kitchenProfile, setKitchen, MAX_OVEN_TRAYS } from '../core/kitchen-prefs.js?v=20261021g17';
-import * as Journal from '../core/recipe-journal.js?v=20261021g17';
-import { agoLabel, fmtCookDate, timesLabel } from './recipe-status-ui.js?v=20261021g17';
-import { ringHtml, challengePace } from './journal-ui.js?v=20261021g17';
-import * as Household from '../core/household.js?v=20261021g17';
-import * as HouseholdUI from './household-ui.js?v=20261021g17';
-import { feedSectionBody, handleFeedClick } from './feed-ui.js?v=20261021g17';
+import * as UserState from '../core/user-recipe-state.js?v=20261021g18';
+import { menuExtrasHtml, themeSegHtml, bindThemeSeg } from './menu-items.js?v=20261021g18';
+import { onAuthChange, onSyncStatus, syncStatus, lastSyncTime, signOut, currentUser, isAvailable } from '../core/sync.js?v=20261021g18';
+import { openSignIn } from './auth-ui.js?v=20261021g18';
+import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261021g18';
+import { kitchenProfile, setKitchen, MAX_OVEN_TRAYS } from '../core/kitchen-prefs.js?v=20261021g18';
+import * as Journal from '../core/recipe-journal.js?v=20261021g18';
+import { agoLabel, fmtCookDate, timesLabel } from './recipe-status-ui.js?v=20261021g18';
+import { ringHtml, challengePace } from './journal-ui.js?v=20261021g18';
+import * as Household from '../core/household.js?v=20261021g18';
+import * as HouseholdUI from './household-ui.js?v=20261021g18';
+import { feedSectionBody, handleFeedClick } from './feed-ui.js?v=20261021g18';
 
 const LOCAL_KEYS = [
   'jesse.recipeState.v1', 'yessy.spiceMixMissing.v1', 'jesse-theme',
@@ -449,7 +449,7 @@ export class AccountView {
 
     const nav = [
       ...(user ? [['profil', 'Profil', null], ['hushall', 'Hushåll', shared ? Household.members().length : null]] : []),
-      ...(user && Household.isTables() ? [['koket', 'Senast i köket', null]] : []),
+      ...(user && Household.isTables() ? [['koket', 'Senast i köket', null], ['vanner', 'Vänner', HouseholdUI.friendsCount() || null]] : []),
       ['utmaning', 'Årets matutmaning', goal ? `${Journal.recipesCookedIn(year).length}/${goal}` : null],
       ['vill', 'Vill laga', groups.want.length],
       ['lagade', 'Lagade', groups.cooked.length], ['betyg', 'Dina betyg', ratings.length],
@@ -476,6 +476,7 @@ export class AccountView {
           ${user ? section('profil', 'Profil', null, HouseholdUI.profileSectionBody()) : ''}
           ${user ? section('hushall', 'Hushåll', shared ? Household.members().length : null, HouseholdUI.householdSectionBody()) : ''}
           ${user && Household.isTables() ? section('koket', 'Senast i köket', null, feedSectionBody((id) => (this.byId[id] || {}).name || ''), shared ? '👥 Hushållet' : '') : ''}
+          ${user && Household.isTables() ? section('vanner', 'Vänner', HouseholdUI.friendsCount() || null, HouseholdUI.friendsSectionBody()) : ''}
           ${section('utmaning', `Årets matutmaning ${year}`, null, this._challengeHtml(), whereMine)}
           ${section('vill', 'Vill laga', groups.want.length, list(groups.want, 'Markera recept med ”Vill laga” så hamnar de här.'), whereShared)}
           ${section('lagade', 'Lagade', groups.cooked.length, list(groups.cooked, 'Inga lagade recept än. Tryck ”Klart! Logga som lagad” när du lagat klart, så sparas datumet här.', true), whereShared)}

@@ -3430,3 +3430,9 @@ p.eq-serving { font-size: 0.85rem; margin: 8px 0 0; }
 .fd-saved { font-size: 0.8rem; color: var(--text-muted); }
 .fd-load-more { margin-top: 10px; }
 .fd-strip[open] .fd-more-n { visibility: hidden; }
+/* Vänner */
+#acc-vanner { grid-column: 1 / -1; }
+.hh-sub { margin: 12px 0 6px; font-size: 0.9rem; }
+.fr-add-form { margin: 6px 0 10px; }
+.fr-share { margin-top: 12px; }
+#acc-vanner .hh-member-act { display: inline-flex; gap: 6px; flex-wrap: wrap; }

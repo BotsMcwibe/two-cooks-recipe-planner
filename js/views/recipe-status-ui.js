@@ -4,10 +4,10 @@
  * card badge. Backed by core/user-recipe-state.js (status, rating) and
  * core/recipe-journal.js (cook log, Inte för oss, lists).
  */
-import * as UserState from '../core/user-recipe-state.js?v=20261021g17';
-import * as Journal from '../core/recipe-journal.js?v=20261021g17';
-import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261021g17';
-import * as Household from '../core/household.js?v=20261021g17';
+import * as UserState from '../core/user-recipe-state.js?v=20261021g18';
+import * as Journal from '../core/recipe-journal.js?v=20261021g18';
+import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261021g18';
+import * as Household from '../core/household.js?v=20261021g18';
 
 const STATUS_ICON = { want: '☆', cooked: '✓' };
 const MONTHS = ['jan', 'feb', 'mars', 'apr', 'maj', 'juni', 'juli', 'aug', 'sep', 'okt', 'nov', 'dec'];
@@ -22,9 +22,13 @@ export function fmtCookDate(iso) {
 export const timesLabel = (n) => `${n} ${n === 1 ? 'gång' : 'gånger'}`;
 /** '2026-06-02' → 'för 4 månader sedan' (rough, for lists where the exact date is secondary). */
 export function agoLabel(iso) {
-  const t = Date.parse(iso || '');
-  if (!Number.isFinite(t)) return '';
-  const days = Math.max(0, Math.round((Date.now() - t) / 864e5));
+  // Calendar days in local time ('2026-10-21' is that day here, not UTC midnight)
+  const m = /^(\d{4})-(\d{2})-(\d{2})/.exec(String(iso || ''));
+  if (!m) return '';
+  const then = new Date(Number(m[1]), Number(m[2]) - 1, Number(m[3]));
+  const n = new Date();
+  const today = new Date(n.getFullYear(), n.getMonth(), n.getDate());
+  const days = Math.max(0, Math.round((today - then) / 864e5));
   if (days === 0) return 'i dag';
   if (days === 1) return 'i går';
   if (days < 14) return `för ${days} dagar sedan`;
