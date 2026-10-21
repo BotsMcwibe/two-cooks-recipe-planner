@@ -4,10 +4,10 @@
  * synced via user_preferences.prefs.pantryExcluded (see sync.js).
  * Fires `pantryexcludechange` on window when it changes.
  */
-import { touchPref } from './prefs-meta.js?v=20261021g12';
+import { touchPref } from './prefs-meta.js?v=20261021g13';
 
 const KEY = 'yessy.pantryExcluded.v1';
-export const PANTRY_URL = 'data/pantry.json?v=20261021g12';
+export const PANTRY_URL = 'data/pantry.json?v=20261021g13';
 
 function read() {
   try {

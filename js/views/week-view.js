@@ -1,6 +1,7 @@
 /**
  * Veckoplaneraren (#vecka): picks recipes for the week, by default one per
- * category (Kyckling, Fisk, Fläsk, Nötkött, Skaldjur, Vego). Categories are the
+ * category (Kyckling, Fläsk, Skaldjur, Snabbt). Snabbt and the other non-protein
+ * categories prefer a protein the week doesn't have yet, for variety. Categories are the
  * browse filter categories (catalog-ui.js categoryChips). Per recipe: Byt,
  * Lås, Översikt and portions; Slumpa om rerolls every unlocked pick and
  * "Lägg allt i inköpslistan" uses the shopping selection + portions API.
@@ -14,12 +15,12 @@
  * courses (no breakfast, dessert or sides) unless the category itself is a meal.
  * Settings + picks live in core/week-plan.js (localStorage + Supabase prefs).
  */
-import { categoryChips, isMainCourse, escapeAttr, escapeHtml, recipeVisual, isScalable, difficultyLabel } from '../utils/catalog-ui.js?v=20261021g12';
-import * as WeekPlan from '../core/week-plan.js?v=20261021g12';
-import * as UserState from '../core/user-recipe-state.js?v=20261021g12';
-import * as Journal from '../core/recipe-journal.js?v=20261021g12';
-import { excludedPantry, loadPantry } from '../core/pantry-exclude.js?v=20261021g12';
-import { isPhotoMissing, imgFailed } from '../utils/photo-fallback.js?v=20261021g12';
+import { categoryChips, isMainCourse, escapeAttr, escapeHtml, recipeVisual, isScalable, difficultyLabel } from '../utils/catalog-ui.js?v=20261021g13';
+import * as WeekPlan from '../core/week-plan.js?v=20261021g13';
+import * as UserState from '../core/user-recipe-state.js?v=20261021g13';
+import * as Journal from '../core/recipe-journal.js?v=20261021g13';
+import { excludedPantry, loadPantry } from '../core/pantry-exclude.js?v=20261021g13';
+import { isPhotoMissing, imgFailed } from '../utils/photo-fallback.js?v=20261021g13';
 
 const RECENT_DAYS = 14;
 const LOCK_SVG = '<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></g></svg>';
@@ -130,6 +131,12 @@ export class WeekView {
     }).map((e) => e.id);
   }
 
+  /** Protein tags of a recipe ('protein:chicken', …). */
+  _proteins(id) {
+    const e = this.byId[id];
+    return e ? (e.tags || []).filter((t) => t.startsWith('protein:')) : [];
+  }
+
   /** Recipes the user has cooked: status Lagad or any cook-log entry. */
   _cookedIds() {
     const s = new Set(Journal.cookStatsAll().keys());
@@ -157,7 +164,14 @@ export class WeekView {
       base.filter((id) => !ctx.recent.has(id)),
       base,
     ];
-    const list = tiers.find((t) => t.length) || [];
+    let list = tiers.find((t) => t.length) || [];
+    // Snabbt, Familj, Pasta…: within the chosen tier, prefer a protein the week doesn't have yet
+    if (ctx.variety && list.length > 1) {
+      const used = new Set();
+      for (const t of taken) for (const pt of this._proteins(t)) used.add(pt);
+      const fresh = list.filter((id) => !this._proteins(id).some((pt) => used.has(pt)));
+      if (fresh.length) list = fresh;
+    }
     if (!list.length && avoid && pool.includes(avoid) && !taken.has(avoid)) return { id: avoid, fallback: false }; // nothing else to swap to
     return { id: list.length ? shuffle(list)[0] : null, fallback };
   }
@@ -208,7 +222,8 @@ export class WeekView {
       const avoid = opts.rerollSlot === p.slot || opts.reroll ? p._prev : null;
       // Rerolls use the chosen source (Redan lagade / Inte lagade än); first fills take any recipe
       const isReroll = opts.reroll || opts.rerollSlot === p.slot;
-      const { id, fallback } = this._pickFrom([...pools[p.cat]], taken, ctx, avoid, isReroll ? settings.rerollSource : null);
+      const cat = this.catById[p.cat];
+      const { id, fallback } = this._pickFrom([...pools[p.cat]], taken, { ...ctx, variety: cat && cat.group === 'other' }, avoid, isReroll ? settings.rerollSource : null);
       if (id) { taken.add(id); p.recipeId = id; }
       if (fallback) { this.sourceFallback.add(p.cat); this.sourceFallbackSrc = settings.rerollSource; }
     }

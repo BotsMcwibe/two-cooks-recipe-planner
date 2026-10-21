@@ -1,4 +1,4 @@
-import { RecipeGraph } from '../core/recipe-graph.js?v=20261021g12';
+import { RecipeGraph } from '../core/recipe-graph.js?v=20261021g13';
 import { formatNiceAmount } from '../utils/helpers.js';
 
 /**
@@ -14,7 +14,7 @@ export class PrecookView {
   /**
    * @param {object} rootRecipe
    * @param {Array} subtreeRecipes
-   * @param {import('../core/recipe-graph.js?v=20261021g12').RecipeGraph} graph - scaled graph
+   * @param {import('../core/recipe-graph.js?v=20261021g13').RecipeGraph} graph - scaled graph
    * @param {Array} baseIngredients - pantry ingredients only
    * @param {object} options
    * @param {number} portionScale

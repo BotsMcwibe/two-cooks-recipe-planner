@@ -3,10 +3,10 @@
  * banner), the "Klart! Logga som lagad" block at the end of the cook page and the
  * yearly challenge ring (Mitt konto).
  */
-import * as Journal from '../core/recipe-journal.js?v=20261021g12';
-import * as UserState from '../core/user-recipe-state.js?v=20261021g12';
-import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261021g12';
-import { timesLabel } from './recipe-status-ui.js?v=20261021g12';
+import * as Journal from '../core/recipe-journal.js?v=20261021g13';
+import * as UserState from '../core/user-recipe-state.js?v=20261021g13';
+import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261021g13';
+import { timesLabel } from './recipe-status-ui.js?v=20261021g13';
 
 // ---------------------------------------------------------------------------
 // Mina anteckningar

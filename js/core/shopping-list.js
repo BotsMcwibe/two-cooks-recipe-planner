@@ -1,4 +1,4 @@
-import { RecipeGraph, convertAmount } from './recipe-graph.js?v=20261021g12';
+import { RecipeGraph, convertAmount } from './recipe-graph.js?v=20261021g13';
 import { formatNiceAmount } from '../utils/helpers.js';
 
 /**
@@ -18,7 +18,7 @@ export class ShoppingListAggregator {
   }
 
   /**
-   * @param {import('../models/recipe.js?v=20261021g12').Recipe} recipe - scaled root
+   * @param {import('../models/recipe.js?v=20261021g13').Recipe} recipe - scaled root
    * @param {RecipeGraph|Iterable} graphOrRecipes - graph containing the recipe subtree
    * @param {number} [portionScale=1.0] - extra multiplier (usually 1 if recipe already scaled)
    */
