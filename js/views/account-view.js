@@ -5,15 +5,15 @@
  * area lists what the app stores: statuses, ratings, own spice mixes, theme,
  * Inköpslista and a Data section. Works logged out (local data only).
  */
-import * as UserState from '../core/user-recipe-state.js?v=20261021g8';
-import { menuExtrasHtml, themeSegHtml, bindThemeSeg } from './menu-items.js?v=20261021g8';
-import { onAuthChange, onSyncStatus, syncStatus, lastSyncTime, signOut, currentUser, isAvailable } from '../core/sync.js?v=20261021g8';
-import { openSignIn } from './auth-ui.js?v=20261021g8';
-import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261021g8';
-import { kitchenProfile, setKitchen, MAX_OVEN_TRAYS } from '../core/kitchen-prefs.js?v=20261021g8';
-import * as Journal from '../core/recipe-journal.js?v=20261021g8';
-import { fmtCookDate, timesLabel } from './recipe-status-ui.js?v=20261021g8';
-import { ringHtml, challengePace } from './journal-ui.js?v=20261021g8';
+import * as UserState from '../core/user-recipe-state.js?v=20261021g9';
+import { menuExtrasHtml, themeSegHtml, bindThemeSeg } from './menu-items.js?v=20261021g9';
+import { onAuthChange, onSyncStatus, syncStatus, lastSyncTime, signOut, currentUser, isAvailable } from '../core/sync.js?v=20261021g9';
+import { openSignIn } from './auth-ui.js?v=20261021g9';
+import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261021g9';
+import { kitchenProfile, setKitchen, MAX_OVEN_TRAYS } from '../core/kitchen-prefs.js?v=20261021g9';
+import * as Journal from '../core/recipe-journal.js?v=20261021g9';
+import { agoLabel, fmtCookDate, timesLabel } from './recipe-status-ui.js?v=20261021g9';
+import { ringHtml, challengePace } from './journal-ui.js?v=20261021g9';
 
 const LOCAL_KEYS = [
   'jesse.recipeState.v1', 'yessy.spiceMixMissing.v1', 'jesse-theme',
@@ -239,7 +239,7 @@ export class AccountView {
           </div>
         </div>
       </div>
-      ${n ? `<details class="ch-done"><summary>Lagade i år (${n})</summary><ul class="acc-list">${done.map((id) => this._recipeLink(id, `<span class="acc-meta">${escapeHtml(fmtCookDate(Journal.cookStats(id).last))}</span>`)).join('')}</ul></details>` : ''}`;
+      ${n ? `<details class="ch-done"><summary>Lagade i år (${n})</summary><ul class="acc-list">${done.map((id) => this._recipeLink(id, (() => { const st = Journal.cookStats(id); return st.count > 1 ? `<span class="acc-meta" title="Lagad ${timesLabel(st.count)}">${st.count}×</span>` : ''; })())).join('')}</ul></details>` : ''}`;
   }
 
   _listsHtml() {
@@ -367,7 +367,7 @@ export class AccountView {
     const stats = Journal.cookStatsAll();
     const cookMeta = (id) => {
       const st = stats.get(id);
-      return st ? `<span class="acc-meta" title="Lagad ${timesLabel(st.count)}, senast ${escapeAttr(fmtCookDate(st.last))}">${st.count > 1 ? `${st.count}× · ` : ''}${escapeHtml(fmtCookDate(st.last))}</span>` : '';
+      return st && st.count > 1 ? `<span class="acc-meta" title="Lagad ${timesLabel(st.count)}, senast ${escapeAttr(fmtCookDate(st.last))}">${st.count}×</span>` : '';
     };
     const list = (arr, empty, meta = false) => arr.length
       ? `<ul class="acc-list${arr.length > 10 ? ' is-long' : ''}">${arr.map(r => this._recipeLink(r.id, `<span class="acc-right">${meta ? cookMeta(r.id) : ''}${starsHtml(r.rating)}</span>`)).join('')}</ul>`
@@ -434,7 +434,7 @@ export class AccountView {
             <h3 class="acc-sub">Högst betygsatta</h3>
             <ul class="acc-list">${top.map(r => this._recipeLink(r.id, starsHtml(r.rating))).join('')}</ul>` : '<p class="acc-empty">Du har inte satt några betyg än.</p>', where)}
           ${again.length ? section('igen', 'Laga igen?', again.length, `<p class="acc-note">Recept du gett 4–5 ★ men inte lagat på minst ${AGAIN_DAYS} dagar.</p>
-            <ul class="acc-list">${again.map(r => this._recipeLink(r.id, `<span class="acc-right"><span class="acc-meta">senast ${escapeHtml(fmtCookDate(stats.get(r.id).last))}</span>${starsHtml(r.rating)}</span>`)).join('')}</ul>`, where) : ''}
+            <ul class="acc-list">${again.map(r => this._recipeLink(r.id, `<span class="acc-right"><span class="acc-meta" title="Senast lagad ${escapeAttr(fmtCookDate(stats.get(r.id).last))}">${escapeHtml(agoLabel(stats.get(r.id).last))}</span>${starsHtml(r.rating)}</span>`)).join('')}</ul>`, where) : ''}
           ${section('listor', 'Mina listor', myLists.length, this._listsHtml(), where)}
           ${section('inte', 'Inte för oss', nfuIds.length, nfuIds.length
             ? `<p class="acc-note">De här visas inte i receptlistan.</p><ul class="acc-list">${nfuIds.map(id => this._recipeLink(id, `<button type="button" class="acc-link-btn" data-nfu-undo="${escapeAttr(id)}" aria-label="Ångra Inte för oss för ${escapeAttr(this.byId[id].name)}">Ångra</button>`)).join('')}</ul>`

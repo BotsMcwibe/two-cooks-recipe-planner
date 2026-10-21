@@ -4,9 +4,9 @@
  * card badge. Backed by core/user-recipe-state.js (status, rating) and
  * core/recipe-journal.js (cook log, Inte för oss, lists).
  */
-import * as UserState from '../core/user-recipe-state.js?v=20261021g8';
-import * as Journal from '../core/recipe-journal.js?v=20261021g8';
-import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261021g8';
+import * as UserState from '../core/user-recipe-state.js?v=20261021g9';
+import * as Journal from '../core/recipe-journal.js?v=20261021g9';
+import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261021g9';
 
 const STATUS_ICON = { want: '☆', cooked: '✓' };
 const MONTHS = ['jan', 'feb', 'mars', 'apr', 'maj', 'juni', 'juli', 'aug', 'sep', 'okt', 'nov', 'dec'];
@@ -19,6 +19,19 @@ export function fmtCookDate(iso) {
   return `${Number(m[3])} ${MONTHS[Number(m[2]) - 1]}${y !== new Date().getFullYear() ? ` ${y}` : ''}`;
 }
 export const timesLabel = (n) => `${n} ${n === 1 ? 'gång' : 'gånger'}`;
+/** '2026-06-02' → 'för 4 månader sedan' (rough, for lists where the exact date is secondary). */
+export function agoLabel(iso) {
+  const t = Date.parse(iso || '');
+  if (!Number.isFinite(t)) return '';
+  const days = Math.max(0, Math.round((Date.now() - t) / 864e5));
+  if (days === 0) return 'i dag';
+  if (days === 1) return 'i går';
+  if (days < 14) return `för ${days} dagar sedan`;
+  if (days < 60) return `för ${Math.round(days / 7)} veckor sedan`;
+  if (days < 365) { const m = Math.round(days / 30.4); return `för ${m} ${m === 1 ? 'månad' : 'månader'} sedan`; }
+  const y = Math.round(days / 365);
+  return `för ${y} år sedan`;
+}
 
 /** Which control has its ▾ menu open (only one at a time). */
 let openMenu = null; // { id, newList: bool }
@@ -127,7 +140,8 @@ export function kitchenMarkHtml(id) {
 }
 
 /**
- * Cook log line for the översikt: "Lagad 3 gånger · senast 12 okt" + editable dates.
+ * Cook log line for the översikt: a disclosure "Lagad 3 gånger ▾" (collapsed by default);
+ * expanding it shows the exact dates with edit (date input), ✕ and + Lägg till datum.
  * Always returns one .cl-log element (empty and hidden when there is nothing to show).
  */
 export function cookLogHtml(id) {
@@ -139,8 +153,8 @@ export function cookLogHtml(id) {
   const open = logOpen.has(id);
   let summary;
   if (entries.length) {
-    summary = `<span class="cl-summary"><span class="cl-icon" aria-hidden="true">🗓</span>Lagad <strong>${timesLabel(entries.length)}</strong> · senast ${escapeHtml(fmtCookDate(entries[0].date))}</span>`
-      + `<button type="button" class="cl-toggle" data-k="cl-toggle" aria-expanded="${open}">${open ? 'Klar' : 'Datum'}</button>`;
+    summary = `<button type="button" class="cl-toggle" data-k="cl-toggle" aria-expanded="${open}" title="${open ? 'Dölj datumen' : 'Visa och ändra datumen'}">`
+      + `<span class="cl-icon" aria-hidden="true">🗓</span><span>Lagad <strong>${timesLabel(entries.length)}</strong></span><span class="cl-chev" aria-hidden="true">▾</span></button>`;
   } else {
     summary = '<span class="cl-summary"><span class="cl-icon" aria-hidden="true">🗓</span>Lagad · inget datum än</span>'
       + '<button type="button" class="cl-add" data-k="cl-add">+ Lägg till datum</button>';
@@ -156,7 +170,7 @@ export function cookLogHtml(id) {
       </li>`).join('')}</ul>
       <button type="button" class="cl-add" data-k="cl-add">+ Lägg till datum</button>`;
   }
-  return `<div ${attr}><div class="cl-head">${summary}</div>${list}</div>`;
+  return `<div ${attr}${open ? ' data-open="1"' : ''}><div class="cl-head">${summary}</div>${list}</div>`;
 }
 
 /** Badge + own stars for a recipe card, plus the catalog Godkänd seal (empty string when nothing is set). */

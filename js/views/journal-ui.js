@@ -3,10 +3,10 @@
  * banner), the "Klart! Logga som lagad" block at the end of the cook page and the
  * yearly challenge ring (Mitt konto).
  */
-import * as Journal from '../core/recipe-journal.js?v=20261021g8';
-import * as UserState from '../core/user-recipe-state.js?v=20261021g8';
-import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261021g8';
-import { fmtCookDate, timesLabel } from './recipe-status-ui.js?v=20261021g8';
+import * as Journal from '../core/recipe-journal.js?v=20261021g9';
+import * as UserState from '../core/user-recipe-state.js?v=20261021g9';
+import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261021g9';
+import { timesLabel } from './recipe-status-ui.js?v=20261021g9';
 
 // ---------------------------------------------------------------------------
 // Mina anteckningar
@@ -72,7 +72,7 @@ export function cookFinishHtml(id) {
   const entries = Journal.cookEntries(id);
   const today = Journal.todayIso();
   const loggedToday = entries.some((e) => e.date === today);
-  const stats = entries.length ? `<span class="cook-finish-stats">Lagad ${timesLabel(entries.length)} · senast ${escapeHtml(fmtCookDate(entries[0].date))}</span>` : '';
+  const stats = entries.length ? `<span class="cook-finish-stats">Lagad ${timesLabel(entries.length)}</span>` : '';
   if (loggedToday) {
     const undo = lastLogged && lastLogged.recipeId === id ? '<button type="button" class="cook-finish-undo">Ångra</button>' : '';
     return `<div class="cook-finish is-done"><p class="cook-finish-title"><span class="cook-finish-check" aria-hidden="true">✓</span> Loggad som lagad i dag</p>${stats}${undo}</div>`;
