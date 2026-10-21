@@ -1,11 +1,11 @@
 /**
- * Personal status control (Vill laga / Lagar nu / Lagad) + clickable 1–5 stars,
+ * Personal status control (Vill laga / Lagad) + clickable 1–5 stars,
  * and the compact card badge. Backed by core/user-recipe-state.js.
  */
-import * as UserState from '../core/user-recipe-state.js?v=20261021g5';
-import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261021g5';
+import * as UserState from '../core/user-recipe-state.js?v=20261021g6';
+import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261021g6';
 
-const STATUS_ICON = { want: '☆', cooking: '◔', cooked: '✓' };
+const STATUS_ICON = { want: '☆', cooked: '✓' };
 
 /**
  * Full control for the overview modal and cook page header.
@@ -64,7 +64,7 @@ export function cardStateHtml(id) {
   if (!status && !rating && !tested) return '';
   let html = '<div class="rs-card">';
   if (tested) html += sealHtml({ title: sealTitle(m) });
-  if (status) html += `<span class="rs-badge rs-${status}">${STATUS_ICON[status]} ${escapeHtml(UserState.STATUS_LABELS[status])}</span>`;
+  if (status && STATUS_ICON[status]) html += `<span class="rs-badge rs-${status}">${STATUS_ICON[status]} ${escapeHtml(UserState.STATUS_LABELS[status])}</span>`;
   if (rating) html += `<span class="rs-card-stars" title="Mitt betyg ${rating} av 5" aria-label="Mitt betyg ${rating} av 5">${'★'.repeat(rating)}<span class="rs-card-stars-off">${'★'.repeat(5 - rating)}</span></span>`;
   return html + '</div>';
 }

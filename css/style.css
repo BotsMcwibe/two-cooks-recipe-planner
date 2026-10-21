@@ -26,8 +26,6 @@
   /* Personal recipe status */
   --status-want: var(--p2);
   --status-want-bg: var(--p2-light);
-  --status-cooking: var(--warn-text);
-  --status-cooking-bg: var(--warn-light);
   --status-cooked: var(--primary-hover);
   --status-cooked-bg: var(--primary-light);
   --mine-star: var(--p2);
@@ -903,7 +901,6 @@ main.main-recipe {
 }
 .rs-status-btn:hover { color: var(--text); background: var(--surface-2); }
 .rs-status-btn.is-on.rs-want { background: var(--status-want-bg); color: var(--status-want); }
-.rs-status-btn.is-on.rs-cooking { background: var(--status-cooking-bg); color: var(--status-cooking); }
 .rs-status-btn.is-on.rs-cooked { background: var(--status-cooked-bg); color: var(--status-cooked); }
 .rs-status-btn.is-on::before { content: "✓ "; }
 .rs-status-btn:focus-visible,
@@ -957,7 +954,6 @@ main.main-recipe {
   font-weight: 700;
 }
 .rs-badge.rs-want { background: var(--status-want-bg); color: var(--status-want); }
-.rs-badge.rs-cooking { background: var(--status-cooking-bg); color: var(--status-cooking); }
 .rs-badge.rs-cooked { background: var(--status-cooked-bg); color: var(--status-cooked); }
 .rs-card-stars { font-size: 0.85rem; letter-spacing: 1px; color: var(--mine-star); }
 .rs-card-stars-off { color: var(--separator); }

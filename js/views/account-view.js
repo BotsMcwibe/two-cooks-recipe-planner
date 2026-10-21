@@ -5,12 +5,12 @@
  * area lists what the app stores: statuses, ratings, own spice mixes, theme,
  * Inköpslista and a Data section. Works logged out (local data only).
  */
-import * as UserState from '../core/user-recipe-state.js?v=20261021g5';
-import { menuExtrasHtml, themeSegHtml, bindThemeSeg } from './menu-items.js?v=20261021g5';
-import { onAuthChange, onSyncStatus, syncStatus, lastSyncTime, signOut, currentUser, isAvailable } from '../core/sync.js?v=20261021g5';
-import { openSignIn } from './auth-ui.js?v=20261021g5';
-import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261021g5';
-import { kitchenProfile, setKitchen, MAX_OVEN_TRAYS } from '../core/kitchen-prefs.js?v=20261021g5';
+import * as UserState from '../core/user-recipe-state.js?v=20261021g6';
+import { menuExtrasHtml, themeSegHtml, bindThemeSeg } from './menu-items.js?v=20261021g6';
+import { onAuthChange, onSyncStatus, syncStatus, lastSyncTime, signOut, currentUser, isAvailable } from '../core/sync.js?v=20261021g6';
+import { openSignIn } from './auth-ui.js?v=20261021g6';
+import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261021g6';
+import { kitchenProfile, setKitchen, MAX_OVEN_TRAYS } from '../core/kitchen-prefs.js?v=20261021g6';
 
 const LOCAL_KEYS = [
   'jesse.recipeState.v1', 'yessy.spiceMixMissing.v1', 'jesse-theme',
@@ -214,7 +214,7 @@ export class AccountView {
     const where = user ? 'Synkas med ditt konto' : 'Bara på den här enheten';
 
     // Statuses + ratings from the user's own state
-    const groups = { cooking: [], want: [], cooked: [] };
+    const groups = { want: [], cooked: [] };
     const ratings = [];
     for (const c of this.catalog) {
       const { status, rating } = UserState.get(c.id);
@@ -245,7 +245,7 @@ export class AccountView {
       </section>`;
 
     const nav = [
-      ['lagar', 'Lagar nu', groups.cooking.length], ['vill', 'Vill laga', groups.want.length],
+      ['vill', 'Vill laga', groups.want.length],
       ['lagade', 'Lagade', groups.cooked.length], ['betyg', 'Dina betyg', ratings.length],
       ['skap', 'Kryddor och skafferi', null], ['installningar', 'Inställningar', null],
       ['inkopslista', 'Inköpslista', shopRows.length], ['data', 'Data', null],
@@ -264,7 +264,6 @@ export class AccountView {
             <p class="acc-lede">${user ? 'Dina recept, betyg och val, synkade mellan dina enheter.' : 'Du är inte inloggad. Allt nedan sparas bara i den här webbläsaren. Logga in för att få det på alla dina enheter.'}</p>
             ${!user && isAvailable() ? '<button type="button" class="acc-btn acc-btn-primary acc-signin acc-signin-hero">Logga in med e-postlänk</button>' : ''}
           </div>
-          ${section('lagar', 'Lagar nu', groups.cooking.length, list(groups.cooking, 'Inget på spisen just nu.'), where)}
           ${section('vill', 'Vill laga', groups.want.length, list(groups.want, 'Markera recept med ”Vill laga” så hamnar de här.'), where)}
           ${section('lagade', 'Lagade', groups.cooked.length, list(groups.cooked, 'Inga lagade recept än.'), where)}
           ${section('betyg', 'Dina betyg', ratings.length, ratings.length ? `

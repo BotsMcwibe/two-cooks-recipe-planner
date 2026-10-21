@@ -1,4 +1,4 @@
-import { loadPortionEnergyKcal } from '../data/loader.js?v=20261021g5';
+import { loadPortionEnergyKcal } from '../data/loader.js?v=20261021g6';
 import {
   buildFilterChips,
   displayTags,
@@ -9,11 +9,11 @@ import {
   recipeVisual,
   starHtml,
   subtitleFromSearchText,
-} from '../utils/catalog-ui.js?v=20261021g5';
-import * as UserState from '../core/user-recipe-state.js?v=20261021g5';
-import { imgFailed, isPhotoMissing, recordPhotoFailure, recordPhotoSuccess, photosLikelyUnavailable } from '../utils/photo-fallback.js?v=20261021g5';
-import { excludedPantry, clearPantryExcluded, loadPantry } from '../core/pantry-exclude.js?v=20261021g5';
-import { cardStateHtml } from './recipe-status-ui.js?v=20261021g5';
+} from '../utils/catalog-ui.js?v=20261021g6';
+import * as UserState from '../core/user-recipe-state.js?v=20261021g6';
+import { imgFailed, isPhotoMissing, recordPhotoFailure, recordPhotoSuccess, photosLikelyUnavailable } from '../utils/photo-fallback.js?v=20261021g6';
+import { excludedPantry, clearPantryExcluded, loadPantry } from '../core/pantry-exclude.js?v=20261021g6';
+import { cardStateHtml } from './recipe-status-ui.js?v=20261021g6';
 
 /** localStorage key: '0' when the user turned the Godkänd filter off (on by default). */
 const GODKAND_KEY = 'yessy.browse.godkandOnly';
@@ -43,7 +43,7 @@ export class BrowseView {
     this.filterChips = buildFilterChips(catalog);
     this.activeFilter = 'all';
     this.kcalOnly = false;
-    /** @type {'want'|'cooking'|'cooked'|null} personal status filter */
+    /** @type {'want'|'cooked'|null} personal status filter */
     this.statusFilter = null;
     /** Godkänd filter (catalog "tested" mark), on by default, remembered locally. */
     this.testedOnly = loadGodkandOnly();
@@ -148,7 +148,7 @@ export class BrowseView {
         this._setGodkand(!this.testedOnly);
         return;
       } else if (group === 'status') {
-        this.statusFilter = this.statusFilter === id ? null : id;
+        this.statusFilter = this.statusFilter === id || !UserState.STATUSES.includes(id) ? null : id;
         this.$container.find('.filter-chip[data-group="status"]').each((_, el) => {
           const on = el.getAttribute('data-filter') === this.statusFilter;
           el.classList.toggle('active', on);
@@ -277,6 +277,7 @@ export class BrowseView {
       }
       if (this.excluded.size) { const p = this.pantryById.get(entry.id); if (p && p.some((x) => this.excluded.has(x))) return false; }
       if (this.testedOnly && !opts.ignoreGodkand) { const m = UserState.catalogMark(entry.id); if (!m || !m.tested) return false; }
+      if (this.statusFilter && !UserState.STATUSES.includes(this.statusFilter)) this.statusFilter = null; // retired status (e.g. 'cooking')
       if (this.statusFilter && UserState.get(entry.id).status !== this.statusFilter) return false;
       if (!q) return true;
       const hay = `${entry.name || ''} ${entry.searchText || ''}`.toLowerCase();

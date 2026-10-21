@@ -1,6 +1,6 @@
-import { RecipeGraph } from '../core/recipe-graph.js?v=20261021g5';
-import { equipmentListHtml } from '../core/equipment.js?v=20261021g5';
-import { kitchenProfile } from '../core/kitchen-prefs.js?v=20261021g5';
+import { RecipeGraph } from '../core/recipe-graph.js?v=20261021g6';
+import { equipmentListHtml } from '../core/equipment.js?v=20261021g6';
+import { kitchenProfile } from '../core/kitchen-prefs.js?v=20261021g6';
 import { formatNiceAmount } from '../utils/helpers.js';
 import {
   allergenLabel,
@@ -12,11 +12,11 @@ import {
   isScalable,
   starHtml,
   subtitleFromSearchText,
-} from '../utils/catalog-ui.js?v=20261021g5';
-import { imgFailed, isPhotoMissing, recordPhotoFailure, recordPhotoSuccess } from '../utils/photo-fallback.js?v=20261021g5';
-import * as UserState from '../core/user-recipe-state.js?v=20261021g5';
-import { spiceMixTogglesHtml } from './spice-mix-ui.js?v=20261021g5';
-import { bindStatusControls, kitchenMarkHtml, refreshStatusControls, statusControlHtml } from './recipe-status-ui.js?v=20261021g5';
+} from '../utils/catalog-ui.js?v=20261021g6';
+import { imgFailed, isPhotoMissing, recordPhotoFailure, recordPhotoSuccess } from '../utils/photo-fallback.js?v=20261021g6';
+import * as UserState from '../core/user-recipe-state.js?v=20261021g6';
+import { spiceMixTogglesHtml } from './spice-mix-ui.js?v=20261021g6';
+import { bindStatusControls, kitchenMarkHtml, refreshStatusControls, statusControlHtml } from './recipe-status-ui.js?v=20261021g6';
 
 /**
  * HelloFresh-inspired recipe overview modal.
@@ -27,7 +27,7 @@ export class OverviewModal {
   /**
    * @param {import('../core/state.js').AppState} state
    * @param {Array<object>} catalog
-   * @param {import('../data/loader.js?v=20261021g5').RecipeRepository} repository
+   * @param {import('../data/loader.js?v=20261021g6').RecipeRepository} repository
    * @param {Array} baseIngredients
    * @param {{
    *   onCook: (id: string, portions: number) => void,

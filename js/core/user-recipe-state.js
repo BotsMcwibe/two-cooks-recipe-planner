@@ -6,15 +6,17 @@
  * `personalRating` used to seed statuses and ratings; they are now only used to
  * recognise and clear those old seeded records once (see migrateSeeds).
  *
- *   get(id)                 → { status: 'want'|'cooking'|'cooked'|null, rating: 1..5|null }
+ *   get(id)                 → { status: 'want'|'cooked'|null, rating: 1..5|null }
  *   set(id, { status?, rating? })
  *   setStatus(id, status) / setRating(id, rating)   (null clears)
  *   subscribe(fn)           → unsubscribe; fn(id|null) after any change (id null = bulk/other tab)
  */
 export const STORAGE_KEY = 'jesse.recipeState.v1';
 
-export const STATUSES = ['want', 'cooking', 'cooked'];
-export const STATUS_LABELS = { want: 'Vill laga', cooking: 'Lagar nu', cooked: 'Lagad' };
+export const STATUSES = ['want', 'cooked'];
+export const STATUS_LABELS = { want: 'Vill laga', cooked: 'Lagad' };
+/** Retired statuses mapped to their replacement ('cooking'/"Lagar nu" → not finished yet → 'want'). */
+const LEGACY_STATUS = { cooking: 'want' };
 
 const listeners = new Set();
 /** @type {Record<string, {status: string|null, rating: number|null}>} */
@@ -24,7 +26,11 @@ let marks = {};
 /** @type {Record<string, {status: string|null, rating: number|null, updatedAt?: number}>} */
 let local = load();
 
-function cleanStatus(v) { return STATUSES.includes(v) ? v : null; }
+function cleanStatus(v) {
+  if (Object.prototype.hasOwnProperty.call(LEGACY_STATUS, v)) return LEGACY_STATUS[v];
+  return STATUSES.includes(v) ? v : null;
+}
+function isLegacyStatus(v) { return Object.prototype.hasOwnProperty.call(LEGACY_STATUS, v); }
 function cleanRating(v) {
   const n = Math.round(Number(v));
   return Number.isFinite(n) && n >= 1 && n <= 5 ? n : null;
@@ -39,9 +45,17 @@ function load() {
     const recipes = parsed && typeof parsed === 'object' ? parsed.recipes : null;
     if (!recipes || typeof recipes !== 'object' || Array.isArray(recipes)) return {};
     const out = {};
+    let migrated = false;
+    const now = Date.now();
     for (const [id, v] of Object.entries(recipes)) {
       if (!v || typeof v !== 'object') continue;
-      out[id] = { status: cleanStatus(v.status), rating: cleanRating(v.rating), updatedAt: Number(v.updatedAt) || 0 };
+      // Retired status (e.g. 'cooking'): migrate with a fresh timestamp so sync pushes the new value.
+      const legacy = isLegacyStatus(v.status);
+      if (legacy) migrated = true;
+      out[id] = { status: cleanStatus(v.status), rating: cleanRating(v.rating), updatedAt: legacy ? Math.max(now, (Number(v.updatedAt) || 0) + 1) : (Number(v.updatedAt) || 0) };
+    }
+    if (migrated) {
+      try { localStorage.setItem(STORAGE_KEY, JSON.stringify({ version: 1, recipes: out })); } catch { /* ignore */ }
     }
     return out;
   } catch {
@@ -182,7 +196,9 @@ export function applyRemote(id, rec) {
     emit(id);
     return true;
   }
-  local[id] = { status: cleanStatus(rec.status), rating: cleanRating(rec.rating), updatedAt: ts };
+  // Retired remote status (e.g. 'cooking'): store the replacement one ms newer
+  // so the next merge writes it back to the server.
+  local[id] = { status: cleanStatus(rec.status), rating: cleanRating(rec.rating), updatedAt: isLegacyStatus(rec.status) ? ts + 1 : ts };
   save();
   emit(id);
   return true;
