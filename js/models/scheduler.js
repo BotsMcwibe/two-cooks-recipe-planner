@@ -24,12 +24,13 @@
  *   their 30 min wait starts early.
  */
 
-import { effectiveOven, isResource, recipeAfterIds, typeInfo } from '../core/equipment.js?v=20261021g2';
-import { isTakeOutNode } from '../utils/prep-phase.js?v=20261021g2';
+import { effectiveOven, isResource, recipeAfterIds, typeInfo } from '../core/equipment.js?v=20261021g3';
+import { isTakeOutNode } from '../utils/prep-phase.js?v=20261021g3';
 
 const PREP_TOLERANCE = 1;
 const DEFAULT_KITCHEN = { ovenTrays: 2, ovenFan: false };
 const AFFINITY_TOLERANCE = 1;
+const SHORT_STEP = 2;
 /** Urgency thresholds (minutes of slack) tried for Preppa först, most prep-forward first. */
 const PREP_THRESHOLDS = [0, 1, 2, 4, 8, 'tie'];
 const VESSEL_RE = /stekpanna|panna|kastrull|gryta|wok/;
@@ -290,7 +291,11 @@ export class Scheduler {
    * @param {{ prepK?: number|'tie'|null, affinity?: boolean, lookahead?: boolean, p1First?: boolean }} opts
    * @returns {{ total: number, placed: Map<string, {start:number, activeEnd:number, end:number, cook:string|null}> }}
    */
-  _simulate({ prepK = null, affinity = false, lookahead = false, p1First = false } = {}) {
+  _simulate({ prepK = null, affinity = false, lookahead = false, p1First = false, interleave = false } = {}) {
+    let forced = null;
+    // Steps already forced ahead at the current T; each at most once, so the interleave cannot cycle.
+    let forcedT = -1;
+    const forcedAtT = new Set();
     const cooks = this.threads >= 2 ? ['P1', 'P2'] : ['P1'];
     const free = { P1: 0, P2: 0 };
     const hands = { P1: 0, P2: 0 };
@@ -332,7 +337,40 @@ export class Scheduler {
           continue;
         }
       }
+      if (forced) {
+        const fi = ready.findIndex(c => c.n.id === forced);
+        if (fi >= 0) pickIdx = fi;
+        forced = null;
+      }
       const { n, r } = ready[pickIdx];
+      // Short-step interleave: a short step m (<= SHORT_STEP active min) that becomes ready
+      // while n would still be hands-on is started first (the cook idles until it is ready)
+      // when that gives a lower finish bound: B = max(rm + m.active + BL(n), rm + BL(m)) vs
+      // A = max(T + BL(n), T + n.active + BL(m)). BL = bottom level (own total + longest tail).
+      if (interleave) {
+        const BL = id => this.bottomLevel[id];
+        const othersFreeBy = (t) => cooks.some(c => free[c] > T + 1e-9 && free[c] <= t + 1e-9);
+        let best = null;
+        for (const { n: m, r: rm } of cands) {
+          if (m === n || rm >= T + n.activeDuration - 1e-9) continue;
+          const rs = Math.max(rm, T);
+          if (m.activeDuration > SHORT_STEP) continue;
+          if (rs === T && forcedT === T && forcedAtT.has(m.id)) continue;
+          if (rs > T + 1e-9 && othersFreeBy(rs)) continue;
+          const A = Math.max(T + BL(n.id), T + n.activeDuration + BL(m.id));
+          const B = Math.max(rs + m.activeDuration + BL(n.id), rs + BL(m.id));
+          if (B < A - 1e-9 && (!best || B < best.B)) best = { m, rm: rs, B };
+        }
+        if (best) {
+          const idleCook = cooks.filter(c => free[c] <= T + 1e-9)
+            .sort((a, b) => (hands[a] - hands[b]) || (a < b ? -1 : 1))[0];
+          free[idleCook] = best.rm;
+          forced = best.m.id;
+          if (forcedT !== best.rm) { forcedT = best.rm; forcedAtT.clear(); }
+          forcedAtT.add(best.m.id);
+          continue;
+        }
+      }
 
       let cook = 'P1';
       if (cooks.length > 1) {
@@ -387,8 +425,9 @@ export class Scheduler {
   _bestRun(prepK) {
     const variants = this.threads >= 2
       ? [{ affinity: true, lookahead: true }, { affinity: true }, { lookahead: true }, {},
-          { lookahead: true, p1First: true }, { p1First: true }]
-      : [{ lookahead: true }, {}];
+          { lookahead: true, p1First: true }, { p1First: true },
+          { affinity: true, lookahead: true, interleave: true }, { lookahead: true, interleave: true }]
+      : [{ lookahead: true }, {}, { lookahead: true, interleave: true }, { interleave: true }];
     const runs = variants.map(v => ({ v, r: this._simulate({ prepK, ...v }) }));
     const fastest = Math.min(...runs.map(x => x.r.total));
     const pick = runs.find(x => x.r.total <= fastest + (x.v.affinity ? AFFINITY_TOLERANCE : 0));
