@@ -5,13 +5,13 @@
  * area lists what the app stores: statuses, ratings, own spice mixes, theme,
  * Inköpslista and a Data section. Works logged out (local data only).
  */
-import * as UserState from '../core/user-recipe-state.js?v=20261021gk';
-import { missingMixes } from '../core/spice-prefs.js?v=20261021gk';
-import { menuExtrasHtml, themeSegHtml, bindThemeSeg } from './menu-items.js?v=20261021gk';
-import { onAuthChange, onSyncStatus, syncStatus, lastSyncTime, signOut, currentUser, isAvailable } from '../core/sync.js?v=20261021gk';
-import { openSignIn } from './auth-ui.js?v=20261021gk';
-import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261021gk';
-import { kitchenProfile, setKitchen, MAX_OVEN_TRAYS } from '../core/kitchen-prefs.js?v=20261021gk';
+import * as UserState from '../core/user-recipe-state.js?v=20261021g2';
+import { missingMixes } from '../core/spice-prefs.js?v=20261021g2';
+import { menuExtrasHtml, themeSegHtml, bindThemeSeg } from './menu-items.js?v=20261021g2';
+import { onAuthChange, onSyncStatus, syncStatus, lastSyncTime, signOut, currentUser, isAvailable } from '../core/sync.js?v=20261021g2';
+import { openSignIn } from './auth-ui.js?v=20261021g2';
+import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261021g2';
+import { kitchenProfile, setKitchen, MAX_OVEN_TRAYS } from '../core/kitchen-prefs.js?v=20261021g2';
 
 const LOCAL_KEYS = [
   'jesse.recipeState.v1', 'yessy.spiceMixMissing.v1', 'jesse-theme',

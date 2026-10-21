@@ -2,8 +2,8 @@
  * Personal status control (Vill laga / Lagar nu / Lagad) + clickable 1–5 stars,
  * and the compact card badge. Backed by core/user-recipe-state.js.
  */
-import * as UserState from '../core/user-recipe-state.js?v=20261021gk';
-import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261021gk';
+import * as UserState from '../core/user-recipe-state.js?v=20261021g2';
+import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261021g2';
 
 const STATUS_ICON = { want: '☆', cooking: '◔', cooked: '✓' };
 
@@ -34,7 +34,7 @@ export function statusControlHtml(id, opts = {}) {
   </div>`;
 }
 
-/** Godkänd seal: round stamp with the Yessy mark and a check, plus the word. `lg` = översikt size. */
+/** Godkänd seal: round stamp with the Yessy face plus the word; the check only shows at `lg` (översikt) size. */
 export function sealHtml(opts = {}) {
   const { lg = false, title = '' } = opts;
   const t = title ? ` title="${escapeAttr(title)}"` : '';

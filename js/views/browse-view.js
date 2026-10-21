@@ -1,4 +1,4 @@
-import { loadPortionEnergyKcal } from '../data/loader.js?v=20261021gk';
+import { loadPortionEnergyKcal } from '../data/loader.js?v=20261021g2';
 import {
   buildFilterChips,
   displayTags,
@@ -9,11 +9,11 @@ import {
   recipeVisual,
   starHtml,
   subtitleFromSearchText,
-} from '../utils/catalog-ui.js?v=20261021gk';
-import * as UserState from '../core/user-recipe-state.js?v=20261021gk';
-import { imgFailed, isPhotoMissing, recordPhotoFailure, recordPhotoSuccess, photosLikelyUnavailable } from '../utils/photo-fallback.js?v=20261021gk';
-import { excludedPantry, clearPantryExcluded, loadPantry } from '../core/pantry-exclude.js?v=20261021gk';
-import { cardStateHtml } from './recipe-status-ui.js?v=20261021gk';
+} from '../utils/catalog-ui.js?v=20261021g2';
+import * as UserState from '../core/user-recipe-state.js?v=20261021g2';
+import { imgFailed, isPhotoMissing, recordPhotoFailure, recordPhotoSuccess, photosLikelyUnavailable } from '../utils/photo-fallback.js?v=20261021g2';
+import { excludedPantry, clearPantryExcluded, loadPantry } from '../core/pantry-exclude.js?v=20261021g2';
+import { cardStateHtml } from './recipe-status-ui.js?v=20261021g2';
 
 /** localStorage key: '0' when the user turned the Godkänd filter off (on by default). */
 const GODKAND_KEY = 'yessy.browse.godkandOnly';
@@ -116,6 +116,7 @@ export class BrowseView {
       <div class="browse-grave" id="browse-grave" hidden></div>
       <div class="browse-grid" id="browse-grid"></div>
       <div class="browse-empty" id="browse-empty" hidden></div>
+      <div class="browse-more" id="browse-more" hidden></div>
     `);
   }
 
@@ -260,6 +261,13 @@ export class BrowseView {
     const chip = this.filterChips.find(c => c.id === this.activeFilter);
     const matchFilter = chip ? chip.match : () => true;
     const q = this.query;
+    // Godkända first, most recently approved first; the rest keep catalog order
+    const approvedAt = (e) => {
+      const m = UserState.catalogMark(e.id);
+      if (!m || !m.tested) return -Infinity;
+      const t = Date.parse(e.cookedAt || '');
+      return Number.isFinite(t) ? t : 0;
+    };
     return this.catalog.filter((entry) => {
       if (!matchFilter(entry)) return false;
       if (this.kcalOnly) {
@@ -273,7 +281,9 @@ export class BrowseView {
       if (!q) return true;
       const hay = `${entry.name || ''} ${entry.searchText || ''}`.toLowerCase();
       return hay.includes(q);
-    });
+    }).map((e, i) => [e, approvedAt(e), i])
+      .sort((a, b) => (b[1] - a[1]) || (a[2] - b[2]))
+      .map(([e]) => e);
   }
 
   /** Ids of the recipes the grid shows right now, in grid order (översikt prev/next). */
@@ -289,6 +299,12 @@ export class BrowseView {
       <button type="button" class="browse-grave-clear" aria-label="Väck alla ingredienser">Väck alla ✕</button>` : '');
     const $grid = this.$container.find('#browse-grid');
     const $empty = this.$container.find('#browse-empty');
+    const $more = this.$container.find('#browse-more');
+    // Godkänd on: offer the full list below the results when it has more recipes
+    const all = this.testedOnly ? this._filtered({ ignoreGodkand: true }).length : 0;
+    const showMore = list.length > 0 && all > list.length;
+    $more.prop('hidden', !showMore).html(showMore
+      ? `<button type="button" class="browse-empty-all">Visa alla recept (${all})</button>` : '');
 
     if (!list.length) {
       $grid.empty();

@@ -1,6 +1,6 @@
 import { EventBus } from './event-bus.js';
 import { debounce } from '../utils/helpers.js';
-import { touchPref } from './prefs-meta.js?v=20261021gk';
+import { touchPref } from './prefs-meta.js?v=20261021g2';
 
 const STORAGE_KEY = 'recipeApp.state.v3';
 
