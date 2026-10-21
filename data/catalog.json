@@ -3267,7 +3267,7 @@
     "id": "pastagratang_ziti",
     "source": "ica",
     "createdAt": 1791654267,
-    "name": "Pastagratäng ziti",
+    "name": "Pastagratäng Ziti",
     "tags": [
       "master",
       "pasta",
@@ -3288,6 +3288,8 @@
     "totalMinutes": 55,
     "searchText": "pastagratäng ziti pasta penne rigatoni salsiccia korv tomatsås mozzarella basilika gratäng ugn italiensk",
     "ratingAverage": 4.3,
-    "ratingCount": 162
+    "ratingCount": 162,
+    "cooked": true,
+    "cookedAt": "2026-10-21T12:07:00+02:00"
   }
 ]
