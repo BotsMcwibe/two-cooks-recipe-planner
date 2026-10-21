@@ -1,4 +1,4 @@
-import { loadPortionEnergyKcal } from '../data/loader.js?v=20261021g9';
+import { loadPortionEnergyKcal } from '../data/loader.js?v=20261021g10';
 import {
   buildFilterChips,
   displayTags,
@@ -9,12 +9,12 @@ import {
   recipeVisual,
   starHtml,
   subtitleFromSearchText,
-} from '../utils/catalog-ui.js?v=20261021g9';
-import * as UserState from '../core/user-recipe-state.js?v=20261021g9';
-import { imgFailed, isPhotoMissing, recordPhotoFailure, recordPhotoSuccess, photosLikelyUnavailable } from '../utils/photo-fallback.js?v=20261021g9';
-import { excludedPantry, clearPantryExcluded, loadPantry } from '../core/pantry-exclude.js?v=20261021g9';
-import * as Journal from '../core/recipe-journal.js?v=20261021g9';
-import { cardStateHtml } from './recipe-status-ui.js?v=20261021g9';
+} from '../utils/catalog-ui.js?v=20261021g10';
+import * as UserState from '../core/user-recipe-state.js?v=20261021g10';
+import { imgFailed, isPhotoMissing, recordPhotoFailure, recordPhotoSuccess, photosLikelyUnavailable } from '../utils/photo-fallback.js?v=20261021g10';
+import { excludedPantry, clearPantryExcluded, loadPantry } from '../core/pantry-exclude.js?v=20261021g10';
+import * as Journal from '../core/recipe-journal.js?v=20261021g10';
+import { cardStateHtml } from './recipe-status-ui.js?v=20261021g10';
 
 /** localStorage key: '0' when the user turned the Godkänd filter off (on by default). */
 const GODKAND_KEY = 'yessy.browse.godkandOnly';
@@ -113,8 +113,17 @@ export class BrowseView {
   }
 
   _buildChrome() {
-    const chips = this.filterChips.map((c, i) =>
-      this._chipHtml(c, 'tag', i === 0)
+    // One wrapping group per context (Alla | måltid | protein | övrigt), divided like the status chips
+    const groupLabels = { all: 'Alla', meal: 'Måltid', protein: 'Protein', other: 'Övrigt' };
+    const groups = [];
+    for (const c of this.filterChips) {
+      const g = c.group || 'other';
+      let grp = groups.find(x => x.id === g);
+      if (!grp) groups.push(grp = { id: g, html: '' });
+      grp.html += this._chipHtml(c, 'tag', c.id === this.activeFilter);
+    }
+    const chips = groups.map(g =>
+      `<span class="filter-chip-group filter-chip-group-${g.id}" role="group" aria-label="${escapeAttr(groupLabels[g.id] || g.id)}">${g.html}</span>`
     ).join('');
     const kcal = this._chipHtml(
       { id: 'kcal', label: 'Under 650 kcal', title: 'Under 650 kcal per portion' },
@@ -133,7 +142,7 @@ export class BrowseView {
           <input type="search" id="browse-search" class="browse-search"
             placeholder="Sök recept…" autocomplete="off" aria-label="Sök recept">
         </div>
-        <div class="filter-chips" role="group" aria-label="Filter">${chips}</div>
+        <div class="filter-chips filter-chips-cats" role="group" aria-label="Kategorier">${chips}</div>
         <div class="filter-chips filter-chips-extra">
           <span class="filter-chip-group" role="group" aria-label="Godkänd och kalorier">${tested}${kcal}</span>
           <span class="filter-chip-group filter-chip-group-status" role="group" aria-label="Min status och mina listor">${status}</span>

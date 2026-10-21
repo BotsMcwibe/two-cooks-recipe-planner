@@ -8,8 +8,9 @@ const PROTEIN_LABELS = {
   'protein:pork': 'Fläsk',
   'protein:fish': 'Fisk',
   'protein:lamb': 'Lamm',
+  'protein:shrimp': 'Skaldjur',
   'protein:mixed': 'Blandat',
-  'protein:vegetarian': 'Vegetariskt',
+  'protein:vegetarian': 'Vego',
 };
 
 const DIFFICULTY_LABELS = {
@@ -99,69 +100,69 @@ export function displayTags(entry, limit = 2) {
   return out.slice(0, limit);
 }
 
+const has = (entry, t) => (entry.tags || []).includes(t) || (entry.hfTags || []).includes(t);
+const hasAny = (entry, list) => list.some(t => has(entry, t));
+
+const BREAKFAST_TAGS = ['breakfast', 'breakfast-kits', 'smoothie'];
+const LUNCH_TAGS = ['lunch', 'lunch-sandwiches', 'lunch-salad'];
+const DESSERT_TAGS = ['dessert', 'dessert-baking'];
+const SIDE_TAGS = ['sides', 'side', 'sides-veggie', 'sides-salad', 'sides-bites', 'sides-proteins', 'sides-bread'];
+const VEGO_TAGS = ['protein:vegetarian', 'veggie', 'vegetarisk', 'vegetarian'];
+
+/** Dinner-type main course: not breakfast, lunch, dessert or a side dish. */
+export function isDinner(entry) {
+  return !hasAny(entry, BREAKFAST_TAGS) && !hasAny(entry, LUNCH_TAGS) && !hasAny(entry, DESSERT_TAGS) && !hasAny(entry, SIDE_TAGS);
+}
+
+/** A main course (lunch or dinner): what the weekly planner picks from by default. */
+export function isMainCourse(entry) {
+  return !hasAny(entry, BREAKFAST_TAGS) && !hasAny(entry, DESSERT_TAGS) && !hasAny(entry, SIDE_TAGS);
+}
+
 /**
- * Build filter chip definitions from catalog frequencies.
- * Always includes "Alla". Prefer protein + Familj/Vego/Snabbt/Dessert when present.
+ * Category chip definitions, grouped by context:
+ *   meal    Frukost, Lunch, Middag, Dessert
+ *   protein Kyckling, Nötkött, Fläsk, Lamm, Fisk, Skaldjur, Vego
+ *   other   Familj, Snabbt, Pasta, Tillbehör
+ * Chips without any matching recipe are left out. Fisk and Skaldjur are
+ * separate (protein:fish vs protein:shrimp; no recipe has both). Vego merges
+ * protein:vegetarian with the veggie/vegetarisk tags. No "Blandat" chip.
+ */
+const CATEGORY_DEFS = [
+  { id: 'meal:breakfast', group: 'meal', label: 'Frukost', match: (e) => hasAny(e, BREAKFAST_TAGS) },
+  { id: 'meal:lunch', group: 'meal', label: 'Lunch', match: (e) => hasAny(e, LUNCH_TAGS) },
+  { id: 'meal:dinner', group: 'meal', label: 'Middag', match: isDinner },
+  { id: 'meal:dessert', group: 'meal', label: 'Dessert', match: (e) => hasAny(e, DESSERT_TAGS) },
+  { id: 'protein:chicken', group: 'protein', label: 'Kyckling', match: (e) => has(e, 'protein:chicken') },
+  { id: 'protein:beef', group: 'protein', label: 'Nötkött', match: (e) => has(e, 'protein:beef') },
+  { id: 'protein:pork', group: 'protein', label: 'Fläsk', match: (e) => has(e, 'protein:pork') },
+  { id: 'protein:lamb', group: 'protein', label: 'Lamm', match: (e) => has(e, 'protein:lamb') },
+  { id: 'protein:fish', group: 'protein', label: 'Fisk', match: (e) => has(e, 'protein:fish') || has(e, 'fish') },
+  { id: 'protein:shrimp', group: 'protein', label: 'Skaldjur', match: (e) => has(e, 'protein:shrimp') || has(e, 'shrimp') },
+  { id: 'protein:vegetarian', group: 'protein', label: 'Vego', match: (e) => hasAny(e, VEGO_TAGS) },
+  { id: 'tag:family', group: 'other', label: 'Familj', match: (e) => hasAny(e, ['family', 'familj', 'family-friendly']) },
+  { id: 'tag:quick', group: 'other', label: 'Snabbt', match: (e) => has(e, 'quick') },
+  { id: 'tag:pasta', group: 'other', label: 'Pasta', match: (e) => has(e, 'pasta') },
+  { id: 'tag:sides', group: 'other', label: 'Tillbehör', match: (e) => hasAny(e, SIDE_TAGS) },
+];
+
+/** Category chips (no "Alla") that match at least one recipe, in display order. */
+export function categoryChips(catalog) {
+  return CATEGORY_DEFS.filter(d => catalog.some(d.match)).map(d => ({ ...d }));
+}
+
+/** Look up one category by id (e.g. 'protein:fish'), or null. */
+export function categoryById(id) {
+  const d = CATEGORY_DEFS.find(x => x.id === id);
+  return d ? { ...d } : null;
+}
+
+/**
+ * Build filter chip definitions: "Alla", then categoryChips() grouped by
+ * context (each chip carries .group: 'all' | 'meal' | 'protein' | 'other').
  */
 export function buildFilterChips(catalog) {
-  const chips = [{ id: 'all', label: 'Alla', match: () => true }];
-
-  const proteinCounts = new Map();
-  const curatedCounts = new Map();
-
-  for (const c of catalog) {
-    for (const t of c.tags || []) {
-      if (t.startsWith('protein:')) {
-        proteinCounts.set(t, (proteinCounts.get(t) || 0) + 1);
-      }
-      if (CURATED_TAG_LABELS[t] && !t.startsWith('protein:')) {
-        curatedCounts.set(t, (curatedCounts.get(t) || 0) + 1);
-      }
-    }
-    for (const t of c.hfTags || []) {
-      if (CURATED_TAG_LABELS[t]) {
-        curatedCounts.set(t, (curatedCounts.get(t) || 0) + 1);
-      }
-    }
-  }
-
-  // Curated first (Familj, Vego, Snabbt, Dessert…)
-  const curatedOrder = ['family', 'family-friendly', 'veggie', 'vegetarisk', 'quick', 'dessert', 'breakfast', 'pasta', 'lunch'];
-  const usedLabels = new Set();
-  for (const key of curatedOrder) {
-    if (!curatedCounts.has(key)) continue;
-    const label = CURATED_TAG_LABELS[key];
-    if (usedLabels.has(label)) continue;
-    usedLabels.add(label);
-    chips.push({
-      id: `tag:${key}`,
-      label,
-      match: (entry) =>
-        (entry.tags || []).includes(key) ||
-        (entry.hfTags || []).includes(key) ||
-        (entry.tags || []).some(t => CURATED_TAG_LABELS[t] === label) ||
-        (entry.hfTags || []).some(t => CURATED_TAG_LABELS[t] === label),
-    });
-  }
-
-  // Protein chips (skip vegetarian if Vego already present)
-  const proteinOrder = [
-    'protein:chicken', 'protein:beef', 'protein:pork', 'protein:fish',
-    'protein:lamb', 'protein:vegetarian',
-  ];
-  for (const key of proteinOrder) {
-    if (!proteinCounts.has(key)) continue;
-    const label = proteinLabel(key);
-    if (!label) continue;
-    if (label === 'Vegetariskt' && usedLabels.has('Vego')) continue;
-    chips.push({
-      id: key,
-      label,
-      match: (entry) => (entry.tags || []).includes(key),
-    });
-  }
-
-  return chips;
+  return [{ id: 'all', group: 'all', label: 'Alla', match: () => true }, ...categoryChips(catalog)];
 }
 
 /**

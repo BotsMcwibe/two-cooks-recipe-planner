@@ -3,7 +3,7 @@
  * synced via user_preferences.prefs.spicesOwned (see sync.js).
  * Fires `spicesownedchange` on window when it changes.
  */
-import { touchPref } from './prefs-meta.js?v=20261021g9';
+import { touchPref } from './prefs-meta.js?v=20261021g10';
 
 const KEY = 'yessy.spicesOwned.v1';
 

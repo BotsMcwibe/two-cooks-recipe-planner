@@ -3120,3 +3120,27 @@ p.eq-serving { font-size: 0.85rem; margin: 8px 0 0; }
 .cl-log[data-open] .cl-dates { padding-left: 24px; }
 .cl-log[data-open] > .cl-add { margin-left: 24px; }
 @media (prefers-reduced-motion: reduce) { .cl-chev { transition: none; } }
+
+/* Category chips: Alla | Frukost…Dessert | Kyckling…Vego | Familj… in context groups */
+.filter-chips-cats {
+  align-items: center;
+  column-gap: 0;
+  row-gap: 8px;
+  /* Every group carries a divider on its left; shift the row left and clip it so
+     the divider only shows between groups on the same line, never at a line start */
+  margin-left: -11px;
+  clip-path: inset(-6px -6px -6px 11px);
+}
+.filter-chips-cats > .filter-chip-group,
+.filter-chips-cats > .filter-chip-group + .filter-chip-group {
+  margin: 0 10px 0 0;
+  padding-left: 10px;
+  border-left: 1px solid var(--border);
+}
+@media (max-width: 520px) {
+  .filter-chips-cats .filter-chip-group { gap: 6px; }
+  .filter-chips-cats > .filter-chip-group,
+  .filter-chips-cats > .filter-chip-group + .filter-chip-group { margin-right: 7px; padding-left: 7px; }
+  .filter-chips-cats { margin-left: -8px; clip-path: inset(-6px -6px -6px 8px); }
+  .filter-chips-cats .filter-chip { padding: 6px 11px; }
+}

@@ -3,7 +3,7 @@
  * Used by the header account popover and the #konto rail menu.
  * The Tema switch (Ljust / Mörkt / System) lives in Mitt konto → Inställningar (themeSegHtml).
  */
-import { themeChoice, setThemeChoice } from '../utils/theme.js?v=20261021g9';
+import { themeChoice, setThemeChoice } from '../utils/theme.js?v=20261021g10';
 
 const SPICE_SVG = '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round" stroke-linecap="round"><rect x="6.5" y="2.8" width="11" height="3.6" rx="1"/><path d="M7.2 6.4h9.6l.9 2.4v10.6a1.8 1.8 0 0 1-1.8 1.8H8.1a1.8 1.8 0 0 1-1.8-1.8V8.8z"/><path d="M6.3 11.5h11.4M6.3 17h11.4"/></g></svg>';
 const PANTRY_SVG = '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round" stroke-linecap="round"><rect x="3.5" y="3" width="17" height="18" rx="1.8"/><path d="M3.5 12h17M12 3v18M9.5 7.5v1.5M14.5 7.5v1.5M9.5 15v1.5M14.5 15v1.5"/></g></svg>';
