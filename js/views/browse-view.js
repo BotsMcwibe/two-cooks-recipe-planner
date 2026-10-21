@@ -246,6 +246,11 @@ export class BrowseView {
     });
   }
 
+  /** Ids of the recipes the grid shows right now, in grid order (översikt prev/next). */
+  filteredIds() {
+    return this._filtered().map((c) => c.id);
+  }
+
   render() {
     const list = this._filtered();
     const n = this.excluded.size;

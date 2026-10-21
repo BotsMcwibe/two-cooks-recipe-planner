@@ -31,8 +31,9 @@ export class OverviewModal {
    * @param {Array} baseIngredients
    * @param {{
    *   onCook: (id: string, portions: number) => void,
-   *   onOpen?: (id: string) => void,
+   *   onOpen?: (id: string, opts?: { nav?: boolean }) => void,
    *   onClose?: () => void,
+   *   getNavList?: () => string[],
    * }} hooks
    */
   constructor(state, catalog, repository, baseIngredients, hooks) {
@@ -47,6 +48,8 @@ export class OverviewModal {
     this.loadToken = 0;
     /** Local portions while modal is open (committed on CTA). */
     this.modalPortions = 4;
+    /** Browse list (ids, in grid order) snapshotted when the modal opens; null = no prev/next. */
+    this.navList = null;
     this._ensureDom();
     this._bind();
   }
@@ -60,6 +63,11 @@ export class OverviewModal {
       <div id="overview-modal-root" class="overview-modal-root" hidden>
         <div class="overview-backdrop" data-close="1"></div>
         <div class="overview-dialog" role="dialog" aria-modal="true" aria-labelledby="overview-title">
+          <div class="overview-nav" role="group" aria-label="Bläddra bland recepten" hidden>
+            <button type="button" class="overview-nav-btn" data-nav="-1" aria-label="Föregående recept" title="Föregående recept (←)"><span aria-hidden="true">‹</span></button>
+            <span class="overview-nav-index" aria-live="polite"></span>
+            <button type="button" class="overview-nav-btn" data-nav="1" aria-label="Nästa recept" title="Nästa recept (→)"><span aria-hidden="true">›</span></button>
+          </div>
           <button type="button" class="overview-close" data-close="1" aria-label="Stäng">×</button>
           <div class="overview-body" id="overview-body">
             <p class="overview-loading">Laddar recept…</p>
@@ -78,8 +86,18 @@ export class OverviewModal {
     });
     this.$root.on('click', '.overview-dialog', (e) => e.stopPropagation());
     $(document).on('keydown.overviewModal', (e) => {
-      if (e.key === 'Escape' && this.isOpen()) this.close();
+      if (!this.isOpen()) return;
+      if (e.key === 'Escape') { this.close(); return; }
+      if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+      if (e.altKey || e.ctrlKey || e.metaKey || e.shiftKey) return; // Alt+← is browser Back
+      const t = e.target;
+      if (t && (t.closest?.('input, textarea, select, [contenteditable]:not([contenteditable="false"])') || t.isContentEditable)) return;
+      if (this.navigate(e.key === 'ArrowLeft' ? -1 : 1)) e.preventDefault();
     });
+    this.$root.on('click', '.overview-nav-btn', (e) => {
+      this.navigate(Number(e.currentTarget.getAttribute('data-nav')));
+    });
+    this._bindSwipe();
     this.$root.on('click', '#overview-portion-minus', () => this._adjustPortions(-1));
     this.$root.on('click', '#overview-portion-plus', () => this._adjustPortions(1));
     this.$root.on('click', '#overview-cta-cook', () => {
@@ -117,7 +135,79 @@ export class OverviewModal {
     if (body) body.scrollTop = top;
   }
 
-  async open(recipeId) {
+  /** Ids of the neighbours in the snapshotted browse list (no wrap-around). */
+  _navPos() {
+    const list = this.navList;
+    const i = list ? list.indexOf(this.recipeId) : -1;
+    if (i < 0) return null;
+    return { i, n: list.length, prev: i > 0 ? list[i - 1] : null, next: i < list.length - 1 ? list[i + 1] : null };
+  }
+
+  _renderNav() {
+    const pos = this._navPos();
+    const $nav = this.$root.find('.overview-nav');
+    const show = !!pos && pos.n > 1;
+    $nav.prop('hidden', !show);
+    this.$root.find('.overview-dialog').toggleClass('has-nav', show);
+    if (!show) return;
+    $nav.find('.overview-nav-index').text(`${pos.i + 1} / ${pos.n}`);
+    $nav.find('[data-nav="-1"]').prop('disabled', !pos.prev);
+    $nav.find('[data-nav="1"]').prop('disabled', !pos.next);
+  }
+
+  /**
+   * Step to the previous (-1) / next (+1) recipe of the browse list. Stops at the ends.
+   * @returns {boolean} true if it moved
+   */
+  navigate(dir) {
+    if (!this.isOpen()) return false;
+    const pos = this._navPos();
+    const id = pos && (dir < 0 ? pos.prev : pos.next);
+    if (!id) return false;
+    this.open(id, { nav: true });
+    return true;
+  }
+
+  /** Horizontal swipe on touch = prev/next. Ignores vertical scrolls and horizontally scrollable areas. */
+  _bindSwipe() {
+    const dialog = this.$root.find('.overview-dialog')[0];
+    if (!dialog) return;
+    let start = null;
+    dialog.addEventListener('touchstart', (e) => {
+      start = null;
+      if (e.touches.length !== 1) return;
+      let el = e.target;
+      while (el && el !== dialog) {
+        if (el.matches?.('input, textarea, select')) return;
+        if (el.scrollWidth > el.clientWidth + 2 && /(auto|scroll)/.test(getComputedStyle(el).overflowX)) return;
+        el = el.parentElement;
+      }
+      const t = e.touches[0];
+      start = { x: t.clientX, y: t.clientY, at: Date.now() };
+    }, { passive: true });
+    dialog.addEventListener('touchend', (e) => {
+      if (!start || e.changedTouches.length !== 1) return;
+      const t = e.changedTouches[0];
+      const dx = t.clientX - start.x;
+      const dy = t.clientY - start.y;
+      const quick = Date.now() - start.at < 700;
+      start = null;
+      if (quick && Math.abs(dx) > 70 && Math.abs(dy) < Math.abs(dx) * 0.5) this.navigate(dx < 0 ? 1 : -1);
+    }, { passive: true });
+  }
+
+  /**
+   * @param {string} recipeId
+   * @param {{ nav?: boolean }} [opts] nav = prev/next inside an open modal (keeps the browse snapshot)
+   */
+  async open(recipeId, opts = {}) {
+    const nav = !!opts.nav && this.isOpen();
+    if (!nav) {
+      let list = null;
+      try { list = this.hooks.getNavList ? this.hooks.getNavList() : null; } catch (err) { console.warn('[overview] nav list', err); }
+      // Opened from outside browse (deep link, Inköpslista …): only offer prev/next if the recipe is in the current browse list.
+      this.navList = list && list.includes(recipeId) ? list.slice() : null;
+    }
     this.recipeId = recipeId;
     const entry = this.catalogById[recipeId];
     const base = entry?.basePortions || 4;
@@ -132,8 +222,15 @@ export class OverviewModal {
 
     this.$root.prop('hidden', false);
     $('body').addClass('modal-open');
-    this.$root.find('#overview-body').html('<p class="overview-loading">Laddar recept…</p>');
-    if (this.hooks.onOpen) this.hooks.onOpen(recipeId);
+    this._renderNav();
+    const dialog = this.$root.find('.overview-dialog')[0];
+    if (nav) {
+      // Keep the old recipe visible (dimmed) until the next one is loaded: no flash of "Laddar…".
+      $(dialog).addClass('is-navigating');
+    } else {
+      this.$root.find('#overview-body').html('<p class="overview-loading">Laddar recept…</p>');
+    }
+    if (this.hooks.onOpen) this.hooks.onOpen(recipeId, { nav });
 
     const token = ++this.loadToken;
     try {
@@ -141,8 +238,11 @@ export class OverviewModal {
       if (token !== this.loadToken) return;
       this.loaded = loaded;
       this._renderBody();
+      $(dialog).removeClass('is-navigating');
+      if (nav) { if (dialog) dialog.scrollTop = 0; this.$root[0].scrollTop = 0; }
     } catch (err) {
       if (token !== this.loadToken) return;
+      $(dialog).removeClass('is-navigating');
       this.$root.find('#overview-body').html(
         `<p class="overview-error">Kunde inte ladda receptet: ${escapeHtml(err.message)}</p>`
       );
@@ -155,6 +255,7 @@ export class OverviewModal {
   close(opts = {}) {
     const wasOpen = this.isOpen();
     this.$root.prop('hidden', true);
+    this.$root.find('.overview-dialog').removeClass('is-navigating');
     $('body').removeClass('modal-open');
     this.loadToken++;
     if (wasOpen && !opts.silent && this.hooks.onClose) this.hooks.onClose();

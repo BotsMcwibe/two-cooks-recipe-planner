@@ -762,6 +762,53 @@ main.main-recipe {
   box-shadow: var(--shadow);
 }
 
+/* Översikt prev/next: pill left of the close button. Disabled = faded + no hover, arrow shape always visible. */
+.overview-nav {
+  position: absolute;
+  top: 12px;
+  right: 56px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  height: 36px;
+  border-radius: 18px;
+  background: var(--close-bg);
+  color: var(--text);
+  box-shadow: var(--shadow);
+}
+.overview-nav[hidden] { display: none; }
+.overview-nav-btn {
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--text);
+  font-size: 1.5rem;
+  line-height: 1;
+  padding: 0 0 3px;
+  cursor: pointer;
+}
+.overview-nav-btn:disabled { opacity: 0.3; cursor: default; }
+@media (hover: hover) {
+  .overview-nav-btn:not(:disabled):hover { background: var(--border); }
+}
+.overview-nav-btn:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: -2px; }
+.overview-nav-index {
+  min-width: 3.6em;
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.overview-dialog.is-navigating #overview-body { opacity: 0.55; transition: opacity 0.15s; }
+/* No hero photo: the nav pill would cover the title, so give the title row its own line below the pill */
+.overview-dialog.has-nav .overview-hero.is-missing + .overview-content { padding-top: 60px; }
+@media (max-width: 520px) {
+  .overview-nav-index { min-width: 3.2em; font-size: 0.8rem; }
+}
+
 .overview-hero {
   width: 100%;
   aspect-ratio: 16 / 9;

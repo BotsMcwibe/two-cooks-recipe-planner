@@ -4,8 +4,8 @@ import { loadStaticData, RecipeRepository } from './data/loader.js?v=20261021eq'
 import { AppShell } from './views/app-shell.js?v=20261013sk';
 import { RecipeChrome } from './views/recipe-selector.js?v=20261011u';
 import { isScalable } from './utils/catalog-ui.js?v=20261011u';
-import { BrowseView } from './views/browse-view.js?v=20261021eq';
-import { OverviewModal } from './views/overview-modal.js?v=20261021eq';
+import { BrowseView } from './views/browse-view.js?v=20261021nav';
+import { OverviewModal } from './views/overview-modal.js?v=20261021nav';
 import { FlowGraph } from './views/flow-graph.js?v=20261021eq';
 import { CookingView } from './views/cooking-view.js?v=20261021ut';
 import { ShoppingSidebar } from './views/shopping-view.js?v=20261021eq';
@@ -286,9 +286,11 @@ async function bootstrap() {
 
   const modal = new OverviewModal(state, catalog, repository, baseIngredients, {
     onCook: (id, portions) => selectAndGo(id, 'cooking', portions),
-    onOpen: () => {
-      if (!applyingHash) syncHashFromApp({ replace: false });
+    // Prev/next inside the modal replaces the hash, so Back closes the översikt instead of stepping through recipes.
+    onOpen: (_id, o) => {
+      if (!applyingHash) syncHashFromApp({ replace: !!o?.nav });
     },
+    getNavList: () => browse.filteredIds(),
     onClose: () => {
       if (!applyingHash) syncHashFromApp({ replace: false });
     },
