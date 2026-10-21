@@ -40,7 +40,7 @@
       "duration": 2,
       "tags": [],
       "wait": 12,
-      "tips": [
+      "devNotes": [
         "Råsteget har ingen minut och listan har inget vatten. 10–12 min är en paketgissning, wait är 12. Inget vatten påhittat."
       ]
     },
@@ -108,8 +108,11 @@
       "duration": 8,
       "tags": [],
       "tips": [
+        "Mynta blandas sist."
+      ],
+      "devNotes": [
         "Snackgurka är mappad till gurka. Svartpeppar är mappad till peppar.",
-        "Mynta blandas sist. Ingen wait, råsteget har ingen minut."
+        "Ingen wait, råsteget har ingen minut."
       ]
     },
     {
@@ -154,17 +157,17 @@
       ],
       "duration": 8,
       "tags": [],
-      "tips": [
-        "3 min per sida är hands-on och ligger i duration, inte som wait. Ingen vilotid är angiven.",
-        "Za'atar är 1 förp utan vikt. Olja är angiven som 1 tsk, inte 1 skvätt.",
-        "Salt och peppar här är egna rader, inte hopslagna med salladens."
-      ],
       "heat": "medel",
       "equipment": [
         {
           "type": "stekpanna_medelstor",
           "sizeSource": "inferred"
         }
+      ],
+      "devNotes": [
+        "3 min per sida är hands-on och ligger i duration, inte som wait. Ingen vilotid är angiven.",
+        "Za'atar är 1 förp utan vikt. Olja är angiven som 1 tsk, inte 1 skvätt.",
+        "Salt och peppar här är egna rader, inte hopslagna med salladens."
       ]
     },
     {

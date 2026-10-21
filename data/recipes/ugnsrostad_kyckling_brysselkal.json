@@ -63,7 +63,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "300 g är samma mängd vid 3 och 4 portioner. Inte uppskalad."
       ]
     },
@@ -101,7 +101,7 @@
       "wait": 12,
       "tags": [],
       "tips": [
-        "Kycklingen rostas på samma plåt. Salt till grönsaker är 0,5 tsk. Olivoljan på plåten är skvätt, inte salladens 1 msk."
+        "Kycklingen rostas på samma plåt."
       ],
       "equipment": [
         {
@@ -116,6 +116,9 @@
           "ref": "plat_1",
           "shared": true
         }
+      ],
+      "devNotes": [
+        "Salt till grönsaker är 0,5 tsk. Olivoljan på plåten är skvätt, inte salladens 1 msk."
       ]
     },
     {
@@ -157,8 +160,7 @@
       "wait": 12,
       "tags": [],
       "tips": [
-        "Jorden Runt är 8 g totalt och delas på mitten: 4 g här, 4 g i bulgur. 8 g är samma vid 3 och 4 portioner.",
-        "Rostas på samma plåt som brysselkålen. Salt till kött är 0,5 tsk."
+        "Rostas på samma plåt som brysselkålen."
       ],
       "equipment": [
         {
@@ -174,6 +176,10 @@
           "transition": "keep",
           "shared": true
         }
+      ],
+      "devNotes": [
+        "Jorden Runt är 8 g totalt och delas på mitten: 4 g här, 4 g i bulgur. 8 g är samma vid 3 och 4 portioner.",
+        "Salt till kött är 0,5 tsk."
       ]
     },
     {
@@ -279,13 +285,13 @@
       "tags": [
         "prep"
       ],
-      "tips": [
-        "Rödkål är 300 g vid både 3 och 4 portioner."
-      ],
       "equipment": [
         {
           "type": "skal_stor"
         }
+      ],
+      "devNotes": [
+        "Rödkål är 300 g vid både 3 och 4 portioner."
       ]
     },
     {
@@ -317,7 +323,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "Yoghurten är fylld som 300 g, inte ml."
       ]
     },
@@ -339,15 +345,15 @@
       "duration": 4,
       "wait": 0,
       "tags": [],
-      "tips": [
-        "2–3 min är hands-on rostning, därför duration och wait 0."
-      ],
       "heat": "medelhög",
       "equipment": [
         {
           "type": "stekpanna_liten",
           "sizeSource": "inferred"
         }
+      ],
+      "devNotes": [
+        "2–3 min är hands-on rostning, därför duration och wait 0."
       ]
     },
     {

@@ -99,7 +99,7 @@
       "wait": 12,
       "tags": [],
       "tips": [
-        "Riset ska ångkoka, så tjuvkika inte. Ingefärsfräset är hands-on i duration. 12 min är sista stegets wait."
+        "Riset ska ångkoka, så tjuvkika inte."
       ],
       "heat": "medelhög",
       "stepHeat": {
@@ -109,6 +109,9 @@
         {
           "type": "kastrull_medelstor"
         }
+      ],
+      "devNotes": [
+        "Ingefärsfräset är hands-on i duration. 12 min är sista stegets wait."
       ]
     },
     {
@@ -165,7 +168,10 @@
         "prep"
       ],
       "tips": [
-        "Ingen klockad tid, därför wait 0. Häll av lagen innan servering.",
+        "Häll av lagen innan servering."
+      ],
+      "devNotes": [
+        "Ingen klockad tid, därför wait 0.",
         "Socker-yielden är 0,5 tsk. Stegtexten säger en nypa. Vattnet som täcker löken har ingen mängd och är inte risets 6 dl."
       ]
     },
@@ -217,7 +223,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "Gurka är 1 st vid både 2 och 4 portioner. Inte uppskalad."
       ]
     },
@@ -239,15 +245,15 @@
       "duration": 4,
       "wait": 0,
       "tags": [],
-      "tips": [
-        "Omrörningen är hands-on, därför duration och wait 0. Sesam är 10 g vid både 2 och 4 portioner."
-      ],
       "heat": "medelhög",
       "equipment": [
         {
           "type": "stekpanna_stor",
           "ref": "stekpanna_1"
         }
+      ],
+      "devNotes": [
+        "Omrörningen är hands-on, därför duration och wait 0. Sesam är 10 g vid både 2 och 4 portioner."
       ]
     },
     {
@@ -305,9 +311,7 @@
       "wait": 0,
       "tags": [],
       "tips": [
-        "Alla tider är hands-on stek, därför duration 8 och wait 0. Inte en passiv klocka och inte hopslagen med riset.",
-        "Köttfärsen är klar när den är genomstekt och utan rosa.",
-        "Salt (steg 5) är 0,5 tsk. Stegtexten säger en nypa. Vattenskvätten i såsen har ingen yield och är inte risets 6 dl. Olivoljan är också en skvätt utan yield."
+        "Köttfärsen är klar när den är genomstekt och utan rosa."
       ],
       "heat": "medelhög",
       "equipment": [
@@ -320,6 +324,10 @@
         {
           "type": "stekpanna_stor"
         }
+      ],
+      "devNotes": [
+        "Alla tider är hands-on stek, därför duration 8 och wait 0. Inte en passiv klocka och inte hopslagen med riset.",
+        "Salt (steg 5) är 0,5 tsk. Stegtexten säger en nypa. Vattenskvätten i såsen har ingen yield och är inte risets 6 dl. Olivoljan är också en skvätt utan yield."
       ]
     },
     {

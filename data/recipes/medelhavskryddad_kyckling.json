@@ -45,8 +45,8 @@
   "nodes": [
     {
       "id": "medelhavskryddad_kyckling__preheated_oven",
-      "name": "Värm Ugn",
-      "outputName": "Förvärmd ugn 240°C",
+      "name": "Värm ugnen",
+      "outputName": "Förvärmd ugn (240°C)",
       "inputs": [],
       "steps": [
         "Värm ugnen till 240°C, eller 220°C varmluft."
@@ -57,13 +57,13 @@
         "no-timer",
         "resource"
       ],
-      "tips": [
-        "HF anger 240°C/220°C varmluft — lokal ugnsnode, inte preheated_oven_220 (220/200)."
-      ],
       "oven": {
         "temp": 240,
         "fanTemp": 220
-      }
+      },
+      "devNotes": [
+        "HF anger 240°C/220°C varmluft — lokal ugnsnode, inte preheated_oven_220 (220/200)."
+      ]
     },
     {
       "id": "medelhavskryddad_kyckling__halved_potato",
@@ -123,9 +123,6 @@
       "duration": 4,
       "wait": 20,
       "tags": [],
-      "tips": [
-        "Övre gränsen av 25–35 min minus de sista 15 min ger 20 min i första fasen."
-      ],
       "equipment": [
         {
           "type": "ugn",
@@ -138,6 +135,9 @@
           "type": "plat",
           "ref": "plat_1"
         }
+      ],
+      "devNotes": [
+        "Övre gränsen av 25–35 min minus de sista 15 min ger 20 min i första fasen."
       ]
     },
     {

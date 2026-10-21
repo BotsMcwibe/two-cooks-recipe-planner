@@ -59,10 +59,6 @@
       "duration": 3,
       "wait": 15,
       "tags": [],
-      "tips": [
-        "Passiv koktid 15 min → wait 15. Sista steget äger timern.",
-        "FLAG: enhet ifylld — småpotatis g, 800 g vid 4 portioner. Salt till kokvattnet har ingen mängd (nypa i nästa steg, inte Salt steg 5)."
-      ],
       "heat": "hög",
       "heatSource": "inferred",
       "equipment": [
@@ -70,6 +66,10 @@
           "type": "kastrull_stor",
           "ref": "kastrull_1"
         }
+      ],
+      "devNotes": [
+        "Passiv koktid 15 min → wait 15. Sista steget äger timern.",
+        "FLAG: enhet ifylld — småpotatis g, 800 g vid 4 portioner. Salt till kokvattnet har ingen mängd (nypa i nästa steg, inte Salt steg 5)."
       ]
     },
     {
@@ -98,10 +98,6 @@
       ],
       "duration": 2,
       "tags": [],
-      "tips": [
-        "Under lock till servering är ingen klockad vila — ingen wait.",
-        "FLAG: salt och peppar här är ouppmätta nypor (pantry), inte yield-raden Salt (steg 5)."
-      ],
       "equipment": [
         {
           "type": "kastrull_stor",
@@ -109,6 +105,10 @@
           "transition": "keep",
           "offHeat": true
         }
+      ],
+      "devNotes": [
+        "Under lock till servering är ingen klockad vila — ingen wait.",
+        "FLAG: salt och peppar här är ouppmätta nypor (pantry), inte yield-raden Salt (steg 5)."
       ]
     },
     {
@@ -144,8 +144,7 @@
       "duration": 5,
       "tags": [],
       "tips": [
-        "1–2 min per sida är hands-on stekning → duration, inte wait. Ugnen behöver inte vara klar förrän rostningen.",
-        "FLAG: enheter ifyllda — fläskytterfilé g (600 g) och Vitlöksflörter g (8 g) vid 4 portioner. Olivolja är pantry-skvätt (ej i yields)."
+        "Ugnen behöver inte vara klar förrän rostningen."
       ],
       "heat": "hög",
       "equipment": [
@@ -153,6 +152,10 @@
           "type": "stekpanna_stor",
           "ref": "stekpanna_1"
         }
+      ],
+      "devNotes": [
+        "1–2 min per sida är hands-on stekning → duration, inte wait.",
+        "FLAG: enheter ifyllda — fläskytterfilé g (600 g) och Vitlöksflörter g (8 g) vid 4 portioner. Olivolja är pantry-skvätt (ej i yields)."
       ]
     },
     {
@@ -173,8 +176,7 @@
       "wait": 13,
       "tags": [],
       "tips": [
-        "Passiv rostning 12–13 min → wait 13 (övre gräns). Sista steget äger timern.",
-        "Ta ut köttet och låt det vila under folie till servering. Ingen minutsiffra — ingen extra wait."
+        "Ta ut köttet och låt det vila under folie till servering."
       ],
       "equipment": [
         {
@@ -187,6 +189,10 @@
         {
           "type": "plat"
         }
+      ],
+      "devNotes": [
+        "Passiv rostning 12–13 min → wait 13 (övre gräns). Sista steget äger timern.",
+        "Ingen minutsiffra — ingen extra wait."
       ]
     },
     {
@@ -207,7 +213,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "FLAG: enhet ifylld — äpple st, 2 st vid 4 portioner."
       ]
     },
@@ -229,7 +235,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "FLAG: enhet ifylld som st (kan vara kruka). 1 st vid både 2 och 4 portioner — skalar inte."
       ]
     },
@@ -273,13 +279,15 @@
         "prep"
       ],
       "tips": [
-        "Blanda precis innan servering så salladen håller sig krispig.",
-        "FLAG: enhet ifylld — salladsmix g. 100 g vid 4 portioner; 2 portioner är 60 g, inte linjärt. Olivolja, salt och peppar är pantry-nypa/skvätt."
+        "Blanda precis innan servering så salladen håller sig krispig."
       ],
       "equipment": [
         {
           "type": "skal_stor"
         }
+      ],
+      "devNotes": [
+        "FLAG: enhet ifylld — salladsmix g. 100 g vid 4 portioner; 2 portioner är 60 g, inte linjärt. Olivolja, salt och peppar är pantry-nypa/skvätt."
       ]
     },
     {
@@ -332,9 +340,7 @@
       "wait": 2,
       "tags": [],
       "tips": [
-        "Fräs 1–2 min är hands-on → duration. Sista stegets uppvärmning 1–2 min är passiv → wait 2.",
-        "FLAG: smör (steg 5) är efter behov med null-mängd. Ingen mängd hittad på — nämns bara i steget, inte som input.",
-        "FLAG: enheter ifyllda — vitlöksklyfta st (2), matlagningsgrädde paket → pkt (2), kycklingbuljong g (8), salt tsk (0,5 tsk; stegets [1/4 tsk | 1/2 tsk]). Gör såsen i samma panna medan fläsket rostas."
+        "Gör såsen i samma panna medan fläsket rostas."
       ],
       "heat": "medel",
       "equipment": [
@@ -344,6 +350,11 @@
           "transition": "keep",
           "after": "flaskytterfile_graddsas__seared_pork"
         }
+      ],
+      "devNotes": [
+        "Fräs 1–2 min är hands-on → duration. Sista stegets uppvärmning 1–2 min är passiv → wait 2.",
+        "FLAG: smör (steg 5) är efter behov med null-mängd. Ingen mängd hittad på — nämns bara i steget, inte som input.",
+        "FLAG: enheter ifyllda — vitlöksklyfta st (2), matlagningsgrädde paket → pkt (2), kycklingbuljong g (8), salt tsk (0,5 tsk; stegets [1/4 tsk | 1/2 tsk])."
       ]
     },
     {
@@ -381,7 +392,7 @@
       "tags": [
         "master"
       ],
-      "tips": [
+      "devNotes": [
         "FLAG: valnötter har amount 20/40 men unit null. Ingen mängd satt. Inte i inputs. Nöt-allergen ändå, eftersom de garneras.",
         "HF step 2 (bryn/rosta) och step 3 (hacka/skiva) saknar bild. Step 6 (servering) saknar bild."
       ]

@@ -45,7 +45,7 @@
   "nodes": [
     {
       "id": "grekisk_notfarsmoussaka__preheated_oven_240",
-      "name": "Värm Ugnen",
+      "name": "Värm ugnen",
       "outputName": "Förvärmd ugn (240°C)",
       "inputs": [],
       "steps": [
@@ -58,13 +58,15 @@
         "resource"
       ],
       "tips": [
-        "Ugnen tar vanligtvis 10–15 minuter att värmas upp.",
-        "HF anger 240°C/220°C varmluft — lokal ugnsnode, inte preheated_oven_220."
+        "Ugnen tar vanligtvis 10–15 minuter att värmas upp."
       ],
       "oven": {
         "temp": 240,
         "fanTemp": 220
-      }
+      },
+      "devNotes": [
+        "HF anger 240°C/220°C varmluft — lokal ugnsnode, inte preheated_oven_220."
+      ]
     },
     {
       "id": "grekisk_notfarsmoussaka__sliced_aubergine",
@@ -119,9 +121,6 @@
       "duration": 2,
       "wait": 12,
       "tags": [],
-      "tips": [
-        "Olivoljan på plåten är en skvätt, inte stekoljans 1 msk."
-      ],
       "equipment": [
         {
           "type": "ugn",
@@ -133,6 +132,9 @@
         {
           "type": "plat"
         }
+      ],
+      "devNotes": [
+        "Olivoljan på plåten är en skvätt, inte stekoljans 1 msk."
       ]
     },
     {
@@ -164,7 +166,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "Zucchini är 1 st vid både 3 och 4 portioner."
       ]
     },
@@ -191,15 +193,15 @@
       "duration": 5,
       "wait": 0,
       "tags": [],
-      "tips": [
-        "3–4 min är hands-on stek, därför duration och wait 0. Nötfärs är 450 g vid både 3 och 4 portioner."
-      ],
       "heat": "medelhög",
       "equipment": [
         {
           "type": "stekpanna_stor",
           "ref": "stekpanna_1"
         }
+      ],
+      "devNotes": [
+        "3–4 min är hands-on stek, därför duration och wait 0. Nötfärs är 450 g vid både 3 och 4 portioner."
       ]
     },
     {
@@ -257,9 +259,7 @@
       "wait": 1,
       "tags": [],
       "tips": [
-        "Stektiderna är hands-on i duration. Bara sjudningen på 1 min är wait, och den äger sista steget.",
-        "Salt till grönsaker och salt till sås är 0,5 tsk vardera, samlat till 1 tsk.",
-        "Krossade tomater 780 g och buljong 8 g är samma vid 3 och 4 portioner. Köttet ska vara genomstekt och utan rosa."
+        "Köttet ska vara genomstekt och utan rosa."
       ],
       "heat": "medelhög",
       "heatSource": "inferred",
@@ -269,6 +269,11 @@
           "ref": "stekpanna_1",
           "transition": "keep"
         }
+      ],
+      "devNotes": [
+        "Stektiderna är hands-on i duration. Bara sjudningen på 1 min är wait, och den äger sista steget.",
+        "Salt till grönsaker och salt till sås är 0,5 tsk vardera, samlat till 1 tsk.",
+        "Krossade tomater 780 g och buljong 8 g är samma vid 3 och 4 portioner."
       ]
     },
     {
@@ -305,9 +310,6 @@
       "duration": 4,
       "wait": 15,
       "tags": [],
-      "tips": [
-        "Mornaysås är 200 g och osten 40 g vid både 3 och 4 portioner. Salladen görs under gratineringen och väntar inte inuti den här noden."
-      ],
       "equipment": [
         {
           "type": "ugn",
@@ -320,6 +322,9 @@
           "type": "ugnsform_stor",
           "sizeSource": "inferred"
         }
+      ],
+      "devNotes": [
+        "Mornaysås är 200 g och osten 40 g vid både 3 och 4 portioner. Salladen görs under gratineringen och väntar inte inuti den här noden."
       ]
     },
     {
@@ -357,7 +362,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "Persilja är 1 st från 2 till 4 portioner. Salladen är baby gem, mappad till lettuce.",
         "En skvätt olivolja är valfri och har ingen mängd."
       ]

@@ -25,8 +25,8 @@
   "nodes": [
     {
       "id": "ugnsbakad_lax_chiligurka__oven",
-      "name": "Värm Ugnen",
-      "outputName": "Varm ugn",
+      "name": "Värm ugnen",
+      "outputName": "Förvärmd ugn (225°C)",
       "inputs": [],
       "steps": [
         "Värm ugnen till 200°C varmluft eller 225°C vanlig."
@@ -36,13 +36,13 @@
         "no-timer",
         "resource"
       ],
-      "tips": [
-        "Råsteget anger ingen förvärmningstid, därför ingen wait."
-      ],
       "oven": {
         "temp": 225,
         "fanTemp": 200
-      }
+      },
+      "devNotes": [
+        "Råsteget anger ingen förvärmningstid, därför ingen wait."
+      ]
     },
     {
       "id": "ugnsbakad_lax_chiligurka__rice",
@@ -61,7 +61,7 @@
       "duration": 2,
       "tags": [],
       "wait": 12,
-      "tips": [
+      "devNotes": [
         "Råsteget har ingen minut. 10–12 min är en paketgissning, wait är 12. Inget vatten i rålistan, inget vatten påhittat."
       ]
     },
@@ -104,7 +104,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "Chili flakes är ½ förp enligt rådatan. Ingen vikt, inga gram påhittade.",
         "\"Till servering\" har ingen minut, därför ingen wait."
       ]
@@ -138,7 +138,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "Kålrabbi är mappad till befintlig vit kålrabbi. Färgen är inte angiven.",
         "Salt är en egen rad, 1 krm, inte hopslagen med laxens salt."
       ]
@@ -186,11 +186,6 @@
       "duration": 3,
       "tags": [],
       "wait": 15,
-      "tips": [
-        "Råtexten säger smord form men listan har ingen olja. Ingen mängd påhittad.",
-        "Lax är 4 st utan vikt. Riven ingefära är 1 förp, inga gram.",
-        "Japansk soja är mappad till sojasås. 15 min är sista stegets wait."
-      ],
       "equipment": [
         {
           "type": "ugn",
@@ -203,6 +198,11 @@
           "type": "ugnsform",
           "sizeSource": "inferred"
         }
+      ],
+      "devNotes": [
+        "Råtexten säger smord form men listan har ingen olja. Ingen mängd påhittad.",
+        "Lax är 4 st utan vikt. Riven ingefära är 1 förp, inga gram.",
+        "Japansk soja är mappad till sojasås. 15 min är sista stegets wait."
       ]
     },
     {
@@ -228,7 +228,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "Andra sojaraden är 1 msk, inte hopslagen med marinadens 2 msk."
       ]
     },

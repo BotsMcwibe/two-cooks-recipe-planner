@@ -52,7 +52,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "FLAG: _unitInference Tomat 8 tsk — överstyrd till 8 st (metod: grovhacka; yield 2 var 4 tsk→4 st).",
         "FLAG: _unitInference Röd paprika 2 tsk — överstyrd till 2 st (metod: grovhacka; spice-reason fel).",
         "FLAG: _unitInference Vitlöksklyfta 4 tsk vid 4 port — delad 2+2 st (yield 2 var 2 klyfta; klyfta→st).",
@@ -77,7 +77,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "FLAG: _unitInference Dragon 1 tsk — överstyrd till 1 kruka (metod: plocka blad; färsk ört)."
       ]
     },
@@ -105,9 +105,6 @@
       "duration": 3,
       "wait": 13,
       "tags": [],
-      "tips": [
-        "FLAG: couscous-vatten 1 l är processmängd (ej HF yields 8 ml)."
-      ],
       "heat": "hög",
       "heatSource": "inferred",
       "equipment": [
@@ -115,6 +112,9 @@
           "type": "kastrull_medelstor",
           "sizeSource": "inferred"
         }
+      ],
+      "devNotes": [
+        "FLAG: couscous-vatten 1 l är processmängd (ej HF yields 8 ml)."
       ]
     },
     {
@@ -151,16 +151,16 @@
       "duration": 4,
       "wait": 15,
       "tags": [],
-      "tips": [
-        "FLAG: _unitInference Buljong 4 ml — överstyrd till 4 g (yield 2 var null/null; samma mönster som övriga masters).",
-        "FLAG: _unitInference Vatten 8 ml — överstyrd till 8 dl (HF-steg: 200 ml kokande vatten per person).",
-        "FLAG: olja till fräsning saknas i HF yields — 1 skvätt pantry."
-      ],
       "heat": "medellåg",
       "equipment": [
         {
           "type": "kastrull_stor"
         }
+      ],
+      "devNotes": [
+        "FLAG: _unitInference Buljong 4 ml — överstyrd till 4 g (yield 2 var null/null; samma mönster som övriga masters).",
+        "FLAG: _unitInference Vatten 8 ml — överstyrd till 8 dl (HF-steg: 200 ml kokande vatten per person).",
+        "FLAG: olja till fräsning saknas i HF yields — 1 skvätt pantry."
       ]
     },
     {
@@ -207,7 +207,6 @@
       "duration": 4,
       "tags": [],
       "tips": [
-        "FLAG: _unitInference Socker 1 g — överstyrd till 1 nypa (efter smak).",
         "Häll i en skvätt extra kokande vatten om soppan känns för tjock.",
         "Resterande crème fraiche (150 ml) sparas till servering."
       ],
@@ -215,6 +214,9 @@
         {
           "type": "stavmixer"
         }
+      ],
+      "devNotes": [
+        "FLAG: _unitInference Socker 1 g — överstyrd till 1 nypa (efter smak)."
       ]
     },
     {
@@ -263,7 +265,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "FLAG: _unitInference Smör 2,667 g — orimligt för vitlökssmör; pantry-uppskattning 40 g för 4 port."
       ]
     },
@@ -296,11 +298,6 @@
       "duration": 3,
       "wait": 7,
       "tags": [],
-      "tips": [
-        "FLAG: _unitInference Ciabatta 1 tsk — överstyrd till 1 st (metod: halvera ciabatta).",
-        "FLAG: olja över brödet saknas i HF yields — 1 skvätt pantry.",
-        "Sätt ugnen på 220°C i början (shared preheated_oven_220)."
-      ],
       "equipment": [
         {
           "type": "ugn",
@@ -312,6 +309,11 @@
         {
           "type": "plat"
         }
+      ],
+      "devNotes": [
+        "FLAG: _unitInference Ciabatta 1 tsk — överstyrd till 1 st (metod: halvera ciabatta).",
+        "FLAG: olja över brödet saknas i HF yields — 1 skvätt pantry.",
+        "Sätt ugnen på 220°C i början (shared preheated_oven_220)."
       ]
     },
     {
@@ -355,7 +357,7 @@
       "tags": [
         "master"
       ],
-      "tips": [
+      "devNotes": [
         "HF-steg säger 'Riv parmesan' men ingrediensen är finriven ost — använd {{grated_cheese}} som den är."
       ]
     }

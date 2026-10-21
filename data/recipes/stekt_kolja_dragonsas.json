@@ -40,7 +40,7 @@
   "nodes": [
     {
       "id": "stekt_kolja_dragonsas__preheated_oven_240",
-      "name": "Värm Ugnen",
+      "name": "Värm ugnen",
       "outputName": "Förvärmd ugn (240°C)",
       "inputs": [],
       "steps": [
@@ -53,13 +53,15 @@
         "resource"
       ],
       "tips": [
-        "Ugnen tar vanligtvis 10–15 minuter att värmas upp.",
-        "HF anger 240°C/220°C varmluft — lokal ugnsnode, inte preheated_oven_220 (220/200)."
+        "Ugnen tar vanligtvis 10–15 minuter att värmas upp."
       ],
       "oven": {
         "temp": 240,
         "fanTemp": 220
-      }
+      },
+      "devNotes": [
+        "HF anger 240°C/220°C varmluft — lokal ugnsnode, inte preheated_oven_220 (220/200)."
+      ]
     },
     {
       "id": "stekt_kolja_dragonsas__potato_wedges",
@@ -115,8 +117,7 @@
       "wait": 20,
       "tags": [],
       "tips": [
-        "Använd fler plåtar om det blir för trångt.",
-        "Första fasen är övre gränsen 35 min minus de 15 min som återstår när broccoli och rädisor läggs på."
+        "Använd fler plåtar om det blir för trångt."
       ],
       "equipment": [
         {
@@ -130,6 +131,9 @@
           "type": "plat",
           "ref": "plat_1"
         }
+      ],
+      "devNotes": [
+        "Första fasen är övre gränsen 35 min minus de 15 min som återstår när broccoli och rädisor läggs på."
       ]
     },
     {
@@ -182,7 +186,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "HF skriver att halva mängden av vissa ingredienser används — mängderna här är 4-portionsyielden som den står."
       ]
     },

@@ -30,7 +30,7 @@
   "nodes": [
     {
       "id": "gronsaksfyllda_paprikor__preheated_oven_200",
-      "name": "Värm Ugnen",
+      "name": "Värm ugnen",
       "outputName": "Förvärmd ugn (200°C)",
       "inputs": [],
       "steps": [
@@ -42,14 +42,14 @@
         "no-timer",
         "resource"
       ],
-      "tips": [
-        "HF anger 200°C (inte 220) — lokal ugnsnode, inte preheated_oven_220."
-      ],
       "oven": {
         "temp": 200,
         "fanTemp": 180,
         "fanTempSource": "derived"
-      }
+      },
+      "devNotes": [
+        "HF anger 200°C (inte 220) — lokal ugnsnode, inte preheated_oven_220."
+      ]
     },
     {
       "id": "gronsaksfyllda_paprikor__cooked_pearl_couscous",
@@ -85,9 +85,6 @@
       "duration": 3,
       "wait": 14,
       "tags": [],
-      "tips": [
-        "FLAG: HF Buljong amount=4 unit infererad som ml (yield 2 var null/null). Tolkat som 4 g grönsaksbuljong. Vatten saknades i yields — 1,5 l för kokning/avhälning av 335 g pärlcouscous (pasta-stil)."
-      ],
       "heat": "hög",
       "heatSource": "inferred",
       "equipment": [
@@ -95,6 +92,9 @@
           "type": "kastrull_medelstor",
           "sizeSource": "inferred"
         }
+      ],
+      "devNotes": [
+        "FLAG: HF Buljong amount=4 unit infererad som ml (yield 2 var null/null). Tolkat som 4 g grönsaksbuljong. Vatten saknades i yields — 1,5 l för kokning/avhälning av 335 g pärlcouscous (pasta-stil)."
       ]
     },
     {
@@ -116,15 +116,15 @@
       "tags": [
         "prep"
       ],
-      "tips": [
-        "FLAG: HF Röd paprika amount=4 unit infererad som tsk (reason spice) — overridden till st; metoden kräver hela paprikor."
-      ],
       "equipment": [
         {
           "type": "ugnsform",
           "ref": "ugnsform_1",
           "sizeSource": "inferred"
         }
+      ],
+      "devNotes": [
+        "FLAG: HF Röd paprika amount=4 unit infererad som tsk (reason spice) — overridden till st; metoden kräver hela paprikor."
       ]
     },
     {
@@ -202,7 +202,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "FLAG: HF Oregano amount=1 unit infererad som tsk (spice), men stegen säger plocka blad från stjälk — overridden till 1 kruka färsk oregano."
       ]
     },
@@ -280,14 +280,14 @@
       ],
       "duration": 10,
       "tags": [],
-      "tips": [
-        "FLAG: Pumpakärnor 1 tsk för både 2- och 4-portions yields (icke-linjär). Tex-Mex 6 tsk vid 4 portioner — HF-värde behållet."
-      ],
       "heat": "medel",
       "equipment": [
         {
           "type": "stekpanna_stor"
         }
+      ],
+      "devNotes": [
+        "FLAG: Pumpakärnor 1 tsk för både 2- och 4-portions yields (icke-linjär). Tex-Mex 6 tsk vid 4 portioner — HF-värde behållet."
       ]
     },
     {

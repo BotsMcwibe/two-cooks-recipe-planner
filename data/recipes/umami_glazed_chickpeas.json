@@ -120,7 +120,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "Kikärtslaget är en processrest, inte en egen vara.",
         "Burkarna delas: 4 msk lag till glazen (0,1 st) och de avrunna kikärtorna till stekningen (0,9 st). Andelen är en uppskattning; råreceptet anger ingen burkstorlek."
       ]
@@ -182,7 +182,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "Glazen tar bara det sparade laget; kikärtorna själva steks i en egen nod."
       ]
     },
@@ -233,15 +233,15 @@
       "duration": 7,
       "wait": 0,
       "tags": [],
-      "tips": [
-        "5–7 min är hands-on stek (duration 7, övre gräns). Ingen passiv wait."
-      ],
       "heat": "medelhög",
       "equipment": [
         {
           "type": "stekpanna_stor",
           "ref": "stekpanna_1"
         }
+      ],
+      "devNotes": [
+        "5–7 min är hands-on stek (duration 7, övre gräns). Ingen passiv wait."
       ]
     },
     {
@@ -390,7 +390,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "HF-kortet lägger yoghurten i samma steg som glaseringen; egen nod så 2–3 min-sjuden äger timern."
       ]
     },
@@ -412,7 +412,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "HF-enhet portionspåse finns inte i units.json — satt till 1 pkt. Samma mängd vid 2 och 4 portioner."
       ]
     },

@@ -35,7 +35,7 @@
       "duration": 2,
       "tags": [],
       "wait": 12,
-      "tips": [
+      "devNotes": [
         "Råsteget har ingen minut. 10–12 min är en paketgissning, wait är 12. Inget vatten i rålistan, inget vatten påhittat."
       ]
     },
@@ -111,16 +111,16 @@
       "duration": 2,
       "tags": [],
       "wait": 7,
-      "tips": [
-        "Daal är 4 förp utan vikt. \"Späd med lite vatten\" har ingen mängd, inget extra vatten påhittat.",
-        "5–7 min ger wait 7, övre gränsen i sista steget."
-      ],
       "heat": "medel",
       "equipment": [
         {
           "type": "kastrull_liten",
           "sizeSource": "inferred"
         }
+      ],
+      "devNotes": [
+        "Daal är 4 förp utan vikt. \"Späd med lite vatten\" har ingen mängd, inget extra vatten påhittat.",
+        "5–7 min ger wait 7, övre gränsen i sista steget."
       ]
     },
     {
@@ -156,7 +156,7 @@
       "tags": [
         "master"
       ],
-      "tips": [
+      "devNotes": [
         "Inledningen \"läs igenom receptet\" är ingen teknik och är inte ett steg.",
         "Betyg saknas (average null, 13 röster). Inget betyg påhittat."
       ]

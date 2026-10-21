@@ -45,7 +45,7 @@
   "nodes": [
     {
       "id": "honungs_chiliglaserad_kyckling__preheated_oven_240",
-      "name": "Värm Ugnen",
+      "name": "Värm ugnen",
       "outputName": "Förvärmd ugn (240°C)",
       "inputs": [],
       "steps": [
@@ -58,13 +58,15 @@
         "resource"
       ],
       "tips": [
-        "Ugnen tar vanligtvis 10–15 minuter att värmas upp.",
-        "HF anger 240°C/220°C varmluft — lokal ugnsnode, inte preheated_oven_220."
+        "Ugnen tar vanligtvis 10–15 minuter att värmas upp."
       ],
       "oven": {
         "temp": 240,
         "fanTemp": 220
-      }
+      },
+      "devNotes": [
+        "HF anger 240°C/220°C varmluft — lokal ugnsnode, inte preheated_oven_220."
+      ]
     },
     {
       "id": "honungs_chiliglaserad_kyckling__cut_fries",
@@ -135,9 +137,7 @@
       "wait": 25,
       "tags": [],
       "tips": [
-        "Använd fler plåtar om det blir för trångt.",
-        "Första fasen är övre gränsen 35 min minus de 10 min som återstår när glazen sätts på.",
-        "Olivolja, och peppar, har ingen mängd i yields."
+        "Använd fler plåtar om det blir för trångt."
       ],
       "equipment": [
         {
@@ -150,6 +150,10 @@
         {
           "type": "plat"
         }
+      ],
+      "devNotes": [
+        "Första fasen är övre gränsen 35 min minus de 10 min som återstår när glazen sätts på.",
+        "Olivolja, och peppar, har ingen mängd i yields."
       ]
     },
     {
@@ -209,7 +213,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "Ranches salt är en nypa i texten, inte saltet till sås (1 tsk), som går i glazen."
       ]
     },
@@ -242,13 +246,13 @@
       "tags": [
         "prep"
       ],
-      "tips": [
-        "En skvätt olivolja precis innan servering är valfri och har ingen mängd."
-      ],
       "equipment": [
         {
           "type": "skal_stor"
         }
+      ],
+      "devNotes": [
+        "En skvätt olivolja precis innan servering är valfri och har ingen mängd."
       ]
     },
     {
@@ -295,15 +299,18 @@
       "wait": 0,
       "tags": [],
       "tips": [
-        "Håll glazen varm till servering. Ingen minuttid, därför ingen wait.",
-        "Stegruben säger sriracha, men ingrediensen är chiliflakes 1 g, samma mängd vid 2 och 4 portioner. Inte uppskalad och inte bytt mot sriracha.",
-        "Glazen delas: kycklingen vänds i den (0,5 st) och resten toppar tallriken (0,5 st). Råreceptet anger ingen proportion."
+        "Håll glazen varm till servering."
       ],
       "heat": "medel",
       "equipment": [
         {
           "type": "kastrull_medelstor"
         }
+      ],
+      "devNotes": [
+        "Ingen minuttid, därför ingen wait.",
+        "Stegruben säger sriracha, men ingrediensen är chiliflakes 1 g, samma mängd vid 2 och 4 portioner. Inte uppskalad och inte bytt mot sriracha.",
+        "Glazen delas: kycklingen vänds i den (0,5 st) och resten toppar tallriken (0,5 st). Råreceptet anger ingen proportion."
       ]
     },
     {
@@ -341,14 +348,16 @@
       "wait": 0,
       "tags": [],
       "tips": [
-        "Tvätta händer och redskap efter rå kyckling. Kycklingen är klar när köttet inte längre är rosa i mitten.",
-        "3 min per sida är hands-on, därför duration och wait 0."
+        "Tvätta händer och redskap efter rå kyckling. Kycklingen är klar när köttet inte längre är rosa i mitten."
       ],
       "heat": "medelhög",
       "equipment": [
         {
           "type": "stekpanna_stor"
         }
+      ],
+      "devNotes": [
+        "3 min per sida är hands-on, därför duration och wait 0."
       ]
     },
     {

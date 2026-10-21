@@ -45,7 +45,7 @@
   "nodes": [
     {
       "id": "citronstekt_lax__preheated_oven",
-      "name": "Värm Ugnen",
+      "name": "Värm ugnen",
       "outputName": "Förvärmd ugn (240°C)",
       "inputs": [],
       "steps": [
@@ -57,13 +57,13 @@
         "no-timer",
         "resource"
       ],
-      "tips": [
-        "HF anger 240°C/220°C varmluft — lokal ugnsnode, inte delad preheated_oven_220."
-      ],
       "oven": {
         "temp": 240,
         "fanTemp": 220
-      }
+      },
+      "devNotes": [
+        "HF anger 240°C/220°C varmluft — lokal ugnsnode, inte delad preheated_oven_220."
+      ]
     },
     {
       "id": "citronstekt_lax__diced_potato",
@@ -108,7 +108,7 @@
       "wait": 15,
       "tags": [],
       "tips": [
-        "Potatisen ska totalt rosta 20–30 min. Broccoli i när 15 min återstår, så den här noden är bara första fasen (övre gräns 30 minus 15).",
+        "Potatisen ska totalt rosta 20–30 min.",
         "Använd fler plåtar om det blir för trångt."
       ],
       "equipment": [
@@ -123,6 +123,9 @@
           "type": "plat",
           "ref": "plat_1"
         }
+      ],
+      "devNotes": [
+        "Broccoli i när 15 min återstår, så den här noden är bara första fasen (övre gräns 30 minus 15)."
       ]
     },
     {
@@ -168,7 +171,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "Råreceptet halverar citronen: ena halvan skivas till garnering, den andra pressas i buljongen."
       ]
     },
@@ -256,9 +259,6 @@
       "duration": 2,
       "wait": 15,
       "tags": [],
-      "tips": [
-        "Det är de sista 15 minuterna av potatisens 20–30 min."
-      ],
       "equipment": [
         {
           "type": "plat",
@@ -272,6 +272,9 @@
           "temp": 240,
           "fanTemp": 220
         }
+      ],
+      "devNotes": [
+        "Det är de sista 15 minuterna av potatisens 20–30 min."
       ]
     },
     {
@@ -303,7 +306,7 @@
       "duration": 6,
       "tags": [],
       "tips": [
-        "Sätt igång när det återstår ca 10 min av potatisens och broccolins ugnstid. Stektiden är hands-on och ligger i duration, inte wait."
+        "Sätt igång när det återstår ca 10 min av potatisens och broccolins ugnstid."
       ],
       "heat": "medelhög",
       "equipment": [
@@ -311,6 +314,9 @@
           "type": "stekpanna_stor",
           "ref": "stekpanna_1"
         }
+      ],
+      "devNotes": [
+        "Stektiden är hands-on och ligger i duration, inte wait."
       ]
     },
     {
@@ -341,7 +347,7 @@
       "duration": 6,
       "tags": [],
       "tips": [
-        "Laxen är färdiglagad när köttet är ogenomskinligt i mitten. Andra stekningen är hands-on och ligger i duration."
+        "Laxen är färdiglagad när köttet är ogenomskinligt i mitten."
       ],
       "heat": "medelhög",
       "heatSource": "inferred",
@@ -351,6 +357,9 @@
           "ref": "stekpanna_1",
           "transition": "keep"
         }
+      ],
+      "devNotes": [
+        "Andra stekningen är hands-on och ligger i duration."
       ]
     },
     {

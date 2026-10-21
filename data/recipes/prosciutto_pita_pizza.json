@@ -36,7 +36,7 @@
   "nodes": [
     {
       "id": "prosciutto_pita_pizza__preheated_oven_200",
-      "name": "Värm Ugnen",
+      "name": "Värm ugnen",
       "outputName": "Förvärmd ugn (200°C)",
       "inputs": [],
       "steps": [
@@ -49,13 +49,15 @@
         "resource"
       ],
       "tips": [
-        "HF anger 200°C/180°C varmluft — lokal ugnsnode, inte preheated_oven_220.",
         "Ugnen tar vanligtvis 10–15 minuter att värmas upp."
       ],
       "oven": {
         "temp": 200,
         "fanTemp": 180
-      }
+      },
+      "devNotes": [
+        "HF anger 200°C/180°C varmluft — lokal ugnsnode, inte preheated_oven_220."
+      ]
     },
     {
       "id": "prosciutto_pita_pizza__chopped_walnuts",

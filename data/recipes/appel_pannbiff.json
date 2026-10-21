@@ -43,7 +43,7 @@
   "nodes": [
     {
       "id": "appel_pannbiff__preheated_oven",
-      "name": "Värm Ugnen",
+      "name": "Värm ugnen",
       "outputName": "Förvärmd ugn (240°C)",
       "inputs": [],
       "steps": [
@@ -55,13 +55,13 @@
         "no-timer",
         "resource"
       ],
-      "tips": [
-        "HF anger 240°C / 220°C varmluft — lokal ugnsnode, inte preheated_oven_220."
-      ],
       "oven": {
         "temp": 240,
         "fanTemp": 220
-      }
+      },
+      "devNotes": [
+        "HF anger 240°C / 220°C varmluft — lokal ugnsnode, inte preheated_oven_220."
+      ]
     },
     {
       "id": "appel_pannbiff__cut_potatoes",
@@ -304,13 +304,16 @@
       "wait": 0,
       "tags": [],
       "tips": [
-        "Biffarna är klara när de inte längre är rosa i mitten. Vändningen är hands-on, ingen passiv timer."
+        "Biffarna är klara när de inte längre är rosa i mitten."
       ],
       "heat": "medelhög",
       "equipment": [
         {
           "type": "stekpanna_stor"
         }
+      ],
+      "devNotes": [
+        "Vändningen är hands-on, ingen passiv timer."
       ]
     },
     {

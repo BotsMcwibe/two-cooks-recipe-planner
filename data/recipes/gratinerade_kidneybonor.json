@@ -30,7 +30,7 @@
   "nodes": [
     {
       "id": "gratinerade_kidneybonor__preheated_oven_200",
-      "name": "Värm Ugnen",
+      "name": "Värm ugnen",
       "outputName": "Förvärmd ugn (200°C)",
       "inputs": [],
       "steps": [
@@ -42,14 +42,14 @@
         "no-timer",
         "resource"
       ],
-      "tips": [
-        "HF anger 200°C (inte 220) — lokal ugnsnode, inte preheated_oven_220."
-      ],
       "oven": {
         "temp": 200,
         "fanTemp": 180,
         "fanTempSource": "derived"
-      }
+      },
+      "devNotes": [
+        "HF anger 200°C (inte 220) — lokal ugnsnode, inte preheated_oven_220."
+      ]
     },
     {
       "id": "gratinerade_kidneybonor__simmered_rice",
@@ -79,16 +79,16 @@
       "duration": 2,
       "wait": 12,
       "tags": [],
-      "tips": [
-        "FLAG: _unitInference Vatten (steg 1) 6 ml — överstyrd till 6 dl (HF-typ water-step-1-…-1dl; risvatten).",
-        "FLAG: alla 30 _unitInference-fyllningar — se tips och agentrapport."
-      ],
       "heat": "låg",
       "equipment": [
         {
           "type": "kastrull_medelstor",
           "sizeSource": "inferred"
         }
+      ],
+      "devNotes": [
+        "FLAG: _unitInference Vatten (steg 1) 6 ml — överstyrd till 6 dl (HF-typ water-step-1-…-1dl; risvatten).",
+        "FLAG: alla 30 _unitInference-fyllningar — se tips och agentrapport."
       ]
     },
     {
@@ -127,7 +127,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "FLAG: _unitInference Lök 2 st — behållen (countable)."
       ]
     },
@@ -149,7 +149,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "FLAG: _unitInference Bladselleri 4 tsk — överstyrd till 4 st (metod: finhacka selleristjälkar)."
       ]
     },
@@ -171,7 +171,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "FLAG: _unitInference Röd paprika 2 tsk — överstyrd till 2 st (metod: skär i bitar)."
       ]
     },
@@ -193,7 +193,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "FLAG: _unitInference Morot 2 st — behållen (countable)."
       ]
     },
@@ -215,7 +215,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "FLAG: _unitInference Chili 1 tsk — överstyrd till 1 st (metod: halvera och finhacka färsk chili; skalar inte 2→4)."
       ]
     },
@@ -237,7 +237,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "FLAG: _unitInference Kidneybönor 2 burk — behållen (can)."
       ]
     },
@@ -284,15 +284,15 @@
       ],
       "duration": 8,
       "tags": [],
-      "tips": [
-        "Stekolja är pantry-skvätt (ej i HF yields; yields-olivolja går till salladen)."
-      ],
       "heat": "medelhög",
       "equipment": [
         {
           "type": "stekpanna_stor",
           "ref": "stekpanna_1"
         }
+      ],
+      "devNotes": [
+        "Stekolja är pantry-skvätt (ej i HF yields; yields-olivolja går till salladen)."
       ]
     },
     {
@@ -343,10 +343,6 @@
       ],
       "duration": 4,
       "tags": [],
-      "tips": [
-        "FLAG: _unitInference Krossade tomater 2 burk — behållen; Baharat 4 tsk — behållen (krydda).",
-        "FLAG: _unitInference Vatten (steg 4) 2 ml — överstyrd till 2 dl (HF-typ water-step-4-…-1dl)."
-      ],
       "heat": "medelhög",
       "heatSource": "inferred",
       "equipment": [
@@ -355,6 +351,10 @@
           "ref": "stekpanna_1",
           "transition": "keep"
         }
+      ],
+      "devNotes": [
+        "FLAG: _unitInference Krossade tomater 2 burk — behållen; Baharat 4 tsk — behållen (krydda).",
+        "FLAG: _unitInference Vatten (steg 4) 2 ml — överstyrd till 2 dl (HF-typ water-step-4-…-1dl)."
       ]
     },
     {
@@ -381,9 +381,6 @@
       "duration": 3,
       "wait": 12,
       "tags": [],
-      "tips": [
-        "FLAG: _unitInference Riven mozzarella 100 g — behållen."
-      ],
       "equipment": [
         {
           "type": "ugn",
@@ -397,6 +394,9 @@
           "type": "ugnsform_stor",
           "sizeSource": "inferred"
         }
+      ],
+      "devNotes": [
+        "FLAG: _unitInference Riven mozzarella 100 g — behållen."
       ]
     },
     {
@@ -439,7 +439,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "FLAG: _unitInference Citrusfrukt/citron 1 tsk — överstyrd till 1 st (metod: halvera citron / citronjuice).",
         "FLAG: _unitInference Sallad 180 g — behållen.",
         "FLAG: _unitInference Olivolja (steg 5) 1,333 ml — överstyrd till 1 msk (HF-typ …-1tbsp; avrundat från 1,333)."

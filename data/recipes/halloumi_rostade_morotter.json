@@ -30,7 +30,7 @@
   "nodes": [
     {
       "id": "halloumi_rostade_morotter__preheated_oven_200",
-      "name": "Värm Ugnen",
+      "name": "Värm ugnen",
       "outputName": "Förvärmd ugn (200°C)",
       "inputs": [],
       "steps": [
@@ -43,14 +43,14 @@
         "resource"
       ],
       "wait": 12,
-      "tips": [
-        "HF anger 200°C (inte 220) — lokal ugnsnode, inte preheated_oven_220."
-      ],
       "oven": {
         "temp": 200,
         "fanTemp": 180,
         "fanTempSource": "derived"
-      }
+      },
+      "devNotes": [
+        "HF anger 200°C (inte 220) — lokal ugnsnode, inte preheated_oven_220."
+      ]
     },
     {
       "id": "halloumi_rostade_morotter__prepped_carrots",
@@ -71,7 +71,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "FLAG: HF/yield unit infererade som 6 tsk — överstyrd till 6 st (metod: skrubba/halvera hela morötter)."
       ]
     },
@@ -212,15 +212,15 @@
       "duration": 5,
       "wait": 5,
       "tags": [],
-      "tips": [
-        "FLAG: HF Buljong amount=4 unit infererad som ml (yields 2 unresolved null). Tolkat som 4 g grönsaksbuljong + 4 dl vatten till 300 g couscous (HF: 'vatten se mängd i ingredienslistan')."
-      ],
       "heat": "hög",
       "heatSource": "inferred",
       "equipment": [
         {
           "type": "kastrull_medelstor"
         }
+      ],
+      "devNotes": [
+        "FLAG: HF Buljong amount=4 unit infererad som ml (yields 2 unresolved null). Tolkat som 4 g grönsaksbuljong + 4 dl vatten till 300 g couscous (HF: 'vatten se mängd i ingredienslistan')."
       ]
     },
     {
@@ -262,7 +262,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "FLAG: HF Citrusfrukt 2 tsk — överstyrd till 2 st citron (metod: halvera citron / 2–4 msk juice)."
       ]
     },

@@ -25,8 +25,8 @@
   "nodes": [
     {
       "id": "katalansk_raksoppa__oven",
-      "name": "Värm Ugnen",
-      "outputName": "Varm ugn",
+      "name": "Värm ugnen",
+      "outputName": "Förvärmd ugn (200°C)",
       "inputs": [],
       "steps": [
         "Värm ugnen till 180°C varmluft eller 200°C vanlig."
@@ -36,13 +36,13 @@
         "no-timer",
         "resource"
       ],
-      "tips": [
-        "Råsteget anger ingen förvärmningstid, därför ingen wait. Inte påhittad."
-      ],
       "oven": {
         "temp": 200,
         "fanTemp": 180
-      }
+      },
+      "devNotes": [
+        "Råsteget anger ingen förvärmningstid, därför ingen wait. Inte påhittad."
+      ]
     },
     {
       "id": "katalansk_raksoppa__prepped_aromatics",
@@ -68,7 +68,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "Bananschalottenlök är mappad till befintlig schalottenlök."
       ]
     },
@@ -109,7 +109,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "Råenheten är förp; behållen som 1 förp. Ingen vikt i rådatan, inga gram påhittade."
       ]
     },
@@ -129,9 +129,6 @@
       ],
       "duration": 3,
       "tags": [],
-      "tips": [
-        "Råsteget har ingen minut. Ingen bak-timer påhittad, därför ingen wait."
-      ],
       "equipment": [
         {
           "type": "ugn",
@@ -140,6 +137,9 @@
           "temp": 200,
           "fanTemp": 180
         }
+      ],
+      "devNotes": [
+        "Råsteget har ingen minut. Ingen bak-timer påhittad, därför ingen wait."
       ]
     },
     {
@@ -190,10 +190,7 @@
       "duration": 5,
       "tags": [],
       "tips": [
-        "Olivolja saknade mängd i rådatan (unit tsk, amount null) → default 1 skvätt.",
-        "Vitlök är 1 klyfta enligt rådatan.",
-        "Saffran, timjan och tomatpuré är förp enligt rådatan. Paketstorlek saknas, inga gram påhittade.",
-        "3 min och 1 min är fräs (hands-on) och ligger i duration, inte som wait. Rökt chilimix är stark, smaka dig fram."
+        "Rökt chilimix är stark, smaka dig fram."
       ],
       "heat": "medelhög",
       "heatSource": "inferred",
@@ -202,6 +199,12 @@
           "type": "gryta",
           "ref": "gryta_1"
         }
+      ],
+      "devNotes": [
+        "Olivolja saknade mängd i rådatan (unit tsk, amount null) → default 1 skvätt.",
+        "Vitlök är 1 klyfta enligt rådatan.",
+        "Saffran, timjan och tomatpuré är förp enligt rådatan. Paketstorlek saknas, inga gram påhittade.",
+        "3 min och 1 min är fräs (hands-on) och ligger i duration, inte som wait."
       ]
     },
     {
@@ -256,12 +259,6 @@
       "duration": 2,
       "wait": 10,
       "tags": [],
-      "tips": [
-        "Vitvinsvinäger är 1 påse i rådatan (namnet nämner 15ml). Behållen som 1 påse, inte 15 ml.",
-        "Krossade tomater, honung och buljong är förp enligt rådatan. Paketvikt saknas.",
-        "Salt och peppar hade enhet krm med amount null → 1 krm var.",
-        "10 min är sista stegets wait."
-      ],
       "heat": "hög",
       "heatSource": "inferred",
       "equipment": [
@@ -270,6 +267,12 @@
           "ref": "gryta_1",
           "transition": "keep"
         }
+      ],
+      "devNotes": [
+        "Vitvinsvinäger är 1 påse i rådatan (namnet nämner 15ml). Behållen som 1 påse, inte 15 ml.",
+        "Krossade tomater, honung och buljong är förp enligt rådatan. Paketvikt saknas.",
+        "Salt och peppar hade enhet krm med amount null → 1 krm var.",
+        "10 min är sista stegets wait."
       ]
     },
     {
@@ -305,7 +308,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "Andra salt- och pepparraden, också utan mängd men med enhet krm, är en egen 1 krm. Inte hopslagen med soppans.",
         "Vitlök är 0.5 klyfta enligt rådatan."
       ]

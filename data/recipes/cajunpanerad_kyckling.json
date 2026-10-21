@@ -87,10 +87,6 @@
       "duration": 3,
       "wait": 35,
       "tags": [],
-      "tips": [
-        "Passiv rosttid 25–35 min → wait 35 (övre gräns). Sista steget äger timern.",
-        "FLAG: olivolja, salt och peppar till potatisen saknar mängd i yields. Den enda olivoljan (2 msk) är märkt steg 4 och används till stekningen."
-      ],
       "equipment": [
         {
           "type": "ugn",
@@ -102,6 +98,10 @@
         {
           "type": "plat"
         }
+      ],
+      "devNotes": [
+        "Passiv rosttid 25–35 min → wait 35 (övre gräns). Sista steget äger timern.",
+        "FLAG: olivolja, salt och peppar till potatisen saknar mängd i yields. Den enda olivoljan (2 msk) är märkt steg 4 och används till stekningen."
       ]
     },
     {
@@ -133,7 +133,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "FLAG: paprika är 1 st vid både 2 och 4 portioner — inte uppskalad.",
         "FLAG: bladpersilja är 1 portionspåse vid både 2 och 4 portioner. Enhet överstyrd till 1 kruka (portionspåse finns inte i units.json)."
       ]
@@ -204,7 +204,9 @@
       ],
       "tips": [
         "Om du inte har ägg kan du använda 2 msk mjölk i stället.",
-        "Tvätta händer och redskap noggrant efter hantering av rå kyckling.",
+        "Tvätta händer och redskap noggrant efter hantering av rå kyckling."
+      ],
+      "devNotes": [
         "FLAG: saltet på kycklingen innan panering och peppar i paneringen saknar mängd. 0,5 tsk är saltet i paneringen (4 portioner).",
         "FLAG: panko är 25 g vid 2 portioner och 75 g vid 4 — inte linjärt. 75 g är oförändrat från 4-portionsyielden."
       ]
@@ -233,7 +235,6 @@
       "wait": 0,
       "tags": [],
       "tips": [
-        "Aktiv stektid (3–4 min per sida) ligger i duration, inte wait.",
         "Kycklingen är klar när köttet är vitt och utan rosa."
       ],
       "heat": "medelhög",
@@ -241,6 +242,9 @@
         {
           "type": "stekpanna_stor"
         }
+      ],
+      "devNotes": [
+        "Aktiv stektid (3–4 min per sida) ligger i duration, inte wait."
       ]
     },
     {
@@ -276,7 +280,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "FLAG: peppar till salladen saknar mängd i yields."
       ]
     },

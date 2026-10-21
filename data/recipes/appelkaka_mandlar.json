@@ -23,7 +23,7 @@
   "nodes": [
     {
       "id": "appelkaka_mandlar__preheated_oven",
-      "name": "Värm Ugnen",
+      "name": "Värm ugnen",
       "outputName": "Förvärmd ugn (190°C)",
       "inputs": [],
       "steps": [

@@ -135,12 +135,15 @@
         "prep"
       ],
       "tips": [
-        "HF anger ingen vila för smeten — blanda tills slät och stek direkt. Kan göras under rostningen av kokos."
+        "Kan göras under rostningen av kokos."
       ],
       "equipment": [
         {
           "type": "skal_stor"
         }
+      ],
+      "devNotes": [
+        "HF anger ingen vila för smeten — blanda tills slät och stek direkt."
       ]
     },
     {

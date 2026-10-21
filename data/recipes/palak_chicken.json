@@ -40,7 +40,7 @@
       "duration": 2,
       "tags": [],
       "wait": 12,
-      "tips": [
+      "devNotes": [
         "Råsteget har ingen minut. 10–12 min är en paketgissning, wait är 12. Inget vatten i rålistan, inget vatten påhittat."
       ]
     },
@@ -96,11 +96,6 @@
       ],
       "duration": 5,
       "tags": [],
-      "tips": [
-        "2 min och 3 min är hands-on och ligger i duration, inte som wait.",
-        "Olja är angiven som 2 tsk, inte 1 skvätt. Garam masala och tomatpuré är förp utan vikt.",
-        "Kommentaren säger smaka av hettan. Listan har 1 tsk chili, ingen extra mängd påhittad."
-      ],
       "heat": "medelhög",
       "heatSource": "inferred",
       "equipment": [
@@ -108,6 +103,11 @@
           "type": "gryta",
           "ref": "gryta_1"
         }
+      ],
+      "devNotes": [
+        "2 min och 3 min är hands-on och ligger i duration, inte som wait.",
+        "Olja är angiven som 2 tsk, inte 1 skvätt. Garam masala och tomatpuré är förp utan vikt.",
+        "Kommentaren säger smaka av hettan. Listan har 1 tsk chili, ingen extra mängd påhittad."
       ]
     },
     {
@@ -152,10 +152,6 @@
       "duration": 3,
       "tags": [],
       "wait": 5,
-      "tips": [
-        "Listan har bara 1 tsk salt, redan i fräset. Ingen extra salt till avsmakningen.",
-        "Spenaten är vikt in i sista steget så wait 5 hör till sjudet."
-      ],
       "heat": "medelhög",
       "equipment": [
         {
@@ -163,6 +159,10 @@
           "ref": "gryta_1",
           "transition": "keep"
         }
+      ],
+      "devNotes": [
+        "Listan har bara 1 tsk salt, redan i fräset. Ingen extra salt till avsmakningen.",
+        "Spenaten är vikt in i sista steget så wait 5 hör till sjudet."
       ]
     },
     {

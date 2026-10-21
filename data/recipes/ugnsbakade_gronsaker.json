@@ -374,7 +374,7 @@
         }
       ],
       "steps": [
-        "Bre {{ugnsbakade_gronsaker__cheese_dressing}} och {{ugnsbakade_gronsaker__garlic_sauce}} på baguettens skäryta.",
+        "Bre {{ugnsbakade_gronsaker__cheese_dressing}} och {{ugnsbakade_gronsaker__garlic_sauce}} på skärytan av {{ugnsbakade_gronsaker__toasted_baguette}}.",
         "Lägg på gemsallad, gurka- och tomatskivor från {{ugnsbakade_gronsaker__sliced_salad}}.",
         "Toppa med {{ugnsbakade_gronsaker__roasted_vegetables}} och servera."
       ],

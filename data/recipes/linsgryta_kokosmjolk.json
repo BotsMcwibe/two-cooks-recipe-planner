@@ -53,8 +53,8 @@
     },
     {
       "id": "linsgryta_kokosmjolk__oven_on",
-      "name": "Sätt på Ugnen",
-      "outputName": "Påslagen ugn",
+      "name": "Värm ugnen",
+      "outputName": "Förvärmd ugn",
       "inputs": [],
       "steps": [
         "Sätt på ugnen enligt anvisningen på brödförpackningen."

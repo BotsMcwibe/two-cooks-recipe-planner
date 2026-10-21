@@ -16,7 +16,7 @@
   "nodes": [
     {
       "id": "warm_lentil_salad__preheated_oven_200",
-      "name": "Värm Ugnen",
+      "name": "Värm ugnen",
       "outputName": "Förvärmd ugn (200°C)",
       "inputs": [],
       "steps": [
@@ -28,14 +28,14 @@
         "no-timer",
         "resource"
       ],
-      "tips": [
-        "HF anger 200°C (inte 220) — lokal ugnsnode, inte preheated_oven_220."
-      ],
       "oven": {
         "temp": 200,
         "fanTemp": 180,
         "fanTempSource": "derived"
-      }
+      },
+      "devNotes": [
+        "HF anger 200°C (inte 220) — lokal ugnsnode, inte preheated_oven_220."
+      ]
     },
     {
       "id": "warm_lentil_salad__diced_butternut",
@@ -56,7 +56,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "FLAG: _unitInference Butternutpumpa 2 tsk — överstyrd till 2 st (metod: ansa/tärna hel pumpa; HF-typ countable)."
       ]
     },
@@ -169,7 +169,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "FLAG: _unitInference Vitlöksklyfta 2 klyfta — klyfta finns inte i units.json; överstyrd till 2 st."
       ]
     },
@@ -191,7 +191,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "FLAG: _unitInference Bladpersilja 1 g — överstyrd till 1 kruka (färsk örtkruka; samma mönster som andra HF-örter)."
       ]
     },
@@ -214,7 +214,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "FLAG: _unitInference Mynta 2 g (4 port) — överstyrd till 1 kruka (färsk ört; HF-skalar ibland gram nonsensiskt)."
       ]
     },
@@ -236,7 +236,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "FLAG: _unitInference Citrusfrukt 1 tsk — överstyrd till 1 st (metod: halvera citron; HF-typ lemon)."
       ]
     },
@@ -288,15 +288,15 @@
       "duration": 5,
       "wait": 10,
       "tags": [],
-      "tips": [
-        "FLAG: _unitInference Vatten 3 ml — överstyrd till 3 dl (HF ingredient type slug water-…-1dl; behåller numeral 3). Buljong 4 ml → 4 g (samma mönster som halloumi/paprikor)."
-      ],
       "heat": "hög",
       "heatSource": "inferred",
       "equipment": [
         {
           "type": "kastrull_stor"
         }
+      ],
+      "devNotes": [
+        "FLAG: _unitInference Vatten 3 ml — överstyrd till 3 dl (HF ingredient type slug water-…-1dl; behåller numeral 3). Buljong 4 ml → 4 g (samma mönster som halloumi/paprikor)."
       ]
     },
     {
@@ -380,7 +380,7 @@
         },
         {
           "id": "warm_lentil_salad__chopped_mint",
-          "amount": 1,
+          "amount": 0.5,
           "unit": "st"
         },
         {
@@ -391,21 +391,21 @@
       ],
       "steps": [
         "Smula {{feta_cheese}} i en skål.",
-        "Blanda osten med ungefär hälften av {{warm_lentil_salad__chopped_mint}} och {{olive_oil}}. Spara resten av myntan till salladen."
+        "Blanda osten med {{warm_lentil_salad__chopped_mint}} och {{olive_oil}}."
       ],
       "duration": 3,
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "FLAG: HF Olivolja 0.667 ml (type slug …-1tbsp → troligen msk) — modellerad som skvätt per användning (rost/fräs/ost) enligt metodtext.",
         "Grekisk salladsost mappad till feta_cheese (300 g)."
       ]
     },
     {
-      "id": "warm_lentil_salad",
-      "name": "Varm linssallad",
-      "outputName": "Varm linssallad med rostade grönsaker och mint",
+      "id": "warm_lentil_salad__lentil_bulgur_mix",
+      "name": "Blanda linssalladen",
+      "outputName": "Varm linssallad",
       "inputs": [
         {
           "id": "warm_lentil_salad__fried_lentils",
@@ -423,18 +423,13 @@
           "unit": "st"
         },
         {
-          "id": "warm_lentil_salad__minty_feta",
-          "amount": 1,
-          "unit": "st"
-        },
-        {
-          "id": "warm_lentil_salad__roasted_vegetables",
-          "amount": 1,
+          "id": "warm_lentil_salad__chopped_mint",
+          "amount": 0.5,
           "unit": "st"
         },
         {
           "id": "warm_lentil_salad__lemon_halves",
-          "amount": 1,
+          "amount": 0.5,
           "unit": "st"
         },
         {
@@ -450,23 +445,54 @@
       ],
       "steps": [
         "Fluffa upp {{warm_lentil_salad__cooked_bulgur}} med en gaffel och för över till stekpannan med {{warm_lentil_salad__fried_lentils}}.",
-        "Rör i {{warm_lentil_salad__chopped_parsley}} och resterande mynta från {{warm_lentil_salad__minty_feta}}.",
-        "Krydda med en skvätt juice från {{warm_lentil_salad__lemon_halves}}, {{salt}} och {{pepper}} efter smak.",
-        "Servera den varma linssalladen i djupa skålar. Toppa med {{warm_lentil_salad__roasted_vegetables}}, {{warm_lentil_salad__minty_feta}} och en skvätt citronjuice."
+        "Rör i {{warm_lentil_salad__chopped_parsley}} och resterande {{warm_lentil_salad__chopped_mint}}.",
+        "Krydda med en skvätt juice från {{warm_lentil_salad__lemon_halves}}, {{salt}} och {{pepper}} efter smak."
       ],
-      "duration": 5,
-      "tags": [
-        "master"
-      ],
-      "heat": "medelhög",
-      "heatSource": "inferred",
+      "duration": 4,
+      "tags": [],
       "equipment": [
         {
           "type": "stekpanna_stor",
           "ref": "stekpanna_1",
           "transition": "keep",
-          "sizeSource": "inferred"
+          "sizeSource": "inferred",
+          "offHeat": true
         }
+      ]
+    },
+    {
+      "id": "warm_lentil_salad",
+      "name": "Varm linssallad",
+      "outputName": "Varm linssallad med rostade grönsaker och mint",
+      "inputs": [
+        {
+          "id": "warm_lentil_salad__lentil_bulgur_mix",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "warm_lentil_salad__roasted_vegetables",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "warm_lentil_salad__minty_feta",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "warm_lentil_salad__lemon_halves",
+          "amount": 0.5,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Servera {{warm_lentil_salad__lentil_bulgur_mix}} i djupa skålar.",
+        "Toppa med {{warm_lentil_salad__roasted_vegetables}}, {{warm_lentil_salad__minty_feta}} och en skvätt juice från {{warm_lentil_salad__lemon_halves}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "master"
       ]
     }
   ]

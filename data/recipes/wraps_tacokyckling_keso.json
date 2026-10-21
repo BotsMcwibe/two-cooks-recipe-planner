@@ -37,7 +37,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "Halv gurka står så vid 4 portioner. Majs är mappad till befintlig majs på burk."
       ]
     },
@@ -69,10 +69,6 @@
       "duration": 6,
       "wait": 5,
       "tags": [],
-      "tips": [
-        "Ingen olja i rålistan, så ingen skvätt är tillagd.",
-        "\"Ett par minuter\" är hands-on i duration. 5 min är råstegets timer."
-      ],
       "heat": "medelhög",
       "heatSource": "inferred",
       "equipment": [
@@ -80,6 +76,10 @@
           "type": "stekpanna_medelstor",
           "sizeSource": "inferred"
         }
+      ],
+      "devNotes": [
+        "Ingen olja i rålistan, så ingen skvätt är tillagd.",
+        "\"Ett par minuter\" är hands-on i duration. 5 min är råstegets timer."
       ]
     },
     {

@@ -27,7 +27,7 @@
   "nodes": [
     {
       "id": "pastagratang_ziti__preheated_oven_200",
-      "name": "Värm Ugnen",
+      "name": "Värm ugnen",
       "outputName": "Förvärmd ugn (200°C)",
       "inputs": [],
       "steps": [
@@ -167,9 +167,6 @@
       "duration": 1,
       "wait": 10,
       "tags": [],
-      "tips": [
-        "ICA anger 2 förp krossade tomater à 390 g = 780 g."
-      ],
       "heat": "medellåg",
       "equipment": [
         {
@@ -178,6 +175,9 @@
           "transition": "keep",
           "sizeSource": "inferred"
         }
+      ],
+      "devNotes": [
+        "ICA anger 2 förp krossade tomater à 390 g = 780 g."
       ]
     },
     {
@@ -198,7 +198,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "2 mozzarellakulor à 125 g."
       ]
     },
@@ -220,7 +220,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "1 dl grovhackad basilika motsvarar ca 1 kruka."
       ]
     },
@@ -334,10 +334,12 @@
         "master"
       ],
       "tips": [
-        "Till servering: rucola samt dressing av olivolja och balsamvinäger är ett valfritt serveringsförslag; ICA anger ingen mängd för rucolan.",
         "Glutenfri: välj glutenfri specialpasta och kontrollera innehållet i korven.",
         "Laktosfri: kontrollera innehållet i korven och ersätt mozzarella med t ex laktosfri mozzarella, sallads- eller färskost. Mjölkproteinfri: ersätt mozzarella med tofu.",
         "Äggfri: använd äggfri pasta och kontrollera innehållet i korven."
+      ],
+      "devNotes": [
+        "Till servering: rucola samt dressing av olivolja och balsamvinäger är ett valfritt serveringsförslag; ICA anger ingen mängd för rucolan."
       ]
     }
   ]

@@ -3,7 +3,7 @@
   "nodes": [
     {
       "id": "preheated_oven_220",
-      "name": "Värm Ugnen",
+      "name": "Värm ugnen",
       "outputName": "Förvärmd ugn (220°C)",
       "inputs": [],
       "steps": [

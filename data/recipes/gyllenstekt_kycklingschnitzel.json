@@ -80,16 +80,16 @@
       "duration": 2,
       "wait": 13,
       "tags": [],
-      "tips": [
-        "Passiv koktid 11–13 min → wait 13 (övre gräns). Sista steget äger timern.",
-        "Salt till kokvattnet har ingen mängd i yields — grönsakssaltet (0,5 tsk) används efter avhällning."
-      ],
       "heat": "hög",
       "heatSource": "inferred",
       "equipment": [
         {
           "type": "kastrull_medelstor"
         }
+      ],
+      "devNotes": [
+        "Passiv koktid 11–13 min → wait 13 (övre gräns). Sista steget äger timern.",
+        "Salt till kokvattnet har ingen mängd i yields — grönsakssaltet (0,5 tsk) används efter avhällning."
       ]
     },
     {
@@ -110,7 +110,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "FLAG: HF yields anger spenat 100 st vid 4 portioner (1 st vid 2, 101 st vid 5–6) — överstyrd till 100 g babyspenat."
       ]
     },
@@ -147,7 +147,7 @@
       "duration": 3,
       "wait": 0,
       "tags": [],
-      "tips": [
+      "devNotes": [
         "Svalning utan klockslag är ingen wait.",
         "FLAG: steget säger en nypa salt, yield «salt till grönsaker» är 0,5 tsk — mängden följer yield.",
         "FLAG: peppar står i steget (en nypa) men saknas i yields."
@@ -178,8 +178,10 @@
         "prep"
       ],
       "tips": [
-        "HF namn/slug är Lök men type=shallot och steget säger schalottenlök — mappad till shallot.",
         "Salladssaltet (0,5 tsk) blandas här, inte en gång till i salladen."
+      ],
+      "devNotes": [
+        "HF namn/slug är Lök men type=shallot och steget säger schalottenlök — mappad till shallot."
       ]
     },
     {
@@ -257,7 +259,9 @@
         "prep"
       ],
       "tips": [
-        "Om du inte har ägg kan du använda 2 msk mjölk.",
+        "Om du inte har ägg kan du använda 2 msk mjölk."
+      ],
+      "devNotes": [
         "FLAG: peppar står i steget (en nypa) men saknas i yields."
       ]
     },
@@ -285,16 +289,18 @@
       "wait": 0,
       "tags": [],
       "tips": [
-        "Hands-on stekning 3–4 min per sida → duration, inte wait.",
         "Tillsätt extra olivolja vid behov.",
-        "Kycklingen är färdiglagad när köttet inte längre är rosa i mitten.",
-        "FLAG: olivolja saknas i yields — 2 msk är uppskattning så det täcker pannan (samma formulering som chicken_kiev)."
+        "Kycklingen är färdiglagad när köttet inte längre är rosa i mitten."
       ],
       "heat": "medelhög",
       "equipment": [
         {
           "type": "stekpanna_stor"
         }
+      ],
+      "devNotes": [
+        "Hands-on stekning 3–4 min per sida → duration, inte wait.",
+        "FLAG: olivolja saknas i yields — 2 msk är uppskattning så det täcker pannan (samma formulering som chicken_kiev)."
       ]
     },
     {
@@ -315,7 +321,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "FLAG: gräslök är 1 st vid 2–4 portioner (2 st först vid 5) — icke-linjär, behållen som 1 st."
       ]
     },
@@ -337,7 +343,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "HF «Citrusfrukt» (type lemon) → lemon. 1 st även vid 2–4 portioner."
       ]
     },
@@ -377,7 +383,7 @@
       ],
       "duration": 4,
       "tags": [],
-      "tips": [
+      "devNotes": [
         "Saltet i steget är det som redan blandats i schalottenlöken."
       ]
     },

@@ -46,7 +46,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "FLAG: _unitInference Svarta bönor 2 burk — behållen (can)."
       ]
     },
@@ -68,7 +68,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "FLAG: _unitInference Vitlöksklyfta 2 klyfta — klyfta finns inte i units.json; överstyrd till 2 st."
       ]
     },
@@ -113,14 +113,16 @@
         "prep"
       ],
       "tips": [
-        "Om du inte har en mixer: mosa bönorna med en gaffel och pressa vitlöken. Det är okej om röran fortfarande har bitar.",
-        "FLAG: _unitInference Citrusfrukt (lime) 2 tsk — överstyrd till 2 st (metod: pressa juice till bönröra + sallad). 1 st här, 1 st i salladen.",
-        "FLAG: _unitInference Gräddfil 150 g samma vid 2 och 4 portioner (icke-linjär). 1 msk till bönröra; resten till mexi-gräddfil."
+        "Om du inte har en mixer: mosa bönorna med en gaffel och pressa vitlöken. Det är okej om röran fortfarande har bitar."
       ],
       "equipment": [
         {
           "type": "mixer"
         }
+      ],
+      "devNotes": [
+        "FLAG: _unitInference Citrusfrukt (lime) 2 tsk — överstyrd till 2 st (metod: pressa juice till bönröra + sallad). 1 st här, 1 st i salladen.",
+        "FLAG: _unitInference Gräddfil 150 g samma vid 2 och 4 portioner (icke-linjär). 1 msk till bönröra; resten till mexi-gräddfil."
       ]
     },
     {
@@ -141,7 +143,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "FLAG: _unitInference Grönkål, skuren 200 g — behållen (large g). Skalar svagt 100 g (2p) → 200 g (4p)."
       ]
     },
@@ -194,7 +196,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "FLAG: _unitInference Lök (rödlök) 1 st — behållen (countable). Samma mängd vid 2 och 4 portioner.",
         "HF type red-onion → red_onion (inte gul lök)."
       ]
@@ -217,7 +219,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "FLAG: _unitInference Plommontomater 2 burk — överstyrd till 2 st (metod: finhacka färska tomater; burk fel för färskvara)."
       ]
     },
@@ -239,7 +241,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "FLAG: _unitInference Bladpersilja 1 g — överstyrd till 1 kruka (färsk örtkruka; samma mönster som andra HF-örter)."
       ]
     },
@@ -261,7 +263,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "FLAG: _unitInference Sallad 180 g — behållen (large g). HF type baby-gem-lettuce."
       ]
     },
@@ -309,7 +311,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "HF-texten säger citronjuice i salladen men ingredient type är lime — använd limejuice.",
         "FLAG: olivolja saknas i HF yields (shipped false / *) — modellerad som 1 skvätt pantry."
       ]
@@ -337,7 +339,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "FLAG: _unitInference Tex-Mex 6 tsk — behållen (small tsk / spice).",
         "FLAG: resterande gräddfil efter 1 msk till bönröra ≈ 135 g av 150 g."
       ]
@@ -381,17 +383,17 @@
       "duration": 8,
       "wait": 8,
       "tags": [],
-      "tips": [
-        "FLAG: _unitInference Tortillabröd 8 tsk — överstyrd till 8 st (metod: bre/stek hela tortillor; count→volume-fel).",
-        "FLAG: _unitInference Riven mozzarella 100 g — behållen.",
-        "Reuse: mini_tortillas (finns i pantry; gratinerad_aubergine).",
-        "FLAG: smör saknas i HF yields (shipped false / *) — 1 klick pantry."
-      ],
       "heat": "medel",
       "equipment": [
         {
           "type": "stekpanna_stor"
         }
+      ],
+      "devNotes": [
+        "FLAG: _unitInference Tortillabröd 8 tsk — överstyrd till 8 st (metod: bre/stek hela tortillor; count→volume-fel).",
+        "FLAG: _unitInference Riven mozzarella 100 g — behållen.",
+        "Reuse: mini_tortillas (finns i pantry; gratinerad_aubergine).",
+        "FLAG: smör saknas i HF yields (shipped false / *) — 1 klick pantry."
       ]
     },
     {
@@ -424,7 +426,7 @@
         "master"
       ],
       "wait": 0,
-      "tips": [
+      "devNotes": [
         "FLAG: alla 24 _unitInference-fyllningar granskade — se tips på respektive nod och agentrapport.",
         "HF headline: med svart bönröra, tomatsallad och gräddfil.",
         "Inga step-bilder i scrape (endast main_s3)."

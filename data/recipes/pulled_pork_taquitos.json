@@ -37,7 +37,7 @@
   "nodes": [
     {
       "id": "pulled_pork_taquitos__preheated_oven",
-      "name": "Värm Ugnen",
+      "name": "Värm ugnen",
       "outputName": "Förvärmd ugn (240°C)",
       "inputs": [],
       "steps": [

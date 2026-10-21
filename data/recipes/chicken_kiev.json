@@ -39,7 +39,7 @@
   "nodes": [
     {
       "id": "chicken_kiev__preheated_oven_240",
-      "name": "Värm Ugnen",
+      "name": "Värm ugnen",
       "outputName": "Förvärmd ugn (240°C)",
       "inputs": [],
       "steps": [
@@ -51,13 +51,13 @@
         "resource"
       ],
       "wait": 12,
-      "tips": [
-        "HF anger 240°C/220°C varmluft — lokal ugnsnode, inte preheated_oven_220 (220/200)."
-      ],
       "oven": {
         "temp": 240,
         "fanTemp": 220
-      }
+      },
+      "devNotes": [
+        "HF anger 240°C/220°C varmluft — lokal ugnsnode, inte preheated_oven_220 (220/200)."
+      ]
     },
     {
       "id": "chicken_kiev__chopped_root_veg",
@@ -101,7 +101,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "FLAG: HF type=shallot men namn/slug är Lök — mappad till onion (gul lök), inte shallot."
       ]
     },
@@ -161,7 +161,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "HF 'Citrusfrukt' (type lemon) → lemon."
       ]
     },

@@ -45,7 +45,7 @@
   "nodes": [
     {
       "id": "caesar_kycklingsallad__preheated_oven_240",
-      "name": "Värm Ugnen",
+      "name": "Värm ugnen",
       "outputName": "Förvärmd ugn (240°C)",
       "inputs": [],
       "steps": [
@@ -58,13 +58,15 @@
         "resource"
       ],
       "tips": [
-        "Ugnen tar vanligtvis 10–15 minuter att värmas upp.",
-        "HF anger 240°C/220°C varmluft — lokal ugnsnode, inte preheated_oven_220."
+        "Ugnen tar vanligtvis 10–15 minuter att värmas upp."
       ],
       "oven": {
         "temp": 240,
         "fanTemp": 220
-      }
+      },
+      "devNotes": [
+        "HF anger 240°C/220°C varmluft — lokal ugnsnode, inte preheated_oven_220."
+      ]
     },
     {
       "id": "caesar_kycklingsallad__diced_potato",
@@ -138,9 +140,7 @@
       "wait": 23,
       "tags": [],
       "tips": [
-        "Använd fler plåtar om det blir för trångt.",
-        "Första fasen är övre gränsen 35 min minus de 12 min som återstår när broccolin läggs på.",
-        "Olivoljan är en skvätt, inte stekoljans 2 msk."
+        "Använd fler plåtar om det blir för trångt."
       ],
       "equipment": [
         {
@@ -155,6 +155,10 @@
           "ref": "plat_1",
           "shared": true
         }
+      ],
+      "devNotes": [
+        "Första fasen är övre gränsen 35 min minus de 12 min som återstår när broccolin läggs på.",
+        "Olivoljan är en skvätt, inte stekoljans 2 msk."
       ]
     },
     {
@@ -176,8 +180,7 @@
       "wait": 27,
       "tags": [],
       "tips": [
-        "Vitlök är 3 klyftor vid både 3 och 4 portioner.",
-        "Rostas på samma plåt som potatisen. 27 min är övre gränsen 35 min minus de 8 min som återstår när vitlöken tas ut."
+        "Rostas på samma plåt som potatisen."
       ],
       "equipment": [
         {
@@ -193,6 +196,10 @@
           "transition": "keep",
           "shared": true
         }
+      ],
+      "devNotes": [
+        "Vitlök är 3 klyftor vid både 3 och 4 portioner.",
+        "27 min är övre gränsen 35 min minus de 8 min som återstår när vitlöken tas ut."
       ]
     },
     {
@@ -277,7 +284,10 @@
       "tips": [
         "Om du inte har ägg kan du använda 2 msk mjölk.",
         "Tvätta händer och redskap noga efter rå kyckling.",
-        "Panko 25 g och ägg 2 st är samma vid 3 och 4 portioner. Osten är hälften av 40 g; resten går i dressingen."
+        "Osten är hälften av 40 g; resten går i dressingen."
+      ],
+      "devNotes": [
+        "Panko 25 g och ägg 2 st är samma vid 3 och 4 portioner."
       ]
     },
     {
@@ -304,13 +314,16 @@
       "wait": 0,
       "tags": [],
       "tips": [
-        "Tillsätt mer olivolja om kycklingen fastnar. 3–4 min per sida är hands-on, därför duration och wait 0."
+        "Tillsätt mer olivolja om kycklingen fastnar."
       ],
       "heat": "medelhög",
       "equipment": [
         {
           "type": "stekpanna_stor"
         }
+      ],
+      "devNotes": [
+        "3–4 min per sida är hands-on, därför duration och wait 0."
       ]
     },
     {
@@ -428,7 +441,7 @@
       "duration": 3,
       "wait": 0,
       "tags": [],
-      "tips": [
+      "devNotes": [
         "\"Svalna något\" har ingen minuttid, därför ingen wait."
       ]
     },
@@ -470,13 +483,13 @@
       "duration": 3,
       "wait": 0,
       "tags": [],
-      "tips": [
-        "En skvätt olivolja i salladen är valfri och har ingen mängd."
-      ],
       "equipment": [
         {
           "type": "skal_stor"
         }
+      ],
+      "devNotes": [
+        "En skvätt olivolja i salladen är valfri och har ingen mängd."
       ]
     },
     {

@@ -71,9 +71,6 @@
       "duration": 2,
       "wait": 13,
       "tags": [],
-      "tips": [
-        "Salt till kokvattnet har ingen mängd i yields. 1 tsk salt hör till moset, inte kastrullen."
-      ],
       "heat": "hög",
       "heatSource": "inferred",
       "equipment": [
@@ -81,6 +78,9 @@
           "type": "kastrull_medelstor",
           "ref": "kastrull_1"
         }
+      ],
+      "devNotes": [
+        "Salt till kokvattnet har ingen mängd i yields. 1 tsk salt hör till moset, inte kastrullen."
       ]
     },
     {
@@ -116,8 +116,7 @@
       "wait": 0,
       "tags": [],
       "tips": [
-        "Tillsätt en klick smör om du vill ha moset extra krämigt. Smöret i yields (2 msk) går till svampen.",
-        "Under lock till servering är ingen klockad vila."
+        "Tillsätt en klick smör om du vill ha moset extra krämigt."
       ],
       "equipment": [
         {
@@ -126,6 +125,10 @@
           "transition": "keep",
           "offHeat": true
         }
+      ],
+      "devNotes": [
+        "Smöret i yields (2 msk) går till svampen.",
+        "Under lock till servering är ingen klockad vila."
       ]
     },
     {
@@ -167,15 +170,15 @@
       "duration": 6,
       "wait": 0,
       "tags": [],
-      "tips": [
-        "Stekningen är hands-on, inte en passiv wait. 3–4 min och 30 sek ligger i duration."
-      ],
       "heat": "medelhög",
       "equipment": [
         {
           "type": "kastrull_stor",
           "ref": "kastrull_2"
         }
+      ],
+      "devNotes": [
+        "Stekningen är hands-on, inte en passiv wait. 3–4 min och 30 sek ligger i duration."
       ]
     },
     {
@@ -311,7 +314,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "HF-enhet portionspåse, 1 påse vid både 2 och 4 portioner. Mappad till pkt, inte uppskalad."
       ]
     },

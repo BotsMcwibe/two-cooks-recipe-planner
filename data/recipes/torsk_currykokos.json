@@ -26,7 +26,7 @@
       "duration": 2,
       "wait": 12,
       "tags": [],
-      "tips": [
+      "devNotes": [
         "Råsteget säger bara \"enligt anvisningarna\" och har ingen timer. 10–12 min är en gissning. Ris är befintligt vanligt ris, inte jasmin."
       ]
     },
@@ -71,10 +71,6 @@
       ],
       "duration": 4,
       "tags": [],
-      "tips": [
-        "1 min är hands-on stek, inte en passiv wait.",
-        "Ingefäran står som redan riven, mängden 0.75 msk är behållen. Vitlök är 1 st klyfta."
-      ],
       "heat": "medelhög",
       "heatSource": "inferred",
       "equipment": [
@@ -82,6 +78,10 @@
           "type": "stekpanna_medelstor",
           "sizeSource": "inferred"
         }
+      ],
+      "devNotes": [
+        "1 min är hands-on stek, inte en passiv wait.",
+        "Ingefäran står som redan riven, mängden 0.75 msk är behållen. Vitlök är 1 st klyfta."
       ]
     },
     {
@@ -111,7 +111,7 @@
       "duration": 3,
       "wait": 8,
       "tags": [],
-      "tips": [
+      "devNotes": [
         "Salt är 2 krm i rådatan, inte 1 nypa. 8 min är råstegets timer."
       ]
     },
@@ -136,7 +136,7 @@
       ],
       "duration": 3,
       "tags": [],
-      "tips": [
+      "devNotes": [
         "Rånamnet är \"sugar snaps\". Mappat till sockerärtor."
       ]
     },
@@ -169,7 +169,10 @@
         "master"
       ],
       "tips": [
-        "Vill du ha en helt slät sås kan du mixa den innan fisken läggs i. Inte ett eget steg."
+        "Vill du ha en helt slät sås kan du mixa den innan fisken läggs i."
+      ],
+      "devNotes": [
+        "Inte ett eget steg."
       ]
     }
   ]

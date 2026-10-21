@@ -66,9 +66,6 @@
       "duration": 4,
       "wait": 10,
       "tags": [],
-      "tips": [
-        "Olivoljan på baguetten har ingen mängd på kortet. Den uppmätta olivoljan, 1/2 msk, hör till dressingen."
-      ],
       "equipment": [
         {
           "type": "ugn",
@@ -80,6 +77,9 @@
         {
           "type": "plat"
         }
+      ],
+      "devNotes": [
+        "Olivoljan på baguetten har ingen mängd på kortet. Den uppmätta olivoljan, 1/2 msk, hör till dressingen."
       ]
     },
     {

@@ -105,12 +105,15 @@
         "Blanda {{salt}}, {{sugar}} och citronsaften i en stor skål. Vänd ner schalottenlöken och ställ åt sidan."
       ],
       "tips": [
-        "Ingen vilotid är angiven. Låt löken dra medan resten förbereds."
+        "Låt löken dra medan resten förbereds."
       ],
       "duration": 4,
       "wait": 0,
       "tags": [
         "prep"
+      ],
+      "devNotes": [
+        "Ingen vilotid är angiven."
       ]
     },
     {

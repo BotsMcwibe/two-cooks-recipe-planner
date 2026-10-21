@@ -43,7 +43,7 @@
   "nodes": [
     {
       "id": "citronstekt_flaskkott__preheated_oven",
-      "name": "Värm Ugnen",
+      "name": "Värm ugnen",
       "outputName": "Förvärmd ugn (240°C)",
       "inputs": [],
       "steps": [
@@ -181,7 +181,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "Hälften av dillen går i tzatzikin och hälften är garnering (0,5 st + 0,5 st, enligt råreceptets \"hälften\")."
       ]
     },
@@ -204,7 +204,10 @@
         "prep"
       ],
       "tips": [
-        "4 msk saft pressas till buljongen och resten är garnering. Råreceptet anger ingen andel av klyftorna, så grafen delar 0,5 st + 0,5 st."
+        "4 msk saft pressas till buljongen och resten är garnering."
+      ],
+      "devNotes": [
+        "Råreceptet anger ingen andel av klyftorna, så grafen delar 0,5 st + 0,5 st."
       ]
     },
     {
@@ -235,7 +238,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "Råreceptet: hälften av vitlöksflörterna (8 g) till köttet, resten till citronbuljongen, alltså 4 g + 4 g."
       ]
     },

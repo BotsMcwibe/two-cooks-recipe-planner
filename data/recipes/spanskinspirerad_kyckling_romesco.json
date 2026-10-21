@@ -38,8 +38,8 @@
   "nodes": [
     {
       "id": "spanskinspirerad_kyckling_romesco__preheated_oven",
-      "name": "Värm Ugn",
-      "outputName": "Förvärmd ugn 240°C",
+      "name": "Värm ugnen",
+      "outputName": "Förvärmd ugn (240°C)",
       "inputs": [],
       "steps": [
         "Värm ugnen till 240°C, eller 220°C varmluft."
@@ -50,13 +50,13 @@
         "no-timer",
         "resource"
       ],
-      "tips": [
-        "HF anger 240°C/220°C varmluft — lokal ugnsnode, inte preheated_oven_220 (220/200)."
-      ],
       "oven": {
         "temp": 240,
         "fanTemp": 220
-      }
+      },
+      "devNotes": [
+        "HF anger 240°C/220°C varmluft — lokal ugnsnode, inte preheated_oven_220 (220/200)."
+      ]
     },
     {
       "id": "spanskinspirerad_kyckling_romesco__diced_potato",
@@ -111,10 +111,6 @@
       "duration": 3,
       "wait": 35,
       "tags": [],
-      "tips": [
-        "Passiv rosttid 25–35 min → wait 35 (övre gräns). Sista steget äger timern.",
-        "FLAG: olivolja till potatisen saknar mängd i yields (enda oljan 1 msk är märkt till stekning)."
-      ],
       "equipment": [
         {
           "type": "ugn",
@@ -126,6 +122,10 @@
         {
           "type": "plat"
         }
+      ],
+      "devNotes": [
+        "Passiv rosttid 25–35 min → wait 35 (övre gräns). Sista steget äger timern.",
+        "FLAG: olivolja till potatisen saknar mängd i yields (enda oljan 1 msk är märkt till stekning)."
       ]
     },
     {
@@ -145,14 +145,14 @@
       ],
       "duration": 5,
       "tags": [],
-      "tips": [
-        "Hands-on rostning 3–4 min → duration 5 (inkl. finhack), ingen wait."
-      ],
       "heat": "medelhög",
       "equipment": [
         {
           "type": "stekpanna_stor"
         }
+      ],
+      "devNotes": [
+        "Hands-on rostning 3–4 min → duration 5 (inkl. finhack), ingen wait."
       ]
     },
     {
@@ -210,7 +210,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "FLAG: bladpersilja är 1 st vid både 2 och 4 portioner."
       ]
     },
@@ -289,7 +289,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "FLAG HUMAN REVIEW: spenat är 30 g vid 2 portioner och 1 g vid 4 portioner i HF-yield. Beloppet 1 g vid basePortions=4 lämnas oförändrat (ej uppskalat till 60 g)."
       ]
     },
@@ -360,7 +360,6 @@
       "duration": 8,
       "tags": [],
       "tips": [
-        "Hands-on stekning (2+2+1–2 min) → duration 8, ingen wait.",
         "Kycklingen är färdiglagad när köttet inte längre är rosa i mitten."
       ],
       "heat": "medelhög",
@@ -368,6 +367,9 @@
         {
           "type": "stekpanna_stor"
         }
+      ],
+      "devNotes": [
+        "Hands-on stekning (2+2+1–2 min) → duration 8, ingen wait."
       ]
     },
     {

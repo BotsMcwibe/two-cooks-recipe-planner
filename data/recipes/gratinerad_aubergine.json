@@ -30,7 +30,7 @@
   "nodes": [
     {
       "id": "gratinerad_aubergine__preheated_oven",
-      "name": "Värm Ugnen",
+      "name": "Värm ugnen",
       "outputName": "Förvärmd ugn (200°C)",
       "inputs": [],
       "steps": [
@@ -125,14 +125,16 @@
         "prep"
       ],
       "tips": [
-        "Det tärnade köttet är klart för fyllningen direkt — auberginehalvorna bakas i nästa steg medan fyllningen kan påbörjas.",
-        "Auberginerna delas: urgröpta halvor till ugnen (0,5 st) och tärnat kött till fyllningen (0,5 st). Råreceptet anger ingen proportion."
+        "Det tärnade köttet är klart för fyllningen direkt — auberginehalvorna bakas i nästa steg medan fyllningen kan påbörjas."
       ],
       "equipment": [
         {
           "type": "ugnsform",
           "sizeSource": "inferred"
         }
+      ],
+      "devNotes": [
+        "Auberginerna delas: urgröpta halvor till ugnen (0,5 st) och tärnat kött till fyllningen (0,5 st). Råreceptet anger ingen proportion."
       ]
     },
     {

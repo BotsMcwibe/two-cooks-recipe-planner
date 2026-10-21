@@ -240,7 +240,9 @@
       "duration": 18,
       "tags": [],
       "tips": [
-        "För en mer autentisk italiensk smak kan du byta ut en del av vattnet mot vitt vin.",
+        "För en mer autentisk italiensk smak kan du byta ut en del av vattnet mot vitt vin."
+      ],
+      "devNotes": [
         "Risotto kräver aktiv omrörning — ingen passiv wait-timer."
       ]
     },

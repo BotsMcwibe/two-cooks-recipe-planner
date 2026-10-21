@@ -36,7 +36,7 @@
   "nodes": [
     {
       "id": "autumn_kale_salad__preheated_oven_240",
-      "name": "Värm Ugnen",
+      "name": "Värm ugnen",
       "outputName": "Förvärmd ugn (240°C)",
       "inputs": [],
       "steps": [
@@ -48,13 +48,13 @@
         "no-timer",
         "resource"
       ],
-      "tips": [
-        "HF anger 240°C/220°C varmluft — lokal ugnsnode, inte preheated_oven_220 (som är 220/200)."
-      ],
       "oven": {
         "temp": 240,
         "fanTemp": 220
-      }
+      },
+      "devNotes": [
+        "HF anger 240°C/220°C varmluft — lokal ugnsnode, inte preheated_oven_220 (som är 220/200)."
+      ]
     },
     {
       "id": "autumn_kale_salad__sliced_butternut",
@@ -180,13 +180,13 @@
       "tags": [
         "prep"
       ],
-      "tips": [
-        "HF levererar skuren grönkål — ingen separat hackningsnod."
-      ],
       "equipment": [
         {
           "type": "skal_stor"
         }
+      ],
+      "devNotes": [
+        "HF levererar skuren grönkål — ingen separat hackningsnod."
       ]
     },
     {

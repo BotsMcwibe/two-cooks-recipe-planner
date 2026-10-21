@@ -53,7 +53,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "FLAG: HF-unit klyfta → st (klyfta saknas i units.json)."
       ]
     },
@@ -88,8 +88,7 @@
       "wait": 10,
       "tags": [],
       "tips": [
-        "Potatisen ska fortfarande vara lite rå — den tillagas vidare i gratängen.",
-        "Kokvatten 2 l är processmängd (ej HF yields); listat HF-vatten går till buljongreduktion."
+        "Potatisen ska fortfarande vara lite rå — den tillagas vidare i gratängen."
       ],
       "heat": "hög",
       "heatSource": "inferred",
@@ -97,6 +96,9 @@
         {
           "type": "kastrull_stor"
         }
+      ],
+      "devNotes": [
+        "Kokvatten 2 l är processmängd (ej HF yields); listat HF-vatten går till buljongreduktion."
       ]
     },
     {
@@ -137,7 +139,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "FLAG: _unitInference Tomat 4 tsk — överstyrd till 4 st (metod: skär i bitar; yield 2 var 2 st)."
       ]
     },
@@ -159,7 +161,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "FLAG: HF Timjan 1 tsk vid både 2 och 4 portioner (skalar inte)."
       ]
     },
@@ -233,10 +235,6 @@
       "duration": 2,
       "wait": 7,
       "tags": [],
-      "tips": [
-        "FLAG: _unitInference Buljong 4 ml — överstyrd till 4 g (yield 2 var null/null; samma mönster som övriga masters).",
-        "FLAG: _unitInference Vatten 2 ml — överstyrd till 2 dl (HF-typ water-vatten-vand-1dl; 'se mängd i ingredienslistan')."
-      ],
       "heat": "medellåg",
       "heatSource": "inferred",
       "equipment": [
@@ -246,6 +244,10 @@
           "transition": "keep",
           "sizeSource": "inferred"
         }
+      ],
+      "devNotes": [
+        "FLAG: _unitInference Buljong 4 ml — överstyrd till 4 g (yield 2 var null/null; samma mönster som övriga masters).",
+        "FLAG: _unitInference Vatten 2 ml — överstyrd till 2 dl (HF-typ water-vatten-vand-1dl; 'se mängd i ingredienslistan')."
       ]
     },
     {
@@ -282,7 +284,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "HF-steg säger 'Riv parmesan' men ingrediensen är finriven ost — använd {{grated_cheese}} som den är."
       ]
     },
@@ -336,7 +338,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "FLAG: olivolja till dressing saknas i HF yields — 2 msk pantry-uppskattning.",
         "FLAG: alla _unitInference-fyllningar för senap/honung/salladsmix/solroskärnor behållna (g)."
       ]
@@ -385,9 +387,6 @@
       ],
       "duration": 5,
       "tags": [],
-      "tips": [
-        "Hälften av den hackade timjan (0.5 st) går hit, resten (0.5 st) strös över vid servering — enligt HF 'hälften av timjan'."
-      ],
       "heat": "medel",
       "heatSource": "inferred",
       "equipment": [
@@ -397,6 +396,9 @@
           "transition": "keep",
           "sizeSource": "inferred"
         }
+      ],
+      "devNotes": [
+        "Hälften av den hackade timjan (0.5 st) går hit, resten (0.5 st) strös över vid servering — enligt HF 'hälften av timjan'."
       ]
     },
     {
@@ -429,8 +431,7 @@
       "wait": 5,
       "tags": [],
       "tips": [
-        "Viktigt: håll ett öga på gratängen så ytan inte bränns.",
-        "HF anger 220°C grillfunktion — shared preheated_oven_220 används (exakt 220°C)."
+        "Viktigt: håll ett öga på gratängen så ytan inte bränns."
       ],
       "equipment": [
         {
@@ -445,6 +446,9 @@
           "type": "ugnsform_stor",
           "sizeSource": "inferred"
         }
+      ],
+      "devNotes": [
+        "HF anger 220°C grillfunktion — shared preheated_oven_220 används (exakt 220°C)."
       ]
     },
     {

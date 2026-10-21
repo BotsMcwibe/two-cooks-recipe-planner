@@ -103,12 +103,15 @@
         "Blanda {{white_wine_vinegar}}, {{sugar}} och {{salt}} i en liten skål. Vänd ner gurkan och ställ åt sidan."
       ],
       "tips": [
-        "Ingen minuttid är angiven. Häll av lagen innan servering."
+        "Häll av lagen innan servering."
       ],
       "duration": 4,
       "wait": 0,
       "tags": [
         "prep"
+      ],
+      "devNotes": [
+        "Ingen minuttid är angiven."
       ]
     },
     {

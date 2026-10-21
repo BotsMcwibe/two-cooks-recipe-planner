@@ -190,9 +190,6 @@
       "duration": 2,
       "wait": 12,
       "tags": [],
-      "tips": [
-        "Hälften av den hackade persiljan (0.5 st) går i såsen, resten (0.5 st) strös över vid servering — enligt HF 'halva persiljan'."
-      ],
       "heat": "medellåg",
       "heatSource": "inferred",
       "equipment": [
@@ -201,6 +198,9 @@
           "ref": "stekpanna_1",
           "transition": "keep"
         }
+      ],
+      "devNotes": [
+        "Hälften av den hackade persiljan (0.5 st) går i såsen, resten (0.5 st) strös över vid servering — enligt HF 'halva persiljan'."
       ]
     },
     {

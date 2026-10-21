@@ -99,10 +99,6 @@
       "duration": 3,
       "wait": 25,
       "tags": [],
-      "tips": [
-        "Första fasen är övre gränsen 30 min minus de 5 min som återstår när halloumin steks.",
-        "Oregano är 1 g (fylld enhet). Stegtexten säger 1/2 paket vid 2 portioner. Olivolja, salt och peppar är stjärnmärkta utan mängd."
-      ],
       "equipment": [
         {
           "type": "ugn",
@@ -114,6 +110,10 @@
         {
           "type": "plat"
         }
+      ],
+      "devNotes": [
+        "Första fasen är övre gränsen 30 min minus de 5 min som återstår när halloumin steks.",
+        "Oregano är 1 g (fylld enhet). Stegtexten säger 1/2 paket vid 2 portioner. Olivolja, salt och peppar är stjärnmärkta utan mängd."
       ]
     },
     {
@@ -187,9 +187,6 @@
       "duration": 2,
       "wait": 20,
       "tags": [],
-      "tips": [
-        "Egen klocka, inte hopslagen med pommesens 25–30 min."
-      ],
       "equipment": [
         {
           "type": "ugn",
@@ -201,6 +198,9 @@
         {
           "type": "plat"
         }
+      ],
+      "devNotes": [
+        "Egen klocka, inte hopslagen med pommesens 25–30 min."
       ]
     },
     {
@@ -227,7 +227,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "Råreceptet: hälften av gurkan rivs till tzatzikin, resten skivas till salladen. Gurka är 1 st vid både 2 och 4 portioner."
       ]
     },
@@ -274,7 +274,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "Citron är 1 st vid både 2 och 4 portioner. Inte uppskalad.",
         "Klyftorna delas: en skvätt till tomatsalladen (0,25 st), en skvätt till halloumin (0,25 st) och resten serveras (0,5 st). Råreceptet anger ingen proportion."
       ]
@@ -339,7 +339,7 @@
       ],
       "duration": 2,
       "tags": [],
-      "tips": [
+      "devNotes": [
         "En skvätt olivolja i salladen är valfri och har ingen mängd, så den är inte med som ingrediens."
       ]
     },
@@ -396,14 +396,14 @@
       "duration": 5,
       "wait": 0,
       "tags": [],
-      "tips": [
-        "2 min per sida är hands-on stek, därför duration och wait 0. Honungen går på under sista minuten, inte som egen klocka."
-      ],
       "heat": "medelhög",
       "equipment": [
         {
           "type": "stekpanna_stor"
         }
+      ],
+      "devNotes": [
+        "2 min per sida är hands-on stek, därför duration och wait 0. Honungen går på under sista minuten, inte som egen klocka."
       ]
     },
     {

@@ -60,7 +60,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "Pak choi är 1 st vid både 3 och 4 portioner. Inte uppskalad.",
         "Den vita delen går till woken och den gröna till riset; råreceptet anger ingen proportion, så grafen delar 0,5 st / 0,5 st."
       ]
@@ -104,7 +104,7 @@
       "wait": 14,
       "tags": [],
       "tips": [
-        "Riset ska ångkoka, så tjuvkika inte. 30 sek vitlöksfräs är hands-on i duration. 14 min är sista stegets wait."
+        "Riset ska ångkoka, så tjuvkika inte."
       ],
       "heat": "medelhög",
       "stepHeat": {
@@ -115,6 +115,9 @@
           "type": "kastrull_medelstor",
           "ref": "kastrull_1"
         }
+      ],
+      "devNotes": [
+        "30 sek vitlöksfräs är hands-on i duration. 14 min är sista stegets wait."
       ]
     },
     {
@@ -139,9 +142,6 @@
       "duration": 1,
       "wait": 0,
       "tags": [],
-      "tips": [
-        "Vilan tills servering har ingen minuttid, därför wait 0. Inte hopslagen med de 14 minuterna."
-      ],
       "equipment": [
         {
           "type": "kastrull_medelstor",
@@ -149,6 +149,9 @@
           "transition": "keep",
           "offHeat": true
         }
+      ],
+      "devNotes": [
+        "Vilan tills servering har ingen minuttid, därför wait 0. Inte hopslagen med de 14 minuterna."
       ]
     },
     {
@@ -203,7 +206,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "Råreceptet: en nypa sesamfrön på avokadon, resterande av de 10 g i woken."
       ]
     },
@@ -267,9 +270,6 @@
       "wait": 0,
       "tags": [],
       "tips": [
-        "Båda stekstegena är hands-on wok, därför duration 8 och wait 0. Inte en passiv klocka och inte hopslagen med risets 14 min.",
-        "Sesam är 10 g totalt enligt råreceptet; en nypa av dem har redan gått till avokadon.",
-        "Soja är 50 ml totalt, samma vid 3 och 4 portioner. Skvätten och resten är samma mängd, inte delad i påhittade milliliter.",
         "Räkorna är klara när de är rosa utanpå och ogenomskinliga i mitten."
       ],
       "heat": "medel",
@@ -277,6 +277,11 @@
         {
           "type": "stekpanna_stor"
         }
+      ],
+      "devNotes": [
+        "Båda stekstegena är hands-on wok, därför duration 8 och wait 0. Inte en passiv klocka och inte hopslagen med risets 14 min.",
+        "Sesam är 10 g totalt enligt råreceptet; en nypa av dem har redan gått till avokadon.",
+        "Soja är 50 ml totalt, samma vid 3 och 4 portioner. Skvätten och resten är samma mängd, inte delad i påhittade milliliter."
       ]
     },
     {

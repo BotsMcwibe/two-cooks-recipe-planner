@@ -51,7 +51,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "Råraden är 1 påse vitvinsvinäger 30ml. Lagrad som 30 ml, inte 1 påse."
       ]
     },
@@ -78,16 +78,16 @@
       "duration": 6,
       "tags": [],
       "wait": 10,
-      "tips": [
-        "Två rårader, 270 g och 135 g, är samma kastrull och är summerade till 405 g.",
-        "5 min skölj är aktiv och ligger i duration. 10 min är sista stegets wait."
-      ],
       "heat": "låg",
       "equipment": [
         {
           "type": "kastrull_medelstor",
           "sizeSource": "inferred"
         }
+      ],
+      "devNotes": [
+        "Två rårader, 270 g och 135 g, är samma kastrull och är summerade till 405 g.",
+        "5 min skölj är aktiv och ligger i duration. 10 min är sista stegets wait."
       ]
     },
     {
@@ -111,7 +111,7 @@
       ],
       "duration": 3,
       "tags": [],
-      "tips": [
+      "devNotes": [
         "\"Svalna något\" har ingen minut, därför ingen wait."
       ]
     },
@@ -155,7 +155,7 @@
         "prep"
       ],
       "wait": 15,
-      "tips": [
+      "devNotes": [
         "Riven ingefära är ⅔ förp, avrundat till 0.67. Tillsammans med räkornas ⅓ (0.33) blir det 1 förp.",
         "15 min är sista stegets wait. Kommentarens mandolin är ett tips, ingen extra mängd."
       ]
@@ -199,7 +199,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "⅓ förp ingefära är avrundat till 0.33. Räkor är 1 förp utan vikt.",
         "\"Till servering\" har ingen minut, därför ingen wait. Japansk soja är mappad till sojasås."
       ]
@@ -227,7 +227,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "Sojan här är ½ msk, inte hopslagen med räkmarinadens 2½ msk."
       ]
     },
@@ -253,10 +253,6 @@
       ],
       "duration": 5,
       "tags": [],
-      "tips": [
-        "Varken rostning eller isbad har en minut, därför ingen wait.",
-        "Sesam är 2 förp utan vikt. Rödkål är hel 300 g, inte den förskurna varianten."
-      ],
       "heat": "medelhög",
       "heatSource": "inferred",
       "equipment": [
@@ -264,6 +260,10 @@
           "type": "stekpanna_liten",
           "sizeSource": "inferred"
         }
+      ],
+      "devNotes": [
+        "Varken rostning eller isbad har en minut, därför ingen wait.",
+        "Sesam är 2 förp utan vikt. Rödkål är hel 300 g, inte den förskurna varianten."
       ]
     },
     {
@@ -299,7 +299,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "Andra limehalvan och andra sesamoljan. Salt är ½ krm enligt rådatan."
       ]
     },

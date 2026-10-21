@@ -30,7 +30,7 @@
   "nodes": [
     {
       "id": "lentil_gratin__preheated_oven_200",
-      "name": "Värm Ugnen",
+      "name": "Värm ugnen",
       "outputName": "Förvärmd ugn (200°C)",
       "inputs": [],
       "steps": [
@@ -42,14 +42,14 @@
         "no-timer",
         "resource"
       ],
-      "tips": [
-        "HF anger 200°C (inte 220) — lokal ugnsnode, inte preheated_oven_220."
-      ],
       "oven": {
         "temp": 200,
         "fanTemp": 180,
         "fanTempSource": "derived"
-      }
+      },
+      "devNotes": [
+        "HF anger 200°C (inte 220) — lokal ugnsnode, inte preheated_oven_220."
+      ]
     },
     {
       "id": "lentil_gratin__boiled_potato",
@@ -75,9 +75,7 @@
       "wait": 10,
       "tags": [],
       "tips": [
-        "Vi förkokar potatisen så den inte behöver gratinera för länge i ugnen.",
-        "FLAG: _unitInference Potatis 500 g — behållen (large g).",
-        "FLAG: kokvatten ej i HF yields — modellerat som pantry water 1,5 l."
+        "Vi förkokar potatisen så den inte behöver gratinera för länge i ugnen."
       ],
       "heat": "medel",
       "equipment": [
@@ -85,6 +83,10 @@
           "type": "kastrull_stor",
           "sizeSource": "inferred"
         }
+      ],
+      "devNotes": [
+        "FLAG: _unitInference Potatis 500 g — behållen (large g).",
+        "FLAG: kokvatten ej i HF yields — modellerat som pantry water 1,5 l."
       ]
     },
     {
@@ -105,7 +107,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "FLAG: _unitInference Lök 2 st — behållen (countable)."
       ]
     },
@@ -127,7 +129,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "FLAG: _unitInference Morot 2 st — behållen (countable)."
       ]
     },
@@ -149,7 +151,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "FLAG: _unitInference Röd paprika 2 tsk — överstyrd till 2 st (metod: halvera paprika, skär bort kärnhus och finhacka)."
       ]
     },
@@ -171,7 +173,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "FLAG: _unitInference Skogschampinjoner 400 g — behållen (large g)."
       ]
     },
@@ -194,8 +196,10 @@
         "prep"
       ],
       "tips": [
-        "FLAG: _unitInference Bladpersilja 1 g — överstyrd till 1 kruka (metod: grovhacka/toppa; cousins använder kruka).",
         "Spara en handfull till topping vid servering."
+      ],
+      "devNotes": [
+        "FLAG: _unitInference Bladpersilja 1 g — överstyrd till 1 kruka (metod: grovhacka/toppa; cousins använder kruka)."
       ]
     },
     {
@@ -216,7 +220,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "FLAG: _unitInference Gröna linser 2 g (reason dry) — överstyrd till 2 burk (metod: skölj i sil; pantry green_lentils är canned; cousins warm_lentil_salad/creamy_aubergine_curry använder 2 burk)."
       ]
     },
@@ -294,17 +298,17 @@
       ],
       "duration": 16,
       "tags": [],
-      "tips": [
-        "FLAG: _unitInference Ay Cajun-ba 4 tsk — behållen (small tsk / spice).",
-        "FLAG: _unitInference Buljong 4 ml — överstyrd till 4 g vegetable_bouillon (cousins potato_leek_gratin/warm_lentil_salad; HF yields-2 hade null).",
-        "FLAG: _unitInference Krossade tomater 2 burk — behållen (can).",
-        "Stekolja är pantry-skvätt (ej i HF yields)."
-      ],
       "heat": "medel",
       "equipment": [
         {
           "type": "stekpanna_stor"
         }
+      ],
+      "devNotes": [
+        "FLAG: _unitInference Ay Cajun-ba 4 tsk — behållen (small tsk / spice).",
+        "FLAG: _unitInference Buljong 4 ml — överstyrd till 4 g vegetable_bouillon (cousins potato_leek_gratin/warm_lentil_salad; HF yields-2 hade null).",
+        "FLAG: _unitInference Krossade tomater 2 burk — behållen (can).",
+        "Stekolja är pantry-skvätt (ej i HF yields)."
       ]
     },
     {
@@ -359,9 +363,6 @@
       "duration": 3,
       "wait": 15,
       "tags": [],
-      "tips": [
-        "FLAG: _unitInference Riven mozzarella 100 g — behållen."
-      ],
       "equipment": [
         {
           "type": "ugn",
@@ -375,6 +376,9 @@
           "type": "ugnsform_stor",
           "sizeSource": "inferred"
         }
+      ],
+      "devNotes": [
+        "FLAG: _unitInference Riven mozzarella 100 g — behållen."
       ]
     },
     {
@@ -417,7 +421,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "FLAG: _unitInference Citrusfrukt 1 tsk — överstyrd till 1 st lemon (metod: halvera citron).",
         "FLAG: _unitInference Sallad 180 g — behållen."
       ]

@@ -36,7 +36,7 @@
   "nodes": [
     {
       "id": "chocolate_granola__preheated_oven",
-      "name": "Värm Ugnen",
+      "name": "Värm ugnen",
       "outputName": "Förvärmd ugn (180°C)",
       "inputs": [],
       "steps": [
@@ -49,13 +49,15 @@
         "resource"
       ],
       "tips": [
-        "Ugnen tar vanligtvis 10–15 minuter att värmas upp.",
-        "HF anger 180°C/160°C varmluft — lokal ugnsnode, inte preheated_oven_220."
+        "Ugnen tar vanligtvis 10–15 minuter att värmas upp."
       ],
       "oven": {
         "temp": 180,
         "fanTemp": 160
-      }
+      },
+      "devNotes": [
+        "HF anger 180°C/160°C varmluft — lokal ugnsnode, inte preheated_oven_220."
+      ]
     },
     {
       "id": "chocolate_granola__mixed",
@@ -166,7 +168,9 @@
         "master"
       ],
       "tips": [
-        "Granolan blir knaprig och god när den har svalnat helt!",
+        "Granolan blir knaprig och god när den har svalnat helt!"
+      ],
+      "devNotes": [
         "Ingen minutangiven svalning i HF-kortet — inventera inte wait; låt svalna innan jordgubbarna blandas i."
       ]
     }

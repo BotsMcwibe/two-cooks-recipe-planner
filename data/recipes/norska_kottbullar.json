@@ -79,9 +79,6 @@
       "duration": 2,
       "wait": 13,
       "tags": [],
-      "tips": [
-        "Salt till kokvattnet har ingen mängd. 1 tsk salt hör till moset."
-      ],
       "heat": "hög",
       "heatSource": "inferred",
       "equipment": [
@@ -89,6 +86,9 @@
           "type": "kastrull_medelstor",
           "ref": "kastrull_1"
         }
+      ],
+      "devNotes": [
+        "Salt till kokvattnet har ingen mängd. 1 tsk salt hör till moset."
       ]
     },
     {
@@ -124,7 +124,7 @@
       "wait": 0,
       "tags": [],
       "tips": [
-        "En klick smör gör moset krämigare. Ingen mängd är angiven, så det är bara ett tips. Under lock är ingen klockad vila."
+        "En klick smör gör moset krämigare."
       ],
       "equipment": [
         {
@@ -133,6 +133,9 @@
           "transition": "keep",
           "offHeat": true
         }
+      ],
+      "devNotes": [
+        "Ingen mängd är angiven, så det är bara ett tips. Under lock är ingen klockad vila."
       ]
     },
     {
@@ -169,13 +172,13 @@
       "tags": [
         "prep"
       ],
-      "tips": [
-        "Nötfärs är mappad till ground_beef (Köttfärs), inte blandfärs."
-      ],
       "equipment": [
         {
           "type": "skal_stor"
         }
+      ],
+      "devNotes": [
+        "Nötfärs är mappad till ground_beef (Köttfärs), inte blandfärs."
       ]
     },
     {
@@ -202,8 +205,7 @@
       "wait": 0,
       "tags": [],
       "tips": [
-        "Köttbullarna är klara när de inte längre är rosa i mitten.",
-        "12–14 min är hands-on vändning, därför duration 14 och wait 0. Oljan är en skvätt, inte den 1 msk som hör till såsen."
+        "Köttbullarna är klara när de inte längre är rosa i mitten."
       ],
       "heat": "medelhög",
       "stepHeat": {
@@ -214,6 +216,9 @@
           "type": "stekpanna_stor",
           "ref": "stekpanna_1"
         }
+      ],
+      "devNotes": [
+        "12–14 min är hands-on vändning, därför duration 14 och wait 0. Oljan är en skvätt, inte den 1 msk som hör till såsen."
       ]
     },
     {
@@ -279,9 +284,6 @@
       "duration": 5,
       "wait": 0,
       "tags": [],
-      "tips": [
-        "De 3–4 min är rörande stek, inte passiv wait."
-      ],
       "heat": "medel",
       "stepHeat": {
         "0": "medellåg"
@@ -291,6 +293,9 @@
           "type": "kastrull_liten",
           "sizeSource": "inferred"
         }
+      ],
+      "devNotes": [
+        "De 3–4 min är rörande stek, inte passiv wait."
       ]
     },
     {
@@ -347,9 +352,6 @@
       "duration": 5,
       "wait": 3,
       "tags": [],
-      "tips": [
-        "Löken steks hands-on (duration). Sjudningen 2–3 min är sista stegets wait 3, inte hopslagen med stektiden."
-      ],
       "heat": "medelhög",
       "stepHeat": {
         "2": "medellåg"
@@ -360,6 +362,9 @@
           "ref": "stekpanna_1",
           "transition": "keep"
         }
+      ],
+      "devNotes": [
+        "Löken steks hands-on (duration). Sjudningen 2–3 min är sista stegets wait 3, inte hopslagen med stektiden."
       ]
     },
     {

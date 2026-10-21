@@ -80,7 +80,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "Basilika är 1 st vid både 2 och 4 portioner. Inte uppskalad."
       ]
     },
@@ -102,15 +102,15 @@
       "duration": 3,
       "wait": 15,
       "tags": [],
-      "tips": [
-        "Kokvattnets salt har ingen mängd. Kryddningen efter avhällning är en egen nypa, inte salladens salt."
-      ],
       "heat": "hög",
       "heatSource": "inferred",
       "equipment": [
         {
           "type": "kastrull_stor"
         }
+      ],
+      "devNotes": [
+        "Kokvattnets salt har ingen mängd. Kryddningen efter avhällning är en egen nypa, inte salladens salt."
       ]
     },
     {
@@ -140,7 +140,7 @@
       "duration": 2,
       "wait": 0,
       "tags": [],
-      "tips": [
+      "devNotes": [
         "Under lock till servering är ingen klockad vila."
       ]
     },
@@ -184,8 +184,7 @@
       "wait": 0,
       "tags": [],
       "tips": [
-        "Tvätta händer och redskap efter rå kyckling. Kycklingen är klar när köttet inte längre är rosa i mitten.",
-        "3 min per sida är hands-on, därför duration och wait 0. Marinadoljan är 2 msk. Skvätten i pannan har ingen yield."
+        "Tvätta händer och redskap efter rå kyckling. Kycklingen är klar när köttet inte längre är rosa i mitten."
       ],
       "heat": "medelhög",
       "equipment": [
@@ -196,6 +195,9 @@
         {
           "type": "skal_stor"
         }
+      ],
+      "devNotes": [
+        "3 min per sida är hands-on, därför duration och wait 0. Marinadoljan är 2 msk. Skvätten i pannan har ingen yield."
       ]
     },
     {
@@ -249,14 +251,14 @@
       "tags": [
         "prep"
       ],
-      "tips": [
-        "4 portioner är 300 g spetskål. 2 och 3 portioner står kvar på 150 g och är inte rättade.",
-        "Gurka är 1 st från 2 till 4 portioner. Massagen är 30 sek hands-on, inte en wait."
-      ],
       "equipment": [
         {
           "type": "skal_stor"
         }
+      ],
+      "devNotes": [
+        "4 portioner är 300 g spetskål. 2 och 3 portioner står kvar på 150 g och är inte rättade.",
+        "Gurka är 1 st från 2 till 4 portioner. Massagen är 30 sek hands-on, inte en wait."
       ]
     },
     {
@@ -308,9 +310,6 @@
       "duration": 3,
       "wait": 2,
       "tags": [],
-      "tips": [
-        "Vitlökssteken på 1 min är hands-on i duration. Sjudningen 1–2 min är sista stegets wait 2, inte hopslagen med stektiden."
-      ],
       "heat": "medel",
       "equipment": [
         {
@@ -319,6 +318,9 @@
           "transition": "keep",
           "after": "kramig_basilikakyckling__fried_chicken"
         }
+      ],
+      "devNotes": [
+        "Vitlökssteken på 1 min är hands-on i duration. Sjudningen 1–2 min är sista stegets wait 2, inte hopslagen med stektiden."
       ]
     },
     {

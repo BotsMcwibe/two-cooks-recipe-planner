@@ -94,7 +94,9 @@
         "prep"
       ],
       "tips": [
-        "Håll längst upp på timjanstjälken och dra med fingrarna längs stjälken för att frigöra bladen.",
+        "Håll längst upp på timjanstjälken och dra med fingrarna längs stjälken för att frigöra bladen."
+      ],
+      "devNotes": [
         "FLAG: HF-enhet portionspåse finns inte i units.json — satt till 1 pkt. Samma mängd vid 2/3/4 portioner."
       ]
     },
@@ -152,9 +154,6 @@
       "duration": 4,
       "wait": 0,
       "tags": [],
-      "tips": [
-        "Stekningen är hands-on (duration); ingen passiv wait."
-      ],
       "heat": "medelhög",
       "equipment": [
         {
@@ -163,6 +162,9 @@
           "transition": "keep",
           "after": "pear_goat_cheese_bruschetta__toasted_walnuts"
         }
+      ],
+      "devNotes": [
+        "Stekningen är hands-on (duration); ingen passiv wait."
       ]
     },
     {

@@ -185,14 +185,14 @@
       "duration": 5,
       "wait": 5,
       "tags": [],
-      "tips": [
-        "Stekningen är hands-on (duration); sjuda är passiv wait med persilja i sista steget."
-      ],
       "heat": "medelhög",
       "equipment": [
         {
           "type": "stekpanna_stor"
         }
+      ],
+      "devNotes": [
+        "Stekningen är hands-on (duration); sjuda är passiv wait med persilja i sista steget."
       ]
     },
     {

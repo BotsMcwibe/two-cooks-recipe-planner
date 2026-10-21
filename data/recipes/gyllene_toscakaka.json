@@ -38,7 +38,7 @@
   "nodes": [
     {
       "id": "gyllene_toscakaka__preheated_oven",
-      "name": "Värm Ugnen",
+      "name": "Värm ugnen",
       "outputName": "Förvärmd ugn (190°C)",
       "inputs": [],
       "steps": [

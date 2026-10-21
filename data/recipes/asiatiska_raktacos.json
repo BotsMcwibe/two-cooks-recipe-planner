@@ -72,7 +72,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "Koriander är 1 st från 2 till 4 portioner. Inte uppskalad.",
         "Gurka är 1 st vid 4 portioner. 2 och 3 portioner står på 0,5 st.",
         "Tomatens korttyp är ekologisk tomat."
@@ -96,7 +96,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "Romansallad är mappad till lettuce."
       ]
     },
@@ -118,7 +118,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "Lime är 1 st från 2 till 4 portioner. Inte uppskalad.",
         "Klyftorna delas: en generös skvätt till pico de gallo (0,4 st), en skvätt till såsen (0,2 st), resten pressas över tacosen (0,4 st). Råreceptet anger ingen proportion."
       ]
@@ -197,15 +197,17 @@
       "wait": 0,
       "tags": [],
       "tips": [
-        "Räkorna är klara när de är rosa utanpå och ogenomskinliga i mitten.",
-        "2–3 min är hands-on, därför duration och wait 0. Olivoljan har ingen mängd i yields.",
-        "Jorden Runt är 4 g vid både 3 och 4 portioner."
+        "Räkorna är klara när de är rosa utanpå och ogenomskinliga i mitten."
       ],
       "heat": "medelhög",
       "equipment": [
         {
           "type": "stekpanna_stor"
         }
+      ],
+      "devNotes": [
+        "2–3 min är hands-on, därför duration och wait 0. Olivoljan har ingen mängd i yields.",
+        "Jorden Runt är 4 g vid både 3 och 4 portioner."
       ]
     },
     {
@@ -226,7 +228,10 @@
       "wait": 1,
       "tags": [],
       "tips": [
-        "Om du inte har mikro: värm ugnen till 220°C/200°C varmluft och värm tortillas täckta med folie i 4–5 min. Det är ett alternativ, inte en andra klocka i samma nod.",
+        "Om du inte har mikro: värm ugnen till 220°C/200°C varmluft och värm tortillas täckta med folie i 4–5 min."
+      ],
+      "devNotes": [
+        "Det är ett alternativ, inte en andra klocka i samma nod.",
         "Kortet säger fullkorn. Befintlig mini_tortillas används, inte en ny id."
       ]
     },
@@ -268,7 +273,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "Såsen är sweet chili plus vegansk srirachamajonnäs, inte en egen SKU och inte sriracha på burk.",
         "4 portioner är 100 g majonnäs. 3 portioner är 75 g, inte 80 g. Sweet chili är 80 g vid både 3 och 4 portioner."
       ]
@@ -322,7 +327,7 @@
       "tags": [
         "master"
       ],
-      "tips": [
+      "devNotes": [
         "Rödkål är 150 g vid både 3 och 4 portioner."
       ]
     }

@@ -147,7 +147,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "FLAG: Ingefära anges som 2 tsk (riven) i HF-yields även för 2 portioner — icke-linjär skalning."
       ]
     },
@@ -296,7 +296,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "FLAG: HF yields anger koriander som 1 st — överstyrd till 1 kruka (färsk ört)."
       ]
     },
@@ -384,7 +384,7 @@
       "tags": [
         "master"
       ],
-      "tips": [
+      "devNotes": [
         "FLAG: HF yields anger spenat 100 st vid 4 portioner (1 st vid 2) — överstyrd till 100 g babyspenat."
       ]
     }

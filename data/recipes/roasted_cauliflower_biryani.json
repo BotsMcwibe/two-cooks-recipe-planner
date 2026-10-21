@@ -72,7 +72,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "FLAG: _unitInference Morot 4 tsk (4p) / 2 st (2p) — överstyrd till 4 st (metod: skiva hela morötter)."
       ]
     },
@@ -141,7 +141,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "FLAG: _unitInference Koriander 1 g (alla yields) — överstyrd till 1 kruka (färsk örtkuka; metod: grovhacka)."
       ]
     },
@@ -182,7 +182,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "FLAG: _unitInference Chili 2 tsk — överstyrd till 2 st (metod: halvera/skiva hela chili)."
       ]
     },
@@ -266,9 +266,7 @@
       "wait": 18,
       "tags": [],
       "tips": [
-        "Häll i lite extra vatten om vätskan har absorberats innan riset är färdigt.",
-        "FLAG: _unitInference Vatten 10 ml — överstyrd till 10 dl (HF-typ water-vatten-vand-1dl; kokvätska till 300 g basmati).",
-        "FLAG: _unitInference Buljong 4 ml — överstyrd till 4 g (pulver/tärning; samma mängd som övriga masters)."
+        "Häll i lite extra vatten om vätskan har absorberats innan riset är färdigt."
       ],
       "heat": "medelhög",
       "heatSource": "inferred",
@@ -278,6 +276,10 @@
           "ref": "stekpanna_1",
           "transition": "keep"
         }
+      ],
+      "devNotes": [
+        "FLAG: _unitInference Vatten 10 ml — överstyrd till 10 dl (HF-typ water-vatten-vand-1dl; kokvätska till 300 g basmati).",
+        "FLAG: _unitInference Buljong 4 ml — överstyrd till 4 g (pulver/tärning; samma mängd som övriga masters)."
       ]
     },
     {
@@ -311,7 +313,7 @@
       ],
       "duration": 1,
       "tags": [],
-      "tips": [
+      "devNotes": [
         "FLAG: koriander delad 0.9 st hit / 0.1 st till servering (HF: 'spara några blad till servering', ingen proportion angiven — uppskattning)."
       ]
     },

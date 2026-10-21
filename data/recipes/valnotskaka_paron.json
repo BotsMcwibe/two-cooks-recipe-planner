@@ -23,7 +23,7 @@
   "nodes": [
     {
       "id": "valnotskaka_paron__preheated_oven_190",
-      "name": "Värm Ugnen",
+      "name": "Värm ugnen",
       "outputName": "Förvärmd ugn (190°C)",
       "inputs": [],
       "steps": [
@@ -36,13 +36,15 @@
         "resource"
       ],
       "tips": [
-        "Ugnen tar vanligtvis 10–15 minuter att värmas upp.",
-        "190°C/170°C varmluft är en lokal ugnsnode, inte preheated_oven_220."
+        "Ugnen tar vanligtvis 10–15 minuter att värmas upp."
       ],
       "oven": {
         "temp": 190,
         "fanTemp": 170
-      }
+      },
+      "devNotes": [
+        "190°C/170°C varmluft är en lokal ugnsnode, inte preheated_oven_220."
+      ]
     },
     {
       "id": "valnotskaka_paron__chopped_walnuts",
@@ -63,7 +65,10 @@
         "prep"
       ],
       "tips": [
-        "Ta gärna ut bakmixen ur kylen 30 min innan den ska användas. Det är ett tips, inte en klocka i grafen.",
+        "Ta gärna ut bakmixen ur kylen 30 min innan den ska användas."
+      ],
+      "devNotes": [
+        "Det är ett tips, inte en klocka i grafen.",
         "80 g är hela kakan. Yielden är samma vid 2 och 4 portioner och är inte uppskalad. De 5 hela nötterna är inte en separat vikt.",
         "Grafen delar nötterna 0,8 st till kakan och 0,2 st (de 5 hela) till toppingen. Andelen är en uppskattning; råreceptet anger antal, inte vikt."
       ]
@@ -93,8 +98,7 @@
       "wait": 35,
       "tags": [],
       "tips": [
-        "Kakan är klar när en provsticka kommer ut torr.",
-        "Kortet säger aldrig hur mixen blir smet. Inget ägg, mjölk eller vatten finns i yielden, så inget sådant är tillagt."
+        "Kakan är klar när en provsticka kommer ut torr."
       ],
       "equipment": [
         {
@@ -107,6 +111,9 @@
         {
           "type": "bakform"
         }
+      ],
+      "devNotes": [
+        "Kortet säger aldrig hur mixen blir smet. Inget ägg, mjölk eller vatten finns i yielden, så inget sådant är tillagt."
       ]
     },
     {
@@ -139,8 +146,7 @@
       "wait": 0,
       "tags": [],
       "tips": [
-        "Bryningen är hands-on, därför duration och wait 0.",
-        "Tillsätt en skvätt vatten om glasyren är för tjock. Ingen mängd är angiven."
+        "Tillsätt en skvätt vatten om glasyren är för tjock."
       ],
       "heat": "medelhög",
       "heatSource": "inferred",
@@ -148,6 +154,10 @@
         {
           "type": "kastrull_liten"
         }
+      ],
+      "devNotes": [
+        "Bryningen är hands-on, därför duration och wait 0.",
+        "Ingen mängd är angiven."
       ]
     },
     {
@@ -180,7 +190,7 @@
       "tags": [
         "master"
       ],
-      "tips": [
+      "devNotes": [
         "Svalningen har ingen minuttid, därför wait 0. Inte hopslagen med bakningen."
       ]
     }

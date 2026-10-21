@@ -187,8 +187,7 @@
       "wait": 17,
       "tags": [],
       "tips": [
-        "Ta fram lammsteken så den blir rumstempererad medan potatisen kokar.",
-        "Kokvatten 2 l är processmängd (ej HF yields); salt 1 tsk är HF salt till potatis (används både i kokvatten och vid krossning)."
+        "Ta fram lammsteken så den blir rumstempererad medan potatisen kokar."
       ],
       "heat": "hög",
       "heatSource": "inferred",
@@ -196,6 +195,9 @@
         {
           "type": "kastrull_medelstor"
         }
+      ],
+      "devNotes": [
+        "Kokvatten 2 l är processmängd (ej HF yields); salt 1 tsk är HF salt till potatis (används både i kokvatten och vid krossning)."
       ]
     },
     {

@@ -49,7 +49,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "Salt är 1 tsk och vitpeppar 2 krm i rådatan, inte nypa."
       ]
     },
@@ -69,9 +69,6 @@
       ],
       "duration": 6,
       "tags": [],
-      "tips": [
-        "Ingen tid i råsteget, därför ingen wait."
-      ],
       "heat": "medelhög",
       "heatSource": "inferred",
       "equipment": [
@@ -79,6 +76,9 @@
           "type": "stekpanna_liten",
           "sizeSource": "inferred"
         }
+      ],
+      "devNotes": [
+        "Ingen tid i råsteget, därför ingen wait."
       ]
     },
     {
@@ -104,9 +104,6 @@
       "duration": 2,
       "wait": 20,
       "tags": [],
-      "tips": [
-        "Råtexten säger att tiden beror på formens storlek. 20 min är den angivna tiden, inte en gissning."
-      ],
       "equipment": [
         {
           "type": "ugn",
@@ -119,6 +116,9 @@
           "type": "ugnsform",
           "sizeSource": "inferred"
         }
+      ],
+      "devNotes": [
+        "Råtexten säger att tiden beror på formens storlek. 20 min är den angivna tiden, inte en gissning."
       ]
     },
     {
@@ -168,7 +168,7 @@
       "tags": [
         "master"
       ],
-      "tips": [
+      "devNotes": [
         "Kommentaren föreslår grahamsmjöl i hälften av mjölet och lingon till. Inte tillagt."
       ]
     }

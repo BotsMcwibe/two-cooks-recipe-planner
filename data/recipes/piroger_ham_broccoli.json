@@ -11,7 +11,7 @@
   "nodes": [
     {
       "id": "piroger_ham_broccoli__preheated_oven_225",
-      "name": "Värm Ugnen",
+      "name": "Värm ugnen",
       "outputName": "Förvärmd ugn (225°C)",
       "inputs": [],
       "steps": [

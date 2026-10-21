@@ -65,7 +65,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "FLAG: enheter ifyllda (ursprungligen null) — potatis g, morot st. 1000 g potatis och 2 st morot vid 4 portioner. Bekräfta."
       ]
     },
@@ -87,10 +87,6 @@
       "duration": 2,
       "wait": 13,
       "tags": [],
-      "tips": [
-        "Passiv koktid 11–13 min → wait 13 (övre gräns). Sista steget äger timern.",
-        "Salt till kokvattnet har ingen mängd i yields — skriv inte över mosets 1 tsk."
-      ],
       "heat": "hög",
       "heatSource": "inferred",
       "equipment": [
@@ -98,6 +94,10 @@
           "type": "kastrull_medelstor",
           "ref": "kastrull_1"
         }
+      ],
+      "devNotes": [
+        "Passiv koktid 11–13 min → wait 13 (övre gräns). Sista steget äger timern.",
+        "Salt till kokvattnet har ingen mängd i yields — skriv inte över mosets 1 tsk."
       ]
     },
     {
@@ -131,10 +131,6 @@
       ],
       "duration": 4,
       "tags": [],
-      "tips": [
-        "FLAG: enheter ifyllda — mjölk msk (6 msk), smör msk (2 msk till moset), salt tsk (1 tsk) vid 4 portioner.",
-        "Under lock till servering är ingen klockad vila — ingen wait."
-      ],
       "heat": "medelhög",
       "heatSource": "inferred",
       "equipment": [
@@ -143,6 +139,10 @@
           "ref": "kastrull_1",
           "transition": "keep"
         }
+      ],
+      "devNotes": [
+        "FLAG: enheter ifyllda — mjölk msk (6 msk), smör msk (2 msk till moset), salt tsk (1 tsk) vid 4 portioner.",
+        "Under lock till servering är ingen klockad vila — ingen wait."
       ]
     },
     {
@@ -169,7 +169,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "FLAG: enheter ifyllda — champinjoner g (200 g), lök st mappad till schalottenlök (HF-typ shallot; steget säger schalottenlök; 2 st).",
         "FLAG: steget skriver svamp som 1/2 paket för 2P, men yield är 100 g / 200 g. Använder 200 g, inte paket."
       ]
@@ -193,8 +193,11 @@
         "prep"
       ],
       "tips": [
+        "Merparten går i såsen och lite sparas till garnering."
+      ],
+      "devNotes": [
         "FLAG: gräslök är 1 st vid både 2 och 4 portioner — skalar inte.",
-        "Merparten går i såsen och lite sparas till garnering. Råreceptet anger ingen proportion, så grafen delar 0,8 st + 0,2 st."
+        "Råreceptet anger ingen proportion, så grafen delar 0,8 st + 0,2 st."
       ]
     },
     {
@@ -215,7 +218,7 @@
       "tags": [
         "prep"
       ],
-      "tips": [
+      "devNotes": [
         "FLAG: enhet ifylld — fläskytterfilé g, 600 g vid 4 portioner.",
         "Salt och peppar till medaljongerna har ingen mängd i yields."
       ]
@@ -242,16 +245,16 @@
       ],
       "duration": 5,
       "tags": [],
-      "tips": [
-        "Stektiden 3–4 min är hands-on och ligger i duration, inte wait. Ställ-åt-sidan är invikt i sista steget så ingen kort sidohandling äger en timer.",
-        "FLAG: smör msk (steg 3) ifylld — 2 msk vid 4 portioner, utöver mosets smör."
-      ],
       "heat": "medelhög",
       "equipment": [
         {
           "type": "stekpanna_stor",
           "ref": "stekpanna_1"
         }
+      ],
+      "devNotes": [
+        "Stektiden 3–4 min är hands-on och ligger i duration, inte wait. Ställ-åt-sidan är invikt i sista steget så ingen kort sidohandling äger en timer.",
+        "FLAG: smör msk (steg 3) ifylld — 2 msk vid 4 portioner, utöver mosets smör."
       ]
     },
     {
@@ -276,10 +279,6 @@
       ],
       "duration": 7,
       "tags": [],
-      "tips": [
-        "2–3 min per sida är hands-on (vändning) och ligger i duration, inte wait.",
-        "FLAG: olivolja saknas i yields — bara 'en skvätt vid behov'. Satt till 1 skvätt."
-      ],
       "heat": "medelhög",
       "equipment": [
         {
@@ -288,6 +287,10 @@
           "transition": "keep",
           "after": "stekt_flask_graslokssas__sauteed_mushrooms"
         }
+      ],
+      "devNotes": [
+        "2–3 min per sida är hands-on (vändning) och ligger i duration, inte wait.",
+        "FLAG: olivolja saknas i yields — bara 'en skvätt vid behov'. Satt till 1 skvätt."
       ]
     },
     {
@@ -318,10 +321,6 @@
       "duration": 1,
       "wait": 1,
       "tags": [],
-      "tips": [
-        "Första sjudningen (1 min) är egen nod. Fläsk, crème fraiche och gräslök kommer i nästa nod så att den andra minuten inte blandas ihop med den här.",
-        "FLAG: enheter ifyllda — vatten dl (1 dl), kycklingbuljong g (8 g vid 4 portioner; 4 g vid 2), salt tsk (1/2 tsk till såsen)."
-      ],
       "heat": "medel",
       "equipment": [
         {
@@ -330,6 +329,10 @@
           "transition": "keep",
           "after": "stekt_flask_graslokssas__seared_pork"
         }
+      ],
+      "devNotes": [
+        "Första sjudningen (1 min) är egen nod. Fläsk, crème fraiche och gräslök kommer i nästa nod så att den andra minuten inte blandas ihop med den här.",
+        "FLAG: enheter ifyllda — vatten dl (1 dl), kycklingbuljong g (8 g vid 4 portioner; 4 g vid 2), salt tsk (1/2 tsk till såsen)."
       ]
     },
     {
@@ -365,7 +368,7 @@
       "duration": 1,
       "wait": 1,
       "tags": [],
-      "tips": [
+      "devNotes": [
         "Andra sjudningen är 1 min — wait 1, sista steget äger timern.",
         "FLAG: crème fraiche. Yield 4 = 1 paket, yield 2 = 1/2 paket. Stegtexten säger '[1/2 paket, 2P]'. Enhet paket → pkt. Vid 4 portioner används 1 pkt, inte ett halvt. Bekräfta paketstorlek."
       ]

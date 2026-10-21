@@ -117,7 +117,7 @@
       "duration": 3,
       "tags": [],
       "tips": [
-        "Låt stå under lock tills servering. Det är ingen tidsatt vila."
+        "Låt stå under lock tills servering."
       ],
       "equipment": [
         {
@@ -127,6 +127,9 @@
           "sizeSource": "inferred",
           "offHeat": true
         }
+      ],
+      "devNotes": [
+        "Det är ingen tidsatt vila."
       ]
     },
     {

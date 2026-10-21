@@ -40,9 +40,6 @@
       ],
       "duration": 8,
       "tags": [],
-      "tips": [
-        "\"Ett par minuter\" är hands-on, ingen wait."
-      ],
       "heat": "medelhög",
       "heatSource": "inferred",
       "equipment": [
@@ -51,6 +48,9 @@
           "ref": "stekpanna_1",
           "sizeSource": "inferred"
         }
+      ],
+      "devNotes": [
+        "\"Ett par minuter\" är hands-on, ingen wait."
       ]
     },
     {
@@ -80,9 +80,6 @@
       "duration": 2,
       "wait": 15,
       "tags": [],
-      "tips": [
-        "Buljong står som 2 st tärningar. Inte omräknat till gram."
-      ],
       "heat": "hög",
       "heatSource": "inferred",
       "equipment": [
@@ -92,6 +89,9 @@
           "transition": "keep",
           "sizeSource": "inferred"
         }
+      ],
+      "devNotes": [
+        "Buljong står som 2 st tärningar. Inte omräknat till gram."
       ]
     },
     {
@@ -125,13 +125,13 @@
       ],
       "duration": 4,
       "tags": [],
-      "tips": [
-        "Salt och vitpeppar har mängd 2 krm i rådatan, så de är inte 1 nypa. Vispgrädde är ny ingrediens, inte matlagningsgrädde."
-      ],
       "equipment": [
         {
           "type": "mixer"
         }
+      ],
+      "devNotes": [
+        "Salt och vitpeppar har mängd 2 krm i rådatan, så de är inte 1 nypa. Vispgrädde är ny ingrediens, inte matlagningsgrädde."
       ]
     },
     {
@@ -150,9 +150,6 @@
       ],
       "duration": 6,
       "tags": [],
-      "tips": [
-        "Ingen tid i råsteget, därför ingen wait. \"Kryddig korv\" är mappad till ny generisk korv."
-      ],
       "heat": "medelhög",
       "heatSource": "inferred",
       "equipment": [
@@ -160,6 +157,9 @@
           "type": "stekpanna_liten",
           "sizeSource": "inferred"
         }
+      ],
+      "devNotes": [
+        "Ingen tid i råsteget, därför ingen wait. \"Kryddig korv\" är mappad till ny generisk korv."
       ]
     },
     {
@@ -186,7 +186,10 @@
         "master"
       ],
       "tips": [
-        "Har du gammalt bröd kan du tärna det, ringla över lite olja och rosta till krutonger. Inte tillagt som ingrediens."
+        "Har du gammalt bröd kan du tärna det, ringla över lite olja och rosta till krutonger."
+      ],
+      "devNotes": [
+        "Inte tillagt som ingrediens."
       ]
     }
   ]

@@ -260,10 +260,12 @@ Recipes describe what they need; the user's kitchen decides how that is cooked. 
 
 The default lives in `data/equipment.json` → `defaultKitchen` and is what `validate-recipes.mjs` checks against. `node scripts/check-equipment.mjs --trays 1 --fan` checks a different profile. When concurrent oven uses need more than `ovenTrays`, or two different effective temperatures overlap, the app must serialise those uses (later use waits for the earlier one: start later / longer total time). It reports the same situations as `oven-slots` / `oven-temp`.
 
-## Node optional field
+## Node optional fields
 
 | Field | Required | Notes |
 |-------|----------|-------|
+| `tips` | no | Array of short **user-facing** cooking tips shown in the app (doneness cues, substitutions, "kan göras medan…", allergen swaps). Plain cooking language only. |
+| `devNotes` | no | Array of **developer/converter notes, never shown to the cook**: unit inference and overrides (`FLAG: _unitInference…`), raw-data quirks, amount-scaling notes ("samma vid 3 och 4 portioner"), invented split proportions, wait/duration bookkeeping, ingredient mapping, local-oven-node remarks. The app must not render it. Added 2026-10-21; earlier such notes were moved out of `tips` (sentence level). |
 | `image` | no | Path string. Prefer **`images.byNode`** on the master so the DAG stays free of media. Use node `image` only if a single node is authored in isolation (e.g. shared prep pack illustration). |
 
 When both `node.image` and `images.byNode[nodeId]` exist, **`images.byNode` wins** (master is source of truth for dish-level media).

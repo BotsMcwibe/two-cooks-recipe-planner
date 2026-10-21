@@ -37,7 +37,7 @@
   "nodes": [
     {
       "id": "chicken_gyros__preheated_oven_200",
-      "name": "Värm Ugnen",
+      "name": "Värm ugnen",
       "outputName": "Förvärmd ugn (200°C)",
       "inputs": [],
       "steps": [
@@ -49,13 +49,13 @@
         "no-timer",
         "resource"
       ],
-      "tips": [
-        "HF anger 200 °C / 180 °C varmluft — lokal ugnsnode, inte preheated_oven_220."
-      ],
       "oven": {
         "temp": 200,
         "fanTemp": 180
-      }
+      },
+      "devNotes": [
+        "HF anger 200 °C / 180 °C varmluft — lokal ugnsnode, inte preheated_oven_220."
+      ]
     },
     {
       "id": "chicken_gyros__warmed_pita",
