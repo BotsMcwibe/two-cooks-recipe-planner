@@ -6,7 +6,6 @@
  * Inköpslista and a Data section. Works logged out (local data only).
  */
 import * as UserState from '../core/user-recipe-state.js?v=20261021g4';
-import { missingMixes } from '../core/spice-prefs.js?v=20261021g4';
 import { menuExtrasHtml, themeSegHtml, bindThemeSeg } from './menu-items.js?v=20261021g4';
 import { onAuthChange, onSyncStatus, syncStatus, lastSyncTime, signOut, currentUser, isAvailable } from '../core/sync.js?v=20261021g4';
 import { openSignIn } from './auth-ui.js?v=20261021g4';
@@ -232,7 +231,6 @@ export class AccountView {
     const maxCount = Math.max(1, ...dist.map(d => d.count));
     const top = [...ratings].sort((a, b) => b.rating - a.rating || a.name.localeCompare(b.name, 'sv')).slice(0, 5);
 
-    const mixes = [...missingMixes()].map(id => this.mixNames[id] || id).sort((a, b) => a.localeCompare(b, 'sv'));
     const shop = this.state.getShoppingData();
     const shopRows = shop.selections.filter(id => this.byId[id]).map(id => {
       const c = this.byId[id];
@@ -249,7 +247,7 @@ export class AccountView {
     const nav = [
       ['lagar', 'Lagar nu', groups.cooking.length], ['vill', 'Vill laga', groups.want.length],
       ['lagade', 'Lagade', groups.cooked.length], ['betyg', 'Dina betyg', ratings.length],
-      ['kryddmixar', 'Kryddmixar', mixes.length], ['installningar', 'Inställningar', null],
+      ['skap', 'Kryddor och skafferi', null], ['installningar', 'Inställningar', null],
       ['inkopslista', 'Inköpslista', shopRows.length], ['data', 'Data', null],
     ];
 
@@ -276,9 +274,11 @@ export class AccountView {
             </div>
             <h3 class="acc-sub">Högst betygsatta</h3>
             <ul class="acc-list">${top.map(r => this._recipeLink(r.id, starsHtml(r.rating))).join('')}</ul>` : '<p class="acc-empty">Du har inte satt några betyg än.</p>', where)}
-          ${section('kryddmixar', 'Kryddmixar du blandar själv', mixes.length, mixes.length
-            ? `<ul class="acc-chips">${mixes.map(m => `<li>${escapeHtml(m)}</li>`).join('')}</ul><p class="acc-hint">Slå av och på med ”Har inte mixen” i ett recept.</p>`
-            : '<p class="acc-empty">Du använder färdiga mixar. Välj ”Har inte mixen” i ett recept för att blanda själv.</p>', where)}
+          ${section('skap', 'Kryddor och skafferi', null, `
+            <div class="acc-links">
+              <a class="acc-link-card" href="#kryddor"><span class="acc-link-title">🧂 Kryddskåpet</span><span class="acc-link-desc">Tryck på kryddorna du har hemma och se vilka kryddmixar du kan blanda själv.</span></a>
+              <a class="acc-link-card" href="#skafferi"><span class="acc-link-title">🪦 Skafferiet</span><span class="acc-link-desc">Tryck på ingredienser du inte tål så tar vi bort recepten med dem.</span></a>
+            </div>`)}
           ${section('installningar', 'Inställningar', null, `${this._themeHtml()}
             ${this._kitchenHtml()}`, where)}
           ${section('inkopslista', 'Inköpslista', shopRows.length, shopRows.length
