@@ -122,7 +122,8 @@ export function catalogMark(id) {
   const m = marks[id];
   return m ? { ...m } : null;
 }
-export const TESTED_LABEL = 'Testad';
+/** UI name of the catalog "tested" mark: a seal of approval. */
+export const TESTED_LABEL = 'Godkänd';
 
 export function get(id) {
   const rec = local[id];

@@ -2505,13 +2505,54 @@ main.main-account { max-width: var(--max-browse); }
 .acc-facts-email { overflow-wrap: anywhere; font-weight: 600; }
 .acc-list.is-long { max-height: 340px; overflow-y: auto; padding-right: 4px; }
 
-/* Catalog "tested in the kitchen" marker: separate from personal status */
-.rs-tested {
-  display: inline-flex; align-items: center; gap: 4px; padding: 2px 8px; border-radius: 999px;
-  font-size: 0.75rem; font-weight: 600; color: var(--text-muted);
-  border: 1px dashed var(--border); background: transparent;
+/* Godkänd: catalog seal of approval (round stamp with the Yessy mark + check), separate from personal status.
+   Shape + word, never colour alone; no halos. */
+:root {
+  --gk-ink: #3d2f00;
+  --gk-ring: #b88a00;
+  --gk-disc: #fff3c4;
+  --gk-check-bg: #3d2f00;
+  --gk-check-fg: #ffd23f;
+  --gk-logo: url('../assets/brand/jesse-logo-light.png');
 }
-.rs-tested::before { content: '🧑\200D🍳'; font-size: 0.8rem; }
+:root[data-theme="dark"] {
+  --gk-ink: #ffd23f;
+  --gk-ring: #e0b400;
+  --gk-disc: #2a2410;
+  --gk-check-bg: #ffd23f;
+  --gk-check-fg: #1b1500;
+  --gk-logo: url('../assets/brand/jesse-logo-dark.png');
+}
+.gk-badge {
+  display: inline-flex; align-items: center; gap: 5px; padding: 1px 9px 1px 2px; border-radius: 999px;
+  font-size: 0.75rem; font-weight: 700; letter-spacing: 0.02em; line-height: 1.2; color: var(--gk-ink);
+  border: 1.5px solid var(--gk-ring); background: transparent; white-space: nowrap;
+}
+.gk-seal {
+  position: relative; flex: none; display: inline-block; width: 20px; height: 20px; border-radius: 50%;
+  background: var(--gk-logo) center 18% / 150% no-repeat, var(--gk-disc);
+  border: 1.5px dashed var(--gk-ring); box-sizing: border-box;
+}
+.gk-check {
+  position: absolute; right: -4px; bottom: -3px; width: 11px; height: 11px; border-radius: 50%;
+  display: grid; place-items: center; font-size: 8px; font-weight: 900; line-height: 1;
+  background: var(--gk-check-bg); color: var(--gk-check-fg);
+}
+.gk-badge-lg { gap: 7px; padding: 2px 12px 2px 3px; font-size: 0.9rem; border-width: 2px; }
+.gk-badge-lg .gk-seal { width: 30px; height: 30px; border-width: 2px; }
+.gk-badge-lg .gk-check { width: 15px; height: 15px; font-size: 10px; right: -4px; bottom: -3px; }
+/* Godkänd filter chip: carries the seal so it reads as the default, active filter */
+.filter-chip-gk { display: inline-flex; align-items: center; gap: 6px; padding-left: 5px; font-weight: 600; }
+.filter-chip-gk .gk-seal { width: 18px; height: 18px; }
+.filter-chip-gk .gk-check { width: 10px; height: 10px; font-size: 7px; }
+.filter-chip-gk:not(.active) .gk-seal { opacity: 0.55; }
+.filter-chip-gk:not(.active) .gk-check { display: none; }
+.browse-empty-all {
+  margin-top: 4px; padding: 8px 16px; border-radius: 999px; border: 1px solid var(--border);
+  background: var(--surface); color: var(--text); font: inherit; font-weight: 600; cursor: pointer;
+}
+.browse-empty-all:hover { border-color: var(--primary); }
+.browse-empty p { margin: 0 0 10px; }
 .rs-kitchen { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 0 0 8px; font-size: 0.85rem; color: var(--text-muted); }
 .rs-kitchen-score { font-weight: 600; }
 .acc-note { margin: 0 0 10px; font-size: 0.85rem; color: var(--text-muted); }

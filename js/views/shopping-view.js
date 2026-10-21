@@ -1,6 +1,6 @@
-import { ShoppingListAggregator } from '../core/shopping-list.js?v=20261021ng';
+import { ShoppingListAggregator } from '../core/shopping-list.js?v=20261021gk';
 import { formatNiceAmount } from '../utils/helpers.js';
-import { escapeAttr, escapeHtml, isPantryIngredient, isScalable } from '../utils/catalog-ui.js?v=20261021ng';
+import { escapeAttr, escapeHtml, isPantryIngredient, isScalable } from '../utils/catalog-ui.js?v=20261021gk';
 
 /**
  * Persistent Inköpslista sidebar: selected recipes + portion controls + aggregated list.
@@ -13,7 +13,7 @@ export class ShoppingSidebar {
    * @param {object} unitMap
    * @param {object} baseIngredientMap
    * @param {object} tagsData
-   * @param {import('../data/loader.js?v=20261021ng').RecipeRepository} repository
+   * @param {import('../data/loader.js?v=20261021gk').RecipeRepository} repository
    */
   constructor(state, catalog, unitMap, baseIngredientMap, tagsData, repository) {
     this.state = state;

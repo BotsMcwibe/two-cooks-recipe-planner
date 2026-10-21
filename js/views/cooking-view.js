@@ -1,9 +1,9 @@
-import { Scheduler } from '../models/scheduler.js?v=20261021ng';
-import { RecipeGraph } from '../core/recipe-graph.js?v=20261021ng';
-import { equipmentSummary, isResource, nodeEquipmentHtml, stepHeatHtml } from '../core/equipment.js?v=20261021ng';
-import { kitchenProfile } from '../core/kitchen-prefs.js?v=20261021ng';
+import { Scheduler } from '../models/scheduler.js?v=20261021gk';
+import { RecipeGraph } from '../core/recipe-graph.js?v=20261021gk';
+import { equipmentSummary, isResource, nodeEquipmentHtml, stepHeatHtml } from '../core/equipment.js?v=20261021gk';
+import { kitchenProfile } from '../core/kitchen-prefs.js?v=20261021gk';
 import { formatNiceAmount } from '../utils/helpers.js';
-import { formatStepInputText, producerMap } from '../utils/derived-inputs.js?v=20261021ng';
+import { formatStepInputText, producerMap } from '../utils/derived-inputs.js?v=20261021gk';
 import {
   allergenLabel,
   difficultyLabel,
@@ -11,11 +11,11 @@ import {
   escapeAttr,
   escapeHtml,
   starHtml,
-} from '../utils/catalog-ui.js?v=20261021ng';
-import { imgFailed, isPhotoMissing, recordPhotoFailure, recordPhotoSuccess } from '../utils/photo-fallback.js?v=20261021ng';
-import * as UserState from '../core/user-recipe-state.js?v=20261021ng';
-import { bindStatusControls, refreshStatusControls, statusControlHtml } from './recipe-status-ui.js?v=20261021ng';
-import { joinStepParts, sentenceCase } from '../utils/text.js?v=20261021ng';
+} from '../utils/catalog-ui.js?v=20261021gk';
+import { imgFailed, isPhotoMissing, recordPhotoFailure, recordPhotoSuccess } from '../utils/photo-fallback.js?v=20261021gk';
+import * as UserState from '../core/user-recipe-state.js?v=20261021gk';
+import { bindStatusControls, refreshStatusControls, statusControlHtml } from './recipe-status-ui.js?v=20261021gk';
+import { joinStepParts, sentenceCase } from '../utils/text.js?v=20261021gk';
 
 /**
  * Cooking view - rich recipe page with hero, meta, ingredients, nutrition,

@@ -1,4 +1,4 @@
-import { loadPortionEnergyKcal } from '../data/loader.js?v=20261021ng';
+import { loadPortionEnergyKcal } from '../data/loader.js?v=20261021gk';
 import {
   buildFilterChips,
   displayTags,
@@ -9,11 +9,20 @@ import {
   recipeVisual,
   starHtml,
   subtitleFromSearchText,
-} from '../utils/catalog-ui.js?v=20261021ng';
-import * as UserState from '../core/user-recipe-state.js?v=20261021ng';
-import { imgFailed, isPhotoMissing, recordPhotoFailure, recordPhotoSuccess, photosLikelyUnavailable } from '../utils/photo-fallback.js?v=20261021ng';
-import { excludedPantry, clearPantryExcluded, loadPantry } from '../core/pantry-exclude.js?v=20261021ng';
-import { cardStateHtml } from './recipe-status-ui.js?v=20261021ng';
+} from '../utils/catalog-ui.js?v=20261021gk';
+import * as UserState from '../core/user-recipe-state.js?v=20261021gk';
+import { imgFailed, isPhotoMissing, recordPhotoFailure, recordPhotoSuccess, photosLikelyUnavailable } from '../utils/photo-fallback.js?v=20261021gk';
+import { excludedPantry, clearPantryExcluded, loadPantry } from '../core/pantry-exclude.js?v=20261021gk';
+import { cardStateHtml } from './recipe-status-ui.js?v=20261021gk';
+
+/** localStorage key: '0' when the user turned the Godkänd filter off (on by default). */
+const GODKAND_KEY = 'yessy.browse.godkandOnly';
+function loadGodkandOnly() {
+  try { return localStorage.getItem(GODKAND_KEY) !== '0'; } catch { return true; }
+}
+function saveGodkandOnly(on) {
+  try { localStorage.setItem(GODKAND_KEY, on ? '1' : '0'); } catch { /* private mode */ }
+}
 
 /**
  * Browse page: searchable/filterable recipe card grid.
@@ -36,7 +45,8 @@ export class BrowseView {
     this.kcalOnly = false;
     /** @type {'want'|'cooking'|'cooked'|null} personal status filter */
     this.statusFilter = null;
-    this.testedOnly = false;
+    /** Godkänd filter (catalog "tested" mark), on by default, remembered locally. */
+    this.testedOnly = loadGodkandOnly();
     this.query = '';
     /** @type {Map<string, number>|null} raw per-portion energyKcal, null until loaded */
     this.kcalById = null;
@@ -63,7 +73,13 @@ export class BrowseView {
   _chipHtml(chip, group, active) {
     const title = chip.title ? ` title="${escapeAttr(chip.title)}"` : '';
     const pressed = group === 'tag' ? '' : ` aria-pressed="${active}"`;
-    return `<button type="button" class="filter-chip${active ? ' active' : ''}" data-group="${escapeAttr(group)}" data-filter="${escapeAttr(chip.id)}"${title}${pressed}>${escapeHtml(chip.label)}</button>`;
+    const cls = chip.cls ? ` ${chip.cls}` : '';
+    const inner = chip.html || escapeHtml(chip.label);
+    return `<button type="button" class="filter-chip${cls}${active ? ' active' : ''}" data-group="${escapeAttr(group)}" data-filter="${escapeAttr(chip.id)}"${title}${pressed}>${inner}</button>`;
+  }
+
+  _godkandTitle() {
+    return this.testedOnly ? 'Visar bara godkända recept. Tryck för att visa alla.' : 'Visa bara godkända recept';
   }
 
   _buildChrome() {
@@ -80,8 +96,10 @@ export class BrowseView {
       'status',
       false,
     )).join('');
-    const tested = this._chipHtml(
-      { id: 'tested', label: 'Testad', title: 'Visa recept som testats i köket' }, 'tested', false);
+    const tested = this._chipHtml({
+      id: 'tested', cls: 'filter-chip-gk', title: this._godkandTitle(),
+      html: `<span class="gk-seal" aria-hidden="true"><span class="gk-check">✓</span></span>${escapeHtml(UserState.TESTED_LABEL)}`,
+    }, 'tested', this.testedOnly);
 
     this.$container.html(`
       <div class="browse-toolbar">
@@ -91,13 +109,13 @@ export class BrowseView {
         </div>
         <div class="filter-chips" role="group" aria-label="Filter">${chips}</div>
         <div class="filter-chips filter-chips-extra">
-          <span class="filter-chip-group" role="group" aria-label="Kalorier">${kcal}${tested}</span>
+          <span class="filter-chip-group" role="group" aria-label="Godkänd och kalorier">${tested}${kcal}</span>
           <span class="filter-chip-group filter-chip-group-status" role="group" aria-label="Min status">${status}</span>
         </div>
       </div>
       <div class="browse-grave" id="browse-grave" hidden></div>
       <div class="browse-grid" id="browse-grid"></div>
-      <p class="browse-empty" id="browse-empty" hidden>Inga recept matchade.</p>
+      <div class="browse-empty" id="browse-empty" hidden></div>
     `);
   }
 
@@ -107,6 +125,7 @@ export class BrowseView {
       this.render();
     });
     this.$container.on('click', '.browse-grave-clear', () => clearPantryExcluded());
+    this.$container.on('click', '.browse-empty-all', () => this._setGodkand(false));
     this.$container.on('click', '.filter-chip', (e) => {
       const $btn = $(e.currentTarget);
       const group = $btn.attr('data-group') || 'tag';
@@ -125,8 +144,8 @@ export class BrowseView {
           return;
         }
       } else if (group === 'tested') {
-        this.testedOnly = !this.testedOnly;
-        $btn.toggleClass('active', this.testedOnly).attr('aria-pressed', String(this.testedOnly));
+        this._setGodkand(!this.testedOnly);
+        return;
       } else if (group === 'status') {
         this.statusFilter = this.statusFilter === id ? null : id;
         this.$container.find('.filter-chip[data-group="status"]').each((_, el) => {
@@ -226,7 +245,18 @@ export class BrowseView {
     });
   }
 
-  _filtered() {
+  /** Turn the Godkänd filter on/off, remember it, and re-render. */
+  _setGodkand(on) {
+    this.testedOnly = !!on;
+    saveGodkandOnly(this.testedOnly);
+    this.$container.find('.filter-chip[data-group="tested"]')
+      .toggleClass('active', this.testedOnly)
+      .attr('aria-pressed', String(this.testedOnly))
+      .attr('title', this._godkandTitle());
+    this.render();
+  }
+
+  _filtered(opts = {}) {
     const chip = this.filterChips.find(c => c.id === this.activeFilter);
     const matchFilter = chip ? chip.match : () => true;
     const q = this.query;
@@ -238,7 +268,7 @@ export class BrowseView {
         if (shown == null || shown >= 650) return false;
       }
       if (this.excluded.size) { const p = this.pantryById.get(entry.id); if (p && p.some((x) => this.excluded.has(x))) return false; }
-      if (this.testedOnly) { const m = UserState.catalogMark(entry.id); if (!m || !m.tested) return false; }
+      if (this.testedOnly && !opts.ignoreGodkand) { const m = UserState.catalogMark(entry.id); if (!m || !m.tested) return false; }
       if (this.statusFilter && UserState.get(entry.id).status !== this.statusFilter) return false;
       if (!q) return true;
       const hay = `${entry.name || ''} ${entry.searchText || ''}`.toLowerCase();
@@ -262,7 +292,11 @@ export class BrowseView {
 
     if (!list.length) {
       $grid.empty();
-      $empty.prop('hidden', false);
+      // Godkänd on but other recipes would match: say so and offer to show them
+      const others = this.testedOnly ? this._filtered({ ignoreGodkand: true }).length : 0;
+      $empty.prop('hidden', false).html(others
+        ? `<p>Inga godkända recept matchade.</p><button type="button" class="browse-empty-all">Visa alla recept (${others})</button>`
+        : '<p>Inga recept matchade.</p>');
       return;
     }
     $empty.prop('hidden', true);

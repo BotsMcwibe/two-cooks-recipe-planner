@@ -2,8 +2,8 @@
  * Personal status control (Vill laga / Lagar nu / Lagad) + clickable 1–5 stars,
  * and the compact card badge. Backed by core/user-recipe-state.js.
  */
-import * as UserState from '../core/user-recipe-state.js?v=20261021ng';
-import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261021ng';
+import * as UserState from '../core/user-recipe-state.js?v=20261021gk';
+import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261021gk';
 
 const STATUS_ICON = { want: '☆', cooking: '◔', cooked: '✓' };
 
@@ -34,21 +34,32 @@ export function statusControlHtml(id, opts = {}) {
   </div>`;
 }
 
-/** Catalog marker line ("Testad i köket", kitchen score), separate from personal state. */
+/** Godkänd seal: round stamp with the Yessy mark and a check, plus the word. `lg` = översikt size. */
+export function sealHtml(opts = {}) {
+  const { lg = false, title = '' } = opts;
+  const t = title ? ` title="${escapeAttr(title)}"` : '';
+  return `<span class="gk-badge${lg ? ' gk-badge-lg' : ''}"${t}><span class="gk-seal" aria-hidden="true"><span class="gk-check">✓</span></span><span class="gk-word">${escapeHtml(UserState.TESTED_LABEL)}</span></span>`;
+}
+
+function sealTitle(m) {
+  return `Godkänd: lagad och godkänd i Yessys kök${m && m.score ? `, kökets betyg ${m.score}` : ''}`;
+}
+
+/** Catalog marker line (Godkänd seal, kitchen score), separate from personal state. */
 export function kitchenMarkHtml(id) {
   const m = UserState.catalogMark(id);
   if (!m || (!m.tested && !m.score)) return '';
-  return `<p class="rs-kitchen">${m.tested ? '<span class="rs-tested">Testad i köket</span>' : ''}${m.score ? `<span class="rs-kitchen-score" title="Kökets betyg, inte ditt">Kökets betyg ${escapeHtml(m.score)}</span>` : ''}</p>`;
+  return `<p class="rs-kitchen">${m.tested ? sealHtml({ lg: true, title: sealTitle(m) }) : ''}${m.score ? `<span class="rs-kitchen-score" title="Kökets betyg, inte ditt">Kökets betyg ${escapeHtml(m.score)}</span>` : ''}</p>`;
 }
 
-/** Badge + own stars for a recipe card, plus the catalog "Testad" marker (empty string when nothing is set). */
+/** Badge + own stars for a recipe card, plus the catalog Godkänd seal (empty string when nothing is set). */
 export function cardStateHtml(id) {
   const { status, rating } = UserState.get(id);
   const m = UserState.catalogMark(id);
   const tested = m && m.tested;
   if (!status && !rating && !tested) return '';
   let html = '<div class="rs-card">';
-  if (tested) html += `<span class="rs-tested" title="Testad i köket${m.score ? `, kökets betyg ${escapeAttr(m.score)}` : ''}">Testad</span>`;
+  if (tested) html += sealHtml({ title: sealTitle(m) });
   if (status) html += `<span class="rs-badge rs-${status}">${STATUS_ICON[status]} ${escapeHtml(UserState.STATUS_LABELS[status])}</span>`;
   if (rating) html += `<span class="rs-card-stars" title="Mitt betyg ${rating} av 5" aria-label="Mitt betyg ${rating} av 5">${'★'.repeat(rating)}<span class="rs-card-stars-off">${'★'.repeat(5 - rating)}</span></span>`;
   return html + '</div>';
