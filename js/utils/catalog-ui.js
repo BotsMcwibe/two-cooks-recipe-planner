@@ -147,7 +147,7 @@ export function buildFilterChips(catalog) {
   // Protein chips (skip vegetarian if Vego already present)
   const proteinOrder = [
     'protein:chicken', 'protein:beef', 'protein:pork', 'protein:fish',
-    'protein:lamb', 'protein:mixed', 'protein:vegetarian',
+    'protein:lamb', 'protein:vegetarian',
   ];
   for (const key of proteinOrder) {
     if (!proteinCounts.has(key)) continue;
