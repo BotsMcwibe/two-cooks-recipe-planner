@@ -3339,3 +3339,65 @@ p.eq-serving { font-size: 0.85rem; margin: 8px 0 0; }
 }
 .hh-emoji:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
 .hh-msg { min-height: 1.2em; font-size: 0.82rem; color: var(--text-muted); }
+
+/* Hushåll section + invite */
+#acc-hushall, .hh-invite-panel { grid-column: 1 / -1; }
+.hh-lede { margin: 0 0 12px; color: var(--text); }
+.hh-name-row { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 8px; }
+.hh-hname { font-weight: 700; font-size: 1.05rem; }
+.hh-members { list-style: none; margin: 0 0 14px; padding: 0; display: grid; gap: 6px; }
+.hh-member { display: flex; align-items: center; gap: 10px; padding: 8px 10px; border-radius: var(--radius-sm); background: var(--surface-2); }
+.hh-member-name { font-weight: 600; }
+.hh-member-act { margin-left: auto; }
+.hh-tag { font-size: 0.72rem; font-weight: 600; padding: 1px 8px; border-radius: 999px; border: 1px solid var(--border); color: var(--text-muted); background: var(--surface); }
+.hh-invite-btn { margin: 2px 0 10px; }
+.hh-invite-card { display: grid; gap: 8px; padding: 14px; margin: 4px 0 12px; border-radius: var(--radius-sm); border: 1px dashed var(--separator); background: var(--surface-2); }
+.hh-invite-card .hh-label { margin: 0; }
+.hh-invite-card .hh-link { max-width: none; width: 100%; font-size: 0.82rem; }
+.hh-code-big { margin: 2px 0; font-size: 1.6rem; font-weight: 800; letter-spacing: 0.12em; font-variant-numeric: tabular-nums; }
+.hh-code { font-weight: 700; letter-spacing: 0.06em; font-variant-numeric: tabular-nums; }
+.hh-share-row a.acc-btn { text-decoration: none; display: inline-flex; align-items: center; }
+.hh-invites { margin: 4px 0 12px; }
+.hh-invites summary { cursor: pointer; font-size: 0.88rem; font-weight: 600; color: var(--text-muted); }
+.hh-join-form { margin: 6px 0 14px; }
+.hh-legend { display: grid; gap: 6px; padding: 10px 12px; border-radius: var(--radius-sm); border: 1px solid var(--border); font-size: 0.86rem; margin-bottom: 10px; }
+.hh-legend-row { margin: 0; display: flex; gap: 8px; align-items: flex-start; }
+.hh-legend-icon { flex: none; width: 1.3em; text-align: center; }
+.hh-check { display: inline-flex; align-items: center; gap: 8px; font-size: 0.9rem; cursor: pointer; }
+.hh-check input { width: 18px; height: 18px; accent-color: var(--text); }
+.hh-leave { display: grid; gap: 10px; padding: 12px; border-radius: var(--radius-sm); border: 1px solid var(--border); background: var(--surface-2); }
+.hh-leave p { margin: 0; }
+.hh-leave-btn { margin-top: 4px; }
+.hh-invite-panel { border: 2px solid var(--text); }
+.hh-invite-panel > p { margin: 0 0 10px; }
+.hh-invite-q { font-size: 1.05rem; }
+.hh-invite-panel .hh-check { margin: 4px 0 2px; }
+/* Lists / challenge / notes markers */
+.ls-lock { font-size: 0.85em; }
+.ls-owner { display: inline-flex; align-items: center; gap: 4px; font-size: 0.78rem; color: var(--text-muted); margin-left: 6px; }
+.ls-private-new { flex-basis: 100%; margin-top: 6px; }
+.ch-scope { margin-top: 10px; }
+.nt-lock { font-size: 0.72rem; font-weight: 600; color: var(--text-muted); margin-left: 8px; }
+/* Status control / cards / cook log: who */
+.rs-menu-shared { font-size: 0.74rem; font-weight: 600; color: var(--text-muted); padding: 6px 12px 4px; }
+.rs-by { display: inline-flex; align-items: center; gap: 6px; font-size: 0.8rem; color: var(--text-muted); }
+.rs-badge .hh-av-sm { width: 16px; height: 16px; font-size: 0.58rem; margin-right: 4px; vertical-align: -3px; }
+.rs-card-hh { font-size: 0.72rem; font-weight: 600; color: var(--text-muted); white-space: nowrap; }
+.cl-who { display: inline-flex; align-items: center; gap: 4px; font-size: 0.8rem; color: var(--text-muted); }
+/* Översikt: Hushållet + Min recension */
+.hh-rev { margin: 14px 0; display: grid; gap: 10px; }
+.hh-rev[hidden] { display: none; }
+.hh-rev-h { margin: 0; font-size: 0.95rem; }
+.hh-rev-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.hh-rev-item { padding: 10px 12px; border-radius: var(--radius-sm); background: var(--surface-2); }
+.hh-rev-who { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.hh-rev-name { font-weight: 600; }
+.hh-stars { color: var(--star); letter-spacing: 1px; }
+.hh-stars-off { color: var(--separator); }
+.hh-rev-text { margin: 6px 0 0; white-space: pre-wrap; }
+.hh-rev-date { margin: 2px 0 0; font-size: 0.75rem; color: var(--text-muted); }
+.hh-rev-mine { border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 8px 12px; }
+.hh-rev-mine summary { cursor: pointer; display: flex; align-items: center; gap: 8px; font-weight: 600; flex-wrap: wrap; }
+.hh-rev-vis { font-size: 0.72rem; font-weight: 600; color: var(--text-muted); }
+.hh-rev-input { width: 100%; box-sizing: border-box; margin: 8px 0; padding: 8px 10px; font: inherit; font-size: 0.92rem; border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--surface); color: var(--text); resize: vertical; }
+.hh-rev-input:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 1px; }

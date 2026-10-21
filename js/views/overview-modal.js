@@ -1,6 +1,6 @@
-import { RecipeGraph } from '../core/recipe-graph.js?v=20261021g15';
-import { equipmentListHtml, servingLineHtml } from '../core/equipment.js?v=20261021g15';
-import { kitchenProfile } from '../core/kitchen-prefs.js?v=20261021g15';
+import { RecipeGraph } from '../core/recipe-graph.js?v=20261021g16';
+import { equipmentListHtml, servingLineHtml } from '../core/equipment.js?v=20261021g16';
+import { kitchenProfile } from '../core/kitchen-prefs.js?v=20261021g16';
 import { formatNiceAmount } from '../utils/helpers.js';
 import {
   allergenLabel,
@@ -12,12 +12,13 @@ import {
   isScalable,
   starHtml,
   subtitleFromSearchText,
-} from '../utils/catalog-ui.js?v=20261021g15';
-import { imgFailed, isPhotoMissing, recordPhotoFailure, recordPhotoSuccess } from '../utils/photo-fallback.js?v=20261021g15';
-import * as UserState from '../core/user-recipe-state.js?v=20261021g15';
-import { spiceMixTogglesHtml } from './spice-mix-ui.js?v=20261021g15';
-import { bindStatusControls, cookLogHtml, kitchenMarkHtml, refreshStatusControls, statusControlHtml } from './recipe-status-ui.js?v=20261021g15';
-import { notesHtml, bindNotes } from './journal-ui.js?v=20261021g15';
+} from '../utils/catalog-ui.js?v=20261021g16';
+import { imgFailed, isPhotoMissing, recordPhotoFailure, recordPhotoSuccess } from '../utils/photo-fallback.js?v=20261021g16';
+import * as UserState from '../core/user-recipe-state.js?v=20261021g16';
+import { spiceMixTogglesHtml } from './spice-mix-ui.js?v=20261021g16';
+import { bindStatusControls, cookLogHtml, kitchenMarkHtml, refreshStatusControls, statusControlHtml } from './recipe-status-ui.js?v=20261021g16';
+import { notesHtml, bindNotes } from './journal-ui.js?v=20261021g16';
+import { householdReviewsHtml, bindHouseholdReviews, refreshHouseholdReviews } from './household-recipe-ui.js?v=20261021g16';
 
 /**
  * HelloFresh-inspired recipe overview modal.
@@ -28,7 +29,7 @@ export class OverviewModal {
   /**
    * @param {import('../core/state.js').AppState} state
    * @param {Array<object>} catalog
-   * @param {import('../data/loader.js?v=20261021g15').RecipeRepository} repository
+   * @param {import('../data/loader.js?v=20261021g16').RecipeRepository} repository
    * @param {Array} baseIngredients
    * @param {{
    *   onCook: (id: string, portions: number) => void,
@@ -83,8 +84,14 @@ export class OverviewModal {
     this.$root.on('click', '[data-close]', () => this.close());
     bindStatusControls(this.$root);
     bindNotes(this.$root);
+    bindHouseholdReviews(this.$root);
     UserState.subscribe((id) => {
-      if (this.isOpen()) refreshStatusControls(this.$root, id);
+      if (this.isOpen()) { refreshStatusControls(this.$root, id); refreshHouseholdReviews(this.$root, id); }
+    });
+    // Household data arrived (who set the status, members' stars): refresh the control
+    window.addEventListener('householdchange', (e) => {
+      const w = e.detail && e.detail.what;
+      if (this.isOpen() && w !== 'feed') refreshStatusControls(this.$root, this.recipeId);
     });
     this.$root.on('click', '.overview-dialog', (e) => e.stopPropagation());
     $(document).on('keydown.overviewModal', (e) => {
@@ -335,6 +342,7 @@ export class OverviewModal {
         ${kitchenMarkHtml(entry.id)}
         ${statusControlHtml(entry.id)}
         ${cookLogHtml(entry.id)}
+        ${householdReviewsHtml(entry.id)}
         ${desc ? `<p class="overview-desc">${escapeHtml(desc)}</p>` : ''}
         ${allergens ? `<div class="overview-allergens"><span class="allergens-label">Allergener:</span> ${allergens}</div>` : ''}
         ${notesHtml(entry.id)}

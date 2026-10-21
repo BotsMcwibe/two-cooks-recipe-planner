@@ -1,4 +1,4 @@
-import { loadPortionEnergyKcal } from '../data/loader.js?v=20261021g15';
+import { loadPortionEnergyKcal } from '../data/loader.js?v=20261021g16';
 import {
   buildFilterChips,
   displayTags,
@@ -9,12 +9,12 @@ import {
   recipeVisual,
   starHtml,
   subtitleFromSearchText,
-} from '../utils/catalog-ui.js?v=20261021g15';
-import * as UserState from '../core/user-recipe-state.js?v=20261021g15';
-import { imgFailed, isPhotoMissing, recordPhotoFailure, recordPhotoSuccess, photosLikelyUnavailable } from '../utils/photo-fallback.js?v=20261021g15';
-import { excludedPantry, clearPantryExcluded, loadPantry } from '../core/pantry-exclude.js?v=20261021g15';
-import * as Journal from '../core/recipe-journal.js?v=20261021g15';
-import { cardStateHtml } from './recipe-status-ui.js?v=20261021g15';
+} from '../utils/catalog-ui.js?v=20261021g16';
+import * as UserState from '../core/user-recipe-state.js?v=20261021g16';
+import { imgFailed, isPhotoMissing, recordPhotoFailure, recordPhotoSuccess, photosLikelyUnavailable } from '../utils/photo-fallback.js?v=20261021g16';
+import { excludedPantry, clearPantryExcluded, loadPantry } from '../core/pantry-exclude.js?v=20261021g16';
+import * as Journal from '../core/recipe-journal.js?v=20261021g16';
+import { cardStateHtml } from './recipe-status-ui.js?v=20261021g16';
 
 /** localStorage key: '0' when the user turned the Godkänd filter off (on by default). */
 const GODKAND_KEY = 'yessy.browse.godkandOnly';
@@ -79,12 +79,19 @@ export class BrowseView {
       if (key === 'recipeLists' || !key) this._renderStatusChips();
       this.render();
     });
+    // Household members' stars / who set a status show on the cards
+    let hhT = 0;
+    window.addEventListener('householdchange', (e) => {
+      const w = e.detail && e.detail.what;
+      if (w === 'feed' || w === 'profile' || w === 'invites') return;
+      clearTimeout(hhT); hhT = setTimeout(() => this.render(), 150);
+    });
   }
 
   /** Vill laga, Lagad, then one chip per own list. */
   _statusChipsHtml() {
     const chips = UserState.STATUSES.map(s => ({ id: s, label: UserState.STATUS_LABELS[s], title: `Visa recept märkta ”${UserState.STATUS_LABELS[s]}”` }));
-    for (const l of Journal.lists()) chips.push({ id: `list:${l.id}`, label: l.name, cls: 'filter-chip-list', title: `Visa listan ”${l.name}”` });
+    for (const l of Journal.lists()) chips.push({ id: `list:${l.id}`, label: Journal.isPrivateList(l) ? `🔒 ${l.name}` : l.name, cls: 'filter-chip-list', title: `Visa listan ”${l.name}”${Journal.isPrivateList(l) ? ' (bara för mig)' : ''}` });
     return chips.map(c => this._chipHtml(c, 'status', this.statusFilter === c.id)).join('');
   }
 

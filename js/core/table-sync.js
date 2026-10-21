@@ -20,9 +20,9 @@
  * this device, the shared local data is cleared first so one household's data
  * never leaks into another's.
  */
-import * as UserState from './user-recipe-state.js?v=20261021g15';
-import * as Journal from './recipe-journal.js?v=20261021g15';
-import * as Household from './household.js?v=20261021g15';
+import * as UserState from './user-recipe-state.js?v=20261021g16';
+import * as Journal from './recipe-journal.js?v=20261021g16';
+import * as Household from './household.js?v=20261021g16';
 
 const CACHE_KEY = 'yessy.tableSync.v1';
 export const TABLE_KEYS = ['cookLog', 'recipeNotes', 'recipeLists', 'notForUs'];

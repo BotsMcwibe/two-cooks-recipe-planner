@@ -2,7 +2,7 @@
  * "Kryddmixar" box: one row per spice mix in the recipe with a
  * "Har inte mixen" switch (stored per mix in localStorage via spice-prefs).
  */
-import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261021g15';
+import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261021g16';
 
 const fmtG = (g) => {
   const r = g < 10 ? Math.round(g * 10) / 10 : Math.round(g);

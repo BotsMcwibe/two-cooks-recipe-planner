@@ -1,28 +1,29 @@
-import { AppState } from './core/state.js?v=20261021g15';
-import { parseHash, setHash } from './core/router.js?v=20261021g15';
-import { loadStaticData, RecipeRepository } from './data/loader.js?v=20261021g15';
-import { AppShell } from './views/app-shell.js?v=20261021g15';
-import { RecipeChrome } from './views/recipe-selector.js?v=20261021g15';
-import { isScalable } from './utils/catalog-ui.js?v=20261021g15';
-import { BrowseView } from './views/browse-view.js?v=20261021g15';
-import { OverviewModal } from './views/overview-modal.js?v=20261021g15';
-import { FlowGraph } from './views/flow-graph.js?v=20261021g15';
-import { CookingView } from './views/cooking-view.js?v=20261021g15';
-import { ShoppingSidebar } from './views/shopping-view.js?v=20261021g15';
+import { AppState } from './core/state.js?v=20261021g16';
+import { parseHash, setHash } from './core/router.js?v=20261021g16';
+import { loadStaticData, RecipeRepository } from './data/loader.js?v=20261021g16';
+import { AppShell } from './views/app-shell.js?v=20261021g16';
+import { RecipeChrome } from './views/recipe-selector.js?v=20261021g16';
+import { isScalable } from './utils/catalog-ui.js?v=20261021g16';
+import { BrowseView } from './views/browse-view.js?v=20261021g16';
+import { OverviewModal } from './views/overview-modal.js?v=20261021g16';
+import { FlowGraph } from './views/flow-graph.js?v=20261021g16';
+import { CookingView } from './views/cooking-view.js?v=20261021g16';
+import { ShoppingSidebar } from './views/shopping-view.js?v=20261021g16';
 import { Timer } from './views/timer.js';
-import { spiceMixTogglesHtml } from './views/spice-mix-ui.js?v=20261021g15';
-import { setMixMissing } from './core/spice-prefs.js?v=20261021g15';
-import { SpiceView } from './views/spice-view.js?v=20261021g15';
-import { PantryView } from './views/pantry-view.js?v=20261021g15';
-import * as UserState from './core/user-recipe-state.js?v=20261021g15';
-import { initSync, hasAuthRedirect } from './core/sync.js?v=20261021g15';
-import { AccountView } from './views/account-view.js?v=20261021g15';
-import { WeekView } from './views/week-view.js?v=20261021g15';
-import { ShoppingPage } from './views/shopping-page.js?v=20261021g15';
-import { renderCookExtras, bindCookExtras } from './views/journal-ui.js?v=20261021g15';
-import { initAuthUi } from './views/auth-ui.js?v=20261021g15';
-import { initThemeToggle } from './utils/theme.js?v=20261021g15';
-import { initBackToTop } from './utils/back-to-top.js?v=20261021g15';
+import { spiceMixTogglesHtml } from './views/spice-mix-ui.js?v=20261021g16';
+import { setMixMissing } from './core/spice-prefs.js?v=20261021g16';
+import { SpiceView } from './views/spice-view.js?v=20261021g16';
+import { PantryView } from './views/pantry-view.js?v=20261021g16';
+import * as UserState from './core/user-recipe-state.js?v=20261021g16';
+import { initSync, hasAuthRedirect, onAuthChange } from './core/sync.js?v=20261021g16';
+import * as Household from './core/household.js?v=20261021g16';
+import { AccountView } from './views/account-view.js?v=20261021g16';
+import { WeekView } from './views/week-view.js?v=20261021g16';
+import { ShoppingPage } from './views/shopping-page.js?v=20261021g16';
+import { renderCookExtras, bindCookExtras } from './views/journal-ui.js?v=20261021g16';
+import { initAuthUi } from './views/auth-ui.js?v=20261021g16';
+import { initThemeToggle } from './utils/theme.js?v=20261021g16';
+import { initBackToTop } from './utils/back-to-top.js?v=20261021g16';
 
 initThemeToggle(null);
 initBackToTop();
@@ -252,6 +253,15 @@ async function bootstrap() {
         return;
       }
 
+      // Invite links: #join/CODE (household) and #friend/CODE open Mitt konto with the invite on top
+      if (route === 'join' || route === 'friend') {
+        if (modal.isOpen()) modal.close({ silent: true });
+        state.currentPhase = 'account';
+        accountView.showInvite(route, masterId);
+        window.scrollTo(0, 0);
+        return;
+      }
+
       if (route === 'konto') {
         if (modal.isOpen()) modal.close({ silent: true });
         const was = state.currentPhase === 'account';
@@ -447,6 +457,13 @@ async function bootstrap() {
   }
   window.addEventListener('hashchange', onRouteUrlChange);
   window.addEventListener('popstate', onRouteUrlChange);
+
+  // Back from the sign-in link with an invite waiting: reopen it
+  onAuthChange((u) => {
+    if (!u) return;
+    const p = Household.takePending();
+    if (p) location.hash = `#${p.kind}/${p.code}`;
+  });
 }
 
 bootstrap().catch(err => {

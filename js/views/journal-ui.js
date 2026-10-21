@@ -3,10 +3,10 @@
  * banner), the "Klart! Logga som lagad" block at the end of the cook page and the
  * yearly challenge ring (Mitt konto).
  */
-import * as Journal from '../core/recipe-journal.js?v=20261021g15';
-import * as UserState from '../core/user-recipe-state.js?v=20261021g15';
-import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261021g15';
-import { timesLabel } from './recipe-status-ui.js?v=20261021g15';
+import * as Journal from '../core/recipe-journal.js?v=20261021g16';
+import * as UserState from '../core/user-recipe-state.js?v=20261021g16';
+import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261021g16';
+import { timesLabel } from './recipe-status-ui.js?v=20261021g16';
 
 // ---------------------------------------------------------------------------
 // Mina anteckningar
@@ -15,7 +15,7 @@ export function notesHtml(id) {
   if (!id) return '';
   const text = Journal.noteText(id);
   return `<details class="nt-notes" data-id="${escapeAttr(id)}"${text ? ' open' : ''}>
-    <summary><span class="nt-title"><span aria-hidden="true">📝</span> Mina anteckningar</span><span class="nt-status" aria-live="polite"></span></summary>
+    <summary><span class="nt-title"><span aria-hidden="true">📝</span> Mina anteckningar</span><span class="nt-lock">🔒 Bara du</span><span class="nt-status" aria-live="polite"></span></summary>
     <textarea class="nt-text" rows="3" maxlength="4000" placeholder="T.ex. dubbla vitlöken, 5 min kortare i ugnen" aria-label="Mina anteckningar">${escapeHtml(text)}</textarea>
     <p class="nt-hint">Bara du ser dina anteckningar. De sparas automatiskt och visas när du lagar receptet.</p>
   </details>`;

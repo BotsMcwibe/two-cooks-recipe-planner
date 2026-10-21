@@ -153,6 +153,8 @@ export function get(id) {
   const rec = local[id];
   return { status: rec ? rec.status : null, rating: rec ? rec.rating : null };
 }
+/** When the status was last changed (epoch ms; 0 = unknown). */
+export const statusAt = (id) => (local[id] && Number(local[id].statusAt)) || 0;
 
 export function set(id, patch) {
   if (!id) return;

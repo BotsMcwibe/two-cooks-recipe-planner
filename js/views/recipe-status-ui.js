@@ -4,9 +4,10 @@
  * card badge. Backed by core/user-recipe-state.js (status, rating) and
  * core/recipe-journal.js (cook log, Inte för oss, lists).
  */
-import * as UserState from '../core/user-recipe-state.js?v=20261021g15';
-import * as Journal from '../core/recipe-journal.js?v=20261021g15';
-import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261021g15';
+import * as UserState from '../core/user-recipe-state.js?v=20261021g16';
+import * as Journal from '../core/recipe-journal.js?v=20261021g16';
+import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261021g16';
+import * as Household from '../core/household.js?v=20261021g16';
 
 const STATUS_ICON = { want: '☆', cooked: '✓' };
 const MONTHS = ['jan', 'feb', 'mars', 'apr', 'maj', 'juni', 'juli', 'aug', 'sep', 'okt', 'nov', 'dec'];
@@ -31,6 +32,36 @@ export function agoLabel(iso) {
   if (days < 365) { const m = Math.round(days / 30.4); return `för ${m} ${m === 1 ? 'månad' : 'månader'} sedan`; }
   const y = Math.round(days / 365);
   return `för ${y} år sedan`;
+}
+
+/** 'i dag' / 'i går' / 'för 3 dagar sedan' for an epoch-ms timestamp. */
+function agoFromMs(t) {
+  const d = new Date(t);
+  return Number.isFinite(t) && t > 0 ? agoLabel(`${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`) : '';
+}
+
+/**
+ * Shared household: who last set the status, when it wasn't me.
+ * Returns { by, text } ("Anna markerade Lagad i går") or null.
+ */
+export function statusBy(id) {
+  if (!Household.isShared()) return null;
+  const { status } = UserState.get(id);
+  const m = Household.statusMeta(id);
+  if (!status || !m || !m.by || m.by === Household.myId()) return null;
+  if (UserState.statusAt(id) > m.at + 1000) return null; // changed here since the last pull: that was me
+  const when = agoFromMs(m.at);
+  return { by: m.by, text: `${Household.nameOf(m.by)} markerade ${UserState.STATUS_LABELS[status]}${when ? ` ${when}` : ''}` };
+}
+
+/** Average of everyone's stars in the household (me included) when someone else has rated. */
+export function householdAverage(id) {
+  if (!Household.isShared()) return null;
+  const others = Household.householdRatings(id).filter((r) => r.rating);
+  if (!others.length) return null;
+  const mine = UserState.get(id).rating;
+  const all = others.map((r) => r.rating).concat(mine ? [mine] : []);
+  return { avg: all.reduce((a, b) => a + b, 0) / all.length, n: all.length };
 }
 
 /** Which control has its ▾ menu open (only one at a time). */
@@ -67,13 +98,15 @@ function menuHtml(id) {
   const nfu = Journal.isNotForUs(id);
   const item = (act, label, on, extra = '') => `<button type="button" class="rs-menu-item${on ? ' is-on' : ''}" role="menuitemradio" aria-checked="${on}" data-act="${act}" data-k="m-${act}"${extra}><span class="rs-menu-check" aria-hidden="true">${on ? '✓' : ''}</span>${escapeHtml(label)}</button>`;
   let html = `<div class="rs-menu" role="menu" aria-label="Spara receptet">`;
+  if (Household.isShared()) html += '<div class="rs-menu-label rs-menu-shared" aria-hidden="true">👥 Gäller hela hushållet</div>';
   html += item('want', 'Vill laga', status === 'want');
   html += item('cooked', 'Lagad', status === 'cooked');
   html += item('nfu', 'Inte för oss', nfu, ' title="Döljs i receptlistan"');
   html += '<div class="rs-menu-sep" role="separator"></div><div class="rs-menu-label" aria-hidden="true">Mina listor</div>';
   for (const l of Journal.lists()) {
     const on = l.recipeIds.includes(id);
-    html += `<button type="button" class="rs-menu-item rs-menu-list${on ? ' is-on' : ''}" role="menuitemcheckbox" aria-checked="${on}" data-act="list" data-list="${escapeAttr(l.id)}" data-k="l-${escapeAttr(l.id)}"><span class="rs-menu-box" aria-hidden="true">${on ? '✓' : ''}</span>${escapeHtml(l.name)}</button>`;
+    const lock = Journal.isPrivateList(l) ? '<span class="ls-lock" title="Bara för mig"> 🔒</span>' : '';
+    html += `<button type="button" class="rs-menu-item rs-menu-list${on ? ' is-on' : ''}" role="menuitemcheckbox" aria-checked="${on}" data-act="list" data-list="${escapeAttr(l.id)}" data-k="l-${escapeAttr(l.id)}"><span class="rs-menu-box" aria-hidden="true">${on ? '✓' : ''}</span>${escapeHtml(l.name)}${lock}</button>`;
   }
   if (openMenu && openMenu.newList) {
     html += `<form class="rs-newlist" data-k="newlist-form"><input type="text" class="rs-newlist-input" data-k="newlist" maxlength="${Journal.MAX_LIST_NAME}" placeholder="T.ex. Vardag" aria-label="Namn på ny lista" autocomplete="off"><button type="submit" class="rs-newlist-ok">Skapa</button></form>`;
@@ -101,6 +134,8 @@ export function statusControlHtml(id, opts = {}) {
   if (status === 'want') { cls = 'is-want'; label = '✓ Vill laga'; title = 'Ta bort ”Vill laga”'; }
   else if (status === 'cooked') { cls = 'is-cooked'; label = '✓ Lagad'; title = 'Ändra status'; }
   else if (nfu) { cls = 'is-nfu'; label = 'Inte för oss'; title = 'Ändra status'; }
+  const who = statusBy(id);
+  if (who) title = `${who.text}. ${title}`;
   const main = `<button type="button" class="rs-main" data-act="main" data-k="main" title="${escapeAttr(title)}"${status === 'want' ? ' aria-pressed="true"' : (cls === 'is-none' ? ' aria-pressed="false"' : ' aria-haspopup="menu"')}>${escapeHtml(label)}</button>`;
   const caret = `<button type="button" class="rs-caret" data-act="caret" data-k="caret" aria-haspopup="menu" aria-expanded="${open}" aria-label="Fler val: Lagad, Inte för oss, listor" title="Fler val"><span aria-hidden="true">▾</span></button>`;
 
@@ -116,6 +151,7 @@ export function statusControlHtml(id, opts = {}) {
     : '';
   return `<div class="rs-control" data-id="${escapeAttr(id)}"${opts.allDone ? ' data-all-done="1"' : ''}>
     <div class="rs-split ${cls}${open ? ' is-open' : ''}" role="group" aria-label="Min status">${main}${caret}${open ? menuHtml(id) : ''}</div>
+    ${who ? `<span class="rs-by" title="${escapeAttr(who.text)}">${Household.avatarHtml(who.by, 'hh-av-sm')}<span>${escapeHtml(who.text)}</span></span>` : ''}
     <div class="rs-stars" role="group" aria-label="Mitt betyg">${stars}${rating ? `<span class="rs-stars-value">${rating}/5</span>` : ''}</div>
     ${done}
   </div>`;
@@ -165,6 +201,7 @@ export function cookLogHtml(id) {
     list = `<ul class="cl-dates">${entries.map((e) => `
       <li data-entry="${escapeAttr(e.id)}">
         <input type="date" class="cl-date" value="${escapeAttr(e.date)}" max="${max}" data-k="d-${escapeAttr(e.id)}" aria-label="Datum lagad">
+        ${Household.isShared() && e.by ? `<span class="cl-who">${Household.avatarHtml(e.by, 'hh-av-sm')}${escapeHtml(Household.nameOf(e.by))}</span>` : ''}
         ${e.cooks === 2 ? '<span class="cl-cooks">2 kockar</span>' : ''}
         <button type="button" class="cl-del" data-k="x-${escapeAttr(e.id)}" aria-label="Ta bort ${escapeAttr(fmtCookDate(e.date))}" title="Ta bort datumet">✕</button>
       </li>`).join('')}</ul>
@@ -180,16 +217,20 @@ export function cardStateHtml(id, stats = null) {
   const tested = m && m.tested;
   const n = stats ? stats.count : Journal.cookStats(id).count;
   const nfu = Journal.isNotForUs(id);
-  if (!status && !rating && !tested && !n && !nfu) return '';
+  const hhAvg = householdAverage(id);
+  if (!status && !rating && !tested && !n && !nfu && !hhAvg) return '';
   let html = '<div class="rs-card">';
   if (tested) html += sealHtml({ title: sealTitle(m) });
   if (status && STATUS_ICON[status]) {
     const times = status === 'cooked' && n > 1 ? ` ${n}×` : '';
-    html += `<span class="rs-badge rs-${status}"${times ? ` title="Lagad ${timesLabel(n)}"` : ''}>${STATUS_ICON[status]} ${escapeHtml(UserState.STATUS_LABELS[status])}${times}</span>`;
+    const who = statusBy(id);
+    const t = [who ? who.text : '', times ? `Lagad ${timesLabel(n)}` : ''].filter(Boolean).join(' · ');
+    html += `<span class="rs-badge rs-${status}"${t ? ` title="${escapeAttr(t)}"` : ''}>${who ? Household.avatarHtml(who.by, 'hh-av-sm') : ''}${STATUS_ICON[status]} ${escapeHtml(UserState.STATUS_LABELS[status])}${times}</span>`;
   }
   if (n && status !== 'cooked') html += `<span class="rs-card-times" title="Lagad ${timesLabel(n)}">Lagad ${n}×</span>`;
   if (nfu) html += '<span class="rs-badge rs-nfu">Inte för oss</span>';
   if (rating) html += `<span class="rs-card-stars" title="Mitt betyg ${rating} av 5" aria-label="Mitt betyg ${rating} av 5">${'★'.repeat(rating)}<span class="rs-card-stars-off">${'★'.repeat(5 - rating)}</span></span>`;
+  if (hhAvg) { const a = hhAvg.avg.toFixed(1).replace('.', ','); html += `<span class="rs-card-hh" title="Hushållets snitt: ${a} av 5 (${hhAvg.n} betyg)">Hushållet ★ ${a}</span>`; }
   return html + '</div>';
 }
 

@@ -8,6 +8,8 @@
  *   #skafferi             → skafferiet (pantry staples → recipes)
  *   #vecka                → veckoplaneraren (week planner)
  *   #inkop[/<code>]       → inköpslista som sida (own, or a shared list code)
+ *   #join/<CODE>          → gå med i ett hushåll (Mitt konto shows the invite)
+ *   #friend/<CODE>        → lägg till en vän (Mitt konto shows the request)
  *   #browse | # | empty   → receptlista (browse)
  */
 
@@ -60,6 +62,10 @@ export function parseHash(hash = typeof location !== 'undefined' ? location.hash
   }
   if (raw.toLowerCase() === 'konto') {
     return { route: 'konto', masterId: null };
+  }
+  const inv = raw.match(/^(join|friend)\/([A-Za-z0-9-]{4,20})$/i);
+  if (inv) {
+    return { route: inv[1].toLowerCase(), masterId: inv[2].toUpperCase().replace(/[^A-Z0-9]/g, '') };
   }
 
   const m = raw.match(/^(cook|overview)\/(.+)$/i);

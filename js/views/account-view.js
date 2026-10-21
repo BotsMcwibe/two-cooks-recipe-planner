@@ -5,17 +5,17 @@
  * area lists what the app stores: statuses, ratings, own spice mixes, theme,
  * Inköpslista and a Data section. Works logged out (local data only).
  */
-import * as UserState from '../core/user-recipe-state.js?v=20261021g15';
-import { menuExtrasHtml, themeSegHtml, bindThemeSeg } from './menu-items.js?v=20261021g15';
-import { onAuthChange, onSyncStatus, syncStatus, lastSyncTime, signOut, currentUser, isAvailable } from '../core/sync.js?v=20261021g15';
-import { openSignIn } from './auth-ui.js?v=20261021g15';
-import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261021g15';
-import { kitchenProfile, setKitchen, MAX_OVEN_TRAYS } from '../core/kitchen-prefs.js?v=20261021g15';
-import * as Journal from '../core/recipe-journal.js?v=20261021g15';
-import { agoLabel, fmtCookDate, timesLabel } from './recipe-status-ui.js?v=20261021g15';
-import { ringHtml, challengePace } from './journal-ui.js?v=20261021g15';
-import * as Household from '../core/household.js?v=20261021g15';
-import * as HouseholdUI from './household-ui.js?v=20261021g15';
+import * as UserState from '../core/user-recipe-state.js?v=20261021g16';
+import { menuExtrasHtml, themeSegHtml, bindThemeSeg } from './menu-items.js?v=20261021g16';
+import { onAuthChange, onSyncStatus, syncStatus, lastSyncTime, signOut, currentUser, isAvailable } from '../core/sync.js?v=20261021g16';
+import { openSignIn } from './auth-ui.js?v=20261021g16';
+import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261021g16';
+import { kitchenProfile, setKitchen, MAX_OVEN_TRAYS } from '../core/kitchen-prefs.js?v=20261021g16';
+import * as Journal from '../core/recipe-journal.js?v=20261021g16';
+import { agoLabel, fmtCookDate, timesLabel } from './recipe-status-ui.js?v=20261021g16';
+import { ringHtml, challengePace } from './journal-ui.js?v=20261021g16';
+import * as Household from '../core/household.js?v=20261021g16';
+import * as HouseholdUI from './household-ui.js?v=20261021g16';
 
 const LOCAL_KEYS = [
   'jesse.recipeState.v1', 'yessy.spiceMixMissing.v1', 'jesse-theme',
@@ -68,7 +68,11 @@ export class AccountView {
     window.addEventListener('yessy:themechange', rerender);
     window.addEventListener('yessy:prefchange', rerender);
     window.addEventListener('kitchenchange', rerender);
-    window.addEventListener('householdchange', () => { if (this.active && !this._typingInAccount()) this.render(); });
+    window.addEventListener('householdchange', () => {
+      if (!this.active) return;
+      HouseholdUI.ensureInvitePreview(this);
+      if (!this._typingInAccount()) this.render();
+    });
     window.addEventListener('journalchange', (e) => { if (!(e.detail && e.detail.key === 'recipeNotes')) rerender(); });
     /** Lists whose recipes are shown / which list is being renamed (kept across re-renders). */
     this.openLists = new Set();
@@ -88,6 +92,13 @@ export class AccountView {
     if (target) setTimeout(() => document.getElementById(target)?.scrollIntoView({ behavior: 'auto', block: 'start' }), 60);
   }
   hide() { this.active = false; }
+
+  /** #join/CODE or #friend/CODE: show the invite on top of Mitt konto. */
+  showInvite(kind, code) {
+    HouseholdUI.openInvite(kind, code);
+    this.show();
+    HouseholdUI.ensureInvitePreview(this);
+  }
 
   /** The rail is re-rendered on toggle; replay the outline→filled transition on the new circle. */
   _animateCircle() {
@@ -140,8 +151,9 @@ export class AccountView {
       if (HouseholdUI.handleSubmit(f, this)) { e.preventDefault(); return; }
       if (f.matches('.ls-new')) {
         e.preventDefault();
-        const input = f.querySelector('input');
-        const l = Journal.createList(input.value);
+        const input = f.querySelector('input[type="text"]');
+        const priv = f.querySelector('[data-ls-private-new]');
+        const l = Journal.createList(input.value, [], { private: !!(priv && priv.checked) });
         if (!l) { input.focus(); return; }
         this.openLists.add(l.id);
         this._focus('.ls-new input');
@@ -157,6 +169,8 @@ export class AccountView {
     });
     this.el.addEventListener('change', (e) => {
       const t = e.target;
+      if (HouseholdUI.handleChange(t, this)) return;
+      if (t.matches('[data-ch-scope]')) { Journal.setChallengeScope(new Date().getFullYear(), t.checked ? 'household' : 'mine'); this._focus('[data-ch-scope]'); return; }
       if (t.matches('.ch-goal-input')) {
         const v = Math.round(Number(t.value));
         if (Number.isFinite(v) && v >= 1) Journal.setChallengeGoal(new Date().getFullYear(), v);
@@ -211,6 +225,8 @@ export class AccountView {
       if (l && window.confirm(`Ta bort listan ”${l.name}”? Recepten finns kvar.`)) Journal.deleteList(l.id);
       return true;
     }
+    const vis = t.closest('[data-ls-private]');
+    if (vis) { const id = vis.getAttribute('data-ls-private'); Journal.setListPrivate(id, vis.getAttribute('data-on') === '1'); this._focus(`[data-ls-private="${CSS.escape(id)}"]`); return true; }
     const out = t.closest('[data-ls-out]');
     if (out) { Journal.setInList(out.getAttribute('data-ls-out'), out.getAttribute('data-recipe'), false); return true; }
     const nfu = t.closest('[data-nfu-undo]');
@@ -248,6 +264,7 @@ export class AccountView {
             </div>
             <button type="button" class="acc-link-btn" data-ch-clear>Ta bort mål</button>
           </div>
+          ${Household.isShared() ? `<label class="hh-check ch-scope"><input type="checkbox" data-ch-scope ${Journal.challengeScope(year) === 'household' ? 'checked' : ''}> Räkna hela hushållets lagningar</label>` : ''}
         </div>
       </div>
       ${n ? `<details class="ch-done"><summary>Lagade i år (${n})</summary><ul class="acc-list">${done.map((id) => this._recipeLink(id, (() => { const st = Journal.cookStats(id); return st.count > 1 ? `<span class="acc-meta" title="Lagad ${timesLabel(st.count)}">${st.count}×</span>` : ''; })())).join('')}</ul></details>` : ''}`;
@@ -256,7 +273,8 @@ export class AccountView {
   _listsHtml() {
     const all = Journal.lists();
     const ideas = LIST_IDEAS.filter((n) => !all.some((l) => l.name.toLowerCase() === n.toLowerCase()));
-    const form = `<form class="ls-new"><input type="text" maxlength="${Journal.MAX_LIST_NAME}" placeholder="Ny lista" aria-label="Namn på ny lista" autocomplete="off"><button type="submit" class="acc-btn">Skapa</button></form>
+    const signedIn = Household.isTables();
+    const form = `<form class="ls-new"><input type="text" maxlength="${Journal.MAX_LIST_NAME}" placeholder="Ny lista" aria-label="Namn på ny lista" autocomplete="off"><button type="submit" class="acc-btn">Skapa</button>${signedIn ? '<label class="hh-check ls-private-new"><input type="checkbox" data-ls-private-new> 🔒 Bara för mig</label>' : ''}</form>
       ${ideas.length ? `<div class="ls-ideas">${ideas.map((n) => `<button type="button" class="ls-idea" data-ls-idea="${escapeAttr(n)}">+ ${escapeHtml(n)}</button>`).join('')}</div>` : ''}`;
     if (!all.length) {
       return `<p class="acc-empty">Samla recept i egna listor, till exempel Vardag, Gästmiddag eller Matlåda. Lägg till recept från ▾ bredvid ”Vill laga” i översikten. Listorna blir filter i receptlistan.</p>${form}`;
@@ -265,15 +283,24 @@ export class AccountView {
       const recipes = l.recipeIds.filter((id) => this.byId[id]);
       const head = this.renaming === l.id
         ? `<form class="ls-rename" data-list="${escapeAttr(l.id)}"><input type="text" value="${escapeAttr(l.name)}" maxlength="${Journal.MAX_LIST_NAME}" aria-label="Nytt namn"><button type="submit" class="acc-btn">Spara</button></form>`
-        : `<summary><span class="ls-name">${escapeHtml(l.name)}</span><span class="acc-count">${recipes.length}</span></summary>`;
+        : `<summary><span class="ls-name">${Journal.isPrivateList(l) ? '<span class="ls-lock" title="Bara för mig">🔒</span> ' : ''}${escapeHtml(l.name)}</span>${this._listOwnerHtml(l)}<span class="acc-count">${recipes.length}</span></summary>`;
       const body = recipes.length
         ? `<ul class="acc-list">${recipes.map((id) => this._recipeLink(id, `<button type="button" class="acc-link-btn" data-ls-out="${escapeAttr(l.id)}" data-recipe="${escapeAttr(id)}" aria-label="Ta bort ${escapeAttr(this.byId[id].name)} från ${escapeAttr(l.name)}">Ta bort</button>`)).join('')}</ul>`
         : '<p class="acc-empty">Tom lista. Lägg till recept från ▾ i översikten.</p>';
-      const actions = `<div class="ls-actions"><button type="button" class="acc-link-btn" data-ls-rename="${escapeAttr(l.id)}">Byt namn</button><button type="button" class="acc-link-btn" data-ls-delete="${escapeAttr(l.id)}">Ta bort lista</button></div>`;
+      const priv = Journal.isPrivateList(l);
+      const visBtn = signedIn && Journal.canChangeVisibility(l)
+        ? `<button type="button" class="acc-link-btn" data-ls-private="${escapeAttr(l.id)}" data-on="${priv ? 0 : 1}">${priv ? 'Dela med hushållet' : '🔒 Gör till Bara för mig'}</button>` : '';
+      const actions = `<div class="ls-actions"><button type="button" class="acc-link-btn" data-ls-rename="${escapeAttr(l.id)}">Byt namn</button>${visBtn}<button type="button" class="acc-link-btn" data-ls-delete="${escapeAttr(l.id)}">Ta bort lista</button></div>`;
       if (this.renaming === l.id) return `<div class="ls-item is-renaming">${head}</div>`;
       return `<details class="ls-item" data-list="${escapeAttr(l.id)}"${this.openLists.has(l.id) ? ' open' : ''}>${head}<div class="ls-body">${body}${actions}</div></details>`;
     }).join('');
     return `<div class="ls-lists">${items}</div>${form}`;
+  }
+
+  /** "av Anna" on lists someone else in the household made. */
+  _listOwnerHtml(l) {
+    if (!Household.isShared() || !l.owner || l.owner === Household.myId()) return '';
+    return `<span class="ls-owner">${Household.avatarHtml(l.owner, 'hh-av-sm')}${escapeHtml(Household.nameOf(l.owner))}</span>`;
   }
 
   /** Tema: Ljust / Mörkt / System (System follows the device). */
@@ -366,7 +393,12 @@ export class AccountView {
 
   render() {
     const user = currentUser();
+    const shared = Household.isShared();
     const where = user ? 'Synkas med ditt konto' : 'Bara på den här enheten';
+    const hhName = shared && Household.household() ? Household.household().name : '';
+    const whereShared = shared ? `👥 Delas med ${hhName || 'hushållet'}` : where;
+    const whereMine = shared ? '🔒 Bara du' : where;
+    const whereRatings = shared ? 'Dina, syns för hushållet' : where;
 
     // Statuses + ratings from the user's own state
     const groups = { want: [], cooked: [] };
@@ -414,7 +446,7 @@ export class AccountView {
       </section>`;
 
     const nav = [
-      ...(user ? [['profil', 'Profil', null]] : []),
+      ...(user ? [['profil', 'Profil', null], ['hushall', 'Hushåll', shared ? Household.members().length : null]] : []),
       ['utmaning', 'Årets matutmaning', goal ? `${Journal.recipesCookedIn(year).length}/${goal}` : null],
       ['vill', 'Vill laga', groups.want.length],
       ['lagade', 'Lagade', groups.cooked.length], ['betyg', 'Dina betyg', ratings.length],
@@ -437,23 +469,25 @@ export class AccountView {
             <p class="acc-lede">${user ? 'Dina recept, betyg och val, synkade mellan dina enheter.' : 'Du är inte inloggad. Allt nedan sparas bara i den här webbläsaren. Logga in för att få det på alla dina enheter.'}</p>
             ${!user && isAvailable() ? '<button type="button" class="acc-btn acc-btn-primary acc-signin acc-signin-hero">Logga in med e-postlänk</button>' : ''}
           </div>
+          ${HouseholdUI.invitePanelHtml()}
           ${user ? section('profil', 'Profil', null, HouseholdUI.profileSectionBody()) : ''}
-          ${section('utmaning', `Årets matutmaning ${year}`, null, this._challengeHtml(), where)}
-          ${section('vill', 'Vill laga', groups.want.length, list(groups.want, 'Markera recept med ”Vill laga” så hamnar de här.'), where)}
-          ${section('lagade', 'Lagade', groups.cooked.length, list(groups.cooked, 'Inga lagade recept än. Tryck ”Klart! Logga som lagad” när du lagat klart, så sparas datumet här.', true), where)}
+          ${user ? section('hushall', 'Hushåll', shared ? Household.members().length : null, HouseholdUI.householdSectionBody()) : ''}
+          ${section('utmaning', `Årets matutmaning ${year}`, null, this._challengeHtml(), whereMine)}
+          ${section('vill', 'Vill laga', groups.want.length, list(groups.want, 'Markera recept med ”Vill laga” så hamnar de här.'), whereShared)}
+          ${section('lagade', 'Lagade', groups.cooked.length, list(groups.cooked, 'Inga lagade recept än. Tryck ”Klart! Logga som lagad” när du lagat klart, så sparas datumet här.', true), whereShared)}
           ${section('betyg', 'Dina betyg', ratings.length, ratings.length ? `
             <div class="acc-ratings">
               <div class="acc-avg"><span class="acc-avg-num">${avg.toFixed(1).replace('.', ',')}</span><span class="acc-avg-sub">snitt av ${ratings.length} betyg</span></div>
               <ul class="acc-dist">${dist.map(d => `<li><span class="acc-dist-label">${d.n} ★</span><span class="acc-bar"><span style="width:${(d.count / maxCount) * 100}%"></span></span><span class="acc-dist-n">${d.count}</span></li>`).join('')}</ul>
             </div>
             <h3 class="acc-sub">Högst betygsatta</h3>
-            <ul class="acc-list">${top.map(r => this._recipeLink(r.id, starsHtml(r.rating))).join('')}</ul>` : '<p class="acc-empty">Du har inte satt några betyg än.</p>', where)}
+            <ul class="acc-list">${top.map(r => this._recipeLink(r.id, starsHtml(r.rating))).join('')}</ul>` : '<p class="acc-empty">Du har inte satt några betyg än.</p>', whereRatings)}
           ${again.length ? section('igen', 'Laga igen?', again.length, `<p class="acc-note">Recept du gett 4–5 ★ men inte lagat på minst ${AGAIN_DAYS} dagar.</p>
             <ul class="acc-list">${again.map(r => this._recipeLink(r.id, `<span class="acc-right"><span class="acc-meta" title="Senast lagad ${escapeAttr(fmtCookDate(stats.get(r.id).last))}">${escapeHtml(agoLabel(stats.get(r.id).last))}</span>${starsHtml(r.rating)}</span>`)).join('')}</ul>`, where) : ''}
-          ${section('listor', 'Mina listor', myLists.length, this._listsHtml(), where)}
+          ${section('listor', shared ? 'Listor' : 'Mina listor', myLists.length, this._listsHtml(), shared ? '👥 Delas, utom 🔒 Bara för mig' : where)}
           ${section('inte', 'Inte för oss', nfuIds.length, nfuIds.length
             ? `<p class="acc-note">De här visas inte i receptlistan.</p><ul class="acc-list">${nfuIds.map(id => this._recipeLink(id, `<button type="button" class="acc-link-btn" data-nfu-undo="${escapeAttr(id)}" aria-label="Ångra Inte för oss för ${escapeAttr(this.byId[id].name)}">Ångra</button>`)).join('')}</ul>`
-            : '<p class="acc-empty">Välj ”Inte för oss” i ▾-menyn i översikten för recept ni inte vill se. De döljs i receptlistan och du kan ångra här.</p>', where)}
+            : '<p class="acc-empty">Välj ”Inte för oss” i ▾-menyn i översikten för recept ni inte vill se. De döljs i receptlistan och du kan ångra här.</p>', whereShared)}
           ${section('skap', 'Kryddor, skafferi och vecka', null, `
             <div class="acc-links">
               <a class="acc-link-card" href="#kryddor"><span class="acc-link-title">🧂 Kryddskåpet</span><span class="acc-link-desc">Tryck på kryddorna du har hemma och se vilka kryddmixar du kan blanda själv.</span></a>
