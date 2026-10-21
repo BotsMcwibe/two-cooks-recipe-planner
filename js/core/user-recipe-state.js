@@ -23,7 +23,11 @@ const listeners = new Set();
 let seeds = {};
 /** Catalog "tested in the kitchen" markers, read-only, never stored or synced. */
 let marks = {};
-/** @type {Record<string, {status: string|null, rating: number|null, updatedAt?: number}>} */
+/**
+ * updatedAt = last change of either field; statusAt / ratingAt = last change of that
+ * field (the household tables merge them separately: status is shared, stars are yours).
+ * @type {Record<string, {status: string|null, rating: number|null, updatedAt?: number, statusAt?: number, ratingAt?: number}>}
+ */
 let local = load();
 
 function cleanStatus(v) {
@@ -52,7 +56,12 @@ function load() {
       // Retired status (e.g. 'cooking'): migrate with a fresh timestamp so sync pushes the new value.
       const legacy = isLegacyStatus(v.status);
       if (legacy) migrated = true;
-      out[id] = { status: cleanStatus(v.status), rating: cleanRating(v.rating), updatedAt: legacy ? Math.max(now, (Number(v.updatedAt) || 0) + 1) : (Number(v.updatedAt) || 0) };
+      const updatedAt = legacy ? Math.max(now, (Number(v.updatedAt) || 0) + 1) : (Number(v.updatedAt) || 0);
+      out[id] = {
+        status: cleanStatus(v.status), rating: cleanRating(v.rating), updatedAt,
+        statusAt: legacy ? updatedAt : (Number(v.statusAt) || updatedAt),
+        ratingAt: Number(v.ratingAt) || (Number(v.updatedAt) || 0),
+      };
     }
     if (migrated) {
       try { localStorage.setItem(STORAGE_KEY, JSON.stringify({ version: 1, recipes: out })); } catch { /* ignore */ }
@@ -69,9 +78,10 @@ function save() {
   } catch { /* storage full / private mode: keep in memory */ }
 }
 
-function emit(id) {
+/** fn(id, { remote }) — remote: true when the change came from sync (don't write it back). */
+function emit(id, remote = false) {
   for (const fn of listeners) {
-    try { fn(id); } catch (err) { console.error(err); }
+    try { fn(id, { remote }); } catch (err) { console.error(err); }
   }
 }
 
@@ -119,7 +129,7 @@ function migrateSeeds() {
   const now = Date.now();
   let changed = false;
   for (const [id, rec] of Object.entries(local)) {
-    if (isSeedCopy(id, rec)) { local[id] = { status: null, rating: null, updatedAt: now }; changed = true; }
+    if (isSeedCopy(id, rec)) { local[id] = { status: null, rating: null, updatedAt: now, statusAt: now, ratingAt: now }; changed = true; }
   }
   try { localStorage.setItem(SEED_MIGRATION_KEY, String(now)); } catch { /* ignore */ }
   if (changed) { save(); emit(null); }
@@ -152,7 +162,13 @@ export function set(id, patch) {
     rating: 'rating' in patch ? cleanRating(patch.rating) : cur.rating,
   };
   if (next.status === cur.status && next.rating === cur.rating && local[id]) return;
-  local[id] = { ...next, updatedAt: Date.now() };
+  const t = Date.now();
+  const prev = local[id] || {};
+  local[id] = {
+    ...next, updatedAt: t,
+    statusAt: next.status !== cur.status ? t : (Number(prev.statusAt) || 0),
+    ratingAt: next.rating !== cur.rating ? t : (Number(prev.ratingAt) || 0),
+  };
   save();
   emit(id);
 }
@@ -191,15 +207,63 @@ export function applyRemote(id, rec) {
   const m = migratedAt();
   const clean = { status: cleanStatus(rec.status), rating: cleanRating(rec.rating) };
   if (m && ts < m && isSeedCopy(id, clean)) {
-    local[id] = { status: null, rating: null, updatedAt: Math.max(m, ts + 1) };
+    const t = Math.max(m, ts + 1);
+    local[id] = { status: null, rating: null, updatedAt: t, statusAt: t, ratingAt: t };
     save();
     emit(id);
     return true;
   }
   // Retired remote status (e.g. 'cooking'): store the replacement one ms newer
   // so the next merge writes it back to the server.
-  local[id] = { status: cleanStatus(rec.status), rating: cleanRating(rec.rating), updatedAt: isLegacyStatus(rec.status) ? ts + 1 : ts };
+  const t = isLegacyStatus(rec.status) ? ts + 1 : ts;
+  local[id] = { status: cleanStatus(rec.status), rating: cleanRating(rec.rating), updatedAt: t, statusAt: t, ratingAt: t };
   save();
-  emit(id);
+  emit(id, t === ts);
   return true;
+}
+
+// ---------------------------------------------------------------------------
+// Household tables (core/table-sync.js): status and stars merge field by field
+// ---------------------------------------------------------------------------
+/** Apply the household status when it is newer than ours. Returns true if applied. */
+export function applyRemoteStatus(id, status, at) {
+  if (!id) return false;
+  const cur = local[id];
+  const ts = Number(at) || 0;
+  if (cur && (Number(cur.statusAt) || 0) >= ts) return false;
+  const next = cleanStatus(status);
+  const base = cur || { status: null, rating: null, updatedAt: 0, statusAt: 0, ratingAt: 0 };
+  local[id] = { ...base, status: next, statusAt: ts, updatedAt: Math.max(Number(base.updatedAt) || 0, ts) };
+  save();
+  if (!cur || cur.status !== next) emit(id, true);
+  return true;
+}
+/** Apply my stars from the server when newer than ours. Returns true if applied. */
+export function applyRemoteRating(id, rating, at) {
+  if (!id) return false;
+  const cur = local[id];
+  const ts = Number(at) || 0;
+  if (cur && (Number(cur.ratingAt) || 0) >= ts) return false;
+  const next = cleanRating(rating);
+  const base = cur || { status: null, rating: null, updatedAt: 0, statusAt: 0, ratingAt: 0 };
+  local[id] = { ...base, rating: next, ratingAt: ts, updatedAt: Math.max(Number(base.updatedAt) || 0, ts) };
+  save();
+  if (!cur || cur.rating !== next) emit(id, true);
+  return true;
+}
+/**
+ * Forget local data that belongs to another household or account: statuses always,
+ * stars too when `ratings` is true. Nothing is marked as a change (timestamps 0).
+ */
+export function resetForAccountChange({ ratings = false } = {}) {
+  let changed = false;
+  for (const [id, rec] of Object.entries(local)) {
+    const keepRating = !ratings && rec.rating != null;
+    if (rec.status == null && !keepRating && rec.rating == null) continue;
+    local[id] = keepRating
+      ? { status: null, rating: rec.rating, updatedAt: Number(rec.ratingAt) || 0, statusAt: 0, ratingAt: Number(rec.ratingAt) || 0 }
+      : { status: null, rating: null, updatedAt: 0, statusAt: 0, ratingAt: 0 };
+    changed = true;
+  }
+  if (changed) { save(); emit(null, true); }
 }

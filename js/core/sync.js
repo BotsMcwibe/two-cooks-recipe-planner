@@ -10,16 +10,27 @@
  *   preference key), then write-through on every local change (optimistic; failures
  *   mark the store dirty and a full merge runs again when back online).
  */
-import { SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, SUPABASE_JS_URL } from '../config.js?v=20261021g13';
-import * as UserState from './user-recipe-state.js?v=20261021g13';
-import { prefTs, setPrefTs } from './prefs-meta.js?v=20261021g13';
-import { missingMixes, replaceMissingMixes } from './spice-prefs.js?v=20261021g13';
-import { excludedPantry, replacePantryExcluded } from './pantry-exclude.js?v=20261021g13';
-import { ownedSpices, replaceSpicesOwned } from './spices-owned.js?v=20261021g13';
-import { savedTheme, applySyncedTheme } from '../utils/theme.js?v=20261021g13';
-import { storedKitchen, replaceKitchen } from './kitchen-prefs.js?v=20261021g13';
-import { storedSettings as storedWeekSettings, replaceSettings as replaceWeekSettings, storedPlan as storedWeekPlan, replacePlan as replaceWeekPlan } from './week-plan.js?v=20261021g13';
-import { JOURNAL_KEYS, journalValue, replaceJournal, mergeJournal, setActor } from './recipe-journal.js?v=20261021g13';
+import { SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, SUPABASE_JS_URL } from '../config.js?v=20261021g14';
+import * as UserState from './user-recipe-state.js?v=20261021g14';
+import { prefTs, setPrefTs } from './prefs-meta.js?v=20261021g14';
+import { missingMixes, replaceMissingMixes } from './spice-prefs.js?v=20261021g14';
+import { excludedPantry, replacePantryExcluded } from './pantry-exclude.js?v=20261021g14';
+import { ownedSpices, replaceSpicesOwned } from './spices-owned.js?v=20261021g14';
+import { savedTheme, applySyncedTheme } from '../utils/theme.js?v=20261021g14';
+import { storedKitchen, replaceKitchen } from './kitchen-prefs.js?v=20261021g14';
+import { storedSettings as storedWeekSettings, replaceSettings as replaceWeekSettings, storedPlan as storedWeekPlan, replacePlan as replaceWeekPlan } from './week-plan.js?v=20261021g14';
+import { JOURNAL_KEYS, journalValue, replaceJournal, mergeJournal, setActor } from './recipe-journal.js?v=20261021g14';
+import * as Household from './household.js?v=20261021g14';
+import * as Tables from './table-sync.js?v=20261021g14';
+
+/**
+ * Household tables (0002+): when the project has them, statuses, stars, the cook
+ * log, lists, Inte för oss and notes sync through table-sync.js instead of
+ * user_recipe_state + the prefs JSON (status/stars are still written to
+ * user_recipe_state too, for older cached clients). Otherwise the legacy path runs.
+ */
+const USE_TABLES = false;
+let tablesMode = false;
 
 const listeners = new Set();
 let client = null;
@@ -77,6 +88,10 @@ export function onAuthChange(fn) {
 }
 
 export function currentUser() { return user; }
+/** Run a full sync now (after joining/leaving a household, etc.). */
+export function syncNow() { return mergeAll(); }
+/** The supabase client (null when unavailable). */
+export function getClient() { return client; }
 export function isAvailable() { return !!client; }
 
 /** True when the URL carries an auth redirect (PKCE code or hash tokens/errors). */
@@ -120,8 +135,9 @@ function prefAdapters() {
       get: () => (appState ? appState.getShoppingData() : null),
       set: (v) => appState && appState.replaceShoppingData(v),
     },
-    // Journal maps (cook log, notes, lists, Inte för oss, challenge): merged record by record
-    ...Object.fromEntries(Object.keys(JOURNAL_KEYS).map((k) => [k, {
+    // Journal maps (cook log, notes, lists, Inte för oss, challenge): merged record by record.
+    // With the household tables only the (personal) challenge stays in prefs.
+    ...Object.fromEntries(Object.keys(JOURNAL_KEYS).filter((k) => !(tablesMode && Tables.TABLE_KEYS.includes(k))).map((k) => [k, {
       get: () => journalValue(k),
       set: (v) => replaceJournal(k, v),
       merge: mergeJournal,
@@ -150,9 +166,43 @@ const toRow = (id, rec) => ({
   updated_at: new Date(Number(rec.updatedAt) || Date.now()).toISOString(),
 });
 
-async function mergeAll() {
+let merging = null;
+let mergeAgain = false;
+/** Full merge; concurrent calls are folded into one extra run. */
+function mergeAll() {
+  if (!client || !user) return Promise.resolve();
+  if (merging) { mergeAgain = true; return merging; }
+  merging = (async () => {
+    try {
+      do { mergeAgain = false; await mergeOnce(); } while (mergeAgain);
+    } finally { merging = null; }
+  })();
+  return merging;
+}
+
+async function mergeOnce() {
   if (!client || !user) return;
   try {
+    // Household tables? (also creates my profile + personal kitchen on first sign-in)
+    // (a network/server error throws: retry later, keep the current mode)
+    const hid = await Tables.detect(client, user);
+    tablesMode = USE_TABLES && !!hid;
+    Household.setMode(tablesMode ? 'tables' : 'legacy');
+    if (hid) await Household.refresh(hid).catch((err) => console.warn('[household] refresh failed', err));
+    if (tablesMode) {
+      await Tables.syncAll(hid);
+    } else {
+      await mergeLegacyRecipeState();
+    }
+    await mergePrefs();
+    setDirty(false);
+  } catch (err) {
+    setDirty(true);
+    console.warn('[sync] merge failed (will retry when online)', err);
+  }
+}
+
+async function mergeLegacyRecipeState() {
     // Recipe state
     const { data: rows, error } = await client.from('user_recipe_state').select('recipe_id,status,rating,updated_at');
     if (error) throw error;
@@ -175,7 +225,9 @@ async function mergeAll() {
       const { error: upErr } = await client.from('user_recipe_state').upsert(push, { onConflict: 'user_id,recipe_id' });
       if (upErr) throw upErr;
     }
+}
 
+async function mergePrefs() {
     // Preferences (per key)
     const { data: prefRow, error: pErr } = await client.from('user_preferences').select('prefs').maybeSingle();
     if (pErr) throw pErr;
@@ -217,12 +269,28 @@ async function mergeAll() {
         changed = true;
       }
     }
+    if (tablesMode) {
+      // Journal records an older cached client wrote to prefs after the switch: import
+      // them once (newer than the marker); table-sync pushes them to the tables.
+      const marker = Number(remotePrefs.journalMigratedAt && remotePrefs.journalMigratedAt.value) || 0;
+      applying = true;
+      try {
+        for (const key of Tables.TABLE_KEYS) {
+          const rv = remotePrefs[key] && remotePrefs[key].value;
+          if (!rv || typeof rv !== 'object') continue;
+          const fresh = Object.fromEntries(Object.entries(rv).filter(([, rec]) => rec && (Number(rec.updatedAt) || 0) > marker));
+          if (Object.keys(fresh).length) replaceJournal(key, mergeJournal(journalValue(key), fresh));
+        }
+      } finally { applying = false; }
+      if (!marker) { const t = Date.now(); merged.journalMigratedAt = { value: t, updatedAt: t }; changed = true; }
+      else {
+        // Newer straggler records: move the marker so they're imported only once
+        const newest = Math.max(marker, ...Tables.TABLE_KEYS.flatMap((k) => Object.values((remotePrefs[k] && remotePrefs[k].value) || {}).map((r) => Number(r && r.updatedAt) || 0)));
+        if (newest > marker) { merged.journalMigratedAt = { value: newest, updatedAt: Date.now() }; changed = true; }
+      }
+      scheduleTablePush();
+    }
     if (changed) await writePrefs(merged);
-    setDirty(false);
-  } catch (err) {
-    setDirty(true);
-    console.warn('[sync] merge failed (will retry when online)', err);
-  }
 }
 
 async function writePrefs(prefs) {
@@ -244,6 +312,23 @@ async function pushRecipe(id) {
     setDirty(true);
     console.warn('[sync] recipe write failed, queued', err);
   }
+}
+
+let tableTimer = null;
+/** Debounced write of local changes to the household tables. */
+function scheduleTablePush() {
+  if (!client || !user || !tablesMode) return;
+  clearTimeout(tableTimer);
+  tableTimer = setTimeout(async () => {
+    try {
+      await Tables.pushSweep();
+      markWritten();
+      if (dirty) setDirty(false);
+    } catch (err) {
+      setDirty(true);
+      console.warn('[sync] table write failed, queued', err);
+    }
+  }, 300);
 }
 
 let prefTimer = null;
@@ -302,12 +387,15 @@ export function initSync({ state } = {}) {
       const { data } = await client.auth.getSession();
       user = data && data.session ? data.session.user : null;
       setActor(user && user.id);
+      Household.attach(client, user);
       cleanAuthFromUrl();
       if (redirectError) console.warn('[auth] sign-in link error:', redirectError);
       client.auth.onAuthStateChange((event, session) => {
         const prev = user && user.id;
         user = session ? session.user : null;
         setActor(user && user.id);
+        Household.attach(client, user);
+        if (!user) { tablesMode = false; Tables.detach(); Household.setMode('local'); }
         emit();
         notifyStatus();
         if (user && user.id !== prev) mergeAll();
@@ -323,8 +411,32 @@ export function initSync({ state } = {}) {
     return { user, error: redirectError };
   })();
 
-  UserState.subscribe((id) => { if (id) pushRecipe(id); });
-  window.addEventListener('yessy:prefchange', () => schedulePrefPush());
+  UserState.subscribe((id, info) => {
+    if (info && info.remote) return;
+    if (id) pushRecipe(id); // user_recipe_state: kept up to date for older cached clients
+    if (tablesMode) {
+      if (id) Household.setMyRating(id, UserState.get(id).rating);
+      scheduleTablePush();
+    }
+  });
+  window.addEventListener('yessy:prefchange', (e) => {
+    const key = e.detail && e.detail.key;
+    if (tablesMode && Tables.TABLE_KEYS.includes(key)) return; // goes to the tables instead
+    schedulePrefPush();
+  });
+  window.addEventListener('journalchange', (e) => {
+    const key = e.detail && e.detail.key;
+    if (tablesMode && (!key || Tables.TABLE_KEYS.includes(key)) && !Tables.isApplying()) scheduleTablePush();
+  });
+  // Fresh household data when the app comes back into view (throttled), retry when dirty
+  let lastFocusSync = 0;
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState !== 'visible' || !user) return;
+    if (Date.now() - lastFocusSync < 30000 && !dirty) return;
+    lastFocusSync = Date.now();
+    mergeAll();
+  });
+  setInterval(() => { if (dirty && user && navigator.onLine !== false) mergeAll(); }, 60000);
   window.addEventListener('online', () => { setDirty(dirty); if (dirty) mergeAll(); });
   window.addEventListener('offline', () => setDirty(dirty));
   return readyPromise;

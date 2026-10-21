@@ -14,13 +14,17 @@
  *
  *   cookLog       { [entryId]: { id, recipeId, date: 'YYYY-MM-DD', cooks?: 1|2, by, createdAt, updatedAt, deleted? } }
  *   recipeNotes   { [recipeId]: { recipeId, text, by, updatedAt } }            (text '' = cleared)
- *   recipeLists   { [listId]: { id, name, recipeIds: [...], owner, members: [], createdAt, updatedAt, deleted? } }
+ *   recipeLists   { [listId]: { id, name, recipeIds: [...], owner, members: [], visibility?: 'household'|'private', createdAt, updatedAt, deleted? } }
  *   notForUs      { [recipeId]: { recipeId, on: bool, by, updatedAt } }
- *   cookChallenge { [year]: { year, goal: int|null, updatedAt } }
+ *   cookChallenge { [year]: { year, goal: int|null, scope?: 'household'|'mine', updatedAt } }
+ *
+ * Signed in with the household tables (core/table-sync.js), cookLog, recipeLists and
+ * notForUs are shared with the household and recipeNotes stay private; the
+ * challenge goal stays personal in prefs.
  *
  * Fires `journalchange` on window ({ detail: { key } }) after any change.
  */
-import { touchPref } from './prefs-meta.js?v=20261021g13';
+import { touchPref } from './prefs-meta.js?v=20261021g14';
 
 export const JOURNAL_KEYS = {
   cookLog: 'yessy.cookLog.v1',
@@ -33,6 +37,8 @@ export const JOURNAL_KEYS = {
 let actor = null;
 /** Signed-in user id stamped on new records (sync.js sets it on auth change). */
 export function setActor(userId) { actor = userId || null; }
+/** The signed-in user id (null when logged out). */
+export function actorId() { return actor; }
 
 const cache = {};
 function read(key) {
@@ -209,11 +215,16 @@ export function lists() {
 export function getList(listId) { return lists().find((l) => l.id === listId) || null; }
 export function listsFor(recipeId) { return lists().filter((l) => l.recipeIds.includes(recipeId)); }
 
-export function createList(name, recipeIds = []) {
+/** True for a 'Bara för mig' list. */
+export const isPrivateList = (l) => !!(l && l.visibility === 'private');
+/** Only the owner (or anyone, for lists made while logged out) may change visibility. */
+export const canChangeVisibility = (l) => !!(l && (!l.owner || !actor || l.owner === actor));
+
+export function createList(name, recipeIds = [], opts = {}) {
   const n = cleanName(name);
   if (!n) return null;
   const t = now();
-  const l = { id: newId('ls'), name: n, recipeIds: [...new Set(recipeIds)], owner: actor, members: [], createdAt: t, updatedAt: t };
+  const l = { id: newId('ls'), name: n, recipeIds: [...new Set(recipeIds)], owner: actor, members: [], visibility: opts.private ? 'private' : 'household', createdAt: t, updatedAt: t };
   commit('recipeLists', { ...read('recipeLists'), [l.id]: l });
   return l;
 }
@@ -231,7 +242,15 @@ export function renameList(listId, name) {
   patchList(listId, (l) => (l.name === n ? null : { ...l, name: n }));
 }
 export function deleteList(listId) {
-  patchList(listId, (l) => ({ id: l.id, name: l.name, recipeIds: [], owner: l.owner ?? null, members: [], createdAt: l.createdAt, deleted: true }));
+  patchList(listId, (l) => ({ id: l.id, name: l.name, recipeIds: [], owner: l.owner ?? null, members: [], visibility: l.visibility || 'household', createdAt: l.createdAt, deleted: true }));
+}
+/** 'Bara för mig' on/off (owner only). */
+export function setListPrivate(listId, on) {
+  patchList(listId, (l) => {
+    if (!canChangeVisibility(l)) return null;
+    const v = on ? 'private' : 'household';
+    return (l.visibility || 'household') === v ? null : { ...l, visibility: v };
+  });
 }
 export function setInList(listId, recipeId, on) {
   patchList(listId, (l) => {
@@ -254,14 +273,28 @@ export function challengeGoal(year = new Date().getFullYear()) {
 export function setChallengeGoal(year, goal) {
   const g = goal == null ? null : Math.max(1, Math.min(MAX_GOAL, Math.round(Number(goal)) || 1));
   if (g === challengeGoal(year)) return;
-  commit('cookChallenge', { ...read('cookChallenge'), [String(year)]: { year: Number(year), goal: g, updatedAt: now() } });
+  const cur = read('cookChallenge')[String(year)] || {};
+  commit('cookChallenge', { ...read('cookChallenge'), [String(year)]: { ...cur, year: Number(year), goal: g, updatedAt: now() } });
 }
-/** Distinct recipes cooked in `year` (from the cook log), newest first. */
+/** 'household' (default: the whole household's cook log counts) or 'mine' (only what I logged). */
+export function challengeScope(year = new Date().getFullYear()) {
+  const c = read('cookChallenge')[String(year)];
+  return c && c.scope === 'mine' ? 'mine' : 'household';
+}
+export function setChallengeScope(year, scope) {
+  const v = scope === 'mine' ? 'mine' : 'household';
+  if (v === challengeScope(year)) return;
+  const cur = read('cookChallenge')[String(year)] || { year: Number(year), goal: null };
+  commit('cookChallenge', { ...read('cookChallenge'), [String(year)]: { ...cur, scope: v, updatedAt: now() } });
+}
+/** Distinct recipes cooked in `year` (from the cook log), newest first. Respects the challenge scope. */
 export function recipesCookedIn(year = new Date().getFullYear()) {
   const seen = new Set();
   const out = [];
+  const mine = challengeScope(year) === 'mine' && actor;
   for (const e of allCookEntries()) {
     if (!e.date.startsWith(`${year}-`) || seen.has(e.recipeId)) continue;
+    if (mine && e.by && e.by !== actor) continue;
     seen.add(e.recipeId);
     out.push(e.recipeId);
   }

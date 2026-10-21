@@ -3296,3 +3296,46 @@ p.eq-serving { font-size: 0.85rem; margin: 8px 0 0; }
 @media (max-width: 520px) {
   .inkop-card { padding: 12px; }
 }
+
+/* ---------------------------------------------------------------------------
+   Hushåll + Vänner (household-ui.js): avatars, profile, household, friends, feed
+   Avatars are an emoji or an initial in a neutral ring, always next to a name in
+   words (never colour alone).
+   --------------------------------------------------------------------------- */
+#acc-profil { grid-column: 1 / -1; }
+.hh-av {
+  display: inline-flex; align-items: center; justify-content: center; flex: none;
+  width: 26px; height: 26px; border-radius: 999px; font-size: 0.78rem; font-weight: 700; line-height: 1;
+  background: var(--surface-2); color: var(--text); box-shadow: inset 0 0 0 1.25px var(--border);
+}
+.hh-av.is-emoji { font-size: 0.95rem; }
+.hh-av-lg { width: 44px; height: 44px; font-size: 1.1rem; }
+.hh-av-lg.is-emoji { font-size: 1.5rem; }
+.hh-av-sm { width: 20px; height: 20px; font-size: 0.66rem; }
+.hh-av-sm.is-emoji { font-size: 0.8rem; }
+.acc-initial.is-emoji { font-size: 1.15rem; }
+.hh-profile { display: grid; gap: 14px; }
+.hh-profile-preview { display: flex; align-items: center; gap: 10px; font-weight: 600; }
+.hh-label { display: block; font-size: 0.8rem; font-weight: 600; color: var(--text-muted); margin-bottom: 4px; }
+.hh-inline { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.hh-input {
+  flex: 1 1 180px; min-width: 0; max-width: 320px; padding: 8px 10px; font: inherit; font-size: 0.92rem;
+  border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--surface); color: var(--text);
+}
+.hh-input:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 1px; }
+.hh-input.hh-code-input { text-transform: uppercase; letter-spacing: 0.08em; font-variant-numeric: tabular-nums; max-width: 180px; }
+.hh-emoji-grid { display: flex; flex-wrap: wrap; gap: 6px; }
+.hh-emoji {
+  position: relative; min-width: 40px; height: 40px; padding: 0 8px; border-radius: 999px; cursor: pointer;
+  font: inherit; font-size: 1.25rem; background: var(--surface-2); color: var(--text); border: 1px solid var(--border);
+}
+.hh-emoji-none { font-size: 0.8rem; font-weight: 600; }
+.hh-emoji:hover { background: var(--toggle-hover); }
+.hh-emoji[aria-pressed="true"] { border: 2px solid var(--text); background: var(--surface); }
+.hh-emoji[aria-pressed="true"]::after {
+  content: '✓'; position: absolute; right: -4px; top: -4px; width: 16px; height: 16px; border-radius: 999px;
+  display: flex; align-items: center; justify-content: center; font-size: 0.62rem; font-weight: 700;
+  background: var(--text); color: var(--surface);
+}
+.hh-emoji:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
+.hh-msg { min-height: 1.2em; font-size: 0.82rem; color: var(--text-muted); }

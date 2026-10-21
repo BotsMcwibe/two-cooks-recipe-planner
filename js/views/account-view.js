@@ -5,15 +5,17 @@
  * area lists what the app stores: statuses, ratings, own spice mixes, theme,
  * Inköpslista and a Data section. Works logged out (local data only).
  */
-import * as UserState from '../core/user-recipe-state.js?v=20261021g13';
-import { menuExtrasHtml, themeSegHtml, bindThemeSeg } from './menu-items.js?v=20261021g13';
-import { onAuthChange, onSyncStatus, syncStatus, lastSyncTime, signOut, currentUser, isAvailable } from '../core/sync.js?v=20261021g13';
-import { openSignIn } from './auth-ui.js?v=20261021g13';
-import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261021g13';
-import { kitchenProfile, setKitchen, MAX_OVEN_TRAYS } from '../core/kitchen-prefs.js?v=20261021g13';
-import * as Journal from '../core/recipe-journal.js?v=20261021g13';
-import { agoLabel, fmtCookDate, timesLabel } from './recipe-status-ui.js?v=20261021g13';
-import { ringHtml, challengePace } from './journal-ui.js?v=20261021g13';
+import * as UserState from '../core/user-recipe-state.js?v=20261021g14';
+import { menuExtrasHtml, themeSegHtml, bindThemeSeg } from './menu-items.js?v=20261021g14';
+import { onAuthChange, onSyncStatus, syncStatus, lastSyncTime, signOut, currentUser, isAvailable } from '../core/sync.js?v=20261021g14';
+import { openSignIn } from './auth-ui.js?v=20261021g14';
+import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261021g14';
+import { kitchenProfile, setKitchen, MAX_OVEN_TRAYS } from '../core/kitchen-prefs.js?v=20261021g14';
+import * as Journal from '../core/recipe-journal.js?v=20261021g14';
+import { agoLabel, fmtCookDate, timesLabel } from './recipe-status-ui.js?v=20261021g14';
+import { ringHtml, challengePace } from './journal-ui.js?v=20261021g14';
+import * as Household from '../core/household.js?v=20261021g14';
+import * as HouseholdUI from './household-ui.js?v=20261021g14';
 
 const LOCAL_KEYS = [
   'jesse.recipeState.v1', 'yessy.spiceMixMissing.v1', 'jesse-theme',
@@ -66,6 +68,7 @@ export class AccountView {
     window.addEventListener('yessy:themechange', rerender);
     window.addEventListener('yessy:prefchange', rerender);
     window.addEventListener('kitchenchange', rerender);
+    window.addEventListener('householdchange', () => { if (this.active && !this._typingInAccount()) this.render(); });
     window.addEventListener('journalchange', (e) => { if (!(e.detail && e.detail.key === 'recipeNotes')) rerender(); });
     /** Lists whose recipes are shown / which list is being renamed (kept across re-renders). */
     this.openLists = new Set();
@@ -116,6 +119,7 @@ export class AccountView {
         return;
       }
       if (this._journalClick(t)) return;
+      if (HouseholdUI.handleClick(t, this)) return;
       if (t.closest('.acc-me-btn')) { this.menuOpen = !this.menuOpen; this.render(); this._animateCircle(); this.el.querySelector(this.menuOpen ? '.acc-menu button, .acc-menu a' : '.acc-me-btn')?.focus(); return; }
       if (t.closest('.acc-logout')) { await signOut(); this.menuOpen = false; this.render(); return; }
       if (t.closest('.acc-clear')) {
@@ -133,6 +137,7 @@ export class AccountView {
     });
     this.el.addEventListener('submit', (e) => {
       const f = e.target;
+      if (HouseholdUI.handleSubmit(f, this)) { e.preventDefault(); return; }
       if (f.matches('.ls-new')) {
         e.preventDefault();
         const input = f.querySelector('input');
@@ -174,6 +179,12 @@ export class AccountView {
   }
 
   _focus(sel) { const el = this.el.querySelector(sel); if (el) el.focus(); }
+
+  /** Don't re-render under the user's fingers while they type in a field. */
+  _typingInAccount() {
+    const a = document.activeElement;
+    return !!(a && this.el.contains(a) && (a.matches('input[type="text"], input:not([type]), textarea') && a.value !== a.defaultValue));
+  }
 
   /** Clicks for challenge, lists and Inte för oss. Returns true when handled. */
   _journalClick(t) {
@@ -322,10 +333,12 @@ export class AccountView {
     }
     const meta = user.user_metadata || {};
     const avatar = meta.avatar_url || meta.picture;
-    const initial = (user.email || '?').trim().charAt(0).toUpperCase();
-    const av = avatar
+    const prof = Household.profile();
+    const initial = prof && prof.avatar_emoji ? prof.avatar_emoji
+      : ((prof && prof.display_name) || user.email || '?').trim().charAt(0).toUpperCase();
+    const av = avatar && !(prof && prof.avatar_emoji)
       ? `<img class="acc-avatar" src="${escapeAttr(avatar)}" alt="" referrerpolicy="no-referrer">`
-      : `<span class="acc-avatar acc-initial" aria-hidden="true">${escapeHtml(initial)}</span>`;
+      : `<span class="acc-avatar acc-initial${prof && prof.avatar_emoji ? ' is-emoji' : ''}" aria-hidden="true">${escapeHtml(initial)}</span>`;
     const provider = (user.app_metadata && user.app_metadata.provider) || 'email';
     const last = lastSyncTime();
     const menu = this.menuOpen ? `
@@ -344,7 +357,7 @@ export class AccountView {
       ${menu}
       <button type="button" class="acc-me-btn" aria-haspopup="menu" aria-expanded="${this.menuOpen}">
         <span class="acc-avatar-wrap">${av}<span class="acc-status-dot is-${status}" aria-hidden="true"></span></span>
-        <span class="acc-me-text"><span class="acc-me-name" title="${escapeAttr(user.email || '')}">${escapeHtml(user.email || '')}</span>
+        <span class="acc-me-text"><span class="acc-me-name" title="${escapeAttr(user.email || '')}">${escapeHtml((prof && prof.display_name) || user.email || '')}</span>
         <span class="acc-me-sub">${dot}${SYNC_LABEL[status]}</span></span>
         <span class="acc-me-caret" aria-hidden="true">⋯</span>
       </button>
@@ -401,6 +414,7 @@ export class AccountView {
       </section>`;
 
     const nav = [
+      ...(user ? [['profil', 'Profil', null]] : []),
       ['utmaning', 'Årets matutmaning', goal ? `${Journal.recipesCookedIn(year).length}/${goal}` : null],
       ['vill', 'Vill laga', groups.want.length],
       ['lagade', 'Lagade', groups.cooked.length], ['betyg', 'Dina betyg', ratings.length],
@@ -423,6 +437,7 @@ export class AccountView {
             <p class="acc-lede">${user ? 'Dina recept, betyg och val, synkade mellan dina enheter.' : 'Du är inte inloggad. Allt nedan sparas bara i den här webbläsaren. Logga in för att få det på alla dina enheter.'}</p>
             ${!user && isAvailable() ? '<button type="button" class="acc-btn acc-btn-primary acc-signin acc-signin-hero">Logga in med e-postlänk</button>' : ''}
           </div>
+          ${user ? section('profil', 'Profil', null, HouseholdUI.profileSectionBody()) : ''}
           ${section('utmaning', `Årets matutmaning ${year}`, null, this._challengeHtml(), where)}
           ${section('vill', 'Vill laga', groups.want.length, list(groups.want, 'Markera recept med ”Vill laga” så hamnar de här.'), where)}
           ${section('lagade', 'Lagade', groups.cooked.length, list(groups.cooked, 'Inga lagade recept än. Tryck ”Klart! Logga som lagad” när du lagat klart, så sparas datumet här.', true), where)}
