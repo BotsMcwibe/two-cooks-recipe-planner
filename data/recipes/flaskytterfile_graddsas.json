@@ -150,9 +150,9 @@
       "heat": "hög",
       "equipment": [
         {
-          "type": "traktorpanna",
+          "type": "stekpanna_stor",
           "ref": "stekpanna_1",
-          "typeSource": "inferred"
+          "confirmed": true
         }
       ],
       "devNotes": [
@@ -364,11 +364,11 @@
       "heat": "medel",
       "equipment": [
         {
-          "type": "traktorpanna",
+          "type": "stekpanna_stor",
           "ref": "stekpanna_1",
           "transition": "keep",
           "after": "flaskytterfile_graddsas__seared_pork",
-          "typeSource": "inferred"
+          "confirmed": true
         },
         {
           "type": "skarbrada",

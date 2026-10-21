@@ -381,9 +381,9 @@
       },
       "equipment": [
         {
-          "type": "traktorpanna",
+          "type": "stekpanna_stor",
           "ref": "stekpanna_1",
-          "typeSource": "inferred"
+          "confirmed": true
         }
       ]
     },

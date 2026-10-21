@@ -242,7 +242,8 @@ Equipment entry:
 | `fanTempSource` | `"derived"` when `fanTemp` was computed (temp − 20) rather than read from the raw. Absent = from the raw. |
 | `mode` | Oven mode for this use, e.g. `"grill"` (gratinera med grillfunktion). |
 | `sizeSource` | `"inferred"` when the raw named no size and the size was guessed from the content volume. |
-| `typeSource` | `"inferred"` when the type was chosen by rule rather than read from the raw (e.g. the raw says "stekpanna" but the pan fries and then simmers ≥ 2 dl liquid, so it is a `traktorpanna`). Absent = the raw names this vessel. |
+| `typeSource` | `"inferred"` when the type was chosen by rule rather than read from the raw (e.g. the raw says "stekpanna" but the pan fries and then simmers ≥ 2 dl liquid, so it is a `traktorpanna`). `"user"` when the user chose the type. Absent = the raw names this vessel. |
+| `confirmed` | `true` when the user has reviewed and approved this vessel choice although a rule would suggest another (e.g. a cream sauce kept in a stekpanna). Put it on every entry of the reuse chain. It silences `stekpanna-liquid` and must not be added by converters. |
 | `count` | Number of identical items used at once (`2` plåtar, 3 djupa tallrikar for a breading line). Absent = 1. |
 | `lid` | `true` when the raw says to cover the vessel (lock). |
 | `liner` | `"bakplatspapper"` on a plåt/form lined with baking paper. |

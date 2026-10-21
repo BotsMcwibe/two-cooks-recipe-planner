@@ -37,7 +37,8 @@
  * Errors: oven-use, eq-unknown-type, eq-bad-field, eq-after-dangling, eq-ref-type, eq-overlap, eq-held,
  *         oven-slots, oven-temp, oven-no-resource, heat-invalid, heat-no-stovetop, eq-serving, eq-placeholder, board-raw-reuse
  * Warnings: pan-too-small, stovetop-no-heat, reuse-transition, burners, eq-unlinked, board-raw-no-separate, stekpanna-liquid
- *   stekpanna-liquid: ≥ 3 dl liquid simmered/boiled in a stekpanna → suggest traktorpanna (deep, lid, ~4 l)
+ *   stekpanna-liquid: ≥ 3 dl liquid simmered/boiled in a stekpanna → suggest traktorpanna (deep, lid, ~4 l);
+ *     silenced by `confirmed: true` on the entry (the user approved this vessel choice)
  *
  * Timing for oven/burner concurrency uses an as-soon-as-possible schedule over inputs + equipment.after
  * (end = start + duration + wait). Add `after` on the equipment entry to serialise two oven loads.
@@ -65,7 +66,7 @@ export const WARNING_TYPES = ['pan-too-small', 'stovetop-no-heat', 'reuse-transi
 const LIQUID_IDS = new Set(['cooking_cream', 'whipping_cream', 'creme_fraiche', 'sour_cream', 'canned_tomatoes', 'passata', 'coconut_milk', 'milk', 'water', 'red_wine_sauce', 'mornay_sauce']);
 const SIMMER_RE = /sjud|puttra|koka|reducera|under lock/i;
 const FIELDS = new Set(['type', 'ref', 'after', 'transition', 'sizeSource', 'hold', 'shared', 'lid', 'mode', 'temp', 'note', 'offHeat', 'slots', 'fanTemp', 'fanTempSource',
-  'count', 'liner', 'optional', 'separate', 'rawKinds', 'inferred', 'typeSource']);
+  'count', 'liner', 'optional', 'separate', 'rawKinds', 'inferred', 'typeSource', 'confirmed']);
 const SERVING_FIELDS = new Set(['type', 'ref', 'count']);
 export const EQ_FORMS = ['indef', 'bare', 'noun', 'def', 'pl', 'pldef'];
 export const RAW_KINDS = ['poultry', 'meat', 'fish', 'shellfish'];
@@ -204,7 +205,8 @@ function checkRecipe(mid, data, ctx) {
       if ('liner' in e && (e.liner !== 'bakplatspapper' || !['ovenware'].includes(t.kind))) add('error', 'eq-bad-field', n.id, `liner "${e.liner}" (only "bakplatspapper" on ovenware)`);
       if (('separate' in e || 'rawKinds' in e) && e.type !== 'skarbrada') add('error', 'eq-bad-field', n.id, 'separate/rawKinds only on skarbrada');
       if (e.rawKinds && !(Array.isArray(e.rawKinds) && e.rawKinds.every(k => RAW_KINDS.includes(k)))) add('error', 'eq-bad-field', n.id, `rawKinds must be a subset of ${RAW_KINDS.join(', ')}`);
-      for (const f of ['optional', 'separate', 'inferred', 'lid']) if (f in e && e[f] !== true) add('error', 'eq-bad-field', n.id, `${f} must be true or absent`);
+      if ('typeSource' in e && !['inferred', 'user'].includes(e.typeSource)) add('error', 'eq-bad-field', n.id, `typeSource "${e.typeSource}" (allowed: inferred, user)`);
+      for (const f of ['optional', 'separate', 'inferred', 'lid', 'confirmed']) if (f in e && e[f] !== true) add('error', 'eq-bad-field', n.id, `${f} must be true or absent`);
       if (e.transition && !TRANSITIONS.includes(e.transition)) add('error', 'eq-bad-field', n.id, `transition "${e.transition}" (allowed: ${TRANSITIONS.join(', ')})`);
       for (const a of afterList(e)) if (!byId.has(a)) add('error', 'eq-after-dangling', n.id, `equipment.after "${a}" is not a node in this recipe or its sharedPrep`);
       if (t.kind === 'stovetop') stovetop = e;
@@ -226,7 +228,7 @@ function checkRecipe(mid, data, ctx) {
       const t = types[stovetop.type], v = vol(n.id);
       const deeper = stovetop.type.startsWith('stekpanna') && types.traktorpanna ? `; consider traktorpanna (${types.traktorpanna.capacityL} l)` : '';
       if (t.capacityL && v > t.capacityL * 1000 * 1.1) add('warning', 'pan-too-small', n.id, `≈${(v / 1000).toFixed(1)} l of contents in ${stovetop.type} (${t.capacityL} l)${deeper}`);
-      if (stovetop.type.startsWith('stekpanna') && !stovetop.offHeat && SIMMER_RE.test((n.steps || []).join(' '))) {
+      if (stovetop.type.startsWith('stekpanna') && !stovetop.offHeat && !stovetop.confirmed && SIMMER_RE.test((n.steps || []).join(' '))) {
         const liq = liquidMl(n.id);
         if (liq >= 300) add('warning', 'stekpanna-liquid', n.id, `≈${(liq / 100).toFixed(1)} dl liquid simmered in ${stovetop.type}; use traktorpanna (deep, with lid) unless the raw says stekpanna`);
       }

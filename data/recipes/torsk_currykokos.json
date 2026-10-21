@@ -77,7 +77,7 @@
         {
           "type": "traktorpanna",
           "ref": "stekpanna_1",
-          "typeSource": "inferred"
+          "typeSource": "user"
         }
       ],
       "devNotes": [
@@ -129,7 +129,7 @@
           "type": "traktorpanna",
           "ref": "stekpanna_1",
           "transition": "keep",
-          "typeSource": "inferred"
+          "typeSource": "user"
         }
       ],
       "heat": "medellåg",

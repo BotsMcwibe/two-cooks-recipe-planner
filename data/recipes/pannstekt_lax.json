@@ -235,9 +235,10 @@
       "heat": "medelhög",
       "equipment": [
         {
-          "type": "traktorpanna",
+          "type": "stekpanna_medelstor",
           "ref": "stekpanna_1",
-          "typeSource": "inferred"
+          "sizeSource": "inferred",
+          "confirmed": true
         },
         {
           "type": "tallrik",
@@ -292,10 +293,11 @@
       "heat": "medelhög",
       "equipment": [
         {
-          "type": "traktorpanna",
+          "type": "stekpanna_medelstor",
           "ref": "stekpanna_1",
           "transition": "keep",
-          "typeSource": "inferred"
+          "sizeSource": "inferred",
+          "confirmed": true
         }
       ]
     },

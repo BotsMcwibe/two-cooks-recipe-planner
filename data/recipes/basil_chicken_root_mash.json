@@ -98,7 +98,7 @@
         {
           "type": "traktorpanna",
           "ref": "stekpanna_1",
-          "typeSource": "inferred"
+          "typeSource": "user"
         }
       ]
     },
@@ -188,7 +188,7 @@
           "type": "traktorpanna",
           "ref": "stekpanna_1",
           "transition": "keep",
-          "typeSource": "inferred"
+          "typeSource": "user"
         }
       ]
     },

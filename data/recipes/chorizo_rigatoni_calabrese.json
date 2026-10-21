@@ -259,9 +259,9 @@
       "heat": "medelhög",
       "equipment": [
         {
-          "type": "traktorpanna",
+          "type": "stekpanna_stor",
           "ref": "stekpanna_1",
-          "typeSource": "inferred"
+          "confirmed": true
         }
       ]
     },
@@ -296,10 +296,10 @@
       "heat": "medel",
       "equipment": [
         {
-          "type": "traktorpanna",
+          "type": "stekpanna_stor",
           "ref": "stekpanna_1",
           "transition": "keep",
-          "typeSource": "inferred"
+          "confirmed": true
         }
       ]
     },

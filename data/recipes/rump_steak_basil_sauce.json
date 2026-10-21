@@ -326,9 +326,9 @@
       "heat": "medelhög",
       "equipment": [
         {
-          "type": "traktorpanna",
+          "type": "stekpanna_stor",
           "ref": "stekpanna_1",
-          "typeSource": "inferred"
+          "confirmed": true
         }
       ]
     },
@@ -362,11 +362,11 @@
       "heat": "medelhög",
       "equipment": [
         {
-          "type": "traktorpanna",
+          "type": "stekpanna_stor",
           "ref": "stekpanna_1",
           "transition": "keep",
           "after": "rump_steak_basil_sauce__roasted_pine_nuts",
-          "typeSource": "inferred"
+          "confirmed": true
         }
       ]
     },
@@ -414,10 +414,10 @@
       "heat": "medel",
       "equipment": [
         {
-          "type": "traktorpanna",
+          "type": "stekpanna_stor",
           "ref": "stekpanna_1",
           "transition": "keep",
-          "typeSource": "inferred"
+          "confirmed": true
         }
       ]
     },

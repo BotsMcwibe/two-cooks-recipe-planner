@@ -204,9 +204,9 @@
       "heat": "medelhög",
       "equipment": [
         {
-          "type": "traktorpanna",
+          "type": "stekpanna_stor",
           "ref": "stekpanna_1",
-          "typeSource": "inferred"
+          "confirmed": true
         },
         {
           "type": "skal_stor",
@@ -340,11 +340,11 @@
       "heat": "medel",
       "equipment": [
         {
-          "type": "traktorpanna",
+          "type": "stekpanna_stor",
           "ref": "stekpanna_1",
           "transition": "keep",
           "after": "kramig_basilikakyckling__fried_chicken",
-          "typeSource": "inferred"
+          "confirmed": true
         },
         {
           "type": "skarbrada",
