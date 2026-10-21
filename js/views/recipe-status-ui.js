@@ -4,9 +4,9 @@
  * card badge. Backed by core/user-recipe-state.js (status, rating) and
  * core/recipe-journal.js (cook log, Inte för oss, lists).
  */
-import * as UserState from '../core/user-recipe-state.js?v=20261021g14';
-import * as Journal from '../core/recipe-journal.js?v=20261021g14';
-import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261021g14';
+import * as UserState from '../core/user-recipe-state.js?v=20261021g15';
+import * as Journal from '../core/recipe-journal.js?v=20261021g15';
+import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261021g15';
 
 const STATUS_ICON = { want: '☆', cooked: '✓' };
 const MONTHS = ['jan', 'feb', 'mars', 'apr', 'maj', 'juni', 'juli', 'aug', 'sep', 'okt', 'nov', 'dec'];

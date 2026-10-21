@@ -10,18 +10,18 @@
  *   preference key), then write-through on every local change (optimistic; failures
  *   mark the store dirty and a full merge runs again when back online).
  */
-import { SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, SUPABASE_JS_URL } from '../config.js?v=20261021g14';
-import * as UserState from './user-recipe-state.js?v=20261021g14';
-import { prefTs, setPrefTs } from './prefs-meta.js?v=20261021g14';
-import { missingMixes, replaceMissingMixes } from './spice-prefs.js?v=20261021g14';
-import { excludedPantry, replacePantryExcluded } from './pantry-exclude.js?v=20261021g14';
-import { ownedSpices, replaceSpicesOwned } from './spices-owned.js?v=20261021g14';
-import { savedTheme, applySyncedTheme } from '../utils/theme.js?v=20261021g14';
-import { storedKitchen, replaceKitchen } from './kitchen-prefs.js?v=20261021g14';
-import { storedSettings as storedWeekSettings, replaceSettings as replaceWeekSettings, storedPlan as storedWeekPlan, replacePlan as replaceWeekPlan } from './week-plan.js?v=20261021g14';
-import { JOURNAL_KEYS, journalValue, replaceJournal, mergeJournal, setActor } from './recipe-journal.js?v=20261021g14';
-import * as Household from './household.js?v=20261021g14';
-import * as Tables from './table-sync.js?v=20261021g14';
+import { SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, SUPABASE_JS_URL } from '../config.js?v=20261021g15';
+import * as UserState from './user-recipe-state.js?v=20261021g15';
+import { prefTs, setPrefTs } from './prefs-meta.js?v=20261021g15';
+import { missingMixes, replaceMissingMixes } from './spice-prefs.js?v=20261021g15';
+import { excludedPantry, replacePantryExcluded } from './pantry-exclude.js?v=20261021g15';
+import { ownedSpices, replaceSpicesOwned } from './spices-owned.js?v=20261021g15';
+import { savedTheme, applySyncedTheme } from '../utils/theme.js?v=20261021g15';
+import { storedKitchen, replaceKitchen } from './kitchen-prefs.js?v=20261021g15';
+import { storedSettings as storedWeekSettings, replaceSettings as replaceWeekSettings, storedPlan as storedWeekPlan, replacePlan as replaceWeekPlan } from './week-plan.js?v=20261021g15';
+import { JOURNAL_KEYS, journalValue, replaceJournal, mergeJournal, setActor } from './recipe-journal.js?v=20261021g15';
+import * as Household from './household.js?v=20261021g15';
+import * as Tables from './table-sync.js?v=20261021g15';
 
 /**
  * Household tables (0002+): when the project has them, statuses, stars, the cook
@@ -29,7 +29,7 @@ import * as Tables from './table-sync.js?v=20261021g14';
  * user_recipe_state + the prefs JSON (status/stars are still written to
  * user_recipe_state too, for older cached clients). Otherwise the legacy path runs.
  */
-const USE_TABLES = false;
+const USE_TABLES = true;
 let tablesMode = false;
 
 const listeners = new Set();

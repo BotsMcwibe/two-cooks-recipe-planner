@@ -40,3 +40,16 @@ Merge rule: on login, local and server are merged per recipe and per preference 
 the newer `updatedAt` wins. After that every change is written to both
 (optimistic; offline changes are pushed when the browser comes back online or on
 the next login).
+
+## 4. Household + friends tables (applied 2026-10-21 through the Supabase MCP)
+| File | What |
+|---|---|
+| `migrations/0002_household_friends.sql` | profiles, households, members, invites, household_recipe_state, cook_log, recipe_lists(+items), recipe_ratings, recipe_notes, friendships; RLS; RPCs (ensure_my_household, invites, join/leave, friends, kitchen_feed). Client UPDATE is column-scoped. |
+| `migrations/0003_migrate_prefs.sql` | Idempotent copy of user_recipe_state + prefs journal keys into the new tables (re-run before phase 1 shipped). |
+| `migrations/0005_household_hardening.sql` | Timestamp clamp (now + 5 min), server-stamped "who" columns, owner-only list visibility, stale writes keep updated_by. |
+
+With these tables the app (`js/core/table-sync.js`) syncs status (shared), stars (yours),
+cook log, lists and Inte för oss (shared) and Mina anteckningar (private) through them;
+status + stars are still written to `user_recipe_state` for older cached clients.
+Without them it falls back to the old tables. Server test: `docs/household-sql/test_household_rls.sql`
+in the project folder (one transaction that always rolls back).

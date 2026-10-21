@@ -6,10 +6,10 @@
  * with, per ingredient, which recipes it comes from (amount per recipe when
  * split). Items can be checked off; that is kept locally per list.
  */
-import { ShoppingListAggregator } from '../core/shopping-list.js?v=20261021g14';
+import { ShoppingListAggregator } from '../core/shopping-list.js?v=20261021g15';
 import { formatNiceAmount } from '../utils/helpers.js';
-import { escapeAttr, escapeHtml, isPantryIngredient, isScalable } from '../utils/catalog-ui.js?v=20261021g14';
-import { encodeShoppingList, decodeShoppingList, shareUrl, checkedItems, setChecked, clearChecked } from '../core/shopping-link.js?v=20261021g14';
+import { escapeAttr, escapeHtml, isPantryIngredient, isScalable } from '../utils/catalog-ui.js?v=20261021g15';
+import { encodeShoppingList, decodeShoppingList, shareUrl, checkedItems, setChecked, clearChecked } from '../core/shopping-link.js?v=20261021g15';
 
 const SHARE_SVG = '<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="2.6"/><circle cx="6" cy="12" r="2.6"/><circle cx="18" cy="19" r="2.6"/><path d="m8.3 10.8 7.4-4.4M8.3 13.2l7.4 4.4"/></g></svg>';
 

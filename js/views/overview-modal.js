@@ -1,6 +1,6 @@
-import { RecipeGraph } from '../core/recipe-graph.js?v=20261021g14';
-import { equipmentListHtml, servingLineHtml } from '../core/equipment.js?v=20261021g14';
-import { kitchenProfile } from '../core/kitchen-prefs.js?v=20261021g14';
+import { RecipeGraph } from '../core/recipe-graph.js?v=20261021g15';
+import { equipmentListHtml, servingLineHtml } from '../core/equipment.js?v=20261021g15';
+import { kitchenProfile } from '../core/kitchen-prefs.js?v=20261021g15';
 import { formatNiceAmount } from '../utils/helpers.js';
 import {
   allergenLabel,
@@ -12,12 +12,12 @@ import {
   isScalable,
   starHtml,
   subtitleFromSearchText,
-} from '../utils/catalog-ui.js?v=20261021g14';
-import { imgFailed, isPhotoMissing, recordPhotoFailure, recordPhotoSuccess } from '../utils/photo-fallback.js?v=20261021g14';
-import * as UserState from '../core/user-recipe-state.js?v=20261021g14';
-import { spiceMixTogglesHtml } from './spice-mix-ui.js?v=20261021g14';
-import { bindStatusControls, cookLogHtml, kitchenMarkHtml, refreshStatusControls, statusControlHtml } from './recipe-status-ui.js?v=20261021g14';
-import { notesHtml, bindNotes } from './journal-ui.js?v=20261021g14';
+} from '../utils/catalog-ui.js?v=20261021g15';
+import { imgFailed, isPhotoMissing, recordPhotoFailure, recordPhotoSuccess } from '../utils/photo-fallback.js?v=20261021g15';
+import * as UserState from '../core/user-recipe-state.js?v=20261021g15';
+import { spiceMixTogglesHtml } from './spice-mix-ui.js?v=20261021g15';
+import { bindStatusControls, cookLogHtml, kitchenMarkHtml, refreshStatusControls, statusControlHtml } from './recipe-status-ui.js?v=20261021g15';
+import { notesHtml, bindNotes } from './journal-ui.js?v=20261021g15';
 
 /**
  * HelloFresh-inspired recipe overview modal.
@@ -28,7 +28,7 @@ export class OverviewModal {
   /**
    * @param {import('../core/state.js').AppState} state
    * @param {Array<object>} catalog
-   * @param {import('../data/loader.js?v=20261021g14').RecipeRepository} repository
+   * @param {import('../data/loader.js?v=20261021g15').RecipeRepository} repository
    * @param {Array} baseIngredients
    * @param {{
    *   onCook: (id: string, portions: number) => void,

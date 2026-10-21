@@ -3,8 +3,8 @@
  * Vänner and Senast i köket here. Rendering returns HTML strings; AccountView
  * forwards clicks/submits/changes to handle*() and re-renders on householdchange.
  */
-import * as Household from '../core/household.js?v=20261021g14';
-import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261021g14';
+import * as Household from '../core/household.js?v=20261021g15';
+import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261021g15';
 
 /** Emoji choices for the avatar (food, so it fits the app). */
 export const AVATAR_EMOJI = ['🍋', '🧄', '🌶️', '🥕', '🍅', '🧀', '🍳', '🥑', '🐟', '🍝', '🥐', '🫐', '🍄', '🥦', '🍪', '☕'];
