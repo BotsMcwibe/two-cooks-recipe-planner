@@ -1,8 +1,8 @@
-import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261011u';
-import { sentenceCase } from '../utils/text.js?v=20261011';
-import { prepPhaseIds, isPrepTagged } from '../utils/prep-phase.js?v=20261021eq';
-import { effectiveOven, isResource } from '../core/equipment.js?v=20261021eq';
-import { kitchenProfile } from '../core/kitchen-prefs.js?v=20261021eq';
+import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261021ng';
+import { sentenceCase } from '../utils/text.js?v=20261021ng';
+import { prepPhaseIds, isPrepTagged } from '../utils/prep-phase.js?v=20261021ng';
+import { effectiveOven, isResource } from '../core/equipment.js?v=20261021ng';
+import { kitchenProfile } from '../core/kitchen-prefs.js?v=20261021ng';
 
 /**
  * Flow graph for the cook page: a left-to-right dependency graph of the recipe's

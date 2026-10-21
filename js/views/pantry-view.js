@@ -4,8 +4,8 @@
  * using a buried ingredient is hidden in #browse. Tap a grave tile to revive it.
  * The set lives in core/pantry-exclude.js (localStorage + Supabase prefs).
  */
-import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261011u';
-import { excludedPantry, setPantryExcluded, clearPantryExcluded, loadPantry } from '../core/pantry-exclude.js?v=20261013gr';
+import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261021ng';
+import { excludedPantry, setPantryExcluded, clearPantryExcluded, loadPantry } from '../core/pantry-exclude.js?v=20261021ng';
 
 /** "380/230g" -> "380 g", "1,5kg" -> "1,5 kg", "6p/3l" -> "6 st". */
 export function prettySize(s) {

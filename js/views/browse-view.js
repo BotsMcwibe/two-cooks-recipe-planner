@@ -1,4 +1,4 @@
-import { loadPortionEnergyKcal } from '../data/loader.js?v=20261021eq';
+import { loadPortionEnergyKcal } from '../data/loader.js?v=20261021ng';
 import {
   buildFilterChips,
   displayTags,
@@ -9,11 +9,11 @@ import {
   recipeVisual,
   starHtml,
   subtitleFromSearchText,
-} from '../utils/catalog-ui.js?v=20261011u';
-import * as UserState from '../core/user-recipe-state.js?v=20261013b';
-import { imgFailed, isPhotoMissing, recordPhotoFailure, recordPhotoSuccess, photosLikelyUnavailable } from '../utils/photo-fallback.js?v=20261011u';
-import { excludedPantry, clearPantryExcluded, loadPantry } from '../core/pantry-exclude.js?v=20261013gr';
-import { cardStateHtml } from './recipe-status-ui.js?v=20261013b';
+} from '../utils/catalog-ui.js?v=20261021ng';
+import * as UserState from '../core/user-recipe-state.js?v=20261021ng';
+import { imgFailed, isPhotoMissing, recordPhotoFailure, recordPhotoSuccess, photosLikelyUnavailable } from '../utils/photo-fallback.js?v=20261021ng';
+import { excludedPantry, clearPantryExcluded, loadPantry } from '../core/pantry-exclude.js?v=20261021ng';
+import { cardStateHtml } from './recipe-status-ui.js?v=20261021ng';
 
 /**
  * Browse page: searchable/filterable recipe card grid.

@@ -1,11 +1,11 @@
 import { Unit } from '../models/unit.js';
 import { Ingredient } from '../models/ingredient.js';
-import { Recipe } from '../models/recipe.js?v=20261021eq';
-import { setEquipmentVocab } from '../core/equipment.js?v=20261021eq';
-import { setKitchenDefaults } from '../core/kitchen-prefs.js?v=20261021eq';
-import { RecipeGraph } from '../core/recipe-graph.js?v=20261021eq';
-import { addSpiceMixSteps } from './spice-mix-steps.js?v=20261012e';
-import { isMixMissing } from '../core/spice-prefs.js?v=20261013a';
+import { Recipe } from '../models/recipe.js?v=20261021ng';
+import { setEquipmentVocab } from '../core/equipment.js?v=20261021ng';
+import { setKitchenDefaults } from '../core/kitchen-prefs.js?v=20261021ng';
+import { RecipeGraph } from '../core/recipe-graph.js?v=20261021ng';
+import { addSpiceMixSteps } from './spice-mix-steps.js?v=20261021ng';
+import { isMixMissing } from '../core/spice-prefs.js?v=20261021ng';
 
 const DATA_BASE = new URL('../../data/', import.meta.url);
 
@@ -48,11 +48,11 @@ export async function loadPortionEnergyKcal(ids) {
  */
 export async function loadStaticData() {
   const [unitsRaw, ingredientsRaw, catalog, blendsRaw, equipmentRaw] = await Promise.all([
-    fetchJSON('units.json?v=20261012e'),
-    fetchJSON('ingredients.json?v=20261012e'),
+    fetchJSON('units.json?v=20261021ng'),
+    fetchJSON('ingredients.json?v=20261021ng'),
     fetchJSON('catalog.json'),
-    fetchJSON('spice-blends.json?v=20261012e').catch(() => ({ spices: [], blends: [] })),
-    fetchJSON('equipment.json?v=20261021eq').catch(() => null),
+    fetchJSON('spice-blends.json?v=20261021ng').catch(() => ({ spices: [], blends: [] })),
+    fetchJSON('equipment.json?v=20261021ng').catch(() => null),
   ]);
   if (equipmentRaw) {
     setEquipmentVocab(equipmentRaw);
@@ -91,7 +91,7 @@ export class RecipeRepository {
     this.unitMap = unitMap;
     this.spiceData = spiceData;
     this.baseIngredientMap = baseIngredientMap;
-    /** @type {Map<string, { graph: RecipeGraph, root: import('../models/recipe.js?v=20261021eq').Recipe, basePortions: number, resolveMap: object, outputMap: object }>} */
+    /** @type {Map<string, { graph: RecipeGraph, root: import('../models/recipe.js?v=20261021ng').Recipe, basePortions: number, resolveMap: object, outputMap: object }>} */
     this.cache = new Map();
     /** @type {Map<string, object>} shared prep pack cache (raw JSON) */
     this.prepCache = new Map();

@@ -3,9 +3,9 @@
  * Logged out: email field → magic link. Logged in: avatar/initial, email, "Logga ut".
  * Hidden entirely if Supabase could not be loaded (app stays local-only).
  */
-import { onAuthChange, signInWithEmail, signOut, isAvailable, syncStatus, onSyncStatus } from '../core/sync.js?v=20261021eq';
-import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261011u';
-import { accountLinkHtml, menuExtrasHtml } from './menu-items.js?v=20261021tm';
+import { onAuthChange, signInWithEmail, signOut, isAvailable, syncStatus, onSyncStatus } from '../core/sync.js?v=20261021ng';
+import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261021ng';
+import { accountLinkHtml, menuExtrasHtml } from './menu-items.js?v=20261021ng';
 
 const USER_SVG = '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="8.5" r="3.8"/><path d="M4.8 20.2c1.2-3.6 4-5.4 7.2-5.4s6 1.8 7.2 5.4"/></g></svg>';
 

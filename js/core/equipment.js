@@ -95,12 +95,12 @@ export function heatHtml(level, opts = {}) {
   if (!n) return '';
   let bars = '';
   for (let i = 1; i <= 5; i++) bars += `<span class="heat-bar${i <= n ? ' is-on' : ''}"></span>`;
-  const word = `${opts.guess ? 'ca ' : ''}${level}`;
-  const title = `Värme: ${level} (${n} av 5)${opts.guess ? ', gissad' : ''}`;
+  const word = `${level}`;
+  const title = `Värme: ${level} (${n} av 5)`;
   return `<span class="heat heat-${n}" title="${esc(title)}"><span class="heat-bars" aria-hidden="true">${bars}</span><span class="heat-word">${esc(word)}</span><span class="sr-only"> (${n} av 5)</span></span>`;
 }
 
-const guessMark = (title) => `<span class="eq-guess" title="${esc(title)}" aria-label="${esc(title)}">?</span>`;
+const guessMark = () => ''; // guessed sizes are not shown to users
 
 function reuseHint(e) {
   const noun = typeNoun(e.type);
