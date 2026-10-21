@@ -6,6 +6,7 @@
  *   #overview/<masterId>  → öppna översikt-modal
  *   #kryddor              → kryddskåpet (spice blend calculator)
  *   #skafferi             → skafferiet (pantry staples → recipes)
+ *   #vecka                → veckoplaneraren (week planner)
  *   #browse | # | empty   → receptlista (browse)
  */
 
@@ -48,6 +49,9 @@ export function parseHash(hash = typeof location !== 'undefined' ? location.hash
   if (raw.toLowerCase() === 'skafferi') {
     return { route: 'skafferi', masterId: null };
   }
+  if (raw.toLowerCase() === 'vecka') {
+    return { route: 'vecka', masterId: null };
+  }
   if (raw.toLowerCase() === 'konto') {
     return { route: 'konto', masterId: null };
   }
@@ -85,6 +89,7 @@ export function hashFor(route, masterId = null) {
   }
   if (route === 'kryddor') return '#kryddor';
   if (route === 'konto') return '#konto';
+  if (route === 'vecka') return '#vecka';
   if (route === 'skafferi') return '#skafferi';
   return '#browse';
 }

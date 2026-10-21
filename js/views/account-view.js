@@ -5,20 +5,20 @@
  * area lists what the app stores: statuses, ratings, own spice mixes, theme,
  * Inköpslista and a Data section. Works logged out (local data only).
  */
-import * as UserState from '../core/user-recipe-state.js?v=20261021g10';
-import { menuExtrasHtml, themeSegHtml, bindThemeSeg } from './menu-items.js?v=20261021g10';
-import { onAuthChange, onSyncStatus, syncStatus, lastSyncTime, signOut, currentUser, isAvailable } from '../core/sync.js?v=20261021g10';
-import { openSignIn } from './auth-ui.js?v=20261021g10';
-import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261021g10';
-import { kitchenProfile, setKitchen, MAX_OVEN_TRAYS } from '../core/kitchen-prefs.js?v=20261021g10';
-import * as Journal from '../core/recipe-journal.js?v=20261021g10';
-import { agoLabel, fmtCookDate, timesLabel } from './recipe-status-ui.js?v=20261021g10';
-import { ringHtml, challengePace } from './journal-ui.js?v=20261021g10';
+import * as UserState from '../core/user-recipe-state.js?v=20261021g11';
+import { menuExtrasHtml, themeSegHtml, bindThemeSeg } from './menu-items.js?v=20261021g11';
+import { onAuthChange, onSyncStatus, syncStatus, lastSyncTime, signOut, currentUser, isAvailable } from '../core/sync.js?v=20261021g11';
+import { openSignIn } from './auth-ui.js?v=20261021g11';
+import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261021g11';
+import { kitchenProfile, setKitchen, MAX_OVEN_TRAYS } from '../core/kitchen-prefs.js?v=20261021g11';
+import * as Journal from '../core/recipe-journal.js?v=20261021g11';
+import { agoLabel, fmtCookDate, timesLabel } from './recipe-status-ui.js?v=20261021g11';
+import { ringHtml, challengePace } from './journal-ui.js?v=20261021g11';
 
 const LOCAL_KEYS = [
   'jesse.recipeState.v1', 'yessy.spiceMixMissing.v1', 'jesse-theme',
   'recipeApp.state.v3', 'yessy.pantryExcluded.v1', 'yessy.spicesOwned.v1', 'yessy.prefsMeta.v1', 'yessy.photoAvailability.v1',
-  'yessy.kitchen.v1', ...Object.values(Journal.JOURNAL_KEYS),
+  'yessy.kitchen.v1', 'yessy.weekPlanSettings.v1', 'yessy.weekPlan.v1', ...Object.values(Journal.JOURNAL_KEYS),
 ];
 /** Quick-create suggestions for Mina listor. */
 const LIST_IDEAS = ['Vardag', 'Gästmiddag', 'Matlåda'];
@@ -406,7 +406,7 @@ export class AccountView {
       ['lagade', 'Lagade', groups.cooked.length], ['betyg', 'Dina betyg', ratings.length],
       ...(again.length ? [['igen', 'Laga igen?', again.length]] : []),
       ['listor', 'Mina listor', myLists.length], ['inte', 'Inte för oss', nfuIds.length],
-      ['skap', 'Kryddor och skafferi', null], ['installningar', 'Inställningar', null],
+      ['skap', 'Kryddor, skafferi och vecka', null], ['installningar', 'Inställningar', null],
       ['inkopslista', 'Inköpslista', shopRows.length], ['data', 'Data', null],
     ];
 
@@ -439,10 +439,11 @@ export class AccountView {
           ${section('inte', 'Inte för oss', nfuIds.length, nfuIds.length
             ? `<p class="acc-note">De här visas inte i receptlistan.</p><ul class="acc-list">${nfuIds.map(id => this._recipeLink(id, `<button type="button" class="acc-link-btn" data-nfu-undo="${escapeAttr(id)}" aria-label="Ångra Inte för oss för ${escapeAttr(this.byId[id].name)}">Ångra</button>`)).join('')}</ul>`
             : '<p class="acc-empty">Välj ”Inte för oss” i ▾-menyn i översikten för recept ni inte vill se. De döljs i receptlistan och du kan ångra här.</p>', where)}
-          ${section('skap', 'Kryddor och skafferi', null, `
+          ${section('skap', 'Kryddor, skafferi och vecka', null, `
             <div class="acc-links">
               <a class="acc-link-card" href="#kryddor"><span class="acc-link-title">🧂 Kryddskåpet</span><span class="acc-link-desc">Tryck på kryddorna du har hemma och se vilka kryddmixar du kan blanda själv.</span></a>
               <a class="acc-link-card" href="#skafferi"><span class="acc-link-title">🪦 Skafferiet</span><span class="acc-link-desc">Tryck på ingredienser du inte tål så tar vi bort recepten med dem.</span></a>
+              <a class="acc-link-card" href="#vecka"><span class="acc-link-title">📅 Veckoplaneraren</span><span class="acc-link-desc">Få veckans recept, ett per kategori. Byt, lås och lägg allt i inköpslistan.</span></a>
             </div>`)}
           ${section('installningar', 'Inställningar', null, `${this._themeHtml()}
             ${this._kitchenHtml()}`, where)}
@@ -451,7 +452,7 @@ export class AccountView {
             : '<p class="acc-empty">Inköpslistan är tom. Kryssa i recept i receptlistan.</p>', where)}
           ${section('data', 'Data', null, `
             <ul class="acc-data">
-              <li><strong>I den här webbläsaren</strong> (localStorage): statusar, betyg, datum du lagat recepten, anteckningar, listor, Inte för oss, årets mål, kryddval, skafferiet, tema, ditt kök, inköpslista och var du är i matlagningen.</li>
+              <li><strong>I den här webbläsaren</strong> (localStorage): statusar, betyg, datum du lagat recepten, anteckningar, listor, Inte för oss, årets mål, kryddval, skafferiet, veckoplaneraren (kategorier och veckans recept), tema, ditt kök, inköpslista och var du är i matlagningen.</li>
               <li><strong>${user ? 'På ditt konto' : 'Med ett konto'}</strong>: allt ovan utom matlagningens bockar synkas${user ? '' : ' när du loggar in'}. Anteckningar är privata och syns bara för dig.</li>
             </ul>
             <button type="button" class="acc-btn acc-btn-danger acc-clear">Rensa lokal data</button>`)}
