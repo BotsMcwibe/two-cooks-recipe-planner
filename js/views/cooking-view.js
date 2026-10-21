@@ -1,9 +1,9 @@
-import { Scheduler } from '../models/scheduler.js?v=20261021g7';
-import { RecipeGraph } from '../core/recipe-graph.js?v=20261021g7';
-import { equipmentItemName, equipmentSummary, isResource, nodeEquipmentHtml, servingItems, stepHeatHtml } from '../core/equipment.js?v=20261021g7';
-import { kitchenProfile } from '../core/kitchen-prefs.js?v=20261021g7';
+import { Scheduler } from '../models/scheduler.js?v=20261021g8';
+import { RecipeGraph } from '../core/recipe-graph.js?v=20261021g8';
+import { equipmentItemName, equipmentSummary, isResource, nodeEquipmentHtml, servingItems, stepHeatHtml } from '../core/equipment.js?v=20261021g8';
+import { kitchenProfile } from '../core/kitchen-prefs.js?v=20261021g8';
 import { formatNiceAmount } from '../utils/helpers.js';
-import { formatStepInputText, producerMap } from '../utils/derived-inputs.js?v=20261021g7';
+import { formatStepInputText, producerMap } from '../utils/derived-inputs.js?v=20261021g8';
 import {
   allergenLabel,
   difficultyLabel,
@@ -11,11 +11,11 @@ import {
   escapeAttr,
   escapeHtml,
   starHtml,
-} from '../utils/catalog-ui.js?v=20261021g7';
-import { imgFailed, isPhotoMissing, recordPhotoFailure, recordPhotoSuccess } from '../utils/photo-fallback.js?v=20261021g7';
-import * as UserState from '../core/user-recipe-state.js?v=20261021g7';
-import { bindStatusControls, kitchenMarkHtml, refreshStatusControls, statusControlHtml } from './recipe-status-ui.js?v=20261021g7';
-import { joinStepParts, sentenceCase } from '../utils/text.js?v=20261021g7';
+} from '../utils/catalog-ui.js?v=20261021g8';
+import { imgFailed, isPhotoMissing, recordPhotoFailure, recordPhotoSuccess } from '../utils/photo-fallback.js?v=20261021g8';
+import * as UserState from '../core/user-recipe-state.js?v=20261021g8';
+import { bindStatusControls, kitchenMarkHtml, refreshStatusControls, statusControlHtml } from './recipe-status-ui.js?v=20261021g8';
+import { joinStepParts, sentenceCase } from '../utils/text.js?v=20261021g8';
 
 /**
  * Cooking view - rich recipe page with hero, meta, ingredients, nutrition,

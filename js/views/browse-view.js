@@ -1,4 +1,4 @@
-import { loadPortionEnergyKcal } from '../data/loader.js?v=20261021g7';
+import { loadPortionEnergyKcal } from '../data/loader.js?v=20261021g8';
 import {
   buildFilterChips,
   displayTags,
@@ -9,11 +9,12 @@ import {
   recipeVisual,
   starHtml,
   subtitleFromSearchText,
-} from '../utils/catalog-ui.js?v=20261021g7';
-import * as UserState from '../core/user-recipe-state.js?v=20261021g7';
-import { imgFailed, isPhotoMissing, recordPhotoFailure, recordPhotoSuccess, photosLikelyUnavailable } from '../utils/photo-fallback.js?v=20261021g7';
-import { excludedPantry, clearPantryExcluded, loadPantry } from '../core/pantry-exclude.js?v=20261021g7';
-import { cardStateHtml } from './recipe-status-ui.js?v=20261021g7';
+} from '../utils/catalog-ui.js?v=20261021g8';
+import * as UserState from '../core/user-recipe-state.js?v=20261021g8';
+import { imgFailed, isPhotoMissing, recordPhotoFailure, recordPhotoSuccess, photosLikelyUnavailable } from '../utils/photo-fallback.js?v=20261021g8';
+import { excludedPantry, clearPantryExcluded, loadPantry } from '../core/pantry-exclude.js?v=20261021g8';
+import * as Journal from '../core/recipe-journal.js?v=20261021g8';
+import { cardStateHtml } from './recipe-status-ui.js?v=20261021g8';
 
 /** localStorage key: '0' when the user turned the Godkänd filter off (on by default). */
 const GODKAND_KEY = 'yessy.browse.godkandOnly';
@@ -43,8 +44,11 @@ export class BrowseView {
     this.filterChips = buildFilterChips(catalog);
     this.activeFilter = 'all';
     this.kcalOnly = false;
-    /** @type {'want'|'cooked'|null} personal status filter */
+    /** @type {string|null} personal filter: 'want' | 'cooked' | 'list:<listId>' */
     this.statusFilter = null;
+    /** Show recipes marked "Inte för oss" anyway (this visit only). */
+    this.showNfu = false;
+    this.nfu = Journal.notForUsIds();
     /** Godkänd filter (catalog "tested" mark), on by default, remembered locally. */
     this.testedOnly = loadGodkandOnly();
     this.query = '';
@@ -68,6 +72,32 @@ export class BrowseView {
     this.render();
     state.on('shoppingChange', () => this._syncCheckboxes());
     UserState.subscribe(() => this.render());
+    window.addEventListener('journalchange', (e) => {
+      const key = e.detail && e.detail.key;
+      if (key === 'recipeNotes' || key === 'cookChallenge') return;
+      if (key === 'notForUs' || !key) this.nfu = Journal.notForUsIds();
+      if (key === 'recipeLists' || !key) this._renderStatusChips();
+      this.render();
+    });
+  }
+
+  /** Vill laga, Lagad, then one chip per own list. */
+  _statusChipsHtml() {
+    const chips = UserState.STATUSES.map(s => ({ id: s, label: UserState.STATUS_LABELS[s], title: `Visa recept märkta ”${UserState.STATUS_LABELS[s]}”` }));
+    for (const l of Journal.lists()) chips.push({ id: `list:${l.id}`, label: l.name, cls: 'filter-chip-list', title: `Visa listan ”${l.name}”` });
+    return chips.map(c => this._chipHtml(c, 'status', this.statusFilter === c.id)).join('');
+  }
+
+  _renderStatusChips() {
+    if (this.statusFilter && this.statusFilter.startsWith('list:') && !Journal.getList(this.statusFilter.slice(5))) this.statusFilter = null;
+    this.$container.find('.filter-chip-group-status').html(this._statusChipsHtml());
+  }
+
+  _statusOk(id) {
+    const f = this.statusFilter;
+    if (!f) return true;
+    if (f.startsWith('list:')) { const l = Journal.getList(f.slice(5)); return !!(l && l.recipeIds.includes(id)); }
+    return UserState.get(id).status === f;
   }
 
   _chipHtml(chip, group, active) {
@@ -91,11 +121,7 @@ export class BrowseView {
       'kcal',
       false,
     );
-    const status = UserState.STATUSES.map(s => this._chipHtml(
-      { id: s, label: UserState.STATUS_LABELS[s], title: `Visa recept märkta ”${UserState.STATUS_LABELS[s]}”` },
-      'status',
-      false,
-    )).join('');
+    const status = this._statusChipsHtml();
     const tested = this._chipHtml({
       id: 'tested', cls: 'filter-chip-gk', title: this._godkandTitle(),
       html: `<span class="gk-seal" aria-hidden="true"><span class="gk-check">✓</span></span>${escapeHtml(UserState.TESTED_LABEL)}`,
@@ -110,10 +136,13 @@ export class BrowseView {
         <div class="filter-chips" role="group" aria-label="Filter">${chips}</div>
         <div class="filter-chips filter-chips-extra">
           <span class="filter-chip-group" role="group" aria-label="Godkänd och kalorier">${tested}${kcal}</span>
-          <span class="filter-chip-group filter-chip-group-status" role="group" aria-label="Min status">${status}</span>
+          <span class="filter-chip-group filter-chip-group-status" role="group" aria-label="Min status och mina listor">${status}</span>
         </div>
       </div>
-      <div class="browse-grave" id="browse-grave" hidden></div>
+      <div class="browse-notices">
+        <div class="browse-grave" id="browse-grave" hidden></div>
+        <div class="browse-grave browse-nfu" id="browse-nfu" hidden></div>
+      </div>
       <div class="browse-grid" id="browse-grid"></div>
       <div class="browse-empty" id="browse-empty" hidden></div>
       <div class="browse-more" id="browse-more" hidden></div>
@@ -126,6 +155,7 @@ export class BrowseView {
       this.render();
     });
     this.$container.on('click', '.browse-grave-clear', () => clearPantryExcluded());
+    this.$container.on('click', '.browse-nfu-toggle', () => { this.showNfu = !this.showNfu; this.render(); this.$container.find('.browse-nfu-toggle').trigger('focus'); });
     this.$container.on('click', '.browse-empty-all', () => this._setGodkand(false));
     this.$container.on('click', '.filter-chip', (e) => {
       const $btn = $(e.currentTarget);
@@ -148,7 +178,8 @@ export class BrowseView {
         this._setGodkand(!this.testedOnly);
         return;
       } else if (group === 'status') {
-        this.statusFilter = this.statusFilter === id || !UserState.STATUSES.includes(id) ? null : id;
+        const known = UserState.STATUSES.includes(id) || (id.startsWith('list:') && Journal.getList(id.slice(5)));
+        this.statusFilter = this.statusFilter === id || !known ? null : id;
         this.$container.find('.filter-chip[data-group="status"]').each((_, el) => {
           const on = el.getAttribute('data-filter') === this.statusFilter;
           el.classList.toggle('active', on);
@@ -277,8 +308,9 @@ export class BrowseView {
       }
       if (this.excluded.size) { const p = this.pantryById.get(entry.id); if (p && p.some((x) => this.excluded.has(x))) return false; }
       if (this.testedOnly && !opts.ignoreGodkand) { const m = UserState.catalogMark(entry.id); if (!m || !m.tested) return false; }
-      if (this.statusFilter && !UserState.STATUSES.includes(this.statusFilter)) this.statusFilter = null; // retired status (e.g. 'cooking')
-      if (this.statusFilter && UserState.get(entry.id).status !== this.statusFilter) return false;
+      if (this.statusFilter && !this.statusFilter.startsWith('list:') && !UserState.STATUSES.includes(this.statusFilter)) this.statusFilter = null; // retired status (e.g. 'cooking')
+      if (!this._statusOk(entry.id)) return false;
+      if (!this.showNfu && !opts.ignoreNfu && this.nfu.has(entry.id)) return false;
       if (!q) return true;
       const hay = `${entry.name || ''} ${entry.searchText || ''}`.toLowerCase();
       return hay.includes(q);
@@ -298,6 +330,13 @@ export class BrowseView {
     this.$container.find('#browse-grave').prop('hidden', !n).html(n ? `
       <a href="#skafferi" class="browse-grave-link">🪦 ${n} ${n === 1 ? 'ingrediens' : 'ingredienser'} på gravplatsen</a>
       <button type="button" class="browse-grave-clear" aria-label="Väck alla ingredienser">Väck alla ✕</button>` : '');
+    // "Inte för oss": how many matching recipes it hides right now (same filters otherwise)
+    const nfuHidden = this.nfu.size ? this._filtered({ ignoreNfu: true }).length - (this.showNfu ? list.filter(c => !this.nfu.has(c.id)).length : list.length) : 0;
+    const nfuShow = this.nfu.size > 0 && (nfuHidden > 0 || this.showNfu);
+    const nfuN = this.showNfu ? list.filter(c => this.nfu.has(c.id)).length : nfuHidden;
+    this.$container.find('#browse-nfu').prop('hidden', !nfuShow).html(nfuShow ? `
+      <a href="#konto" class="browse-grave-link" data-acc-target="acc-inte">🙅 ${nfuN} recept är inte för oss</a>
+      <button type="button" class="browse-grave-clear browse-nfu-toggle" aria-pressed="${this.showNfu}">${this.showNfu ? 'Dölj dem igen' : 'Visa ändå'}</button>` : '');
     const $grid = this.$container.find('#browse-grid');
     const $empty = this.$container.find('#browse-empty');
     const $more = this.$container.find('#browse-more');
@@ -318,6 +357,7 @@ export class BrowseView {
     }
     $empty.prop('hidden', true);
 
+    const stats = Journal.cookStatsAll();
     let html = '';
     for (const c of list) {
       const vis = recipeVisual(c);
@@ -333,10 +373,10 @@ export class BrowseView {
       const rating = starHtml(c.ratingAverage, c.ratingCount);
       const selected = this.state.isShoppingRecipeSelected(c.id);
       const checked = selected ? 'checked' : '';
-      const mine = cardStateHtml(c.id);
+      const mine = cardStateHtml(c.id, stats.get(c.id) || { count: 0 });
 
       html += `
-        <article class="recipe-card${selected ? ' is-shopping-selected' : ''}" data-id="${escapeAttr(c.id)}">
+        <article class="recipe-card${selected ? ' is-shopping-selected' : ''}${this.nfu.has(c.id) ? ' is-nfu' : ''}" data-id="${escapeAttr(c.id)}">
           <div class="recipe-card-media${noPhoto ? ' is-nophoto' : ''}" style="--ph-h:${vis.hue}" data-ph-emoji="${escapeAttr(vis.emoji)}">
             <label class="recipe-card-shop" title="Lägg till i inköpslista">
               <input type="checkbox" class="recipe-card-shop-cb" data-id="${escapeAttr(c.id)}"

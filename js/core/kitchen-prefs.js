@@ -4,7 +4,7 @@
  * Defaults come from data/equipment.json → defaultKitchen (set by the loader).
  * Fires `kitchenchange` on window when it changes.
  */
-import { touchPref } from './prefs-meta.js?v=20261021g7';
+import { touchPref } from './prefs-meta.js?v=20261021g8';
 
 const KEY = 'yessy.kitchen.v1';
 let defaults = { ovenTrays: 2, ovenFan: false };

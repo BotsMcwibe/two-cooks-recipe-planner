@@ -19,11 +19,11 @@
       if (t === 'dark') document.querySelector('meta[name="theme-color"]').setAttribute('content', '#111418');
     })();
   </script>
-  <link rel="icon" href="assets/brand/yessy-face.ico?v=20261021g7" sizes="any">
-  <link rel="icon" type="image/png" sizes="512x512" href="assets/brand/yessy-face-light-512.png?v=20261021g7" media="(prefers-color-scheme: light)">
-  <link rel="icon" type="image/png" sizes="512x512" href="assets/brand/yessy-face-dark-512.png?v=20261021g7" media="(prefers-color-scheme: dark)">
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/brand/yessy-face-apple-touch.png?v=20261021g7">
-  <link rel="stylesheet" href="css/style.css?v=20261021g7">
+  <link rel="icon" href="assets/brand/yessy-face.ico?v=20261021g8" sizes="any">
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/brand/yessy-face-light-512.png?v=20261021g8" media="(prefers-color-scheme: light)">
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/brand/yessy-face-dark-512.png?v=20261021g8" media="(prefers-color-scheme: dark)">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/brand/yessy-face-apple-touch.png?v=20261021g8">
+  <link rel="stylesheet" href="css/style.css?v=20261021g8">
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"
     integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
     crossorigin="anonymous"></script>
@@ -31,8 +31,8 @@
 <body>
   <header>
     <a href="#browse" class="brand" aria-label="Yessy, till receptlistan">
-      <img class="brand-mark brand-mark-light" src="assets/brand/yessy-face-light.png?v=20261021g7" width="36" height="36" alt="" decoding="async">
-      <img class="brand-mark brand-mark-dark" src="assets/brand/yessy-face-dark.png?v=20261021g7" width="36" height="36" alt="" decoding="async">
+      <img class="brand-mark brand-mark-light" src="assets/brand/yessy-face-light.png?v=20261021g8" width="36" height="36" alt="" decoding="async">
+      <img class="brand-mark brand-mark-dark" src="assets/brand/yessy-face-dark.png?v=20261021g8" width="36" height="36" alt="" decoding="async">
       <span class="brand-text">
         <span class="brand-word">Yessy</span>
         <span class="brand-tagline">det är dags att laga</span>
@@ -59,6 +59,7 @@
     <section id="view-cooking" style="display:none">
       <div id="cooking-hero" hidden></div>
       <div id="cooking-header" hidden></div>
+      <div id="cook-note" class="cook-note-wrap" hidden></div>
       <div id="cook-toggles" class="cook-toggles"></div>
       <div id="cook-graph" class="cook-graph"></div>
       <div id="cooking-layout" class="cooking-layout">
@@ -70,6 +71,7 @@
         </aside>
         <div class="cooking-main">
           <div id="cooking-steps"></div>
+          <div id="cook-finish" class="cook-finish-wrap"></div>
         </div>
       </div>
     </section>
@@ -84,6 +86,6 @@
     <section id="view-account" class="view-account" style="display:none"></section>
   </main>
 
-  <script type="module" src="js/main.js?v=20261021g7"></script>
+  <script type="module" src="js/main.js?v=20261021g8"></script>
 </body>
 </html>

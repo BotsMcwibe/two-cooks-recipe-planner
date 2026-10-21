@@ -1,6 +1,6 @@
-import { RecipeGraph } from '../core/recipe-graph.js?v=20261021g7';
-import { equipmentListHtml, servingLineHtml } from '../core/equipment.js?v=20261021g7';
-import { kitchenProfile } from '../core/kitchen-prefs.js?v=20261021g7';
+import { RecipeGraph } from '../core/recipe-graph.js?v=20261021g8';
+import { equipmentListHtml, servingLineHtml } from '../core/equipment.js?v=20261021g8';
+import { kitchenProfile } from '../core/kitchen-prefs.js?v=20261021g8';
 import { formatNiceAmount } from '../utils/helpers.js';
 import {
   allergenLabel,
@@ -12,11 +12,12 @@ import {
   isScalable,
   starHtml,
   subtitleFromSearchText,
-} from '../utils/catalog-ui.js?v=20261021g7';
-import { imgFailed, isPhotoMissing, recordPhotoFailure, recordPhotoSuccess } from '../utils/photo-fallback.js?v=20261021g7';
-import * as UserState from '../core/user-recipe-state.js?v=20261021g7';
-import { spiceMixTogglesHtml } from './spice-mix-ui.js?v=20261021g7';
-import { bindStatusControls, kitchenMarkHtml, refreshStatusControls, statusControlHtml } from './recipe-status-ui.js?v=20261021g7';
+} from '../utils/catalog-ui.js?v=20261021g8';
+import { imgFailed, isPhotoMissing, recordPhotoFailure, recordPhotoSuccess } from '../utils/photo-fallback.js?v=20261021g8';
+import * as UserState from '../core/user-recipe-state.js?v=20261021g8';
+import { spiceMixTogglesHtml } from './spice-mix-ui.js?v=20261021g8';
+import { bindStatusControls, cookLogHtml, kitchenMarkHtml, refreshStatusControls, statusControlHtml } from './recipe-status-ui.js?v=20261021g8';
+import { notesHtml, bindNotes } from './journal-ui.js?v=20261021g8';
 
 /**
  * HelloFresh-inspired recipe overview modal.
@@ -27,7 +28,7 @@ export class OverviewModal {
   /**
    * @param {import('../core/state.js').AppState} state
    * @param {Array<object>} catalog
-   * @param {import('../data/loader.js?v=20261021g7').RecipeRepository} repository
+   * @param {import('../data/loader.js?v=20261021g8').RecipeRepository} repository
    * @param {Array} baseIngredients
    * @param {{
    *   onCook: (id: string, portions: number) => void,
@@ -81,6 +82,7 @@ export class OverviewModal {
   _bind() {
     this.$root.on('click', '[data-close]', () => this.close());
     bindStatusControls(this.$root);
+    bindNotes(this.$root);
     UserState.subscribe((id) => {
       if (this.isOpen()) refreshStatusControls(this.$root, id);
     });
@@ -332,8 +334,10 @@ export class OverviewModal {
         ${tags ? `<div class="overview-tags">${tags}</div>` : ''}
         ${kitchenMarkHtml(entry.id)}
         ${statusControlHtml(entry.id)}
+        ${cookLogHtml(entry.id)}
         ${desc ? `<p class="overview-desc">${escapeHtml(desc)}</p>` : ''}
         ${allergens ? `<div class="overview-allergens"><span class="allergens-label">Allergener:</span> ${allergens}</div>` : ''}
+        ${notesHtml(entry.id)}
 
         ${isScalable(entry) ? `
         <div class="overview-portions">

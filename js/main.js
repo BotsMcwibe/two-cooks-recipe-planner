@@ -1,25 +1,26 @@
-import { AppState } from './core/state.js?v=20261021g7';
-import { parseHash, setHash } from './core/router.js?v=20261021g7';
-import { loadStaticData, RecipeRepository } from './data/loader.js?v=20261021g7';
-import { AppShell } from './views/app-shell.js?v=20261021g7';
-import { RecipeChrome } from './views/recipe-selector.js?v=20261021g7';
-import { isScalable } from './utils/catalog-ui.js?v=20261021g7';
-import { BrowseView } from './views/browse-view.js?v=20261021g7';
-import { OverviewModal } from './views/overview-modal.js?v=20261021g7';
-import { FlowGraph } from './views/flow-graph.js?v=20261021g7';
-import { CookingView } from './views/cooking-view.js?v=20261021g7';
-import { ShoppingSidebar } from './views/shopping-view.js?v=20261021g7';
+import { AppState } from './core/state.js?v=20261021g8';
+import { parseHash, setHash } from './core/router.js?v=20261021g8';
+import { loadStaticData, RecipeRepository } from './data/loader.js?v=20261021g8';
+import { AppShell } from './views/app-shell.js?v=20261021g8';
+import { RecipeChrome } from './views/recipe-selector.js?v=20261021g8';
+import { isScalable } from './utils/catalog-ui.js?v=20261021g8';
+import { BrowseView } from './views/browse-view.js?v=20261021g8';
+import { OverviewModal } from './views/overview-modal.js?v=20261021g8';
+import { FlowGraph } from './views/flow-graph.js?v=20261021g8';
+import { CookingView } from './views/cooking-view.js?v=20261021g8';
+import { ShoppingSidebar } from './views/shopping-view.js?v=20261021g8';
 import { Timer } from './views/timer.js';
-import { spiceMixTogglesHtml } from './views/spice-mix-ui.js?v=20261021g7';
-import { setMixMissing } from './core/spice-prefs.js?v=20261021g7';
-import { SpiceView } from './views/spice-view.js?v=20261021g7';
-import { PantryView } from './views/pantry-view.js?v=20261021g7';
-import * as UserState from './core/user-recipe-state.js?v=20261021g7';
-import { initSync, hasAuthRedirect } from './core/sync.js?v=20261021g7';
-import { AccountView } from './views/account-view.js?v=20261021g7';
-import { initAuthUi } from './views/auth-ui.js?v=20261021g7';
-import { initThemeToggle } from './utils/theme.js?v=20261021g7';
-import { initBackToTop } from './utils/back-to-top.js?v=20261021g7';
+import { spiceMixTogglesHtml } from './views/spice-mix-ui.js?v=20261021g8';
+import { setMixMissing } from './core/spice-prefs.js?v=20261021g8';
+import { SpiceView } from './views/spice-view.js?v=20261021g8';
+import { PantryView } from './views/pantry-view.js?v=20261021g8';
+import * as UserState from './core/user-recipe-state.js?v=20261021g8';
+import { initSync, hasAuthRedirect } from './core/sync.js?v=20261021g8';
+import { AccountView } from './views/account-view.js?v=20261021g8';
+import { renderCookExtras, bindCookExtras } from './views/journal-ui.js?v=20261021g8';
+import { initAuthUi } from './views/auth-ui.js?v=20261021g8';
+import { initThemeToggle } from './utils/theme.js?v=20261021g8';
+import { initBackToTop } from './utils/back-to-top.js?v=20261021g8';
 
 initThemeToggle(null);
 initBackToTop();
@@ -118,6 +119,7 @@ async function bootstrap() {
       }) || {};
       flowGraph.render(root, schedule, schedOpts, progress);
       $('#cook-spice-mixes').html(spiceMixTogglesHtml(current.spiceMixes, scale));
+      renderCookExtras(state.selectedRecipeId, { cooks: schedOpts.cooks });
       Timer.initAll($('#cooking-steps'));
     }
 
@@ -327,6 +329,7 @@ async function bootstrap() {
     if (state.currentPhase === 'cooking') updateUI({ softUpdate: false, preserveScroll: true });
   });
 
+  bindCookExtras();
   shell.setFocusShoppingHandler(() => shoppingSidebar.focus());
 
   state.on('selectedRecipeId', async (id) => {

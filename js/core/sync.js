@@ -10,14 +10,15 @@
  *   preference key), then write-through on every local change (optimistic; failures
  *   mark the store dirty and a full merge runs again when back online).
  */
-import { SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, SUPABASE_JS_URL } from '../config.js?v=20261021g7';
-import * as UserState from './user-recipe-state.js?v=20261021g7';
-import { prefTs, setPrefTs } from './prefs-meta.js?v=20261021g7';
-import { missingMixes, replaceMissingMixes } from './spice-prefs.js?v=20261021g7';
-import { excludedPantry, replacePantryExcluded } from './pantry-exclude.js?v=20261021g7';
-import { ownedSpices, replaceSpicesOwned } from './spices-owned.js?v=20261021g7';
-import { savedTheme, applySyncedTheme } from '../utils/theme.js?v=20261021g7';
-import { storedKitchen, replaceKitchen } from './kitchen-prefs.js?v=20261021g7';
+import { SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, SUPABASE_JS_URL } from '../config.js?v=20261021g8';
+import * as UserState from './user-recipe-state.js?v=20261021g8';
+import { prefTs, setPrefTs } from './prefs-meta.js?v=20261021g8';
+import { missingMixes, replaceMissingMixes } from './spice-prefs.js?v=20261021g8';
+import { excludedPantry, replacePantryExcluded } from './pantry-exclude.js?v=20261021g8';
+import { ownedSpices, replaceSpicesOwned } from './spices-owned.js?v=20261021g8';
+import { savedTheme, applySyncedTheme } from '../utils/theme.js?v=20261021g8';
+import { storedKitchen, replaceKitchen } from './kitchen-prefs.js?v=20261021g8';
+import { JOURNAL_KEYS, journalValue, replaceJournal, mergeJournal, setActor } from './recipe-journal.js?v=20261021g8';
 
 const listeners = new Set();
 let client = null;
@@ -115,6 +116,12 @@ function prefAdapters() {
       get: () => (appState ? appState.getShoppingData() : null),
       set: (v) => appState && appState.replaceShoppingData(v),
     },
+    // Journal maps (cook log, notes, lists, Inte för oss, challenge): merged record by record
+    ...Object.fromEntries(Object.keys(JOURNAL_KEYS).map((k) => [k, {
+      get: () => journalValue(k),
+      set: (v) => replaceJournal(k, v),
+      merge: mergeJournal,
+    }])),
   };
 }
 
@@ -123,6 +130,7 @@ function localPrefs() {
   for (const [key, a] of Object.entries(prefAdapters())) {
     const value = a.get();
     if (value == null) continue;
+    if (a.merge && !Object.keys(value).length && !prefTs(key)) continue; // never touched: nothing to send
     out[key] = { value, updatedAt: prefTs(key) };
   }
   return out;
@@ -171,10 +179,24 @@ async function mergeAll() {
     const mine = localPrefs();
     const merged = { ...remotePrefs };
     const adapters = prefAdapters();
+    let changed = !prefRow;
     applying = true;
     try {
+      // Record-merged keys: union both sides, apply locally, write back if the server lacks anything
+      for (const [key, a] of Object.entries(adapters)) {
+        if (!a.merge) continue;
+        const rv = remotePrefs[key];
+        const lv = mine[key];
+        if (!rv && !lv) continue;
+        const value = a.merge(lv ? lv.value : {}, rv ? rv.value : {});
+        const ts = Math.max(Number(rv && rv.updatedAt) || 0, Number(lv && lv.updatedAt) || 0);
+        a.set(value);
+        setPrefTs(key, ts);
+        if (!rv || JSON.stringify(value) !== JSON.stringify(rv.value)) { merged[key] = { value, updatedAt: ts }; changed = true; }
+      }
       for (const [key, rv] of Object.entries(remotePrefs)) {
         const lv = mine[key];
+        if (adapters[key] && adapters[key].merge) continue;
         if (adapters[key] && rv && (!lv || (Number(rv.updatedAt) || 0) > (Number(lv.updatedAt) || 0))) {
           adapters[key].set(rv.value);
           setPrefTs(key, Number(rv.updatedAt) || 0);
@@ -183,8 +205,8 @@ async function mergeAll() {
     } finally {
       applying = false;
     }
-    let changed = !prefRow;
     for (const [key, lv] of Object.entries(mine)) {
+      if (adapters[key] && adapters[key].merge) continue;
       const rv = remotePrefs[key];
       if (!rv || (Number(lv.updatedAt) || 0) > (Number(rv.updatedAt) || 0)) {
         merged[key] = lv;
@@ -231,8 +253,19 @@ function schedulePrefPush() {
       if (error) throw error;
       const remote = (data && data.prefs) || {};
       const merged = { ...remote };
+      const adapters = prefAdapters();
       for (const [key, lv] of Object.entries(localPrefs())) {
         const rv = remote[key];
+        const a = adapters[key];
+        if (a && a.merge) {
+          // Union with what other devices wrote meanwhile, and show their records here too
+          const value = a.merge(lv.value, rv ? rv.value : {});
+          const ts = Math.max(Number(lv.updatedAt) || 0, Number(rv && rv.updatedAt) || 0);
+          merged[key] = { value, updatedAt: ts };
+          applying = true;
+          try { a.set(value); } finally { applying = false; }
+          continue;
+        }
         if (!rv || (Number(lv.updatedAt) || 0) >= (Number(rv.updatedAt) || 0)) merged[key] = lv;
       }
       await writePrefs(merged);
@@ -264,11 +297,13 @@ export function initSync({ state } = {}) {
       });
       const { data } = await client.auth.getSession();
       user = data && data.session ? data.session.user : null;
+      setActor(user && user.id);
       cleanAuthFromUrl();
       if (redirectError) console.warn('[auth] sign-in link error:', redirectError);
       client.auth.onAuthStateChange((event, session) => {
         const prev = user && user.id;
         user = session ? session.user : null;
+        setActor(user && user.id);
         emit();
         notifyStatus();
         if (user && user.id !== prev) mergeAll();

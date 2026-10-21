@@ -5,18 +5,26 @@
  * area lists what the app stores: statuses, ratings, own spice mixes, theme,
  * Inköpslista and a Data section. Works logged out (local data only).
  */
-import * as UserState from '../core/user-recipe-state.js?v=20261021g7';
-import { menuExtrasHtml, themeSegHtml, bindThemeSeg } from './menu-items.js?v=20261021g7';
-import { onAuthChange, onSyncStatus, syncStatus, lastSyncTime, signOut, currentUser, isAvailable } from '../core/sync.js?v=20261021g7';
-import { openSignIn } from './auth-ui.js?v=20261021g7';
-import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261021g7';
-import { kitchenProfile, setKitchen, MAX_OVEN_TRAYS } from '../core/kitchen-prefs.js?v=20261021g7';
+import * as UserState from '../core/user-recipe-state.js?v=20261021g8';
+import { menuExtrasHtml, themeSegHtml, bindThemeSeg } from './menu-items.js?v=20261021g8';
+import { onAuthChange, onSyncStatus, syncStatus, lastSyncTime, signOut, currentUser, isAvailable } from '../core/sync.js?v=20261021g8';
+import { openSignIn } from './auth-ui.js?v=20261021g8';
+import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261021g8';
+import { kitchenProfile, setKitchen, MAX_OVEN_TRAYS } from '../core/kitchen-prefs.js?v=20261021g8';
+import * as Journal from '../core/recipe-journal.js?v=20261021g8';
+import { fmtCookDate, timesLabel } from './recipe-status-ui.js?v=20261021g8';
+import { ringHtml, challengePace } from './journal-ui.js?v=20261021g8';
 
 const LOCAL_KEYS = [
   'jesse.recipeState.v1', 'yessy.spiceMixMissing.v1', 'jesse-theme',
   'recipeApp.state.v3', 'yessy.pantryExcluded.v1', 'yessy.spicesOwned.v1', 'yessy.prefsMeta.v1', 'yessy.photoAvailability.v1',
-  'yessy.kitchen.v1',
+  'yessy.kitchen.v1', ...Object.values(Journal.JOURNAL_KEYS),
 ];
+/** Quick-create suggestions for Mina listor. */
+const LIST_IDEAS = ['Vardag', 'Gästmiddag', 'Matlåda'];
+const DEFAULT_GOAL = 30;
+/** "Laga igen?": rated 4–5 and last cooked at least this many days ago. */
+const AGAIN_DAYS = 60;
 
 const SYNC_LABEL = {
   local: 'Bara på den här enheten',
@@ -58,6 +66,10 @@ export class AccountView {
     window.addEventListener('yessy:themechange', rerender);
     window.addEventListener('yessy:prefchange', rerender);
     window.addEventListener('kitchenchange', rerender);
+    window.addEventListener('journalchange', (e) => { if (!(e.detail && e.detail.key === 'recipeNotes')) rerender(); });
+    /** Lists whose recipes are shown / which list is being renamed (kept across re-renders). */
+    this.openLists = new Set();
+    this.renaming = null;
     // "Ändra" links (Utrustning → Ditt kök) jump to a section once #konto is shown
     document.addEventListener('click', (e) => {
       const a = e.target.closest && e.target.closest('[data-acc-target]');
@@ -103,6 +115,7 @@ export class AccountView {
         this.el.querySelector(`[data-kitchen-fan="${on ? 1 : 0}"]`)?.focus();
         return;
       }
+      if (this._journalClick(t)) return;
       if (t.closest('.acc-me-btn')) { this.menuOpen = !this.menuOpen; this.render(); this._animateCircle(); this.el.querySelector(this.menuOpen ? '.acc-menu button, .acc-menu a' : '.acc-me-btn')?.focus(); return; }
       if (t.closest('.acc-logout')) { await signOut(); this.menuOpen = false; this.render(); return; }
       if (t.closest('.acc-clear')) {
@@ -118,9 +131,138 @@ export class AccountView {
       }
       if (this.menuOpen && t.isConnected && !t.closest('.acc-me')) { this.menuOpen = false; this.render(); }
     });
+    this.el.addEventListener('submit', (e) => {
+      const f = e.target;
+      if (f.matches('.ls-new')) {
+        e.preventDefault();
+        const input = f.querySelector('input');
+        const l = Journal.createList(input.value);
+        if (!l) { input.focus(); return; }
+        this.openLists.add(l.id);
+        this._focus('.ls-new input');
+      } else if (f.matches('.ls-rename')) {
+        e.preventDefault();
+        const id = f.getAttribute('data-list');
+        const v = f.querySelector('input').value;
+        this.renaming = null;
+        if (v.trim()) Journal.renameList(id, v);
+        this.render();
+        this._focus(`[data-ls-rename="${CSS.escape(id)}"]`);
+      }
+    });
+    this.el.addEventListener('change', (e) => {
+      const t = e.target;
+      if (t.matches('.ch-goal-input')) {
+        const v = Math.round(Number(t.value));
+        if (Number.isFinite(v) && v >= 1) Journal.setChallengeGoal(new Date().getFullYear(), v);
+        else this.render();
+        this._focus('.ch-goal-input');
+      }
+    });
+    this.el.addEventListener('toggle', (e) => {
+      const d = e.target;
+      if (!d.matches || !d.matches('.ls-item')) return;
+      const id = d.getAttribute('data-list');
+      if (d.open) this.openLists.add(id); else this.openLists.delete(id);
+    }, true);
     this.el.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && this.renaming && e.target.closest('.ls-rename')) {
+        const id = this.renaming; this.renaming = null; this.render(); this._focus(`[data-ls-rename="${CSS.escape(id)}"]`); return;
+      }
       if (e.key === 'Escape' && this.menuOpen) { this.menuOpen = false; this.render(); this.el.querySelector('.acc-me-btn')?.focus(); }
     });
+  }
+
+  _focus(sel) { const el = this.el.querySelector(sel); if (el) el.focus(); }
+
+  /** Clicks for challenge, lists and Inte för oss. Returns true when handled. */
+  _journalClick(t) {
+    const year = new Date().getFullYear();
+    if (t.closest('[data-ch-start]')) { Journal.setChallengeGoal(year, DEFAULT_GOAL); this._focus('.ch-goal-input'); return true; }
+    const step = t.closest('[data-ch-step]');
+    if (step) {
+      const g = Journal.challengeGoal(year) || DEFAULT_GOAL;
+      Journal.setChallengeGoal(year, g + Number(step.getAttribute('data-ch-step')));
+      this._focus(`[data-ch-step="${step.getAttribute('data-ch-step')}"]`);
+      return true;
+    }
+    if (t.closest('[data-ch-clear]')) {
+      if (window.confirm(`Ta bort målet för ${year}? Din logg finns kvar.`)) { Journal.setChallengeGoal(year, null); this._focus('[data-ch-start]'); }
+      return true;
+    }
+    const idea = t.closest('[data-ls-idea]');
+    if (idea) { const l = Journal.createList(idea.getAttribute('data-ls-idea')); if (l) this.openLists.add(l.id); this._focus('.ls-new input'); return true; }
+    const ren = t.closest('[data-ls-rename]');
+    if (ren) { this.renaming = ren.getAttribute('data-ls-rename'); this.render(); const i = this.el.querySelector('.ls-rename input'); if (i) { i.focus(); i.select(); } return true; }
+    const del = t.closest('[data-ls-delete]');
+    if (del) {
+      const l = Journal.getList(del.getAttribute('data-ls-delete'));
+      if (l && window.confirm(`Ta bort listan ”${l.name}”? Recepten finns kvar.`)) Journal.deleteList(l.id);
+      return true;
+    }
+    const out = t.closest('[data-ls-out]');
+    if (out) { Journal.setInList(out.getAttribute('data-ls-out'), out.getAttribute('data-recipe'), false); return true; }
+    const nfu = t.closest('[data-nfu-undo]');
+    if (nfu) { Journal.setNotForUs(nfu.getAttribute('data-nfu-undo'), false); return true; }
+    return false;
+  }
+
+  _challengeHtml() {
+    const year = new Date().getFullYear();
+    const goal = Journal.challengeGoal(year);
+    const done = Journal.recipesCookedIn(year);
+    if (!goal) {
+      return `<p class="acc-empty">Sätt ett mål för hur många olika recept du vill laga i år. Varje recept du loggar som lagat räknas, en gång per recept.</p>
+        <button type="button" class="acc-btn acc-btn-primary ch-start" data-ch-start>Laga ${DEFAULT_GOAL} olika recept ${year}</button>
+        ${done.length ? `<p class="acc-hint">Du har redan lagat ${done.length} olika recept i år.</p>` : ''}`;
+    }
+    const n = done.length;
+    const pace = challengePace(n, goal);
+    const icon = n >= goal ? '★' : pace.diff > 0 ? '▲' : pace.diff < 0 ? '▼' : '●';
+    const pct = Math.min(100, Math.round((n / goal) * 100));
+    const left = Math.max(0, goal - n);
+    return `<div class="ch-wrap">
+        <div class="ch-ring-wrap" role="img" aria-label="${n} av ${goal} recept">${ringHtml(n, goal)}
+          <div class="ch-ring-text" aria-hidden="true"><span class="ch-num">${n}</span><span class="ch-of">av ${goal}</span></div></div>
+        <div class="ch-info">
+          <p class="ch-title">Laga ${goal} olika recept ${year}</p>
+          <p class="ch-pace"><span class="ch-pace-icon" aria-hidden="true">${icon}</span>${escapeHtml(pace.text)}</p>
+          <p class="ch-sub">${pct} % klart${left ? ` · ${left} kvar` : ''}</p>
+          <div class="ch-edit">
+            <span class="ch-edit-label" id="ch-goal-label">Mål</span>
+            <div class="portion-controls kitchen-stepper ch-stepper" role="group" aria-labelledby="ch-goal-label">
+              <button type="button" data-ch-step="-1" aria-label="Lägre mål" ${goal <= 1 ? 'disabled' : ''}>−</button>
+              <input type="number" class="ch-goal-input" min="1" max="${Journal.MAX_GOAL}" value="${goal}" aria-label="Antal recept i år">
+              <button type="button" data-ch-step="1" aria-label="Högre mål" ${goal >= Journal.MAX_GOAL ? 'disabled' : ''}>+</button>
+            </div>
+            <button type="button" class="acc-link-btn" data-ch-clear>Ta bort mål</button>
+          </div>
+        </div>
+      </div>
+      ${n ? `<details class="ch-done"><summary>Lagade i år (${n})</summary><ul class="acc-list">${done.map((id) => this._recipeLink(id, `<span class="acc-meta">${escapeHtml(fmtCookDate(Journal.cookStats(id).last))}</span>`)).join('')}</ul></details>` : ''}`;
+  }
+
+  _listsHtml() {
+    const all = Journal.lists();
+    const ideas = LIST_IDEAS.filter((n) => !all.some((l) => l.name.toLowerCase() === n.toLowerCase()));
+    const form = `<form class="ls-new"><input type="text" maxlength="${Journal.MAX_LIST_NAME}" placeholder="Ny lista" aria-label="Namn på ny lista" autocomplete="off"><button type="submit" class="acc-btn">Skapa</button></form>
+      ${ideas.length ? `<div class="ls-ideas">${ideas.map((n) => `<button type="button" class="ls-idea" data-ls-idea="${escapeAttr(n)}">+ ${escapeHtml(n)}</button>`).join('')}</div>` : ''}`;
+    if (!all.length) {
+      return `<p class="acc-empty">Samla recept i egna listor, till exempel Vardag, Gästmiddag eller Matlåda. Lägg till recept från ▾ bredvid ”Vill laga” i översikten. Listorna blir filter i receptlistan.</p>${form}`;
+    }
+    const items = all.map((l) => {
+      const recipes = l.recipeIds.filter((id) => this.byId[id]);
+      const head = this.renaming === l.id
+        ? `<form class="ls-rename" data-list="${escapeAttr(l.id)}"><input type="text" value="${escapeAttr(l.name)}" maxlength="${Journal.MAX_LIST_NAME}" aria-label="Nytt namn"><button type="submit" class="acc-btn">Spara</button></form>`
+        : `<summary><span class="ls-name">${escapeHtml(l.name)}</span><span class="acc-count">${recipes.length}</span></summary>`;
+      const body = recipes.length
+        ? `<ul class="acc-list">${recipes.map((id) => this._recipeLink(id, `<button type="button" class="acc-link-btn" data-ls-out="${escapeAttr(l.id)}" data-recipe="${escapeAttr(id)}" aria-label="Ta bort ${escapeAttr(this.byId[id].name)} från ${escapeAttr(l.name)}">Ta bort</button>`)).join('')}</ul>`
+        : '<p class="acc-empty">Tom lista. Lägg till recept från ▾ i översikten.</p>';
+      const actions = `<div class="ls-actions"><button type="button" class="acc-link-btn" data-ls-rename="${escapeAttr(l.id)}">Byt namn</button><button type="button" class="acc-link-btn" data-ls-delete="${escapeAttr(l.id)}">Ta bort lista</button></div>`;
+      if (this.renaming === l.id) return `<div class="ls-item is-renaming">${head}</div>`;
+      return `<details class="ls-item" data-list="${escapeAttr(l.id)}"${this.openLists.has(l.id) ? ' open' : ''}>${head}<div class="ls-body">${body}${actions}</div></details>`;
+    }).join('');
+    return `<div class="ls-lists">${items}</div>${form}`;
   }
 
   /** Tema: Ljust / Mörkt / System (System follows the device). */
@@ -222,9 +364,23 @@ export class AccountView {
       if (rating) ratings.push({ id: c.id, rating, name: c.name });
     }
     for (const g of Object.values(groups)) g.sort((a, b) => a.name.localeCompare(b.name, 'sv'));
-    const list = (arr, empty) => arr.length
-      ? `<ul class="acc-list${arr.length > 10 ? ' is-long' : ''}">${arr.map(r => this._recipeLink(r.id, starsHtml(r.rating))).join('')}</ul>`
+    const stats = Journal.cookStatsAll();
+    const cookMeta = (id) => {
+      const st = stats.get(id);
+      return st ? `<span class="acc-meta" title="Lagad ${timesLabel(st.count)}, senast ${escapeAttr(fmtCookDate(st.last))}">${st.count > 1 ? `${st.count}× · ` : ''}${escapeHtml(fmtCookDate(st.last))}</span>` : '';
+    };
+    const list = (arr, empty, meta = false) => arr.length
+      ? `<ul class="acc-list${arr.length > 10 ? ' is-long' : ''}">${arr.map(r => this._recipeLink(r.id, `<span class="acc-right">${meta ? cookMeta(r.id) : ''}${starsHtml(r.rating)}</span>`)).join('')}</ul>`
       : `<p class="acc-empty">${empty}</p>`;
+    // Laga igen?: rated 4–5, last cooked AGAIN_DAYS+ days ago, longest ago first
+    const cutoff = Journal.todayIso(new Date(Date.now() - AGAIN_DAYS * 864e5));
+    const again = ratings.filter(r => r.rating >= 4 && stats.get(r.id) && stats.get(r.id).last <= cutoff)
+      .sort((a, b) => stats.get(a.id).last.localeCompare(stats.get(b.id).last));
+    const nfuIds = [...Journal.notForUsIds()].filter(id => this.byId[id])
+      .sort((a, b) => this.byId[a].name.localeCompare(this.byId[b].name, 'sv'));
+    const myLists = Journal.lists();
+    const year = new Date().getFullYear();
+    const goal = Journal.challengeGoal(year);
 
     const avg = ratings.length ? ratings.reduce((s, r) => s + r.rating, 0) / ratings.length : 0;
     const dist = [5, 4, 3, 2, 1].map(n => ({ n, count: ratings.filter(r => r.rating === n).length }));
@@ -245,8 +401,11 @@ export class AccountView {
       </section>`;
 
     const nav = [
+      ['utmaning', 'Årets matutmaning', goal ? `${Journal.recipesCookedIn(year).length}/${goal}` : null],
       ['vill', 'Vill laga', groups.want.length],
       ['lagade', 'Lagade', groups.cooked.length], ['betyg', 'Dina betyg', ratings.length],
+      ...(again.length ? [['igen', 'Laga igen?', again.length]] : []),
+      ['listor', 'Mina listor', myLists.length], ['inte', 'Inte för oss', nfuIds.length],
       ['skap', 'Kryddor och skafferi', null], ['installningar', 'Inställningar', null],
       ['inkopslista', 'Inköpslista', shopRows.length], ['data', 'Data', null],
     ];
@@ -264,8 +423,9 @@ export class AccountView {
             <p class="acc-lede">${user ? 'Dina recept, betyg och val, synkade mellan dina enheter.' : 'Du är inte inloggad. Allt nedan sparas bara i den här webbläsaren. Logga in för att få det på alla dina enheter.'}</p>
             ${!user && isAvailable() ? '<button type="button" class="acc-btn acc-btn-primary acc-signin acc-signin-hero">Logga in med e-postlänk</button>' : ''}
           </div>
+          ${section('utmaning', `Årets matutmaning ${year}`, null, this._challengeHtml(), where)}
           ${section('vill', 'Vill laga', groups.want.length, list(groups.want, 'Markera recept med ”Vill laga” så hamnar de här.'), where)}
-          ${section('lagade', 'Lagade', groups.cooked.length, list(groups.cooked, 'Inga lagade recept än.'), where)}
+          ${section('lagade', 'Lagade', groups.cooked.length, list(groups.cooked, 'Inga lagade recept än. Tryck ”Klart! Logga som lagad” när du lagat klart, så sparas datumet här.', true), where)}
           ${section('betyg', 'Dina betyg', ratings.length, ratings.length ? `
             <div class="acc-ratings">
               <div class="acc-avg"><span class="acc-avg-num">${avg.toFixed(1).replace('.', ',')}</span><span class="acc-avg-sub">snitt av ${ratings.length} betyg</span></div>
@@ -273,6 +433,12 @@ export class AccountView {
             </div>
             <h3 class="acc-sub">Högst betygsatta</h3>
             <ul class="acc-list">${top.map(r => this._recipeLink(r.id, starsHtml(r.rating))).join('')}</ul>` : '<p class="acc-empty">Du har inte satt några betyg än.</p>', where)}
+          ${again.length ? section('igen', 'Laga igen?', again.length, `<p class="acc-note">Recept du gett 4–5 ★ men inte lagat på minst ${AGAIN_DAYS} dagar.</p>
+            <ul class="acc-list">${again.map(r => this._recipeLink(r.id, `<span class="acc-right"><span class="acc-meta">senast ${escapeHtml(fmtCookDate(stats.get(r.id).last))}</span>${starsHtml(r.rating)}</span>`)).join('')}</ul>`, where) : ''}
+          ${section('listor', 'Mina listor', myLists.length, this._listsHtml(), where)}
+          ${section('inte', 'Inte för oss', nfuIds.length, nfuIds.length
+            ? `<p class="acc-note">De här visas inte i receptlistan.</p><ul class="acc-list">${nfuIds.map(id => this._recipeLink(id, `<button type="button" class="acc-link-btn" data-nfu-undo="${escapeAttr(id)}" aria-label="Ångra Inte för oss för ${escapeAttr(this.byId[id].name)}">Ångra</button>`)).join('')}</ul>`
+            : '<p class="acc-empty">Välj ”Inte för oss” i ▾-menyn i översikten för recept ni inte vill se. De döljs i receptlistan och du kan ångra här.</p>', where)}
           ${section('skap', 'Kryddor och skafferi', null, `
             <div class="acc-links">
               <a class="acc-link-card" href="#kryddor"><span class="acc-link-title">🧂 Kryddskåpet</span><span class="acc-link-desc">Tryck på kryddorna du har hemma och se vilka kryddmixar du kan blanda själv.</span></a>
@@ -285,8 +451,8 @@ export class AccountView {
             : '<p class="acc-empty">Inköpslistan är tom. Kryssa i recept i receptlistan.</p>', where)}
           ${section('data', 'Data', null, `
             <ul class="acc-data">
-              <li><strong>I den här webbläsaren</strong> (localStorage): statusar, betyg, kryddval, tema, ditt kök, inköpslista och var du är i matlagningen.</li>
-              <li><strong>${user ? 'På ditt konto' : 'Med ett konto'}</strong>: statusar och betyg, kryddval, tema, ditt kök och inköpslista synkas${user ? '' : ' när du loggar in'}. Matlagningens bockar stannar på enheten.</li>
+              <li><strong>I den här webbläsaren</strong> (localStorage): statusar, betyg, datum du lagat recepten, anteckningar, listor, Inte för oss, årets mål, kryddval, skafferiet, tema, ditt kök, inköpslista och var du är i matlagningen.</li>
+              <li><strong>${user ? 'På ditt konto' : 'Med ett konto'}</strong>: allt ovan utom matlagningens bockar synkas${user ? '' : ' när du loggar in'}. Anteckningar är privata och syns bara för dig.</li>
             </ul>
             <button type="button" class="acc-btn acc-btn-danger acc-clear">Rensa lokal data</button>`)}
         </div>

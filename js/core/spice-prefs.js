@@ -2,7 +2,7 @@
  * Per-mix "Har inte mixen" preference (localStorage, keyed by mix ingredient id).
  * Fires a `spicemixchange` event on window when it changes.
  */
-import { touchPref } from './prefs-meta.js?v=20261021g7';
+import { touchPref } from './prefs-meta.js?v=20261021g8';
 
 const KEY = 'yessy.spiceMixMissing.v1';
 
