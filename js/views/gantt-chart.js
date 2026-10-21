@@ -1,6 +1,6 @@
-import { Scheduler } from '../models/scheduler.js?v=20261021g4';
-import { isResource } from '../core/equipment.js?v=20261021g4';
-import { kitchenProfile } from '../core/kitchen-prefs.js?v=20261021g4';
+import { Scheduler } from '../models/scheduler.js?v=20261021g5';
+import { isResource } from '../core/equipment.js?v=20261021g5';
+import { kitchenProfile } from '../core/kitchen-prefs.js?v=20261021g5';
 
 /**
  * Gantt chart view - renders the process visualization as positioned DOM divs.

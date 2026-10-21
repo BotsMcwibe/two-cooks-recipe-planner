@@ -10,14 +10,14 @@
  *   preference key), then write-through on every local change (optimistic; failures
  *   mark the store dirty and a full merge runs again when back online).
  */
-import { SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, SUPABASE_JS_URL } from '../config.js?v=20261021g4';
-import * as UserState from './user-recipe-state.js?v=20261021g4';
-import { prefTs, setPrefTs } from './prefs-meta.js?v=20261021g4';
-import { missingMixes, replaceMissingMixes } from './spice-prefs.js?v=20261021g4';
-import { excludedPantry, replacePantryExcluded } from './pantry-exclude.js?v=20261021g4';
-import { ownedSpices, replaceSpicesOwned } from './spices-owned.js?v=20261021g4';
-import { savedTheme, applySyncedTheme } from '../utils/theme.js?v=20261021g4';
-import { storedKitchen, replaceKitchen } from './kitchen-prefs.js?v=20261021g4';
+import { SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, SUPABASE_JS_URL } from '../config.js?v=20261021g5';
+import * as UserState from './user-recipe-state.js?v=20261021g5';
+import { prefTs, setPrefTs } from './prefs-meta.js?v=20261021g5';
+import { missingMixes, replaceMissingMixes } from './spice-prefs.js?v=20261021g5';
+import { excludedPantry, replacePantryExcluded } from './pantry-exclude.js?v=20261021g5';
+import { ownedSpices, replaceSpicesOwned } from './spices-owned.js?v=20261021g5';
+import { savedTheme, applySyncedTheme } from '../utils/theme.js?v=20261021g5';
+import { storedKitchen, replaceKitchen } from './kitchen-prefs.js?v=20261021g5';
 
 const listeners = new Set();
 let client = null;

@@ -3,7 +3,7 @@
  * The initial theme is applied by an inline script in <head> (before first paint):
  * a saved choice in localStorage wins, otherwise prefers-color-scheme.
  */
-import { touchPref } from '../core/prefs-meta.js?v=20261021g4';
+import { touchPref } from '../core/prefs-meta.js?v=20261021g5';
 
 export const THEME_KEY = 'jesse-theme';
 const THEME_COLORS = { light: '#f4f5f7', dark: '#111418' };

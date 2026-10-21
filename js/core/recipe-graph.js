@@ -1,4 +1,4 @@
-import { isResource, recipeAfterIds } from './equipment.js?v=20261021g4';
+import { isResource, recipeAfterIds } from './equipment.js?v=20261021g5';
 
 /**
  * Map-based recipe graph for O(1) lookups by recipe/output id.
@@ -20,7 +20,7 @@ export function convertAmount(amount, from, to, ingredientId) {
 
 export class RecipeGraph {
   /**
-   * @param {Iterable<import('../models/recipe.js?v=20261021g4').Recipe>|Map<string, import('../models/recipe.js?v=20261021g4').Recipe>} recipes
+   * @param {Iterable<import('../models/recipe.js?v=20261021g5').Recipe>|Map<string, import('../models/recipe.js?v=20261021g5').Recipe>} recipes
    */
   constructor(recipes) {
     this.byId = new Map();
