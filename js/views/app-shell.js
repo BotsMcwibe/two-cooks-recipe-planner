@@ -16,6 +16,7 @@ export class AppShell {
       pantry: $('#view-pantry'),
       account: $('#view-account'),
       week: $('#view-week'),
+      shop: $('#view-shop'),
     };
     this.onFocusShopping = null;
     this._bind();
@@ -83,7 +84,7 @@ export class AppShell {
     const recipePhase = active === 'cooking';
     $('main').toggleClass('main-browse', active === 'browse');
     $('main').toggleClass('main-recipe', recipePhase);
-    $('main').toggleClass('main-spices', active === 'spices' || active === 'pantry' || active === 'account' || active === 'week');
+    $('main').toggleClass('main-spices', active === 'spices' || active === 'pantry' || active === 'account' || active === 'week' || active === 'shop');
     $('main').toggleClass('main-account', active === 'account');
     $('#app-layout').toggleClass('is-browse', active === 'browse');
   }

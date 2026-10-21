@@ -1,6 +1,6 @@
-import { ShoppingListAggregator } from '../core/shopping-list.js?v=20261021g11';
+import { ShoppingListAggregator } from '../core/shopping-list.js?v=20261021g12';
 import { formatNiceAmount } from '../utils/helpers.js';
-import { escapeAttr, escapeHtml, isPantryIngredient, isScalable } from '../utils/catalog-ui.js?v=20261021g11';
+import { escapeAttr, escapeHtml, isPantryIngredient, isScalable } from '../utils/catalog-ui.js?v=20261021g12';
 
 /**
  * Persistent Inköpslista sidebar: selected recipes + portion controls + aggregated list.
@@ -13,7 +13,7 @@ export class ShoppingSidebar {
    * @param {object} unitMap
    * @param {object} baseIngredientMap
    * @param {object} tagsData
-   * @param {import('../data/loader.js?v=20261021g11').RecipeRepository} repository
+   * @param {import('../data/loader.js?v=20261021g12').RecipeRepository} repository
    */
   constructor(state, catalog, unitMap, baseIngredientMap, tagsData, repository) {
     this.state = state;
@@ -63,6 +63,9 @@ export class ShoppingSidebar {
     // then let the anchor's #overview/<id> hash drive the router.
     this.$container.on('click', '.shop-recipe-link', (e) => {
       if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button > 0) return;
+      if (this._drawerOpen) this.closeDrawer({ restoreFocus: false });
+    });
+    this.$container.on('click', '.shopping-page-link', () => {
       if (this._drawerOpen) this.closeDrawer({ restoreFocus: false });
     });
     this.$container.on('click', '.shopping-sidebar-close', (e) => {
@@ -185,13 +188,18 @@ export class ShoppingSidebar {
   }
 
   /** Convert the currently aggregated entries to the sender-friendly JSON shape. */
-  _buildCopyPayload(groups) {
-    const payload = { ingredienser: [], skafferi: [] };
+  _buildCopyPayload(groups, selectedIds = []) {
+    const payload = { recept: [], ingredienser: [], skafferi: [] };
+    for (const id of selectedIds) {
+      const c = this.catalogById[id];
+      if (c) payload.recept.push({ namn: c.name, portioner: isScalable(c) ? this.state.getShoppingPortions(id) : (c.basePortions || 4) });
+    }
     for (const entries of Object.values(groups)) {
       for (const entry of entries) {
         const unit = entry.unit?.abbreviation || '';
         const item = {
           name: entry.ingredient ? entry.ingredient.name : entry.ingredientId,
+          recept: [...(entry.sources || [])],
           // Keep the same rounded/fractional display used in the sidebar.
           amount: formatNiceAmount(entry.amount, unit),
           unit,
@@ -264,6 +272,7 @@ export class ShoppingSidebar {
             <button type="button" class="shopping-sidebar-close" aria-label="Stäng inköpslista">×</button>
           </div>
         </div>
+        <a class="shopping-page-link" href="#inkop">Visa som sida <span aria-hidden="true">›</span></a>
         <div class="shopping-sidebar-body">`;
 
       if (!count) {
@@ -314,7 +323,7 @@ export class ShoppingSidebar {
         }
 
         const groups = aggregator.getByTag();
-        this._copyPayload = this._buildCopyPayload(groups);
+        this._copyPayload = this._buildCopyPayload(groups, selectedIds);
         const groupNames = Object.keys(groups);
         if (groupNames.length) {
           html += '<div class="shopping-groups">';

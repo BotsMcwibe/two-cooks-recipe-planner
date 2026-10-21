@@ -14,12 +14,12 @@
  * courses (no breakfast, dessert or sides) unless the category itself is a meal.
  * Settings + picks live in core/week-plan.js (localStorage + Supabase prefs).
  */
-import { categoryChips, isMainCourse, escapeAttr, escapeHtml, recipeVisual, isScalable, difficultyLabel } from '../utils/catalog-ui.js?v=20261021g11';
-import * as WeekPlan from '../core/week-plan.js?v=20261021g11';
-import * as UserState from '../core/user-recipe-state.js?v=20261021g11';
-import * as Journal from '../core/recipe-journal.js?v=20261021g11';
-import { excludedPantry, loadPantry } from '../core/pantry-exclude.js?v=20261021g11';
-import { isPhotoMissing, imgFailed } from '../utils/photo-fallback.js?v=20261021g11';
+import { categoryChips, isMainCourse, escapeAttr, escapeHtml, recipeVisual, isScalable, difficultyLabel } from '../utils/catalog-ui.js?v=20261021g12';
+import * as WeekPlan from '../core/week-plan.js?v=20261021g12';
+import * as UserState from '../core/user-recipe-state.js?v=20261021g12';
+import * as Journal from '../core/recipe-journal.js?v=20261021g12';
+import { excludedPantry, loadPantry } from '../core/pantry-exclude.js?v=20261021g12';
+import { isPhotoMissing, imgFailed } from '../utils/photo-fallback.js?v=20261021g12';
 
 const RECENT_DAYS = 14;
 const LOCK_SVG = '<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></g></svg>';
@@ -478,8 +478,8 @@ export class WeekView {
       if (!this.state.isShoppingRecipeSelected(p.recipeId)) { this.state.toggleShoppingRecipe(p.recipeId); added++; }
     }
     this.flash = added
-      ? `${added} ${recipesWord(added)} tillagda. <a href="#browse" class="week-flash-link">Visa inköpslistan</a>`
-      : 'Allt fanns redan i inköpslistan. <a href="#browse" class="week-flash-link">Visa inköpslistan</a>';
+      ? `${added} ${recipesWord(added)} tillagda. <a href="#inkop" class="week-flash-link">Visa inköpslistan</a>`
+      : 'Allt fanns redan i inköpslistan. <a href="#inkop" class="week-flash-link">Visa inköpslistan</a>';
     this._renderActions();
   }
 }

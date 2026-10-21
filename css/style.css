@@ -3246,3 +3246,53 @@ p.eq-serving { font-size: 0.85rem; margin: 8px 0 0; }
 .week-cards { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
 .week-eyebrow { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted); }
 .week-card-missing { flex-direction: column; gap: 4px; }
+
+/* Sidebar → Inköpslista as a page */
+.shopping-page-link {
+  flex: none; display: block; padding: 8px 16px; font-size: 0.85rem; font-weight: 600; color: var(--primary);
+  text-decoration: none; border-bottom: 1px solid var(--border);
+}
+.shopping-page-link:hover { text-decoration: underline; }
+
+/* === Inköpslista som sida (#inkop, #inkop/<code>) === */
+.inkop-page { max-width: 820px; margin: 0 auto; }
+.inkop-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 14px 0; }
+.inkop-actions .acc-btn { display: inline-flex; align-items: center; gap: 7px; }
+.inkop-actions .acc-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.inkop-flash { font-size: 0.9rem; color: var(--text-muted); }
+.inkop-flash a { color: var(--primary); font-weight: 600; }
+.inkop-url { width: min(100%, 360px); padding: 4px 8px; border: 1px solid var(--border); border-radius: 6px; background: var(--surface-2); color: var(--text); font: inherit; font-size: 0.85rem; }
+.inkop-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; margin-bottom: 14px; box-shadow: var(--shadow); }
+.inkop-recipes { list-style: none; margin: 0; padding: 0; }
+.inkop-recipe { display: flex; align-items: center; justify-content: space-between; gap: 8px 12px; padding: 8px 0; border-top: 1px solid var(--divider-soft); flex-wrap: wrap; }
+.inkop-recipe:first-child { border-top: 0; }
+.inkop-recipe-link { font-weight: 600; color: var(--text); text-decoration: none; min-width: 0; }
+.inkop-recipe-link span { color: var(--text-muted); }
+.inkop-recipe-link:hover { text-decoration: underline; }
+.inkop-recipe-right { display: inline-flex; align-items: center; gap: 8px; margin-left: auto; }
+.inkop-port { font-size: 0.85rem; color: var(--text-muted); font-variant-numeric: tabular-nums; }
+.inkop-ing-head { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 12px; }
+.inkop-ing-head .week-h2 { margin-bottom: 4px; }
+.inkop-progress { font-size: 0.85rem; color: var(--text-muted); }
+.inkop-ing-head .acc-link-btn { margin-left: auto; }
+.inkop-group h3 { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); margin: 14px 0 4px; }
+.inkop-items { list-style: none; margin: 0; padding: 0; }
+.inkop-item label { display: flex; align-items: flex-start; gap: 10px; padding: 8px 4px; border-top: 1px solid var(--divider-soft); cursor: pointer; }
+.inkop-item:first-child label { border-top: 0; }
+.inkop-cb { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.inkop-box {
+  flex: none; width: 20px; height: 20px; margin-top: 1px; border: 2px solid var(--separator); border-radius: 5px; background: var(--surface);
+  display: grid; place-items: center; font-size: 13px; font-weight: 900; line-height: 1; color: var(--on-accent);
+}
+.inkop-cb:checked + .inkop-box { background: var(--primary); border-color: var(--primary); }
+.inkop-cb:checked + .inkop-box::after { content: '✓'; }
+.inkop-cb:focus-visible + .inkop-box { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
+.inkop-text { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.inkop-amt { font-weight: 700; font-variant-numeric: tabular-nums; }
+.inkop-src { font-size: 0.78rem; color: var(--text-muted); line-height: 1.35; }
+.inkop-src-amt { font-weight: 600; color: var(--text); font-variant-numeric: tabular-nums; }
+.inkop-item.is-checked .inkop-line { text-decoration: line-through; color: var(--text-muted); }
+.inkop-item.is-checked .inkop-src, .inkop-item.is-checked .inkop-src-amt { color: var(--text-faint); }
+@media (max-width: 520px) {
+  .inkop-card { padding: 12px; }
+}

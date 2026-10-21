@@ -7,6 +7,7 @@
  *   #kryddor              → kryddskåpet (spice blend calculator)
  *   #skafferi             → skafferiet (pantry staples → recipes)
  *   #vecka                → veckoplaneraren (week planner)
+ *   #inkop[/<code>]       → inköpslista som sida (own, or a shared list code)
  *   #browse | # | empty   → receptlista (browse)
  */
 
@@ -22,6 +23,7 @@
 export function normalizeHash(hash) {
   const raw = String(hash || '').replace(/^#/, '');
   if (!raw || raw === 'browse') return 'browse';
+  if (/^inkop(\/|$)/i.test(raw)) return `inkop${raw.slice(5)}`;
   const m = raw.match(/^(cook|overview)\/(.+)$/i);
   if (!m) return raw.toLowerCase();
   let id = m[2];
@@ -48,6 +50,10 @@ export function parseHash(hash = typeof location !== 'undefined' ? location.hash
   }
   if (raw.toLowerCase() === 'skafferi') {
     return { route: 'skafferi', masterId: null };
+  }
+  const ink = raw.match(/^inkop(?:\/(.*))?$/i);
+  if (ink) {
+    return { route: 'inkop', masterId: ink[1] ? ink[1] : null };
   }
   if (raw.toLowerCase() === 'vecka') {
     return { route: 'vecka', masterId: null };
@@ -90,6 +96,7 @@ export function hashFor(route, masterId = null) {
   if (route === 'kryddor') return '#kryddor';
   if (route === 'konto') return '#konto';
   if (route === 'vecka') return '#vecka';
+  if (route === 'inkop') return masterId ? `#inkop/${masterId}` : '#inkop';
   if (route === 'skafferi') return '#skafferi';
   return '#browse';
 }
