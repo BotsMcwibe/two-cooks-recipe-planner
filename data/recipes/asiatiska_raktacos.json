@@ -76,6 +76,13 @@
         "Koriander är 1 st från 2 till 4 portioner. Inte uppskalad.",
         "Gurka är 1 st vid 4 portioner. 2 och 3 portioner står på 0,5 st.",
         "Tomatens korttyp är ekologisk tomat."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -121,6 +128,13 @@
       "devNotes": [
         "Lime är 1 st från 2 till 4 portioner. Inte uppskalad.",
         "Klyftorna delas: en generös skvätt till pico de gallo (0,4 st), en skvätt till såsen (0,2 st), resten pressas över tacosen (0,4 st). Råreceptet anger ingen proportion."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -150,7 +164,7 @@
         }
       ],
       "steps": [
-        "Blanda {{asiatiska_raktacos__chopped_salsa_veg}} med en generös skvätt saft från {{asiatiska_raktacos__lime_wedges}}, {{salt}} och en nypa {{pepper}} i en medelstor skål."
+        "Blanda {{asiatiska_raktacos__chopped_salsa_veg}} med en generös skvätt saft från {{asiatiska_raktacos__lime_wedges}}, {{salt}} och en nypa {{pepper}} i {{eq:skal_1}}."
       ],
       "duration": 3,
       "tags": [
@@ -158,7 +172,8 @@
       ],
       "equipment": [
         {
-          "type": "skal_medelstor"
+          "type": "skal_medelstor",
+          "ref": "skal_1"
         }
       ]
     },
@@ -189,8 +204,8 @@
         }
       ],
       "steps": [
-        "Grovhacka {{king_prawns}} på en separat skärbräda och krydda med {{salt}}.",
-        "Hetta upp {{olive_oil}} i en stor stekpanna på medelhög värme.",
+        "Grovhacka {{king_prawns}} på en separat {{eq:skarbrada_ra|noun}} och krydda med {{salt}}.",
+        "Hetta upp {{olive_oil}} i {{eq:stekpanna_1}} på medelhög värme.",
         "Stek räkorna och {{jorden_runt}} i 2–3 min, eller tills räkorna är gyllene och genomstekta."
       ],
       "duration": 5,
@@ -202,7 +217,16 @@
       "heat": "medelhög",
       "equipment": [
         {
-          "type": "stekpanna_stor"
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada_ra",
+          "separate": true,
+          "rawKinds": [
+            "shellfish"
+          ]
         }
       ],
       "devNotes": [
@@ -222,7 +246,7 @@
         }
       ],
       "steps": [
-        "Värm {{mini_tortillas}} i 30–60 sek i mikrovågsugnen."
+        "Värm {{mini_tortillas}} i 30–60 sek i {{eq:mikro_1|def}}."
       ],
       "duration": 1,
       "wait": 1,
@@ -233,6 +257,12 @@
       "devNotes": [
         "Det är ett alternativ, inte en andra klocka i samma nod.",
         "Kortet säger fullkorn. Befintlig mini_tortillas används, inte en ny id."
+      ],
+      "equipment": [
+        {
+          "type": "mikro",
+          "ref": "mikro_1"
+        }
       ]
     },
     {
@@ -267,7 +297,7 @@
         }
       ],
       "steps": [
-        "Blanda {{sweet_chili_sauce}}, {{vegan_sriracha_mayo}}, en skvätt saft från {{asiatiska_raktacos__lime_wedges}}, {{salt}} och en nypa {{pepper}} i en liten skål."
+        "Blanda {{sweet_chili_sauce}}, {{vegan_sriracha_mayo}}, en skvätt saft från {{asiatiska_raktacos__lime_wedges}}, {{salt}} och en nypa {{pepper}} i {{eq:skal_2}}."
       ],
       "duration": 2,
       "tags": [
@@ -276,6 +306,12 @@
       "devNotes": [
         "Såsen är sweet chili plus vegansk srirachamajonnäs, inte en egen SKU och inte sriracha på burk.",
         "4 portioner är 100 g majonnäs. 3 portioner är 75 g, inte 80 g. Sweet chili är 80 g vid både 3 och 4 portioner."
+      ],
+      "equipment": [
+        {
+          "type": "skal_liten",
+          "ref": "skal_2"
+        }
       ]
     },
     {

@@ -53,7 +53,7 @@
         }
       ],
       "steps": [
-        "Koka upp {{small_potato}} i en stor kastrull med saltat vatten.",
+        "Koka upp {{small_potato}} i {{eq:kastrull_1}} med saltat vatten.",
         "Koka i 15 min, eller tills de enkelt kan delas med en kniv."
       ],
       "duration": 3,
@@ -94,7 +94,7 @@
         }
       ],
       "steps": [
-        "Häll av vattnet och lägg tillbaka {{flaskytterfile_graddsas__boiled_potatoes}} i kastrullen. Krydda med en nypa {{salt}} och {{pepper}}. Ställ åt sidan under lock så potatisen håller värmen."
+        "Häll av vattnet och lägg tillbaka {{flaskytterfile_graddsas__boiled_potatoes}} i {{eq:kastrull_1|def}}. Krydda med en nypa {{salt}} och {{pepper}}. Ställ åt sidan under lock så potatisen håller värmen."
       ],
       "duration": 2,
       "tags": [],
@@ -103,7 +103,8 @@
           "type": "kastrull_stor",
           "ref": "kastrull_1",
           "transition": "keep",
-          "offHeat": true
+          "offHeat": true,
+          "lid": true
         }
       ],
       "devNotes": [
@@ -138,7 +139,7 @@
         }
       ],
       "steps": [
-        "Hetta upp en skvätt {{olive_oil}} i en stor stekpanna på hög värme. Krydda {{pork_tenderloin}} med {{garlic_flakes}} och en nypa {{salt}}.",
+        "Hetta upp en skvätt {{olive_oil}} i {{eq:stekpanna_1}} på hög värme. Krydda {{pork_tenderloin}} med {{garlic_flakes}} och en nypa {{salt}}.",
         "Bryn i 1–2 min per sida."
       ],
       "duration": 5,
@@ -149,8 +150,9 @@
       "heat": "hög",
       "equipment": [
         {
-          "type": "stekpanna_stor",
-          "ref": "stekpanna_1"
+          "type": "traktorpanna",
+          "ref": "stekpanna_1",
+          "typeSource": "inferred"
         }
       ],
       "devNotes": [
@@ -170,7 +172,7 @@
         }
       ],
       "steps": [
-        "Lägg {{flaskytterfile_graddsas__seared_pork}} på en plåt med bakplåtspapper. Rosta överst i ugnen i 12–13 min."
+        "Lägg {{flaskytterfile_graddsas__seared_pork}} på {{eq:plat_1}} med bakplåtspapper. Rosta överst i {{eq:ugn|def}} i 12–13 min."
       ],
       "duration": 1,
       "wait": 13,
@@ -187,7 +189,9 @@
           "fanTemp": 200
         },
         {
-          "type": "plat"
+          "type": "plat",
+          "ref": "plat_1",
+          "liner": "bakplatspapper"
         }
       ],
       "devNotes": [
@@ -215,6 +219,13 @@
       ],
       "devNotes": [
         "FLAG: enhet ifylld — äpple st, 2 st vid 4 portioner."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -237,6 +248,13 @@
       ],
       "devNotes": [
         "FLAG: enhet ifylld som st (kan vara kruka). 1 st vid både 2 och 4 portioner — skalar inte."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -272,7 +290,7 @@
       ],
       "steps": [
         "Skölj {{mixed_salad}}.",
-        "Blanda en skvätt {{olive_oil}}, en nypa {{salt}} och {{pepper}} i en stor skål. Tillsätt {{mixed_salad}} och {{flaskytterfile_graddsas__sliced_apple}}."
+        "Blanda en skvätt {{olive_oil}}, en nypa {{salt}} och {{pepper}} i {{eq:skal_1}}. Tillsätt {{mixed_salad}} och {{flaskytterfile_graddsas__sliced_apple}}."
       ],
       "duration": 3,
       "tags": [
@@ -283,7 +301,8 @@
       ],
       "equipment": [
         {
-          "type": "skal_stor"
+          "type": "skal_stor",
+          "ref": "skal_1"
         }
       ],
       "devNotes": [
@@ -333,7 +352,7 @@
       ],
       "steps": [
         "Finhacka eller pressa {{garlic}}.",
-        "Hetta upp en generös klick smör och en skvätt {{olive_oil}} i stekpannan på medelvärme. Tillsätt {{garlic}} och fräs i 1–2 min.",
+        "Hetta upp en generös klick smör och en skvätt {{olive_oil}} i {{eq:stekpanna_1|def}} på medelvärme. Tillsätt {{garlic}} och fräs i 1–2 min.",
         "Tillsätt {{cooking_cream}}, {{chicken_bouillon}} och {{flaskytterfile_graddsas__chopped_basil}} (spara lite basilika till garnering). Koka tills uppvärmd, 1–2 min. Krydda med {{salt}} och en generös nypa {{pepper}}."
       ],
       "duration": 4,
@@ -345,10 +364,16 @@
       "heat": "medel",
       "equipment": [
         {
-          "type": "stekpanna_stor",
+          "type": "traktorpanna",
           "ref": "stekpanna_1",
           "transition": "keep",
-          "after": "flaskytterfile_graddsas__seared_pork"
+          "after": "flaskytterfile_graddsas__seared_pork",
+          "typeSource": "inferred"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
         }
       ],
       "devNotes": [
@@ -385,7 +410,7 @@
       ],
       "steps": [
         "Skär {{flaskytterfile_graddsas__roasted_pork}} i 2 cm breda skivor.",
-        "Lägg upp {{flaskytterfile_graddsas__kept_potatoes}}, köttet och {{flaskytterfile_graddsas__apple_salad}} på tallrikar. Skeda över {{flaskytterfile_graddsas__cream_sauce}}.",
+        "Lägg upp {{flaskytterfile_graddsas__kept_potatoes}}, köttet och {{flaskytterfile_graddsas__apple_salad}} på {{eq:servering|pl}}. Skeda över {{flaskytterfile_graddsas__cream_sauce}}.",
         "Garnera salladen med valnötter och köttet med resterande basilika."
       ],
       "duration": 4,
@@ -395,6 +420,20 @@
       "devNotes": [
         "FLAG: valnötter har amount 20/40 men unit null. Ingen mängd satt. Inte i inputs. Nöt-allergen ändå, eftersom de garneras.",
         "HF step 2 (bryn/rosta) och step 3 (hacka/skiva) saknar bild. Step 6 (servering) saknar bild."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "serving": [
+        {
+          "type": "servering_tallrik",
+          "ref": "servering",
+          "count": "portions"
+        }
       ]
     }
   ]

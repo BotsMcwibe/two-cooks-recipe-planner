@@ -43,7 +43,7 @@
       "outputName": "Förvärmd ugn (240°C)",
       "inputs": [],
       "steps": [
-        "Värm ugnen till 240°C, eller 220°C varmluft."
+        "Värm {{eq:ugn|def}} till 240°C, eller 220°C varmluft."
       ],
       "duration": 1,
       "wait": 12,
@@ -76,6 +76,13 @@
       "duration": 5,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -110,9 +117,9 @@
         }
       ],
       "steps": [
-        "Placera {{bbq_lax_ranch__potato_wedges}} på en plåt med bakplåtspapper (använd 2 plåtar).",
+        "Placera {{bbq_lax_ranch__potato_wedges}} på {{eq:plat_1}} med bakplåtspapper (använd 2 {{eq:plat_1|pl}}).",
         "Blanda med {{olive_oil}}, {{bbq_spice_mix}}, {{salt}} och {{pepper}}.",
-        "Rosta i den förvärmda ugnen i 25–35 min, eller tills gyllene."
+        "Rosta i den förvärmda {{eq:ugn|def}} i 25–35 min, eller tills gyllene."
       ],
       "duration": 3,
       "wait": 35,
@@ -126,7 +133,10 @@
           "fanTemp": 220
         },
         {
-          "type": "plat"
+          "type": "plat",
+          "ref": "plat_1",
+          "count": 2,
+          "liner": "bakplatspapper"
         }
       ]
     },
@@ -147,6 +157,13 @@
       "duration": 2,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -181,11 +198,17 @@
         }
       ],
       "steps": [
-        "Blanda {{sour_cream}}, {{mayonnaise}}, {{bbq_lax_ranch__chopped_chives}}, {{salt}} och {{pepper}} i en liten skål och ställ åt sidan."
+        "Blanda {{sour_cream}}, {{mayonnaise}}, {{bbq_lax_ranch__chopped_chives}}, {{salt}} och {{pepper}} i {{eq:skal_1}} och ställ åt sidan."
       ],
       "duration": 2,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skal_liten",
+          "ref": "skal_1"
+        }
       ]
     },
     {
@@ -217,8 +240,8 @@
       "steps": [
         "Skär {{butter}} i kuber.",
         "Torka av {{salmon_fillet}} med hushållspapper och krydda med {{salt}}.",
-        "Placera laxen med skinnsidan ner i en ugnsform med bakplåtspapper. Bre med {{bbq_sauce}} och toppa med smörkuber.",
-        "Tillaga i den förvärmda ugnen i 15–20 min, eller tills genomstekt."
+        "Placera laxen med skinnsidan ner i {{eq:ugnsform_1}} med bakplåtspapper. Bre med {{bbq_sauce}} och toppa med smörkuber.",
+        "Tillaga i den förvärmda {{eq:ugn|def}} i 15–20 min, eller tills genomstekt."
       ],
       "duration": 5,
       "wait": 20,
@@ -236,7 +259,14 @@
         },
         {
           "type": "ugnsform",
-          "sizeSource": "inferred"
+          "sizeSource": "inferred",
+          "ref": "ugnsform_1",
+          "liner": "bakplatspapper"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
         }
       ]
     },
@@ -257,6 +287,13 @@
       "duration": 3,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -276,6 +313,13 @@
       "duration": 2,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -295,6 +339,13 @@
       "duration": 2,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -315,7 +366,7 @@
       ],
       "steps": [
         "Häll av {{canned_corn}}.",
-        "Hetta upp {{olive_oil}} i en medelstor stekpanna på medelhög värme.",
+        "Hetta upp {{olive_oil}} i {{eq:stekpanna_1}} på medelhög värme.",
         "Stek majsen i 4–5 min, eller tills lätt brynt."
       ],
       "duration": 5,
@@ -324,7 +375,8 @@
       "heat": "medelhög",
       "equipment": [
         {
-          "type": "stekpanna_medelstor"
+          "type": "stekpanna_medelstor",
+          "ref": "stekpanna_1"
         }
       ]
     },
@@ -375,13 +427,14 @@
         }
       ],
       "steps": [
-        "Blanda {{bbq_lax_ranch__fried_corn}}, {{bbq_lax_ranch__halved_tomatoes}}, {{bbq_lax_ranch__chopped_red_onion}}, {{bbq_lax_ranch__chopped_parsley}}, {{salted_peanuts}}, {{olive_oil}}, {{salt}} och {{pepper}} i en medelstor skål."
+        "Blanda {{bbq_lax_ranch__fried_corn}}, {{bbq_lax_ranch__halved_tomatoes}}, {{bbq_lax_ranch__chopped_red_onion}}, {{bbq_lax_ranch__chopped_parsley}}, {{salted_peanuts}}, {{olive_oil}}, {{salt}} och {{pepper}} i {{eq:skal_2}}."
       ],
       "duration": 2,
       "tags": [],
       "equipment": [
         {
-          "type": "skal_medelstor"
+          "type": "skal_medelstor",
+          "ref": "skal_2"
         }
       ]
     },
@@ -427,7 +480,7 @@
         }
       ],
       "steps": [
-        "Blanda {{aioli}}, {{water}}, {{olive_oil}}, {{salt}} och {{pepper}} i en medelstor skål.",
+        "Blanda {{aioli}}, {{water}}, {{olive_oil}}, {{salt}} och {{pepper}} i {{eq:skal_3}}.",
         "Vänd ner {{cabbage_mix}} och {{carrot_julienne}} och ställ åt sidan."
       ],
       "duration": 3,
@@ -436,7 +489,8 @@
       ],
       "equipment": [
         {
-          "type": "skal_medelstor"
+          "type": "skal_medelstor",
+          "ref": "skal_3"
         }
       ]
     },
@@ -472,13 +526,20 @@
         }
       ],
       "steps": [
-        "Lägg upp {{bbq_lax_ranch__baked_bbq_salmon}} på ett serveringsfat och toppa med resterande smör från ugnsformen.",
+        "Lägg upp {{bbq_lax_ranch__baked_bbq_salmon}} på {{eq:servering}} och toppa med resterande smör från {{eq:ugnsform_1|def}}.",
         "Servera med {{bbq_lax_ranch__roasted_bbq_potato}}, {{bbq_lax_ranch__ranch_dressing}}, {{bbq_lax_ranch__cabbage_salad}} och {{bbq_lax_ranch__corn_salsa}}."
       ],
       "duration": 2,
       "wait": 0,
       "tags": [
         "master"
+      ],
+      "serving": [
+        {
+          "type": "serveringsfat",
+          "ref": "servering",
+          "count": 1
+        }
       ]
     }
   ]

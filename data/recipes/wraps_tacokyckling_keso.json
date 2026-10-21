@@ -39,6 +39,13 @@
       ],
       "devNotes": [
         "Halv gurka står så vid 4 portioner. Majs är mappad till befintlig majs på burk."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {

@@ -68,6 +68,15 @@
         {
           "type": "stekpanna_medelstor",
           "sizeSource": "inferred"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada_ra",
+          "separate": true,
+          "inferred": true,
+          "rawKinds": [
+            "meat"
+          ]
         }
       ],
       "devNotes": [

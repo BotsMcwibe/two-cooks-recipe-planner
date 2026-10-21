@@ -2865,6 +2865,36 @@ img.auth-avatar, img.acc-avatar { box-shadow: 0 0 0 1.25px var(--border); transi
 .eq-count { font-weight: 700; font-variant-numeric: tabular-nums; }
 .eq-profile { font-size: 0.78rem; color: var(--text-muted); margin: 8px 0 0; }
 .eq-profile a { color: var(--primary); }
+/* Equipment named in step text: italic + dotted underline (never colour alone), ingredients stay bold */
+.step-eq {
+  font-style: italic;
+  text-decoration: underline dotted;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--text-muted);
+}
+.eq-optional { color: var(--text-muted); font-weight: 400; }
+.eq-separate {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  font-size: 0.78rem;
+  color: var(--text);
+  margin: 0;
+}
+.eq-separate-label {
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0 5px;
+  border: 1px solid var(--text-muted);
+  border-radius: 4px;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+p.eq-serving { font-size: 0.85rem; margin: 8px 0 0; }
+.eq-serving-label { font-weight: 600; }
 .flow-edge.is-equipment { stroke-dasharray: 5 4; }
 .flow-node.is-resource { border-style: dashed; }
 .flow-oven { font-size: 0.72rem; color: var(--text-muted); }

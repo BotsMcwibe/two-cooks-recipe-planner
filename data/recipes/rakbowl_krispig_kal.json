@@ -45,7 +45,7 @@
         }
       ],
       "steps": [
-        "Blanda {{white_wine_vinegar}}, {{sugar}} och {{salt}} i en skål."
+        "Blanda {{white_wine_vinegar}}, {{sugar}} och {{salt}} i {{eq:skal_1}}."
       ],
       "duration": 2,
       "tags": [
@@ -53,6 +53,12 @@
       ],
       "devNotes": [
         "Råraden är 1 påse vitvinsvinäger 30ml. Lagrad som 30 ml, inte 1 påse."
+      ],
+      "equipment": [
+        {
+          "type": "skal",
+          "ref": "skal_1"
+        }
       ]
     },
     {
@@ -72,7 +78,7 @@
         }
       ],
       "steps": [
-        "Tvätta {{jasmine_rice}} under kallt vatten ca 5 min. Lägg i en kastrull med {{water}} och koka upp.",
+        "Tvätta {{jasmine_rice}} under kallt vatten ca 5 min. Lägg i {{eq:kastrull_1}} med {{water}} och koka upp.",
         "Sänk till låg värme och koka under lock ca 10 min, tills riset är mjukt."
       ],
       "duration": 6,
@@ -82,7 +88,9 @@
       "equipment": [
         {
           "type": "kastrull_medelstor",
-          "sizeSource": "inferred"
+          "sizeSource": "inferred",
+          "ref": "kastrull_1",
+          "lid": true
         }
       ],
       "devNotes": [
@@ -147,7 +155,7 @@
         }
       ],
       "steps": [
-        "Blanda {{water}}, {{vinegar_spirit}}, {{sugar}} och {{grated_ginger}} i en bunke.",
+        "Blanda {{water}}, {{vinegar_spirit}}, {{sugar}} och {{grated_ginger}} i {{eq:skal_2}}.",
         "Hyvla {{cucumber}} tunt och blanda ner. Låt dra minst 15 min."
       ],
       "duration": 4,
@@ -158,6 +166,12 @@
       "devNotes": [
         "Riven ingefära är ⅔ förp, avrundat till 0.67. Tillsammans med räkornas ⅓ (0.33) blir det 1 förp.",
         "15 min är sista stegets wait. Kommentarens mandolin är ett tips, ingen extra mängd."
+      ],
+      "equipment": [
+        {
+          "type": "skal_stor",
+          "ref": "skal_2"
+        }
       ]
     },
     {
@@ -221,7 +235,7 @@
         }
       ],
       "steps": [
-        "Blanda {{mayonnaise}} och {{soy_sauce}} i en liten skål."
+        "Blanda {{mayonnaise}} och {{soy_sauce}} i {{eq:skal_3}}."
       ],
       "duration": 2,
       "tags": [
@@ -229,6 +243,12 @@
       ],
       "devNotes": [
         "Sojan här är ½ msk, inte hopslagen med räkmarinadens 2½ msk."
+      ],
+      "equipment": [
+        {
+          "type": "skal_liten",
+          "ref": "skal_3"
+        }
       ]
     },
     {
@@ -248,7 +268,7 @@
         }
       ],
       "steps": [
-        "Rosta {{sesame_seeds}} i en torr panna tills de är gyllenbruna.",
+        "Rosta {{sesame_seeds}} i en torr {{eq:stekpanna_1|noun}} tills de är gyllenbruna.",
         "Finstrimla {{red_cabbage}} och lägg i iskallt vatten så den blir krispig."
       ],
       "duration": 5,
@@ -258,7 +278,8 @@
       "equipment": [
         {
           "type": "stekpanna_liten",
-          "sizeSource": "inferred"
+          "sizeSource": "inferred",
+          "ref": "stekpanna_1"
         }
       ],
       "devNotes": [
@@ -340,12 +361,19 @@
         }
       ],
       "steps": [
-        "Lägg upp {{rakbowl_krispig_kal__dressed_rice}} i skålar. Ringla över {{rakbowl_krispig_kal__mayo}} och strö på sesam från {{rakbowl_krispig_kal__cabbage}}.",
+        "Lägg upp {{rakbowl_krispig_kal__dressed_rice}} i {{eq:servering|pl}}. Ringla över {{rakbowl_krispig_kal__mayo}} och strö på sesam från {{rakbowl_krispig_kal__cabbage}}.",
         "Lägg {{rakbowl_krispig_kal__shrimp}} i mitten. Lägg kålen, {{rakbowl_krispig_kal__spinach}} och {{rakbowl_krispig_kal__pickle}} runt om."
       ],
       "duration": 4,
       "tags": [
         "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_skal",
+          "ref": "servering",
+          "count": "portions"
+        }
       ]
     }
   ]

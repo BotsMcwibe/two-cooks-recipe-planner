@@ -67,6 +67,13 @@
       ],
       "devNotes": [
         "FLAG: enheter ifyllda (ursprungligen null) — potatis g, morot st. 1000 g potatis och 2 st morot vid 4 portioner. Bekräfta."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -81,7 +88,7 @@
         }
       ],
       "steps": [
-        "Koka upp en medelstor kastrull med saltat vatten.",
+        "Koka upp {{eq:kastrull_1}} med saltat vatten.",
         "Koka {{stekt_flask_graslokssas__diced_roots}} i 11–13 min, eller tills de enkelt kan delas med en kniv."
       ],
       "duration": 2,
@@ -137,7 +144,8 @@
         {
           "type": "kastrull_medelstor",
           "ref": "kastrull_1",
-          "transition": "keep"
+          "transition": "keep",
+          "lid": true
         }
       ],
       "devNotes": [
@@ -172,6 +180,13 @@
       "devNotes": [
         "FLAG: enheter ifyllda — champinjoner g (200 g), lök st mappad till schalottenlök (HF-typ shallot; steget säger schalottenlök; 2 st).",
         "FLAG: steget skriver svamp som 1/2 paket för 2P, men yield är 100 g / 200 g. Använder 200 g, inte paket."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -198,6 +213,13 @@
       "devNotes": [
         "FLAG: gräslök är 1 st vid både 2 och 4 portioner — skalar inte.",
         "Råreceptet anger ingen proportion, så grafen delar 0,8 st + 0,2 st."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -212,7 +234,7 @@
         }
       ],
       "steps": [
-        "Skär {{pork_tenderloin}} i medaljonger (3 per person) på en separat skärbräda. Krydda med salt och peppar."
+        "Skär {{pork_tenderloin}} i medaljonger (3 per person) på en separat {{eq:skarbrada_ra|noun}}. Krydda med salt och peppar."
       ],
       "duration": 4,
       "tags": [
@@ -221,6 +243,16 @@
       "devNotes": [
         "FLAG: enhet ifylld — fläskytterfilé g, 600 g vid 4 portioner.",
         "Salt och peppar till medaljongerna har ingen mängd i yields."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada_ra",
+          "separate": true,
+          "rawKinds": [
+            "meat"
+          ]
+        }
       ]
     },
     {
@@ -240,8 +272,8 @@
         }
       ],
       "steps": [
-        "Hetta upp {{butter}} i en stor stekpanna på medelhög värme.",
-        "Stek {{stekt_flask_graslokssas__prepped_veg}} i 3–4 min, tills svampen är mjuk och schalottenlöken är karamelliserad. Krydda med en generös nypa salt och peppar, och ställ åt sidan på en tallrik."
+        "Hetta upp {{butter}} i {{eq:stekpanna_1}} på medelhög värme.",
+        "Stek {{stekt_flask_graslokssas__prepped_veg}} i 3–4 min, tills svampen är mjuk och schalottenlöken är karamelliserad. Krydda med en generös nypa salt och peppar, och ställ åt sidan på {{eq:tallrik_1}}."
       ],
       "duration": 5,
       "tags": [],
@@ -250,6 +282,10 @@
         {
           "type": "stekpanna_stor",
           "ref": "stekpanna_1"
+        },
+        {
+          "type": "tallrik",
+          "ref": "tallrik_1"
         }
       ],
       "devNotes": [
@@ -274,8 +310,8 @@
         }
       ],
       "steps": [
-        "Hetta upp stekpannan där svampen stektes (eller en ny stor stekpanna) på medelhög värme och tillsätt {{olive_oil}} vid behov.",
-        "Stek {{stekt_flask_graslokssas__pork_medallions}} i 2–3 min per sida, tills de är brynta och gyllene. Sätt åt sidan på en tallrik."
+        "Hetta upp {{eq:stekpanna_1|def}} där svampen stektes (eller en ny {{eq:stekpanna_1|bare}}) på medelhög värme och tillsätt {{olive_oil}} vid behov.",
+        "Stek {{stekt_flask_graslokssas__pork_medallions}} i 2–3 min per sida, tills de är brynta och gyllene. Sätt åt sidan på {{eq:tallrik_2}}."
       ],
       "duration": 7,
       "tags": [],
@@ -286,6 +322,10 @@
           "ref": "stekpanna_1",
           "transition": "keep",
           "after": "stekt_flask_graslokssas__sauteed_mushrooms"
+        },
+        {
+          "type": "tallrik",
+          "ref": "tallrik_2"
         }
       ],
       "devNotes": [
@@ -315,7 +355,7 @@
         }
       ],
       "steps": [
-        "Sänk till medelvärme. Rör i {{water}}, {{chicken_bouillon}}, {{salt}} och en generös nypa peppar i stekpannan där köttet stektes.",
+        "Sänk till medelvärme. Rör i {{water}}, {{chicken_bouillon}}, {{salt}} och en generös nypa peppar i {{eq:stekpanna_1|def}} där köttet stektes.",
         "Låt sjuda i 1 min."
       ],
       "duration": 1,
@@ -400,13 +440,20 @@
         }
       ],
       "steps": [
-        "Lägg upp {{stekt_flask_graslokssas__root_mash}} och fläsket från {{stekt_flask_graslokssas__chive_sauce}} på tallrikar.",
+        "Lägg upp {{stekt_flask_graslokssas__root_mash}} och fläsket från {{stekt_flask_graslokssas__chive_sauce}} på {{eq:servering|pl}}.",
         "Skeda över gräslökssåsen och lägg på svamp och schalottenlök från {{stekt_flask_graslokssas__sauteed_mushrooms}}.",
         "Garnera med resterande {{stekt_flask_graslokssas__chopped_chives}}."
       ],
       "duration": 3,
       "tags": [
         "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_tallrik",
+          "ref": "servering",
+          "count": "portions"
+        }
       ]
     }
   ]

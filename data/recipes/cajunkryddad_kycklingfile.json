@@ -43,7 +43,7 @@
       "outputName": "Förvärmd ugn (240°C)",
       "inputs": [],
       "steps": [
-        "Värm ugnen till 240°C, eller 220°C varmluft."
+        "Värm {{eq:ugn|def}} till 240°C, eller 220°C varmluft."
       ],
       "duration": 1,
       "wait": 12,
@@ -98,6 +98,13 @@
       ],
       "devNotes": [
         "Potatisens korttyp är ekologisk potatis, mappad till potato. Löken är rödlök."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -127,8 +134,8 @@
         }
       ],
       "steps": [
-        "Lägg {{cajunkryddad_kycklingfile__prepped_veg}} på en plåt med bakplåtspapper. Blanda med {{olive_oil}}, {{salt}} och en nypa {{pepper}}.",
-        "Rosta i ugnen i ca 25 min, tills det återstår 10 min av totalt 25–35 min."
+        "Lägg {{cajunkryddad_kycklingfile__prepped_veg}} på {{eq:plat_1}} med bakplåtspapper. Blanda med {{olive_oil}}, {{salt}} och en nypa {{pepper}}.",
+        "Rosta i {{eq:ugn|def}} i ca 25 min, tills det återstår 10 min av totalt 25–35 min."
       ],
       "duration": 3,
       "wait": 25,
@@ -146,7 +153,8 @@
         },
         {
           "type": "plat",
-          "ref": "plat_1"
+          "ref": "plat_1",
+          "liner": "bakplatspapper"
         }
       ],
       "devNotes": [
@@ -170,7 +178,7 @@
         }
       ],
       "steps": [
-        "Häll av {{canned_corn}} och lägg majsen på plåten med {{cajunkryddad_kycklingfile__roasted_veg_first}}.",
+        "Häll av {{canned_corn}} och lägg majsen på {{eq:plat_1|def}} med {{cajunkryddad_kycklingfile__roasted_veg_first}}.",
         "Rosta i ca 5 min, tills det återstår 5 min av grönsakernas tid."
       ],
       "duration": 1,
@@ -234,7 +242,7 @@
         }
       ],
       "steps": [
-        "När det återstår 5 min av grönsakernas tid i ugnen, lägg {{chicken_breast}} mellan två bakplåtspapper och banka den till ca 2 cm jämn tjocklek.",
+        "När det återstår 5 min av grönsakernas tid i {{eq:ugn|def}}, lägg {{chicken_breast}} mellan två bakplåtspapper och banka den till ca 2 cm jämn tjocklek.",
         "Krydda med {{salt}} och {{cajun_spice_mix}}."
       ],
       "duration": 3,
@@ -244,6 +252,17 @@
       ],
       "devNotes": [
         "Ay Cajun-ba är mappad till cajun_spice_mix. 8 g är samma vid 3 och 4 portioner."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada_ra",
+          "separate": true,
+          "inferred": true,
+          "rawKinds": [
+            "poultry"
+          ]
+        }
       ]
     },
     {
@@ -263,7 +282,7 @@
         }
       ],
       "steps": [
-        "Hetta upp {{olive_oil}} i en stor stekpanna på medelhög värme.",
+        "Hetta upp {{olive_oil}} i {{eq:stekpanna_1}} på medelhög värme.",
         "Stek {{cajunkryddad_kycklingfile__seasoned_chicken}} i 2 min per sida, eller tills den är brynt.",
         "Sänk till medelvärme och stek i ytterligare 2–3 min per sida, eller tills den är genomstekt."
       ],
@@ -279,7 +298,8 @@
       },
       "equipment": [
         {
-          "type": "stekpanna_stor"
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1"
         }
       ],
       "devNotes": [
@@ -302,7 +322,14 @@
       ],
       "duration": 2,
       "wait": 0,
-      "tags": []
+      "tags": [],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "cajunkryddad_kycklingfile__spinach_veg",
@@ -322,7 +349,7 @@
       ],
       "steps": [
         "Skölj {{baby_spinach}}.",
-        "Blanda spenaten med {{cajunkryddad_kycklingfile__finished_veg}} på plåten."
+        "Blanda spenaten med {{cajunkryddad_kycklingfile__finished_veg}} på {{eq:plat_1|def}}."
       ],
       "duration": 2,
       "wait": 0,
@@ -360,11 +387,18 @@
         }
       ],
       "steps": [
-        "Lägg upp {{cajunkryddad_kycklingfile__spinach_veg}}, {{cajunkryddad_kycklingfile__sliced_chicken}} och {{vegan_sriracha_mayo}} på tallrikar."
+        "Lägg upp {{cajunkryddad_kycklingfile__spinach_veg}}, {{cajunkryddad_kycklingfile__sliced_chicken}} och {{vegan_sriracha_mayo}} på {{eq:servering|pl}}."
       ],
       "duration": 2,
       "tags": [
         "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_tallrik",
+          "ref": "servering",
+          "count": "portions"
+        }
       ]
     }
   ]

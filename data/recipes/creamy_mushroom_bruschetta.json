@@ -53,6 +53,13 @@
       "duration": 1,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -72,6 +79,13 @@
       "duration": 3,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -91,6 +105,13 @@
       "duration": 2,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -116,8 +137,8 @@
       ],
       "steps": [
         "Skär {{ciabatta}} i 1,5 cm tjocka skivor.",
-        "Placera skivorna på en plåt med bakplåtspapper, ringla över {{olive_oil}} och krydda med {{salt}}.",
-        "Rosta i mitten av den förvärmda ugnen i 6–8 min, tills spröda och gyllene."
+        "Placera skivorna på {{eq:plat_1}} med bakplåtspapper, ringla över {{olive_oil}} och krydda med {{salt}}.",
+        "Rosta i mitten av den förvärmda {{eq:ugn|def}} i 6–8 min, tills spröda och gyllene."
       ],
       "duration": 3,
       "wait": 8,
@@ -131,7 +152,14 @@
           "fanTemp": 200
         },
         {
-          "type": "plat"
+          "type": "plat",
+          "ref": "plat_1",
+          "liner": "bakplatspapper"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
         }
       ]
     },
@@ -177,7 +205,7 @@
         }
       ],
       "steps": [
-        "Hetta upp {{butter}} i en stor stekpanna på medelhög värme.",
+        "Hetta upp {{butter}} i {{eq:stekpanna_1}} på medelhög värme.",
         "Stek {{creamy_mushroom_bruschetta__chopped_mushrooms}} i 3–4 min, tills brynta.",
         "Tillsätt {{creamy_mushroom_bruschetta__chopped_garlic}}, {{cooking_cream}}, {{salt}} och {{pepper}}.",
         "Sjud i 3–5 min, eller tills grädden tjocknat, och rör i {{creamy_mushroom_bruschetta__chopped_parsley}}."
@@ -188,7 +216,8 @@
       "heat": "medelhög",
       "equipment": [
         {
-          "type": "stekpanna_stor"
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1"
         }
       ],
       "devNotes": [

@@ -58,7 +58,7 @@
         }
       ],
       "steps": [
-        "Koka upp en stor kastrull med saltat vatten.",
+        "Koka upp {{eq:kastrull_1}} med saltat vatten.",
         "Koka {{mie_noodles}} i 4 min, tills mjuka."
       ],
       "duration": 4,
@@ -71,7 +71,8 @@
       "heatSource": "inferred",
       "equipment": [
         {
-          "type": "kastrull_stor"
+          "type": "kastrull_stor",
+          "ref": "kastrull_1"
         }
       ]
     },
@@ -120,11 +121,22 @@
       ],
       "steps": [
         "Finhacka eller pressa {{garlic}}.",
-        "Blanda vitlöken med {{olive_oil}}, {{salt}} och {{pepper}} i en liten skål. Ställ åt sidan."
+        "Blanda vitlöken med {{olive_oil}}, {{salt}} och {{pepper}} i {{eq:skal_1}}. Ställ åt sidan."
       ],
       "duration": 3,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skal_liten",
+          "ref": "skal_1"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -171,7 +183,7 @@
       "steps": [
         "Halvera {{lime}} och pressa ur en generös skvätt saft.",
         "Kärna ur och finhacka {{fresh_chili}}.",
-        "Blanda chilin, limesaften, {{ginger_paste}}, {{sugar}}, {{soy_sauce}}, {{fish_sauce}} och {{olive_oil}} till en marinad i en liten skål. Ställ åt sidan."
+        "Blanda chilin, limesaften, {{ginger_paste}}, {{sugar}}, {{soy_sauce}}, {{fish_sauce}} och {{olive_oil}} till en marinad i {{eq:skal_2}}. Ställ åt sidan."
       ],
       "duration": 5,
       "tags": [
@@ -179,6 +191,17 @@
       ],
       "tips": [
         "Skippa chilin, eller använd mindre, om du inte gillar stark mat."
+      ],
+      "equipment": [
+        {
+          "type": "skal_liten",
+          "ref": "skal_2"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -216,7 +239,7 @@
         "Skala {{carrot}} i långa band med en potatisskalare och finhacka den sista innersta biten.",
         "Grovhacka {{cucumber}}.",
         "Finhacka {{mint_coriander}}.",
-        "Blanda morotsbanden, gurkan, örterna, {{olive_oil}} och {{salt}} i en stor skål."
+        "Blanda morotsbanden, gurkan, örterna, {{olive_oil}} och {{salt}} i {{eq:skal_3}}."
       ],
       "duration": 8,
       "tags": [
@@ -224,7 +247,13 @@
       ],
       "equipment": [
         {
-          "type": "skal_stor"
+          "type": "skal_stor",
+          "ref": "skal_3"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
         }
       ]
     },
@@ -245,6 +274,13 @@
       "duration": 3,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -264,6 +300,13 @@
       "duration": 2,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -283,6 +326,13 @@
       "duration": 2,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -307,7 +357,7 @@
         }
       ],
       "steps": [
-        "Hetta upp {{olive_oil}} i en stor stekpanna på medelhög värme.",
+        "Hetta upp {{olive_oil}} i {{eq:stekpanna_1}} på medelhög värme.",
         "Tillsätt {{king_prawns}} och krydda med {{salt}}. Stek 1–2 min per sida, tills de är gyllene och genomstekta."
       ],
       "duration": 5,
@@ -318,7 +368,8 @@
       "heat": "medelhög",
       "equipment": [
         {
-          "type": "stekpanna_stor"
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1"
         }
       ]
     },
@@ -386,13 +437,20 @@
         }
       ],
       "steps": [
-        "Lägg upp {{vietnamesisk_rakbowl_vitloksnudlar__garlic_noodles}}, {{vietnamesisk_rakbowl_vitloksnudlar__diced_mango}} och {{vietnamesisk_rakbowl_vitloksnudlar__salad}} i djupa skålar.",
+        "Lägg upp {{vietnamesisk_rakbowl_vitloksnudlar__garlic_noodles}}, {{vietnamesisk_rakbowl_vitloksnudlar__diced_mango}} och {{vietnamesisk_rakbowl_vitloksnudlar__salad}} i {{eq:servering|pl}}.",
         "Toppa nudlarna med {{vietnamesisk_rakbowl_vitloksnudlar__fried_shrimp}} och skeda över {{vietnamesisk_rakbowl_vitloksnudlar__marinade}}.",
         "Garnera med {{vietnamesisk_rakbowl_vitloksnudlar__chopped_peanuts}} och {{vietnamesisk_rakbowl_vitloksnudlar__sliced_spring_onion}}."
       ],
       "duration": 3,
       "tags": [
         "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_djup_skal",
+          "ref": "servering",
+          "count": "portions"
+        }
       ]
     }
   ]

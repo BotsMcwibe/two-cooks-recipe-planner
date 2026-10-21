@@ -207,7 +207,7 @@ Node `tags` is a string array (`[]` when none apply). `master` marks the master 
 
 ## Equipment, heat & resources
 
-Vocabulary: `data/equipment.json` (types, labels, `kind`, capacity, burner size, aliases). Kinds: `stovetop` (needs a burner and a heat level), `oven`, `ovenware` (1 oven slot each), `bowl`, `tool`. Rules for converters: `recipes/docs/hf-to-graph-conversion.md` §4.6. Checker: `scripts/check-equipment.mjs` (run by `validate-recipes.mjs`).
+Vocabulary: `data/equipment.json` (types, labels, `kind`, capacity, burner size, aliases). Kinds: `stovetop` (needs a burner and a heat level), `oven`, `ovenware` (1 oven slot each), `bowl`, `plate` (tallrik/djup tallrik used while cooking), `board` (skärbräda), `appliance` (mikro, vattenkokare), `tool` (sil, durkslag, kavel, kötthammare, mixer…), `serving` (plating dishes; only in the master's `serving` list). Every type has Swedish `forms` used to render step placeholders, and `rawAnimalLabels` gives the Swedish phrase per raw kind (`poultry` → "rå kyckling"). Rules for converters: `recipes/docs/hf-to-graph-conversion.md` §4.6. Checker: `scripts/check-equipment.mjs` (run by `validate-recipes.mjs`).
 
 | Field | Where | Notes |
 |-------|-------|-------|
@@ -229,7 +229,7 @@ Equipment entry:
 
 | Key | Notes |
 |-----|-------|
-| `type` | Id in `equipment.json`. Sizes are part of the type: `kastrull_liten` (1.5 l), `kastrull_medelstor` (2.5 l), `kastrull_stor` (4 l), `stekpanna_liten` (20 cm), `stekpanna_medelstor` (24 cm), `stekpanna_stor` (28 cm), `wok`, `gryta`, `grill`, `plat`, `ugnsform`, `ugnsform_stor`, `springform`, `bakform`, `galler`, `skal_medelstor`, `skal_stor`, `mixer`, `stavmixer`, … The word is **medelstor** (alias: mellanstor). |
+| `type` | Id in `equipment.json`. Sizes are part of the type: `kastrull_liten` (1.5 l), `kastrull_medelstor` (2.5 l), `kastrull_stor` (4 l), `stekpanna_liten` (20 cm), `stekpanna_medelstor` (24 cm), `stekpanna_stor` (28 cm), `traktorpanna` (traktörpanna/sauteuse: deep sauté pan with high sides and lid, one size, typical 28 cm ≈ 4 l, burner stor; no size scale), `wok`, `gryta`, `grill`, `plat`, `ugnsform`, `ugnsform_stor`, `springform`, `bakform`, `galler`, `skal_medelstor`, `skal_stor`, `mixer`, `stavmixer`, … The word is **medelstor** (alias: mellanstor). |
 | `ref` | Dish-local instance name. The same `ref` on several nodes is the same physical pot/pan/tray, reused in order. Only written when a vessel is used by 2+ nodes. |
 | `transition` | State before this use of a reused vessel: `keep` (samma panna, torka inte ur / behåll skyn), `wipe` (torka ur den först), `wash` (diska ur). Absent = `fresh` (first use). |
 | `after` | Node id (or array) the equipment waits for. For `ugn` it is the preheat resource. For a reused vessel it is the previous user when no ingredient edge already orders them. This is a **resource ordering**, not a food edge, so it never counts as an input. |
@@ -242,6 +242,42 @@ Equipment entry:
 | `fanTempSource` | `"derived"` when `fanTemp` was computed (temp − 20) rather than read from the raw. Absent = from the raw. |
 | `mode` | Oven mode for this use, e.g. `"grill"` (gratinera med grillfunktion). |
 | `sizeSource` | `"inferred"` when the raw named no size and the size was guessed from the content volume. |
+| `typeSource` | `"inferred"` when the type was chosen by rule rather than read from the raw (e.g. the raw says "stekpanna" but the pan fries and then simmers ≥ 2 dl liquid, so it is a `traktorpanna`). Absent = the raw names this vessel. |
+| `count` | Number of identical items used at once (`2` plåtar, 3 djupa tallrikar for a breading line). Absent = 1. |
+| `lid` | `true` when the raw says to cover the vessel (lock). |
+| `liner` | `"bakplatspapper"` on a plåt/form lined with baking paper. |
+| `optional` | `true` for nice-to-have tools (kavel, kötthammare, vattenkokare): the dish works without them. |
+| `separate` | Skärbräda only: `true` = a board reserved for raw animal food (ref `skarbrada_ra`), distinct from the board for vegetables/ready-to-eat food (ref `skarbrada`). |
+| `rawKinds` | Skärbräda only: which raw kinds are cut on it (`poultry`, `meat`, `fish`, `shellfish`; from `ingredients.json` `rawAnimal`). The app turns it into "Använd en separat skärbräda för rå kyckling". |
+| `inferred` | `true` when the entry was added by inference and the raw text does not name the item (e.g. a board for "Hacka löken"). |
+
+**Cooking vs serving.** `equipment` lists what is used while cooking (skålar, tallrikar to set aside or drain on, a breading line of djupa tallrikar). Plates, bowls, dishes and glasses the food is served in go in the master node's `serving` list and never in `equipment`:
+
+```json
+"serving": [{ "type": "servering_tallrik", "ref": "servering", "count": "portions" }]
+```
+
+`count` is `"portions"` (one per portion) or a number (`1` serveringsfat). Serving types: `servering_tallrik`, `servering_djup_tallrik`, `servering_skal`, `servering_djup_skal`, `serveringsfat`, `glas`.
+
+**Raw animal food and cutting boards.** `ingredients.json` entries for raw meat, poultry, fish and shellfish carry `"rawAnimal": "poultry" | "meat" | "fish" | "shellfish"` (cured or smoked products such as skinka, prosciutto and kallrökt lax do not; bacon, färs and salsiccia do). A node handles raw food if it has a `rawAnimal` input, or a derived input from a node that handles raw food and does not cook (no heat, stovetop or oven). A node that cuts or pounds raw animal food gets `{ "type": "skarbrada", "ref": "skarbrada_ra", "separate": true, "rawKinds": [...] }`. `check-equipment.mjs` gives an **error** (`board-raw-reuse`) when a board ref that held raw food is used later for other food without `"transition": "wash"`, and a **warning** (`board-raw-no-separate`) when a node cuts raw animal food without a separate board.
+
+### Equipment placeholders in steps
+
+Steps name equipment with `{{eq:<key>}}` or `{{eq:<key>|<form>}}`. The `eq:` prefix cannot clash with ingredient/node ids, which are snake_case without a colon.
+
+- **key**: an equipment or serving `ref` of this recipe (the node's own entries first, then any node or the master `serving` list; a pack resolves inside the pack), or a `type` that appears exactly once in this node, or `ugn` (the oven; always resolves).
+- **form** (default `indef`), read from `equipment.json` → `types[type].forms`:
+
+| form | example (`stekpanna_stor`) | use |
+|------|------|------|
+| `indef` | en stor stekpanna | first mention: "Hetta upp {{eq:stekpanna_1}}" |
+| `bare` | stor stekpanna | after a numeral/other article ("två …") |
+| `noun` | stekpanna | after a non-size word kept in text: "en ny {{eq:skal_2|noun}}", "samma {{eq:x|noun}}" |
+| `def` | stekpannan | "i {{eq:stekpanna_1|def}}" |
+| `pl` | stora stekpannor | "på {{eq:servering|pl}}" (tallrikar) |
+| `pldef` | stekpannorna | |
+
+The size word (liten/medelstor/stor) comes from the type, so the text never repeats it; en/ett and plural forms are stored per type. The app capitalises a placeholder that starts a sentence. Words such as *ny, annan, separat, torr, samma*, numerals and "med bakplåtspapper" stay as plain text. `check-equipment.mjs` gives `eq-placeholder` (error) when a key or form does not resolve, and `eq-unlinked` (warning) when a step names equipment in plain text. Exception (approved rule): a small skål that only holds something set aside ("Lägg över i en skål", "Ställ åt sidan i en liten skål") is not tracked and stays plain text.
 
 **Resources.** An oven preheat node is tagged `resource` and carries `oven`. It is never a node input, never part of the sum-to-1 rule, and is never shown as an ingredient. Every node that bakes or roasts references it via `{ "type": "ugn", "after": "<preheat id>", "slots", "temp", "fanTemp" }`. The oven runs one temperature at a time. Its capacity is **not fixed**: it comes from the kitchen profile below. The burner size follows from the vessel (`equipment.json` → `burner`) and is not stored.
 

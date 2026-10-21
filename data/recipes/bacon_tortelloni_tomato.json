@@ -52,6 +52,13 @@
       "duration": 3,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -71,6 +78,13 @@
       "duration": 2,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -90,6 +104,17 @@
       "duration": 3,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada_ra",
+          "separate": true,
+          "inferred": true,
+          "rawKinds": [
+            "meat"
+          ]
+        }
       ]
     },
     {
@@ -119,7 +144,7 @@
         }
       ],
       "steps": [
-        "Hetta upp en medelstor stekpanna på medelhög värme.",
+        "Hetta upp {{eq:stekpanna_1}} på medelhög värme.",
         "Stek {{bacon_tortelloni_tomato__diced_bacon}} i 4–5 min, eller tills brynt.",
         "Tillsätt {{passata}}, {{cooking_cream}} och hälften av {{parmesan}} (40 g).",
         "Sjud i 2–3 min, tills såsen tjocknat."
@@ -133,8 +158,9 @@
       "heat": "medelhög",
       "equipment": [
         {
-          "type": "stekpanna_medelstor",
-          "ref": "stekpanna_1"
+          "type": "traktorpanna",
+          "ref": "stekpanna_1",
+          "typeSource": "inferred"
         }
       ]
     },
@@ -165,7 +191,7 @@
         }
       ],
       "steps": [
-        "Koka upp en medelstor kastrull med saltat {{water}}.",
+        "Koka upp {{eq:kastrull_1}} med saltat {{water}}.",
         "Tillsätt {{bacon_tortelloni_tomato__chopped_broccoli}} och {{tortelloni}} i det kokande vattnet.",
         "Koka i 1–2 min, tills pastan är al dente och broccolin mjuknat.",
         "Precis innan pastan är färdig, skopa upp ca 2 dl kokvatten i en kopp och ställ åt sidan.",
@@ -182,7 +208,8 @@
       "heatSource": "inferred",
       "equipment": [
         {
-          "type": "kastrull_medelstor"
+          "type": "kastrull_medelstor",
+          "ref": "kastrull_1"
         }
       ]
     },
@@ -208,11 +235,17 @@
         }
       ],
       "steps": [
-        "Blanda {{chili_flakes}}, {{bacon_tortelloni_tomato__chopped_walnuts}} och {{olive_oil}} i en liten skål."
+        "Blanda {{chili_flakes}}, {{bacon_tortelloni_tomato__chopped_walnuts}} och {{olive_oil}} i {{eq:skal_1}}."
       ],
       "duration": 1,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skal_liten",
+          "ref": "skal_1"
+        }
       ]
     },
     {
@@ -237,7 +270,7 @@
         }
       ],
       "steps": [
-        "Tillsätt {{bacon_tortelloni_tomato__cooked_pasta_broccoli}} i stekpannan med {{bacon_tortelloni_tomato__tomato_cream_sauce}}.",
+        "Tillsätt {{bacon_tortelloni_tomato__cooked_pasta_broccoli}} i {{eq:stekpanna_1|def}} med {{bacon_tortelloni_tomato__tomato_cream_sauce}}.",
         "Rör ner det sparade pastavattnet ({{water}})."
       ],
       "duration": 2,
@@ -246,9 +279,10 @@
       "heatSource": "inferred",
       "equipment": [
         {
-          "type": "stekpanna_medelstor",
+          "type": "traktorpanna",
           "ref": "stekpanna_1",
-          "transition": "keep"
+          "transition": "keep",
+          "typeSource": "inferred"
         }
       ]
     },
@@ -274,7 +308,7 @@
         }
       ],
       "steps": [
-        "Lägg upp {{bacon_tortelloni_tomato__pasta_in_sauce}} i skålar.",
+        "Lägg upp {{bacon_tortelloni_tomato__pasta_in_sauce}} i {{eq:servering|pl}}.",
         "Toppa med resterande {{parmesan}}.",
         "Ringla {{bacon_tortelloni_tomato__chili_oil}} över vuxenportionerna."
       ],
@@ -284,6 +318,13 @@
       ],
       "tips": [
         "Låt barnportionerna vara utan chiliolja om ni vill."
+      ],
+      "serving": [
+        {
+          "type": "servering_skal",
+          "ref": "servering",
+          "count": "portions"
+        }
       ]
     }
   ]

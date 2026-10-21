@@ -1,4 +1,4 @@
-import { loadPortionEnergyKcal } from '../data/loader.js?v=20261021g6';
+import { loadPortionEnergyKcal } from '../data/loader.js?v=20261021g7';
 import {
   buildFilterChips,
   displayTags,
@@ -9,11 +9,11 @@ import {
   recipeVisual,
   starHtml,
   subtitleFromSearchText,
-} from '../utils/catalog-ui.js?v=20261021g6';
-import * as UserState from '../core/user-recipe-state.js?v=20261021g6';
-import { imgFailed, isPhotoMissing, recordPhotoFailure, recordPhotoSuccess, photosLikelyUnavailable } from '../utils/photo-fallback.js?v=20261021g6';
-import { excludedPantry, clearPantryExcluded, loadPantry } from '../core/pantry-exclude.js?v=20261021g6';
-import { cardStateHtml } from './recipe-status-ui.js?v=20261021g6';
+} from '../utils/catalog-ui.js?v=20261021g7';
+import * as UserState from '../core/user-recipe-state.js?v=20261021g7';
+import { imgFailed, isPhotoMissing, recordPhotoFailure, recordPhotoSuccess, photosLikelyUnavailable } from '../utils/photo-fallback.js?v=20261021g7';
+import { excludedPantry, clearPantryExcluded, loadPantry } from '../core/pantry-exclude.js?v=20261021g7';
+import { cardStateHtml } from './recipe-status-ui.js?v=20261021g7';
 
 /** localStorage key: '0' when the user turned the Godkänd filter off (on by default). */
 const GODKAND_KEY = 'yessy.browse.godkandOnly';

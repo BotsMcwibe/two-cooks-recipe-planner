@@ -56,6 +56,13 @@
       ],
       "devNotes": [
         "FLAG: HF yields 2/3/4 har identiska mängder (1 st mango); headline anger 2 portioner. Behållen yields==4 som hos granola-kit — underportionerat om man skalar UI till 4."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -70,8 +77,8 @@
         }
       ],
       "steps": [
-        "Placera påsen med {{cashews}} på en plan yta. Krossa dem genom att banka med botten av en stekpanna.",
-        "Hetta upp en stor stekpanna på medelhög värme. Rosta de krossade cashewnötterna i 3–4 min, eller tills gyllene, under omrörning."
+        "Placera påsen med {{cashews}} på en plan yta. Krossa dem genom att banka med botten av {{eq:stekpanna_1}}.",
+        "Hetta upp {{eq:stekpanna_1}} på medelhög värme. Rosta de krossade cashewnötterna i 3–4 min, eller tills gyllene, under omrörning."
       ],
       "duration": 5,
       "wait": 0,
@@ -82,7 +89,13 @@
       "heat": "medelhög",
       "equipment": [
         {
-          "type": "stekpanna_stor"
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
         }
       ]
     },
@@ -108,7 +121,7 @@
         }
       ],
       "steps": [
-        "Tillsätt {{mango_smoothie_bowl__diced_mango}}, {{honey}} och {{coconut_milk}} till mixern.",
+        "Tillsätt {{mango_smoothie_bowl__diced_mango}}, {{honey}} och {{coconut_milk}} till {{eq:mixer_1|def}}.",
         "Mixa i 1–2 min, eller tills smoothien har önskad konsistens."
       ],
       "duration": 3,
@@ -122,7 +135,8 @@
       ],
       "equipment": [
         {
-          "type": "mixer"
+          "type": "mixer",
+          "ref": "mixer_1"
         }
       ]
     },
@@ -148,13 +162,20 @@
         }
       ],
       "steps": [
-        "Häll upp {{mango_smoothie_bowl__blended}} i skålar.",
+        "Häll upp {{mango_smoothie_bowl__blended}} i {{eq:servering|pl}}.",
         "Garnera med {{mango_smoothie_bowl__roasted_cashews}} och {{freeze_dried_strawberries}}."
       ],
       "duration": 2,
       "wait": 0,
       "tags": [
         "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_skal",
+          "ref": "servering",
+          "count": "portions"
+        }
       ]
     }
   ]

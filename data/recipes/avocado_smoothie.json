@@ -69,6 +69,13 @@
       "duration": 5,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -93,7 +100,7 @@
         }
       ],
       "steps": [
-        "Tillsätt {{avocado_smoothie__prepped_produce}}, {{yoghurt}} och {{honey}} till mixern.",
+        "Tillsätt {{avocado_smoothie__prepped_produce}}, {{yoghurt}} och {{honey}} till {{eq:mixer_1|def}}.",
         "Mixa i 1–2 min, eller tills slätt."
       ],
       "duration": 3,
@@ -106,7 +113,8 @@
       ],
       "equipment": [
         {
-          "type": "mixer"
+          "type": "mixer",
+          "ref": "mixer_1"
         }
       ]
     },
@@ -122,12 +130,19 @@
         }
       ],
       "steps": [
-        "Servera {{avocado_smoothie__blended}} i 4 glas."
+        "Servera {{avocado_smoothie__blended}} i 4 {{eq:servering|noun}}."
       ],
       "duration": 1,
       "wait": 0,
       "tags": [
         "master"
+      ],
+      "serving": [
+        {
+          "type": "glas",
+          "ref": "servering",
+          "count": "portions"
+        }
       ]
     }
   ]

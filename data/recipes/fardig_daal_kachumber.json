@@ -81,12 +81,23 @@
         }
       ],
       "steps": [
-        "Tärna {{tomato}} och {{cucumber}} i små bitar och finhacka {{red_onion}}. Lägg i en skål.",
+        "Tärna {{tomato}} och {{cucumber}} i små bitar och finhacka {{red_onion}}. Lägg i {{eq:skal_1}}.",
         "Grovhacka {{coriander}} och blanda ner. Krydda med {{salt}} och {{cumin}}. Pressa över saften från {{lime}}."
       ],
       "duration": 8,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skal",
+          "ref": "skal_1"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -106,7 +117,7 @@
         }
       ],
       "steps": [
-        "Lägg {{ready_daal}} och {{water}} i en kastrull. Värm på medelvärme ca 5–7 min."
+        "Lägg {{ready_daal}} och {{water}} i {{eq:kastrull_1}}. Värm på medelvärme ca 5–7 min."
       ],
       "duration": 2,
       "tags": [],
@@ -115,7 +126,8 @@
       "equipment": [
         {
           "type": "kastrull_liten",
-          "sizeSource": "inferred"
+          "sizeSource": "inferred",
+          "ref": "kastrull_1"
         }
       ],
       "devNotes": [

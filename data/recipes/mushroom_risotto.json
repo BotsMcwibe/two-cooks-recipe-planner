@@ -45,6 +45,13 @@
       "duration": 3,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -64,6 +71,13 @@
       "duration": 1,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -83,6 +97,13 @@
       "duration": 4,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -102,6 +123,13 @@
       "duration": 4,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -121,6 +149,13 @@
       "duration": 3,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -140,6 +175,13 @@
       "duration": 2,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -159,6 +201,13 @@
       "duration": 2,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -203,7 +252,7 @@
         }
       ],
       "steps": [
-        "Hetta upp {{olive_oil}} i en stor stekpanna på medelhög värme.",
+        "Hetta upp {{olive_oil}} i {{eq:stekpanna_1}} på medelhög värme.",
         "Fräs {{mushroom_risotto__chopped_garlic}}, {{mushroom_risotto__chopped_onion}} och {{mushroom_risotto__diced_carrot}} i ca 3 min.",
         "Tillsätt {{mushroom_risotto__diced_mushrooms}} och fräs i ytterligare ca 3 min.",
         "Häll i {{risotto_rice}} och {{vegetable_bouillon}}, och fräs i 1 min."
@@ -213,7 +262,8 @@
       "heat": "medelhög",
       "equipment": [
         {
-          "type": "stekpanna_stor"
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1"
         }
       ]
     },
@@ -283,12 +333,18 @@
         }
       ],
       "steps": [
-        "Blanda {{mushroom_risotto__chopped_hazelnuts}}, {{mushroom_risotto__diced_apple}} och {{mushroom_risotto__chopped_oregano}} i en salladsskål.",
+        "Blanda {{mushroom_risotto__chopped_hazelnuts}}, {{mushroom_risotto__diced_apple}} och {{mushroom_risotto__chopped_oregano}} i {{eq:skal_1}}.",
         "Smaksätt med {{white_wine_vinegar}}, {{salt}} och {{pepper}}."
       ],
       "duration": 2,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skal_stor",
+          "ref": "skal_1"
+        }
       ]
     },
     {

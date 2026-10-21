@@ -51,6 +51,13 @@
       "duration": 6,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -65,7 +72,7 @@
         }
       ],
       "steps": [
-        "Koka upp en medelstor kastrull med saltat vatten.",
+        "Koka upp {{eq:kastrull_1}} med saltat vatten.",
         "Koka {{boeuf_bourguignon_vitloksmos__prepped_potato_garlic}} i 11–13 min, eller tills bitarna enkelt kan delas med en kniv."
       ],
       "duration": 2,
@@ -123,7 +130,8 @@
           "type": "kastrull_medelstor",
           "ref": "kastrull_1",
           "transition": "keep",
-          "offHeat": true
+          "offHeat": true,
+          "lid": true
         }
       ],
       "devNotes": [
@@ -164,8 +172,8 @@
       ],
       "steps": [
         "Grovhacka {{mushrooms}}.",
-        "Hetta upp {{butter}} i en stor kastrull på medelhög värme. Stek svampen i 3–4 min, eller tills den är brynt.",
-        "Tillsätt {{garlic_flakes}} och stek i 30 sek, tills det doftar. Krydda med en nypa {{salt}} och {{pepper}} och ställ åt sidan i en skål."
+        "Hetta upp {{butter}} i {{eq:kastrull_2}} på medelhög värme. Stek svampen i 3–4 min, eller tills den är brynt.",
+        "Tillsätt {{garlic_flakes}} och stek i 30 sek, tills det doftar. Krydda med en nypa {{salt}} och {{pepper}} och ställ åt sidan i {{eq:skal_1}}."
       ],
       "duration": 6,
       "wait": 0,
@@ -175,6 +183,15 @@
         {
           "type": "kastrull_stor",
           "ref": "kastrull_2"
+        },
+        {
+          "type": "skal",
+          "ref": "skal_1"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
         }
       ],
       "devNotes": [
@@ -204,7 +221,7 @@
       ],
       "steps": [
         "Skär {{onion}} i tunna skivor. Finhacka {{carrot}} (oskalad).",
-        "Hetta upp {{olive_oil}} på medelhög värme i kastrullen där svampen stektes (utan att torka ur den), eller i en ny stor kastrull.",
+        "Hetta upp {{olive_oil}} på medelhög värme i {{eq:kastrull_2|def}} där svampen stektes (utan att torka ur den), eller i en ny {{eq:kastrull_2|bare}}.",
         "Stek lök och morot i 2–3 min, tills de är något mjuka."
       ],
       "duration": 6,
@@ -217,6 +234,11 @@
           "ref": "kastrull_2",
           "transition": "keep",
           "after": "boeuf_bourguignon_vitloksmos__fried_mushrooms"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
         }
       ]
     },
@@ -274,7 +296,8 @@
         {
           "type": "kastrull_stor",
           "ref": "kastrull_2",
-          "transition": "keep"
+          "transition": "keep",
+          "lid": true
         }
       ]
     },
@@ -316,6 +339,13 @@
       ],
       "devNotes": [
         "HF-enhet portionspåse, 1 påse vid både 2 och 4 portioner. Mappad till pkt, inte uppskalad."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -371,12 +401,19 @@
         }
       ],
       "steps": [
-        "Lägg upp {{boeuf_bourguignon_vitloksmos__garlic_mash}} och {{boeuf_bourguignon_vitloksmos__finished_stew}} i skålar.",
+        "Lägg upp {{boeuf_bourguignon_vitloksmos__garlic_mash}} och {{boeuf_bourguignon_vitloksmos__finished_stew}} i {{eq:servering|pl}}.",
         "Toppa med {{boeuf_bourguignon_vitloksmos__chopped_parsley}}."
       ],
       "duration": 3,
       "tags": [
         "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_skal",
+          "ref": "servering",
+          "count": "portions"
+        }
       ]
     }
   ]

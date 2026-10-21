@@ -49,7 +49,7 @@
       "outputName": "Förvärmd ugn (240°C)",
       "inputs": [],
       "steps": [
-        "Värm ugnen till 240°C, eller 220°C varmluft."
+        "Värm {{eq:ugn|def}} till 240°C, eller 220°C varmluft."
       ],
       "duration": 1,
       "wait": 12,
@@ -85,6 +85,13 @@
       "duration": 3,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -104,6 +111,13 @@
       "duration": 3,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -133,8 +147,8 @@
         }
       ],
       "steps": [
-        "Lägg {{caesar_kycklingsallad__diced_potato}} på en plåt med bakplåtspapper. Blanda med {{olive_oil}}, {{salt}} och en nypa {{pepper}}.",
-        "Rosta i ugnen i ca 23 min, tills det återstår 12 min av totalt 25–35 min."
+        "Lägg {{caesar_kycklingsallad__diced_potato}} på {{eq:plat_1}} med bakplåtspapper. Blanda med {{olive_oil}}, {{salt}} och en nypa {{pepper}}.",
+        "Rosta i {{eq:ugn|def}} i ca 23 min, tills det återstår 12 min av totalt 25–35 min."
       ],
       "duration": 3,
       "wait": 23,
@@ -153,7 +167,8 @@
         {
           "type": "plat",
           "ref": "plat_1",
-          "shared": true
+          "shared": true,
+          "liner": "bakplatspapper"
         }
       ],
       "devNotes": [
@@ -173,8 +188,8 @@
         }
       ],
       "steps": [
-        "Lägg {{garlic}} (oskalad) på ena sidan av plåten med potatisen.",
-        "Rosta i ugnen i ca 27 min och ta ut vitlöksklyftorna när det återstår 8 min av potatisens tid, samtidigt som kycklingen läggs på plåten."
+        "Lägg {{garlic}} (oskalad) på ena sidan av {{eq:plat_1|def}} med potatisen.",
+        "Rosta i {{eq:ugn|def}} i ca 27 min och ta ut vitlöksklyftorna när det återstår 8 min av potatisens tid, samtidigt som kycklingen läggs på {{eq:plat_1|def}}."
       ],
       "duration": 1,
       "wait": 27,
@@ -219,7 +234,7 @@
         }
       ],
       "steps": [
-        "Lägg {{caesar_kycklingsallad__broccoli_florets}} på plåten med {{caesar_kycklingsallad__roasted_potato_first}}.",
+        "Lägg {{caesar_kycklingsallad__broccoli_florets}} på {{eq:plat_1|def}} med {{caesar_kycklingsallad__roasted_potato_first}}.",
         "Rosta i ca 4 min, tills det återstår 8 min av potatisens tid."
       ],
       "duration": 1,
@@ -274,8 +289,8 @@
       ],
       "steps": [
         "Krydda {{chicken_breast}} med {{salt}}.",
-        "Vispa {{egg}} i en djup tallrik. Blanda {{panko}} och {{parmesan}} i en annan.",
-        "Vänd kycklingen först i ägg och sedan i pankomixen. Lägg den på en tallrik."
+        "Vispa {{egg}} i {{eq:djup_tallrik_1}}. Blanda {{panko}} och {{parmesan}} i en annan.",
+        "Vänd kycklingen först i ägg och sedan i pankomixen. Lägg den på {{eq:tallrik_1}}."
       ],
       "duration": 6,
       "tags": [
@@ -288,6 +303,16 @@
       ],
       "devNotes": [
         "Panko 25 g och ägg 2 st är samma vid 3 och 4 portioner."
+      ],
+      "equipment": [
+        {
+          "type": "djup_tallrik",
+          "ref": "djup_tallrik_1"
+        },
+        {
+          "type": "tallrik",
+          "ref": "tallrik_1"
+        }
       ]
     },
     {
@@ -307,7 +332,7 @@
         }
       ],
       "steps": [
-        "Hetta upp en stor stekpanna på medelhög värme och tillsätt {{olive_oil}} så det täcker botten.",
+        "Hetta upp {{eq:stekpanna_1}} på medelhög värme och tillsätt {{olive_oil}} så det täcker botten.",
         "Stek {{caesar_kycklingsallad__breaded_chicken}} i 3–4 min per sida, eller tills den är gyllene."
       ],
       "duration": 9,
@@ -319,7 +344,8 @@
       "heat": "medelhög",
       "equipment": [
         {
-          "type": "stekpanna_stor"
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1"
         }
       ],
       "devNotes": [
@@ -338,8 +364,8 @@
         }
       ],
       "steps": [
-        "Lägg över {{caesar_kycklingsallad__fried_chicken}} på plåten med potatis och broccoli när det återstår 8 min av potatisens tid.",
-        "Rosta i ugnen i 8 min, tills kycklingen är genomstekt."
+        "Lägg över {{caesar_kycklingsallad__fried_chicken}} på {{eq:plat_1|def}} med potatis och broccoli när det återstår 8 min av potatisens tid.",
+        "Rosta i {{eq:ugn|def}} i 8 min, tills kycklingen är genomstekt."
       ],
       "duration": 2,
       "wait": 8,
@@ -418,11 +444,17 @@
         }
       ],
       "steps": [
-        "Pressa ut {{caesar_kycklingsallad__roasted_garlic}} ur skalet och mosa den med en gaffel i en liten skål.",
+        "Pressa ut {{caesar_kycklingsallad__roasted_garlic}} ur skalet och mosa den med en gaffel i {{eq:skal_1}}.",
         "Rör i {{aioli}}, {{parmesan}}, {{water}}, en nypa {{salt}} och {{pepper}}."
       ],
       "duration": 3,
-      "tags": []
+      "tags": [],
+      "equipment": [
+        {
+          "type": "skal_liten",
+          "ref": "skal_1"
+        }
+      ]
     },
     {
       "id": "caesar_kycklingsallad__sliced_chicken",
@@ -436,13 +468,20 @@
         }
       ],
       "steps": [
-        "Ta ut {{caesar_kycklingsallad__roasted_chicken}} ur ugnen och låt svalna något. Skär kycklingen i tunna skivor."
+        "Ta ut {{caesar_kycklingsallad__roasted_chicken}} ur {{eq:ugn|def}} och låt svalna något. Skär kycklingen i tunna skivor."
       ],
       "duration": 3,
       "wait": 0,
       "tags": [],
       "devNotes": [
         "\"Svalna något\" har ingen minuttid, därför ingen wait."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -477,7 +516,7 @@
         }
       ],
       "steps": [
-        "Blanda {{cabbage_mix}}, {{kale}}, {{caesar_kycklingsallad__garlic_dressing}} och {{salt}} i en stor skål.",
+        "Blanda {{cabbage_mix}}, {{kale}}, {{caesar_kycklingsallad__garlic_dressing}} och {{salt}} i {{eq:skal_2}}.",
         "Rör i {{caesar_kycklingsallad__finished_veg}} när de svalnat något."
       ],
       "duration": 3,
@@ -485,7 +524,8 @@
       "tags": [],
       "equipment": [
         {
-          "type": "skal_stor"
+          "type": "skal_stor",
+          "ref": "skal_2"
         }
       ],
       "devNotes": [
@@ -509,12 +549,19 @@
         }
       ],
       "steps": [
-        "Lägg upp {{caesar_kycklingsallad__potato_salad}} i skålar.",
+        "Lägg upp {{caesar_kycklingsallad__potato_salad}} i {{eq:servering|pl}}.",
         "Toppa med {{caesar_kycklingsallad__sliced_chicken}}."
       ],
       "duration": 2,
       "tags": [
         "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_skal",
+          "ref": "servering",
+          "count": "portions"
+        }
       ]
     }
   ]

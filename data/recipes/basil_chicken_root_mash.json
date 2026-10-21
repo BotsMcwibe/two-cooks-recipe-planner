@@ -29,6 +29,13 @@
       "duration": 8,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -48,7 +55,7 @@
         }
       ],
       "steps": [
-        "Lägg {{basil_chicken_root_mash__chopped_potato_carrot}} i en kastrull och täck med kallt {{water}}.",
+        "Lägg {{basil_chicken_root_mash__chopped_potato_carrot}} i {{eq:kastrull_1}} och täck med kallt {{water}}.",
         "Koka upp, sänk värmen och sjud i 10–12 minuter tills de är mjuka."
       ],
       "duration": 2,
@@ -59,7 +66,8 @@
       "equipment": [
         {
           "type": "kastrull_stor",
-          "sizeSource": "inferred"
+          "sizeSource": "inferred",
+          "ref": "kastrull_1"
         }
       ]
     },
@@ -80,7 +88,7 @@
         }
       ],
       "steps": [
-        "Hetta upp {{olive_oil}} i en stor stekpanna på medelhög värme.",
+        "Hetta upp {{olive_oil}} i {{eq:stekpanna_1}} på medelhög värme.",
         "Bryn {{chicken_inner_fillet}} 4–5 minuter tills gyllene."
       ],
       "duration": 6,
@@ -88,8 +96,9 @@
       "heat": "medelhög",
       "equipment": [
         {
-          "type": "stekpanna_stor",
-          "ref": "stekpanna_1"
+          "type": "traktorpanna",
+          "ref": "stekpanna_1",
+          "typeSource": "inferred"
         }
       ]
     },
@@ -110,6 +119,13 @@
       "duration": 2,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -154,7 +170,7 @@
         }
       ],
       "steps": [
-        "Sänk till låg värme i pannan med {{basil_chicken_root_mash__fried_chicken}}.",
+        "Sänk till låg värme i {{eq:stekpanna_1|def}} med {{basil_chicken_root_mash__fried_chicken}}.",
         "Tillsätt {{creme_fraiche}}, {{soy_sauce}} och {{honey}}. Krydda med {{salt}} och {{pepper}}.",
         "Låt sjuda i 8–10 minuter tills kycklingen är genomlagad. Rör ner {{basil_chicken_root_mash__chopped_basil}} mot slutet."
       ],
@@ -169,9 +185,10 @@
       "heat": "låg",
       "equipment": [
         {
-          "type": "stekpanna_stor",
+          "type": "traktorpanna",
           "ref": "stekpanna_1",
-          "transition": "keep"
+          "transition": "keep",
+          "typeSource": "inferred"
         }
       ]
     },
@@ -212,6 +229,13 @@
       "duration": 3,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -235,6 +259,13 @@
       ],
       "devNotes": [
         "En skvätt saft går till salladen (0,25 st), resten serveras som klyftor (0,75 st). Råreceptet anger ingen proportion."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -274,11 +305,17 @@
         }
       ],
       "steps": [
-        "Blanda {{basil_chicken_root_mash__grated_zucchini}}, {{basil_chicken_root_mash__sliced_apple}}, en skvätt citronsaft från {{basil_chicken_root_mash__lemon_wedges}}, {{olive_oil}}, {{salt}} och {{pepper}} i en skål."
+        "Blanda {{basil_chicken_root_mash__grated_zucchini}}, {{basil_chicken_root_mash__sliced_apple}}, en skvätt citronsaft från {{basil_chicken_root_mash__lemon_wedges}}, {{olive_oil}}, {{salt}} och {{pepper}} i {{eq:skal_1}}."
       ],
       "duration": 3,
       "tags": [
         "salad"
+      ],
+      "equipment": [
+        {
+          "type": "skal",
+          "ref": "skal_1"
+        }
       ]
     },
     {
@@ -308,7 +345,7 @@
         }
       ],
       "steps": [
-        "Häll av vattnet från kastrullen med {{basil_chicken_root_mash__boiled_potato_carrot}}.",
+        "Häll av vattnet från {{eq:kastrull_1|def}} med {{basil_chicken_root_mash__boiled_potato_carrot}}.",
         "Mosa potatis och morot tillsammans med en klick {{butter}} till mos.",
         "Smaka av med {{salt}} och {{pepper}}."
       ],
@@ -344,13 +381,20 @@
         }
       ],
       "steps": [
-        "Lägg upp {{basil_chicken_root_mash__root_vegetable_mash}} på tallrikar.",
+        "Lägg upp {{basil_chicken_root_mash__root_vegetable_mash}} på {{eq:servering|pl}}.",
         "Toppa med {{basil_chicken_root_mash__basil_chicken_sauce}}.",
         "Servera med {{basil_chicken_root_mash__zucchini_salad}} och resterande {{basil_chicken_root_mash__lemon_wedges}} på sidan."
       ],
       "duration": 2,
       "tags": [
         "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_tallrik",
+          "ref": "servering",
+          "count": "portions"
+        }
       ]
     }
   ]

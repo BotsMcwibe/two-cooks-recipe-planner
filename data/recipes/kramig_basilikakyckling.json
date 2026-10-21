@@ -60,6 +60,13 @@
       "duration": 3,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -82,6 +89,13 @@
       ],
       "devNotes": [
         "Basilika är 1 st vid både 2 och 4 portioner. Inte uppskalad."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -96,7 +110,7 @@
         }
       ],
       "steps": [
-        "Koka upp en stor kastrull med saltat vatten.",
+        "Koka upp {{eq:kastrull_1}} med saltat vatten.",
         "Koka {{kramig_basilikakyckling__halved_potato}} i 12–15 min, eller tills den enkelt kan delas med en kniv."
       ],
       "duration": 3,
@@ -106,7 +120,8 @@
       "heatSource": "inferred",
       "equipment": [
         {
-          "type": "kastrull_stor"
+          "type": "kastrull_stor",
+          "ref": "kastrull_1"
         }
       ],
       "devNotes": [
@@ -176,9 +191,9 @@
         }
       ],
       "steps": [
-        "Hetta upp en skvätt {{olive_oil}} i en stor stekpanna på medelhög värme.",
-        "Blanda {{chicken_inner_fillet}}, {{salt}}, {{olive_oil}} och {{garlic_flakes}} i en stor skål.",
-        "Stek kycklingen i 3 min per sida, eller tills den är brynt och genomstekt. Lägg över den på en tallrik."
+        "Hetta upp en skvätt {{olive_oil}} i {{eq:stekpanna_1}} på medelhög värme.",
+        "Blanda {{chicken_inner_fillet}}, {{salt}}, {{olive_oil}} och {{garlic_flakes}} i {{eq:skal_1}}.",
+        "Stek kycklingen i 3 min per sida, eller tills den är brynt och genomstekt. Lägg över den på {{eq:tallrik_1}}."
       ],
       "duration": 8,
       "wait": 0,
@@ -189,11 +204,17 @@
       "heat": "medelhög",
       "equipment": [
         {
-          "type": "stekpanna_stor",
-          "ref": "stekpanna_1"
+          "type": "traktorpanna",
+          "ref": "stekpanna_1",
+          "typeSource": "inferred"
         },
         {
-          "type": "skal_stor"
+          "type": "skal_stor",
+          "ref": "skal_1"
+        },
+        {
+          "type": "tallrik",
+          "ref": "tallrik_1"
         }
       ],
       "devNotes": [
@@ -243,7 +264,7 @@
       ],
       "steps": [
         "Halvera, kärna ur och skär {{apple}} i tunna skivor. Skär {{cucumber}} i halvmånar.",
-        "Lägg {{pointed_cabbage}} i en stor skål, ringla över {{olive_oil}} och massera i 30 sek.",
+        "Lägg {{pointed_cabbage}} i {{eq:skal_2}}, ringla över {{olive_oil}} och massera i 30 sek.",
         "Blanda i äpple, gurka, {{dried_cranberries}}, {{salt}} och en nypa {{pepper}}."
       ],
       "duration": 6,
@@ -253,7 +274,13 @@
       ],
       "equipment": [
         {
-          "type": "skal_stor"
+          "type": "skal_stor",
+          "ref": "skal_2"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
         }
       ],
       "devNotes": [
@@ -304,7 +331,7 @@
       ],
       "steps": [
         "Finhacka eller pressa {{garlic}}.",
-        "Hetta upp {{butter}} på medelvärme i stekpannan som användes till kycklingen. Tillsätt vitlöken och stek i 1 min, tills den doftar.",
+        "Hetta upp {{butter}} på medelvärme i {{eq:stekpanna_1|def}} som användes till kycklingen. Tillsätt vitlöken och stek i 1 min, tills den doftar.",
         "Tillsätt {{cooking_cream}}, {{vegetable_bouillon}} och {{kramig_basilikakyckling__chopped_basil}}. Sjud i 1–2 min, tills såsen är varm. Krydda med {{salt}} och en generös nypa {{pepper}}."
       ],
       "duration": 3,
@@ -313,10 +340,16 @@
       "heat": "medel",
       "equipment": [
         {
-          "type": "stekpanna_stor",
+          "type": "traktorpanna",
           "ref": "stekpanna_1",
           "transition": "keep",
-          "after": "kramig_basilikakyckling__fried_chicken"
+          "after": "kramig_basilikakyckling__fried_chicken",
+          "typeSource": "inferred"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
         }
       ],
       "devNotes": [
@@ -350,12 +383,19 @@
         }
       ],
       "steps": [
-        "Lägg upp {{kramig_basilikakyckling__seasoned_potato}}, {{kramig_basilikakyckling__fried_chicken}} och {{kramig_basilikakyckling__cranberry_salad}} på tallrikar.",
+        "Lägg upp {{kramig_basilikakyckling__seasoned_potato}}, {{kramig_basilikakyckling__fried_chicken}} och {{kramig_basilikakyckling__cranberry_salad}} på {{eq:servering|pl}}.",
         "Ringla {{kramig_basilikakyckling__basil_sauce}} över kycklingen."
       ],
       "duration": 3,
       "tags": [
         "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_tallrik",
+          "ref": "servering",
+          "count": "portions"
+        }
       ]
     }
   ]

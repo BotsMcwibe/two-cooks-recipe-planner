@@ -33,6 +33,13 @@
       "duration": 8,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -79,10 +86,10 @@
         }
       ],
       "steps": [
-        "Koka upp en stor kastrull med {{water}}.",
+        "Koka upp {{eq:kastrull_1}} med {{water}}.",
         "Lägg i {{potato_leek_gratin__chopped_potato}} och {{potato_leek_gratin__peeled_garlic}} i det kokande vattnet.",
         "Låt sjuda i 10 min.",
-        "Häll av i ett durkslag. Spara vitlöksklyftorna separat till stekningen; behåll potatisen till gratängfyllningen."
+        "Häll av i {{eq:durkslag_1}}. Spara vitlöksklyftorna separat till stekningen; behåll potatisen till gratängfyllningen."
       ],
       "duration": 3,
       "wait": 10,
@@ -94,7 +101,12 @@
       "heatSource": "inferred",
       "equipment": [
         {
-          "type": "kastrull_stor"
+          "type": "kastrull_stor",
+          "ref": "kastrull_1"
+        },
+        {
+          "type": "durkslag",
+          "ref": "durkslag_1"
         }
       ],
       "devNotes": [
@@ -119,6 +131,13 @@
       "duration": 5,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -141,6 +160,13 @@
       ],
       "devNotes": [
         "FLAG: _unitInference Tomat 4 tsk — överstyrd till 4 st (metod: skär i bitar; yield 2 var 2 st)."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -163,6 +189,13 @@
       ],
       "devNotes": [
         "FLAG: HF Timjan 1 tsk vid både 2 och 4 portioner (skalar inte)."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -188,7 +221,7 @@
       ],
       "steps": [
         "Pressa den sparade kokta vitlöken (från potatiskoket).",
-        "Hetta upp {{oil}} i en kastrull på medelvärme.",
+        "Hetta upp {{oil}} i {{eq:kastrull_2}} på medelvärme.",
         "Tillsätt {{potato_leek_gratin__sliced_leek}}, {{potato_leek_gratin__chopped_tomato}} och den pressade vitlöken.",
         "Stek under regelbunden omrörning i 5 min."
       ],
@@ -228,7 +261,7 @@
         }
       ],
       "steps": [
-        "Blanda i {{vegetable_bouillon}} och {{water}} i kastrullen med {{potato_leek_gratin__fried_vegetables}}.",
+        "Blanda i {{vegetable_bouillon}} och {{water}} i {{eq:kastrull_2|def}} med {{potato_leek_gratin__fried_vegetables}}.",
         "Rör om så att buljongen löses upp.",
         "Sänk värmen och låt sjuda tills hälften av vätskan har reducerats, 5–7 min."
       ],
@@ -277,7 +310,7 @@
         }
       ],
       "steps": [
-        "Blanda {{grated_cheese}} och {{panko}} i en liten skål.",
+        "Blanda {{grated_cheese}} och {{panko}} i {{eq:skal_1}}.",
         "Krydda med {{salt}} och {{pepper}}."
       ],
       "duration": 2,
@@ -286,6 +319,12 @@
       ],
       "devNotes": [
         "HF-steg säger 'Riv parmesan' men ingrediensen är finriven ost — använd {{grated_cheese}} som den är."
+      ],
+      "equipment": [
+        {
+          "type": "skal_liten",
+          "ref": "skal_1"
+        }
       ]
     },
     {
@@ -330,8 +369,8 @@
         }
       ],
       "steps": [
-        "Blanda {{mustard}}, {{honey}} och {{olive_oil}} i en skål.",
-        "Lägg {{mixed_salad}} och {{sunflower_seeds}} i en salladsskål.",
+        "Blanda {{mustard}}, {{honey}} och {{olive_oil}} i {{eq:skal_2}}.",
+        "Lägg {{mixed_salad}} och {{sunflower_seeds}} i {{eq:skal_2}}.",
         "Häll över senapsdressingen och krydda med {{salt}} och {{pepper}}."
       ],
       "duration": 4,
@@ -341,6 +380,12 @@
       "devNotes": [
         "FLAG: olivolja till dressing saknas i HF yields — 2 msk pantry-uppskattning.",
         "FLAG: alla _unitInference-fyllningar för senap/honung/salladsmix/solroskärnor behållna (g)."
+      ],
+      "equipment": [
+        {
+          "type": "skal",
+          "ref": "skal_2"
+        }
       ]
     },
     {
@@ -380,10 +425,10 @@
         }
       ],
       "steps": [
-        "Häll den förkokta potatisen från {{potato_leek_gratin__boiled_potato}} i kastrullen med {{potato_leek_gratin__reduced_stock}}.",
+        "Häll den förkokta potatisen från {{potato_leek_gratin__boiled_potato}} i {{eq:kastrull_2|def}} med {{potato_leek_gratin__reduced_stock}}.",
         "Tillsätt {{potato_leek_gratin__chopped_thyme}} och rör i {{creme_fraiche}}.",
         "Värm upp tills såsen börjar bubbla.",
-        "Ta av kastrullen från värmen. Smaka av med {{salt}} och {{pepper}}."
+        "Ta av {{eq:kastrull_2|def}} från värmen. Smaka av med {{salt}} och {{pepper}}."
       ],
       "duration": 5,
       "tags": [],
@@ -423,9 +468,9 @@
         }
       ],
       "steps": [
-        "För över {{potato_leek_gratin__gratin_filling}} i en ugnsform.",
+        "För över {{potato_leek_gratin__gratin_filling}} i {{eq:ugnsform_1}}.",
         "Strö först över {{grated_mozzarella}} och sedan {{potato_leek_gratin__panko_mix}}.",
-        "Gratinera i ugnen med grillfunktion i 3–5 min tills osten har smält och pankomixen blivit gyllenbrun."
+        "Gratinera i {{eq:ugn|def}} med grillfunktion i 3–5 min tills osten har smält och pankomixen blivit gyllenbrun."
       ],
       "duration": 4,
       "wait": 5,
@@ -444,7 +489,8 @@
         },
         {
           "type": "ugnsform_stor",
-          "sizeSource": "inferred"
+          "sizeSource": "inferred",
+          "ref": "ugnsform_1"
         }
       ],
       "devNotes": [
@@ -473,13 +519,20 @@
         }
       ],
       "steps": [
-        "Servera {{potato_leek_gratin__gratinated_gratin}} i djupa tallrikar med {{potato_leek_gratin__honey_mustard_salad}} vid sidan.",
+        "Servera {{potato_leek_gratin__gratinated_gratin}} i {{eq:servering|pl}} med {{potato_leek_gratin__honey_mustard_salad}} vid sidan.",
         "Strö över resterande {{potato_leek_gratin__chopped_thyme}}."
       ],
       "duration": 1,
       "wait": 0,
       "tags": [
         "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_djup_tallrik",
+          "ref": "servering",
+          "count": "portions"
+        }
       ]
     }
   ]

@@ -59,7 +59,7 @@
         }
       ],
       "steps": [
-        "Koka upp en medelstor kastrull med {{water}}.",
+        "Koka upp {{eq:kastrull_1}} med {{water}}.",
         "Rör i {{jasmine_rice}} och {{salt}}, sänk till medellåg värme och sjud under lock i 12 min."
       ],
       "duration": 2,
@@ -72,7 +72,8 @@
       "equipment": [
         {
           "type": "kastrull_medelstor",
-          "ref": "kastrull_1"
+          "ref": "kastrull_1",
+          "lid": true
         }
       ]
     },
@@ -98,7 +99,8 @@
           "type": "kastrull_medelstor",
           "ref": "kastrull_1",
           "transition": "keep",
-          "offHeat": true
+          "offHeat": true,
+          "lid": true
         }
       ]
     },
@@ -142,6 +144,13 @@
       "duration": 2,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -203,11 +212,17 @@
         }
       ],
       "steps": [
-        "Blanda {{olive_oil}} och {{umami_glazed_chickpeas__pressed_garlic}} i en liten skål. Ställ åt sidan till servering."
+        "Blanda {{olive_oil}} och {{umami_glazed_chickpeas__pressed_garlic}} i {{eq:skal_1}}. Ställ åt sidan till servering."
       ],
       "duration": 1,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skal_liten",
+          "ref": "skal_1"
+        }
       ]
     },
     {
@@ -227,7 +242,7 @@
         }
       ],
       "steps": [
-        "Hetta upp {{olive_oil}} i en stor stekpanna på medelhög värme.",
+        "Hetta upp {{olive_oil}} i {{eq:stekpanna_1}} på medelhög värme.",
         "Stek {{umami_glazed_chickpeas__drained_chickpeas}} i 5–7 min, eller tills gyllene. Rör om då och då."
       ],
       "duration": 7,
@@ -273,6 +288,13 @@
       "duration": 6,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -313,7 +335,7 @@
       ],
       "steps": [
         "Grovhacka {{salted_peanuts}}.",
-        "Blanda {{umami_glazed_chickpeas__cut_vegetables}} (rädisor, morot och gurka) och jordnötterna med {{ponzu_dressing}}, {{olive_oil}}, {{salt}} och {{pepper}} i en medelstor skål."
+        "Blanda {{umami_glazed_chickpeas__cut_vegetables}} (rädisor, morot och gurka) och jordnötterna med {{ponzu_dressing}}, {{olive_oil}}, {{salt}} och {{pepper}} i {{eq:skal_2}}."
       ],
       "duration": 2,
       "tags": [
@@ -321,7 +343,13 @@
       ],
       "equipment": [
         {
-          "type": "skal_medelstor"
+          "type": "skal_medelstor",
+          "ref": "skal_2"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
         }
       ]
     },
@@ -342,7 +370,7 @@
         }
       ],
       "steps": [
-        "Tillsätt {{umami_glazed_chickpeas__umami_glaze}} till pannan med {{umami_glazed_chickpeas__fried_chickpeas}} och sjud i 2–3 min, eller tills såsen har tjocknat och kikärtorna är glaserade."
+        "Tillsätt {{umami_glazed_chickpeas__umami_glaze}} till {{eq:stekpanna_1|def}} med {{umami_glazed_chickpeas__fried_chickpeas}} och sjud i 2–3 min, eller tills såsen har tjocknat och kikärtorna är glaserade."
       ],
       "duration": 1,
       "wait": 3,
@@ -384,7 +412,7 @@
         }
       ],
       "steps": [
-        "Blanda {{sriracha}} och {{yoghurt}} i en liten skål. Krydda med {{salt}} och {{pepper}}."
+        "Blanda {{sriracha}} och {{yoghurt}} i {{eq:skal_3}}. Krydda med {{salt}} och {{pepper}}."
       ],
       "duration": 2,
       "tags": [
@@ -392,6 +420,12 @@
       ],
       "devNotes": [
         "HF-kortet lägger yoghurten i samma steg som glaseringen; egen nod så 2–3 min-sjuden äger timern."
+      ],
+      "equipment": [
+        {
+          "type": "skal_liten",
+          "ref": "skal_3"
+        }
       ]
     },
     {
@@ -414,6 +448,13 @@
       ],
       "devNotes": [
         "HF-enhet portionspåse finns inte i units.json — satt till 1 pkt. Samma mängd vid 2 och 4 portioner."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -453,7 +494,7 @@
         }
       ],
       "steps": [
-        "Lägg upp {{umami_glazed_chickpeas__cooked_rice}} i djupa tallrikar och ringla över {{umami_glazed_chickpeas__garlic_oil}}.",
+        "Lägg upp {{umami_glazed_chickpeas__cooked_rice}} i {{eq:servering|pl}} och ringla över {{umami_glazed_chickpeas__garlic_oil}}.",
         "Toppa med {{umami_glazed_chickpeas__ponzu_salad}} och {{umami_glazed_chickpeas__glazed_chickpeas}}.",
         "Strö över {{umami_glazed_chickpeas__grated_coriander}} och servera med {{umami_glazed_chickpeas__sriracha_yoghurt}}."
       ],
@@ -461,6 +502,13 @@
       "wait": 0,
       "tags": [
         "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_djup_tallrik",
+          "ref": "servering",
+          "count": "portions"
+        }
       ]
     }
   ]

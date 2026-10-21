@@ -57,6 +57,13 @@
       "duration": 3,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -76,6 +83,13 @@
       "duration": 2,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -131,6 +145,13 @@
       "duration": 3,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -169,6 +190,13 @@
       "duration": 2,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -198,7 +226,7 @@
         }
       ],
       "steps": [
-        "Hetta upp {{olive_oil}} i en stekpanna på medelhög värme.",
+        "Hetta upp {{olive_oil}} i {{eq:stekpanna_1}} på medelhög värme.",
         "Tillsätt {{kramig_medelhavs_kyckling__sliced_onion}}, {{kramig_medelhavs_kyckling__pressed_garlic}} och {{chicken_breast_strips}} och en nypa salt. Stek i 4–5 min tills kycklingen är gyllene och genomstekt."
       ],
       "duration": 6,
@@ -209,9 +237,9 @@
       "heat": "medelhög",
       "equipment": [
         {
-          "type": "stekpanna_stor",
+          "type": "traktorpanna",
           "ref": "stekpanna_1",
-          "sizeSource": "inferred"
+          "typeSource": "inferred"
         }
       ]
     },
@@ -272,10 +300,10 @@
       "heatSource": "inferred",
       "equipment": [
         {
-          "type": "stekpanna_stor",
+          "type": "traktorpanna",
           "ref": "stekpanna_1",
           "transition": "keep",
-          "sizeSource": "inferred"
+          "typeSource": "inferred"
         }
       ]
     },
@@ -333,12 +361,19 @@
         }
       ],
       "steps": [
-        "Lägg upp {{kramig_medelhavs_kyckling__bulgur_med_gronsaker}} i skålar och toppa med {{kramig_medelhavs_kyckling__cream_sauce}}.",
+        "Lägg upp {{kramig_medelhavs_kyckling__bulgur_med_gronsaker}} i {{eq:servering|pl}} och toppa med {{kramig_medelhavs_kyckling__cream_sauce}}.",
         "Garnera med {{kramig_medelhavs_kyckling__chopped_parsley}}."
       ],
       "duration": 3,
       "tags": [
         "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_skal",
+          "ref": "servering",
+          "count": "portions"
+        }
       ]
     }
   ]

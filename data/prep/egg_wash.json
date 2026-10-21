@@ -13,11 +13,17 @@
         }
       ],
       "steps": [
-        "Vispa {{egg}} lätt i en liten skål."
+        "Vispa {{egg}} lätt i {{eq:egg_wash_skal_1}}."
       ],
       "duration": 1,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skal_liten",
+          "ref": "egg_wash_skal_1"
+        }
       ]
     }
   ]

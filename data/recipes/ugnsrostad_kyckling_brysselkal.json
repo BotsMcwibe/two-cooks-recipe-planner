@@ -65,6 +65,13 @@
       ],
       "devNotes": [
         "300 g är samma mängd vid 3 och 4 portioner. Inte uppskalad."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -94,8 +101,8 @@
         }
       ],
       "steps": [
-        "Lägg {{ugnsrostad_kyckling_brysselkal__sliced_sprouts}} på en plåt med bakplåtspapper. Blanda med en skvätt {{olive_oil}}, {{salt}} och en nypa {{pepper}}.",
-        "Rosta i ugnen i 10–12 min, eller tills brysselkålen är gyllene."
+        "Lägg {{ugnsrostad_kyckling_brysselkal__sliced_sprouts}} på {{eq:plat_1}} med bakplåtspapper. Blanda med en skvätt {{olive_oil}}, {{salt}} och en nypa {{pepper}}.",
+        "Rosta i {{eq:ugn|def}} i 10–12 min, eller tills brysselkålen är gyllene."
       ],
       "duration": 2,
       "wait": 12,
@@ -114,7 +121,8 @@
         {
           "type": "plat",
           "ref": "plat_1",
-          "shared": true
+          "shared": true,
+          "liner": "bakplatspapper"
         }
       ],
       "devNotes": [
@@ -153,8 +161,8 @@
         }
       ],
       "steps": [
-        "Lägg {{chicken_breast}} på plåten bredvid brysselkålen. Ringla över en skvätt {{olive_oil}} och krydda med {{jorden_runt}}, {{salt}} och en nypa {{pepper}}.",
-        "Rosta i ugnen i 10–12 min, eller tills kycklingen är genomstekt."
+        "Lägg {{chicken_breast}} på {{eq:plat_1|def}} bredvid brysselkålen. Ringla över en skvätt {{olive_oil}} och krydda med {{jorden_runt}}, {{salt}} och en nypa {{pepper}}.",
+        "Rosta i {{eq:ugn|def}} i 10–12 min, eller tills kycklingen är genomstekt."
       ],
       "duration": 2,
       "wait": 12,
@@ -198,7 +206,14 @@
       ],
       "duration": 3,
       "wait": 0,
-      "tags": []
+      "tags": [],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "ugnsrostad_kyckling_brysselkal__cooked_bulgur",
@@ -227,7 +242,7 @@
         }
       ],
       "steps": [
-        "Koka upp {{water}} i en kastrull.",
+        "Koka upp {{water}} i {{eq:kastrull_1}}.",
         "Rör i {{bulgur}}, {{jorden_runt}} och {{salt}}. Sänk till medellåg värme och sjud under lock i 9–10 min, eller tills bulgur är al dente."
       ],
       "duration": 3,
@@ -237,7 +252,9 @@
       "equipment": [
         {
           "type": "kastrull_medelstor",
-          "sizeSource": "inferred"
+          "sizeSource": "inferred",
+          "ref": "kastrull_1",
+          "lid": true
         }
       ]
     },
@@ -279,7 +296,7 @@
       ],
       "steps": [
         "Halvera, kärna ur och skär {{apple}} och {{pear}} i tunna skivor.",
-        "Blanda äpple, päron, {{shredded_red_cabbage}}, {{olive_oil}}, {{salt}} och en nypa {{pepper}} i en stor skål."
+        "Blanda äpple, päron, {{shredded_red_cabbage}}, {{olive_oil}}, {{salt}} och en nypa {{pepper}} i {{eq:skal_1}}."
       ],
       "duration": 5,
       "tags": [
@@ -287,7 +304,13 @@
       ],
       "equipment": [
         {
-          "type": "skal_stor"
+          "type": "skal_stor",
+          "ref": "skal_1"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
         }
       ],
       "devNotes": [
@@ -317,7 +340,7 @@
       ],
       "steps": [
         "Finhacka eller pressa {{garlic}}.",
-        "Blanda vitlök, {{yoghurt}} och {{salt}} i en liten skål."
+        "Blanda vitlök, {{yoghurt}} och {{salt}} i {{eq:skal_2}}."
       ],
       "duration": 3,
       "tags": [
@@ -325,6 +348,17 @@
       ],
       "devNotes": [
         "Yoghurten är fylld som 300 g, inte ml."
+      ],
+      "equipment": [
+        {
+          "type": "skal_liten",
+          "ref": "skal_2"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -339,7 +373,7 @@
         }
       ],
       "steps": [
-        "Hetta upp en stekpanna på medelhög värme. Grovhacka {{walnuts}}.",
+        "Hetta upp {{eq:stekpanna_1}} på medelhög värme. Grovhacka {{walnuts}}.",
         "Rosta nötterna i 2–3 min, eller tills de är gyllene."
       ],
       "duration": 4,
@@ -349,7 +383,13 @@
       "equipment": [
         {
           "type": "stekpanna_liten",
-          "sizeSource": "inferred"
+          "sizeSource": "inferred",
+          "ref": "stekpanna_1"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
         }
       ],
       "devNotes": [
@@ -393,12 +433,19 @@
         }
       ],
       "steps": [
-        "Lägg upp {{ugnsrostad_kyckling_brysselkal__cooked_bulgur}}, {{ugnsrostad_kyckling_brysselkal__cabbage_apple_salad}} och {{ugnsrostad_kyckling_brysselkal__roasted_sprouts}} i skålar och toppa med {{ugnsrostad_kyckling_brysselkal__sliced_chicken}}.",
+        "Lägg upp {{ugnsrostad_kyckling_brysselkal__cooked_bulgur}}, {{ugnsrostad_kyckling_brysselkal__cabbage_apple_salad}} och {{ugnsrostad_kyckling_brysselkal__roasted_sprouts}} i {{eq:servering|pl}} och toppa med {{ugnsrostad_kyckling_brysselkal__sliced_chicken}}.",
         "Garnera med {{ugnsrostad_kyckling_brysselkal__toasted_walnuts}} och ringla över {{ugnsrostad_kyckling_brysselkal__garlic_dressing}}."
       ],
       "duration": 3,
       "tags": [
         "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_skal",
+          "ref": "servering",
+          "count": "portions"
+        }
       ]
     }
   ]

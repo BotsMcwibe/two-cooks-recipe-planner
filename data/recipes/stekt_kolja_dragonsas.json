@@ -44,7 +44,7 @@
       "outputName": "Förvärmd ugn (240°C)",
       "inputs": [],
       "steps": [
-        "Värm ugnen till 240°C, eller 220°C varmluft."
+        "Värm {{eq:ugn|def}} till 240°C, eller 220°C varmluft."
       ],
       "duration": 1,
       "wait": 12,
@@ -80,6 +80,13 @@
       "duration": 5,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -109,9 +116,9 @@
         }
       ],
       "steps": [
-        "Placera {{stekt_kolja_dragonsas__potato_wedges}} på ena sidan av en plåt med bakplåtspapper.",
+        "Placera {{stekt_kolja_dragonsas__potato_wedges}} på ena sidan av {{eq:plat_1}} med bakplåtspapper.",
         "Blanda med {{olive_oil}}, {{salt}} och en nypa {{pepper}}.",
-        "Rosta i ugnen i ca 20 min, tills det återstår 15 min av totalt 25–35 min."
+        "Rosta i {{eq:ugn|def}} i ca 20 min, tills det återstår 15 min av totalt 25–35 min."
       ],
       "duration": 3,
       "wait": 20,
@@ -129,7 +136,8 @@
         },
         {
           "type": "plat",
-          "ref": "plat_1"
+          "ref": "plat_1",
+          "liner": "bakplatspapper"
         }
       ],
       "devNotes": [
@@ -180,7 +188,7 @@
       "steps": [
         "Skär {{lemon}} i klyftor.",
         "Plocka och finhacka blad från {{tarragon}}.",
-        "Blanda dragon, {{cooking_cream}}, {{vegetable_bouillon}}, en generös skvätt citrussaft, {{water}}, {{salt}} och en nypa {{pepper}} i en liten skål."
+        "Blanda dragon, {{cooking_cream}}, {{vegetable_bouillon}}, en generös skvätt citrussaft, {{water}}, {{salt}} och en nypa {{pepper}} i {{eq:skal_1}}."
       ],
       "duration": 5,
       "tags": [
@@ -188,6 +196,17 @@
       ],
       "devNotes": [
         "HF skriver att halva mängden av vissa ingredienser används — mängderna här är 4-portionsyielden som den står."
+      ],
+      "equipment": [
+        {
+          "type": "skal_liten",
+          "ref": "skal_1"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -207,6 +226,13 @@
       "duration": 1,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -232,6 +258,13 @@
       "duration": 5,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -266,7 +299,7 @@
         }
       ],
       "steps": [
-        "Lägg {{stekt_kolja_dragonsas__prepped_vegetables}} på andra sidan av plåten med {{stekt_kolja_dragonsas__roasted_potato}}.",
+        "Lägg {{stekt_kolja_dragonsas__prepped_vegetables}} på andra sidan av {{eq:plat_1|def}} med {{stekt_kolja_dragonsas__roasted_potato}}.",
         "Blanda grönsakerna med {{olive_oil}}, {{salt}} och en nypa {{pepper}}.",
         "Rosta i ytterligare 15 min, eller tills potatisen är gyllene."
       ],
@@ -330,7 +363,7 @@
         }
       ],
       "steps": [
-        "Hetta upp {{olive_oil}} i en stor stekpanna på medelhög värme. Torka av {{haddock}} med hushållspapper och krydda med {{salt}} och en nypa {{pepper}} på båda sidor.",
+        "Hetta upp {{olive_oil}} i {{eq:stekpanna_1}} på medelhög värme. Torka av {{haddock}} med hushållspapper och krydda med {{salt}} och en nypa {{pepper}} på båda sidor.",
         "Stek fisken i 2–3 min.",
         "Vänd fisken, tillsätt {{butter}} och {{stekt_kolja_dragonsas__chopped_shallot}} och stek i 1 min.",
         "Sänk till medelvärme, rör ner {{stekt_kolja_dragonsas__tarragon_sauce}} och sjud i ytterligare 2–3 min, tills fisken är genomstekt och såsen varm."
@@ -348,7 +381,9 @@
       },
       "equipment": [
         {
-          "type": "stekpanna_stor"
+          "type": "traktorpanna",
+          "ref": "stekpanna_1",
+          "typeSource": "inferred"
         }
       ]
     },
@@ -369,12 +404,19 @@
         }
       ],
       "steps": [
-        "Lägg upp potatis och rostade grönsaker från {{stekt_kolja_dragonsas__roasted_broccoli_radish}} och fisken från {{stekt_kolja_dragonsas__pan_fried_haddock}} på tallrikar.",
-        "Toppa fisken med dragonsåsen från pannan."
+        "Lägg upp potatis och rostade grönsaker från {{stekt_kolja_dragonsas__roasted_broccoli_radish}} och fisken från {{stekt_kolja_dragonsas__pan_fried_haddock}} på {{eq:servering|pl}}.",
+        "Toppa fisken med dragonsåsen från {{eq:stekpanna_1|def}}."
       ],
       "duration": 3,
       "tags": [
         "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_tallrik",
+          "ref": "servering",
+          "count": "portions"
+        }
       ]
     }
   ]

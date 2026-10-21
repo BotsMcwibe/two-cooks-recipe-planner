@@ -45,6 +45,13 @@
       "duration": 4,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -67,6 +74,13 @@
       ],
       "tips": [
         "Använd bara en halv chili om du inte tycker om stark mat."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -91,6 +105,13 @@
       "duration": 4,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -110,6 +131,13 @@
       "duration": 2,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -139,7 +167,7 @@
         }
       ],
       "steps": [
-        "Hetta upp {{olive_oil}} i en stor stekpanna på medelvärme.",
+        "Hetta upp {{olive_oil}} i {{eq:stekpanna_1}} på medelvärme.",
         "Fräs {{spaghetti_courgette_sauce__diced_zucchini}}, {{spaghetti_courgette_sauce__chopped_chili}} och {{spaghetti_courgette_sauce__chopped_garlic_onion}} i 1–2 min."
       ],
       "duration": 3,
@@ -147,8 +175,9 @@
       "heat": "medel",
       "equipment": [
         {
-          "type": "stekpanna_stor",
-          "ref": "stekpanna_1"
+          "type": "traktorpanna",
+          "ref": "stekpanna_1",
+          "typeSource": "inferred"
         }
       ]
     },
@@ -184,7 +213,7 @@
         }
       ],
       "steps": [
-        "Tillsätt {{spaghetti_courgette_sauce__chopped_parsley}} och {{canned_tomatoes}} till {{spaghetti_courgette_sauce__fried_vegetables}} i pannan.",
+        "Tillsätt {{spaghetti_courgette_sauce__chopped_parsley}} och {{canned_tomatoes}} till {{spaghetti_courgette_sauce__fried_vegetables}} i {{eq:stekpanna_1|def}}.",
         "Låt sjuda i 10–12 min tills såsen tjocknat. Krydda med {{salt}} och {{pepper}} mot slutet."
       ],
       "duration": 2,
@@ -194,9 +223,10 @@
       "heatSource": "inferred",
       "equipment": [
         {
-          "type": "stekpanna_stor",
+          "type": "traktorpanna",
           "ref": "stekpanna_1",
-          "transition": "keep"
+          "transition": "keep",
+          "typeSource": "inferred"
         }
       ],
       "devNotes": [
@@ -225,10 +255,10 @@
         }
       ],
       "steps": [
-        "Koka upp saltat {{water}} i en stor kastrull.",
+        "Koka upp saltat {{water}} i {{eq:kastrull_1}}.",
         "Tillsätt {{spaghetti}} och koka i 10–12 min utan lock, eller tills al dente.",
         "Rör om regelbundet så att spaghettin inte blir klibbig.",
-        "Häll av i ett durkslag."
+        "Häll av i {{eq:durkslag_1}}."
       ],
       "duration": 3,
       "wait": 12,
@@ -240,7 +270,13 @@
       "heatSource": "inferred",
       "equipment": [
         {
-          "type": "kastrull_stor"
+          "type": "kastrull_stor",
+          "ref": "kastrull_1",
+          "lid": true
+        },
+        {
+          "type": "durkslag",
+          "ref": "durkslag_1"
         }
       ]
     },
@@ -261,7 +297,7 @@
         }
       ],
       "steps": [
-        "Lägg {{parmesan}} och {{panko}} i en stekpanna på medelvärme.",
+        "Lägg {{parmesan}} och {{panko}} i {{eq:stekpanna_2}} på medelvärme.",
         "Rör tills blandningen är gyllenbrun och krispig, ca 5 min."
       ],
       "duration": 5,
@@ -270,7 +306,8 @@
       "equipment": [
         {
           "type": "stekpanna_liten",
-          "sizeSource": "inferred"
+          "sizeSource": "inferred",
+          "ref": "stekpanna_2"
         }
       ]
     },
@@ -301,12 +338,19 @@
         }
       ],
       "steps": [
-        "Servera {{spaghetti_courgette_sauce__cooked_spaghetti}} med {{spaghetti_courgette_sauce__courgette_sauce}} i djupa tallrikar.",
+        "Servera {{spaghetti_courgette_sauce__cooked_spaghetti}} med {{spaghetti_courgette_sauce__courgette_sauce}} i {{eq:servering|pl}}.",
         "Strö över {{spaghetti_courgette_sauce__crispy_parmesan_panko}} och resterande {{spaghetti_courgette_sauce__chopped_parsley}}."
       ],
       "duration": 2,
       "tags": [
         "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_djup_tallrik",
+          "ref": "servering",
+          "count": "portions"
+        }
       ]
     }
   ]

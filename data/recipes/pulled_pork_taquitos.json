@@ -41,7 +41,7 @@
       "outputName": "Förvärmd ugn (240°C)",
       "inputs": [],
       "steps": [
-        "Värm ugnen till 240°C, eller 220°C varmluft."
+        "Värm {{eq:ugn|def}} till 240°C, eller 220°C varmluft."
       ],
       "duration": 1,
       "wait": 12,
@@ -69,8 +69,8 @@
         }
       ],
       "steps": [
-        "Placera {{pulled_pork}} och sky från förpackningen i en kastrull.",
-        "Hetta upp kastrullen på medelvärme och sjud under lock i 10–12 min."
+        "Placera {{pulled_pork}} och sky från förpackningen i {{eq:kastrull_1}}.",
+        "Hetta upp {{eq:kastrull_1|def}} på medelvärme och sjud under lock i 10–12 min."
       ],
       "duration": 2,
       "wait": 12,
@@ -79,7 +79,9 @@
       "equipment": [
         {
           "type": "kastrull_liten",
-          "sizeSource": "inferred"
+          "sizeSource": "inferred",
+          "ref": "kastrull_1",
+          "lid": true
         }
       ]
     },
@@ -140,12 +142,23 @@
       ],
       "steps": [
         "Halvera {{lime}}.",
-        "Blanda {{creme_fraiche}}, limesaft, {{salt}} och {{pepper}} i en liten skål."
+        "Blanda {{creme_fraiche}}, limesaft, {{salt}} och {{pepper}} i {{eq:skal_1}}."
       ],
       "duration": 3,
       "wait": 0,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skal_liten",
+          "ref": "skal_1"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -175,7 +188,7 @@
         }
       ],
       "steps": [
-        "Fördela {{pulled_pork_taquitos__pork_filling}} på {{mini_tortillas}}, rulla ihop dem stramt och placera på en plåt med bakplåtspapper.",
+        "Fördela {{pulled_pork_taquitos__pork_filling}} på {{mini_tortillas}}, rulla ihop dem stramt och placera på {{eq:plat_1}} med bakplåtspapper.",
         "Pensla med en generös skvätt {{olive_oil}} och krydda med {{salt}}.",
         "Grädda i 7–9 min, tills spröda och gyllene."
       ],
@@ -191,7 +204,9 @@
           "fanTemp": 220
         },
         {
-          "type": "plat"
+          "type": "plat",
+          "ref": "plat_1",
+          "liner": "bakplatspapper"
         }
       ]
     },

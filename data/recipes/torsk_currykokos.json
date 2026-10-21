@@ -75,8 +75,9 @@
       "heatSource": "inferred",
       "equipment": [
         {
-          "type": "stekpanna_medelstor",
-          "sizeSource": "inferred"
+          "type": "traktorpanna",
+          "ref": "stekpanna_1",
+          "typeSource": "inferred"
         }
       ],
       "devNotes": [
@@ -113,7 +114,26 @@
       "tags": [],
       "devNotes": [
         "Salt är 2 krm i rådatan, inte 1 nypa. 8 min är råstegets timer."
-      ]
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada_ra",
+          "separate": true,
+          "inferred": true,
+          "rawKinds": [
+            "fish"
+          ]
+        },
+        {
+          "type": "traktorpanna",
+          "ref": "stekpanna_1",
+          "transition": "keep",
+          "typeSource": "inferred"
+        }
+      ],
+      "heat": "medellåg",
+      "heatSource": "inferred"
     },
     {
       "id": "torsk_currykokos__veg_rice",
@@ -138,6 +158,13 @@
       "tags": [],
       "devNotes": [
         "Rånamnet är \"sugar snaps\". Mappat till sockerärtor."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {

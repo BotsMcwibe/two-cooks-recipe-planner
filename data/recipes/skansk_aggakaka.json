@@ -75,6 +75,15 @@
         {
           "type": "stekpanna_liten",
           "sizeSource": "inferred"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada_ra",
+          "separate": true,
+          "inferred": true,
+          "rawKinds": [
+            "meat"
+          ]
         }
       ],
       "devNotes": [
@@ -98,8 +107,8 @@
         }
       ],
       "steps": [
-        "Lägg {{skansk_aggakaka__bacon}} i en ugnsform.",
-        "Häll över {{skansk_aggakaka__batter}} och grädda i ugnen ca 20 min."
+        "Lägg {{skansk_aggakaka__bacon}} i {{eq:ugnsform_1}}.",
+        "Häll över {{skansk_aggakaka__batter}} och grädda i {{eq:ugn|def}} ca 20 min."
       ],
       "duration": 2,
       "wait": 20,
@@ -114,7 +123,8 @@
         },
         {
           "type": "ugnsform",
-          "sizeSource": "inferred"
+          "sizeSource": "inferred",
+          "ref": "ugnsform_1"
         }
       ],
       "devNotes": [
@@ -143,6 +153,13 @@
       "duration": 5,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {

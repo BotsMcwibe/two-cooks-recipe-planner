@@ -45,6 +45,13 @@
       "duration": 4,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -64,6 +71,13 @@
       "duration": 1,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -88,10 +102,10 @@
         }
       ],
       "steps": [
-        "Koka upp {{water}} med {{vegetable_bouillon}} i en kastrull.",
+        "Koka upp {{water}} med {{vegetable_bouillon}} i {{eq:kastrull_1}}.",
         "Lägg ner {{noodles}} i det kokande buljongvattnet.",
         "Koka tills mjuka, 4–6 min.",
-        "Häll av vattnet i ett durkslag och häll tillbaka nudlarna i kastrullen."
+        "Häll av vattnet i {{eq:durkslag_1}} och häll tillbaka nudlarna i {{eq:kastrull_1|def}}."
       ],
       "duration": 3,
       "wait": 5,
@@ -104,7 +118,12 @@
       "equipment": [
         {
           "type": "kastrull_medelstor",
-          "sizeSource": "inferred"
+          "sizeSource": "inferred",
+          "ref": "kastrull_1"
+        },
+        {
+          "type": "durkslag",
+          "ref": "durkslag_1"
         }
       ]
     },
@@ -143,6 +162,13 @@
       ],
       "devNotes": [
         "HF-kortet anger ca 10 g ingefära för 2 port (≈20 g för 4)."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -167,7 +193,7 @@
         }
       ],
       "steps": [
-        "Hetta upp {{oil}} i en stor kastrull på medelhög värme.",
+        "Hetta upp {{oil}} i {{eq:kastrull_2}} på medelhög värme.",
         "Fräs svamp och paprika från {{coconut_soup__prepped_vegetables}} samt chili, ingefära och vitlök från {{coconut_soup__prepped_aromatics}} i 2 min under omrörning."
       ],
       "duration": 3,
@@ -220,7 +246,7 @@
         }
       ],
       "steps": [
-        "Häll i {{coconut_milk}}, {{yellow_curry_paste}} och {{water}} i kastrullen med {{coconut_soup__fried_vegetables}}.",
+        "Häll i {{coconut_milk}}, {{yellow_curry_paste}} och {{water}} i {{eq:kastrull_2|def}} med {{coconut_soup__fried_vegetables}}.",
         "Låt soppan sjuda tills grönsakerna har mjuknat, 3–4 min.",
         "Häll i {{coconut_soup__cooked_noodles}}. Se till att de är nedsänkta i soppan och rör om ordentligt.",
         "Rör i {{soy_sauce}}."
@@ -267,6 +293,13 @@
       "duration": 4,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -298,12 +331,19 @@
       "steps": [
         "Rör i hälften av koriandern från {{coconut_soup__garnish}} i {{coconut_soup__soup}}.",
         "Pressa i juice från {{coconut_soup__lime_wedges}} efter smak. Tillsätt {{salt}} om det behövs.",
-        "Servera soppan i skålar och toppa med jordnötter, resterande koriander och salladslök."
+        "Servera soppan i {{eq:servering|pl}} och toppa med jordnötter, resterande koriander och salladslök."
       ],
       "duration": 3,
       "wait": 0,
       "tags": [
         "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_skal",
+          "ref": "servering",
+          "count": "portions"
+        }
       ]
     }
   ]

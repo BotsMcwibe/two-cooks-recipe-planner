@@ -63,6 +63,13 @@
       "devNotes": [
         "Pak choi är 1 st vid både 3 och 4 portioner. Inte uppskalad.",
         "Den vita delen går till woken och den gröna till riset; råreceptet anger ingen proportion, så grafen delar 0,5 st / 0,5 st."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -97,7 +104,7 @@
         }
       ],
       "steps": [
-        "Finhacka eller pressa {{garlic}}. Hetta upp {{olive_oil}} i en medelstor kastrull på medelhög värme och fräs vitlöken i 30 sek, tills den doftar.",
+        "Finhacka eller pressa {{garlic}}. Hetta upp {{olive_oil}} i {{eq:kastrull_1}} på medelhög värme och fräs vitlöken i 30 sek, tills den doftar.",
         "Tillsätt {{water}} och koka upp. Rör i {{long_grain_rice}} och {{salt}}, sänk till medellåg värme och sjud under lock i 14 min."
       ],
       "duration": 3,
@@ -113,7 +120,13 @@
       "equipment": [
         {
           "type": "kastrull_medelstor",
-          "ref": "kastrull_1"
+          "ref": "kastrull_1",
+          "lid": true
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
         }
       ],
       "devNotes": [
@@ -147,7 +160,8 @@
           "type": "kastrull_medelstor",
           "ref": "kastrull_1",
           "transition": "keep",
-          "offHeat": true
+          "offHeat": true,
+          "lid": true
         }
       ],
       "devNotes": [
@@ -171,6 +185,13 @@
       "duration": 3,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -208,6 +229,13 @@
       ],
       "devNotes": [
         "Råreceptet: en nypa sesamfrön på avokadon, resterande av de 10 g i woken."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -262,9 +290,9 @@
         }
       ],
       "steps": [
-        "Hetta upp {{olive_oil}} i en stor stekpanna på medelvärme. Stek {{asiatisk_rakwok__chopped_broccoli}}, den vita delen från {{asiatisk_rakwok__prepped_pak_choi}} och en skvätt av {{soy_sauce}} i 3–4 min, tills broccolin börjar mjukna.",
+        "Hetta upp {{olive_oil}} i {{eq:stekpanna_1}} på medelvärme. Stek {{asiatisk_rakwok__chopped_broccoli}}, den vita delen från {{asiatisk_rakwok__prepped_pak_choi}} och en skvätt av {{soy_sauce}} i 3–4 min, tills broccolin börjar mjukna.",
         "Tillsätt {{king_prawns}} och resten av {{sesame_seeds}}. Stek i 2–3 min, tills räkorna är genomstekta.",
-        "Tillsätt resten av {{soy_sauce}} och {{asian_wok_sauce}}, ta av pannan från värmen och rör om. Krydda med {{salt}} och en nypa {{pepper}}."
+        "Tillsätt resten av {{soy_sauce}} och {{asian_wok_sauce}}, ta av {{eq:stekpanna_1|def}} från värmen och rör om. Krydda med {{salt}} och en nypa {{pepper}}."
       ],
       "duration": 8,
       "wait": 0,
@@ -275,7 +303,8 @@
       "heat": "medel",
       "equipment": [
         {
-          "type": "stekpanna_stor"
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1"
         }
       ],
       "devNotes": [
@@ -307,11 +336,18 @@
       ],
       "steps": [
         "Fluffa upp {{asiatisk_rakwok__pak_choi_rice}} med en gaffel.",
-        "Lägg upp riset och {{asiatisk_rakwok__shrimp_wok}} i skålar och toppa med {{asiatisk_rakwok__seasoned_avocado}}."
+        "Lägg upp riset och {{asiatisk_rakwok__shrimp_wok}} i {{eq:servering|pl}} och toppa med {{asiatisk_rakwok__seasoned_avocado}}."
       ],
       "duration": 3,
       "tags": [
         "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_skal",
+          "ref": "servering",
+          "count": "portions"
+        }
       ]
     }
   ]

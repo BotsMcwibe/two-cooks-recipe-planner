@@ -36,6 +36,13 @@
       "duration": 10,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -55,6 +62,13 @@
       "duration": 3,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -99,8 +113,8 @@
         }
       ],
       "steps": [
-        "Placera {{chicken_bulgur_mediterranean__diced_vegetables}} och {{chicken_bulgur_mediterranean__red_onion_wedges}} på en plåt med bakplåtspapper. Blanda med {{olive_oil}}, {{spicemix_pearl}}, {{vegetable_bouillon}}, {{salt}} och en nypa {{pepper}}.",
-        "Rosta i ugnen i 10-15 minuter, eller tills mjuka."
+        "Placera {{chicken_bulgur_mediterranean__diced_vegetables}} och {{chicken_bulgur_mediterranean__red_onion_wedges}} på {{eq:plat_1}} med bakplåtspapper. Blanda med {{olive_oil}}, {{spicemix_pearl}}, {{vegetable_bouillon}}, {{salt}} och en nypa {{pepper}}.",
+        "Rosta i {{eq:ugn|def}} i 10-15 minuter, eller tills mjuka."
       ],
       "duration": 5,
       "tags": [],
@@ -117,7 +131,9 @@
           "fanTemp": 200
         },
         {
-          "type": "plat"
+          "type": "plat",
+          "ref": "plat_1",
+          "liner": "bakplatspapper"
         }
       ]
     },
@@ -143,7 +159,7 @@
         }
       ],
       "steps": [
-        "Koka upp en kastrull med {{water}}.",
+        "Koka upp {{eq:kastrull_1}} med {{water}}.",
         "Rör i bulgur och salt, sänk till medellåg värme. Sjud under lock i 9-10 minuter, eller tills \"al dente\"."
       ],
       "duration": 2,
@@ -153,7 +169,9 @@
       "equipment": [
         {
           "type": "kastrull_medelstor",
-          "sizeSource": "inferred"
+          "sizeSource": "inferred",
+          "ref": "kastrull_1",
+          "lid": true
         }
       ]
     },
@@ -178,6 +196,13 @@
       ],
       "tips": [
         "Använd en stor kniv och samla ihop persiljan till en hög för att underlätta hackningen."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -241,11 +266,21 @@
         }
       ],
       "steps": [
-        "Skär varje {{chicken_breast_bbq}} i 3 delar på en separat skärbräda."
+        "Skär varje {{chicken_breast_bbq}} i 3 delar på en separat {{eq:skarbrada_ra|noun}}."
       ],
       "duration": 3,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada_ra",
+          "separate": true,
+          "rawKinds": [
+            "poultry"
+          ]
+        }
       ]
     },
     {
@@ -280,7 +315,7 @@
         }
       ],
       "steps": [
-        "Hetta upp {{olive_oil}} i en stor stekpanna på medelhög värme.",
+        "Hetta upp {{olive_oil}} i {{eq:stekpanna_1}} på medelhög värme.",
         "Stek {{chicken_bulgur_mediterranean__chopped_chicken}} med {{salt}} i 3 min på varje sida, eller tills gylllene och genomstekt."
       ],
       "duration": 9,
@@ -293,7 +328,8 @@
       "heat": "medelhög",
       "equipment": [
         {
-          "type": "stekpanna_stor"
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1"
         }
       ]
     },
@@ -318,6 +354,13 @@
       ],
       "devNotes": [
         "Råreceptet: en skvätt saft i yoghurten och en skvätt i bulguren, alltså 0,5 st + 0,5 st."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -347,7 +390,7 @@
         }
       ],
       "steps": [
-        "Blanda {{yoghurt}}, en skvätt {{chicken_bulgur_mediterranean__lemon_juice}}, {{salt}} och {{pepper}} i en liten skål."
+        "Blanda {{yoghurt}}, en skvätt {{chicken_bulgur_mediterranean__lemon_juice}}, {{salt}} och {{pepper}} i {{eq:skal_1}}."
       ],
       "duration": 3,
       "tags": [
@@ -356,6 +399,12 @@
       ],
       "tips": [
         "Smaka av."
+      ],
+      "equipment": [
+        {
+          "type": "skal_liten",
+          "ref": "skal_1"
+        }
       ]
     },
     {
@@ -385,13 +434,20 @@
         }
       ],
       "steps": [
-        "Lägg upp {{chicken_bulgur_mediterranean__bulgur_with_roasted_vegetables}} i djupa tallrikar.",
+        "Lägg upp {{chicken_bulgur_mediterranean__bulgur_with_roasted_vegetables}} i {{eq:servering|pl}}.",
         "Toppa med {{chicken_bulgur_mediterranean__grilled_chicken}} och {{chicken_bulgur_mediterranean__lemon_yoghurt}}.",
         "Strö över {{pumpkin_seeds}}."
       ],
       "duration": 2,
       "tags": [
         "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_djup_tallrik",
+          "ref": "servering",
+          "count": "portions"
+        }
       ]
     }
   ]

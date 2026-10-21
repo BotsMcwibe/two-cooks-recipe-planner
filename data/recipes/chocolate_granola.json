@@ -40,7 +40,7 @@
       "outputName": "Förvärmd ugn (180°C)",
       "inputs": [],
       "steps": [
-        "Värm ugnen till 180°C, eller 160°C varmluft."
+        "Värm {{eq:ugn|def}} till 180°C, eller 160°C varmluft."
       ],
       "duration": 1,
       "wait": 10,
@@ -91,8 +91,8 @@
         }
       ],
       "steps": [
-        "Blanda {{honey}} och {{salt}} i en stor skål.",
-        "Vänd ner {{oats}}, {{cocoa_powder}} och {{hazelnuts}} i skålen."
+        "Blanda {{honey}} och {{salt}} i {{eq:skal_1}}.",
+        "Vänd ner {{oats}}, {{cocoa_powder}} och {{hazelnuts}} i {{eq:skal_1|def}}."
       ],
       "duration": 5,
       "tags": [
@@ -103,7 +103,8 @@
       ],
       "equipment": [
         {
-          "type": "skal_stor"
+          "type": "skal_stor",
+          "ref": "skal_1"
         }
       ]
     },
@@ -119,8 +120,8 @@
         }
       ],
       "steps": [
-        "Sprid ut {{chocolate_granola__mixed}} i ett jämnt lager på en plåt med bakplåtspapper.",
-        "Rosta i ugnen i 10–15 min. Rör om var 5:e minut, tills granolan är jämnt rostad."
+        "Sprid ut {{chocolate_granola__mixed}} i ett jämnt lager på {{eq:plat_1}} med bakplåtspapper.",
+        "Rosta i {{eq:ugn|def}} i 10–15 min. Rör om var 5:e minut, tills granolan är jämnt rostad."
       ],
       "duration": 3,
       "wait": 15,
@@ -137,7 +138,9 @@
           "fanTemp": 160
         },
         {
-          "type": "plat"
+          "type": "plat",
+          "ref": "plat_1",
+          "liner": "bakplatspapper"
         }
       ]
     },
@@ -158,7 +161,7 @@
         }
       ],
       "steps": [
-        "Ta ut {{chocolate_granola__roasted}} från ugnen och låt svalna helt.",
+        "Ta ut {{chocolate_granola__roasted}} från {{eq:ugn|def}} och låt svalna helt.",
         "Vänd ner {{freeze_dried_strawberries}}.",
         "Servera till frukost, eller förvara i en lufttät behållare i upp till 2 veckor."
       ],

@@ -48,7 +48,7 @@
       "outputName": "Förvärmd ugn (240°C)",
       "inputs": [],
       "steps": [
-        "Värm ugnen till 240°C, eller 220°C varmluft."
+        "Värm {{eq:ugn|def}} till 240°C, eller 220°C varmluft."
       ],
       "duration": 1,
       "wait": 12,
@@ -84,6 +84,13 @@
       ],
       "devNotes": [
         "FLAG: potatis 1000 g är ifylld enhet (tidigare null) — granska."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -125,8 +132,8 @@
         }
       ],
       "steps": [
-        "Lägg {{ugnsstekt_kycklingfile_sesam__diced_potato}} på en plåt med bakplåtspapper. Blanda med en skvätt olivolja, en nypa salt och peppar, och strö över {{sesame_seeds}}.",
-        "Rosta i ugnen i 15 min."
+        "Lägg {{ugnsstekt_kycklingfile_sesam__diced_potato}} på {{eq:plat_1}} med bakplåtspapper. Blanda med en skvätt olivolja, en nypa salt och peppar, och strö över {{sesame_seeds}}.",
+        "Rosta i {{eq:ugn|def}} i 15 min."
       ],
       "duration": 3,
       "wait": 15,
@@ -144,7 +151,8 @@
         },
         {
           "type": "plat",
-          "ref": "plat_1"
+          "ref": "plat_1",
+          "liner": "bakplatspapper"
         }
       ],
       "devNotes": [
@@ -174,6 +182,13 @@
       "devNotes": [
         "FLAG: broccoli 500 g är ifylld enhet — granska.",
         "Stegbilden visar både broccolin och kycklingen som kryddas."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -229,8 +244,8 @@
         }
       ],
       "steps": [
-        "Ta ut plåten. Lägg {{ugnsstekt_kycklingfile_sesam__seasoned_chicken}} och {{ugnsstekt_kycklingfile_sesam__cut_broccoli}} bredvid {{ugnsstekt_kycklingfile_sesam__sesame_potato}}. Blanda broccolin med en skvätt olivolja, en nypa salt och peppar.",
-        "Rosta överst i ugnen i 10 min."
+        "Ta ut {{eq:plat_1|def}}. Lägg {{ugnsstekt_kycklingfile_sesam__seasoned_chicken}} och {{ugnsstekt_kycklingfile_sesam__cut_broccoli}} bredvid {{ugnsstekt_kycklingfile_sesam__sesame_potato}}. Blanda broccolin med en skvätt olivolja, en nypa salt och peppar.",
+        "Rosta överst i {{eq:ugn|def}} i 10 min."
       ],
       "duration": 3,
       "wait": 10,
@@ -273,8 +288,8 @@
         }
       ],
       "steps": [
-        "Ta ut plåten igen. Strö {{grated_cheese}} över kycklingen i {{ugnsstekt_kycklingfile_sesam__roasted_chicken_broccoli}}.",
-        "Rosta överst i ugnen i ytterligare 3–4 min, tills kycklingen är genomstekt och osten har smält."
+        "Ta ut {{eq:plat_1|def}} igen. Strö {{grated_cheese}} över kycklingen i {{ugnsstekt_kycklingfile_sesam__roasted_chicken_broccoli}}.",
+        "Rosta överst i {{eq:ugn|def}} i ytterligare 3–4 min, tills kycklingen är genomstekt och osten har smält."
       ],
       "duration": 2,
       "wait": 4,
@@ -323,7 +338,7 @@
         }
       ],
       "steps": [
-        "Blanda {{ugnsstekt_kycklingfile_sesam__rinsed_rucola}}, {{balsamic_vinegar}} och {{olive_oil}} i en liten skål. Krydda med en nypa salt och peppar."
+        "Blanda {{ugnsstekt_kycklingfile_sesam__rinsed_rucola}}, {{balsamic_vinegar}} och {{olive_oil}} i {{eq:skal_1}}. Krydda med en nypa salt och peppar."
       ],
       "duration": 2,
       "tags": [
@@ -332,6 +347,12 @@
       "devNotes": [
         "FLAG: balsamvinäger 12 ml (6 ml vid 2 portioner) är ifylld enhet. Steget säger \"1/2 paket, 2P\", vilket inte stämmer med ml-mängden — använd ml, inte paket.",
         "FLAG: olivolja 1 msk är ifylld enhet och matchar stegets \"1/2 msk | 1 msk\" för salladen. Det är hela den kvantifierade oljan; rostoljan är separat och omätt."
+      ],
+      "equipment": [
+        {
+          "type": "skal_liten",
+          "ref": "skal_1"
+        }
       ]
     },
     {
@@ -356,7 +377,7 @@
         }
       ],
       "steps": [
-        "Lägg broccoli, potatis och kyckling från {{ugnsstekt_kycklingfile_sesam__cheesy_chicken}} på tallrikar.",
+        "Lägg broccoli, potatis och kyckling från {{ugnsstekt_kycklingfile_sesam__cheesy_chicken}} på {{eq:tallrik_1|pl}}.",
         "Servera med en klick {{aioli}} och {{ugnsstekt_kycklingfile_sesam__rucola_salad}}."
       ],
       "duration": 3,
@@ -366,6 +387,12 @@
       "devNotes": [
         "FLAG: aioli 80 g är ifylld enhet — granska.",
         "Salt och peppar i receptet har ingen mängd i yields (en nypa i texten) och är inte inlagda som ingrediensrader."
+      ],
+      "equipment": [
+        {
+          "type": "tallrik",
+          "ref": "tallrik_1"
+        }
       ]
     }
   ]

@@ -42,7 +42,7 @@
       "outputName": "Förvärmd ugn (190°C)",
       "inputs": [],
       "steps": [
-        "Värm ugnen till 190°C, eller 170°C varmluft."
+        "Värm {{eq:ugn|def}} till 190°C, eller 170°C varmluft."
       ],
       "duration": 1,
       "wait": 10,
@@ -102,9 +102,9 @@
         }
       ],
       "steps": [
-        "Blanda {{sponge_cake_mix}}, {{cinnamon}} och {{morotskaka__grated_carrot}} i en skål.",
-        "Häll smeten i en rund bakform (20–22 cm i diameter) med bakplåtspapper och platta till med en slickepott.",
-        "Grädda i ugnen i 30–35 min."
+        "Blanda {{sponge_cake_mix}}, {{cinnamon}} och {{morotskaka__grated_carrot}} i {{eq:skal_1}}.",
+        "Häll smeten i en rund {{eq:bakform_1|noun}} (20–22 cm i diameter) med bakplåtspapper och platta till med en slickepott.",
+        "Grädda i {{eq:ugn|def}} i 30–35 min."
       ],
       "duration": 5,
       "wait": 35,
@@ -121,7 +121,13 @@
           "fanTemp": 170
         },
         {
-          "type": "bakform"
+          "type": "bakform",
+          "ref": "bakform_1",
+          "liner": "bakplatspapper"
+        },
+        {
+          "type": "skal",
+          "ref": "skal_1"
         }
       ]
     },
@@ -137,8 +143,8 @@
         }
       ],
       "steps": [
-        "Placera {{walnuts}} på en plåt med bakplåtspapper.",
-        "Rosta i ugnen i 5 min, eller tills gyllene."
+        "Placera {{walnuts}} på {{eq:plat_1}} med bakplåtspapper.",
+        "Rosta i {{eq:ugn|def}} i 5 min, eller tills gyllene."
       ],
       "duration": 1,
       "wait": 5,
@@ -155,7 +161,9 @@
           "fanTemp": 170
         },
         {
-          "type": "plat"
+          "type": "plat",
+          "ref": "plat_1",
+          "liner": "bakplatspapper"
         }
       ]
     },
@@ -174,7 +182,14 @@
         "Grovhacka {{morotskaka__roasted_walnuts}}."
       ],
       "duration": 2,
-      "tags": []
+      "tags": [],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "morotskaka__frosting",
@@ -199,7 +214,7 @@
       ],
       "steps": [
         "Halvera {{lemon}} och pressa saften.",
-        "Blanda {{cream_cheese}}, {{powdered_sugar}} och citronsaft i en medelstor skål till en slät glasyr."
+        "Blanda {{cream_cheese}}, {{powdered_sugar}} och citronsaft i {{eq:skal_2}} till en slät glasyr."
       ],
       "duration": 4,
       "tags": [
@@ -210,7 +225,13 @@
       ],
       "equipment": [
         {
-          "type": "skal_medelstor"
+          "type": "skal_medelstor",
+          "ref": "skal_2"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
         }
       ]
     },

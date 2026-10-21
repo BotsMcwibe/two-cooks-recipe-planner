@@ -44,9 +44,14 @@
       "heatSource": "inferred",
       "equipment": [
         {
-          "type": "stekpanna_stor",
+          "type": "traktorpanna",
           "ref": "stekpanna_1",
-          "sizeSource": "inferred"
+          "typeSource": "inferred"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
         }
       ],
       "devNotes": [
@@ -84,10 +89,11 @@
       "heatSource": "inferred",
       "equipment": [
         {
-          "type": "stekpanna_stor",
+          "type": "traktorpanna",
           "ref": "stekpanna_1",
           "transition": "keep",
-          "sizeSource": "inferred"
+          "lid": true,
+          "typeSource": "inferred"
         }
       ],
       "devNotes": [

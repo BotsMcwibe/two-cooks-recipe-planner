@@ -1,6 +1,6 @@
-import { RecipeGraph } from '../core/recipe-graph.js?v=20261021g6';
-import { equipmentListHtml } from '../core/equipment.js?v=20261021g6';
-import { kitchenProfile } from '../core/kitchen-prefs.js?v=20261021g6';
+import { RecipeGraph } from '../core/recipe-graph.js?v=20261021g7';
+import { equipmentListHtml, servingLineHtml } from '../core/equipment.js?v=20261021g7';
+import { kitchenProfile } from '../core/kitchen-prefs.js?v=20261021g7';
 import { formatNiceAmount } from '../utils/helpers.js';
 import {
   allergenLabel,
@@ -12,11 +12,11 @@ import {
   isScalable,
   starHtml,
   subtitleFromSearchText,
-} from '../utils/catalog-ui.js?v=20261021g6';
-import { imgFailed, isPhotoMissing, recordPhotoFailure, recordPhotoSuccess } from '../utils/photo-fallback.js?v=20261021g6';
-import * as UserState from '../core/user-recipe-state.js?v=20261021g6';
-import { spiceMixTogglesHtml } from './spice-mix-ui.js?v=20261021g6';
-import { bindStatusControls, kitchenMarkHtml, refreshStatusControls, statusControlHtml } from './recipe-status-ui.js?v=20261021g6';
+} from '../utils/catalog-ui.js?v=20261021g7';
+import { imgFailed, isPhotoMissing, recordPhotoFailure, recordPhotoSuccess } from '../utils/photo-fallback.js?v=20261021g7';
+import * as UserState from '../core/user-recipe-state.js?v=20261021g7';
+import { spiceMixTogglesHtml } from './spice-mix-ui.js?v=20261021g7';
+import { bindStatusControls, kitchenMarkHtml, refreshStatusControls, statusControlHtml } from './recipe-status-ui.js?v=20261021g7';
 
 /**
  * HelloFresh-inspired recipe overview modal.
@@ -27,7 +27,7 @@ export class OverviewModal {
   /**
    * @param {import('../core/state.js').AppState} state
    * @param {Array<object>} catalog
-   * @param {import('../data/loader.js?v=20261021g6').RecipeRepository} repository
+   * @param {import('../data/loader.js?v=20261021g7').RecipeRepository} repository
    * @param {Array} baseIngredients
    * @param {{
    *   onCook: (id: string, portions: number) => void,
@@ -411,7 +411,8 @@ export class OverviewModal {
     const root = loaded.graph.get(this.recipeId);
     if (!root) return '';
     const list = equipmentListHtml(loaded.graph.getSubtreeRecipes(root), kitchenProfile());
-    return list ? `<div class="overview-equipment eq-section"><h3>Utrustning</h3>${list}</div>` : '';
+    const serving = servingLineHtml(root, this.modalPortions);
+    return list || serving ? `<div class="overview-equipment eq-section"><h3>Utrustning</h3>${list}${serving}</div>` : '';
   }
 
   /** Kitchen profile changed (plåtar / varmluft): refresh the Utrustning block in place. */
@@ -479,6 +480,7 @@ export class OverviewModal {
     $body.find('#overview-portion-minus').prop('disabled', cur <= 2);
     $body.find('#overview-portion-plus').prop('disabled', cur >= 24);
     $body.find('.overview-spice-mixes').html(spiceMixTogglesHtml(this.loaded && this.loaded.spiceMixes, this._portionScale()));
+    this.refreshEquipment(); // Servering follows the portions
 
     const amounts = this._amountTextById();
     if (amounts) {

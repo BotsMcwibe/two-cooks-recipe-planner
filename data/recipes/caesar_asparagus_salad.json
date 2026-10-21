@@ -41,7 +41,7 @@
       "outputName": "Förvärmd ugn (240°C)",
       "inputs": [],
       "steps": [
-        "Värm ugnen till 240°C, eller 220°C varmluft."
+        "Värm {{eq:ugn|def}} till 240°C, eller 220°C varmluft."
       ],
       "duration": 1,
       "wait": 12,
@@ -84,9 +84,9 @@
         }
       ],
       "steps": [
-        "Skär {{baguette}} i 2 cm stora bitar och placera dem på en plåt med bakplåtspapper.",
+        "Skär {{baguette}} i 2 cm stora bitar och placera dem på {{eq:plat_1}} med bakplåtspapper.",
         "Blanda med {{olive_oil}}, {{salt}} och {{pepper}}.",
-        "Rosta i ugnen i 8–10 min, eller tills krutongerna är gyllene och krispiga."
+        "Rosta i {{eq:ugn|def}} i 8–10 min, eller tills krutongerna är gyllene och krispiga."
       ],
       "duration": 3,
       "wait": 10,
@@ -100,7 +100,14 @@
           "fanTemp": 220
         },
         {
-          "type": "plat"
+          "type": "plat",
+          "ref": "plat_1",
+          "liner": "bakplatspapper"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
         }
       ]
     },
@@ -121,6 +128,13 @@
       "duration": 1,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -140,6 +154,13 @@
       "duration": 3,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -160,6 +181,13 @@
       "duration": 2,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -184,7 +212,7 @@
         }
       ],
       "steps": [
-        "Hetta upp {{olive_oil}} i en stekpanna på medelhög värme.",
+        "Hetta upp {{olive_oil}} i {{eq:stekpanna_1}} på medelhög värme.",
         "Stek {{caesar_asparagus_salad__prepped_asparagus}} med {{salt}} i 1–2 min, eller tills lätt brynt."
       ],
       "duration": 1,
@@ -194,7 +222,8 @@
       "equipment": [
         {
           "type": "stekpanna_liten",
-          "sizeSource": "inferred"
+          "sizeSource": "inferred",
+          "ref": "stekpanna_1"
         }
       ]
     },
@@ -251,7 +280,7 @@
       ],
       "steps": [
         "Halvera {{lemon}}.",
-        "Blanda {{sour_cream}}, {{mayonnaise}}, {{caesar_asparagus_salad__chopped_garlic}}, en skvätt citronsaft, {{salt}} och {{pepper}} i en stor skål.",
+        "Blanda {{sour_cream}}, {{mayonnaise}}, {{caesar_asparagus_salad__chopped_garlic}}, en skvätt citronsaft, {{salt}} och {{pepper}} i {{eq:skal_1}}.",
         "Vänd ner {{caesar_asparagus_salad__prepped_lettuce}}.",
         "Tillsätt {{caesar_asparagus_salad__croutons}} och {{grated_cheese}} och vänd runt."
       ],
@@ -262,7 +291,13 @@
       ],
       "equipment": [
         {
-          "type": "skal_stor"
+          "type": "skal_stor",
+          "ref": "skal_1"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
         }
       ]
     },
@@ -288,13 +323,20 @@
         }
       ],
       "steps": [
-        "Servera {{caesar_asparagus_salad__dressed_salad}} i en skål.",
+        "Servera {{caesar_asparagus_salad__dressed_salad}} i {{eq:servering}}.",
         "Toppa med {{grated_cheese}} och {{caesar_asparagus_salad__fried_asparagus}}."
       ],
       "duration": 2,
       "wait": 0,
       "tags": [
         "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_skal",
+          "ref": "servering",
+          "count": 1
+        }
       ]
     }
   ]

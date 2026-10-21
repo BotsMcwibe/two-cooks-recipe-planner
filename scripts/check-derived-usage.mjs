@@ -87,7 +87,7 @@ function extractStepRefs(steps) {
   const re = /\{\{([^}]+)\}\}/g;
   for (const step of steps || []) {
     let m;
-    while ((m = re.exec(step))) ids.add(m[1].trim());
+    while ((m = re.exec(step))) if (!m[1].trim().startsWith('eq:')) ids.add(m[1].trim()); // {{eq:…}} = equipment (check-equipment.mjs)
   }
   return ids;
 }

@@ -34,7 +34,7 @@
       "outputName": "Förvärmd ugn (200°C)",
       "inputs": [],
       "steps": [
-        "Värm ugnen till 200°C."
+        "Värm {{eq:ugn|def}} till 200°C."
       ],
       "duration": 1,
       "wait": 10,
@@ -78,6 +78,13 @@
       "duration": 5,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -97,6 +104,13 @@
       "duration": 4,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -116,6 +130,13 @@
       "duration": 3,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -138,6 +159,13 @@
       ],
       "tips": [
         "Använd bara en halv chili om du inte tycker om stark mat."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -157,6 +185,13 @@
       "duration": 2,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -196,7 +231,7 @@
         }
       ],
       "steps": [
-        "Fräs {{creamy_aubergine_curry__chopped_aromatics}}, {{creamy_aubergine_curry__diced_potato}} och {{creamy_aubergine_curry__diced_aubergine}} med {{olive_oil}} i en stor kastrull på medelvärme.",
+        "Fräs {{creamy_aubergine_curry__chopped_aromatics}}, {{creamy_aubergine_curry__diced_potato}} och {{creamy_aubergine_curry__diced_aubergine}} med {{olive_oil}} i {{eq:kastrull_1}} på medelvärme.",
         "Krydda med {{salt}} och {{pepper}}. Låt sjuda tills auberginen är mjuk och gyllenbrun, ca 10 min. Rör om regelbundet."
       ],
       "duration": 4,
@@ -250,7 +285,7 @@
         }
       ],
       "steps": [
-        "Skölj {{green_lentils}} i en sil under rinnande vatten tills vattnet klarnar.",
+        "Skölj {{green_lentils}} i {{eq:sil_1}} under rinnande vatten tills vattnet klarnar.",
         "Tillsätt linserna i {{creamy_aubergine_curry__aubergine_base}} tillsammans med {{creamy_aubergine_curry__chopped_chili}}, {{coconut_milk}}, {{water}} och {{soy_sauce}}.",
         "Låt sjuda i ytterligare 5–10 min, tills auberginen är mosig och potatisen färdigkokt."
       ],
@@ -264,6 +299,10 @@
           "type": "kastrull_stor",
           "ref": "kastrull_1",
           "transition": "keep"
+        },
+        {
+          "type": "sil",
+          "ref": "sil_1"
         }
       ]
     },
@@ -279,7 +318,7 @@
         }
       ],
       "steps": [
-        "Värm {{baguette}} i ugnen i 7–8 min."
+        "Värm {{baguette}} i {{eq:ugn|def}} i 7–8 min."
       ],
       "duration": 1,
       "wait": 8,
@@ -334,12 +373,26 @@
       "steps": [
         "Halvera {{lime}}. Pressa i juice från en limehalva i {{creamy_aubergine_curry__curry}} och rör i hälften av {{creamy_aubergine_curry__chopped_coriander}}.",
         "Krydda med extra limejuice, {{salt}} och {{pepper}} efter smak.",
-        "Sleva upp curryn i djupa skålar, toppa med resterande koriander och servera med {{creamy_aubergine_curry__warmed_baguette}} vid sidan av."
+        "Sleva upp curryn i {{eq:servering|pl}}, toppa med resterande koriander och servera med {{creamy_aubergine_curry__warmed_baguette}} vid sidan av."
       ],
       "duration": 3,
       "wait": 0,
       "tags": [
         "master"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "serving": [
+        {
+          "type": "servering_djup_skal",
+          "ref": "servering",
+          "count": "portions"
+        }
       ]
     }
   ]

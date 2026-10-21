@@ -34,7 +34,7 @@
       "outputName": "Förvärmd ugn (200°C)",
       "inputs": [],
       "steps": [
-        "Sätt ugnen på 200°C."
+        "Sätt {{eq:ugn|def}} på 200°C."
       ],
       "duration": 1,
       "wait": 12,
@@ -68,7 +68,7 @@
         }
       ],
       "steps": [
-        "Täck {{potato}} med {{water}} i en kastrull.",
+        "Täck {{potato}} med {{water}} i {{eq:kastrull_1}}.",
         "Koka på medelvärme i 10 min."
       ],
       "duration": 2,
@@ -81,7 +81,8 @@
       "equipment": [
         {
           "type": "kastrull_stor",
-          "sizeSource": "inferred"
+          "sizeSource": "inferred",
+          "ref": "kastrull_1"
         }
       ],
       "devNotes": [
@@ -109,6 +110,13 @@
       ],
       "devNotes": [
         "FLAG: _unitInference Lök 2 st — behållen (countable)."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -131,6 +139,13 @@
       ],
       "devNotes": [
         "FLAG: _unitInference Morot 2 st — behållen (countable)."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -153,6 +168,13 @@
       ],
       "devNotes": [
         "FLAG: _unitInference Röd paprika 2 tsk — överstyrd till 2 st (metod: halvera paprika, skär bort kärnhus och finhacka)."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -175,6 +197,13 @@
       ],
       "devNotes": [
         "FLAG: _unitInference Skogschampinjoner 400 g — behållen (large g)."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -200,6 +229,13 @@
       ],
       "devNotes": [
         "FLAG: _unitInference Bladpersilja 1 g — överstyrd till 1 kruka (metod: grovhacka/toppa; cousins använder kruka)."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -214,7 +250,7 @@
         }
       ],
       "steps": [
-        "Rensa och skölj {{green_lentils}} i en sil."
+        "Rensa och skölj {{green_lentils}} i {{eq:sil_1}}."
       ],
       "duration": 2,
       "tags": [
@@ -222,6 +258,12 @@
       ],
       "devNotes": [
         "FLAG: _unitInference Gröna linser 2 g (reason dry) — överstyrd till 2 burk (metod: skölj i sil; pantry green_lentils är canned; cousins warm_lentil_salad/creamy_aubergine_curry använder 2 burk)."
+      ],
+      "equipment": [
+        {
+          "type": "sil",
+          "ref": "sil_1"
+        }
       ]
     },
     {
@@ -291,7 +333,7 @@
         }
       ],
       "steps": [
-        "Hetta upp {{olive_oil}} i en stor stekpanna på medelvärme.",
+        "Hetta upp {{olive_oil}} i {{eq:stekpanna_1}} på medelvärme.",
         "Fräs {{lentil_gratin__chopped_onion}} och {{lentil_gratin__chopped_carrot}} tills de blivit något mjukare, 4–5 min.",
         "Lägg i {{lentil_gratin__chopped_pepper}} och {{lentil_gratin__chopped_mushrooms}}. Krydda med {{salt}} och {{pepper}}. Fräs under omrörning i 5 min.",
         "Lägg i merparten av {{lentil_gratin__chopped_parsley}} (spara en handfull till topping), {{lentil_gratin__rinsed_lentils}}, {{cajun_spice_mix}}, {{vegetable_bouillon}} och {{canned_tomatoes}}. Fräs i ytterligare 5 min."
@@ -301,7 +343,9 @@
       "heat": "medel",
       "equipment": [
         {
-          "type": "stekpanna_stor"
+          "type": "traktorpanna",
+          "ref": "stekpanna_1",
+          "typeSource": "inferred"
         }
       ],
       "devNotes": [
@@ -326,7 +370,14 @@
         "Häll av {{lentil_gratin__boiled_potato}} och skiva dem tunt."
       ],
       "duration": 3,
-      "tags": []
+      "tags": [],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "lentil_gratin__gratin",
@@ -355,10 +406,10 @@
         }
       ],
       "steps": [
-        "Lägg över {{lentil_gratin__lentil_mix}} till en ugnsform.",
+        "Lägg över {{lentil_gratin__lentil_mix}} till {{eq:ugnsform_1}}.",
         "Placera ett lager av {{lentil_gratin__potato_slices}} jämnt på toppen.",
         "Strö {{grated_mozzarella}} ovanpå och krydda med {{pepper}}.",
-        "Gratinera i ugnen, 10–15 min."
+        "Gratinera i {{eq:ugn|def}}, 10–15 min."
       ],
       "duration": 3,
       "wait": 15,
@@ -374,7 +425,8 @@
         },
         {
           "type": "ugnsform_stor",
-          "sizeSource": "inferred"
+          "sizeSource": "inferred",
+          "ref": "ugnsform_1"
         }
       ],
       "devNotes": [
@@ -414,7 +466,7 @@
       ],
       "steps": [
         "Halvera {{lemon}}.",
-        "Dela {{lettuce}} i stora bitar och lägg i en skål.",
+        "Dela {{lettuce}} i stora bitar och lägg i {{eq:skal_1}}.",
         "Häll över {{olive_oil}} och citronjuice. Krydda med {{salt}} och {{pepper}}."
       ],
       "duration": 4,
@@ -424,6 +476,17 @@
       "devNotes": [
         "FLAG: _unitInference Citrusfrukt 1 tsk — överstyrd till 1 st lemon (metod: halvera citron).",
         "FLAG: _unitInference Sallad 180 g — behållen."
+      ],
+      "equipment": [
+        {
+          "type": "skal",
+          "ref": "skal_1"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -443,14 +506,21 @@
         }
       ],
       "steps": [
-        "Lägg upp {{lentil_gratin__gratin}} i skålar med {{lentil_gratin__gem_salad}} vid sidan.",
+        "Lägg upp {{lentil_gratin__gratin}} i {{eq:servering|pl}} med {{lentil_gratin__gem_salad}} vid sidan.",
         "Toppa med den sparade persiljan."
       ],
       "duration": 3,
       "tags": [
         "master"
       ],
-      "wait": 0
+      "wait": 0,
+      "serving": [
+        {
+          "type": "servering_skal",
+          "ref": "servering",
+          "count": "portions"
+        }
+      ]
     }
   ]
 }

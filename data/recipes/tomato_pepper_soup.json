@@ -57,6 +57,13 @@
         "FLAG: _unitInference Röd paprika 2 tsk — överstyrd till 2 st (metod: grovhacka; spice-reason fel).",
         "FLAG: _unitInference Vitlöksklyfta 4 tsk vid 4 port — delad 2+2 st (yield 2 var 2 klyfta; klyfta→st).",
         "HF-ingrediens heter Lök men stegen säger schalottenlök — mappar till shallot."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -79,6 +86,13 @@
       ],
       "devNotes": [
         "FLAG: _unitInference Dragon 1 tsk — överstyrd till 1 kruka (metod: plocka blad; färsk ört)."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -98,7 +112,7 @@
         }
       ],
       "steps": [
-        "Täck {{pearl_couscous}} med {{water}} i en kastrull.",
+        "Täck {{pearl_couscous}} med {{water}} i {{eq:kastrull_1}}.",
         "Låt koka under lock i 12–14 min. Rör om regelbundet så grynen inte fastnar.",
         "Häll av vattnet, fluffa upp med en gaffel och sätt åt sidan att ångtorka."
       ],
@@ -110,7 +124,9 @@
       "equipment": [
         {
           "type": "kastrull_medelstor",
-          "sizeSource": "inferred"
+          "sizeSource": "inferred",
+          "ref": "kastrull_1",
+          "lid": true
         }
       ],
       "devNotes": [
@@ -144,7 +160,7 @@
         }
       ],
       "steps": [
-        "Hetta upp {{oil}} i en stor kastrull.",
+        "Hetta upp {{oil}} i {{eq:kastrull_2}}.",
         "Fräs schalottenlök, tomat, paprika och vitlök från {{tomato_pepper_soup__prepped_vegetables}} i 2 min på låg till medelvärme under omrörning.",
         "Häll i {{water}} (kokande) och {{vegetable_bouillon}}. Låt soppan sjuda under lock i 15 min."
       ],
@@ -154,7 +170,9 @@
       "heat": "medellåg",
       "equipment": [
         {
-          "type": "kastrull_stor"
+          "type": "kastrull_stor",
+          "ref": "kastrull_2",
+          "lid": true
         }
       ],
       "devNotes": [
@@ -200,7 +218,7 @@
         }
       ],
       "steps": [
-        "Ta {{tomato_pepper_soup__soup_base}} av värmen. Tillsätt {{creme_fraiche}} och blanda slät med stavmixer.",
+        "Ta {{tomato_pepper_soup__soup_base}} av värmen. Tillsätt {{creme_fraiche}} och blanda slät med {{eq:stavmixer_1|noun}}.",
         "Krydda med {{salt}}, {{pepper}} och {{sugar}} efter smak.",
         "Rör i {{tomato_pepper_soup__cooked_couscous}}."
       ],
@@ -212,7 +230,8 @@
       ],
       "equipment": [
         {
-          "type": "stavmixer"
+          "type": "stavmixer",
+          "ref": "stavmixer_1"
         }
       ],
       "devNotes": [
@@ -259,7 +278,7 @@
         }
       ],
       "steps": [
-        "Skala och pressa {{garlic}}. Blanda med {{tomato_pepper_soup__softened_butter}} i en skål."
+        "Skala och pressa {{garlic}}. Blanda med {{tomato_pepper_soup__softened_butter}} i {{eq:skal_1}}."
       ],
       "duration": 2,
       "tags": [
@@ -267,6 +286,12 @@
       ],
       "devNotes": [
         "FLAG: _unitInference Smör 2,667 g — orimligt för vitlökssmör; pantry-uppskattning 40 g för 4 port."
+      ],
+      "equipment": [
+        {
+          "type": "skal",
+          "ref": "skal_1"
+        }
       ]
     },
     {
@@ -292,8 +317,8 @@
       ],
       "steps": [
         "Halvera {{ciabatta}} på längden och skär i ca 5 cm breda skivor.",
-        "Lägg brödet på en bakplåt med bakplåtspapper. Bre med {{tomato_pepper_soup__garlic_butter}} och ringla över {{oil}}.",
-        "Baka i den förvärmda ugnen i 6–8 min tills gyllenbruna."
+        "Lägg brödet på {{eq:plat_1}} med bakplåtspapper. Bre med {{tomato_pepper_soup__garlic_butter}} och ringla över {{oil}}.",
+        "Baka i den förvärmda {{eq:ugn|def}} i 6–8 min tills gyllenbruna."
       ],
       "duration": 3,
       "wait": 7,
@@ -307,7 +332,14 @@
           "fanTemp": 200
         },
         {
-          "type": "plat"
+          "type": "plat",
+          "ref": "plat_1",
+          "liner": "bakplatspapper"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
         }
       ],
       "devNotes": [
@@ -348,7 +380,7 @@
         }
       ],
       "steps": [
-        "Häll {{tomato_pepper_soup__soup}} i djupa skålar.",
+        "Häll {{tomato_pepper_soup__soup}} i {{eq:servering|pl}}.",
         "Strö över {{grated_cheese}}, toppa med en klick {{creme_fraiche}} och {{tomato_pepper_soup__chopped_tarragon}}.",
         "Servera med {{tomato_pepper_soup__garlic_bread}} vid sidan."
       ],
@@ -359,6 +391,13 @@
       ],
       "devNotes": [
         "HF-steg säger 'Riv parmesan' men ingrediensen är finriven ost — använd {{grated_cheese}} som den är."
+      ],
+      "serving": [
+        {
+          "type": "servering_djup_skal",
+          "ref": "servering",
+          "count": "portions"
+        }
       ]
     }
   ]

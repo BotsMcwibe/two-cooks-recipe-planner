@@ -34,8 +34,8 @@
       "outputName": "Förvärmd ugn (200°C)",
       "inputs": [],
       "steps": [
-        "Sätt ugnen på 200°C.",
-        "Koka upp vatten i vattenkokaren (behövs till couscous och mandlar)."
+        "Sätt {{eq:ugn|def}} på 200°C.",
+        "Koka upp vatten i {{eq:vattenkokare_1|def}} (behövs till couscous och mandlar)."
       ],
       "duration": 1,
       "tags": [
@@ -50,6 +50,13 @@
       },
       "devNotes": [
         "HF anger 200°C (inte 220) — lokal ugnsnode, inte preheated_oven_220."
+      ],
+      "equipment": [
+        {
+          "type": "vattenkokare",
+          "optional": true,
+          "ref": "vattenkokare_1"
+        }
       ]
     },
     {
@@ -73,6 +80,13 @@
       ],
       "devNotes": [
         "FLAG: HF/yield unit infererade som 6 tsk — överstyrd till 6 st (metod: skrubba/halvera hela morötter)."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -92,6 +106,13 @@
       "duration": 4,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -111,6 +132,13 @@
       "duration": 3,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -150,10 +178,10 @@
         }
       ],
       "steps": [
-        "Lägg {{halloumi_rostade_morotter__prepped_carrots}}, {{halloumi_rostade_morotter__diced_zucchini}} och {{halloumi_rostade_morotter__onion_wedges}} i en skål.",
+        "Lägg {{halloumi_rostade_morotter__prepped_carrots}}, {{halloumi_rostade_morotter__diced_zucchini}} och {{halloumi_rostade_morotter__onion_wedges}} i {{eq:skal_1}}.",
         "Häll på {{olive_oil}}, krydda med {{salt}} och {{pepper}} och blanda ordentligt.",
-        "Sprid ut grönsakerna jämnt på en bakplåt täckt med bakplåtspapper.",
-        "Baka i ugnen i 20–25 min tills de är gyllenbruna och möra."
+        "Sprid ut grönsakerna jämnt på {{eq:plat_1}} täckt med bakplåtspapper.",
+        "Baka i {{eq:ugn|def}} i 20–25 min tills de är gyllenbruna och möra."
       ],
       "duration": 5,
       "wait": 25,
@@ -168,7 +196,13 @@
           "fanTempSource": "derived"
         },
         {
-          "type": "plat"
+          "type": "plat",
+          "ref": "plat_1",
+          "liner": "bakplatspapper"
+        },
+        {
+          "type": "skal",
+          "ref": "skal_1"
         }
       ]
     },
@@ -204,9 +238,9 @@
         }
       ],
       "steps": [
-        "Koka upp {{water}} i en medelstor kastrull och rör i {{vegetable_bouillon}}.",
+        "Koka upp {{water}} i {{eq:kastrull_1}} och rör i {{vegetable_bouillon}}.",
         "Rör i {{couscous}}, {{tex_mex}} och {{olive_oil}}.",
-        "Sätt på locket och ta av kastrullen från spisplattan.",
+        "Sätt på locket och ta av {{eq:kastrull_1|def}} från spisplattan.",
         "Låt stå i 5 min, eller tills allt vatten har absorberats. Rör om med en gaffel."
       ],
       "duration": 5,
@@ -216,7 +250,9 @@
       "heatSource": "inferred",
       "equipment": [
         {
-          "type": "kastrull_medelstor"
+          "type": "kastrull_medelstor",
+          "ref": "kastrull_1",
+          "lid": true
         }
       ],
       "devNotes": [
@@ -256,7 +292,7 @@
       ],
       "steps": [
         "Halvera {{lemon}} och pressa ur 2–4 msk juice.",
-        "Blanda citronjuicen med {{honey}}, {{olive_oil}}, {{salt}} och {{pepper}} i en liten skål."
+        "Blanda citronjuicen med {{honey}}, {{olive_oil}}, {{salt}} och {{pepper}} i {{eq:skal_2}}."
       ],
       "duration": 4,
       "tags": [
@@ -264,6 +300,17 @@
       ],
       "devNotes": [
         "FLAG: HF Citrusfrukt 2 tsk — överstyrd till 2 st citron (metod: halvera citron / 2–4 msk juice)."
+      ],
+      "equipment": [
+        {
+          "type": "skal_liten",
+          "ref": "skal_2"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -283,9 +330,9 @@
         }
       ],
       "steps": [
-        "Lägg {{almonds}} i en skål och häll över kokande {{water}}. Låt stå i 5 minuter och häll av i en sil.",
+        "Lägg {{almonds}} i {{eq:skal_3}} och häll över kokande {{water}}. Låt stå i 5 minuter och häll av i {{eq:sil_1}}.",
         "Skala mandlarna för hand när skalet är mjukt. Strimla dem grovt.",
-        "Rosta de strimlade mandlarna i en torr stekpanna på medelvärme 2–3 min under omrörning tills de är gyllenbruna. Lägg åt sidan."
+        "Rosta de strimlade mandlarna i en torr {{eq:stekpanna_1|noun}} på medelvärme 2–3 min under omrörning tills de är gyllenbruna. Lägg åt sidan."
       ],
       "duration": 8,
       "wait": 5,
@@ -296,6 +343,19 @@
           "type": "stekpanna_stor",
           "ref": "stekpanna_1",
           "sizeSource": "inferred"
+        },
+        {
+          "type": "skal",
+          "ref": "skal_3"
+        },
+        {
+          "type": "sil",
+          "ref": "sil_1"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
         }
       ]
     },
@@ -317,7 +377,7 @@
       ],
       "steps": [
         "Dela {{halloumi}} i 1 cm tjocka skivor.",
-        "Hetta upp {{olive_oil}} i stekpannan på medelvärme.",
+        "Hetta upp {{olive_oil}} i {{eq:stekpanna_1|def}} på medelvärme.",
         "Stek halloumiskivorna tills de är gyllenbruna, ca 2 min per sida."
       ],
       "duration": 8,
@@ -330,6 +390,11 @@
           "transition": "keep",
           "sizeSource": "inferred",
           "after": "halloumi_rostade_morotter__roasted_almonds"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
         }
       ]
     },
@@ -365,14 +430,21 @@
         }
       ],
       "steps": [
-        "Lägg upp {{halloumi_rostade_morotter__spiced_couscous}}, {{halloumi_rostade_morotter__roasted_vegetables}} och {{halloumi_rostade_morotter__fried_halloumi}} på tallriken.",
+        "Lägg upp {{halloumi_rostade_morotter__spiced_couscous}}, {{halloumi_rostade_morotter__roasted_vegetables}} och {{halloumi_rostade_morotter__fried_halloumi}} på {{eq:servering|def}}.",
         "Strö över {{halloumi_rostade_morotter__roasted_almonds}} och ringla {{halloumi_rostade_morotter__honey_lemon_dressing}} på toppen."
       ],
       "duration": 3,
       "tags": [
         "master"
       ],
-      "wait": 0
+      "wait": 0,
+      "serving": [
+        {
+          "type": "servering_tallrik",
+          "ref": "servering",
+          "count": 1
+        }
+      ]
     }
   ]
 }

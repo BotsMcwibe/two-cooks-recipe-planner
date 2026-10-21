@@ -42,7 +42,7 @@
       "outputName": "Förvärmd ugn (190°C)",
       "inputs": [],
       "steps": [
-        "Värm ugnen till 190°C, eller 170°C varmluft."
+        "Värm {{eq:ugn|def}} till 190°C, eller 170°C varmluft."
       ],
       "duration": 1,
       "wait": 10,
@@ -75,9 +75,9 @@
         }
       ],
       "steps": [
-        "Häll {{chocolate_cake_mix}} i en rund bakform (20–22 cm i diameter) med bakplåtspapper.",
+        "Häll {{chocolate_cake_mix}} i en rund {{eq:bakform_1|noun}} (20–22 cm i diameter) med bakplåtspapper.",
         "Rör ner {{milk_chocolate_chips}} och platta till med en slickepott.",
-        "Baka i ugnen i 30–35 min."
+        "Baka i {{eq:ugn|def}} i 30–35 min."
       ],
       "duration": 5,
       "wait": 35,
@@ -95,7 +95,9 @@
           "fanTemp": 170
         },
         {
-          "type": "bakform"
+          "type": "bakform",
+          "ref": "bakform_1",
+          "liner": "bakplatspapper"
         }
       ]
     },
@@ -111,8 +113,8 @@
         }
       ],
       "steps": [
-        "Placera {{hazelnuts}} på en plåt med bakplåtspapper.",
-        "Rosta i ugnen i 4–6 min, eller tills gyllene."
+        "Placera {{hazelnuts}} på {{eq:plat_1}} med bakplåtspapper.",
+        "Rosta i {{eq:ugn|def}} i 4–6 min, eller tills gyllene."
       ],
       "duration": 1,
       "wait": 6,
@@ -129,7 +131,9 @@
           "fanTemp": 170
         },
         {
-          "type": "plat"
+          "type": "plat",
+          "ref": "plat_1",
+          "liner": "bakplatspapper"
         }
       ]
     },
@@ -148,7 +152,14 @@
         "Grovhacka {{apelsinglaserad_chokladkaka__roasted_hazelnuts}}."
       ],
       "duration": 2,
-      "tags": []
+      "tags": [],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "apelsinglaserad_chokladkaka__orange_glaze",
@@ -168,7 +179,7 @@
       ],
       "steps": [
         "Halvera {{orange}} och pressa saften.",
-        "Blanda {{powdered_sugar}} och ½ msk apelsinsaft i en medelstor skål till en slät glasyr."
+        "Blanda {{powdered_sugar}} och ½ msk apelsinsaft i {{eq:skal_1}} till en slät glasyr."
       ],
       "duration": 3,
       "tags": [
@@ -180,7 +191,13 @@
       ],
       "equipment": [
         {
-          "type": "skal_medelstor"
+          "type": "skal_medelstor",
+          "ref": "skal_1"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
         }
       ]
     },
@@ -202,6 +219,13 @@
       "duration": 4,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {

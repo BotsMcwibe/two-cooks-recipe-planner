@@ -41,7 +41,7 @@
       "outputName": "Förvärmd ugn (200°C)",
       "inputs": [],
       "steps": [
-        "Värm ugnen till 200 °C, eller 180 °C varmluft."
+        "Värm {{eq:ugn|def}} till 200 °C, eller 180 °C varmluft."
       ],
       "duration": 1,
       "wait": 10,
@@ -69,7 +69,7 @@
         }
       ],
       "steps": [
-        "Placera {{pita_bread}} direkt på gallret i ugnen.",
+        "Placera {{pita_bread}} direkt på {{eq:galler_1|def}} i {{eq:ugn|def}}.",
         "Baka i 3–4 min, eller tills uppvärmda."
       ],
       "duration": 1,
@@ -87,7 +87,8 @@
           "fanTemp": 180
         },
         {
-          "type": "galler"
+          "type": "galler",
+          "ref": "galler_1"
         }
       ]
     },
@@ -118,7 +119,7 @@
         }
       ],
       "steps": [
-        "Hetta upp {{olive_oil}} i en stor stekpanna på medelhög värme.",
+        "Hetta upp {{olive_oil}} i {{eq:stekpanna_1}} på medelhög värme.",
         "Tillsätt {{chicken_breast_strips}} och krydda med {{souvlaki_spice}} och {{salt}}.",
         "Stek i 4–5 min, eller tills gyllene och genomstekt. Vänd då och då."
       ],
@@ -132,7 +133,8 @@
       "heat": "medelhög",
       "equipment": [
         {
-          "type": "stekpanna_stor"
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1"
         }
       ]
     },
@@ -170,11 +172,17 @@
       "steps": [
         "Riv eller pressa {{garlic}} fint.",
         "Riv {{cucumber}} grovt och pressa ur så mycket vätska som möjligt i en ren handduk.",
-        "Blanda gurka, yoghurt, vitlök, {{salt}} och en nypa {{pepper}} i en skål."
+        "Blanda gurka, yoghurt, vitlök, {{salt}} och en nypa {{pepper}} i {{eq:skal_1}}."
       ],
       "duration": 8,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skal",
+          "ref": "skal_1"
+        }
       ]
     },
     {
@@ -200,6 +208,13 @@
       "duration": 4,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -236,6 +251,13 @@
       "wait": 0,
       "tags": [
         "master"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     }
   ]

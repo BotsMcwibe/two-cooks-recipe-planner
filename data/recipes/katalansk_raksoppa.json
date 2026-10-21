@@ -29,7 +29,7 @@
       "outputName": "Förvärmd ugn (200°C)",
       "inputs": [],
       "steps": [
-        "Värm ugnen till 180°C varmluft eller 200°C vanlig."
+        "Värm {{eq:ugn|def}} till 180°C varmluft eller 200°C vanlig."
       ],
       "duration": 1,
       "tags": [
@@ -70,6 +70,13 @@
       ],
       "devNotes": [
         "Bananschalottenlök är mappad till befintlig schalottenlök."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -89,6 +96,13 @@
       "duration": 2,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -184,7 +198,7 @@
         }
       ],
       "steps": [
-        "Hetta upp {{olive_oil}} i en stekgryta. Fräs {{katalansk_raksoppa__prepped_aromatics}} och pressad {{garlic}} ca 3 min.",
+        "Hetta upp {{olive_oil}} i {{eq:gryta_1}}. Fräs {{katalansk_raksoppa__prepped_aromatics}} och pressad {{garlic}} ca 3 min.",
         "Krydda med {{saffron}}, {{smoked_chili_mix}} efter egen smak, {{dried_thyme}} och {{tomato_paste}}. Fräs ytterligare ca 1 min."
       ],
       "duration": 5,
@@ -302,7 +316,7 @@
         }
       ],
       "steps": [
-        "Blanda {{mayonnaise}} med pressad {{garlic}} i en liten skål. Smaka av med {{salt}} och {{pepper}}."
+        "Blanda {{mayonnaise}} med pressad {{garlic}} i {{eq:skal_1}}. Smaka av med {{salt}} och {{pepper}}."
       ],
       "duration": 2,
       "tags": [
@@ -311,6 +325,12 @@
       "devNotes": [
         "Andra salt- och pepparraden, också utan mängd men med enhet krm, är en egen 1 krm. Inte hopslagen med soppans.",
         "Vitlök är 0.5 klyfta enligt rådatan."
+      ],
+      "equipment": [
+        {
+          "type": "skal_liten",
+          "ref": "skal_1"
+        }
       ]
     },
     {
@@ -345,12 +365,19 @@
         }
       ],
       "steps": [
-        "Fördela {{katalansk_raksoppa__drained_shrimp}} i botten på djupa tallrikar och häll på {{katalansk_raksoppa__soup}}.",
+        "Fördela {{katalansk_raksoppa__drained_shrimp}} i botten på {{eq:servering|pl}} och häll på {{katalansk_raksoppa__soup}}.",
         "Toppa med {{katalansk_raksoppa__diced_tomato}}. Servera med {{katalansk_raksoppa__aioli}} och {{katalansk_raksoppa__bread}}."
       ],
       "duration": 3,
       "tags": [
         "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_djup_tallrik",
+          "ref": "servering",
+          "count": "portions"
+        }
       ]
     }
   ]

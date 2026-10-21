@@ -113,6 +113,13 @@
       "devNotes": [
         "Snackgurka är mappad till gurka. Svartpeppar är mappad till peppar.",
         "Ingen wait, råsteget har ingen minut."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -153,7 +160,7 @@
       ],
       "steps": [
         "Skär {{pork_chop}} i 4 jämntjocka skivor. Krydda med {{zaatar}}, {{salt}} och {{pepper}}.",
-        "Hetta upp {{oil}} och {{butter}} i en rymlig panna. Stek på medelvärme ca 3 min per sida, tills köttet är genomstekt."
+        "Hetta upp {{oil}} och {{butter}} i en rymlig {{eq:stekpanna_1|noun}}. Stek på medelvärme ca 3 min per sida, tills köttet är genomstekt."
       ],
       "duration": 8,
       "tags": [],
@@ -161,7 +168,17 @@
       "equipment": [
         {
           "type": "stekpanna_medelstor",
-          "sizeSource": "inferred"
+          "sizeSource": "inferred",
+          "ref": "stekpanna_1"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada_ra",
+          "separate": true,
+          "inferred": true,
+          "rawKinds": [
+            "meat"
+          ]
         }
       ],
       "devNotes": [

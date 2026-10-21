@@ -55,6 +55,13 @@
       "duration": 2,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -74,6 +81,13 @@
       "duration": 3,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -108,7 +122,7 @@
         }
       ],
       "steps": [
-        "Hetta upp {{butter}} i en stor kastrull på medelvärme. Fräs {{vietnamesisk_kycklingbowl_vitloksris__minced_garlic}} i 30 sek, eller tills väldoftande.",
+        "Hetta upp {{butter}} i {{eq:kastrull_1}} på medelvärme. Fräs {{vietnamesisk_kycklingbowl_vitloksris__minced_garlic}} i 30 sek, eller tills väldoftande.",
         "Tillsätt {{water}} och koka upp. Rör i {{jasmine_rice}} och {{salt}}, sänk till medellåg värme och sjud under lock i 12 min."
       ],
       "duration": 3,
@@ -124,7 +138,8 @@
       "equipment": [
         {
           "type": "kastrull_stor",
-          "ref": "kastrull_1"
+          "ref": "kastrull_1",
+          "lid": true
         }
       ]
     },
@@ -140,7 +155,7 @@
         }
       ],
       "steps": [
-        "Ta av kastrullen från värmen och låt {{vietnamesisk_kycklingbowl_vitloksris__garlic_rice}} vila under lock i 10 min."
+        "Ta av {{eq:kastrull_1|def}} från värmen och låt {{vietnamesisk_kycklingbowl_vitloksris__garlic_rice}} vila under lock i 10 min."
       ],
       "duration": 1,
       "tags": [],
@@ -150,7 +165,8 @@
           "type": "kastrull_stor",
           "ref": "kastrull_1",
           "transition": "keep",
-          "offHeat": true
+          "offHeat": true,
+          "lid": true
         }
       ]
     },
@@ -182,7 +198,7 @@
       ],
       "steps": [
         "Skär {{cucumber}} i tunna halvmånar.",
-        "Blanda {{white_wine_vinegar}}, {{sugar}}, {{water}} och en nypa salt i en liten skål. Vänd i gurkan och ställ åt sidan."
+        "Blanda {{white_wine_vinegar}}, {{sugar}}, {{water}} och en nypa salt i {{eq:skal_1}}. Vänd i gurkan och ställ åt sidan."
       ],
       "duration": 4,
       "tags": [
@@ -191,6 +207,17 @@
       "wait": 0,
       "tips": [
         "Häll av lagen före servering."
+      ],
+      "equipment": [
+        {
+          "type": "skal_liten",
+          "ref": "skal_1"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -220,7 +247,7 @@
         }
       ],
       "steps": [
-        "Hetta upp {{olive_oil}} i en stor stekpanna på medelhög värme.",
+        "Hetta upp {{olive_oil}} i {{eq:stekpanna_1}} på medelhög värme.",
         "Stek {{carrot_julienne}}, {{vietnamesisk_kycklingbowl_vitloksris__sliced_onion}}, {{ginger_ninja}} och en nypa salt i 3–4 min, eller tills mjukt. Lägg över i en skål med lock för att hålla värmen."
       ],
       "duration": 5,
@@ -230,7 +257,8 @@
       "equipment": [
         {
           "type": "stekpanna_stor",
-          "ref": "stekpanna_1"
+          "ref": "stekpanna_1",
+          "lid": true
         }
       ]
     },
@@ -252,7 +280,7 @@
       ],
       "steps": [
         "Krydda {{chicken_inner_fillet}} med {{salt}}.",
-        "Hetta upp stekpannan där grönsakerna stektes (eller en ny stor stekpanna) på medelhög värme och tillsätt en skvätt olivolja vid behov. Stek kycklingen i 3 min per sida, eller tills brynt och genomstekt."
+        "Hetta upp {{eq:stekpanna_1|def}} där grönsakerna stektes (eller en ny {{eq:stekpanna_1|bare}}) på medelhög värme och tillsätt en skvätt olivolja vid behov. Stek kycklingen i 3 min per sida, eller tills brynt och genomstekt."
       ],
       "duration": 7,
       "tags": [],
@@ -331,14 +359,21 @@
         }
       ],
       "steps": [
-        "Lägg upp {{vietnamesisk_kycklingbowl_vitloksris__rested_garlic_rice}}, {{vietnamesisk_kycklingbowl_vitloksris__fried_veg}}, {{vietnamesisk_kycklingbowl_vitloksris__sauced_chicken}} och {{vietnamesisk_kycklingbowl_vitloksris__pickled_cucumber}} i skålar. Häll av lagen från gurkan. Skeda över resterande sås från stekpannan.",
+        "Lägg upp {{vietnamesisk_kycklingbowl_vitloksris__rested_garlic_rice}}, {{vietnamesisk_kycklingbowl_vitloksris__fried_veg}}, {{vietnamesisk_kycklingbowl_vitloksris__sauced_chicken}} och {{vietnamesisk_kycklingbowl_vitloksris__pickled_cucumber}} i {{eq:servering|pl}}. Häll av lagen från gurkan. Skeda över resterande sås från {{eq:stekpanna_1|def}}.",
         "Plocka blad från {{coriander}}, riv dem och strö över. Toppa med en klick {{vegan_sriracha_mayo}}."
       ],
       "duration": 4,
       "tags": [
         "master"
       ],
-      "wait": 0
+      "wait": 0,
+      "serving": [
+        {
+          "type": "servering_skal",
+          "ref": "servering",
+          "count": "portions"
+        }
+      ]
     }
   ]
 }

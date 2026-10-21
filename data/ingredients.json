@@ -147,7 +147,8 @@
         "processed_meat",
         "meat"
       ],
-      "image": "assets/ingredients/bacon.png"
+      "image": "assets/ingredients/bacon.png",
+      "rawAnimal": "meat"
     },
     "baguette": {
       "name": "Baguette",
@@ -414,7 +415,8 @@
         "meat",
         "fresh"
       ],
-      "image": "assets/ingredients/chicken_breast.png"
+      "image": "assets/ingredients/chicken_breast.png",
+      "rawAnimal": "poultry"
     },
     "chicken_breast_bbq": {
       "name": "Kycklingbröstfilé, BBQ-Marinerad",
@@ -422,7 +424,8 @@
         "meat",
         "fresh"
       ],
-      "image": "assets/ingredients/chicken_breast_bbq.png"
+      "image": "assets/ingredients/chicken_breast_bbq.png",
+      "rawAnimal": "poultry"
     },
     "chicken_breast_strips": {
       "name": "Strimlad kycklingbröstfilé",
@@ -430,7 +433,8 @@
         "meat",
         "fresh"
       ],
-      "image": "assets/ingredients/chicken_breast_strips.png"
+      "image": "assets/ingredients/chicken_breast_strips.png",
+      "rawAnimal": "poultry"
     },
     "chicken_inner_fillet": {
       "name": "Kycklinginnerfilé",
@@ -438,7 +442,8 @@
         "meat",
         "fresh"
       ],
-      "image": "assets/ingredients/chicken_inner_fillet.png"
+      "image": "assets/ingredients/chicken_inner_fillet.png",
+      "rawAnimal": "poultry"
     },
     "chickpeas": {
       "name": "Kikärtor",
@@ -515,7 +520,8 @@
       "tags": [
         "fish",
         "fresh"
-      ]
+      ],
+      "rawAnimal": "fish"
     },
     "cold_smoked_salmon": {
       "name": "Kallrökt lax",
@@ -859,14 +865,16 @@
         "meat",
         "fresh"
       ],
-      "image": "assets/ingredients/ground_beef.png"
+      "image": "assets/ingredients/ground_beef.png",
+      "rawAnimal": "meat"
     },
     "haddock": {
       "name": "Kolja",
       "tags": [
         "fish",
         "fresh"
-      ]
+      ],
+      "rawAnimal": "fish"
     },
     "halloumi": {
       "name": "Halloumi",
@@ -978,7 +986,8 @@
       "tags": [
         "seafood",
         "fresh"
-      ]
+      ],
+      "rawAnimal": "shellfish"
     },
     "kohlrabi": {
       "name": "Vit kålrabbi",
@@ -993,7 +1002,8 @@
         "meat",
         "fresh"
       ],
-      "image": "assets/ingredients/lamb_rump.png"
+      "image": "assets/ingredients/lamb_rump.png",
+      "rawAnimal": "meat"
     },
     "leek": {
       "name": "Purjolök",
@@ -1142,7 +1152,8 @@
         "meat",
         "fresh"
       ],
-      "image": "assets/ingredients/mixed_mince.png"
+      "image": "assets/ingredients/mixed_mince.png",
+      "rawAnimal": "meat"
     },
     "mixed_salad": {
       "name": "Salladsmix",
@@ -1405,20 +1416,23 @@
       "tags": [
         "meat",
         "fresh"
-      ]
+      ],
+      "rawAnimal": "meat"
     },
     "pork_collar": {
       "name": "Fläskkarré",
       "tags": [
         "meat"
-      ]
+      ],
+      "rawAnimal": "meat"
     },
     "pork_tenderloin": {
       "name": "Fläskytterfilé",
       "tags": [
         "meat",
         "fresh"
-      ]
+      ],
+      "rawAnimal": "meat"
     },
     "portobello": {
       "name": "Portobello",
@@ -1565,7 +1579,8 @@
         "meat",
         "fresh"
       ],
-      "image": "assets/ingredients/rump_steak.png"
+      "image": "assets/ingredients/rump_steak.png",
+      "rawAnimal": "meat"
     },
     "saffron": {
       "name": "Saffran",
@@ -1578,7 +1593,8 @@
       "tags": [
         "fish",
         "fresh"
-      ]
+      ],
+      "rawAnimal": "fish"
     },
     "salmon_fillet": {
       "name": "Laxfilé",
@@ -1586,7 +1602,8 @@
         "fish",
         "fresh"
       ],
-      "image": "assets/ingredients/salmon_fillet.png"
+      "image": "assets/ingredients/salmon_fillet.png",
+      "rawAnimal": "fish"
     },
     "salt": {
       "name": "Salt",
@@ -1650,7 +1667,8 @@
       "tags": [
         "seafood",
         "fresh"
-      ]
+      ],
+      "rawAnimal": "shellfish"
     },
     "sliced_pork_chop": {
       "name": "Skivad fläskkotlett",
@@ -1658,7 +1676,8 @@
         "meat",
         "fresh"
       ],
-      "image": "assets/ingredients/sliced_pork_chop.png"
+      "image": "assets/ingredients/sliced_pork_chop.png",
+      "rawAnimal": "meat"
     },
     "small_potato": {
       "name": "Småpotatis",
@@ -2005,7 +2024,8 @@
         "meat",
         "fresh"
       ],
-      "image": "assets/ingredients/salsiccia.png"
+      "image": "assets/ingredients/salsiccia.png",
+      "rawAnimal": "meat"
     },
     "mozzarella": {
       "name": "Mozzarella",

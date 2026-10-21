@@ -49,7 +49,7 @@
       "outputName": "Förvärmd ugn (240°C)",
       "inputs": [],
       "steps": [
-        "Värm ugnen till 240°C, eller 220°C varmluft."
+        "Värm {{eq:ugn|def}} till 240°C, eller 220°C varmluft."
       ],
       "duration": 1,
       "wait": 12,
@@ -85,6 +85,13 @@
       "duration": 5,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -119,9 +126,9 @@
         }
       ],
       "steps": [
-        "Lägg {{krispiga_kikartor_salladsbowl__potato_chunks}} på två plåtar med bakplåtspapper.",
+        "Lägg {{krispiga_kikartor_salladsbowl__potato_chunks}} på två {{eq:plat_1|pl}} med bakplåtspapper.",
         "Blanda med {{olive_oil}}, {{garlic_flakes}}, {{salt}} och en nypa {{pepper}}.",
-        "Rosta i ugnen i 25–35 min, eller tills potatisen är gyllene."
+        "Rosta i {{eq:ugn|def}} i 25–35 min, eller tills potatisen är gyllene."
       ],
       "duration": 3,
       "wait": 35,
@@ -133,6 +140,12 @@
           "slots": 1,
           "temp": 240,
           "fanTemp": 220
+        },
+        {
+          "type": "plat",
+          "ref": "plat_1",
+          "count": 2,
+          "liner": "bakplatspapper"
         }
       ],
       "devNotes": [
@@ -151,7 +164,7 @@
         }
       ],
       "steps": [
-        "Hetta upp en stor stekpanna på medelhög värme.",
+        "Hetta upp {{eq:stekpanna_1}} på medelhög värme.",
         "Rosta {{pine_nuts}} i 3–4 min, eller tills de är gyllene. Ställ åt sidan."
       ],
       "duration": 4,
@@ -160,7 +173,8 @@
       "heat": "medelhög",
       "equipment": [
         {
-          "type": "stekpanna_stor"
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1"
         }
       ],
       "devNotes": [
@@ -194,9 +208,9 @@
         }
       ],
       "steps": [
-        "Häll av {{chickpeas}} och lägg dem på en plåt med bakplåtspapper. Platta till dem med en sked eller stekspade.",
+        "Häll av {{chickpeas}} och lägg dem på {{eq:plat_2}} med bakplåtspapper. Platta till dem med en sked eller stekspade.",
         "Ringla över {{olive_oil}} och krydda med {{salt}} och en nypa {{pepper}}.",
-        "Rosta i ugnen i 12–15 min, eller tills de är krispiga."
+        "Rosta i {{eq:ugn|def}} i 12–15 min, eller tills de är krispiga."
       ],
       "duration": 3,
       "wait": 15,
@@ -210,7 +224,9 @@
           "fanTemp": 220
         },
         {
-          "type": "plat"
+          "type": "plat",
+          "ref": "plat_2",
+          "liner": "bakplatspapper"
         }
       ],
       "devNotes": [
@@ -252,7 +268,7 @@
       ],
       "steps": [
         "Finhacka {{chives}}.",
-        "Blanda gräslök, {{aioli}}, {{yoghurt}}, {{salt}} och en nypa {{pepper}} i en liten skål."
+        "Blanda gräslök, {{aioli}}, {{yoghurt}}, {{salt}} och en nypa {{pepper}} i {{eq:skal_1}}."
       ],
       "duration": 3,
       "tags": [
@@ -260,6 +276,17 @@
       ],
       "devNotes": [
         "Gräslök är 1 portionspåse vid både 2 och 4 portioner. Mappad till 1 pkt, inte uppskalad."
+      ],
+      "equipment": [
+        {
+          "type": "skal_liten",
+          "ref": "skal_1"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -294,6 +321,13 @@
       ],
       "devNotes": [
         "Romansallad är mappad till lettuce (Sallad). Ingen egen romansallad-id."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -333,13 +367,20 @@
         }
       ],
       "steps": [
-        "Lägg upp sallad och rädisor från {{krispiga_kikartor_salladsbowl__prepped_salad}} tillsammans med {{krispiga_kikartor_salladsbowl__roasted_potato}} i djupa tallrikar.",
+        "Lägg upp sallad och rädisor från {{krispiga_kikartor_salladsbowl__prepped_salad}} tillsammans med {{krispiga_kikartor_salladsbowl__roasted_potato}} i {{eq:servering|pl}}.",
         "Toppa med avokadoskivorna från {{krispiga_kikartor_salladsbowl__prepped_salad}} och {{krispiga_kikartor_salladsbowl__toasted_pine_nuts}}.",
         "Ringla över {{krispiga_kikartor_salladsbowl__chive_dressing}} och toppa med {{grated_cheese}} och {{krispiga_kikartor_salladsbowl__roasted_chickpeas}}."
       ],
       "duration": 3,
       "tags": [
         "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_djup_tallrik",
+          "ref": "servering",
+          "count": "portions"
+        }
       ]
     }
   ]

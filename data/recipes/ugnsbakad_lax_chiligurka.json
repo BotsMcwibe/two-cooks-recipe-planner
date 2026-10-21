@@ -29,7 +29,7 @@
       "outputName": "Förvärmd ugn (225°C)",
       "inputs": [],
       "steps": [
-        "Värm ugnen till 200°C varmluft eller 225°C vanlig."
+        "Värm {{eq:ugn|def}} till 200°C varmluft eller 225°C vanlig."
       ],
       "duration": 1,
       "tags": [
@@ -97,7 +97,7 @@
         }
       ],
       "steps": [
-        "Blanda {{sugar}}, {{chili_flakes}}, {{vinegar_spirit}} och {{water}} i en bunke.",
+        "Blanda {{sugar}}, {{chili_flakes}}, {{vinegar_spirit}} och {{water}} i {{eq:skal_1}}.",
         "Skiva {{cucumber}} så tunt som möjligt och blanda ner i lagen. Låt stå till servering."
       ],
       "duration": 5,
@@ -107,6 +107,17 @@
       "devNotes": [
         "Chili flakes är ½ förp enligt rådatan. Ingen vikt, inga gram påhittade.",
         "\"Till servering\" har ingen minut, därför ingen wait."
+      ],
+      "equipment": [
+        {
+          "type": "skal_stor",
+          "ref": "skal_1"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -141,6 +152,13 @@
       "devNotes": [
         "Kålrabbi är mappad till befintlig vit kålrabbi. Färgen är inte angiven.",
         "Salt är en egen rad, 1 krm, inte hopslagen med laxens salt."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -181,7 +199,7 @@
       ],
       "steps": [
         "Blanda {{grated_ginger}} med {{soy_sauce}}, {{sugar}}, {{tomato_paste}} och {{salt}}.",
-        "Lägg {{salmon_fillet}} i en ugnsform och bred över marinaden. Baka i ugnen, i mitten, ca 15 min."
+        "Lägg {{salmon_fillet}} i {{eq:ugnsform_1}} och bred över marinaden. Baka i {{eq:ugn|def}}, i mitten, ca 15 min."
       ],
       "duration": 3,
       "tags": [],
@@ -196,7 +214,8 @@
         },
         {
           "type": "ugnsform",
-          "sizeSource": "inferred"
+          "sizeSource": "inferred",
+          "ref": "ugnsform_1"
         }
       ],
       "devNotes": [
@@ -222,7 +241,7 @@
         }
       ],
       "steps": [
-        "Blanda {{mayonnaise}} och {{soy_sauce}} i en liten skål."
+        "Blanda {{mayonnaise}} och {{soy_sauce}} i {{eq:skal_2}}."
       ],
       "duration": 2,
       "tags": [
@@ -230,6 +249,12 @@
       ],
       "devNotes": [
         "Andra sojaraden är 1 msk, inte hopslagen med marinadens 2 msk."
+      ],
+      "equipment": [
+        {
+          "type": "skal_liten",
+          "ref": "skal_2"
+        }
       ]
     },
     {

@@ -61,9 +61,9 @@
         }
       ],
       "steps": [
-        "Häll {{bbq_sauce}} i en djup tallrik.",
-        "Blanda {{panko}} och {{salt}} i en ny djup tallrik.",
-        "Vänd {{chicken_inner_fillet}} först i BBQ-sås och sedan i panko. Ställ åt sidan på en tallrik."
+        "Häll {{bbq_sauce}} i {{eq:djup_tallrik_1}}.",
+        "Blanda {{panko}} och {{salt}} i en ny {{eq:djup_tallrik_2|bare}}.",
+        "Vänd {{chicken_inner_fillet}} först i BBQ-sås och sedan i panko. Ställ åt sidan på {{eq:tallrik_1}}."
       ],
       "duration": 6,
       "tags": [
@@ -71,6 +71,20 @@
       ],
       "tips": [
         "VIKTIGT: Tvätta händer och köksredskap noggrant efter hantering av rå kyckling."
+      ],
+      "equipment": [
+        {
+          "type": "djup_tallrik",
+          "ref": "djup_tallrik_1"
+        },
+        {
+          "type": "djup_tallrik",
+          "ref": "djup_tallrik_2"
+        },
+        {
+          "type": "tallrik",
+          "ref": "tallrik_1"
+        }
       ]
     },
     {
@@ -90,9 +104,9 @@
         }
       ],
       "steps": [
-        "Hetta upp en stor stekpanna på medelhög värme och tillsätt {{olive_oil}} så det täcker pannan.",
+        "Hetta upp {{eq:stekpanna_1}} på medelhög värme och tillsätt {{olive_oil}} så det täcker {{eq:stekpanna_1|def}}.",
         "Stek {{crispy_bbq_chicken__breaded_chicken}} i 3–4 min per sida, eller tills gyllene och genomstekt.",
-        "Ställ åt sidan på en tallrik med hushållspapper."
+        "Ställ åt sidan på {{eq:tallrik_2}} med hushållspapper."
       ],
       "duration": 9,
       "wait": 0,
@@ -103,7 +117,12 @@
       "heat": "medelhög",
       "equipment": [
         {
-          "type": "stekpanna_stor"
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1"
+        },
+        {
+          "type": "tallrik",
+          "ref": "tallrik_2"
         }
       ]
     },
@@ -140,11 +159,22 @@
       ],
       "steps": [
         "Finhacka eller pressa {{garlic}}.",
-        "Blanda {{sour_cream}}, {{mayonnaise}}, vitlöken, {{salt}} och {{pepper}} i en liten skål."
+        "Blanda {{sour_cream}}, {{mayonnaise}}, vitlöken, {{salt}} och {{pepper}} i {{eq:skal_1}}."
       ],
       "duration": 3,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skal_liten",
+          "ref": "skal_1"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {

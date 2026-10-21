@@ -27,7 +27,7 @@
       "outputName": "Förvärmd ugn (190°C)",
       "inputs": [],
       "steps": [
-        "Värm ugnen till 190°C, eller 170°C varmluft."
+        "Värm {{eq:ugn|def}} till 190°C, eller 170°C varmluft."
       ],
       "duration": 1,
       "wait": 12,
@@ -71,6 +71,13 @@
         "Det är ett tips, inte en klocka i grafen.",
         "80 g är hela kakan. Yielden är samma vid 2 och 4 portioner och är inte uppskalad. De 5 hela nötterna är inte en separat vikt.",
         "Grafen delar nötterna 0,8 st till kakan och 0,2 st (de 5 hela) till toppingen. Andelen är en uppskattning; råreceptet anger antal, inte vikt."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -90,9 +97,9 @@
         }
       ],
       "steps": [
-        "Häll smeten från {{sponge_cake_mix}} i en rund bakform, 20–22 cm i diameter, med bakplåtspapper.",
+        "Häll smeten från {{sponge_cake_mix}} i en rund {{eq:bakform_1|noun}}, 20–22 cm i diameter, med bakplåtspapper.",
         "Rör ner de hackade nötterna från {{valnotskaka_paron__chopped_walnuts}} och platta till med en slickepott.",
-        "Baka i ugnen i 30–35 min."
+        "Baka i {{eq:ugn|def}} i 30–35 min."
       ],
       "duration": 5,
       "wait": 35,
@@ -109,7 +116,9 @@
           "fanTemp": 170
         },
         {
-          "type": "bakform"
+          "type": "bakform",
+          "ref": "bakform_1",
+          "liner": "bakplatspapper"
         }
       ],
       "devNotes": [
@@ -138,9 +147,9 @@
         }
       ],
       "steps": [
-        "Hetta upp {{butter}} i en liten kastrull i 2–3 min, tills det börjar bubbla och får en nötaktig brun färg.",
+        "Hetta upp {{butter}} i {{eq:kastrull_1}} i 2–3 min, tills det börjar bubbla och får en nötaktig brun färg.",
         "Halvera, kärna ur och tärna {{pear}} i små bitar.",
-        "Blanda {{powdered_sugar}} och det brynta smöret i en liten skål."
+        "Blanda {{powdered_sugar}} och det brynta smöret i {{eq:skal_1}}."
       ],
       "duration": 6,
       "wait": 0,
@@ -152,7 +161,17 @@
       "heatSource": "inferred",
       "equipment": [
         {
-          "type": "kastrull_liten"
+          "type": "kastrull_liten",
+          "ref": "kastrull_1"
+        },
+        {
+          "type": "skal_liten",
+          "ref": "skal_1"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
         }
       ],
       "devNotes": [

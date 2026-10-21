@@ -1,9 +1,9 @@
-import { Scheduler } from '../models/scheduler.js?v=20261021g6';
-import { RecipeGraph } from '../core/recipe-graph.js?v=20261021g6';
-import { equipmentSummary, isResource, nodeEquipmentHtml, stepHeatHtml } from '../core/equipment.js?v=20261021g6';
-import { kitchenProfile } from '../core/kitchen-prefs.js?v=20261021g6';
+import { Scheduler } from '../models/scheduler.js?v=20261021g7';
+import { RecipeGraph } from '../core/recipe-graph.js?v=20261021g7';
+import { equipmentItemName, equipmentSummary, isResource, nodeEquipmentHtml, servingItems, stepHeatHtml } from '../core/equipment.js?v=20261021g7';
+import { kitchenProfile } from '../core/kitchen-prefs.js?v=20261021g7';
 import { formatNiceAmount } from '../utils/helpers.js';
-import { formatStepInputText, producerMap } from '../utils/derived-inputs.js?v=20261021g6';
+import { formatStepInputText, producerMap } from '../utils/derived-inputs.js?v=20261021g7';
 import {
   allergenLabel,
   difficultyLabel,
@@ -11,11 +11,11 @@ import {
   escapeAttr,
   escapeHtml,
   starHtml,
-} from '../utils/catalog-ui.js?v=20261021g6';
-import { imgFailed, isPhotoMissing, recordPhotoFailure, recordPhotoSuccess } from '../utils/photo-fallback.js?v=20261021g6';
-import * as UserState from '../core/user-recipe-state.js?v=20261021g6';
-import { bindStatusControls, kitchenMarkHtml, refreshStatusControls, statusControlHtml } from './recipe-status-ui.js?v=20261021g6';
-import { joinStepParts, sentenceCase } from '../utils/text.js?v=20261021g6';
+} from '../utils/catalog-ui.js?v=20261021g7';
+import { imgFailed, isPhotoMissing, recordPhotoFailure, recordPhotoSuccess } from '../utils/photo-fallback.js?v=20261021g7';
+import * as UserState from '../core/user-recipe-state.js?v=20261021g7';
+import { bindStatusControls, kitchenMarkHtml, refreshStatusControls, statusControlHtml } from './recipe-status-ui.js?v=20261021g7';
+import { joinStepParts, sentenceCase } from '../utils/text.js?v=20261021g7';
 
 /**
  * Cooking view - rich recipe page with hero, meta, ingredients, nutrition,
@@ -60,6 +60,7 @@ export class CookingView {
   render(rootRecipe, subtreeRecipes, graph, baseIngredients, options, meta = {}) {
     this._byNode = (meta.images && meta.images.byNode) || {};
     this._kitchen = kitchenProfile();
+    this._portions = meta.currentPortions || null;
     // Same scheduler the flow graph uses. Header minutes follow this makespan
     // (prep-first / 2 cooks / kitchen profile included), not catalog totalMinutes.
     const schedule = rootRecipe
@@ -523,6 +524,12 @@ export class CookingView {
     const isText = [];
     for (const part of step) {
       if (part && typeof part === 'object') {
+        if (part.type === 'equipment') {
+          // Equipment: italic + dotted underline (not colour), distinct from bold ingredients
+          texts.push(`<em class="step-eq">${escapeHtml(part.text || part.key || '')}</em>`);
+          isText.push(false);
+          continue;
+        }
         if (part.type === 'ingredient' && part.ingredient?.json?.name) {
           texts.push(`<strong>${escapeHtml(part.ingredient.json.name)}</strong>`);
         } else if (part.name) {
@@ -561,6 +568,8 @@ export class CookingView {
     html += '</ul>';
     const eq = this._equipmentRowsHtml(this._subtree, this._kitchen || kitchenProfile());
     if (eq) html += `<div class="eq-section"><h3>Utrustning</h3>${eq}</div>`;
+    const serving = this._servingRowsHtml(rootRecipe);
+    if (serving) html += `<div class="eq-section eq-serving-section"><h3>Servering</h3>${serving}</div>`;
     this.$ingredients.html(html);
   }
 
@@ -580,11 +589,21 @@ export class CookingView {
         } else {
           amount = '';
         }
-      } else if (it.guess) {
-        name += guess;
+      } else {
+        name = escapeHtml(equipmentItemName(it));
+        if (it.optional) name += ' <span class="eq-optional">(valfritt)</span>';
+        if (it.guess) name += guess;
       }
       return `<li class="eq-row eq-${it.kind}"><span class="ing-amount">${amount}</span><span class="ing-name">${name}</span></li>`;
     }).join('');
+    return `<ul class="ingredient-list eq-rows">${rows}</ul>`;
+  }
+
+  /** Servering (master `serving`): "4 st Tallrikar", scaled with the chosen portions. */
+  _servingRowsHtml(rootRecipe) {
+    const items = servingItems(rootRecipe, this._portions || rootRecipe?.basePortions);
+    if (!items.length) return '';
+    const rows = items.map(it => `<li class="eq-row eq-serving-row"><span class="ing-amount">${it.count} st</span><span class="ing-name">${escapeHtml(it.label)}</span></li>`).join('');
     return `<ul class="ingredient-list eq-rows">${rows}</ul>`;
   }
 

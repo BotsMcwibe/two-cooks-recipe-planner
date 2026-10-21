@@ -74,7 +74,7 @@
         }
       ],
       "steps": [
-        "Hetta upp {{olive_oil}} i en medelstor kastrull på medelvärme. Fräs {{desiccated_coconut}} i 1 min, tills väldoftande.",
+        "Hetta upp {{olive_oil}} i {{eq:kastrull_1}} på medelvärme. Fräs {{desiccated_coconut}} i 1 min, tills väldoftande.",
         "Tillsätt {{water}} och koka upp. Rör i {{long_grain_rice}} och {{salt}}, sänk till medellåg värme och sjud under lock i 14 min."
       ],
       "duration": 4,
@@ -90,7 +90,8 @@
       "equipment": [
         {
           "type": "kastrull_medelstor",
-          "ref": "kastrull_1"
+          "ref": "kastrull_1",
+          "lid": true
         }
       ]
     },
@@ -106,7 +107,7 @@
         }
       ],
       "steps": [
-        "Ta av kastrullen från värmen och låt {{vietnamesisk_rakbowl__coconut_rice}} vila under lock i 10 min."
+        "Ta av {{eq:kastrull_1|def}} från värmen och låt {{vietnamesisk_rakbowl__coconut_rice}} vila under lock i 10 min."
       ],
       "duration": 1,
       "wait": 10,
@@ -116,7 +117,8 @@
           "type": "kastrull_medelstor",
           "ref": "kastrull_1",
           "transition": "keep",
-          "offHeat": true
+          "offHeat": true,
+          "lid": true
         }
       ]
     },
@@ -154,6 +156,13 @@
       "duration": 6,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -184,7 +193,7 @@
       ],
       "steps": [
         "Pressa saften ur limen i {{vietnamesisk_rakbowl__prepped_aromatics}}.",
-        "Blanda saften med chilin, vitlöken, ingefäran, {{sugar}}, {{soy_sauce}} och {{olive_oil}} i en liten skål."
+        "Blanda saften med chilin, vitlöken, ingefäran, {{sugar}}, {{soy_sauce}} och {{olive_oil}} i {{eq:skal_1}}."
       ],
       "duration": 3,
       "tags": [
@@ -192,6 +201,12 @@
       ],
       "tips": [
         "Skippa chili eller använd mindre om du inte tycker om stark mat."
+      ],
+      "equipment": [
+        {
+          "type": "skal_liten",
+          "ref": "skal_1"
+        }
       ]
     },
     {
@@ -223,6 +238,13 @@
       "duration": 8,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -248,7 +270,7 @@
       ],
       "steps": [
         "Finhacka {{coriander}}.",
-        "Blanda {{vietnamesisk_rakbowl__cut_mango_vegetables}} (mango, kålrabbi och rädisor), {{salt}} och koriander i en stor skål."
+        "Blanda {{vietnamesisk_rakbowl__cut_mango_vegetables}} (mango, kålrabbi och rädisor), {{salt}} och koriander i {{eq:skal_2}}."
       ],
       "duration": 2,
       "tags": [
@@ -259,7 +281,13 @@
       ],
       "equipment": [
         {
-          "type": "skal_stor"
+          "type": "skal_stor",
+          "ref": "skal_2"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
         }
       ]
     },
@@ -286,7 +314,7 @@
       ],
       "steps": [
         "Krydda {{king_prawns}} med {{salt}}.",
-        "Hetta upp {{olive_oil}} i en stor stekpanna på medelhög värme.",
+        "Hetta upp {{olive_oil}} i {{eq:stekpanna_1}} på medelhög värme.",
         "Stek räkorna 1–2 min på varje sida, tills de är gyllene och genomstekta."
       ],
       "duration": 6,
@@ -297,7 +325,8 @@
       "heat": "medelhög",
       "equipment": [
         {
-          "type": "stekpanna_stor"
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1"
         }
       ]
     },
@@ -328,12 +357,19 @@
         }
       ],
       "steps": [
-        "Lägg upp {{vietnamesisk_rakbowl__rested_coconut_rice}} och {{vietnamesisk_rakbowl__mango_salad}} på tallrikar.",
+        "Lägg upp {{vietnamesisk_rakbowl__rested_coconut_rice}} och {{vietnamesisk_rakbowl__mango_salad}} på {{eq:servering|pl}}.",
         "Toppa med {{vietnamesisk_rakbowl__fried_shrimp}} och {{vietnamesisk_rakbowl__ginger_sauce}}."
       ],
       "duration": 3,
       "tags": [
         "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_tallrik",
+          "ref": "servering",
+          "count": "portions"
+        }
       ]
     }
   ]

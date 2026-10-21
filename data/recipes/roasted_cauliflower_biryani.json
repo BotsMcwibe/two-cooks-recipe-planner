@@ -33,6 +33,13 @@
       "duration": 4,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -52,6 +59,13 @@
       "duration": 2,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -74,6 +88,13 @@
       ],
       "devNotes": [
         "FLAG: _unitInference Morot 4 tsk (4p) / 2 st (2p) — överstyrd till 4 st (metod: skiva hela morötter)."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -103,9 +124,9 @@
         }
       ],
       "steps": [
-        "Placera {{roasted_cauliflower_biryani__cauliflower_florets}} på en bakplåt täckt med bakplåtspapper.",
-        "Häll över {{olive_oil}} och krydda med {{salt}} och {{pepper}}. Blanda och sprid buketterna jämnt över plåten.",
-        "Rosta i ugnen tills möra och lätt gyllenbruna, 20–25 min."
+        "Placera {{roasted_cauliflower_biryani__cauliflower_florets}} på {{eq:plat_1}} täckt med bakplåtspapper.",
+        "Häll över {{olive_oil}} och krydda med {{salt}} och {{pepper}}. Blanda och sprid buketterna jämnt över {{eq:plat_1|def}}.",
+        "Rosta i {{eq:ugn|def}} tills möra och lätt gyllenbruna, 20–25 min."
       ],
       "duration": 3,
       "wait": 25,
@@ -119,7 +140,9 @@
           "fanTemp": 200
         },
         {
-          "type": "plat"
+          "type": "plat",
+          "ref": "plat_1",
+          "liner": "bakplatspapper"
         }
       ]
     },
@@ -143,6 +166,13 @@
       ],
       "devNotes": [
         "FLAG: _unitInference Koriander 1 g (alla yields) — överstyrd till 1 kruka (färsk örtkuka; metod: grovhacka)."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -162,6 +192,13 @@
       "duration": 2,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -184,6 +221,13 @@
       ],
       "devNotes": [
         "FLAG: _unitInference Chili 2 tsk — överstyrd till 2 st (metod: halvera/skiva hela chili)."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -213,7 +257,7 @@
         }
       ],
       "steps": [
-        "Hetta upp {{olive_oil}} i en djup medelstor stekpanna på medelvärme.",
+        "Hetta upp {{olive_oil}} i {{eq:stekpanna_1}} på medelvärme.",
         "Tillsätt {{roasted_cauliflower_biryani__sliced_onion}} och {{roasted_cauliflower_biryani__sliced_carrot}}. Fräs tills löken har mjuknat, ca 5 min.",
         "Häll i {{garam_masala}}, rör om tills doftande, ca 1 min."
       ],
@@ -222,8 +266,9 @@
       "heat": "medel",
       "equipment": [
         {
-          "type": "stekpanna_medelstor",
-          "ref": "stekpanna_1"
+          "type": "traktorpanna",
+          "ref": "stekpanna_1",
+          "typeSource": "inferred"
         }
       ]
     },
@@ -259,7 +304,7 @@
         }
       ],
       "steps": [
-        "Rör i {{basmati_rice}} och {{dried_cranberries}} i stekpannan med {{roasted_cauliflower_biryani__fried_onion_carrot}}. Häll i {{water}} och {{vegetable_bouillon}} och koka upp.",
+        "Rör i {{basmati_rice}} och {{dried_cranberries}} i {{eq:stekpanna_1|def}} med {{roasted_cauliflower_biryani__fried_onion_carrot}}. Häll i {{water}} och {{vegetable_bouillon}} och koka upp.",
         "Sänk värmen och låt sjuda under lock tills vattnet är absorberat och riset är färdigkokt, 16–18 min."
       ],
       "duration": 1,
@@ -272,9 +317,11 @@
       "heatSource": "inferred",
       "equipment": [
         {
-          "type": "stekpanna_medelstor",
+          "type": "traktorpanna",
           "ref": "stekpanna_1",
-          "transition": "keep"
+          "transition": "keep",
+          "lid": true,
+          "typeSource": "inferred"
         }
       ],
       "devNotes": [
@@ -344,13 +391,20 @@
         }
       ],
       "steps": [
-        "Fördela {{roasted_cauliflower_biryani__cooked_biryani}} i djupa tallrikar.",
+        "Fördela {{roasted_cauliflower_biryani__cooked_biryani}} i {{eq:servering|pl}}.",
         "Toppa med {{sour_cream}} och strö över {{roasted_cauliflower_biryani__sliced_chili}} samt de sparade bladen från {{roasted_cauliflower_biryani__chopped_coriander}}."
       ],
       "duration": 3,
       "wait": 0,
       "tags": [
         "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_djup_tallrik",
+          "ref": "servering",
+          "count": "portions"
+        }
       ]
     }
   ]

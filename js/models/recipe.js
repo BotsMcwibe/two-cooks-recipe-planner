@@ -1,6 +1,59 @@
 import { Ingredient } from './ingredient.js';
 
-function parseStepTemplate(stepString, ingredientMap) {
+const EQ_FORMS = ['indef', 'bare', 'noun', 'def', 'pl', 'pldef'];
+const warnedEq = new Set();
+function warnEqOnce(msg) {
+  if (warnedEq.has(msg)) return;
+  warnedEq.add(msg);
+  console.warn(msg);
+}
+
+/**
+ * Resolve an equipment placeholder key (SCHEMA.md "Equipment placeholders in steps"):
+ * the node's own equipment ref, then any ref in this recipe file (incl. the master `serving`
+ * list), then a type used exactly once in the node; `ugn` always resolves.
+ * @returns {string|null} equipment type, or null when unknown
+ */
+function resolveEqType(key, nodeEquipment, eqCtx) {
+  const own = nodeEquipment || [];
+  const hit = own.find(e => e && e.ref === key);
+  if (hit) return hit.type;
+  const refs = eqCtx && eqCtx.refs;
+  if (refs && refs[key]) return refs[key];
+  const sameType = own.filter(e => e && e.type === key);
+  if (sameType.length === 1) return key;
+  if (key === 'ugn') return 'ugn';
+  // Lenient fallbacks (never throw): a type used more than once, or any known type
+  if (sameType.length > 1) return key;
+  if (eqCtx && eqCtx.types && eqCtx.types[key]) return key;
+  return null;
+}
+
+function eqPhrase(type, form, key, eqCtx) {
+  const info = type && eqCtx && eqCtx.types ? eqCtx.types[type] : null;
+  const forms = info && info.forms;
+  if (forms && forms[form]) return forms[form];
+  if (forms && forms.indef) {
+    warnEqOnce(`Equipment placeholder form "${form}" missing for type "${type}"`);
+    return forms.indef;
+  }
+  if (info && info.label) return info.label.toLowerCase();
+  return String(type || key).replace(/_\d+$/, '').replace(/_/g, ' ');
+}
+
+/** Text before a placeholder ends a sentence (or the step starts) → capitalise it. */
+function atSentenceStart(parts) {
+  for (let i = parts.length - 1; i >= 0; i--) {
+    const p = parts[i];
+    if (typeof p !== 'string') return false;
+    const t = p.trimEnd();
+    if (!t) continue;
+    return /[.!?:]$/.test(t);
+  }
+  return true;
+}
+
+function parseStepTemplate(stepString, ingredientMap, nodeEquipment = null, eqCtx = null, nodeId = '') {
   const re = /\{\{([^}]+)\}\}/g;
   let last = 0, m;
   const parts = [];
@@ -9,6 +62,23 @@ function parseStepTemplate(stepString, ingredientMap) {
       parts.push(stepString.slice(last, m.index));
     }
     const id = m[1].trim();
+    if (id.startsWith('eq:')) {
+      const [rawKey, rawForm] = id.slice(3).split('|');
+      const key = (rawKey || '').trim();
+      let form = (rawForm || 'indef').trim();
+      if (!EQ_FORMS.includes(form)) {
+        warnEqOnce(`Unknown equipment form "${form}" in {{${id}}} (${nodeId})`);
+        form = 'indef';
+      }
+      const type = resolveEqType(key, nodeEquipment, eqCtx);
+      if (!type) warnEqOnce(`Unknown equipment key "${key}" in {{${id}}} (${nodeId})`);
+      let text = eqPhrase(type, form, key, eqCtx);
+      if (atSentenceStart(parts)) text = text.charAt(0).toLocaleUpperCase('sv') + text.slice(1);
+      // `name` keeps scheduler/text matching working (it joins part names into plain text)
+      parts.push({ type: 'equipment', key, form, eqType: type, text, name: text });
+      last = re.lastIndex;
+      continue;
+    }
     if (!ingredientMap[id]) {
       throw new Error(`Unknown ingredient "${id}" in step`);
     }
@@ -65,7 +135,7 @@ export class RecipeBuilder {
   }
 }
 
-const EQUIPMENT_FIELDS = ['equipment', 'heat', 'stepHeat', 'heatSource', 'oven', 'rawId'];
+const EQUIPMENT_FIELDS = ['equipment', 'serving', 'heat', 'stepHeat', 'heatSource', 'oven', 'rawId'];
 function copyEquipmentFields(from, to) {
   for (const k of EQUIPMENT_FIELDS) to[k] = from[k] !== undefined ? from[k] : null;
 }
@@ -133,8 +203,9 @@ export class Recipe {
    * @param {object} ingMap - mutable map of id -> Ingredient (base + recipe outputs)
    * @param {object} unitMap - id -> Unit
    * @param {object} [outputMap] - optional separate map for recipe outputs (kept out of pantry)
+   * @param {{ types: object, refs: object }} [eqCtx] - equipment vocab types + ref→type for this file
    */
-  static fromJSON(data, ingMap, unitMap, outputMap = null) {
+  static fromJSON(data, ingMap, unitMap, outputMap = null, eqCtx = null) {
     const targetMap = outputMap || ingMap;
     if (!targetMap[data.id]) {
       const ingName = data.outputName || data.name;
@@ -153,7 +224,7 @@ export class Recipe {
     rec.wait = data.wait || 0;
     rec.outputAmount = data.outputAmount != null ? data.outputAmount : 1;
     rec.basePortions = data.basePortions != null ? data.basePortions : null;
-    rec.steps = data.steps.map(step => parseStepTemplate(step, ingMap));
+    rec.steps = data.steps.map(step => parseStepTemplate(step, ingMap, data.equipment, eqCtx, data.id));
     rec.inputs = data.inputs.map(i => {
       if (!ingMap[i.id]) {
         throw new Error(`Unknown input ingredient "${i.id}" in recipe "${data.id}"`);
@@ -171,6 +242,7 @@ export class Recipe {
     rec.tags = data.tags || [];
     // Equipment, heat & resources (SCHEMA.md). Kept as plain data; never used as inputs.
     rec.equipment = Array.isArray(data.equipment) ? data.equipment.map(e => ({ ...e })) : null;
+    rec.serving = Array.isArray(data.serving) ? data.serving.map(e => ({ ...e })) : null;
     rec.heat = data.heat || null;
     rec.stepHeat = data.stepHeat && typeof data.stepHeat === 'object' ? { ...data.stepHeat } : null;
     rec.heatSource = data.heatSource || null;

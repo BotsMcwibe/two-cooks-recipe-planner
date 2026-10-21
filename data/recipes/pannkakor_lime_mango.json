@@ -64,7 +64,7 @@
       "steps": [
         "Skala och skär {{mango}} i tre delar längs med kärnan. Tärna i ca 2 cm stora bitar.",
         "Halvera {{lime}}.",
-        "Blanda {{sugar}}, {{water}} och en generös skvätt limesaft i en medelstor skål.",
+        "Blanda {{sugar}}, {{water}} och en generös skvätt limesaft i {{eq:skal_1}}.",
         "Vänd ner mangobitarna och ställ åt sidan medan du gör resten."
       ],
       "duration": 5,
@@ -77,7 +77,13 @@
       ],
       "equipment": [
         {
-          "type": "skal_medelstor"
+          "type": "skal_medelstor",
+          "ref": "skal_1"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
         }
       ]
     },
@@ -93,7 +99,7 @@
         }
       ],
       "steps": [
-        "Hetta upp en stor stekpanna på medelhög värme.",
+        "Hetta upp {{eq:stekpanna_1}} på medelhög värme.",
         "Rosta {{desiccated_coconut}} i 2–3 min, eller tills gyllene. Ställ åt sidan i en skål."
       ],
       "duration": 1,
@@ -127,7 +133,7 @@
         }
       ],
       "steps": [
-        "Vispa {{water}} och {{pancake_mix}} i en stor skål tills smeten är slät."
+        "Vispa {{water}} och {{pancake_mix}} i {{eq:skal_2}} tills smeten är slät."
       ],
       "duration": 3,
       "wait": 0,
@@ -139,7 +145,8 @@
       ],
       "equipment": [
         {
-          "type": "skal_stor"
+          "type": "skal_stor",
+          "ref": "skal_2"
         }
       ],
       "devNotes": [
@@ -163,8 +170,8 @@
         }
       ],
       "steps": [
-        "Smält {{butter}} i samma stekpanna på medelhög värme.",
-        "Portionera ut {{pannkakor_lime_mango__batter}} till pannkakor på 8–10 cm i pannan.",
+        "Smält {{butter}} i samma {{eq:stekpanna_1|noun}} på medelhög värme.",
+        "Portionera ut {{pannkakor_lime_mango__batter}} till pannkakor på 8–10 cm i {{eq:stekpanna_1|def}}.",
         "Stek i 1–2 min på varje sida, eller tills gyllene och genomstekta. Upprepa med resten av smeten i omgångar."
       ],
       "duration": 12,
@@ -216,7 +223,7 @@
         }
       ],
       "steps": [
-        "Lägg upp {{pannkakor_lime_mango__fried_pancakes}} på tallrikar.",
+        "Lägg upp {{pannkakor_lime_mango__fried_pancakes}} på {{eq:servering|pl}}.",
         "Toppa med en klick {{yoghurt}} och {{pannkakor_lime_mango__marinated_mango}}.",
         "Strö över {{pannkakor_lime_mango__roasted_coconut}} och ringla över {{syrup}}."
       ],
@@ -224,6 +231,13 @@
       "wait": 0,
       "tags": [
         "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_tallrik",
+          "ref": "servering",
+          "count": "portions"
+        }
       ]
     }
   ]

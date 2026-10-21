@@ -56,6 +56,13 @@
       "duration": 5,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -85,8 +92,8 @@
         }
       ],
       "steps": [
-        "Blanda {{creamy_sweet_potato_dhal__diced_sweet_potato}} med {{olive_oil}}, {{salt}} och {{pepper}} på en plåt med bakplåtspapper.",
-        "Sprid ut och rosta i ugnen i 20 min, eller tills mjuka."
+        "Blanda {{creamy_sweet_potato_dhal__diced_sweet_potato}} med {{olive_oil}}, {{salt}} och {{pepper}} på {{eq:plat_1}} med bakplåtspapper.",
+        "Sprid ut och rosta i {{eq:ugn|def}} i 20 min, eller tills mjuka."
       ],
       "duration": 2,
       "wait": 20,
@@ -100,7 +107,9 @@
           "fanTemp": 200
         },
         {
-          "type": "plat"
+          "type": "plat",
+          "ref": "plat_1",
+          "liner": "bakplatspapper"
         }
       ]
     },
@@ -149,6 +158,13 @@
       ],
       "devNotes": [
         "FLAG: Ingefära anges som 2 tsk (riven) i HF-yields även för 2 portioner — icke-linjär skalning."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -193,7 +209,7 @@
         }
       ],
       "steps": [
-        "Hetta upp {{olive_oil}} i en kastrull på medelhög värme.",
+        "Hetta upp {{olive_oil}} i {{eq:kastrull_1}} på medelhög värme.",
         "Fräs {{creamy_sweet_potato_dhal__chopped_aromatics}} (löken) i 2–3 min.",
         "Tillsätt ingefäran, {{milda_mahal}} och {{curry_on}}, och fräs i 1–2 min.",
         "Rör i {{coconut_milk}}, {{water}} och {{vegetable_bouillon}}."
@@ -258,7 +274,8 @@
           "type": "kastrull_medelstor",
           "ref": "kastrull_1",
           "transition": "keep",
-          "sizeSource": "inferred"
+          "sizeSource": "inferred",
+          "lid": true
         }
       ]
     },
@@ -290,7 +307,7 @@
       ],
       "steps": [
         "Finhacka {{coriander}}.",
-        "Blanda koriander, {{olive_oil}}, {{salt}} och {{pepper}} i en skål."
+        "Blanda koriander, {{olive_oil}}, {{salt}} och {{pepper}} i {{eq:skal_1}}."
       ],
       "duration": 3,
       "tags": [
@@ -298,6 +315,17 @@
       ],
       "devNotes": [
         "FLAG: HF yields anger koriander som 1 st — överstyrd till 1 kruka (färsk ört)."
+      ],
+      "equipment": [
+        {
+          "type": "skal",
+          "ref": "skal_1"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -317,9 +345,9 @@
         }
       ],
       "steps": [
-        "Skär {{tortillas}} i 3 cm breda band och lägg dem på en plåt med bakplåtspapper.",
+        "Skär {{tortillas}} i 3 cm breda band och lägg dem på {{eq:plat_2}} med bakplåtspapper.",
         "Pensla över {{creamy_sweet_potato_dhal__coriander_oil}}.",
-        "Rosta i ugnen tills gyllene och krispiga, ca 4–6 min."
+        "Rosta i {{eq:ugn|def}} tills gyllene och krispiga, ca 4–6 min."
       ],
       "duration": 3,
       "wait": 6,
@@ -338,7 +366,14 @@
           "fanTemp": 200
         },
         {
-          "type": "plat"
+          "type": "plat",
+          "ref": "plat_2",
+          "liner": "bakplatspapper"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
         }
       ]
     },
@@ -376,7 +411,7 @@
       "steps": [
         "Skölj {{baby_spinach}}.",
         "Rör i {{creamy_sweet_potato_dhal__roasted_sweet_potato}} och {{baby_spinach}} i {{creamy_sweet_potato_dhal__simmered_dhal}}.",
-        "Sleva upp dhalen i djupa tallrikar och toppa med en klick {{yoghurt}}.",
+        "Sleva upp dhalen i {{eq:servering|pl}} och toppa med en klick {{yoghurt}}.",
         "Servera med {{creamy_sweet_potato_dhal__tortilla_chips}} vid sidan av."
       ],
       "duration": 4,
@@ -386,6 +421,13 @@
       ],
       "devNotes": [
         "FLAG: HF yields anger spenat 100 st vid 4 portioner (1 st vid 2) — överstyrd till 100 g babyspenat."
+      ],
+      "serving": [
+        {
+          "type": "servering_djup_tallrik",
+          "ref": "servering",
+          "count": "portions"
+        }
       ]
     }
   ]

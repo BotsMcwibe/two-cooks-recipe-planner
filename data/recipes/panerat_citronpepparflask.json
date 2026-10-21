@@ -49,7 +49,7 @@
       "outputName": "Förvärmd ugn (240°C)",
       "inputs": [],
       "steps": [
-        "Värm ugnen till 240°C, eller 220°C varmluft."
+        "Värm {{eq:ugn|def}} till 240°C, eller 220°C varmluft."
       ],
       "duration": 1,
       "wait": 12,
@@ -88,6 +88,13 @@
       "duration": 5,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -117,9 +124,9 @@
         }
       ],
       "steps": [
-        "Placera {{panerat_citronpepparflask__prepped_potato_onion}} på två plåtar med bakplåtspapper.",
+        "Placera {{panerat_citronpepparflask__prepped_potato_onion}} på två {{eq:plat_1|pl}} med bakplåtspapper.",
         "Blanda med olivolja, {{garlic_flakes}}, {{salt}} och en nypa {{pepper}}.",
-        "Rosta i ugnen i ca 30 min, tills det återstår 5 min av totalt 25–35 min."
+        "Rosta i {{eq:ugn|def}} i ca 30 min, tills det återstår 5 min av totalt 25–35 min."
       ],
       "duration": 4,
       "wait": 30,
@@ -134,7 +141,9 @@
         },
         {
           "type": "plat",
-          "ref": "plat_1"
+          "ref": "plat_1",
+          "count": 2,
+          "liner": "bakplatspapper"
         }
       ]
     },
@@ -155,6 +164,13 @@
       "duration": 3,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -174,7 +190,7 @@
         }
       ],
       "steps": [
-        "Lägg {{panerat_citronpepparflask__prepped_beans}} på plåten med {{panerat_citronpepparflask__roasted_potato_onion}} och vänd runt.",
+        "Lägg {{panerat_citronpepparflask__prepped_beans}} på {{eq:plat_1|def}} med {{panerat_citronpepparflask__roasted_potato_onion}} och vänd runt.",
         "Rosta resterande ca 5 min."
       ],
       "duration": 1,
@@ -224,6 +240,13 @@
       "duration": 2,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -253,11 +276,17 @@
         }
       ],
       "steps": [
-        "Blanda {{creme_fraiche}}, {{panerat_citronpepparflask__chopped_dill}}, {{salt}} och {{pepper}} i en liten skål.",
+        "Blanda {{creme_fraiche}}, {{panerat_citronpepparflask__chopped_dill}}, {{salt}} och {{pepper}} i {{eq:skal_1}}.",
         "Ställ åt sidan."
       ],
       "duration": 2,
-      "tags": []
+      "tags": [],
+      "equipment": [
+        {
+          "type": "skal_liten",
+          "ref": "skal_1"
+        }
+      ]
     },
     {
       "id": "panerat_citronpepparflask__breaded_pork",
@@ -292,9 +321,9 @@
       ],
       "steps": [
         "Krydda {{sliced_pork_chop}} med {{salt}}.",
-        "Vispa {{egg}} i en djup tallrik.",
-        "Blanda {{panko}} och {{lemon_pepper}} i en ny djup tallrik.",
-        "Vänd fläsket först i ägg och sen i panko. Lägg över till en ren tallrik."
+        "Vispa {{egg}} i {{eq:djup_tallrik_1}}.",
+        "Blanda {{panko}} och {{lemon_pepper}} i en ny {{eq:djup_tallrik_2|bare}}.",
+        "Vänd fläsket först i ägg och sen i panko. Lägg över till en ren {{eq:tallrik_1|noun}}."
       ],
       "duration": 8,
       "tags": [
@@ -302,6 +331,20 @@
       ],
       "tips": [
         "Om du inte har ägg kan du använda 2 msk mjölk istället."
+      ],
+      "equipment": [
+        {
+          "type": "djup_tallrik",
+          "ref": "djup_tallrik_1"
+        },
+        {
+          "type": "djup_tallrik",
+          "ref": "djup_tallrik_2"
+        },
+        {
+          "type": "tallrik",
+          "ref": "tallrik_1"
+        }
       ]
     },
     {
@@ -326,9 +369,9 @@
         }
       ],
       "steps": [
-        "Hetta upp en stor stekpanna på medelhög värme och tillsätt {{olive_oil}} så det täcker pannan.",
+        "Hetta upp {{eq:stekpanna_1}} på medelhög värme och tillsätt {{olive_oil}} så det täcker {{eq:stekpanna_1|def}}.",
         "Stek {{panerat_citronpepparflask__breaded_pork}} i 3–4 min per sida, eller tills gyllene och genomstekt.",
-        "Lägg åt sidan på en tallrik med hushållspapper och krydda med {{salt}}."
+        "Lägg åt sidan på {{eq:tallrik_2}} med hushållspapper och krydda med {{salt}}."
       ],
       "duration": 9,
       "wait": 0,
@@ -342,6 +385,10 @@
         {
           "type": "stekpanna_stor",
           "ref": "stekpanna_1"
+        },
+        {
+          "type": "tallrik",
+          "ref": "tallrik_2"
         }
       ]
     },
@@ -373,7 +420,7 @@
       ],
       "steps": [
         "Vänd {{panerat_citronpepparflask__rinsed_rucola}} med {{panerat_citronpepparflask__roasted_vegetables}} precis innan servering.",
-        "Lägg upp {{panerat_citronpepparflask__fried_pork}} och grönsakerna på tallrikar.",
+        "Lägg upp {{panerat_citronpepparflask__fried_pork}} och grönsakerna på {{eq:servering|pl}}.",
         "Servera med en klick {{panerat_citronpepparflask__dill_creme}}."
       ],
       "duration": 3,
@@ -387,6 +434,13 @@
           "ref": "stekpanna_1",
           "transition": "keep",
           "offHeat": true
+        }
+      ],
+      "serving": [
+        {
+          "type": "servering_tallrik",
+          "ref": "servering",
+          "count": "portions"
         }
       ]
     }

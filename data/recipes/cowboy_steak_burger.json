@@ -43,7 +43,7 @@
       "outputName": "Förvärmd ugn (240°C)",
       "inputs": [],
       "steps": [
-        "Värm ugnen till 240°C, eller 220°C varmluft."
+        "Värm {{eq:ugn|def}} till 240°C, eller 220°C varmluft."
       ],
       "duration": 1,
       "tags": [
@@ -105,7 +105,7 @@
       ],
       "steps": [
         "Krydda {{cowboy_steak_burger__roomtemp_meat}} med {{salt}} och {{panamat_spice}}.",
-        "Värm grillen till hög värme."
+        "Värm {{eq:grill_1|def}} till hög värme."
       ],
       "duration": 3,
       "tags": [],
@@ -137,6 +137,13 @@
       "duration": 5,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -156,6 +163,13 @@
       "duration": 2,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -175,6 +189,13 @@
       "duration": 3,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -204,9 +225,9 @@
         }
       ],
       "steps": [
-        "Placera {{cowboy_steak_burger__diced_potato}} på ena sidan av en plåt med bakplåtspapper.",
+        "Placera {{cowboy_steak_burger__diced_potato}} på ena sidan av {{eq:plat_1}} med bakplåtspapper.",
         "Blanda med {{olive_oil}}, {{salt}} och {{pepper}}.",
-        "Rosta i den förvärmda ugnen i 13–23 min (första delen av totalt 25–35 min), tills det är dags för bacon."
+        "Rosta i den förvärmda {{eq:ugn|def}} i 13–23 min (första delen av totalt 25–35 min), tills det är dags för bacon."
       ],
       "duration": 3,
       "wait": 23,
@@ -224,7 +245,8 @@
         },
         {
           "type": "plat",
-          "ref": "plat_1"
+          "ref": "plat_1",
+          "liner": "bakplatspapper"
         }
       ]
     },
@@ -245,7 +267,7 @@
         }
       ],
       "steps": [
-        "Placera {{bacon}} på andra sidan av plåten med {{cowboy_steak_burger__roasting_potato}}.",
+        "Placera {{bacon}} på andra sidan av {{eq:plat_1|def}} med {{cowboy_steak_burger__roasting_potato}}.",
         "Rosta klart i 12 min, eller tills potatisen är gyllene och baconet krispigt."
       ],
       "duration": 1,
@@ -296,7 +318,7 @@
         }
       ],
       "steps": [
-        "Vispa ihop {{egg}}, {{flour}}, {{water}} och {{salt}} i en djup tallrik."
+        "Vispa ihop {{egg}}, {{flour}}, {{water}} och {{salt}} i {{eq:djup_tallrik_1}}."
       ],
       "duration": 2,
       "tags": [
@@ -304,6 +326,12 @@
       ],
       "tips": [
         "Vispa tills smeten är len och klumpfri."
+      ],
+      "equipment": [
+        {
+          "type": "djup_tallrik",
+          "ref": "djup_tallrik_1"
+        }
       ]
     },
     {
@@ -328,7 +356,7 @@
         }
       ],
       "steps": [
-        "Hetta upp en stekpanna på medelhög värme och tillsätt {{olive_oil}} så det täcker botten.",
+        "Hetta upp {{eq:stekpanna_1}} på medelhög värme och tillsätt {{olive_oil}} så det täcker botten.",
         "Doppa {{cowboy_steak_burger__onion_rings}} i {{cowboy_steak_burger__onion_batter}} så de täcks.",
         "Stek lökringarna i 1–2 min per sida, tills gyllene."
       ],
@@ -342,7 +370,8 @@
       "equipment": [
         {
           "type": "stekpanna_medelstor",
-          "sizeSource": "inferred"
+          "sizeSource": "inferred",
+          "ref": "stekpanna_1"
         }
       ]
     },
@@ -388,7 +417,7 @@
       ],
       "steps": [
         "Dela {{brioche_bun}} på mitten.",
-        "Placera bröden direkt på ugnsgallret och värm i ugnen i 3–4 min, eller tills uppvärmda."
+        "Placera bröden direkt på {{eq:galler_1|def}} och värm i {{eq:ugn|def}} i 3–4 min, eller tills uppvärmda."
       ],
       "duration": 1,
       "wait": 4,
@@ -405,7 +434,13 @@
           "fanTemp": 220
         },
         {
-          "type": "galler"
+          "type": "galler",
+          "ref": "galler_1"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
         }
       ]
     },
@@ -459,6 +494,13 @@
       "wait": 0,
       "tags": [
         "master"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     }
   ]

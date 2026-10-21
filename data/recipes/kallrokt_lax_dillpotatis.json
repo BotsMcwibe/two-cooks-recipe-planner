@@ -60,7 +60,7 @@
         }
       ],
       "steps": [
-        "Koka upp en medelstor kastrull med saltat vatten. Tärna {{potato}} (oskalad) i 2 cm stora bitar.",
+        "Koka upp {{eq:kastrull_1}} med saltat vatten. Tärna {{potato}} (oskalad) i 2 cm stora bitar.",
         "Koka potatisen i 11–13 min, tills den enkelt kan delas med en kniv. Häll av, krydda med en nypa salt och {{pepper}} och ställ åt sidan under lock."
       ],
       "duration": 5,
@@ -70,7 +70,14 @@
       "heatSource": "inferred",
       "equipment": [
         {
-          "type": "kastrull_medelstor"
+          "type": "kastrull_medelstor",
+          "ref": "kastrull_1",
+          "lid": true
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
         }
       ]
     },
@@ -102,7 +109,7 @@
       ],
       "steps": [
         "Skär {{shallot}} i tunna skivor. Dela {{lemon}} på mitten och pressa ur ca 2 msk saft.",
-        "Blanda {{salt}}, {{sugar}} och citronsaften i en stor skål. Vänd ner schalottenlöken och ställ åt sidan."
+        "Blanda {{salt}}, {{sugar}} och citronsaften i {{eq:skal_1}}. Vänd ner schalottenlöken och ställ åt sidan."
       ],
       "tips": [
         "Låt löken dra medan resten förbereds."
@@ -114,6 +121,17 @@
       ],
       "devNotes": [
         "Ingen vilotid är angiven."
+      ],
+      "equipment": [
+        {
+          "type": "skal_stor",
+          "ref": "skal_1"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -133,6 +151,13 @@
       "duration": 2,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -164,6 +189,13 @@
       "duration": 5,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -188,7 +220,7 @@
         }
       ],
       "steps": [
-        "Vänd ner {{kallrokt_lax_dillpotatis__prepped_salad_veg}} och {{olive_oil}} i skålen med {{kallrokt_lax_dillpotatis__pickled_shallot}}."
+        "Vänd ner {{kallrokt_lax_dillpotatis__prepped_salad_veg}} och {{olive_oil}} i {{eq:skal_1|def}} med {{kallrokt_lax_dillpotatis__pickled_shallot}}."
       ],
       "duration": 2,
       "tags": []
@@ -255,12 +287,19 @@
         }
       ],
       "steps": [
-        "Lägg upp {{kallrokt_lax_dillpotatis__dill_potatoes}} och {{kallrokt_lax_dillpotatis__shallot_salad}} i djupa tallrikar.",
+        "Lägg upp {{kallrokt_lax_dillpotatis__dill_potatoes}} och {{kallrokt_lax_dillpotatis__shallot_salad}} i {{eq:servering|pl}}.",
         "Toppa med {{cold_smoked_salmon}}."
       ],
       "duration": 3,
       "tags": [
         "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_djup_tallrik",
+          "ref": "servering",
+          "count": "portions"
+        }
       ]
     }
   ]

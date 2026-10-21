@@ -56,6 +56,13 @@
       "duration": 2,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -75,6 +82,13 @@
       "duration": 4,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -94,6 +108,13 @@
       "duration": 1,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -117,6 +138,13 @@
       ],
       "tips": [
         "Se till att purjolöken är ordentligt sköljd och rensad."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -136,6 +164,13 @@
       "duration": 2,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -155,6 +190,13 @@
       "duration": 2,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -179,7 +221,7 @@
         }
       ],
       "steps": [
-        "Koka upp en medelstor kastrull med saltat {{water}}.",
+        "Koka upp {{eq:kastrull_1}} med saltat {{water}}.",
         "Koka {{potato}} i 15–18 min, eller tills nästan genomkokta.",
         "Häll av vattnet."
       ],
@@ -193,7 +235,8 @@
       "heatSource": "inferred",
       "equipment": [
         {
-          "type": "kastrull_medelstor"
+          "type": "kastrull_medelstor",
+          "ref": "kastrull_1"
         }
       ],
       "devNotes": [
@@ -227,7 +270,7 @@
         }
       ],
       "steps": [
-        "Placera {{rosemary_lamb_leek_sauce__boiled_potato}} på en plåt med bakplåtspapper.",
+        "Placera {{rosemary_lamb_leek_sauce__boiled_potato}} på {{eq:plat_1}} med bakplåtspapper.",
         "Krossa den lätt med en gaffel.",
         "Vänd tillsammans med en skvätt {{olive_oil}}, {{salt}} och en nypa {{pepper}}."
       ],
@@ -236,7 +279,8 @@
       "equipment": [
         {
           "type": "plat",
-          "ref": "plat_1"
+          "ref": "plat_1",
+          "liner": "bakplatspapper"
         }
       ]
     },
@@ -281,7 +325,7 @@
       ],
       "steps": [
         "Skär fettsidan av {{rosemary_lamb_leek_sauce__roomtemp_meat}} i ett 1 cm djupt zickzackmönster och krydda med {{salt}}.",
-        "Placera köttet med fettsidan ner i en medelstor stekpanna. Värm upp stekpannan på medelvärme och stek oavbrutet i 8–9 min, eller tills gyllene.",
+        "Placera köttet med fettsidan ner i {{eq:stekpanna_1}}. Värm upp {{eq:stekpanna_1|def}} på medelvärme och stek oavbrutet i 8–9 min, eller tills gyllene.",
         "Höj till hög värme och bryn köttet på alla sidor i 30 sek."
       ],
       "duration": 10,
@@ -292,7 +336,17 @@
       },
       "equipment": [
         {
-          "type": "stekpanna_medelstor"
+          "type": "stekpanna_medelstor",
+          "ref": "stekpanna_1"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada_ra",
+          "separate": true,
+          "inferred": true,
+          "rawKinds": [
+            "meat"
+          ]
         }
       ]
     },
@@ -318,8 +372,8 @@
         }
       ],
       "steps": [
-        "Lägg över {{rosemary_lamb_leek_sauce__seared_lamb}} på en bakplåt med bakplåtspapper med fettsidan upp. Bre ovansidan med {{mustard}} och tryck försiktigt fast {{rosemary_lamb_leek_sauce__chopped_rosemary}}.",
-        "Rosta i ugnen i 15 min eller tills genomstekt."
+        "Lägg över {{rosemary_lamb_leek_sauce__seared_lamb}} på {{eq:plat_2}} med bakplåtspapper med fettsidan upp. Bre ovansidan med {{mustard}} och tryck försiktigt fast {{rosemary_lamb_leek_sauce__chopped_rosemary}}.",
+        "Rosta i {{eq:ugn|def}} i 15 min eller tills genomstekt."
       ],
       "duration": 2,
       "wait": 15,
@@ -337,7 +391,9 @@
           "fanTemp": 200
         },
         {
-          "type": "plat"
+          "type": "plat",
+          "ref": "plat_2",
+          "liner": "bakplatspapper"
         }
       ]
     },
@@ -358,8 +414,8 @@
         }
       ],
       "steps": [
-        "När det återstår 10–12 min av köttets tillagningstid, tillsätt {{rosemary_lamb_leek_sauce__chopped_broccoli}} på plåten med {{rosemary_lamb_leek_sauce__crushed_potato}}.",
-        "Rosta i ugnen resterande tid, eller tills gyllene."
+        "När det återstår 10–12 min av köttets tillagningstid, tillsätt {{rosemary_lamb_leek_sauce__chopped_broccoli}} på {{eq:plat_1|def}} med {{rosemary_lamb_leek_sauce__crushed_potato}}.",
+        "Rosta i {{eq:ugn|def}} resterande tid, eller tills gyllene."
       ],
       "duration": 2,
       "wait": 12,
@@ -409,7 +465,7 @@
         }
       ],
       "steps": [
-        "Hetta upp {{olive_oil}} i en medelstor kastrull på medelhög värme.",
+        "Hetta upp {{olive_oil}} i {{eq:kastrull_2}} på medelhög värme.",
         "Fräs {{rosemary_lamb_leek_sauce__sliced_leek}} och {{rosemary_lamb_leek_sauce__minced_garlic}} i 1–2 min, eller tills något mjuknat.",
         "Tillsätt {{water}} och sjud i 3–4 min."
       ],
@@ -446,7 +502,7 @@
         }
       ],
       "steps": [
-        "Mixa {{rosemary_lamb_leek_sauce__leek_base}} slätt med en stavmixer.",
+        "Mixa {{rosemary_lamb_leek_sauce__leek_base}} slätt med {{eq:stavmixer_1}}.",
         "Rör ner {{cooking_cream}} och {{salt}} och sjud i ytterligare 1 min."
       ],
       "duration": 3,
@@ -465,7 +521,8 @@
           "transition": "keep"
         },
         {
-          "type": "stavmixer"
+          "type": "stavmixer",
+          "ref": "stavmixer_1"
         }
       ]
     },
@@ -502,7 +559,7 @@
       ],
       "steps": [
         "Skär {{rosemary_lamb_leek_sauce__roasted_lamb}} i tunna skivor precis före servering.",
-        "Lägg upp kött, broccoli och krossad potatis på tallrikar.",
+        "Lägg upp kött, broccoli och krossad potatis på {{eq:servering|pl}}.",
         "Skeda över {{rosemary_lamb_leek_sauce__leek_sauce}}.",
         "Toppa med {{rosemary_lamb_leek_sauce__chopped_pistachios}} och {{rosemary_lamb_leek_sauce__chopped_mint}}."
       ],
@@ -510,6 +567,20 @@
       "wait": 0,
       "tags": [
         "master"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "serving": [
+        {
+          "type": "servering_tallrik",
+          "ref": "servering",
+          "count": "portions"
+        }
       ]
     }
   ]

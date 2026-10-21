@@ -18,12 +18,18 @@
         }
       ],
       "steps": [
-        "Värm {{oil}} och {{milk}} till 37°C i en kastrull eller mikrovågsugn."
+        "Värm {{oil}} och {{milk}} till 37°C i {{eq:pirog_dough_mikro_1}}."
       ],
       "duration": 3,
       "tags": [],
       "tips": [
         "Använd ett finger för att kontrollera temperaturen."
+      ],
+      "equipment": [
+        {
+          "type": "mikro",
+          "ref": "pirog_dough_mikro_1"
+        }
       ]
     },
     {

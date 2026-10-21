@@ -34,7 +34,7 @@
       "outputName": "Förvärmd ugn (200°C)",
       "inputs": [],
       "steps": [
-        "Sätt ugnen på 200°C."
+        "Sätt {{eq:ugn|def}} på 200°C."
       ],
       "duration": 1,
       "wait": 12,
@@ -78,9 +78,9 @@
         }
       ],
       "steps": [
-        "Koka upp {{water}}, {{vegetable_bouillon}} och {{salt}} i en kastrull.",
+        "Koka upp {{water}}, {{vegetable_bouillon}} och {{salt}} i {{eq:kastrull_1}}.",
         "Lägg i {{pearl_couscous}} och låt koka i 10–14 min tills den är mjuk men fortfarande ger lite tuggmotstånd.",
-        "Häll av couscousen i en sil."
+        "Häll av couscousen i {{eq:sil_1}}."
       ],
       "duration": 3,
       "wait": 14,
@@ -90,7 +90,12 @@
       "equipment": [
         {
           "type": "kastrull_medelstor",
-          "sizeSource": "inferred"
+          "sizeSource": "inferred",
+          "ref": "kastrull_1"
+        },
+        {
+          "type": "sil",
+          "ref": "sil_1"
         }
       ],
       "devNotes": [
@@ -110,7 +115,7 @@
       ],
       "steps": [
         "Dela {{paprika}} på längden och skär bort kärnhuset.",
-        "Lägg halvorna i en ugnsform med skärytan vänd uppåt."
+        "Lägg halvorna i {{eq:ugnsform_1}} med skärytan vänd uppåt."
       ],
       "duration": 4,
       "tags": [
@@ -121,6 +126,11 @@
           "type": "ugnsform",
           "ref": "ugnsform_1",
           "sizeSource": "inferred"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
         }
       ],
       "devNotes": [
@@ -144,6 +154,13 @@
       "duration": 3,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -163,6 +180,13 @@
       "duration": 1,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -182,6 +206,13 @@
       "duration": 4,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -204,6 +235,13 @@
       ],
       "devNotes": [
         "FLAG: HF Oregano amount=1 unit infererad som tsk (spice), men stegen säger plocka blad från stjälk — overridden till 1 kruka färsk oregano."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -273,7 +311,7 @@
         }
       ],
       "steps": [
-        "Hetta upp {{olive_oil}} i en stor stekpanna på medelvärme.",
+        "Hetta upp {{olive_oil}} i {{eq:stekpanna_1}} på medelvärme.",
         "Fräs {{gronsaksfyllda_paprikor__chopped_red_onion}}, {{gronsaksfyllda_paprikor__chopped_garlic}}, {{gronsaksfyllda_paprikor__sliced_mushrooms}}, {{dried_thyme}}, {{tex_mex}} och {{pumpkin_seeds}} tills löken har mjuknat, 4–6 min.",
         "Häll i {{canned_tomatoes}} och {{gronsaksfyllda_paprikor__cooked_pearl_couscous}}. Stek under regelbunden omrörning i 2 min.",
         "Krydda med {{salt}}, {{pepper}} och {{sugar}}."
@@ -283,7 +321,9 @@
       "heat": "medel",
       "equipment": [
         {
-          "type": "stekpanna_stor"
+          "type": "traktorpanna",
+          "ref": "stekpanna_1",
+          "typeSource": "inferred"
         }
       ],
       "devNotes": [
@@ -324,7 +364,7 @@
       "steps": [
         "Fyll paprikahalvorna ({{gronsaksfyllda_paprikor__prepped_peppers}}) med {{gronsaksfyllda_paprikor__vegetable_filling}}. Pressa i fyllningen ordentligt så att du får plats med så mycket som möjligt.",
         "Toppa med {{grated_mozzarella}}, {{salt}} och {{pepper}}.",
-        "Gratinera på mellersta hyllan i ugnen tills osten har blivit gyllenbrun, ca 20 min."
+        "Gratinera på mellersta hyllan i {{eq:ugn|def}} tills osten har blivit gyllenbrun, ca 20 min."
       ],
       "duration": 8,
       "wait": 20,

@@ -42,7 +42,7 @@
       "outputName": "Förvärmd ugn (240°C)",
       "inputs": [],
       "steps": [
-        "Värm ugnen till 240°C, eller 220°C varmluft."
+        "Värm {{eq:ugn|def}} till 240°C, eller 220°C varmluft."
       ],
       "duration": 1,
       "wait": 12,
@@ -75,6 +75,13 @@
       "duration": 5,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -104,9 +111,9 @@
         }
       ],
       "steps": [
-        "Lägg {{spanskinspirerad_kyckling_romesco__diced_potato}} på en plåt med bakplåtspapper (använd flera plåtar om det blir för trångt).",
+        "Lägg {{spanskinspirerad_kyckling_romesco__diced_potato}} på {{eq:plat_1}} med bakplåtspapper (använd flera {{eq:plat_1|pl}} om det blir för trångt).",
         "Blanda med olivolja, {{salt}}, {{dried_oregano}} och {{pepper}}.",
-        "Rosta i ugnen i 25–35 min, eller tills potatisen är gyllene."
+        "Rosta i {{eq:ugn|def}} i 25–35 min, eller tills potatisen är gyllene."
       ],
       "duration": 3,
       "wait": 35,
@@ -120,7 +127,9 @@
           "fanTemp": 220
         },
         {
-          "type": "plat"
+          "type": "plat",
+          "ref": "plat_1",
+          "liner": "bakplatspapper"
         }
       ],
       "devNotes": [
@@ -140,7 +149,7 @@
         }
       ],
       "steps": [
-        "Hetta upp en stor stekpanna på medelhög värme.",
+        "Hetta upp {{eq:stekpanna_1}} på medelhög värme.",
         "Rosta {{walnuts}} i 3–4 min, eller tills gyllene. Finhacka."
       ],
       "duration": 5,
@@ -148,7 +157,13 @@
       "heat": "medelhög",
       "equipment": [
         {
-          "type": "stekpanna_stor"
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
         }
       ],
       "devNotes": [
@@ -187,10 +202,16 @@
         }
       ],
       "steps": [
-        "Blanda {{calabrese_pesto}}, {{salt}}, {{water}}, {{spanskinspirerad_kyckling_romesco__toasted_walnuts}} och {{smoked_paprika}} i en medelstor skål. Ställ åt sidan."
+        "Blanda {{calabrese_pesto}}, {{salt}}, {{water}}, {{spanskinspirerad_kyckling_romesco__toasted_walnuts}} och {{smoked_paprika}} i {{eq:skal_1}}. Ställ åt sidan."
       ],
       "duration": 3,
-      "tags": []
+      "tags": [],
+      "equipment": [
+        {
+          "type": "skal_medelstor",
+          "ref": "skal_1"
+        }
+      ]
     },
     {
       "id": "spanskinspirerad_kyckling_romesco__chopped_parsley",
@@ -212,6 +233,13 @@
       ],
       "devNotes": [
         "FLAG: bladpersilja är 1 st vid både 2 och 4 portioner."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -231,6 +259,13 @@
       "duration": 2,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -250,6 +285,13 @@
       "duration": 3,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -269,6 +311,13 @@
       "duration": 1,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -315,7 +364,7 @@
         }
       ],
       "steps": [
-        "Lägg handen ovanpå {{chicken_breast}} och skär försiktigt i två tunna filéer på långsidan på en separat skärbräda.",
+        "Lägg handen ovanpå {{chicken_breast}} och skär försiktigt i två tunna filéer på långsidan på en separat {{eq:skarbrada_ra|noun}}.",
         "Krydda kycklingen med {{salt}} och {{hello_sunrise}}."
       ],
       "duration": 6,
@@ -324,6 +373,16 @@
       ],
       "tips": [
         "Tvätta händer och köksredskap noggrant efter att ha hanterat rå kyckling."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada_ra",
+          "separate": true,
+          "rawKinds": [
+            "poultry"
+          ]
+        }
       ]
     },
     {
@@ -353,9 +412,9 @@
         }
       ],
       "steps": [
-        "Hetta upp {{olive_oil}} i en stor stekpanna på medelhög värme.",
+        "Hetta upp {{olive_oil}} i {{eq:stekpanna_2}} på medelhög värme.",
         "Stek {{spanskinspirerad_kyckling_romesco__seasoned_chicken}} i 2 min per sida, eller tills brynt.",
-        "Tillsätt {{butter}} och {{spanskinspirerad_kyckling_romesco__pressed_garlic}} till pannan. Stek i 1–2 min, tills väldoftande och kycklingen är genomstekt."
+        "Tillsätt {{butter}} och {{spanskinspirerad_kyckling_romesco__pressed_garlic}} till {{eq:stekpanna_2|def}}. Stek i 1–2 min, tills väldoftande och kycklingen är genomstekt."
       ],
       "duration": 8,
       "tags": [],
@@ -365,7 +424,8 @@
       "heat": "medelhög",
       "equipment": [
         {
-          "type": "stekpanna_stor"
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_2"
         }
       ],
       "devNotes": [
@@ -399,7 +459,7 @@
         }
       ],
       "steps": [
-        "Blanda {{spanskinspirerad_kyckling_romesco__tomato_wedges}}, saften från {{spanskinspirerad_kyckling_romesco__halved_lemon}}, {{spanskinspirerad_kyckling_romesco__rinsed_spinach}} och {{salt}} i en stor skål.",
+        "Blanda {{spanskinspirerad_kyckling_romesco__tomato_wedges}}, saften från {{spanskinspirerad_kyckling_romesco__halved_lemon}}, {{spanskinspirerad_kyckling_romesco__rinsed_spinach}} och {{salt}} i {{eq:skal_2}}.",
         "Tillsätt eventuellt en skvätt olivolja."
       ],
       "duration": 3,
@@ -408,7 +468,8 @@
       ],
       "equipment": [
         {
-          "type": "skal_stor"
+          "type": "skal_stor",
+          "ref": "skal_2"
         }
       ]
     },
@@ -461,14 +522,21 @@
         }
       ],
       "steps": [
-        "Lägg upp {{spanskinspirerad_kyckling_romesco__herb_potato_finish}} och {{spanskinspirerad_kyckling_romesco__tomato_spinach_salad}} på tallrikar.",
-        "Bre ut en klick {{spanskinspirerad_kyckling_romesco__romesco}} på tallrikarna med baksidan av en sked.",
-        "Toppa med {{spanskinspirerad_kyckling_romesco__fried_chicken}} och sky från pannan."
+        "Lägg upp {{spanskinspirerad_kyckling_romesco__herb_potato_finish}} och {{spanskinspirerad_kyckling_romesco__tomato_spinach_salad}} på {{eq:servering|pl}}.",
+        "Bre ut en klick {{spanskinspirerad_kyckling_romesco__romesco}} på {{eq:servering|pldef}} med baksidan av en sked.",
+        "Toppa med {{spanskinspirerad_kyckling_romesco__fried_chicken}} och sky från {{eq:stekpanna_2|def}}."
       ],
       "duration": 3,
       "wait": 0,
       "tags": [
         "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_tallrik",
+          "ref": "servering",
+          "count": "portions"
+        }
       ]
     }
   ]

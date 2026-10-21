@@ -1,5 +1,5 @@
 {
-  "_doc": "Kitchen equipment vocabulary. See SCHEMA.md 'Equipment, heat & resources' and hf-to-graph-conversion.md §4.6. kind: stovetop = on a burner (needs heat), oven = the oven itself (shared, capacity in slots), ovenware = goes in the oven (uses 1 slot), bowl/tool = no heat. capacityL = usable volume in litres; oneLayerG = rough max food weight for frying in one layer. offHeat on an equipment entry = vessel used off the burner (mash in the pot, toss in the pan); no heat needed.",
+  "_doc": "Kitchen equipment vocabulary. See SCHEMA.md 'Equipment, heat & resources' and hf-to-graph-conversion.md §4.6. kind: stovetop = on a burner (needs heat), oven = the oven itself (shared, capacity in slots), ovenware = goes in the oven (uses 1 slot), bowl/tool = no heat. capacityL = usable volume in litres; oneLayerG = rough max food weight for frying in one layer. offHeat on an equipment entry = vessel used off the burner (mash in the pot, toss in the pan); no heat needed. kind: plate = tallrik used while cooking, board = skärbräda, appliance = mikro/vattenkokare/brödrost, serving = only in the master node `serving` list (never in node.equipment). forms = Swedish noun-phrase forms used to render {{eq:<key>|<form>}} step placeholders (SCHEMA.md \"Equipment placeholders\").",
   "defaultKitchen": {
     "ovenTrays": 2,
     "ovenFan": false,
@@ -38,21 +38,45 @@
       "kind": "stovetop",
       "exclusive": true,
       "capacityL": 1.5,
-      "burner": "liten"
+      "burner": "liten",
+      "forms": {
+        "indef": "en liten kastrull",
+        "bare": "liten kastrull",
+        "noun": "kastrull",
+        "def": "kastrullen",
+        "pl": "små kastruller",
+        "pldef": "kastrullerna"
+      }
     },
     "kastrull_medelstor": {
       "label": "Medelstor kastrull",
       "kind": "stovetop",
       "exclusive": true,
       "capacityL": 2.5,
-      "burner": "mellan"
+      "burner": "mellan",
+      "forms": {
+        "indef": "en medelstor kastrull",
+        "bare": "medelstor kastrull",
+        "noun": "kastrull",
+        "def": "kastrullen",
+        "pl": "medelstora kastruller",
+        "pldef": "kastrullerna"
+      }
     },
     "kastrull_stor": {
       "label": "Stor kastrull",
       "kind": "stovetop",
       "exclusive": true,
       "capacityL": 4,
-      "burner": "stor"
+      "burner": "stor",
+      "forms": {
+        "indef": "en stor kastrull",
+        "bare": "stor kastrull",
+        "noun": "kastrull",
+        "def": "kastrullen",
+        "pl": "stora kastruller",
+        "pldef": "kastrullerna"
+      }
     },
     "gryta": {
       "label": "Gryta (gjutjärn)",
@@ -61,7 +85,15 @@
       "capacityL": 5,
       "burner": "stor",
       "ovenSafe": true,
-      "ovenSlots": 1
+      "ovenSlots": 1,
+      "forms": {
+        "indef": "en gryta",
+        "bare": "gryta",
+        "noun": "gryta",
+        "def": "grytan",
+        "pl": "grytor",
+        "pldef": "grytorna"
+      }
     },
     "stekpanna_liten": {
       "label": "Liten stekpanna",
@@ -70,7 +102,15 @@
       "cm": 20,
       "capacityL": 1.0,
       "oneLayerG": 250,
-      "burner": "liten"
+      "burner": "liten",
+      "forms": {
+        "indef": "en liten stekpanna",
+        "bare": "liten stekpanna",
+        "noun": "stekpanna",
+        "def": "stekpannan",
+        "pl": "små stekpannor",
+        "pldef": "stekpannorna"
+      }
     },
     "stekpanna_medelstor": {
       "label": "Medelstor stekpanna",
@@ -79,7 +119,15 @@
       "cm": 24,
       "capacityL": 2.0,
       "oneLayerG": 450,
-      "burner": "mellan"
+      "burner": "mellan",
+      "forms": {
+        "indef": "en medelstor stekpanna",
+        "bare": "medelstor stekpanna",
+        "noun": "stekpanna",
+        "def": "stekpannan",
+        "pl": "medelstora stekpannor",
+        "pldef": "stekpannorna"
+      }
     },
     "stekpanna_stor": {
       "label": "Stor stekpanna",
@@ -88,7 +136,15 @@
       "cm": 28,
       "capacityL": 3.0,
       "oneLayerG": 650,
-      "burner": "stor"
+      "burner": "stor",
+      "forms": {
+        "indef": "en stor stekpanna",
+        "bare": "stor stekpanna",
+        "noun": "stekpanna",
+        "def": "stekpannan",
+        "pl": "stora stekpannor",
+        "pldef": "stekpannorna"
+      }
     },
     "sauterpanna": {
       "label": "Sauterpanna (hög kant)",
@@ -97,7 +153,15 @@
       "cm": 28,
       "capacityL": 3.5,
       "oneLayerG": 650,
-      "burner": "stor"
+      "burner": "stor",
+      "forms": {
+        "indef": "en sauterpanna",
+        "bare": "sauterpanna",
+        "noun": "sauterpanna",
+        "def": "sauterpannan",
+        "pl": "sauterpannor",
+        "pldef": "sauterpannorna"
+      }
     },
     "wok": {
       "label": "Wok",
@@ -106,7 +170,15 @@
       "cm": 32,
       "capacityL": 4,
       "oneLayerG": 700,
-      "burner": "stor"
+      "burner": "stor",
+      "forms": {
+        "indef": "en wok",
+        "bare": "wok",
+        "noun": "wok",
+        "def": "woken",
+        "pl": "wokar",
+        "pldef": "wokarna"
+      }
     },
     "grillpanna": {
       "label": "Grillpanna",
@@ -115,13 +187,29 @@
       "cm": 28,
       "capacityL": 1.5,
       "oneLayerG": 600,
-      "burner": "stor"
+      "burner": "stor",
+      "forms": {
+        "indef": "en grillpanna",
+        "bare": "grillpanna",
+        "noun": "grillpanna",
+        "def": "grillpannan",
+        "pl": "grillpannor",
+        "pldef": "grillpannorna"
+      }
     },
     "ugn": {
       "label": "Ugn",
       "kind": "oven",
       "exclusive": false,
-      "note": "Kapacitet (antal plåtar) och varmluft kommer från användarens kökprofil (kitchen.ovenTrays, kitchen.ovenFan). En temperatur åt gången. Plåt, ugnsform, galler och bakform tar 1 plats var."
+      "note": "Kapacitet (antal plåtar) och varmluft kommer från användarens kökprofil (kitchen.ovenTrays, kitchen.ovenFan). En temperatur åt gången. Plåt, ugnsform, galler och bakform tar 1 plats var.",
+      "forms": {
+        "indef": "en ugn",
+        "bare": "ugn",
+        "noun": "ugn",
+        "def": "ugnen",
+        "pl": "ugnar",
+        "pldef": "ugnarna"
+      }
     },
     "plat": {
       "label": "Ugnsplåt",
@@ -130,7 +218,15 @@
       "ovenSlots": 1,
       "capacityL": 3,
       "oneLayerG": 1000,
-      "note": "Med bakplåtspapper. ~40×30 cm."
+      "note": "Med bakplåtspapper. ~40×30 cm.",
+      "forms": {
+        "indef": "en plåt",
+        "bare": "plåt",
+        "noun": "plåt",
+        "def": "plåten",
+        "pl": "plåtar",
+        "pldef": "plåtarna"
+      }
     },
     "ugnsform": {
       "label": "Ugnsform",
@@ -138,7 +234,15 @@
       "exclusive": true,
       "ovenSlots": 1,
       "capacityL": 2.5,
-      "note": "~25×20 cm"
+      "note": "~25×20 cm",
+      "forms": {
+        "indef": "en ugnsform",
+        "bare": "ugnsform",
+        "noun": "ugnsform",
+        "def": "ugnsformen",
+        "pl": "ugnsformar",
+        "pldef": "ugnsformarna"
+      }
     },
     "ugnsform_stor": {
       "label": "Stor ugnsform",
@@ -146,7 +250,15 @@
       "exclusive": true,
       "ovenSlots": 1,
       "capacityL": 4,
-      "note": "~30×25 cm / långpanna"
+      "note": "~30×25 cm / långpanna",
+      "forms": {
+        "indef": "en stor ugnsform",
+        "bare": "stor ugnsform",
+        "noun": "ugnsform",
+        "def": "ugnsformen",
+        "pl": "stora ugnsformar",
+        "pldef": "ugnsformarna"
+      }
     },
     "springform": {
       "label": "Springform",
@@ -154,99 +266,435 @@
       "exclusive": true,
       "ovenSlots": 1,
       "capacityL": 2.5,
-      "cm": 24
+      "cm": 24,
+      "forms": {
+        "indef": "en springform",
+        "bare": "springform",
+        "noun": "springform",
+        "def": "springformen",
+        "pl": "springformar",
+        "pldef": "springformarna"
+      }
     },
     "bakform": {
       "label": "Bakform / brödform",
       "kind": "ovenware",
       "exclusive": true,
       "ovenSlots": 1,
-      "capacityL": 1.5
+      "capacityL": 1.5,
+      "forms": {
+        "indef": "en bakform",
+        "bare": "bakform",
+        "noun": "bakform",
+        "def": "bakformen",
+        "pl": "bakformar",
+        "pldef": "bakformarna"
+      }
     },
     "muffinsplat": {
       "label": "Muffinsplåt",
       "kind": "ovenware",
       "exclusive": true,
-      "ovenSlots": 1
+      "ovenSlots": 1,
+      "forms": {
+        "indef": "en muffinsplåt",
+        "bare": "muffinsplåt",
+        "noun": "muffinsplåt",
+        "def": "muffinsplåten",
+        "pl": "muffinsplåtar",
+        "pldef": "muffinsplåtarna"
+      }
     },
     "galler": {
       "label": "Ugnsgaller",
       "kind": "ovenware",
       "exclusive": true,
       "ovenSlots": 1,
-      "note": "Direkt på gallret (bröd, pitabröd)"
+      "note": "Direkt på gallret (bröd, pitabröd)",
+      "forms": {
+        "indef": "ett galler",
+        "bare": "galler",
+        "noun": "galler",
+        "def": "gallret",
+        "pl": "galler",
+        "pldef": "gallren"
+      }
     },
     "skal_liten": {
       "label": "Liten skål",
       "kind": "bowl",
       "exclusive": true,
-      "capacityL": 0.5
+      "capacityL": 0.5,
+      "forms": {
+        "indef": "en liten skål",
+        "bare": "liten skål",
+        "noun": "skål",
+        "def": "skålen",
+        "pl": "små skålar",
+        "pldef": "skålarna"
+      }
     },
     "skal_medelstor": {
       "label": "Medelstor skål",
       "kind": "bowl",
       "exclusive": true,
-      "capacityL": 1.5
+      "capacityL": 1.5,
+      "forms": {
+        "indef": "en medelstor skål",
+        "bare": "medelstor skål",
+        "noun": "skål",
+        "def": "skålen",
+        "pl": "medelstora skålar",
+        "pldef": "skålarna"
+      }
     },
     "skal_stor": {
       "label": "Stor skål",
       "kind": "bowl",
       "exclusive": true,
-      "capacityL": 3
+      "capacityL": 3,
+      "forms": {
+        "indef": "en stor skål",
+        "bare": "stor skål",
+        "noun": "skål",
+        "def": "skålen",
+        "pl": "stora skålar",
+        "pldef": "skålarna"
+      }
     },
     "mixer": {
       "label": "Mixer",
       "kind": "tool",
       "exclusive": true,
-      "capacityL": 1.5
+      "capacityL": 1.5,
+      "forms": {
+        "indef": "en mixer",
+        "bare": "mixer",
+        "noun": "mixer",
+        "def": "mixern",
+        "pl": "mixrar",
+        "pldef": "mixrarna"
+      }
     },
     "stavmixer": {
       "label": "Stavmixer",
       "kind": "tool",
-      "exclusive": false
+      "exclusive": false,
+      "forms": {
+        "indef": "en stavmixer",
+        "bare": "stavmixer",
+        "noun": "stavmixer",
+        "def": "stavmixern",
+        "pl": "stavmixrar",
+        "pldef": "stavmixrarna"
+      }
     },
     "matberedare": {
       "label": "Matberedare",
       "kind": "tool",
       "exclusive": true,
-      "capacityL": 2
+      "capacityL": 2,
+      "forms": {
+        "indef": "en matberedare",
+        "bare": "matberedare",
+        "noun": "matberedare",
+        "def": "matberedaren",
+        "pl": "matberedare",
+        "pldef": "matberedarna"
+      }
     },
     "elvisp": {
       "label": "Elvisp",
       "kind": "tool",
-      "exclusive": false
+      "exclusive": false,
+      "forms": {
+        "indef": "en elvisp",
+        "bare": "elvisp",
+        "noun": "elvisp",
+        "def": "elvispen",
+        "pl": "elvispar",
+        "pldef": "elvisparna"
+      }
     },
     "sil": {
-      "label": "Sil / durkslag",
+      "label": "Sil",
       "kind": "tool",
-      "exclusive": false
+      "exclusive": false,
+      "forms": {
+        "indef": "en sil",
+        "bare": "sil",
+        "noun": "sil",
+        "def": "silen",
+        "pl": "silar",
+        "pldef": "silarna"
+      }
     },
     "rivjarn": {
       "label": "Rivjärn",
       "kind": "tool",
-      "exclusive": false
+      "exclusive": false,
+      "forms": {
+        "indef": "ett rivjärn",
+        "bare": "rivjärn",
+        "noun": "rivjärn",
+        "def": "rivjärnet",
+        "pl": "rivjärn",
+        "pldef": "rivjärnen"
+      }
     },
     "mortel": {
       "label": "Mortel",
       "kind": "tool",
-      "exclusive": false
+      "exclusive": false,
+      "forms": {
+        "indef": "en mortel",
+        "bare": "mortel",
+        "noun": "mortel",
+        "def": "morteln",
+        "pl": "mortlar",
+        "pldef": "mortlarna"
+      }
     },
     "mikro": {
       "label": "Mikrovågsugn",
-      "kind": "tool",
-      "exclusive": true
+      "kind": "appliance",
+      "exclusive": true,
+      "forms": {
+        "indef": "en mikrovågsugn",
+        "bare": "mikrovågsugn",
+        "noun": "mikrovågsugn",
+        "def": "mikrovågsugnen",
+        "pl": "mikrovågsugnar",
+        "pldef": "mikrovågsugnarna"
+      }
     },
     "brodrost": {
       "label": "Brödrost",
-      "kind": "tool",
-      "exclusive": true
+      "kind": "appliance",
+      "exclusive": true,
+      "forms": {
+        "indef": "en brödrost",
+        "bare": "brödrost",
+        "noun": "brödrost",
+        "def": "brödrosten",
+        "pl": "brödrostar",
+        "pldef": "brödrostarna"
+      }
     },
     "grill": {
       "label": "Grill / grillpanna utomhus",
       "kind": "stovetop",
       "exclusive": true,
       "note": "HF 'Värm grillen'. Värmenivå som för spisen.",
-      "burner": null
+      "burner": null,
+      "forms": {
+        "indef": "en grill",
+        "bare": "grill",
+        "noun": "grill",
+        "def": "grillen",
+        "pl": "grillar",
+        "pldef": "grillarna"
+      }
+    },
+    "skal": {
+      "label": "Skål",
+      "kind": "bowl",
+      "exclusive": true,
+      "capacityL": 1.5,
+      "note": "Storlek ej angiven i texten",
+      "forms": {
+        "indef": "en skål",
+        "bare": "skål",
+        "noun": "skål",
+        "def": "skålen",
+        "pl": "skålar",
+        "pldef": "skålarna"
+      }
+    },
+    "durkslag": {
+      "label": "Durkslag",
+      "kind": "tool",
+      "exclusive": false,
+      "forms": {
+        "indef": "ett durkslag",
+        "bare": "durkslag",
+        "noun": "durkslag",
+        "def": "durkslaget",
+        "pl": "durkslag",
+        "pldef": "durkslagen"
+      }
+    },
+    "tallrik": {
+      "label": "Tallrik",
+      "kind": "plate",
+      "exclusive": true,
+      "note": "Matlagning: ställ åt sidan, låt rinna av på hushållspapper, rulla köttbullar",
+      "forms": {
+        "indef": "en tallrik",
+        "bare": "tallrik",
+        "noun": "tallrik",
+        "def": "tallriken",
+        "pl": "tallrikar",
+        "pldef": "tallrikarna"
+      }
+    },
+    "djup_tallrik": {
+      "label": "Djup tallrik",
+      "kind": "plate",
+      "exclusive": true,
+      "note": "Matlagning: paneringsstation (ägg / mjöl / ströbröd), en per moment",
+      "forms": {
+        "indef": "en djup tallrik",
+        "bare": "djup tallrik",
+        "noun": "tallrik",
+        "def": "tallriken",
+        "pl": "djupa tallrikar",
+        "pldef": "tallrikarna"
+      }
+    },
+    "skarbrada": {
+      "label": "Skärbräda",
+      "kind": "board",
+      "exclusive": false,
+      "note": "ref \"skarbrada\" = brädan för grönsaker och färdiglagat; ref \"skarbrada_ra\" (separate: true) = separat bräda för rått kött, fågel, fisk och skaldjur. Diska (transition wash) innan en rå-bräda används till annat.",
+      "forms": {
+        "indef": "en skärbräda",
+        "bare": "skärbräda",
+        "noun": "skärbräda",
+        "def": "skärbrädan",
+        "pl": "skärbrädor",
+        "pldef": "skärbrädorna"
+      }
+    },
+    "kavel": {
+      "label": "Kavel",
+      "kind": "tool",
+      "exclusive": false,
+      "forms": {
+        "indef": "en kavel",
+        "bare": "kavel",
+        "noun": "kavel",
+        "def": "kaveln",
+        "pl": "kavlar",
+        "pldef": "kavlarna"
+      }
+    },
+    "kotthammare": {
+      "label": "Kötthammare",
+      "kind": "tool",
+      "exclusive": false,
+      "forms": {
+        "indef": "en kötthammare",
+        "bare": "kötthammare",
+        "noun": "kötthammare",
+        "def": "kötthammaren",
+        "pl": "kötthammare",
+        "pldef": "kötthammarna"
+      }
+    },
+    "vattenkokare": {
+      "label": "Vattenkokare",
+      "kind": "appliance",
+      "exclusive": true,
+      "forms": {
+        "indef": "en vattenkokare",
+        "bare": "vattenkokare",
+        "noun": "vattenkokare",
+        "def": "vattenkokaren",
+        "pl": "vattenkokare",
+        "pldef": "vattenkokarna"
+      }
+    },
+    "servering_tallrik": {
+      "label": "Tallrikar",
+      "kind": "serving",
+      "forms": {
+        "indef": "en tallrik",
+        "bare": "tallrik",
+        "noun": "tallrik",
+        "def": "tallriken",
+        "pl": "tallrikar",
+        "pldef": "tallrikarna"
+      }
+    },
+    "servering_djup_tallrik": {
+      "label": "Djupa tallrikar",
+      "kind": "serving",
+      "forms": {
+        "indef": "en djup tallrik",
+        "bare": "djup tallrik",
+        "noun": "tallrik",
+        "def": "tallriken",
+        "pl": "djupa tallrikar",
+        "pldef": "tallrikarna"
+      }
+    },
+    "servering_skal": {
+      "label": "Skålar",
+      "kind": "serving",
+      "forms": {
+        "indef": "en skål",
+        "bare": "skål",
+        "noun": "skål",
+        "def": "skålen",
+        "pl": "skålar",
+        "pldef": "skålarna"
+      }
+    },
+    "servering_djup_skal": {
+      "label": "Djupa skålar",
+      "kind": "serving",
+      "forms": {
+        "indef": "en djup skål",
+        "bare": "djup skål",
+        "noun": "skål",
+        "def": "skålen",
+        "pl": "djupa skålar",
+        "pldef": "skålarna"
+      }
+    },
+    "serveringsfat": {
+      "label": "Serveringsfat",
+      "kind": "serving",
+      "forms": {
+        "indef": "ett serveringsfat",
+        "bare": "serveringsfat",
+        "noun": "serveringsfat",
+        "def": "serveringsfatet",
+        "pl": "serveringsfat",
+        "pldef": "serveringsfaten"
+      }
+    },
+    "glas": {
+      "label": "Glas",
+      "kind": "serving",
+      "forms": {
+        "indef": "ett glas",
+        "bare": "glas",
+        "noun": "glas",
+        "def": "glaset",
+        "pl": "glas",
+        "pldef": "glasen"
+      }
+    },
+    "traktorpanna": {
+      "label": "Traktörpanna",
+      "kind": "stovetop",
+      "exclusive": true,
+      "cm": 28,
+      "capacityL": 4.0,
+      "oneLayerG": 650,
+      "burner": "stor",
+      "hasLid": true,
+      "note": "Djup sautépanna med höga kanter och lock. En storlek (typisk 28 cm, ca 4 l); ingen storleksskala.",
+      "forms": {
+        "indef": "en traktörpanna",
+        "bare": "traktörpanna",
+        "noun": "traktörpanna",
+        "def": "traktörpannan",
+        "pl": "traktörpannor",
+        "pldef": "traktörpannorna"
+      }
     }
   },
   "aliases": {
@@ -256,6 +704,25 @@
     "bakplåt": "plat",
     "långpanna": "ugnsform_stor",
     "durkslag": "sil",
-    "gjutjärnsgryta": "gryta"
+    "gjutjärnsgryta": "gryta",
+    "kakform": "springform",
+    "brödform": "bakform",
+    "gratängform": "ugnsform",
+    "salladsskål": "skal_stor",
+    "bunke": "skal_stor",
+    "mikrovågsugn": "mikro",
+    "köttbultare": "kotthammare",
+    "traktörpanna": "traktorpanna",
+    "sauteuse": "traktorpanna",
+    "sautépanna": "traktorpanna",
+    "sauterpanna": "traktorpanna",
+    "djup stekpanna": "traktorpanna"
+  },
+  "rawAnimalLabels": {
+    "_doc": "ingredients.json rawAnimal → phrase for the separate-board hint (\"Använd en separat skärbräda för …\")",
+    "poultry": "rå kyckling",
+    "meat": "rått kött",
+    "fish": "rå fisk",
+    "shellfish": "råa skaldjur"
   }
 }

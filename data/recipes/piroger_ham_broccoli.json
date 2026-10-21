@@ -15,7 +15,7 @@
       "outputName": "Förvärmd ugn (225°C)",
       "inputs": [],
       "steps": [
-        "Värm ugnen till 225°C, eller 200°C varmluft."
+        "Värm {{eq:ugn|def}} till 225°C, eller 200°C varmluft."
       ],
       "duration": 1,
       "tags": [
@@ -48,6 +48,13 @@
       "duration": 2,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -67,6 +74,13 @@
       "duration": 2,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -101,11 +115,17 @@
         }
       ],
       "steps": [
-        "Blanda {{piroger_ham_broccoli__chopped_broccoli}}, {{piroger_ham_broccoli__chopped_ham}}, {{grated_cheese}}, {{egg}} och {{pepper}} i en skål."
+        "Blanda {{piroger_ham_broccoli__chopped_broccoli}}, {{piroger_ham_broccoli__chopped_ham}}, {{grated_cheese}}, {{egg}} och {{pepper}} i {{eq:skal_1}}."
       ],
       "duration": 3,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skal",
+          "ref": "skal_1"
+        }
       ]
     },
     {
@@ -126,6 +146,13 @@
       "duration": 4,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -147,13 +174,15 @@
       "steps": [
         "Klicka på {{piroger_ham_broccoli__pie_filling_broccoli_ham_cheese}} på ena halvan av varje bit av {{piroger_ham_broccoli__rolled_dough}}.",
         "Vik ihop degen till en halvmåne och nyp kanterna ordentligt med en gaffel.",
-        "Lägg pajerna på en plåt med bakplåtspapper."
+        "Lägg pajerna på {{eq:plat_1}} med bakplåtspapper."
       ],
       "duration": 6,
       "tags": [],
       "equipment": [
         {
-          "type": "plat"
+          "type": "plat",
+          "ref": "plat_1",
+          "liner": "bakplatspapper"
         }
       ]
     },
@@ -199,7 +228,7 @@
         }
       ],
       "steps": [
-        "Grädda {{piroger_ham_broccoli__egg_washed_pies}} på nedersta valsen i ugnen i ca 12 minuter tills gyllene."
+        "Grädda {{piroger_ham_broccoli__egg_washed_pies}} på nedersta valsen i {{eq:ugn|def}} i ca 12 minuter tills gyllene."
       ],
       "duration": 1,
       "tags": [

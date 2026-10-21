@@ -102,6 +102,11 @@
         {
           "type": "gryta",
           "ref": "gryta_1"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
         }
       ],
       "devNotes": [
@@ -158,6 +163,11 @@
           "type": "gryta",
           "ref": "gryta_1",
           "transition": "keep"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
         }
       ],
       "devNotes": [

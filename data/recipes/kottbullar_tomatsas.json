@@ -49,7 +49,7 @@
         }
       ],
       "steps": [
-        "Hetta upp en stor stekpanna på medelhög värme.",
+        "Hetta upp {{eq:stekpanna_1}} på medelhög värme.",
         "Rosta {{pine_nuts}} i 3–4 min, eller tills gyllene. Lägg över i en skål."
       ],
       "duration": 2,
@@ -58,7 +58,8 @@
       "heat": "medelhög",
       "equipment": [
         {
-          "type": "stekpanna_stor"
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1"
         }
       ]
     },
@@ -85,11 +86,22 @@
       ],
       "steps": [
         "Skär {{shallot}} i tunna skivor.",
-        "Blanda schalottenlök, {{salt}} och {{water}} (tillräckligt för att täcka löken) i en liten skål och ställ åt sidan."
+        "Blanda schalottenlök, {{salt}} och {{water}} (tillräckligt för att täcka löken) i {{eq:skal_1}} och ställ åt sidan."
       ],
       "duration": 3,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skal_liten",
+          "ref": "skal_1"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -129,9 +141,9 @@
         }
       ],
       "steps": [
-        "Blanda {{mixed_mince}}, {{egg}}, {{breadcrumbs}}, {{buon_appetito}} (hälften av kryddmixen) och {{salt}} i en stor skål.",
-        "Rulla färsen till köttbullar med fuktiga händer (5 per person) och placera dem på en tallrik.",
-        "Hetta upp {{olive_oil}} i en stor stekpanna på medelhög värme.",
+        "Blanda {{mixed_mince}}, {{egg}}, {{breadcrumbs}}, {{buon_appetito}} (hälften av kryddmixen) och {{salt}} i {{eq:skal_2}}.",
+        "Rulla färsen till köttbullar med fuktiga händer (5 per person) och placera dem på {{eq:tallrik_1}}.",
+        "Hetta upp {{olive_oil}} i {{eq:stekpanna_2}} på medelhög värme.",
         "Stek köttbullarna, vänd dem regelbundet, i 3–4 min, eller tills brynta."
       ],
       "duration": 10,
@@ -140,11 +152,17 @@
       "heat": "medelhög",
       "equipment": [
         {
-          "type": "skal_stor"
+          "type": "skal_stor",
+          "ref": "skal_2"
         },
         {
-          "type": "stekpanna_stor",
-          "ref": "stekpanna_2"
+          "type": "traktorpanna",
+          "ref": "stekpanna_2",
+          "typeSource": "inferred"
+        },
+        {
+          "type": "tallrik",
+          "ref": "tallrik_1"
         }
       ]
     },
@@ -205,7 +223,7 @@
         }
       ],
       "steps": [
-        "Tillsätt resterande {{buon_appetito}}, {{garlic_herb_seasoning}}, {{beef_bouillon}}, {{canned_tomatoes}}, {{salt}}, {{water}} och {{sugar}} till stekpannan med {{kottbullar_tomatsas__meatballs}}.",
+        "Tillsätt resterande {{buon_appetito}}, {{garlic_herb_seasoning}}, {{beef_bouillon}}, {{canned_tomatoes}}, {{salt}}, {{water}} och {{sugar}} till {{eq:stekpanna_2|def}} med {{kottbullar_tomatsas__meatballs}}.",
         "Sänk till medellåg värme och sjud i 10–15 min, tills såsen har tjocknat och köttbullarna är genomstekta.",
         "Rör i {{butter}} och krydda med en nypa salt och {{pepper}}."
       ],
@@ -218,9 +236,10 @@
       "heat": "medellåg",
       "equipment": [
         {
-          "type": "stekpanna_stor",
+          "type": "traktorpanna",
           "ref": "stekpanna_2",
-          "transition": "keep"
+          "transition": "keep",
+          "typeSource": "inferred"
         }
       ]
     },
@@ -264,13 +283,19 @@
         "Skölj {{mixed_salad}}.",
         "Halvera {{cherry_tomatoes}}.",
         "Häll av {{kottbullar_tomatsas__pickled_shallot}}.",
-        "Blanda tomater, schalottenlök, {{kottbullar_tomatsas__roasted_pine_nuts}}, salladsmix, {{olive_oil}} och {{salt}} i en stor skål."
+        "Blanda tomater, schalottenlök, {{kottbullar_tomatsas__roasted_pine_nuts}}, salladsmix, {{olive_oil}} och {{salt}} i {{eq:skal_3}}."
       ],
       "duration": 5,
       "tags": [],
       "equipment": [
         {
-          "type": "skal_stor"
+          "type": "skal_stor",
+          "ref": "skal_3"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
         }
       ]
     },
@@ -296,9 +321,9 @@
         }
       ],
       "steps": [
-        "Koka upp en stor kastrull med saltat {{water}}.",
+        "Koka upp {{eq:kastrull_1}} med saltat {{water}}.",
         "Tillsätt {{fresh_tagliatelle}} till det kokande vattnet. Koka i 2–3 min, tills al dente.",
-        "Häll av vattnet och lägg tillbaka pastan i kastrullen."
+        "Häll av vattnet och lägg tillbaka pastan i {{eq:kastrull_1|def}}."
       ],
       "duration": 3,
       "wait": 3,
@@ -311,7 +336,8 @@
       "heatSource": "inferred",
       "equipment": [
         {
-          "type": "kastrull_stor"
+          "type": "kastrull_stor",
+          "ref": "kastrull_1"
         }
       ]
     },
@@ -342,12 +368,19 @@
         }
       ],
       "steps": [
-        "Lägg upp {{kottbullar_tomatsas__cooked_pasta}} i skålar och toppa med {{kottbullar_tomatsas__meatballs_tomato_sauce}}.",
+        "Lägg upp {{kottbullar_tomatsas__cooked_pasta}} i {{eq:servering|pl}} och toppa med {{kottbullar_tomatsas__meatballs_tomato_sauce}}.",
         "Strö över {{parmesan}} och servera med {{kottbullar_tomatsas__pine_nut_salad}}."
       ],
       "duration": 3,
       "tags": [
         "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_skal",
+          "ref": "servering",
+          "count": "portions"
+        }
       ]
     }
   ]

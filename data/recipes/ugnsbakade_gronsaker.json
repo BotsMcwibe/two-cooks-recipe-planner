@@ -48,6 +48,13 @@
       "duration": 3,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -67,6 +74,13 @@
       "duration": 3,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -86,6 +100,13 @@
       "duration": 3,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -130,10 +151,10 @@
         }
       ],
       "steps": [
-        "Placera {{ugnsbakade_gronsaker__chopped_pepper}}, {{ugnsbakade_gronsaker__chopped_zucchini}} och {{ugnsbakade_gronsaker__chopped_onion}} i en ugnsform.",
+        "Placera {{ugnsbakade_gronsaker__chopped_pepper}}, {{ugnsbakade_gronsaker__chopped_zucchini}} och {{ugnsbakade_gronsaker__chopped_onion}} i {{eq:ugnsform_1}}.",
         "Smula {{feta_cheese}} över grönsakerna.",
         "Ringla över {{olive_oil}} och krydda med {{salt}} och {{pepper}}.",
-        "Baka i ugnen i ca 20 min."
+        "Baka i {{eq:ugn|def}} i ca 20 min."
       ],
       "duration": 5,
       "wait": 20,
@@ -151,7 +172,8 @@
         },
         {
           "type": "ugnsform",
-          "sizeSource": "inferred"
+          "sizeSource": "inferred",
+          "ref": "ugnsform_1"
         }
       ]
     },
@@ -191,6 +213,13 @@
       "duration": 2,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -225,7 +254,7 @@
         }
       ],
       "steps": [
-        "Blanda {{ugnsbakade_gronsaker__chopped_garlic}} och {{ugnsbakade_gronsaker__chopped_parsley}} i en skål tillsammans med {{sour_cream}} tills jämn.",
+        "Blanda {{ugnsbakade_gronsaker__chopped_garlic}} och {{ugnsbakade_gronsaker__chopped_parsley}} i {{eq:skal_1}} tillsammans med {{sour_cream}} tills jämn.",
         "Krydda med {{salt}} och {{pepper}}."
       ],
       "duration": 3,
@@ -234,6 +263,12 @@
       ],
       "tips": [
         "Använd halva burken gräddfil här; resten går till ostdressingen."
+      ],
+      "equipment": [
+        {
+          "type": "skal",
+          "ref": "skal_1"
+        }
       ]
     },
     {
@@ -268,13 +303,19 @@
         }
       ],
       "steps": [
-        "Mosa {{feta_cheese}} med en gaffel i en skål.",
+        "Mosa {{feta_cheese}} med en gaffel i {{eq:skal_2}}.",
         "Häll i {{ketchup}} och blanda ordentligt med {{sour_cream}}.",
         "Krydda med {{salt}} och {{pepper}} efter smak."
       ],
       "duration": 4,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skal",
+          "ref": "skal_2"
+        }
       ]
     },
     {
@@ -305,6 +346,13 @@
       "duration": 5,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -320,8 +368,8 @@
       ],
       "steps": [
         "Dela {{baguette}} först på mitten och sedan på längden.",
-        "Lägg baguetten med skärytan vänd uppåt på en bakplåt täckt med bakplåtspapper.",
-        "Rosta i ugnen i 7–8 min (gärna parallellt med grönsakernas sista minuter)."
+        "Lägg baguetten med skärytan vänd uppåt på {{eq:plat_1}} täckt med bakplåtspapper.",
+        "Rosta i {{eq:ugn|def}} i 7–8 min (gärna parallellt med grönsakernas sista minuter)."
       ],
       "duration": 3,
       "wait": 8,
@@ -338,7 +386,14 @@
           "fanTemp": 200
         },
         {
-          "type": "plat"
+          "type": "plat",
+          "ref": "plat_1",
+          "liner": "bakplatspapper"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
         }
       ]
     },

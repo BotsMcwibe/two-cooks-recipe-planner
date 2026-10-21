@@ -59,7 +59,7 @@
         }
       ],
       "steps": [
-        "Koka upp en medelstor kastrull med {{water}} och {{salt}}.",
+        "Koka upp {{eq:kastrull_1}} med {{water}} och {{salt}}.",
         "Tillsätt {{pearl_couscous}}, sänk till medellåg värme och sjud i 12–15 min, tills den är al dente. Häll av vattnet."
       ],
       "duration": 3,
@@ -68,7 +68,8 @@
       "heat": "medellåg",
       "equipment": [
         {
-          "type": "kastrull_medelstor"
+          "type": "kastrull_medelstor",
+          "ref": "kastrull_1"
         }
       ]
     },
@@ -100,7 +101,7 @@
       ],
       "steps": [
         "Skär {{cucumber}} i tunna skivor.",
-        "Blanda {{white_wine_vinegar}}, {{sugar}} och {{salt}} i en liten skål. Vänd ner gurkan och ställ åt sidan."
+        "Blanda {{white_wine_vinegar}}, {{sugar}} och {{salt}} i {{eq:skal_1}}. Vänd ner gurkan och ställ åt sidan."
       ],
       "tips": [
         "Häll av lagen innan servering."
@@ -112,6 +113,17 @@
       ],
       "devNotes": [
         "Ingen minuttid är angiven."
+      ],
+      "equipment": [
+        {
+          "type": "skal_liten",
+          "ref": "skal_1"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -137,6 +149,13 @@
       "duration": 4,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -156,6 +175,13 @@
       "duration": 2,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -185,7 +211,7 @@
         }
       ],
       "steps": [
-        "Hetta upp en skvätt {{olive_oil}} i en stor stekpanna på medelhög värme. Torka av {{salmon_fillet}} med hushållspapper och krydda med {{salt}} och {{lemon_pepper}}.",
+        "Hetta upp en skvätt {{olive_oil}} i {{eq:stekpanna_1}} på medelhög värme. Torka av {{salmon_fillet}} med hushållspapper och krydda med {{salt}} och {{lemon_pepper}}.",
         "Stek med skinnsidan ner i 3–4 min. Vänd laxen och stek i ytterligare 3–5 min, tills den är gyllene och genomstekt."
       ],
       "tips": [
@@ -197,7 +223,8 @@
       "heat": "medelhög",
       "equipment": [
         {
-          "type": "stekpanna_stor"
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1"
         }
       ]
     },
@@ -228,11 +255,17 @@
         }
       ],
       "steps": [
-        "Blanda {{creme_fraiche}}, {{citronpepparlax_parlcouscous__chopped_dill}} och {{salt}} i en liten skål.",
+        "Blanda {{creme_fraiche}}, {{citronpepparlax_parlcouscous__chopped_dill}} och {{salt}} i {{eq:skal_2}}.",
         "Rör ner dilldressingen i {{citronpepparlax_parlcouscous__cooked_couscous}}."
       ],
       "duration": 3,
-      "tags": []
+      "tags": [],
+      "equipment": [
+        {
+          "type": "skal_liten",
+          "ref": "skal_2"
+        }
+      ]
     },
     {
       "id": "citronpepparlax_parlcouscous__avocado_salad",
@@ -256,13 +289,14 @@
         }
       ],
       "steps": [
-        "Häll av lagen från {{citronpepparlax_parlcouscous__pickled_cucumber}}. Blanda gurkan med {{olive_oil}} och {{citronpepparlax_parlcouscous__prepped_salad_veg}} i en stor skål precis innan servering."
+        "Häll av lagen från {{citronpepparlax_parlcouscous__pickled_cucumber}}. Blanda gurkan med {{olive_oil}} och {{citronpepparlax_parlcouscous__prepped_salad_veg}} i {{eq:skal_3}} precis innan servering."
       ],
       "duration": 2,
       "tags": [],
       "equipment": [
         {
-          "type": "skal_stor"
+          "type": "skal_stor",
+          "ref": "skal_3"
         }
       ]
     },
@@ -288,11 +322,18 @@
         }
       ],
       "steps": [
-        "Lägg upp {{citronpepparlax_parlcouscous__dressed_couscous}}, {{citronpepparlax_parlcouscous__avocado_salad}} och {{citronpepparlax_parlcouscous__fried_salmon}} i djupa tallrikar."
+        "Lägg upp {{citronpepparlax_parlcouscous__dressed_couscous}}, {{citronpepparlax_parlcouscous__avocado_salad}} och {{citronpepparlax_parlcouscous__fried_salmon}} i {{eq:servering|pl}}."
       ],
       "duration": 2,
       "tags": [
         "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_djup_tallrik",
+          "ref": "servering",
+          "count": "portions"
+        }
       ]
     }
   ]

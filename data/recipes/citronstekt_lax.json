@@ -49,7 +49,7 @@
       "outputName": "Förvärmd ugn (240°C)",
       "inputs": [],
       "steps": [
-        "Värm ugnen till 240°C, eller 220°C varmluft."
+        "Värm {{eq:ugn|def}} till 240°C, eller 220°C varmluft."
       ],
       "duration": 1,
       "wait": 12,
@@ -82,6 +82,13 @@
       "duration": 5,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -101,8 +108,8 @@
         }
       ],
       "steps": [
-        "Lägg {{citronstekt_lax__diced_potato}} på en plåt med bakplåtspapper. Blanda med en skvätt olivolja, {{salt}} och en nypa peppar.",
-        "Rosta i den förvärmda ugnen i 15 min."
+        "Lägg {{citronstekt_lax__diced_potato}} på {{eq:plat_1}} med bakplåtspapper. Blanda med en skvätt olivolja, {{salt}} och en nypa peppar.",
+        "Rosta i den förvärmda {{eq:ugn|def}} i 15 min."
       ],
       "duration": 3,
       "wait": 15,
@@ -121,7 +128,8 @@
         },
         {
           "type": "plat",
-          "ref": "plat_1"
+          "ref": "plat_1",
+          "liner": "bakplatspapper"
         }
       ],
       "devNotes": [
@@ -151,6 +159,13 @@
       "duration": 3,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -173,6 +188,13 @@
       ],
       "devNotes": [
         "Råreceptet halverar citronen: ena halvan skivas till garnering, den andra pressas i buljongen."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -202,7 +224,7 @@
         }
       ],
       "steps": [
-        "Blanda {{water}}, {{vegetable_bouillon}}, {{citronstekt_lax__garlic_dill}} och en generös skvätt saft från {{lemon}} i en liten skål."
+        "Blanda {{water}}, {{vegetable_bouillon}}, {{citronstekt_lax__garlic_dill}} och en generös skvätt saft från {{lemon}} i {{eq:skal_1}}."
       ],
       "duration": 2,
       "tags": [
@@ -210,6 +232,12 @@
       ],
       "tips": [
         "Citronsaften pressas från den andra citronhalvan."
+      ],
+      "equipment": [
+        {
+          "type": "skal_liten",
+          "ref": "skal_1"
+        }
       ]
     },
     {
@@ -229,6 +257,13 @@
       "duration": 4,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -253,8 +288,8 @@
         }
       ],
       "steps": [
-        "Lägg {{citronstekt_lax__diced_broccoli}} på samma plåt som {{citronstekt_lax__roasted_potato}}. Ringla över en skvätt olivolja och krydda med {{salt}} och en nypa peppar.",
-        "Rosta i ugnen i 15 min, tills potatis och broccoli är mjuka och gyllene."
+        "Lägg {{citronstekt_lax__diced_broccoli}} på samma {{eq:plat_1|noun}} som {{citronstekt_lax__roasted_potato}}. Ringla över en skvätt olivolja och krydda med {{salt}} och en nypa peppar.",
+        "Rosta i {{eq:ugn|def}} i 15 min, tills potatis och broccoli är mjuka och gyllene."
       ],
       "duration": 2,
       "wait": 15,
@@ -299,7 +334,7 @@
         }
       ],
       "steps": [
-        "Hetta upp {{olive_oil}} i en stor stekpanna på medelhög värme.",
+        "Hetta upp {{olive_oil}} i {{eq:stekpanna_1}} på medelhög värme.",
         "Torka av {{salmon_fillet}} med hushållspapper och krydda med {{salt}}.",
         "Stek laxen med skinnsidan ner i 3–4 min."
       ],
@@ -394,13 +429,20 @@
         }
       ],
       "steps": [
-        "Lägg upp {{citronstekt_lax__lemon_salmon}}, rostad potatis och broccoli från {{citronstekt_lax__roasted_broccoli}} på tallrikar.",
-        "Skeda citronbuljongen från pannan över laxen och garnera med {{citronstekt_lax__lemon_slices}}.",
+        "Lägg upp {{citronstekt_lax__lemon_salmon}}, rostad potatis och broccoli från {{citronstekt_lax__roasted_broccoli}} på {{eq:servering|pl}}.",
+        "Skeda citronbuljongen från {{eq:stekpanna_1|def}} över laxen och garnera med {{citronstekt_lax__lemon_slices}}.",
         "Servera med {{aioli}} och toppa potatis och broccoli med {{sesame_seeds}}."
       ],
       "duration": 3,
       "tags": [
         "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_tallrik",
+          "ref": "servering",
+          "count": "portions"
+        }
       ]
     }
   ]

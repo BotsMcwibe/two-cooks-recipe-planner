@@ -59,6 +59,13 @@
       "duration": 5,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -73,7 +80,7 @@
         }
       ],
       "steps": [
-        "Koka upp en medelstor kastrull med saltat vatten.",
+        "Koka upp {{eq:kastrull_1}} med saltat vatten.",
         "Koka {{norska_kottbullar__diced_potato}} i 11–13 min, eller tills bitarna enkelt kan delas med en kniv."
       ],
       "duration": 2,
@@ -131,7 +138,8 @@
           "type": "kastrull_medelstor",
           "ref": "kastrull_1",
           "transition": "keep",
-          "offHeat": true
+          "offHeat": true,
+          "lid": true
         }
       ],
       "devNotes": [
@@ -165,8 +173,8 @@
         }
       ],
       "steps": [
-        "Blanda {{ground_beef}}, {{egg}}, {{breadcrumbs}} och {{salt}} i en stor skål.",
-        "Rulla färsen till köttbullar (4 per person) och lägg dem på en tallrik."
+        "Blanda {{ground_beef}}, {{egg}}, {{breadcrumbs}} och {{salt}} i {{eq:skal_1}}.",
+        "Rulla färsen till köttbullar (4 per person) och lägg dem på {{eq:tallrik_1}}."
       ],
       "duration": 6,
       "tags": [
@@ -174,7 +182,12 @@
       ],
       "equipment": [
         {
-          "type": "skal_stor"
+          "type": "skal_stor",
+          "ref": "skal_1"
+        },
+        {
+          "type": "tallrik",
+          "ref": "tallrik_1"
         }
       ],
       "devNotes": [
@@ -198,8 +211,8 @@
         }
       ],
       "steps": [
-        "Hetta upp {{olive_oil}} i en stor stekpanna på medelhög värme.",
-        "Stek {{norska_kottbullar__rolled_meatballs}} i 12–14 min, tills de är brynta och genomstekta. Sänk till medelvärme när de är brynta. Lägg över dem på en tallrik."
+        "Hetta upp {{olive_oil}} i {{eq:stekpanna_1}} på medelhög värme.",
+        "Stek {{norska_kottbullar__rolled_meatballs}} i 12–14 min, tills de är brynta och genomstekta. Sänk till medelvärme när de är brynta. Lägg över dem på {{eq:tallrik_2}}."
       ],
       "duration": 14,
       "wait": 0,
@@ -213,8 +226,13 @@
       },
       "equipment": [
         {
-          "type": "stekpanna_stor",
-          "ref": "stekpanna_1"
+          "type": "traktorpanna",
+          "ref": "stekpanna_1",
+          "typeSource": "inferred"
+        },
+        {
+          "type": "tallrik",
+          "ref": "tallrik_2"
         }
       ],
       "devNotes": [
@@ -244,6 +262,13 @@
       "duration": 4,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -278,7 +303,7 @@
         }
       ],
       "steps": [
-        "Smält {{butter}} i en kastrull på medelvärme.",
+        "Smält {{butter}} i {{eq:kastrull_2}} på medelvärme.",
         "Tillsätt {{kale}}, {{salt}} och en nypa {{pepper}}. Sänk till medellåg värme, tillsätt {{dried_cranberries}} och rör i 3–4 min, tills grönkålen mjuknat."
       ],
       "duration": 5,
@@ -291,7 +316,8 @@
       "equipment": [
         {
           "type": "kastrull_liten",
-          "sizeSource": "inferred"
+          "sizeSource": "inferred",
+          "ref": "kastrull_2"
         }
       ],
       "devNotes": [
@@ -345,7 +371,7 @@
         }
       ],
       "steps": [
-        "Hetta upp {{olive_oil}} i samma stekpanna på medelhög värme. Fräs {{norska_kottbullar__prepped_onion_garlic}} i 3–4 min, tills löken mjuknat.",
+        "Hetta upp {{olive_oil}} i samma {{eq:stekpanna_1|noun}} på medelhög värme. Fräs {{norska_kottbullar__prepped_onion_garlic}} i 3–4 min, tills löken mjuknat.",
         "Tillsätt {{water}}, {{lingon_jam}}, {{red_wine_sauce}}, {{salt}}, {{beef_bouillon}} och {{norska_kottbullar__fried_meatballs}}.",
         "Sänk till medellåg värme och sjud i 2–3 min, tills såsen tjocknat något."
       ],
@@ -358,9 +384,10 @@
       },
       "equipment": [
         {
-          "type": "stekpanna_stor",
+          "type": "traktorpanna",
           "ref": "stekpanna_1",
-          "transition": "keep"
+          "transition": "keep",
+          "typeSource": "inferred"
         }
       ],
       "devNotes": [
@@ -389,12 +416,19 @@
         }
       ],
       "steps": [
-        "Lägg upp {{norska_kottbullar__potato_mash}} och {{norska_kottbullar__meatball_sauce}} på tallrikar.",
+        "Lägg upp {{norska_kottbullar__potato_mash}} och {{norska_kottbullar__meatball_sauce}} på {{eq:servering|pl}}.",
         "Servera med {{norska_kottbullar__fried_kale}}."
       ],
       "duration": 3,
       "tags": [
         "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_tallrik",
+          "ref": "servering",
+          "count": "portions"
+        }
       ]
     }
   ]

@@ -64,7 +64,7 @@
         }
       ],
       "steps": [
-        "Koka upp {{water}} i en kastrull.",
+        "Koka upp {{water}} i {{eq:kastrull_1}}.",
         "Rör i {{bulgur}}, {{souvlaki_spice}} och {{salt}} och sänk till medellåg värme.",
         "Sjud under lock i 9–10 min, eller tills ”al dente”."
       ],
@@ -75,7 +75,9 @@
       "equipment": [
         {
           "type": "kastrull_medelstor",
-          "sizeSource": "inferred"
+          "sizeSource": "inferred",
+          "ref": "kastrull_1",
+          "lid": true
         }
       ]
     },
@@ -108,6 +110,13 @@
       "duration": 8,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -142,7 +151,7 @@
         }
       ],
       "steps": [
-        "Blanda {{chili_flakes}}, {{olive_oil}}, {{salt}} och {{pepper}} i en liten skål.",
+        "Blanda {{chili_flakes}}, {{olive_oil}}, {{salt}} och {{pepper}} i {{eq:skal_1}}.",
         "Smula ner {{feta_cheese}} i grova bitar och vänd runt."
       ],
       "duration": 3,
@@ -151,6 +160,12 @@
       ],
       "tips": [
         "Skippa chili eller använd mindre om du inte tycker om stark mat."
+      ],
+      "equipment": [
+        {
+          "type": "skal_liten",
+          "ref": "skal_1"
+        }
       ]
     },
     {
@@ -170,7 +185,7 @@
         }
       ],
       "steps": [
-        "Hetta upp {{olive_oil}} i en stor stekpanna på medelhög värme.",
+        "Hetta upp {{olive_oil}} i {{eq:stekpanna_1}} på medelhög värme.",
         "Stek {{falafel}} i 4–5 min, eller tills genomvarma, gyllene och spröda."
       ],
       "duration": 5,
@@ -181,7 +196,8 @@
       "heat": "medelhög",
       "equipment": [
         {
-          "type": "stekpanna_stor"
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1"
         }
       ]
     },
@@ -222,11 +238,17 @@
         }
       ],
       "steps": [
-        "Blanda {{tahini}}, {{yoghurt}}, {{water}}, {{sugar}}, {{salt}} och {{pepper}} i en liten skål."
+        "Blanda {{tahini}}, {{yoghurt}}, {{water}}, {{sugar}}, {{salt}} och {{pepper}} i {{eq:skal_2}}."
       ],
       "duration": 2,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skal_liten",
+          "ref": "skal_2"
+        }
       ]
     },
     {
@@ -261,7 +283,7 @@
         }
       ],
       "steps": [
-        "Lägg upp {{falafel_bulgur_bowl__cooked_bulgur}} och {{falafel_bulgur_bowl__prepped_vegetables}} i skålar och toppa bulgur med {{falafel_bulgur_bowl__fried_falafel}}.",
+        "Lägg upp {{falafel_bulgur_bowl__cooked_bulgur}} och {{falafel_bulgur_bowl__prepped_vegetables}} i {{eq:servering|pl}} och toppa bulgur med {{falafel_bulgur_bowl__fried_falafel}}.",
         "Toppa salladen med {{falafel_bulgur_bowl__chili_feta}}.",
         "Ringla {{falafel_bulgur_bowl__tahini_sauce}} över falafel och bulgur."
       ],
@@ -269,7 +291,14 @@
       "tags": [
         "master"
       ],
-      "wait": 0
+      "wait": 0,
+      "serving": [
+        {
+          "type": "servering_skal",
+          "ref": "servering",
+          "count": "portions"
+        }
+      ]
     }
   ]
 }

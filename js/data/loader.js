@@ -1,11 +1,11 @@
 import { Unit } from '../models/unit.js';
 import { Ingredient } from '../models/ingredient.js';
-import { Recipe } from '../models/recipe.js?v=20261021g6';
-import { setEquipmentVocab } from '../core/equipment.js?v=20261021g6';
-import { setKitchenDefaults } from '../core/kitchen-prefs.js?v=20261021g6';
-import { RecipeGraph } from '../core/recipe-graph.js?v=20261021g6';
-import { addSpiceMixSteps } from './spice-mix-steps.js?v=20261021g6';
-import { isMixMissing } from '../core/spice-prefs.js?v=20261021g6';
+import { Recipe } from '../models/recipe.js?v=20261021g7';
+import { equipmentVocab, setEquipmentVocab } from '../core/equipment.js?v=20261021g7';
+import { setKitchenDefaults } from '../core/kitchen-prefs.js?v=20261021g7';
+import { RecipeGraph } from '../core/recipe-graph.js?v=20261021g7';
+import { addSpiceMixSteps } from './spice-mix-steps.js?v=20261021g7';
+import { isMixMissing } from '../core/spice-prefs.js?v=20261021g7';
 
 const DATA_BASE = new URL('../../data/', import.meta.url);
 
@@ -48,11 +48,11 @@ export async function loadPortionEnergyKcal(ids) {
  */
 export async function loadStaticData() {
   const [unitsRaw, ingredientsRaw, catalog, blendsRaw, equipmentRaw] = await Promise.all([
-    fetchJSON('units.json?v=20261021g6'),
-    fetchJSON('ingredients.json?v=20261021g6'),
+    fetchJSON('units.json?v=20261021g7'),
+    fetchJSON('ingredients.json?v=20261021g7'),
     fetchJSON('catalog.json'),
-    fetchJSON('spice-blends.json?v=20261021g6').catch(() => ({ spices: [], blends: [] })),
-    fetchJSON('equipment.json?v=20261021g6').catch(() => null),
+    fetchJSON('spice-blends.json?v=20261021g7').catch(() => ({ spices: [], blends: [] })),
+    fetchJSON('equipment.json?v=20261021g7').catch(() => null),
   ]);
   if (equipmentRaw) {
     setEquipmentVocab(equipmentRaw);
@@ -91,7 +91,7 @@ export class RecipeRepository {
     this.unitMap = unitMap;
     this.spiceData = spiceData;
     this.baseIngredientMap = baseIngredientMap;
-    /** @type {Map<string, { graph: RecipeGraph, root: import('../models/recipe.js?v=20261021g6').Recipe, basePortions: number, resolveMap: object, outputMap: object }>} */
+    /** @type {Map<string, { graph: RecipeGraph, root: import('../models/recipe.js?v=20261021g7').Recipe, basePortions: number, resolveMap: object, outputMap: object }>} */
     this.cache = new Map();
     /** @type {Map<string, object>} shared prep pack cache (raw JSON) */
     this.prepCache = new Map();
@@ -128,14 +128,29 @@ export class RecipeRepository {
     const { resolveMap, outputMap } = this._createResolveMaps();
 
     const allNodes = [];
+    // Equipment placeholder context: refs resolve inside their own file (a pack inside the pack)
+    const eqTypes = equipmentVocab().types || {};
+    const refsOf = (nodes) => {
+      const refs = Object.create(null);
+      for (const n of nodes || []) {
+        for (const e of [...(n.equipment || []), ...(n.serving || [])]) {
+          if (e && e.ref && e.type && !refs[e.ref]) refs[e.ref] = e.type;
+        }
+      }
+      return refs;
+    };
+    const eqCtxById = new Map();
 
     // Shared prep packs first (so their outputs exist for local refs)
     for (const packId of recipeData.sharedPrep || []) {
       const pack = await this._loadPrepPack(packId);
+      const packCtx = { types: eqTypes, refs: refsOf(pack.nodes) };
       for (const node of pack.nodes || []) {
         allNodes.push(node);
+        eqCtxById.set(node.id, packCtx);
       }
     }
+    const localCtx = { types: eqTypes, refs: refsOf(recipeData.nodes) };
 
     for (const node of recipeData.nodes || []) {
       allNodes.push(node);
@@ -166,7 +181,7 @@ export class RecipeRepository {
       const nodeData = node.id === recipeData.masterId
         ? { ...node, basePortions: recipeData.basePortions, rawId: recipeData.rawId ?? null }
         : node;
-      recipes.push(Recipe.fromJSON(nodeData, resolveMap, this.unitMap, outputMap));
+      recipes.push(Recipe.fromJSON(nodeData, resolveMap, this.unitMap, outputMap, eqCtxById.get(node.id) || localCtx));
     }
 
     const graph = new RecipeGraph(recipes);

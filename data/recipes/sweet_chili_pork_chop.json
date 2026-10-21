@@ -53,6 +53,13 @@
       "duration": 3,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -72,6 +79,13 @@
       "duration": 2,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -91,6 +105,13 @@
       "duration": 2,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -110,6 +131,13 @@
       "duration": 2,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -129,6 +157,13 @@
       "duration": 1,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -170,6 +205,13 @@
       ],
       "devNotes": [
         "En skvätt saft går till glazen (0,25 st), resten pressas över vid servering (0,75 st). Råreceptet anger ingen proportion."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -189,11 +231,21 @@
         }
       ],
       "steps": [
-        "Tärna {{sliced_pork_chop}} i 2 cm stora bitar på en separat skärbräda och krydda med {{salt}}."
+        "Tärna {{sliced_pork_chop}} i 2 cm stora bitar på en separat {{eq:skarbrada_ra|noun}} och krydda med {{salt}}."
       ],
       "duration": 4,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada_ra",
+          "separate": true,
+          "rawKinds": [
+            "meat"
+          ]
+        }
       ]
     },
     {
@@ -223,7 +275,7 @@
         }
       ],
       "steps": [
-        "Koka upp {{water}} och {{vegetable_bouillon}} i en kastrull.",
+        "Koka upp {{water}} och {{vegetable_bouillon}} i {{eq:kastrull_1}}.",
         "Rör i {{jasmine_rice}} och {{salt}}, sänk till medellåg värme och sjud under lock i 12 min."
       ],
       "duration": 3,
@@ -237,7 +289,8 @@
         {
           "type": "kastrull_medelstor",
           "ref": "kastrull_1",
-          "sizeSource": "inferred"
+          "sizeSource": "inferred",
+          "lid": true
         }
       ]
     },
@@ -264,7 +317,8 @@
           "ref": "kastrull_1",
           "transition": "keep",
           "sizeSource": "inferred",
-          "offHeat": true
+          "offHeat": true,
+          "lid": true
         }
       ]
     },
@@ -315,10 +369,10 @@
         }
       ],
       "steps": [
-        "Hetta upp {{olive_oil}} i en stor stekpanna på medelhög värme.",
+        "Hetta upp {{olive_oil}} i {{eq:stekpanna_1}} på medelhög värme.",
         "Stek {{sweet_chili_pork_chop__julienned_carrot}}, {{sweet_chili_pork_chop__sliced_red_onion}}, {{sweet_chili_pork_chop__quartered_radishes}} och {{sweet_chili_pork_chop__chopped_broccolini}} i 3–4 min, eller tills de är nästan mjuka.",
         "Tillsätt {{sweet_chili_pork_chop__minced_garlic}} och stek i 1 min.",
-        "Krydda med {{salt}} och {{pepper}}. Lägg över grönsakerna i en skål och håll varma under lock."
+        "Krydda med {{salt}} och {{pepper}}. Lägg över grönsakerna i {{eq:skal_1}} och håll varma under lock."
       ],
       "duration": 6,
       "tags": [],
@@ -326,7 +380,12 @@
       "equipment": [
         {
           "type": "stekpanna_stor",
-          "ref": "stekpanna_1"
+          "ref": "stekpanna_1",
+          "lid": true
+        },
+        {
+          "type": "skal",
+          "ref": "skal_1"
         }
       ]
     },
@@ -357,11 +416,17 @@
         }
       ],
       "steps": [
-        "Blanda {{sweet_chili_sauce}}, {{soy_sauce}}, {{sweet_chili_pork_chop__grated_ginger}} och en skvätt saft från {{sweet_chili_pork_chop__lime_wedges}} i en liten skål. Spara resten av klyftorna till servering."
+        "Blanda {{sweet_chili_sauce}}, {{soy_sauce}}, {{sweet_chili_pork_chop__grated_ginger}} och en skvätt saft från {{sweet_chili_pork_chop__lime_wedges}} i {{eq:skal_2}}. Spara resten av klyftorna till servering."
       ],
       "duration": 2,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skal_liten",
+          "ref": "skal_2"
+        }
       ]
     },
     {
@@ -386,7 +451,7 @@
         }
       ],
       "steps": [
-        "Hetta upp {{olive_oil}} på medelhög värme i stekpannan där grönsakerna stektes (när de är avlyfta), eller i en ny stor stekpanna.",
+        "Hetta upp {{olive_oil}} på medelhög värme i {{eq:stekpanna_1|def}} där grönsakerna stektes (när de är avlyfta), eller i en ny {{eq:stekpanna_2|bare}}.",
         "Stek {{sweet_chili_pork_chop__diced_pork}} i 3–4 min, eller tills det är brynt och genomstekt.",
         "Tillsätt {{sweet_chili_pork_chop__sweet_chili_glaze}} när det återstår 30 sek av stektiden och rör om tills allt är genomvarmt och ingefäran väldoftande."
       ],
@@ -401,7 +466,8 @@
           "after": "sweet_chili_pork_chop__fried_vegetables"
         },
         {
-          "type": "stekpanna_stor"
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_2"
         }
       ]
     },
@@ -432,12 +498,19 @@
         }
       ],
       "steps": [
-        "Lägg upp {{sweet_chili_pork_chop__cooked_rice}} och {{sweet_chili_pork_chop__fried_vegetables}} i skålar.",
+        "Lägg upp {{sweet_chili_pork_chop__cooked_rice}} och {{sweet_chili_pork_chop__fried_vegetables}} i {{eq:servering|pl}}.",
         "Toppa med {{sweet_chili_pork_chop__glazed_pork}} och pressa över saft från resterande {{sweet_chili_pork_chop__lime_wedges}}."
       ],
       "duration": 3,
       "tags": [
         "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_skal",
+          "ref": "servering",
+          "count": "portions"
+        }
       ]
     }
   ]

@@ -41,7 +41,7 @@
       "outputName": "Förvärmd ugn (190°C)",
       "inputs": [],
       "steps": [
-        "Värm ugnen till 190°C, eller 170°C varmluft."
+        "Värm {{eq:ugn|def}} till 190°C, eller 170°C varmluft."
       ],
       "duration": 1,
       "wait": 10,
@@ -69,14 +69,24 @@
         }
       ],
       "steps": [
-        "Placera {{milk_chocolate_chips}} i en liten skål.",
-        "Värm i mikrovågsugnen i 20 sekunder åt gången tills chokladen har smält. Rör om mellan varje gång."
+        "Placera {{milk_chocolate_chips}} i {{eq:skal_1}}.",
+        "Värm i {{eq:mikro_1|def}} i 20 sekunder åt gången tills chokladen har smält. Rör om mellan varje gång."
       ],
       "duration": 3,
       "tags": [],
       "tips": [
         "Ta ut bakmixen från kylskåpet 30 min innan den ska användas.",
         "Smält chokladen i ett vattenbad om du inte har mikrovågsugn."
+      ],
+      "equipment": [
+        {
+          "type": "skal_liten",
+          "ref": "skal_1"
+        },
+        {
+          "type": "mikro",
+          "ref": "mikro_1"
+        }
       ]
     },
     {
@@ -96,6 +106,13 @@
       "duration": 3,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -125,10 +142,10 @@
         }
       ],
       "steps": [
-        "Blanda {{chocolate_cake_mix}}, {{spindelnats_brownie__melted_chocolate}} och {{spindelnats_brownie__chopped_hazelnuts}} i en stor skål.",
-        "Klä en bakform med bakplåtspapper. Häll i smeten och platta till med en slickepott.",
+        "Blanda {{chocolate_cake_mix}}, {{spindelnats_brownie__melted_chocolate}} och {{spindelnats_brownie__chopped_hazelnuts}} i {{eq:skal_2}}.",
+        "Klä {{eq:bakform_1}} med bakplåtspapper. Häll i smeten och platta till med en slickepott.",
         "Toppa med resterande {{milk_chocolate_chips}}.",
-        "Grädda i ugnen i 25–30 min."
+        "Grädda i {{eq:ugn|def}} i 25–30 min."
       ],
       "duration": 5,
       "wait": 30,
@@ -145,10 +162,13 @@
           "fanTemp": 170
         },
         {
-          "type": "skal_stor"
+          "type": "skal_stor",
+          "ref": "skal_2"
         },
         {
-          "type": "bakform"
+          "type": "bakform",
+          "ref": "bakform_1",
+          "liner": "bakplatspapper"
         }
       ]
     },
@@ -169,7 +189,7 @@
         }
       ],
       "steps": [
-        "Blanda {{powdered_sugar}} och {{water}} i en liten skål till en slät glasyr.",
+        "Blanda {{powdered_sugar}} och {{water}} i {{eq:skal_3}} till en slät glasyr.",
         "Häll glasyren i en plastpåse. Klipp ett litet hål i ena hörnet när det är dags att spritsa."
       ],
       "duration": 3,
@@ -178,6 +198,12 @@
       ],
       "tips": [
         "Glasyren kan göras medan brownien gräddas."
+      ],
+      "equipment": [
+        {
+          "type": "skal_liten",
+          "ref": "skal_3"
+        }
       ]
     },
     {
@@ -208,6 +234,13 @@
       ],
       "tips": [
         "Kakan ska vara sval innan du spritsar, annars rinner glasyren ut."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     }
   ]

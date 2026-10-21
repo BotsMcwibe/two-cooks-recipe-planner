@@ -27,7 +27,7 @@
       "outputName": "Förvärmd ugn (190°C)",
       "inputs": [],
       "steps": [
-        "Värm ugnen till 190°C, eller 170°C varmluft."
+        "Värm {{eq:ugn|def}} till 190°C, eller 170°C varmluft."
       ],
       "duration": 1,
       "wait": 10,
@@ -61,6 +61,13 @@
       "duration": 4,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -86,7 +93,7 @@
       ],
       "steps": [
         "Grovhacka {{almonds}}.",
-        "Blanda mandel, {{cinnamon}} och {{sugar}} i en liten skål."
+        "Blanda mandel, {{cinnamon}} och {{sugar}} i {{eq:skal_1}}."
       ],
       "duration": 3,
       "tags": [
@@ -94,6 +101,17 @@
       ],
       "tips": [
         "Mandeltoppningen kan göras medan kakan gräddas."
+      ],
+      "equipment": [
+        {
+          "type": "skal_liten",
+          "ref": "skal_1"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -113,9 +131,9 @@
         }
       ],
       "steps": [
-        "Häll {{sponge_cake_mix}} i en rund bakform (20–22 cm i diameter) med bakplåtspapper och platta till med en slickepott.",
+        "Häll {{sponge_cake_mix}} i en rund {{eq:bakform_1|noun}} (20–22 cm i diameter) med bakplåtspapper och platta till med en slickepott.",
         "Fördela {{appelkaka_mandlar__sliced_apple}} i ett lager ovanpå kakmix.",
-        "Baka i ugnen i ca 30 min (första fasen; toppas senare)."
+        "Baka i {{eq:ugn|def}} i ca 30 min (första fasen; toppas senare)."
       ],
       "duration": 5,
       "wait": 30,
@@ -129,7 +147,9 @@
           "fanTemp": 170
         },
         {
-          "type": "bakform"
+          "type": "bakform",
+          "ref": "bakform_1",
+          "liner": "bakplatspapper"
         }
       ]
     },

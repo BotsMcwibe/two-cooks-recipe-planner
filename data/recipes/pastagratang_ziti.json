@@ -31,7 +31,7 @@
       "outputName": "Förvärmd ugn (200°C)",
       "inputs": [],
       "steps": [
-        "Sätt ugnen på 200°C."
+        "Sätt {{eq:ugn|def}} på 200°C."
       ],
       "duration": 1,
       "wait": 10,
@@ -60,8 +60,8 @@
         }
       ],
       "steps": [
-        "Koka upp rikligt med vatten i en kastrull.",
-        "Koka {{pasta}} ca 2 minuter kortare än anvisningen på förpackningen, ca 8–10 min. Häll sedan av pastan i ett durkslag."
+        "Koka upp rikligt med vatten i {{eq:kastrull_1}}.",
+        "Koka {{pasta}} ca 2 minuter kortare än anvisningen på förpackningen, ca 8–10 min. Häll sedan av pastan i {{eq:durkslag_1}}."
       ],
       "duration": 2,
       "wait": 10,
@@ -74,7 +74,12 @@
       "equipment": [
         {
           "type": "kastrull_stor",
-          "sizeSource": "inferred"
+          "sizeSource": "inferred",
+          "ref": "kastrull_1"
+        },
+        {
+          "type": "durkslag",
+          "ref": "durkslag_1"
         }
       ]
     },
@@ -100,6 +105,13 @@
       "duration": 4,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -125,7 +137,7 @@
       ],
       "steps": [
         "Klipp upp korvskinnet på {{salsiccia}}.",
-        "Hetta upp {{oil}} i en stekpanna på medelhög värme och smula ner korvfärsen. Stek ca 2 minuter.",
+        "Hetta upp {{oil}} i {{eq:stekpanna_1}} på medelhög värme och smula ner korvfärsen. Stek ca 2 minuter.",
         "Tillsätt {{pastagratang_ziti__chopped_onion_garlic}} och stek ytterligare 2 minuter."
       ],
       "duration": 6,
@@ -133,9 +145,9 @@
       "heat": "medelhög",
       "equipment": [
         {
-          "type": "stekpanna_stor",
+          "type": "traktorpanna",
           "ref": "stekpanna_1",
-          "sizeSource": "inferred"
+          "typeSource": "inferred"
         }
       ]
     },
@@ -170,10 +182,10 @@
       "heat": "medellåg",
       "equipment": [
         {
-          "type": "stekpanna_stor",
+          "type": "traktorpanna",
           "ref": "stekpanna_1",
           "transition": "keep",
-          "sizeSource": "inferred"
+          "typeSource": "inferred"
         }
       ],
       "devNotes": [
@@ -200,6 +212,13 @@
       ],
       "devNotes": [
         "2 mozzarellakulor à 125 g."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -222,6 +241,13 @@
       ],
       "devNotes": [
         "1 dl grovhackad basilika motsvarar ca 1 kruka."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -263,7 +289,7 @@
       "steps": [
         "Smaka av {{pastagratang_ziti__tomato_sauce}} med {{salt}} och {{pepper}}.",
         "Blanda {{pastagratang_ziti__cooked_pasta}} med såsen.",
-        "Varva pastan, hälften av {{pastagratang_ziti__sliced_mozzarella}} och all {{pastagratang_ziti__chopped_basil}} i en ugnsform.",
+        "Varva pastan, hälften av {{pastagratang_ziti__sliced_mozzarella}} och all {{pastagratang_ziti__chopped_basil}} i {{eq:ugnsform_1}}.",
         "Toppa med resten av mozzarellan."
       ],
       "duration": 5,
@@ -288,7 +314,7 @@
         }
       ],
       "steps": [
-        "Tillaga {{pastagratang_ziti__assembled_gratin}} mitt i ugnen 20–25 minuter."
+        "Tillaga {{pastagratang_ziti__assembled_gratin}} mitt i {{eq:ugn|def}} 20–25 minuter."
       ],
       "duration": 1,
       "wait": 25,

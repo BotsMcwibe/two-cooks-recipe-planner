@@ -49,7 +49,7 @@
       "outputName": "Förvärmd ugn (240°C)",
       "inputs": [],
       "steps": [
-        "Värm ugnen till 240°C, eller 220°C varmluft."
+        "Värm {{eq:ugn|def}} till 240°C, eller 220°C varmluft."
       ],
       "duration": 1,
       "wait": 12,
@@ -100,6 +100,13 @@
       "duration": 8,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -129,9 +136,9 @@
         }
       ],
       "steps": [
-        "Lägg {{honungs_chiliglaserad_kyckling__cut_fries}} på en plåt med bakplåtspapper.",
+        "Lägg {{honungs_chiliglaserad_kyckling__cut_fries}} på {{eq:plat_1}} med bakplåtspapper.",
         "Blanda med {{olive_oil}}, {{salt}} och en nypa {{pepper}}.",
-        "Rosta i ugnen i ca 25 min, tills det återstår 10 min av totalt 25–35 min."
+        "Rosta i {{eq:ugn|def}} i ca 25 min, tills det återstår 10 min av totalt 25–35 min."
       ],
       "duration": 3,
       "wait": 25,
@@ -148,7 +155,9 @@
           "fanTemp": 220
         },
         {
-          "type": "plat"
+          "type": "plat",
+          "ref": "plat_1",
+          "liner": "bakplatspapper"
         }
       ],
       "devNotes": [
@@ -207,7 +216,7 @@
       ],
       "steps": [
         "Finhacka eller pressa {{garlic}}.",
-        "Blanda {{mayonnaise}}, {{sour_cream}}, vitlök, en nypa {{salt}} och {{pepper}} i en liten skål."
+        "Blanda {{mayonnaise}}, {{sour_cream}}, vitlök, en nypa {{salt}} och {{pepper}} i {{eq:skal_1}}."
       ],
       "duration": 4,
       "tags": [
@@ -215,6 +224,17 @@
       ],
       "devNotes": [
         "Ranches salt är en nypa i texten, inte saltet till sås (1 tsk), som går i glazen."
+      ],
+      "equipment": [
+        {
+          "type": "skal_liten",
+          "ref": "skal_1"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -240,7 +260,7 @@
       ],
       "steps": [
         "Skölj {{mixed_salad}}. Skär {{radish}} i tunna skivor.",
-        "Blanda rädisor, salladsmix och {{salt}} i en stor skål."
+        "Blanda rädisor, salladsmix och {{salt}} i {{eq:skal_2}}."
       ],
       "duration": 4,
       "tags": [
@@ -248,7 +268,13 @@
       ],
       "equipment": [
         {
-          "type": "skal_stor"
+          "type": "skal_stor",
+          "ref": "skal_2"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
         }
       ],
       "devNotes": [
@@ -292,7 +318,7 @@
         }
       ],
       "steps": [
-        "Smält {{butter}} i en medelstor kastrull på medelvärme när det återstår 10 min av rotfrukternas tid i ugnen.",
+        "Smält {{butter}} i {{eq:kastrull_1}} på medelvärme när det återstår 10 min av rotfrukternas tid i {{eq:ugn|def}}.",
         "Tillsätt {{chili_flakes}}, {{honey}}, {{ketchup}}, {{water}} och {{salt}}. Vispa tills glazen är slät."
       ],
       "duration": 3,
@@ -304,7 +330,8 @@
       "heat": "medel",
       "equipment": [
         {
-          "type": "kastrull_medelstor"
+          "type": "kastrull_medelstor",
+          "ref": "kastrull_1"
         }
       ],
       "devNotes": [
@@ -340,7 +367,7 @@
         }
       ],
       "steps": [
-        "Hetta upp {{olive_oil}} i en stor stekpanna på medelhög värme.",
+        "Hetta upp {{olive_oil}} i {{eq:stekpanna_1}} på medelhög värme.",
         "Tillsätt {{chicken_inner_fillet}} och krydda med en nypa {{salt}}. Stek i 3 min per sida, eller tills den är brynt och genomstekt.",
         "Vänd kycklingen i hälften av {{honungs_chiliglaserad_kyckling__chili_glaze}} precis innan servering."
       ],
@@ -353,7 +380,8 @@
       "heat": "medelhög",
       "equipment": [
         {
-          "type": "stekpanna_stor"
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1"
         }
       ],
       "devNotes": [
@@ -392,12 +420,19 @@
         }
       ],
       "steps": [
-        "Lägg upp {{honungs_chiliglaserad_kyckling__glazed_chicken}}, {{honungs_chiliglaserad_kyckling__roasted_fries}} och {{honungs_chiliglaserad_kyckling__radish_salad}} på tallrikar.",
+        "Lägg upp {{honungs_chiliglaserad_kyckling__glazed_chicken}}, {{honungs_chiliglaserad_kyckling__roasted_fries}} och {{honungs_chiliglaserad_kyckling__radish_salad}} på {{eq:servering|pl}}.",
         "Toppa kycklingen med resterande {{honungs_chiliglaserad_kyckling__chili_glaze}} och servera med {{honungs_chiliglaserad_kyckling__ranch_sauce}}."
       ],
       "duration": 3,
       "tags": [
         "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_tallrik",
+          "ref": "servering",
+          "count": "portions"
+        }
       ]
     }
   ]

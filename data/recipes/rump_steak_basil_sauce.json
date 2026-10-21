@@ -59,7 +59,7 @@
         }
       ],
       "steps": [
-        "Lägg {{rump_steak}}, {{soy_sauce}} och {{pepper}} i en medelstor skål.",
+        "Lägg {{rump_steak}}, {{soy_sauce}} och {{pepper}} i {{eq:skal_1}}.",
         "Vänd så köttet täcks och ställ åt sidan för att marinera."
       ],
       "duration": 2,
@@ -68,7 +68,8 @@
       ],
       "equipment": [
         {
-          "type": "skal_medelstor"
+          "type": "skal_medelstor",
+          "ref": "skal_1"
         }
       ]
     },
@@ -95,6 +96,13 @@
       "duration": 6,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -134,9 +142,9 @@
         }
       ],
       "steps": [
-        "Koka upp en stor kastrull med saltat {{water}}.",
+        "Koka upp {{eq:kastrull_1}} med saltat {{water}}.",
         "Koka {{rump_steak_basil_sauce__diced_potato}} i 11–13 min, eller tills de enkelt kan delas med en kniv.",
-        "Häll av vattnet och mosa potatis och vitlök tillsammans med {{milk}}, {{grated_cheese}}, {{salt}} och {{pepper}} i kastrullen.",
+        "Häll av vattnet och mosa potatis och vitlök tillsammans med {{milk}}, {{grated_cheese}}, {{salt}} och {{pepper}} i {{eq:kastrull_1|def}}.",
         "Ställ åt sidan under lock."
       ],
       "duration": 3,
@@ -149,7 +157,9 @@
       "heatSource": "inferred",
       "equipment": [
         {
-          "type": "kastrull_stor"
+          "type": "kastrull_stor",
+          "ref": "kastrull_1",
+          "lid": true
         }
       ]
     },
@@ -170,6 +180,13 @@
       "duration": 2,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -189,6 +206,13 @@
       "duration": 2,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -219,12 +243,23 @@
       ],
       "steps": [
         "Skär {{shallot}} i tunna skivor.",
-        "Pressa saften från {{lemon}} i en liten skål och rör i {{sugar}} och {{salt}}.",
+        "Pressa saften från {{lemon}} i {{eq:skal_2}} och rör i {{sugar}} och {{salt}}.",
         "Vänd schalottenlöken i lagen och ställ åt sidan."
       ],
       "duration": 4,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skal_liten",
+          "ref": "skal_2"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -255,7 +290,7 @@
       ],
       "steps": [
         "Skölj {{mixed_salad}}.",
-        "Blanda {{rump_steak_basil_sauce__halved_tomatoes}}, salladsmixen, {{salt}} och {{pepper}} i en medelstor skål.",
+        "Blanda {{rump_steak_basil_sauce__halved_tomatoes}}, salladsmixen, {{salt}} och {{pepper}} i {{eq:skal_3}}.",
         "Ställ åt sidan."
       ],
       "duration": 2,
@@ -264,7 +299,8 @@
       ],
       "equipment": [
         {
-          "type": "skal_medelstor"
+          "type": "skal_medelstor",
+          "ref": "skal_3"
         }
       ]
     },
@@ -280,7 +316,7 @@
         }
       ],
       "steps": [
-        "Hetta upp en stor stekpanna på medelhög värme.",
+        "Hetta upp {{eq:stekpanna_1}} på medelhög värme.",
         "Rosta {{pine_nuts}} i 3–4 min, eller tills gyllene.",
         "Ställ åt sidan i en liten skål."
       ],
@@ -290,8 +326,9 @@
       "heat": "medelhög",
       "equipment": [
         {
-          "type": "stekpanna_stor",
-          "ref": "stekpanna_1"
+          "type": "traktorpanna",
+          "ref": "stekpanna_1",
+          "typeSource": "inferred"
         }
       ]
     },
@@ -312,8 +349,8 @@
         }
       ],
       "steps": [
-        "Hetta upp {{olive_oil}} i samma stekpanna på medelhög värme.",
-        "Stek {{rump_steak_basil_sauce__marinated_steak}} (spara sojasåsen i skålen) i 3–4 min per sida, eller tills brynt."
+        "Hetta upp {{olive_oil}} i samma {{eq:stekpanna_1|noun}} på medelhög värme.",
+        "Stek {{rump_steak_basil_sauce__marinated_steak}} (spara sojasåsen i {{eq:skal_1|def}}) i 3–4 min per sida, eller tills brynt."
       ],
       "duration": 8,
       "tags": [],
@@ -325,10 +362,11 @@
       "heat": "medelhög",
       "equipment": [
         {
-          "type": "stekpanna_stor",
+          "type": "traktorpanna",
           "ref": "stekpanna_1",
           "transition": "keep",
-          "after": "rump_steak_basil_sauce__roasted_pine_nuts"
+          "after": "rump_steak_basil_sauce__roasted_pine_nuts",
+          "typeSource": "inferred"
         }
       ]
     },
@@ -364,8 +402,8 @@
         }
       ],
       "steps": [
-        "Hetta upp samma stekpanna (med sky) på medelvärme.",
-        "Rör i resterande {{soy_sauce}} (från skålen och foliepaketet), {{creme_fraiche}}, {{sugar}} och {{rump_steak_basil_sauce__chopped_basil}}.",
+        "Hetta upp samma {{eq:stekpanna_1|noun}} (med sky) på medelvärme.",
+        "Rör i resterande {{soy_sauce}} (från {{eq:skal_1|def}} och foliepaketet), {{creme_fraiche}}, {{sugar}} och {{rump_steak_basil_sauce__chopped_basil}}.",
         "Sjud i 1–2 min, tills såsen lätt tjocknat.",
         "Smaka av med salt och peppar och ta av från värme.",
         "Behåll den vilade steken från {{rump_steak_basil_sauce__fried_steak}} redo för uppläggning."
@@ -376,9 +414,10 @@
       "heat": "medel",
       "equipment": [
         {
-          "type": "stekpanna_stor",
+          "type": "traktorpanna",
           "ref": "stekpanna_1",
-          "transition": "keep"
+          "transition": "keep",
+          "typeSource": "inferred"
         }
       ]
     },
@@ -415,7 +454,7 @@
       ],
       "steps": [
         "Häll av lagen från {{rump_steak_basil_sauce__pickled_shallot}} och vänd ner den i {{rump_steak_basil_sauce__tomato_salad}} precis innan servering.",
-        "Lägg upp {{rump_steak_basil_sauce__basil_sauce}} och {{rump_steak_basil_sauce__garlic_cheese_mash}} på tallrikar.",
+        "Lägg upp {{rump_steak_basil_sauce__basil_sauce}} och {{rump_steak_basil_sauce__garlic_cheese_mash}} på {{eq:servering|pl}}.",
         "Skeda basilikasåsen över köttet.",
         "Servera med tomatsalladen toppad med {{rump_steak_basil_sauce__roasted_pine_nuts}}."
       ],
@@ -423,7 +462,14 @@
       "tags": [
         "master"
       ],
-      "wait": 0
+      "wait": 0,
+      "serving": [
+        {
+          "type": "servering_tallrik",
+          "ref": "servering",
+          "count": "portions"
+        }
+      ]
     }
   ]
 }

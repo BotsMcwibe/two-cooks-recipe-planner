@@ -25,9 +25,19 @@
  *   - Resource nodes (tag "resource", e.g. preheated ovens) are NOT ingredients: never inputs,
  *     never part of the sum-to-1 rule (check-derived-usage.mjs), referenced only via equipment.after.
  *
+ *   - more entry fields: count (identical items, e.g. 2 plåtar), liner ("bakplatspapper" on plåt/form), lid (vessel
+ *       covered), optional (kavel/kötthammare/vattenkokare: nice to have), separate + rawKinds (skärbräda reserved for raw
+ *       animal food, rawKinds from ingredients.json rawAnimal), inferred (entry added by inference, text does not name it)
+ *   - master node `serving`: [{ type (kind "serving"), ref, count: n | "portions" }] — plating dishes, never in node.equipment
+ *   - step placeholders {{eq:<key>|<form>}} (SCHEMA.md "Equipment placeholders"): key = an equipment/serving `ref` of this
+ *       recipe, a `type` used once in this node, or "ugn"; form = indef | bare | noun | def | pl | pldef (default indef)
+ *   - cutting boards: an entry with rawKinds/separate marks a raw-animal use; a later use of the same board ref for other
+ *       food needs transition "wash"
+ *
  * Errors: oven-use, eq-unknown-type, eq-bad-field, eq-after-dangling, eq-ref-type, eq-overlap, eq-held,
- *         oven-slots, oven-temp, oven-no-resource, heat-invalid, heat-no-stovetop
- * Warnings: pan-too-small, stovetop-no-heat, reuse-transition, burners
+ *         oven-slots, oven-temp, oven-no-resource, heat-invalid, heat-no-stovetop, eq-serving, eq-placeholder, board-raw-reuse
+ * Warnings: pan-too-small, stovetop-no-heat, reuse-transition, burners, eq-unlinked, board-raw-no-separate, stekpanna-liquid
+ *   stekpanna-liquid: ≥ 3 dl liquid simmered/boiled in a stekpanna → suggest traktorpanna (deep, lid, ~4 l)
  *
  * Timing for oven/burner concurrency uses an as-soon-as-possible schedule over inputs + equipment.after
  * (end = start + duration + wait). Add `after` on the equipment entry to serialise two oven loads.
@@ -49,9 +59,33 @@ export const TRANSITIONS = ['fresh', 'keep', 'wipe', 'wash'];
 export const DEFAULT_KITCHEN = { ovenTrays: 2, ovenFan: false };
 export const MAX_BURNERS = 4;
 export const ERROR_TYPES = ['eq-unknown-type', 'eq-bad-field', 'eq-after-dangling', 'eq-ref-type', 'eq-overlap', 'eq-held',
-  'oven-slots', 'oven-temp', 'oven-no-resource', 'oven-use', 'heat-invalid', 'heat-no-stovetop'];
-export const WARNING_TYPES = ['pan-too-small', 'stovetop-no-heat', 'reuse-transition', 'burners'];
-const FIELDS = new Set(['type', 'ref', 'after', 'transition', 'sizeSource', 'hold', 'shared', 'lid', 'mode', 'temp', 'note', 'offHeat', 'slots', 'fanTemp', 'fanTempSource']);
+  'oven-slots', 'oven-temp', 'oven-no-resource', 'oven-use', 'heat-invalid', 'heat-no-stovetop', 'eq-serving', 'eq-placeholder', 'board-raw-reuse'];
+export const WARNING_TYPES = ['pan-too-small', 'stovetop-no-heat', 'reuse-transition', 'burners', 'eq-unlinked', 'board-raw-no-separate', 'stekpanna-liquid'];
+// Liquids that make a sauce/stew in the pan (stekpanna-liquid). Bouillon cubes count via the water they come with.
+const LIQUID_IDS = new Set(['cooking_cream', 'whipping_cream', 'creme_fraiche', 'sour_cream', 'canned_tomatoes', 'passata', 'coconut_milk', 'milk', 'water', 'red_wine_sauce', 'mornay_sauce']);
+const SIMMER_RE = /sjud|puttra|koka|reducera|under lock/i;
+const FIELDS = new Set(['type', 'ref', 'after', 'transition', 'sizeSource', 'hold', 'shared', 'lid', 'mode', 'temp', 'note', 'offHeat', 'slots', 'fanTemp', 'fanTempSource',
+  'count', 'liner', 'optional', 'separate', 'rawKinds', 'inferred', 'typeSource']);
+const SERVING_FIELDS = new Set(['type', 'ref', 'count']);
+export const EQ_FORMS = ['indef', 'bare', 'noun', 'def', 'pl', 'pldef'];
+export const RAW_KINDS = ['poultry', 'meat', 'fish', 'shellfish'];
+const MIX_RE = /\b(blanda|vispa|rör|vänd|mosa|marinera|knåda|massera|panera|toppa|ringla)\b/i;
+const EQ_RE = /\{\{eq:([^}|]+)(?:\|([^}]*))?\}\}/g;
+const CUT_RE = /\b(fin|grov)?hacka\b|\bskär\b|\bskiva\b|\bstrimla\b|\btärna\b|\bhalvera\b|\bdela\b|\bklyfta\b|\bkvarta\b|\bbanka\b|\bsnitt\b|\bfiléa\b|\bkapa\b/i;
+const RAW_WORD_RE = /\b(kyckling\w*|kött\w*|fläsk\w*|lax\w*|fisk\w*|räk\w*|bacon\w*|färs\w*|filé\w*|medaljong\w*|biff\w*|torsk\w*|kolja\w*|sej\w*)\b/i;
+// Words that name equipment; found outside a placeholder they give eq-unlinked. Built from equipment.json forms + extras.
+const EXTRA_WORDS = ['panna', 'pannan', 'bakplåt', 'bakplåten', 'ugnsplåt', 'salladsskål', 'salladsskålen', 'bunke', 'bunken', 'långpanna', 'långpannan',
+  'form', 'formen', 'stekgryta', 'stekgrytan', 'gratängform', 'gratängformen', 'sauteuse', 'kakform', 'brödform', 'wokpanna', 'wokpannan', 'ugnsgaller'];
+let wordRe = null;
+function equipmentWordRe(types) {
+  if (wordRe) return wordRe;
+  const ws = new Set(EXTRA_WORDS);
+  for (const t of Object.values(types)) for (const [k, f] of Object.entries(t.forms || {})) if (k !== 'indef' && k !== 'bare' && k !== 'pl') { if (!/\s/.test(f)) ws.add(f); }
+  for (const t of Object.values(types)) for (const f of [t.forms?.pl, t.forms?.bare]) if (f) ws.add(f.split(' ').pop());
+  ws.delete('glas'); ws.delete('glaset');
+  wordRe = new RegExp(`(?<![\\wåäö])(${[...ws].sort((a, b) => b.length - a.length).join('|')})(?![\\wåäö])`, 'i');
+  return wordRe;
+}
 
 // Rough volume model (ml). 1 g ≈ 1 ml; pieces use a typical weight.
 const UNIT_ML = { g: 1, kg: 1000, ml: 1, dl: 100, l: 1000, msk: 15, tsk: 5, krm: 1, skvätt: 10, nypa: 0, klick: 15,
@@ -82,7 +116,7 @@ export const afterList = e => (e.after == null ? [] : Array.isArray(e.after) ? e
 export const isResource = n => (n.tags || []).includes('resource');
 
 function checkRecipe(mid, data, ctx) {
-  const { equipment, prepPacks, kitchen } = ctx;
+  const { equipment, prepPacks, kitchen, ingredients = {} } = ctx;
   const OVEN_SLOTS = kitchen.ovenTrays;
   const types = equipment.types;
   const problems = [];
@@ -140,6 +174,20 @@ function checkRecipe(mid, data, ctx) {
     volMemo.set(id, v); return v;
   };
 
+  // Liquid (ml) added to a node: base liquids + liquid in cold derived inputs (a sauce mixed in a bowl)
+  const liquidMl = id => {
+    const n = byId.get(id); let v = 0;
+    for (const i of n.inputs || []) {
+      if (LIQUID_IDS.has(i.id) && i.unit !== 'st') v += (UNIT_ML[i.unit] || 0) * (i.amount || 0);
+      else if (byId.has(i.id)) {
+        const d = byId.get(i.id);
+        if (isResource(d) || (d.equipment || []).some(e => (types[e.type] || {}).kind === 'stovetop')) continue;
+        v += liquidMl(i.id) * (i.amount || 0);
+      }
+    }
+    return v;
+  };
+
   const refs = new Map(); // ref -> [{node, entry}]
   const ovenUsers = [];
   const stoveUsers = [];
@@ -151,6 +199,12 @@ function checkRecipe(mid, data, ctx) {
       for (const k of Object.keys(e)) if (!FIELDS.has(k)) add('error', 'eq-bad-field', n.id, `equipment field "${k}" is not allowed`);
       const t = types[e.type];
       if (!t) { add('error', 'eq-unknown-type', n.id, `equipment type "${e.type}" is not in equipment.json`); continue; }
+      if (t.kind === 'serving') add('error', 'eq-serving', n.id, `${e.type} is a serving dish; put it in the master node's serving list, not equipment`);
+      if ('count' in e && !(Number.isInteger(e.count) && e.count >= 1)) add('error', 'eq-bad-field', n.id, `count must be an integer ≥ 1`);
+      if ('liner' in e && (e.liner !== 'bakplatspapper' || !['ovenware'].includes(t.kind))) add('error', 'eq-bad-field', n.id, `liner "${e.liner}" (only "bakplatspapper" on ovenware)`);
+      if (('separate' in e || 'rawKinds' in e) && e.type !== 'skarbrada') add('error', 'eq-bad-field', n.id, 'separate/rawKinds only on skarbrada');
+      if (e.rawKinds && !(Array.isArray(e.rawKinds) && e.rawKinds.every(k => RAW_KINDS.includes(k)))) add('error', 'eq-bad-field', n.id, `rawKinds must be a subset of ${RAW_KINDS.join(', ')}`);
+      for (const f of ['optional', 'separate', 'inferred', 'lid']) if (f in e && e[f] !== true) add('error', 'eq-bad-field', n.id, `${f} must be true or absent`);
       if (e.transition && !TRANSITIONS.includes(e.transition)) add('error', 'eq-bad-field', n.id, `transition "${e.transition}" (allowed: ${TRANSITIONS.join(', ')})`);
       for (const a of afterList(e)) if (!byId.has(a)) add('error', 'eq-after-dangling', n.id, `equipment.after "${a}" is not a node in this recipe or its sharedPrep`);
       if (t.kind === 'stovetop') stovetop = e;
@@ -170,7 +224,12 @@ function checkRecipe(mid, data, ctx) {
     if (stovetop) {
       stoveUsers.push(n.id);
       const t = types[stovetop.type], v = vol(n.id);
-      if (t.capacityL && v > t.capacityL * 1000 * 1.1) add('warning', 'pan-too-small', n.id, `≈${(v / 1000).toFixed(1)} l of contents in ${stovetop.type} (${t.capacityL} l)`);
+      const deeper = stovetop.type.startsWith('stekpanna') && types.traktorpanna ? `; consider traktorpanna (${types.traktorpanna.capacityL} l)` : '';
+      if (t.capacityL && v > t.capacityL * 1000 * 1.1) add('warning', 'pan-too-small', n.id, `≈${(v / 1000).toFixed(1)} l of contents in ${stovetop.type} (${t.capacityL} l)${deeper}`);
+      if (stovetop.type.startsWith('stekpanna') && !stovetop.offHeat && SIMMER_RE.test((n.steps || []).join(' '))) {
+        const liq = liquidMl(n.id);
+        if (liq >= 300) add('warning', 'stekpanna-liquid', n.id, `≈${(liq / 100).toFixed(1)} dl liquid simmered in ${stovetop.type}; use traktorpanna (deep, with lid) unless the raw says stekpanna`);
+      }
     }
     for (const e of eq) {
       const t = types[e.type];
@@ -225,6 +284,69 @@ function checkRecipe(mid, data, ctx) {
     });
   }
 
+  // serving list (master node only)
+  for (const n of local) {
+    if (!n.serving) continue;
+    if (n.id !== mid) add('error', 'eq-serving', n.id, 'serving is only allowed on the master node');
+    for (const e of n.serving) {
+      for (const k of Object.keys(e)) if (!SERVING_FIELDS.has(k)) add('error', 'eq-serving', n.id, `serving field "${k}" is not allowed`);
+      const t = types[e.type];
+      if (!t || t.kind !== 'serving') add('error', 'eq-serving', n.id, `serving type "${e.type}" must be an equipment.json type with kind "serving"`);
+      if (!(e.count === 'portions' || (Number.isInteger(e.count) && e.count >= 1))) add('error', 'eq-serving', n.id, 'serving count must be "portions" or an integer ≥ 1');
+      if (e.ref) { if (!refs.has(e.ref)) refs.set(e.ref, []); }
+    }
+  }
+
+  // {{eq:key|form}} placeholders and unlinked equipment words
+  const allRefs = new Set();
+  for (const n of local) for (const e of [...(n.equipment || []), ...(n.serving || [])]) if (e.ref) allRefs.add(e.ref);
+  checkPlaceholders(local, allRefs, types, (lvl, type, node, msg) => add(lvl, type, node, msg));
+
+  // cutting boards: raw animal food
+  const rawKindsOf = id => (ingredients[id] && ingredients[id].rawAnimal) || null;
+  const cooksIn = n => n.heat != null || (n.equipment || []).some(e => ['stovetop', 'oven'].includes((types[e.type] || {}).kind));
+  const rawMemo = new Map();
+  const handles = id => {
+    const n = byId.get(id); const k = new Set();
+    for (const i of n.inputs || []) {
+      if (rawKindsOf(i.id)) k.add(rawKindsOf(i.id));
+      else if (byId.has(i.id)) for (const x of rawOut(i.id)) k.add(x);
+    }
+    return k;
+  };
+  const rawOut = id => {
+    if (rawMemo.has(id)) return rawMemo.get(id);
+    rawMemo.set(id, new Set());
+    const n = byId.get(id); const k = (cooksIn(n) || isResource(n)) ? new Set() : handles(id);
+    rawMemo.set(id, k); return k;
+  };
+  const boardUsers = new Map();
+  for (const n of local) {
+    if (isResource(n)) continue;
+    const kinds = handles(n.id);
+    const boards = (n.equipment || []).filter(e => e.type === 'skarbrada');
+    for (const b of boards) if (b.ref) { if (!boardUsers.has(b.ref)) boardUsers.set(b.ref, []); boardUsers.get(b.ref).push({ node: n.id, entry: b }); }
+    if (!kinds.size) continue;
+    const rawIds = (n.inputs || []).map(i => i.id).filter(id => rawKindsOf(id) || (byId.has(id) && rawOut(id).size));
+    let rawCut = false;
+    for (const st of n.steps || []) for (const sent of st.split(/(?<=[.!?])\s+/)) {
+      if (!CUT_RE.test(sent)) continue;
+      const plain = sent.replace(/\{\{[^}]+\}\}/g, ' ');
+      if (rawIds.some(r => sent.includes(`{{${r}}}`)) || RAW_WORD_RE.test(plain) || /\bbanka\b/i.test(sent)) rawCut = true;
+    }
+    if (rawCut && !boards.some(b => b.separate)) add('warning', 'board-raw-no-separate', n.id, `cuts raw ${[...kinds].join('/')} but has no separate skärbräda (separate: true)`);
+  }
+  for (const [ref, users] of boardUsers) {
+    const seq = [...users].sort((x, y) => (anc(y.node).has(x.node) ? -1 : anc(x.node).has(y.node) ? 1 : start(x.node) - start(y.node)));
+    let dirty = null;
+    for (const u of seq) {
+      const raw = Boolean(u.entry.separate || (u.entry.rawKinds && u.entry.rawKinds.length));
+      if (u.entry.transition === 'wash') dirty = null;
+      if (!raw && dirty) add('error', 'board-raw-reuse', u.node, `skärbräda "${ref}" was used for raw food in ${dirty} and is reused here without transition "wash"`);
+      if (raw) dirty = u.node;
+    }
+  }
+
   // oven concurrency (ASAP)
   const events = ovenUsers.map(o => ({ ...o, s: start(o.id), e: end(o.id) })).filter(o => o.e > o.s);
   for (const o of events) {
@@ -242,18 +364,47 @@ function checkRecipe(mid, data, ctx) {
   return problems;
 }
 
+/** Every {{eq:key|form}} must resolve; equipment words outside placeholders give eq-unlinked. */
+function checkPlaceholders(nodes, allRefs, types, add) {
+  const re = equipmentWordRe(types);
+  for (const n of nodes) {
+    const own = [...(n.equipment || []), ...(n.serving || [])];
+    const typeCount = {};
+    for (const e of own) typeCount[e.type] = (typeCount[e.type] || 0) + 1;
+    for (const st of n.steps || []) {
+      for (const m of st.matchAll(EQ_RE)) {
+        const key = m[1].trim(); const form = (m[2] || 'indef').trim();
+        if (!EQ_FORMS.includes(form)) add('error', 'eq-placeholder', n.id, `{{eq:${m[1]}|${m[2]}}}: unknown form "${form}" (allowed: ${EQ_FORMS.join(', ')})`);
+        const ok = key === 'ugn' || own.some(e => e.ref === key) || typeCount[key] === 1 || allRefs.has(key);
+        if (!ok) add('error', 'eq-placeholder', n.id, `{{eq:${key}}} does not resolve to an equipment/serving ref of this recipe, a type used once in this node, or "ugn"`);
+      }
+      const plain = st.replace(/\{\{[^}]+\}\}/g, ' ');
+      let w = plain.match(re);
+      // approved rule: a small skål that only holds something set aside is not tracked (no {{eq:}} needed)
+      if (w && /^sk[åa]l/i.test(w[1]) && !MIX_RE.test((n.steps || []).join(' ')) && /lägg (över )?i|ställ åt sidan|håll/i.test(plain)) w = null;
+      if (w) add('warning', 'eq-unlinked', n.id, `equipment word "${w[1]}" is not linked as {{eq:…}}: "${plain.trim().slice(0, 90)}"`);
+    }
+  }
+}
+
 export function checkEquipment(loaded, ids, kitchenOverride) {
   const base = loaded || loadAll();
   const equipment = base.equipment || readJSON(join(DATA, 'equipment.json'));
   const kitchen = { ...DEFAULT_KITCHEN, ...(equipment.defaultKitchen || {}), ...(kitchenOverride || {}) };
   delete kitchen._doc;
-  const ctx = { equipment, prepPacks: base.prepPacks, kitchen };
+  const ingredients = base.ingredients && base.ingredients.ingredients ? base.ingredients.ingredients : (base.ingredients || {});
+  const ctx = { equipment, prepPacks: base.prepPacks, kitchen, ingredients };
   const targets = ids && ids.length ? ids : Object.keys(base.masters).sort();
   const byRecipe = {};
   for (const mid of targets) byRecipe[mid] = checkRecipe(mid, base.masters[mid], ctx);
   // shared prep resource nodes must carry oven info
   for (const [pid, pack] of Object.entries(base.prepPacks)) for (const n of pack.nodes || [])
     if (isResource(n) && n.id.includes('oven') && !n.oven) (byRecipe[`prep/${pid}`] ||= []).push({ recipe: `prep/${pid}`, level: 'error', type: 'eq-bad-field', node: n.id, message: 'resource oven node lacks `oven: {temp}`' });
+  // shared prep packs: placeholders resolve inside the pack
+  for (const [pid, pack] of Object.entries(base.prepPacks)) {
+    const refs = new Set((pack.nodes || []).flatMap(n => (n.equipment || []).map(e => e.ref).filter(Boolean)));
+    checkPlaceholders(pack.nodes || [], refs, equipment.types, (level, type, node, message) => (byRecipe[`prep/${pid}`] ||= []).push({ recipe: `prep/${pid}`, level, type, node, message }));
+  }
   const problems = Object.values(byRecipe).flat();
   const count = (lvl, ts) => Object.fromEntries(ts.map(t => [t, problems.filter(p => p.level === lvl && p.type === t).length]));
   const summary = { kitchen, recipesChecked: targets.length, errors: problems.filter(p => p.level === 'error').length,

@@ -55,7 +55,7 @@
         }
       ],
       "steps": [
-        "Koka upp en kastrull med saltat vatten.",
+        "Koka upp {{eq:kastrull_1}} med saltat vatten.",
         "Koka {{udon_noodles}} i 4–6 min, tills mjuka."
       ],
       "duration": 4,
@@ -69,7 +69,8 @@
       "equipment": [
         {
           "type": "kastrull_medelstor",
-          "sizeSource": "inferred"
+          "sizeSource": "inferred",
+          "ref": "kastrull_1"
         }
       ]
     },
@@ -107,6 +108,13 @@
       "duration": 3,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -126,6 +134,13 @@
       "duration": 2,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -145,6 +160,13 @@
       "duration": 2,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -209,7 +231,7 @@
         }
       ],
       "steps": [
-        "Hetta upp {{olive_oil}} i en stekpanna på medelhög värme. Stek {{rakor_i_sotsur_sas__sliced_onion}} och {{wok_mix}} i 3–4 min, tills något mjuk.",
+        "Hetta upp {{olive_oil}} i {{eq:stekpanna_1}} på medelhög värme. Stek {{rakor_i_sotsur_sas__sliced_onion}} och {{wok_mix}} i 3–4 min, tills något mjuk.",
         "Tillsätt {{shrimp}} och {{salt}} och stek i 3–4 min, tills genomstekta.",
         "Rör ner {{rakor_i_sotsur_sas__minced_garlic}}, {{soy_sauce}}, {{white_wine_vinegar}}, {{chili_flakes}}, {{sweet_chili_sauce}} och {{rakor_i_sotsur_sas__drained_udon}} och sjud i 1–2 min, tills tjocknat."
       ],
@@ -224,7 +246,8 @@
       "equipment": [
         {
           "type": "stekpanna_stor",
-          "sizeSource": "inferred"
+          "sizeSource": "inferred",
+          "ref": "stekpanna_1"
         }
       ]
     },
@@ -255,12 +278,19 @@
         }
       ],
       "steps": [
-        "Lägg upp {{rakor_i_sotsur_sas__sweet_sour_shrimp}} i skålar.",
+        "Lägg upp {{rakor_i_sotsur_sas__sweet_sour_shrimp}} i {{eq:servering|pl}}.",
         "Toppa med {{salted_peanuts}}, {{sesame_seeds}} och {{rakor_i_sotsur_sas__sliced_spring_onion}}."
       ],
       "duration": 3,
       "tags": [
         "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_skal",
+          "ref": "servering",
+          "count": "portions"
+        }
       ]
     }
   ]

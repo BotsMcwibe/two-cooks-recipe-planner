@@ -43,7 +43,7 @@
       "outputName": "Förvärmd ugn (240°C)",
       "inputs": [],
       "steps": [
-        "Värm ugnen till 240 °C, eller 220 °C varmluft."
+        "Värm {{eq:ugn|def}} till 240 °C, eller 220 °C varmluft."
       ],
       "duration": 1,
       "wait": 12,
@@ -76,6 +76,13 @@
       "duration": 8,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -110,9 +117,9 @@
         }
       ],
       "steps": [
-        "Placera {{beef_kofta_greek_salad__cut_fries}} på en plåt med bakplåtspapper.",
+        "Placera {{beef_kofta_greek_salad__cut_fries}} på {{eq:plat_1}} med bakplåtspapper.",
         "Blanda med {{olive_oil}}, {{buon_appetito}}, {{salt}} och en nypa {{pepper}}.",
-        "Rosta i ugnen i 25–35 min, eller tills gyllene och mjuka."
+        "Rosta i {{eq:ugn|def}} i 25–35 min, eller tills gyllene och mjuka."
       ],
       "duration": 3,
       "wait": 30,
@@ -126,7 +133,9 @@
           "fanTemp": 220
         },
         {
-          "type": "plat"
+          "type": "plat",
+          "ref": "plat_1",
+          "liner": "bakplatspapper"
         }
       ]
     },
@@ -169,11 +178,22 @@
       "steps": [
         "Finhacka {{dill}} och finhacka eller pressa {{garlic}}.",
         "Riv {{cucumber}} grovt och pressa ur så mycket vätska som möjligt i en ren handduk.",
-        "Blanda gurka, vitlök, {{yoghurt}}, dill, {{salt}} och en nypa {{pepper}} i en medelstor skål. Ställ åt sidan."
+        "Blanda gurka, vitlök, {{yoghurt}}, dill, {{salt}} och en nypa {{pepper}} i {{eq:skal_1}}. Ställ åt sidan."
       ],
       "duration": 10,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skal_medelstor",
+          "ref": "skal_1"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -205,6 +225,13 @@
       "duration": 7,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -240,11 +267,17 @@
       ],
       "steps": [
         "Smula {{feta_cheese}}.",
-        "Blanda {{beef_kofta_greek_salad__cut_salad_vegetables}} (sallad, körsbärstomater och rädisor), fetaost, {{olive_oil}}, {{salt}} och en nypa {{pepper}} i en medelstor skål. Ställ åt sidan."
+        "Blanda {{beef_kofta_greek_salad__cut_salad_vegetables}} (sallad, körsbärstomater och rädisor), fetaost, {{olive_oil}}, {{salt}} och en nypa {{pepper}} i {{eq:skal_2}}. Ställ åt sidan."
       ],
       "duration": 3,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skal_medelstor",
+          "ref": "skal_2"
+        }
       ]
     },
     {
@@ -289,9 +322,9 @@
         }
       ],
       "steps": [
-        "Blanda {{ground_beef}}, {{panamat_spice}}, {{breadcrumbs}}, {{egg}}, {{salt}} och en nypa {{pepper}} i en stor skål.",
+        "Blanda {{ground_beef}}, {{panamat_spice}}, {{breadcrumbs}}, {{egg}}, {{salt}} och en nypa {{pepper}} i {{eq:skal_3}}.",
         "Forma färsen till 8 cm långa koftas med fuktiga händer (4 per person).",
-        "Hetta upp {{olive_oil}} i en stor stekpanna på medelhög värme.",
+        "Hetta upp {{olive_oil}} i {{eq:stekpanna_1}} på medelhög värme.",
         "Stek koftas, vänd dem regelbundet, i 2–3 min, eller tills brynta. Sänk till medelvärme och stek i ytterligare 6–7 min, eller tills genomstekta."
       ],
       "duration": 15,
@@ -306,10 +339,12 @@
       },
       "equipment": [
         {
-          "type": "skal_stor"
+          "type": "skal_stor",
+          "ref": "skal_3"
         },
         {
-          "type": "stekpanna_stor"
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1"
         }
       ]
     },
@@ -341,9 +376,9 @@
       ],
       "steps": [
         "Finhacka bladen från {{mint}}.",
-        "Blanda mynta, {{olive_oil}} och {{salt}} i en liten skål.",
-        "Placera {{flatbread}} på en plåt med bakplåtspapper och bre med myntaolja.",
-        "Värm i ugnen i 2–3 min, eller tills rostat. Skär i kvartar."
+        "Blanda mynta, {{olive_oil}} och {{salt}} i {{eq:skal_4}}.",
+        "Placera {{flatbread}} på {{eq:plat_2}} med bakplåtspapper och bre med myntaolja.",
+        "Värm i {{eq:ugn|def}} i 2–3 min, eller tills rostat. Skär i kvartar."
       ],
       "duration": 5,
       "wait": 3,
@@ -357,7 +392,18 @@
           "fanTemp": 220
         },
         {
-          "type": "plat"
+          "type": "plat",
+          "ref": "plat_2",
+          "liner": "bakplatspapper"
+        },
+        {
+          "type": "skal_liten",
+          "ref": "skal_4"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
         }
       ]
     },
@@ -393,13 +439,20 @@
         }
       ],
       "steps": [
-        "Lägg upp {{beef_kofta_greek_salad__cooked_koftas}}, {{beef_kofta_greek_salad__roasted_fries}}, {{beef_kofta_greek_salad__greek_salad}} och {{beef_kofta_greek_salad__mint_flatbread}} på tallrikar.",
+        "Lägg upp {{beef_kofta_greek_salad__cooked_koftas}}, {{beef_kofta_greek_salad__roasted_fries}}, {{beef_kofta_greek_salad__greek_salad}} och {{beef_kofta_greek_salad__mint_flatbread}} på {{eq:servering|pl}}.",
         "Servera med {{beef_kofta_greek_salad__tzatziki}}."
       ],
       "duration": 3,
       "wait": 0,
       "tags": [
         "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_tallrik",
+          "ref": "servering",
+          "count": "portions"
+        }
       ]
     }
   ]

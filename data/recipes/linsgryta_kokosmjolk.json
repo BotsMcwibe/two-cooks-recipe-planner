@@ -57,7 +57,7 @@
       "outputName": "Förvärmd ugn",
       "inputs": [],
       "steps": [
-        "Sätt på ugnen enligt anvisningen på brödförpackningen."
+        "Sätt på {{eq:ugn|def}} enligt anvisningen på brödförpackningen."
       ],
       "duration": 1,
       "tags": [
@@ -85,6 +85,13 @@
       "duration": 3,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -119,7 +126,7 @@
         }
       ],
       "steps": [
-        "Fräs {{linsgryta_kokosmjolk__chopped_onion}} i {{oil}} i en gryta.",
+        "Fräs {{linsgryta_kokosmjolk__chopped_onion}} i {{oil}} i {{eq:gryta_1}}.",
         "Pressa i {{garlic}} och tillsätt {{curry}} och {{tomato_paste}}. Fräs ytterligare någon minut."
       ],
       "duration": 4,
@@ -150,6 +157,13 @@
       "duration": 2,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -225,7 +239,7 @@
         }
       ],
       "steps": [
-        "Tillaga {{naan_bread}} i ugnen enligt anvisningen på förpackningen, ca 2–4 min."
+        "Tillaga {{naan_bread}} i {{eq:ugn|def}} enligt anvisningen på förpackningen, ca 2–4 min."
       ],
       "duration": 1,
       "wait": 4,
@@ -282,7 +296,7 @@
       ],
       "steps": [
         "Smaka av {{linsgryta_kokosmjolk__simmered_stew}} med {{salt}} och {{pepper}}.",
-        "Servera grytan med {{linsgryta_kokosmjolk__cooked_rice}} och tomater, {{linsgryta_kokosmjolk__cooked_naan}} samt {{matyoghurt}}, och toppa med {{coriander}}."
+        "Servera {{eq:gryta_1|def}} med {{linsgryta_kokosmjolk__cooked_rice}} och tomater, {{linsgryta_kokosmjolk__cooked_naan}} samt {{matyoghurt}}, och toppa med {{coriander}}."
       ],
       "duration": 3,
       "tags": [

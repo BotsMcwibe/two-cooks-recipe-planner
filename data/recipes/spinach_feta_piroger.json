@@ -27,6 +27,13 @@
       "duration": 2,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -46,7 +53,7 @@
         }
       ],
       "steps": [
-        "Hetta upp {{olive_oil}} i en stekpanna på medelhög värme.",
+        "Hetta upp {{olive_oil}} i {{eq:stekpanna_1}} på medelhög värme.",
         "Fräs {{spinach_feta_piroger__chopped_onion}} i {{olive_oil}} några minuter tills den mjuknar."
       ],
       "duration": 3,
@@ -109,6 +116,13 @@
       "duration": 3,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -200,6 +214,13 @@
       "duration": 4,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -221,14 +242,15 @@
       "steps": [
         "Lägg en klick {{spinach_feta_piroger__spinach_feta_filling}} på ena halvan av varje bit av {{spinach_feta_piroger__rolled_dough}}.",
         "Vik ihop degen till en halvmåne och nyp ihop kanterna ordentligt med en gaffel.",
-        "Lägg pirogerna på en plåt med bakplåtspapper."
+        "Lägg pirogerna på {{eq:plat_1}} med bakplåtspapper."
       ],
       "duration": 6,
       "tags": [],
       "equipment": [
         {
           "type": "plat",
-          "ref": "plat_1"
+          "ref": "plat_1",
+          "liner": "bakplatspapper"
         }
       ]
     },
@@ -256,7 +278,7 @@
       "steps": [
         "Pensla {{spinach_feta_piroger__shaped_piroger}} med {{egg_wash}}.",
         "Strö över {{sesame_seeds}}.",
-        "Grädda på nedersta valsen i ugnen i ca 12 minuter tills de fått fin färg."
+        "Grädda på nedersta valsen i {{eq:ugn|def}} i ca 12 minuter tills de fått fin färg."
       ],
       "duration": 5,
       "tags": [

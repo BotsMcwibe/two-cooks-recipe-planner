@@ -34,7 +34,7 @@
       "outputName": "Förvärmd ugn (200°C)",
       "inputs": [],
       "steps": [
-        "Värm ugnen till 200°C."
+        "Värm {{eq:ugn|def}} till 200°C."
       ],
       "duration": 1,
       "wait": 10,
@@ -68,6 +68,13 @@
       "duration": 3,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -87,6 +94,13 @@
       "duration": 3,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -118,7 +132,7 @@
       "steps": [
         "Halvera {{aubergine}} på längden, gröp ur och spara köttet (lämna ½–1 cm kant).",
         "Skär aubergineköttet i 1 cm stora bitar och spara till fyllningen.",
-        "Lägg auberginehalvorna med snittytan upp i en ugnsform. Ringla över {{olive_oil}} och krydda med {{salt}} och {{pepper}}."
+        "Lägg auberginehalvorna med snittytan upp i {{eq:ugnsform_1}}. Ringla över {{olive_oil}} och krydda med {{salt}} och {{pepper}}."
       ],
       "duration": 8,
       "tags": [
@@ -130,7 +144,13 @@
       "equipment": [
         {
           "type": "ugnsform",
-          "sizeSource": "inferred"
+          "sizeSource": "inferred",
+          "ref": "ugnsform_1"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
         }
       ],
       "devNotes": [
@@ -149,7 +169,7 @@
         }
       ],
       "steps": [
-        "Sätt formen med de förberedda auberginehalvorna från {{gratinerad_aubergine__prepped_aubergine}} i ugnen och baka i 10 min."
+        "Sätt {{eq:ugnsform_2|def}} med de förberedda auberginehalvorna från {{gratinerad_aubergine__prepped_aubergine}} i {{eq:ugn|def}} och baka i 10 min."
       ],
       "duration": 1,
       "wait": 10,
@@ -165,7 +185,8 @@
         },
         {
           "type": "ugnsform",
-          "sizeSource": "inferred"
+          "sizeSource": "inferred",
+          "ref": "ugnsform_2"
         }
       ]
     },
@@ -206,7 +227,7 @@
         }
       ],
       "steps": [
-        "Hetta upp {{olive_oil}} i en stor stekpanna på medelhög värme.",
+        "Hetta upp {{olive_oil}} i {{eq:stekpanna_1}} på medelhög värme.",
         "Fräs {{gratinerad_aubergine__chopped_pepper}}, {{gratinerad_aubergine__chopped_shallot}}, {{dukkah}}, {{harissa}} och det sparade aubergineköttet från {{gratinerad_aubergine__prepped_aubergine}} i 5 min."
       ],
       "duration": 1,
@@ -215,7 +236,9 @@
       "heat": "medelhög",
       "equipment": [
         {
-          "type": "stekpanna_stor"
+          "type": "traktorpanna",
+          "ref": "stekpanna_1",
+          "typeSource": "inferred"
         }
       ]
     },
@@ -266,8 +289,10 @@
       "heatSource": "inferred",
       "equipment": [
         {
-          "type": "stekpanna_stor",
-          "sizeSource": "inferred"
+          "type": "traktorpanna",
+          "ref": "stekpanna_1",
+          "transition": "keep",
+          "typeSource": "inferred"
         }
       ]
     },
@@ -293,8 +318,8 @@
         }
       ],
       "steps": [
-        "Ta ut auberginehalvorna ur ugnen och fyll dem med {{gratinerad_aubergine__vegetable_filling}}.",
-        "Toppa med {{parmesan}} och gratinera i ugnen tills osten har blivit gyllenbrun, ca 10 min."
+        "Ta ut auberginehalvorna ur {{eq:ugn|def}} och fyll dem med {{gratinerad_aubergine__vegetable_filling}}.",
+        "Toppa med {{parmesan}} och gratinera i {{eq:ugn|def}} tills osten har blivit gyllenbrun, ca 10 min."
       ],
       "duration": 3,
       "wait": 10,
@@ -315,7 +340,7 @@
         }
       ],
       "steps": [
-        "Värm {{mini_tortillas}} i ugnen, 3–4 min."
+        "Värm {{mini_tortillas}} i {{eq:ugn|def}}, 3–4 min."
       ],
       "duration": 1,
       "wait": 4,
@@ -376,14 +401,20 @@
         }
       ],
       "steps": [
-        "Blanda {{rucola}} med {{olive_oil}}, {{balsamic_vinegar}}, {{salt}} och {{pepper}} i en salladsskål.",
+        "Blanda {{rucola}} med {{olive_oil}}, {{balsamic_vinegar}}, {{salt}} och {{pepper}} i {{eq:skal_1}}.",
         "Servera {{gratinerad_aubergine__gratinated_aubergine}} med {{gratinerad_aubergine__warmed_tortillas}} och den friska rucolasalladen."
       ],
       "duration": 3,
       "tags": [
         "master"
       ],
-      "wait": 0
+      "wait": 0,
+      "equipment": [
+        {
+          "type": "skal_stor",
+          "ref": "skal_1"
+        }
+      ]
     }
   ]
 }

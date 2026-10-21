@@ -65,6 +65,13 @@
       "duration": 3,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -84,6 +91,13 @@
       "duration": 2,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -103,6 +117,13 @@
       "duration": 1,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -122,6 +143,13 @@
       "duration": 1,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -141,6 +169,13 @@
       "duration": 2,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -160,6 +195,13 @@
       "duration": 2,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -203,7 +245,7 @@
         }
       ],
       "steps": [
-        "Koka upp en stor kastrull med saltat {{water}}.",
+        "Koka upp {{eq:kastrull_1}} med saltat {{water}}.",
         "Koka {{rigatoni}} i 11–12 min, eller tills al dente."
       ],
       "duration": 3,
@@ -239,7 +281,7 @@
         }
       ],
       "steps": [
-        "Häll av vattnet och lägg tillbaka {{kramig_prosciuttopasta__cooked_rigatoni}} i kastrullen tillsammans med lite {{olive_oil}}."
+        "Häll av vattnet och lägg tillbaka {{kramig_prosciuttopasta__cooked_rigatoni}} i {{eq:kastrull_1|def}} tillsammans med lite {{olive_oil}}."
       ],
       "duration": 1,
       "tags": [],
@@ -269,8 +311,8 @@
         }
       ],
       "steps": [
-        "Hetta upp {{olive_oil}} i en stor stekpanna på medelhög värme.",
-        "Fräs {{kramig_prosciuttopasta__chopped_prosciutto}} i 2–3 min och lägg sedan över på en tallrik med hushållspapper."
+        "Hetta upp {{olive_oil}} i {{eq:stekpanna_1}} på medelhög värme.",
+        "Fräs {{kramig_prosciuttopasta__chopped_prosciutto}} i 2–3 min och lägg sedan över på {{eq:tallrik_1}} med hushållspapper."
       ],
       "duration": 4,
       "wait": 0,
@@ -280,6 +322,10 @@
         {
           "type": "stekpanna_stor",
           "ref": "stekpanna_1"
+        },
+        {
+          "type": "tallrik",
+          "ref": "tallrik_1"
         }
       ]
     },
@@ -320,7 +366,7 @@
         }
       ],
       "steps": [
-        "Hetta upp {{olive_oil}} i stekpannan på medelhög värme.",
+        "Hetta upp {{olive_oil}} i {{eq:stekpanna_1|def}} på medelhög värme.",
         "Stek {{kramig_prosciuttopasta__chopped_shallot}}, {{kramig_prosciuttopasta__chopped_zucchini}}, {{kramig_prosciuttopasta__sliced_portobello}}, {{kramig_prosciuttopasta__minced_garlic}} och {{salt}} i 4–5 min, tills de börjar mjukna."
       ],
       "duration": 1,
@@ -413,12 +459,19 @@
       ],
       "steps": [
         "Vänd ner {{kramig_prosciuttopasta__drained_rigatoni}}, {{kramig_prosciuttopasta__rinsed_spinach}} och hälften av {{kramig_prosciuttopasta__fried_prosciutto}} i {{kramig_prosciuttopasta__cream_sauce}}. Krydda generöst med {{pepper}}.",
-        "Lägg upp pastan i skålar. Toppa med resten av {{kramig_prosciuttopasta__fried_prosciutto}} och {{grated_cheese}}. Garnera med resten av {{kramig_prosciuttopasta__sliced_basil}}."
+        "Lägg upp pastan i {{eq:servering|pl}}. Toppa med resten av {{kramig_prosciuttopasta__fried_prosciutto}} och {{grated_cheese}}. Garnera med resten av {{kramig_prosciuttopasta__sliced_basil}}."
       ],
       "duration": 3,
       "wait": 0,
       "tags": [
         "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_skal",
+          "ref": "servering",
+          "count": "portions"
+        }
       ]
     }
   ]

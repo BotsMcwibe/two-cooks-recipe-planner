@@ -40,7 +40,7 @@
         }
       ],
       "steps": [
-        "Skölj {{black_beans}} i en sil under kallt vatten."
+        "Skölj {{black_beans}} i {{eq:sil_1}} under kallt vatten."
       ],
       "duration": 2,
       "tags": [
@@ -48,6 +48,12 @@
       ],
       "devNotes": [
         "FLAG: _unitInference Svarta bönor 2 burk — behållen (can)."
+      ],
+      "equipment": [
+        {
+          "type": "sil",
+          "ref": "sil_1"
+        }
       ]
     },
     {
@@ -104,7 +110,7 @@
         }
       ],
       "steps": [
-        "Lägg {{kale_quesadillas__rinsed_beans}}, {{kale_quesadillas__peeled_garlic}} och {{sour_cream}} i en mixer.",
+        "Lägg {{kale_quesadillas__rinsed_beans}}, {{kale_quesadillas__peeled_garlic}} och {{sour_cream}} i {{eq:mixer_1}}.",
         "Blanda tills du har en grov bönröra.",
         "Halvera {{lime}} och pressa i juice efter smak. Krydda med {{salt}}."
       ],
@@ -117,7 +123,13 @@
       ],
       "equipment": [
         {
-          "type": "mixer"
+          "type": "mixer",
+          "ref": "mixer_1"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
         }
       ],
       "devNotes": [
@@ -145,6 +157,13 @@
       ],
       "devNotes": [
         "FLAG: _unitInference Grönkål, skuren 200 g — behållen (large g). Skalar svagt 100 g (2p) → 200 g (4p)."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -164,7 +183,7 @@
         }
       ],
       "steps": [
-        "Fräs {{kale_quesadillas__chopped_kale}} i en torr stekpanna på medelvärme i 5 min.",
+        "Fräs {{kale_quesadillas__chopped_kale}} i en torr {{eq:stekpanna_1|noun}} på medelvärme i 5 min.",
         "Krydda med {{salt}}."
       ],
       "duration": 2,
@@ -174,7 +193,8 @@
       "equipment": [
         {
           "type": "stekpanna_liten",
-          "sizeSource": "inferred"
+          "sizeSource": "inferred",
+          "ref": "stekpanna_1"
         }
       ]
     },
@@ -199,6 +219,13 @@
       "devNotes": [
         "FLAG: _unitInference Lök (rödlök) 1 st — behållen (countable). Samma mängd vid 2 och 4 portioner.",
         "HF type red-onion → red_onion (inte gul lök)."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -221,6 +248,13 @@
       ],
       "devNotes": [
         "FLAG: _unitInference Plommontomater 2 burk — överstyrd till 2 st (metod: finhacka färska tomater; burk fel för färskvara)."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -243,6 +277,13 @@
       ],
       "devNotes": [
         "FLAG: _unitInference Bladpersilja 1 g — överstyrd till 1 kruka (färsk örtkruka; samma mönster som andra HF-örter)."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -265,6 +306,13 @@
       ],
       "devNotes": [
         "FLAG: _unitInference Sallad 180 g — behållen (large g). HF type baby-gem-lettuce."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -304,7 +352,7 @@
         }
       ],
       "steps": [
-        "Blanda {{kale_quesadillas__sliced_lettuce}}, {{kale_quesadillas__chopped_parsley}}, {{kale_quesadillas__chopped_tomato}} och {{kale_quesadillas__chopped_red_onion}} i en salladsskål.",
+        "Blanda {{kale_quesadillas__sliced_lettuce}}, {{kale_quesadillas__chopped_parsley}}, {{kale_quesadillas__chopped_tomato}} och {{kale_quesadillas__chopped_red_onion}} i {{eq:skal_1}}.",
         "Pressa juice från {{lime}} över salladen och tillsätt {{olive_oil}}. Blanda om."
       ],
       "duration": 3,
@@ -314,6 +362,12 @@
       "devNotes": [
         "HF-texten säger citronjuice i salladen men ingredient type är lime — använd limejuice.",
         "FLAG: olivolja saknas i HF yields (shipped false / *) — modellerad som 1 skvätt pantry."
+      ],
+      "equipment": [
+        {
+          "type": "skal_stor",
+          "ref": "skal_1"
+        }
       ]
     },
     {
@@ -333,7 +387,7 @@
         }
       ],
       "steps": [
-        "Blanda {{sour_cream}} och {{tex_mex}} i en skål."
+        "Blanda {{sour_cream}} och {{tex_mex}} i {{eq:skal_2}}."
       ],
       "duration": 2,
       "tags": [
@@ -342,6 +396,12 @@
       "devNotes": [
         "FLAG: _unitInference Tex-Mex 6 tsk — behållen (small tsk / spice).",
         "FLAG: resterande gräddfil efter 1 msk till bönröra ≈ 135 g av 150 g."
+      ],
+      "equipment": [
+        {
+          "type": "skal",
+          "ref": "skal_2"
+        }
       ]
     },
     {
@@ -377,8 +437,8 @@
       ],
       "steps": [
         "Bre {{kale_quesadillas__black_bean_mix}} på hälften av {{mini_tortillas}}. Strö över {{kale_quesadillas__fried_kale}} och {{grated_mozzarella}}. Lägg en tortilla ovanpå varje.",
-        "Hetta upp {{butter}} i en stor stekpanna på medelvärme.",
-        "Lägg i quesadillorna och stek 3–4 min per sida tills de är gyllenbruna och osten smält. Stek i omgångar om pannan är trång."
+        "Hetta upp {{butter}} i {{eq:stekpanna_2}} på medelvärme.",
+        "Lägg i quesadillorna och stek 3–4 min per sida tills de är gyllenbruna och osten smält. Stek i omgångar om {{eq:stekpanna_2|def}} är trång."
       ],
       "duration": 8,
       "wait": 8,
@@ -386,7 +446,8 @@
       "heat": "medel",
       "equipment": [
         {
-          "type": "stekpanna_stor"
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_2"
         }
       ],
       "devNotes": [
@@ -418,7 +479,7 @@
         }
       ],
       "steps": [
-        "Kvarta {{kale_quesadillas__cooked_quesadillas}} och fördela mellan tallrikarna.",
+        "Kvarta {{kale_quesadillas__cooked_quesadillas}} och fördela mellan {{eq:servering|pldef}}.",
         "Servera med {{kale_quesadillas__tomato_salad}} och {{kale_quesadillas__mexi_sour_cream}} vid sidan."
       ],
       "duration": 3,
@@ -430,6 +491,20 @@
         "FLAG: alla 24 _unitInference-fyllningar granskade — se tips på respektive nod och agentrapport.",
         "HF headline: med svart bönröra, tomatsallad och gräddfil.",
         "Inga step-bilder i scrape (endast main_s3)."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "serving": [
+        {
+          "type": "servering_tallrik",
+          "ref": "servering",
+          "count": "portions"
+        }
       ]
     }
   ]

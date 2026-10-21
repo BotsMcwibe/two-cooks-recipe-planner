@@ -59,6 +59,13 @@
       "duration": 4,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -73,7 +80,7 @@
         }
       ],
       "steps": [
-        "Koka upp en kastrull med saltat vatten.",
+        "Koka upp {{eq:kastrull_1}} med saltat vatten.",
         "Lägg i {{rodvinsstekt_kyckling__diced_potato}} och koka i 10–12 min, tills de enkelt kan delas med en kniv."
       ],
       "duration": 3,
@@ -125,7 +132,8 @@
           "ref": "kastrull_1",
           "transition": "keep",
           "sizeSource": "inferred",
-          "offHeat": true
+          "offHeat": true,
+          "lid": true
         }
       ],
       "devNotes": [
@@ -154,7 +162,7 @@
         }
       ],
       "steps": [
-        "Blanda {{wholegrain_mustard}}, {{honey}}, {{olive_oil}} och en nypa salt och peppar i en stor skål."
+        "Blanda {{wholegrain_mustard}}, {{honey}}, {{olive_oil}} och en nypa salt och peppar i {{eq:skal_1}}."
       ],
       "duration": 2,
       "tags": [
@@ -162,7 +170,8 @@
       ],
       "equipment": [
         {
-          "type": "skal_stor"
+          "type": "skal_stor",
+          "ref": "skal_1"
         }
       ]
     },
@@ -213,6 +222,13 @@
       "duration": 2,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -233,8 +249,8 @@
       ],
       "steps": [
         "Krydda {{chicken_inner_fillet}} med en nypa salt.",
-        "Hetta upp {{olive_oil}} i en stor stekpanna på medelhög värme.",
-        "Stek kycklingen i 5–6 min, tills den är brynt och genomstekt. Lägg över den på en tallrik."
+        "Hetta upp {{olive_oil}} i {{eq:stekpanna_1}} på medelhög värme.",
+        "Stek kycklingen i 5–6 min, tills den är brynt och genomstekt. Lägg över den på {{eq:tallrik_1}}."
       ],
       "duration": 8,
       "tags": [],
@@ -246,6 +262,10 @@
         {
           "type": "stekpanna_stor",
           "ref": "stekpanna_1"
+        },
+        {
+          "type": "tallrik",
+          "ref": "tallrik_1"
         }
       ]
     },
@@ -286,7 +306,7 @@
         }
       ],
       "steps": [
-        "Hetta upp stekpannan som kycklingen stektes i igen på medelvärme.",
+        "Hetta upp {{eq:stekpanna_1|def}} som kycklingen stektes i igen på medelvärme.",
         "Tillsätt {{butter}}, {{rodvinsstekt_kyckling__minced_garlic}}, {{dried_thyme}}, {{red_wine_sauce}}, {{chicken_bouillon}}, {{water}} och en nypa peppar. Koka i 2–3 min."
       ],
       "duration": 2,
@@ -319,7 +339,7 @@
         }
       ],
       "steps": [
-        "Häll köttsaften från tallriken med {{rodvinsstekt_kyckling__fried_chicken}} i {{rodvinsstekt_kyckling__red_wine_sauce}}.",
+        "Häll köttsaften från {{eq:tallrik_1|def}} med {{rodvinsstekt_kyckling__fried_chicken}} i {{rodvinsstekt_kyckling__red_wine_sauce}}.",
         "Lägg i kycklingen och vänd tills den är täckt av såsen."
       ],
       "duration": 1,
@@ -347,12 +367,19 @@
         }
       ],
       "steps": [
-        "Lägg upp {{rodvinsstekt_kyckling__potato_mash}} på tallrikar. Toppa med {{rodvinsstekt_kyckling__sauced_chicken}}.",
+        "Lägg upp {{rodvinsstekt_kyckling__potato_mash}} på {{eq:servering|pl}}. Toppa med {{rodvinsstekt_kyckling__sauced_chicken}}.",
         "Servera med {{rodvinsstekt_kyckling__cabbage_salad}}."
       ],
       "duration": 3,
       "tags": [
         "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_tallrik",
+          "ref": "servering",
+          "count": "portions"
+        }
       ]
     }
   ]

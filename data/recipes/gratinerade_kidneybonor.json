@@ -34,7 +34,7 @@
       "outputName": "Förvärmd ugn (200°C)",
       "inputs": [],
       "steps": [
-        "Sätt ugnen på 200°C."
+        "Sätt {{eq:ugn|def}} på 200°C."
       ],
       "duration": 1,
       "wait": 12,
@@ -73,7 +73,7 @@
         }
       ],
       "steps": [
-        "Fyll en kastrull med {{water}} och {{salt}}.",
+        "Fyll {{eq:kastrull_1}} med {{water}} och {{salt}}.",
         "Häll i {{jasmine_rice}}. Koka på låg värme under lock i 12 min."
       ],
       "duration": 2,
@@ -83,7 +83,9 @@
       "equipment": [
         {
           "type": "kastrull_medelstor",
-          "sizeSource": "inferred"
+          "sizeSource": "inferred",
+          "ref": "kastrull_1",
+          "lid": true
         }
       ],
       "devNotes": [
@@ -129,6 +131,13 @@
       ],
       "devNotes": [
         "FLAG: _unitInference Lök 2 st — behållen (countable)."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -151,6 +160,13 @@
       ],
       "devNotes": [
         "FLAG: _unitInference Bladselleri 4 tsk — överstyrd till 4 st (metod: finhacka selleristjälkar)."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -173,6 +189,13 @@
       ],
       "devNotes": [
         "FLAG: _unitInference Röd paprika 2 tsk — överstyrd till 2 st (metod: skär i bitar)."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -195,6 +218,13 @@
       ],
       "devNotes": [
         "FLAG: _unitInference Morot 2 st — behållen (countable)."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -217,6 +247,13 @@
       ],
       "devNotes": [
         "FLAG: _unitInference Chili 1 tsk — överstyrd till 1 st (metod: halvera och finhacka färsk chili; skalar inte 2→4)."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -278,7 +315,7 @@
         }
       ],
       "steps": [
-        "Hetta upp {{olive_oil}} i en stor stekpanna på medelhög värme.",
+        "Hetta upp {{olive_oil}} i {{eq:stekpanna_1}} på medelhög värme.",
         "Lägg i {{gratinerade_kidneybonor__chopped_onion}}, {{gratinerade_kidneybonor__chopped_celery}}, {{gratinerade_kidneybonor__chopped_pepper}}, {{gratinerade_kidneybonor__chopped_carrot}} och {{gratinerade_kidneybonor__chopped_chili}}.",
         "Fräs tills grönsakerna mjuknat, 6–7 min."
       ],
@@ -287,8 +324,9 @@
       "heat": "medelhög",
       "equipment": [
         {
-          "type": "stekpanna_stor",
-          "ref": "stekpanna_1"
+          "type": "traktorpanna",
+          "ref": "stekpanna_1",
+          "typeSource": "inferred"
         }
       ],
       "devNotes": [
@@ -337,7 +375,7 @@
         }
       ],
       "steps": [
-        "Rör i {{gratinerade_kidneybonor__rinsed_beans}}, {{canned_tomatoes}} och {{baharat}} i stekpannan med {{gratinerade_kidneybonor__fried_vegetables}}.",
+        "Rör i {{gratinerade_kidneybonor__rinsed_beans}}, {{canned_tomatoes}} och {{baharat}} i {{eq:stekpanna_1|def}} med {{gratinerade_kidneybonor__fried_vegetables}}.",
         "Tillsätt {{water}}. Stek under omrörning i 2–3 min.",
         "Krydda med {{salt}} och {{pepper}}."
       ],
@@ -347,9 +385,10 @@
       "heatSource": "inferred",
       "equipment": [
         {
-          "type": "stekpanna_stor",
+          "type": "traktorpanna",
           "ref": "stekpanna_1",
-          "transition": "keep"
+          "transition": "keep",
+          "typeSource": "inferred"
         }
       ],
       "devNotes": [
@@ -374,9 +413,9 @@
         }
       ],
       "steps": [
-        "För över {{gratinerade_kidneybonor__bean_tomato_mix}} till en ugnsform.",
+        "För över {{gratinerade_kidneybonor__bean_tomato_mix}} till {{eq:ugnsform_1}}.",
         "Strö över ett jämnt lager {{grated_mozzarella}}.",
-        "Gratinera i ugnen tills osten har smält och är gyllenbrun, 10–12 min."
+        "Gratinera i {{eq:ugn|def}} tills osten har smält och är gyllenbrun, 10–12 min."
       ],
       "duration": 3,
       "wait": 12,
@@ -392,7 +431,8 @@
         },
         {
           "type": "ugnsform_stor",
-          "sizeSource": "inferred"
+          "sizeSource": "inferred",
+          "ref": "ugnsform_1"
         }
       ],
       "devNotes": [
@@ -431,7 +471,7 @@
         }
       ],
       "steps": [
-        "Dela {{lettuce}} i stora bitar och lägg i en salladsskål.",
+        "Dela {{lettuce}} i stora bitar och lägg i {{eq:skal_1}}.",
         "Halvera {{lemon}} och pressa saften över salladen.",
         "Smaksätt med {{olive_oil}}, {{salt}} och {{pepper}}."
       ],
@@ -443,6 +483,17 @@
         "FLAG: _unitInference Citrusfrukt/citron 1 tsk — överstyrd till 1 st (metod: halvera citron / citronjuice).",
         "FLAG: _unitInference Sallad 180 g — behållen.",
         "FLAG: _unitInference Olivolja (steg 5) 1,333 ml — överstyrd till 1 msk (HF-typ …-1tbsp; avrundat från 1,333)."
+      ],
+      "equipment": [
+        {
+          "type": "skal_stor",
+          "ref": "skal_1"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -467,7 +518,7 @@
         }
       ],
       "steps": [
-        "Fördela {{gratinerade_kidneybonor__cooked_rice}} mellan tallrikarna.",
+        "Fördela {{gratinerade_kidneybonor__cooked_rice}} mellan {{eq:servering|pldef}}.",
         "Lägg på rikligt med {{gratinerade_kidneybonor__gratinated_beans}}.",
         "Servera {{gratinerade_kidneybonor__gem_salad}} vid sidan."
       ],
@@ -475,7 +526,14 @@
       "tags": [
         "master"
       ],
-      "wait": 0
+      "wait": 0,
+      "serving": [
+        {
+          "type": "servering_tallrik",
+          "ref": "servering",
+          "count": "portions"
+        }
+      ]
     }
   ]
 }

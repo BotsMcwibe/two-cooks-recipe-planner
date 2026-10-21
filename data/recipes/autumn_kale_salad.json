@@ -40,7 +40,7 @@
       "outputName": "Förvärmd ugn (240°C)",
       "inputs": [],
       "steps": [
-        "Värm ugnen till 240°C, eller 220°C varmluft."
+        "Värm {{eq:ugn|def}} till 240°C, eller 220°C varmluft."
       ],
       "duration": 1,
       "wait": 12,
@@ -74,6 +74,13 @@
       "duration": 8,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -103,9 +110,9 @@
         }
       ],
       "steps": [
-        "Placera {{autumn_kale_salad__sliced_butternut}} på en plåt med bakplåtspapper.",
+        "Placera {{autumn_kale_salad__sliced_butternut}} på {{eq:plat_1}} med bakplåtspapper.",
         "Ringla över {{olive_oil}} och krydda med {{salt}} och {{pepper}}.",
-        "Rosta i ugnen i 20–30 min, eller tills mjuk och gyllene."
+        "Rosta i {{eq:ugn|def}} i 20–30 min, eller tills mjuk och gyllene."
       ],
       "duration": 3,
       "wait": 30,
@@ -119,7 +126,9 @@
           "fanTemp": 220
         },
         {
-          "type": "plat"
+          "type": "plat",
+          "ref": "plat_1",
+          "liner": "bakplatspapper"
         }
       ]
     },
@@ -135,7 +144,7 @@
         }
       ],
       "steps": [
-        "Hetta upp en stor stekpanna på medelhög värme.",
+        "Hetta upp {{eq:stekpanna_1}} på medelhög värme.",
         "Rosta {{walnuts}} i 3–4 min, eller tills gyllene. Ställ åt sidan."
       ],
       "duration": 4,
@@ -147,7 +156,8 @@
       "heat": "medelhög",
       "equipment": [
         {
-          "type": "stekpanna_stor"
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1"
         }
       ]
     },
@@ -173,7 +183,7 @@
         }
       ],
       "steps": [
-        "Blanda {{honey_mustard_dressing}} och {{kale}} i en stor skål.",
+        "Blanda {{honey_mustard_dressing}} och {{kale}} i {{eq:skal_1}}.",
         "Tillsätt {{dried_cranberries}} och vänd runt."
       ],
       "duration": 3,
@@ -182,7 +192,8 @@
       ],
       "equipment": [
         {
-          "type": "skal_stor"
+          "type": "skal_stor",
+          "ref": "skal_1"
         }
       ],
       "devNotes": [
@@ -216,13 +227,20 @@
         }
       ],
       "steps": [
-        "Lägg upp {{autumn_kale_salad__dressed_kale}} på en tallrik och toppa med {{autumn_kale_salad__roasted_butternut}}.",
+        "Lägg upp {{autumn_kale_salad__dressed_kale}} på {{eq:servering}} och toppa med {{autumn_kale_salad__roasted_butternut}}.",
         "Smula över {{feta_cheese}} och garnera med {{autumn_kale_salad__toasted_walnuts}}."
       ],
       "duration": 3,
       "wait": 0,
       "tags": [
         "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_tallrik",
+          "ref": "servering",
+          "count": 1
+        }
       ]
     }
   ]

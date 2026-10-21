@@ -52,6 +52,13 @@
       "duration": 2,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -95,10 +102,10 @@
         }
       ],
       "steps": [
-        "Koka upp en stor kastrull med saltat {{water}}.",
+        "Koka upp {{eq:kastrull_1}} med saltat {{water}}.",
         "Koka {{linguine}} i 8 min, eller tills al dente.",
         "Precis innan pastan är färdig, skopa upp ca 2 dl kokvatten i en kopp och ställ åt sidan.",
-        "Häll av vattnet och lägg tillbaka pastan i kastrullen."
+        "Häll av vattnet och lägg tillbaka pastan i {{eq:kastrull_1|def}}."
       ],
       "duration": 2,
       "wait": 8,
@@ -111,7 +118,8 @@
       "heatSource": "inferred",
       "equipment": [
         {
-          "type": "kastrull_stor"
+          "type": "kastrull_stor",
+          "ref": "kastrull_1"
         }
       ]
     },
@@ -157,7 +165,7 @@
         }
       ],
       "steps": [
-        "Hetta upp en medelstor stekpanna på medelhög värme.",
+        "Hetta upp {{eq:stekpanna_1}} på medelhög värme.",
         "Stek {{bacon}}, {{cherry_tomatoes}} och {{cajun_bacon_linguine__sliced_paprika}} i 4–5 min, eller tills mjuka.",
         "Tillsätt {{tomato_paste}}, {{chili_flakes}}, {{smoked_paprika}} och {{cajun_spice_mix}}. Stek i 30 sek, tills väldoftande."
       ],
@@ -171,8 +179,9 @@
       "heat": "medelhög",
       "equipment": [
         {
-          "type": "stekpanna_medelstor",
-          "ref": "stekpanna_1"
+          "type": "traktorpanna",
+          "ref": "stekpanna_1",
+          "typeSource": "inferred"
         }
       ]
     },
@@ -208,7 +217,7 @@
         }
       ],
       "steps": [
-        "Tillsätt {{cooking_cream}}, {{vegetable_bouillon}}, finriven {{parmesan}} och det sparade pastavattnet ({{water}}) till stekpannan med {{cajun_bacon_linguine__fried_bacon_veg}}.",
+        "Tillsätt {{cooking_cream}}, {{vegetable_bouillon}}, finriven {{parmesan}} och det sparade pastavattnet ({{water}}) till {{eq:stekpanna_1|def}} med {{cajun_bacon_linguine__fried_bacon_veg}}.",
         "Rör ihop till en krämig sås."
       ],
       "duration": 2,
@@ -220,9 +229,10 @@
       "heatSource": "inferred",
       "equipment": [
         {
-          "type": "stekpanna_medelstor",
+          "type": "traktorpanna",
           "ref": "stekpanna_1",
-          "transition": "keep"
+          "transition": "keep",
+          "typeSource": "inferred"
         }
       ]
     },
@@ -250,7 +260,7 @@
       "steps": [
         "Vänd ner {{cajun_bacon_linguine__cooked_linguine}} i {{cajun_bacon_linguine__cajun_cream_sauce}}.",
         "Rör i {{cajun_bacon_linguine__rinsed_rucola}} precis innan servering.",
-        "Lägg upp pastan i djupa tallrikar."
+        "Lägg upp pastan i {{eq:servering|pl}}."
       ],
       "duration": 2,
       "tags": [
@@ -259,10 +269,18 @@
       "wait": 0,
       "equipment": [
         {
-          "type": "stekpanna_medelstor",
+          "type": "traktorpanna",
           "ref": "stekpanna_1",
           "transition": "keep",
-          "offHeat": true
+          "offHeat": true,
+          "typeSource": "inferred"
+        }
+      ],
+      "serving": [
+        {
+          "type": "servering_djup_tallrik",
+          "ref": "servering",
+          "count": "portions"
         }
       ]
     }

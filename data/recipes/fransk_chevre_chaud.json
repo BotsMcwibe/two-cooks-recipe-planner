@@ -60,8 +60,8 @@
       ],
       "steps": [
         "Dela {{baguette}} på längden och sedan på hälften så det blir 4 bitar.",
-        "Lägg bitarna på en plåt med bakplåtspapper, ringla över olivolja, bre på {{goat_cheese}} och krydda med {{pepper}}.",
-        "Rosta i ugnen i 8–10 min, tills gyllene."
+        "Lägg bitarna på {{eq:plat_1}} med bakplåtspapper, ringla över olivolja, bre på {{goat_cheese}} och krydda med {{pepper}}.",
+        "Rosta i {{eq:ugn|def}} i 8–10 min, tills gyllene."
       ],
       "duration": 4,
       "wait": 10,
@@ -75,7 +75,14 @@
           "fanTemp": 200
         },
         {
-          "type": "plat"
+          "type": "plat",
+          "ref": "plat_1",
+          "liner": "bakplatspapper"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
         }
       ],
       "devNotes": [
@@ -114,7 +121,7 @@
         }
       ],
       "steps": [
-        "Blanda {{balsamic_vinegar}}, {{olive_oil}} och {{sugar}} i en stor skål.",
+        "Blanda {{balsamic_vinegar}}, {{olive_oil}} och {{sugar}} i {{eq:skal_1}}.",
         "Skölj {{mixed_salad}}.",
         "Halvera, kärna ur och skär {{apple}} i tunna skivor.",
         "Vänd ner salladsmixen och äpplet i dressingen."
@@ -125,7 +132,13 @@
       ],
       "equipment": [
         {
-          "type": "skal_stor"
+          "type": "skal_stor",
+          "ref": "skal_1"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
         }
       ]
     },
@@ -146,11 +159,22 @@
         }
       ],
       "steps": [
-        "Grovhacka {{walnuts}} och blanda dem med {{honey}} i en liten skål."
+        "Grovhacka {{walnuts}} och blanda dem med {{honey}} i {{eq:skal_2}}."
       ],
       "duration": 3,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skal_liten",
+          "ref": "skal_2"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -175,13 +199,20 @@
         }
       ],
       "steps": [
-        "Lägg upp {{fransk_chevre_chaud__dressed_salad}} i skålar.",
+        "Lägg upp {{fransk_chevre_chaud__dressed_salad}} i {{eq:servering|pl}}.",
         "Toppa med {{fransk_chevre_chaud__goat_cheese_baguette}} och {{fransk_chevre_chaud__honey_walnuts}}."
       ],
       "duration": 3,
       "wait": 0,
       "tags": [
         "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_skal",
+          "ref": "servering",
+          "count": "portions"
+        }
       ]
     }
   ]

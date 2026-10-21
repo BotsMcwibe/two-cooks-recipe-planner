@@ -58,6 +58,13 @@
       "duration": 6,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -92,9 +99,9 @@
         }
       ],
       "steps": [
-        "Lägg {{honungsstekt_grillost_tzatziki__cut_fries}} på en plåt med bakplåtspapper.",
+        "Lägg {{honungsstekt_grillost_tzatziki__cut_fries}} på {{eq:plat_1}} med bakplåtspapper.",
         "Blanda med {{olive_oil}}, {{dried_oregano}}, en nypa {{salt}} och {{pepper}}.",
-        "Rosta i ugnen i ca 25 min, tills det återstår 5 min av totalt 25–30 min."
+        "Rosta i {{eq:ugn|def}} i ca 25 min, tills det återstår 5 min av totalt 25–30 min."
       ],
       "duration": 3,
       "wait": 25,
@@ -108,7 +115,9 @@
           "fanTemp": 200
         },
         {
-          "type": "plat"
+          "type": "plat",
+          "ref": "plat_1",
+          "liner": "bakplatspapper"
         }
       ],
       "devNotes": [
@@ -151,6 +160,13 @@
       "duration": 3,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -180,9 +196,9 @@
         }
       ],
       "steps": [
-        "Lägg {{honungsstekt_grillost_tzatziki__halved_tomatoes}} på en ny plåt med bakplåtspapper.",
+        "Lägg {{honungsstekt_grillost_tzatziki__halved_tomatoes}} på en ny {{eq:plat_2|noun}} med bakplåtspapper.",
         "Blanda med en generös skvätt {{olive_oil}}, en nypa {{salt}} och {{pepper}}.",
-        "Rosta i ugnen i 15–20 min."
+        "Rosta i {{eq:ugn|def}} i 15–20 min."
       ],
       "duration": 2,
       "wait": 20,
@@ -196,7 +212,9 @@
           "fanTemp": 200
         },
         {
-          "type": "plat"
+          "type": "plat",
+          "ref": "plat_2",
+          "liner": "bakplatspapper"
         }
       ],
       "devNotes": [
@@ -229,6 +247,13 @@
       ],
       "devNotes": [
         "Råreceptet: hälften av gurkan rivs till tzatzikin, resten skivas till salladen. Gurka är 1 st vid både 2 och 4 portioner."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -254,6 +279,13 @@
       "duration": 2,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -277,6 +309,13 @@
       "devNotes": [
         "Citron är 1 st vid både 2 och 4 portioner. Inte uppskalad.",
         "Klyftorna delas: en skvätt till tomatsalladen (0,25 st), en skvätt till halloumin (0,25 st) och resten serveras (0,5 st). Råreceptet anger ingen proportion."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -306,11 +345,17 @@
         }
       ],
       "steps": [
-        "Blanda {{yoghurt}}, {{honungsstekt_grillost_tzatziki__tzatziki_veg}}, en nypa {{salt}} och {{pepper}} i en skål."
+        "Blanda {{yoghurt}}, {{honungsstekt_grillost_tzatziki__tzatziki_veg}}, en nypa {{salt}} och {{pepper}} i {{eq:skal_1}}."
       ],
       "duration": 3,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skal",
+          "ref": "skal_1"
+        }
       ]
     },
     {
@@ -335,12 +380,18 @@
         }
       ],
       "steps": [
-        "Blanda {{honungsstekt_grillost_tzatziki__salad_veg}} med {{honungsstekt_grillost_tzatziki__roasted_tomatoes}} och en skvätt saft från {{honungsstekt_grillost_tzatziki__lemon_wedges}} i en skål."
+        "Blanda {{honungsstekt_grillost_tzatziki__salad_veg}} med {{honungsstekt_grillost_tzatziki__roasted_tomatoes}} och en skvätt saft från {{honungsstekt_grillost_tzatziki__lemon_wedges}} i {{eq:skal_2}}."
       ],
       "duration": 2,
       "tags": [],
       "devNotes": [
         "En skvätt olivolja i salladen är valfri och har ingen mängd, så den är inte med som ingrediens."
+      ],
+      "equipment": [
+        {
+          "type": "skal",
+          "ref": "skal_2"
+        }
       ]
     },
     {
@@ -360,6 +411,13 @@
       "duration": 2,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -389,7 +447,7 @@
         }
       ],
       "steps": [
-        "Hetta upp {{olive_oil}} i en stor stekpanna på medelhög värme när det återstår 5 min av pommesens tid i ugnen.",
+        "Hetta upp {{olive_oil}} i {{eq:stekpanna_1}} på medelhög värme när det återstår 5 min av pommesens tid i {{eq:ugn|def}}.",
         "Stek {{honungsstekt_grillost_tzatziki__sliced_halloumi}} i 2 min på varje sida, eller tills de är gyllene.",
         "Ringla över {{honey}} och en skvätt saft från {{honungsstekt_grillost_tzatziki__lemon_wedges}} när 1 min återstår, och vänd skivorna så de täcks."
       ],
@@ -399,7 +457,8 @@
       "heat": "medelhög",
       "equipment": [
         {
-          "type": "stekpanna_stor"
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1"
         }
       ],
       "devNotes": [
@@ -438,12 +497,19 @@
         }
       ],
       "steps": [
-        "Lägg upp {{honungsstekt_grillost_tzatziki__roasted_fries}}, {{honungsstekt_grillost_tzatziki__fried_halloumi}} och {{honungsstekt_grillost_tzatziki__tomato_salad}} på tallrikar.",
+        "Lägg upp {{honungsstekt_grillost_tzatziki__roasted_fries}}, {{honungsstekt_grillost_tzatziki__fried_halloumi}} och {{honungsstekt_grillost_tzatziki__tomato_salad}} på {{eq:servering|pl}}.",
         "Servera med {{honungsstekt_grillost_tzatziki__tzatziki}} och resterande {{honungsstekt_grillost_tzatziki__lemon_wedges}}."
       ],
       "duration": 3,
       "tags": [
         "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_tallrik",
+          "ref": "servering",
+          "count": "portions"
+        }
       ]
     }
   ]

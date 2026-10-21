@@ -7,7 +7,7 @@
       "outputName": "Förvärmd ugn (220°C)",
       "inputs": [],
       "steps": [
-        "Värm ugnen till 220°C, eller 200°C varmluft."
+        "Värm {{eq:ugn|def}} till 220°C, eller 200°C varmluft."
       ],
       "duration": 1,
       "tags": [

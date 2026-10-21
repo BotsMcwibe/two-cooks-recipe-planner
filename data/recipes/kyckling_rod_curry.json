@@ -67,6 +67,13 @@
       ],
       "devNotes": [
         "Paprika i rådatan är röd paprika, mappad till befintlig paprika. Halva lökar, zucchini och paprika står så vid 4 portioner."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -122,8 +129,8 @@
       "heatSource": "inferred",
       "equipment": [
         {
-          "type": "stekpanna_stor",
-          "sizeSource": "inferred"
+          "type": "traktorpanna",
+          "typeSource": "inferred"
         }
       ],
       "devNotes": [

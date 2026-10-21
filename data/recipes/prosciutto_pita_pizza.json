@@ -40,7 +40,7 @@
       "outputName": "Förvärmd ugn (200°C)",
       "inputs": [],
       "steps": [
-        "Värm ugnen till 200°C, eller 180°C varmluft."
+        "Värm {{eq:ugn|def}} till 200°C, eller 180°C varmluft."
       ],
       "duration": 1,
       "wait": 12,
@@ -76,6 +76,13 @@
       "duration": 2,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -95,6 +102,13 @@
       "duration": 2,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -134,7 +148,7 @@
         }
       ],
       "steps": [
-        "Blanda {{prosciutto_pita_pizza__chopped_walnuts}}, {{prosciutto_pita_pizza__chopped_basil}}, {{grated_cheese}}, {{olive_oil}}, {{salt}} och {{pepper}} i en liten skål."
+        "Blanda {{prosciutto_pita_pizza__chopped_walnuts}}, {{prosciutto_pita_pizza__chopped_basil}}, {{grated_cheese}}, {{olive_oil}}, {{salt}} och {{pepper}} i {{eq:skal_1}}."
       ],
       "duration": 2,
       "wait": 0,
@@ -143,6 +157,12 @@
       ],
       "tips": [
         "Hälften av den rivna osten går till peston; andra hälften strös på pitabrödet innan rostning."
+      ],
+      "equipment": [
+        {
+          "type": "skal_liten",
+          "ref": "skal_1"
+        }
       ]
     },
     {
@@ -162,9 +182,9 @@
         }
       ],
       "steps": [
-        "Placera {{pita_bread}} på bakplåtspapper direkt på gallret.",
+        "Placera {{pita_bread}} på bakplåtspapper direkt på {{eq:galler_1|def}}.",
         "Strö över {{grated_cheese}}.",
-        "Rosta i den förvärmda ugnen i 3–4 min, eller tills uppvärmda."
+        "Rosta i den förvärmda {{eq:ugn|def}} i 3–4 min, eller tills uppvärmda."
       ],
       "duration": 2,
       "wait": 4,
@@ -178,7 +198,8 @@
           "fanTemp": 180
         },
         {
-          "type": "galler"
+          "type": "galler",
+          "ref": "galler_1"
         }
       ]
     },
@@ -210,13 +231,20 @@
       ],
       "steps": [
         "Skölj {{rucola}}.",
-        "Lägg upp {{prosciutto_pita_pizza__roasted_pita}} på tallrikar och toppa med {{rucola}} och {{prosciutto}}.",
+        "Lägg upp {{prosciutto_pita_pizza__roasted_pita}} på {{eq:servering|pl}} och toppa med {{rucola}} och {{prosciutto}}.",
         "Ringla {{prosciutto_pita_pizza__walnut_pesto}} över pitapizzan."
       ],
       "duration": 3,
       "wait": 0,
       "tags": [
         "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_tallrik",
+          "ref": "servering",
+          "count": "portions"
+        }
       ]
     }
   ]

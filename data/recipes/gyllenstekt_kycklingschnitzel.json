@@ -60,6 +60,13 @@
       "duration": 5,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -74,7 +81,7 @@
         }
       ],
       "steps": [
-        "Koka upp en medelstor kastrull med saltat vatten.",
+        "Koka upp {{eq:kastrull_1}} med saltat vatten.",
         "Koka {{gyllenstekt_kycklingschnitzel__diced_potato}} i 11–13 min, eller tills de enkelt kan delas med en kniv."
       ],
       "duration": 2,
@@ -84,7 +91,8 @@
       "heatSource": "inferred",
       "equipment": [
         {
-          "type": "kastrull_medelstor"
+          "type": "kastrull_medelstor",
+          "ref": "kastrull_1"
         }
       ],
       "devNotes": [
@@ -171,7 +179,7 @@
       ],
       "steps": [
         "Skär {{shallot}} i tunna skivor.",
-        "Blanda {{shallot}} och {{salt}} i en liten skål och ställ åt sidan."
+        "Blanda {{shallot}} och {{salt}} i {{eq:skal_1}} och ställ åt sidan."
       ],
       "duration": 3,
       "tags": [
@@ -182,6 +190,17 @@
       ],
       "devNotes": [
         "HF namn/slug är Lök men type=shallot och steget säger schalottenlök — mappad till shallot."
+      ],
+      "equipment": [
+        {
+          "type": "skal_liten",
+          "ref": "skal_1"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -201,7 +220,7 @@
         }
       ],
       "steps": [
-        "Lägg {{chicken_breast}} mellan två bakplåtspapper och banka med kötthammare eller kavel tills den är jämntjock, ca 2 cm.",
+        "Lägg {{chicken_breast}} mellan två bakplåtspapper och banka med {{eq:kotthammare_1|noun}} eller {{eq:kavel_1|noun}} tills den är jämntjock, ca 2 cm.",
         "Krydda med {{salt}}."
       ],
       "duration": 6,
@@ -210,6 +229,27 @@
       ],
       "tips": [
         "VIKTIGT: Tvätta händer och köksredskap noggrant efter att ha hanterat rå kyckling."
+      ],
+      "equipment": [
+        {
+          "type": "kotthammare",
+          "optional": true,
+          "ref": "kotthammare_1"
+        },
+        {
+          "type": "kavel",
+          "optional": true,
+          "ref": "kavel_1"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada_ra",
+          "separate": true,
+          "inferred": true,
+          "rawKinds": [
+            "poultry"
+          ]
+        }
       ]
     },
     {
@@ -249,10 +289,10 @@
         }
       ],
       "steps": [
-        "Blanda {{flour}}, {{salt}} och {{pepper}} i en djup tallrik.",
-        "Vispa {{egg}} i en andra djup tallrik.",
-        "Lägg {{panko}} i en tredje djup tallrik.",
-        "Vänd {{gyllenstekt_kycklingschnitzel__pounded_chicken}} först i mjöl, sen i ägg och till sist i panko. Placera på en tallrik."
+        "Blanda {{flour}}, {{salt}} och {{pepper}} i {{eq:djup_tallrik_1}}.",
+        "Vispa {{egg}} i en andra {{eq:djup_tallrik_2|bare}}.",
+        "Lägg {{panko}} i en tredje {{eq:djup_tallrik_3|bare}}.",
+        "Vänd {{gyllenstekt_kycklingschnitzel__pounded_chicken}} först i mjöl, sen i ägg och till sist i panko. Placera på {{eq:tallrik_1}}."
       ],
       "duration": 8,
       "tags": [
@@ -263,6 +303,24 @@
       ],
       "devNotes": [
         "FLAG: peppar står i steget (en nypa) men saknas i yields."
+      ],
+      "equipment": [
+        {
+          "type": "djup_tallrik",
+          "ref": "djup_tallrik_1"
+        },
+        {
+          "type": "djup_tallrik",
+          "ref": "djup_tallrik_2"
+        },
+        {
+          "type": "djup_tallrik",
+          "ref": "djup_tallrik_3"
+        },
+        {
+          "type": "tallrik",
+          "ref": "tallrik_1"
+        }
       ]
     },
     {
@@ -282,8 +340,8 @@
         }
       ],
       "steps": [
-        "Hetta upp en stor stekpanna på medelhög värme och tillsätt {{olive_oil}} så det täcker pannan.",
-        "Stek {{gyllenstekt_kycklingschnitzel__breaded_chicken}} i 3–4 min per sida, eller tills gyllene och genomstekt. Lägg över till en tallrik med hushållspapper."
+        "Hetta upp {{eq:stekpanna_1}} på medelhög värme och tillsätt {{olive_oil}} så det täcker {{eq:stekpanna_1|def}}.",
+        "Stek {{gyllenstekt_kycklingschnitzel__breaded_chicken}} i 3–4 min per sida, eller tills gyllene och genomstekt. Lägg över till {{eq:tallrik_2}} med hushållspapper."
       ],
       "duration": 9,
       "wait": 0,
@@ -295,7 +353,12 @@
       "heat": "medelhög",
       "equipment": [
         {
-          "type": "stekpanna_stor"
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1"
+        },
+        {
+          "type": "tallrik",
+          "ref": "tallrik_2"
         }
       ],
       "devNotes": [
@@ -323,6 +386,13 @@
       ],
       "devNotes": [
         "FLAG: gräslök är 1 st vid 2–4 portioner (2 st först vid 5) — icke-linjär, behållen som 1 st."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -345,6 +415,13 @@
       ],
       "devNotes": [
         "HF «Citrusfrukt» (type lemon) → lemon. 1 st även vid 2–4 portioner."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -409,13 +486,20 @@
         }
       ],
       "steps": [
-        "Lägg upp {{gyllenstekt_kycklingschnitzel__fried_chicken}} och {{gyllenstekt_kycklingschnitzel__potato_salad}} på tallrikar.",
+        "Lägg upp {{gyllenstekt_kycklingschnitzel__fried_chicken}} och {{gyllenstekt_kycklingschnitzel__potato_salad}} på {{eq:servering|pl}}.",
         "Servera med {{gyllenstekt_kycklingschnitzel__lemon_wedges}}."
       ],
       "duration": 3,
       "wait": 0,
       "tags": [
         "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_tallrik",
+          "ref": "servering",
+          "count": "portions"
+        }
       ]
     }
   ]

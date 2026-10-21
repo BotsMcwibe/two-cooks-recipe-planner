@@ -47,7 +47,7 @@
         }
       ],
       "steps": [
-        "Värm {{tortillas}} i mikrovågsugnen i ca 30–60 sek, eller tills mjuka och varma."
+        "Värm {{tortillas}} i {{eq:mikro_1|def}} i ca 30–60 sek, eller tills mjuka och varma."
       ],
       "duration": 1,
       "wait": 1,
@@ -55,6 +55,12 @@
       "tips": [
         "Tortillas kan ätas rätt ur påsen, men vi rekommenderar att värma dem.",
         "Utan mikrovågsugn: värm ugnen till 220 °C/200 °C varmluft och värm tortillas täckta med folie i 4–5 min."
+      ],
+      "equipment": [
+        {
+          "type": "mikro",
+          "ref": "mikro_1"
+        }
       ]
     },
     {
@@ -79,12 +85,22 @@
         }
       ],
       "steps": [
-        "Skär {{sliced_pork_chop}} i 2 cm tjocka strimlor på en separat skärbräda.",
+        "Skär {{sliced_pork_chop}} i 2 cm tjocka strimlor på en separat {{eq:skarbrada_ra|noun}}.",
         "Krydda med {{tex_mex}} och {{salt}}."
       ],
       "duration": 3,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada_ra",
+          "separate": true,
+          "rawKinds": [
+            "meat"
+          ]
+        }
       ]
     },
     {
@@ -104,7 +120,7 @@
         }
       ],
       "steps": [
-        "Hetta upp {{olive_oil}} i en stor stekpanna på medelhög värme.",
+        "Hetta upp {{olive_oil}} i {{eq:stekpanna_1}} på medelhög värme.",
         "Stek {{tex_mex_pork_burrito__seasoned_pork}} i 3–4 min, eller tills brynt och genomstekt."
       ],
       "duration": 4,
@@ -116,7 +132,8 @@
       "heat": "medelhög",
       "equipment": [
         {
-          "type": "stekpanna_stor"
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1"
         }
       ]
     },
@@ -137,11 +154,17 @@
         }
       ],
       "steps": [
-        "Blanda {{mayonnaise}} och {{sriracha}} i en liten skål."
+        "Blanda {{mayonnaise}} och {{sriracha}} i {{eq:skal_1}}."
       ],
       "duration": 1,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skal_liten",
+          "ref": "skal_1"
+        }
       ]
     },
     {
@@ -177,8 +200,8 @@
       ],
       "steps": [
         "Halvera {{lime}}.",
-        "Blanda 1 msk limesaft, {{olive_oil}}, {{salt}} och {{pepper}} i en stor skål.",
-        "Vänd ner {{mixed_salad}} i skålen med dressingen."
+        "Blanda 1 msk limesaft, {{olive_oil}}, {{salt}} och {{pepper}} i {{eq:skal_2}}.",
+        "Vänd ner {{mixed_salad}} i {{eq:skal_2|def}} med dressingen."
       ],
       "duration": 3,
       "tags": [
@@ -186,7 +209,13 @@
       ],
       "equipment": [
         {
-          "type": "skal_stor"
+          "type": "skal_stor",
+          "ref": "skal_2"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
         }
       ]
     },

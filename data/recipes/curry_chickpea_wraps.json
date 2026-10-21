@@ -47,7 +47,7 @@
         }
       ],
       "steps": [
-        "Värm {{tortillas}} i mikrovågsugnen i ca 30–60 sek, eller tills mjuka och varma."
+        "Värm {{tortillas}} i {{eq:mikro_1|def}} i ca 30–60 sek, eller tills mjuka och varma."
       ],
       "duration": 1,
       "wait": 1,
@@ -55,6 +55,12 @@
       "tips": [
         "Tortillas kan ätas som de är, men vi rekommenderar att värma dem.",
         "Utan mikrovågsugn: värm ugnen till 220 °C/200 °C varmluft och värm tortillas täckta med folie i 4–5 min."
+      ],
+      "equipment": [
+        {
+          "type": "mikro",
+          "ref": "mikro_1"
+        }
       ]
     },
     {
@@ -94,9 +100,9 @@
         }
       ],
       "steps": [
-        "Blanda {{mayonnaise}} och {{sriracha}} i en stor skål.",
+        "Blanda {{mayonnaise}} och {{sriracha}} i {{eq:skal_1}}.",
         "Häll av och skölj {{chickpeas}}.",
-        "Mosa kikärtorna grovt med en gaffel i en medelstor skål.",
+        "Mosa kikärtorna grovt med en gaffel i {{eq:skal_2}}.",
         "Rör i {{curry_on}}, majonnäs-srirachablandningen, {{salt}} och {{pepper}}."
       ],
       "duration": 5,
@@ -106,7 +112,12 @@
       ],
       "equipment": [
         {
-          "type": "skal_stor"
+          "type": "skal_stor",
+          "ref": "skal_1"
+        },
+        {
+          "type": "skal_medelstor",
+          "ref": "skal_2"
         }
       ]
     },
@@ -140,6 +151,13 @@
       "wait": 0,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {

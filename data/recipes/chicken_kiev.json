@@ -43,7 +43,7 @@
       "outputName": "Förvärmd ugn (240°C)",
       "inputs": [],
       "steps": [
-        "Värm ugnen till 240°C, eller 220°C varmluft."
+        "Värm {{eq:ugn|def}} till 240°C, eller 220°C varmluft."
       ],
       "duration": 1,
       "tags": [
@@ -81,6 +81,13 @@
       "duration": 6,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -103,6 +110,13 @@
       ],
       "devNotes": [
         "FLAG: HF type=shallot men namn/slug är Lök — mappad till onion (gul lök), inte shallot."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -122,6 +136,13 @@
       "duration": 3,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -141,6 +162,13 @@
       "duration": 2,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -163,6 +191,13 @@
       ],
       "devNotes": [
         "HF 'Citrusfrukt' (type lemon) → lemon."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -221,12 +256,23 @@
       ],
       "steps": [
         "Finhacka {{parsley}}.",
-        "Mosa {{chicken_kiev__softened_butter}}, {{chicken_kiev__minced_garlic}}, den finhackade persiljan, {{salt}} och {{pepper}} med en gaffel i en skål.",
+        "Mosa {{chicken_kiev__softened_butter}}, {{chicken_kiev__minced_garlic}}, den finhackade persiljan, {{salt}} och {{pepper}} med en gaffel i {{eq:skal_1}}.",
         "Ställ åt sidan."
       ],
       "duration": 4,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skal",
+          "ref": "skal_1"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -261,9 +307,9 @@
         }
       ],
       "steps": [
-        "Lägg {{chicken_kiev__chopped_root_veg}} och {{chicken_kiev__onion_wedges}} på en plåt med bakplåtspapper.",
+        "Lägg {{chicken_kiev__chopped_root_veg}} och {{chicken_kiev__onion_wedges}} på {{eq:plat_1}} med bakplåtspapper.",
         "Blanda med {{olive_oil}}, {{salt}} och {{pepper}}.",
-        "Rosta i den förvärmda ugnen i 8–18 min (första delen av totalt 20–30 min), tills det är dags för broccolini."
+        "Rosta i den förvärmda {{eq:ugn|def}} i 8–18 min (första delen av totalt 20–30 min), tills det är dags för broccolini."
       ],
       "duration": 4,
       "wait": 18,
@@ -281,7 +327,8 @@
         },
         {
           "type": "plat",
-          "ref": "plat_1"
+          "ref": "plat_1",
+          "liner": "bakplatspapper"
         }
       ]
     },
@@ -302,7 +349,7 @@
         }
       ],
       "steps": [
-        "Tillsätt {{chicken_kiev__chopped_broccolini}} på plåten med {{chicken_kiev__roasting_root_veg}}.",
+        "Tillsätt {{chicken_kiev__chopped_broccolini}} på {{eq:plat_1|def}} med {{chicken_kiev__roasting_root_veg}}.",
         "Rosta klart i 12 min, eller tills rotfrukterna är mjuka och broccolini är klar."
       ],
       "duration": 1,
@@ -348,7 +395,7 @@
         }
       ],
       "steps": [
-        "Skär ett horisontellt snitt i varje {{chicken_breast}} med en vass kniv utan att skära rakt igenom, på en separat skärbräda.",
+        "Skär ett horisontellt snitt i varje {{chicken_breast}} med en vass kniv utan att skära rakt igenom, på en separat {{eq:skarbrada_ra|noun}}.",
         "Krydda med {{salt}}.",
         "Fyll fickorna med {{chicken_kiev__garlic_butter}}."
       ],
@@ -358,6 +405,16 @@
       ],
       "tips": [
         "VIKTIGT: Tvätta händer och köksredskap noggrant efter hantering av rå kyckling."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada_ra",
+          "separate": true,
+          "rawKinds": [
+            "poultry"
+          ]
+        }
       ]
     },
     {
@@ -388,11 +445,22 @@
       ],
       "steps": [
         "Finhacka {{parsley}}.",
-        "Blanda {{panko}}, den finhackade persiljan, {{salt}} och {{pepper}} i en annan djup tallrik."
+        "Blanda {{panko}}, den finhackade persiljan, {{salt}} och {{pepper}} i en annan {{eq:djup_tallrik_1|bare}}."
       ],
       "duration": 3,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "djup_tallrik",
+          "ref": "djup_tallrik_1"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -417,9 +485,9 @@
         }
       ],
       "steps": [
-        "Vispa {{egg}} i en djup tallrik.",
+        "Vispa {{egg}} i {{eq:djup_tallrik_2}}.",
         "Vänd {{chicken_kiev__stuffed_chicken}} i ägg och sedan i {{chicken_kiev__seasoned_panko}}.",
-        "Ställ åt sidan på en tallrik."
+        "Ställ åt sidan på {{eq:tallrik_1}}."
       ],
       "duration": 5,
       "tags": [
@@ -427,6 +495,16 @@
       ],
       "tips": [
         "Var försiktig när du panerar kycklingen, så att inte fyllningen ramlar ut."
+      ],
+      "equipment": [
+        {
+          "type": "djup_tallrik",
+          "ref": "djup_tallrik_2"
+        },
+        {
+          "type": "tallrik",
+          "ref": "tallrik_1"
+        }
       ]
     },
     {
@@ -446,10 +524,10 @@
         }
       ],
       "steps": [
-        "Hetta upp en stor stekpanna på medelhög värme och tillsätt {{olive_oil}} så det täcker pannan.",
+        "Hetta upp {{eq:stekpanna_1}} på medelhög värme och tillsätt {{olive_oil}} så det täcker {{eq:stekpanna_1|def}}.",
         "Stek {{chicken_kiev__breaded_chicken}} i 2–3 min per sida, eller tills gyllene.",
-        "Lägg över kycklingen på en ny plåt med bakplåtspapper.",
-        "Tillaga i den förvärmda ugnen i 6–10 min, tills genomstekt."
+        "Lägg över kycklingen på en ny {{eq:plat_2|noun}} med bakplåtspapper.",
+        "Tillaga i den förvärmda {{eq:ugn|def}} i 6–10 min, tills genomstekt."
       ],
       "duration": 10,
       "wait": 8,
@@ -467,10 +545,13 @@
           "fanTemp": 220
         },
         {
-          "type": "stekpanna_stor"
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1"
         },
         {
-          "type": "plat"
+          "type": "plat",
+          "ref": "plat_2",
+          "liner": "bakplatspapper"
         }
       ],
       "heat": "medelhög"
@@ -493,7 +574,7 @@
       ],
       "steps": [
         "Skölj {{mixed_salad}}.",
-        "Blanda {{chicken_kiev__roasted_vegetables}} med {{mixed_salad}} på plåten och vänd runt tills salladen har mjuknat något."
+        "Blanda {{chicken_kiev__roasted_vegetables}} med {{mixed_salad}} på {{eq:plat_1|def}} och vänd runt tills salladen har mjuknat något."
       ],
       "duration": 3,
       "tags": [],
@@ -532,15 +613,22 @@
         }
       ],
       "steps": [
-        "Lägg upp {{chicken_kiev__veg_salad}} och {{chicken_kiev__cooked_chicken}} på tallrikar.",
-        "Ringla över resterande vitlökssmör från stekpannan.",
+        "Lägg upp {{chicken_kiev__veg_salad}} och {{chicken_kiev__cooked_chicken}} på {{eq:servering|pl}}.",
+        "Ringla över resterande vitlökssmör från {{eq:stekpanna_1|def}}.",
         "Servera med en klick {{aioli}} och {{chicken_kiev__lemon_wedges}} att pressa över kycklingen."
       ],
       "duration": 3,
       "tags": [
         "master"
       ],
-      "wait": 0
+      "wait": 0,
+      "serving": [
+        {
+          "type": "servering_tallrik",
+          "ref": "servering",
+          "count": "portions"
+        }
+      ]
     }
   ]
 }

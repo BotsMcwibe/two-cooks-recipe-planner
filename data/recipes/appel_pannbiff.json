@@ -47,7 +47,7 @@
       "outputName": "Förvärmd ugn (240°C)",
       "inputs": [],
       "steps": [
-        "Värm ugnen till 240°C, eller 220°C varmluft."
+        "Värm {{eq:ugn|def}} till 240°C, eller 220°C varmluft."
       ],
       "duration": 1,
       "wait": 12,
@@ -80,6 +80,13 @@
       "duration": 6,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -114,9 +121,9 @@
         }
       ],
       "steps": [
-        "Lägg {{appel_pannbiff__cut_potatoes}} på en plåt med bakplåtspapper.",
+        "Lägg {{appel_pannbiff__cut_potatoes}} på {{eq:plat_1}} med bakplåtspapper.",
         "Blanda med {{olive_oil}}, {{mamas_favorit}}, {{salt}} och {{pepper}}.",
-        "Rosta i ugnen i 25–35 min, tills mjuka."
+        "Rosta i {{eq:ugn|def}} i 25–35 min, tills mjuka."
       ],
       "duration": 4,
       "wait": 35,
@@ -130,7 +137,9 @@
           "fanTemp": 220
         },
         {
-          "type": "plat"
+          "type": "plat",
+          "ref": "plat_1",
+          "liner": "bakplatspapper"
         }
       ]
     },
@@ -151,6 +160,13 @@
       "duration": 3,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -170,7 +186,7 @@
         }
       ],
       "steps": [
-        "Hetta upp {{olive_oil}} i en stor stekpanna på medelvärme.",
+        "Hetta upp {{olive_oil}} i {{eq:stekpanna_1}} på medelvärme.",
         "Stek {{appel_pannbiff__sliced_onion}} i 5–10 min, eller tills mjuk."
       ],
       "duration": 2,
@@ -267,7 +283,7 @@
         }
       ],
       "steps": [
-        "Blanda {{ground_beef}}, {{appel_pannbiff__grated_apple}}, {{breadcrumbs}}, {{salt}} och {{pepper}} i en stor skål.",
+        "Blanda {{ground_beef}}, {{appel_pannbiff__grated_apple}}, {{breadcrumbs}}, {{salt}} och {{pepper}} i {{eq:skal_1}}.",
         "Forma till 4 biffar (1 per person) med fuktiga händer."
       ],
       "duration": 8,
@@ -276,7 +292,8 @@
       ],
       "equipment": [
         {
-          "type": "skal_stor"
+          "type": "skal_stor",
+          "ref": "skal_1"
         }
       ]
     },
@@ -297,7 +314,7 @@
         }
       ],
       "steps": [
-        "Hetta upp {{olive_oil}} i en stor stekpanna på medelhög värme.",
+        "Hetta upp {{olive_oil}} i {{eq:stekpanna_2}} på medelhög värme.",
         "Stek {{appel_pannbiff__formed_patties}} i 4–5 min per sida, tills de inte längre är rosa i mitten."
       ],
       "duration": 10,
@@ -309,7 +326,8 @@
       "heat": "medelhög",
       "equipment": [
         {
-          "type": "stekpanna_stor"
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_2"
         }
       ],
       "devNotes": [
@@ -333,6 +351,13 @@
       "duration": 2,
       "tags": [
         "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -381,11 +406,17 @@
         }
       ],
       "steps": [
-        "Blanda {{yoghurt}} och {{appel_pannbiff__pressed_garlic}} i en skål.",
+        "Blanda {{yoghurt}} och {{appel_pannbiff__pressed_garlic}} i {{eq:skal_2}}.",
         "Krydda med {{salt}} och {{pepper}}."
       ],
       "duration": 3,
-      "tags": []
+      "tags": [],
+      "equipment": [
+        {
+          "type": "skal",
+          "ref": "skal_2"
+        }
+      ]
     },
     {
       "id": "appel_pannbiff__cabbage_salad",
@@ -414,7 +445,7 @@
         }
       ],
       "steps": [
-        "Blanda {{cabbage_mix}} och {{salt}} i en stor skål. Massera med händerna i 30 sek.",
+        "Blanda {{cabbage_mix}} och {{salt}} i {{eq:skal_3}}. Massera med händerna i 30 sek.",
         "Rör i {{appel_pannbiff__grated_carrot}} och hälften av {{appel_pannbiff__garlic_yoghurt}}. Spara resten till servering."
       ],
       "duration": 4,
@@ -423,7 +454,8 @@
       ],
       "equipment": [
         {
-          "type": "skal_stor"
+          "type": "skal_stor",
+          "ref": "skal_3"
         }
       ]
     },
@@ -454,7 +486,7 @@
         }
       ],
       "steps": [
-        "Lägg upp {{appel_pannbiff__fried_patties}}, {{appel_pannbiff__roasted_potatoes}} och {{appel_pannbiff__cabbage_salad}} på tallrikar.",
+        "Lägg upp {{appel_pannbiff__fried_patties}}, {{appel_pannbiff__roasted_potatoes}} och {{appel_pannbiff__cabbage_salad}} på {{eq:servering|pl}}.",
         "Toppa pannbiffarna med {{appel_pannbiff__caramelized_onion}}.",
         "Servera med resterande vitlöksyoghurt."
       ],
@@ -462,6 +494,13 @@
       "wait": 0,
       "tags": [
         "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_tallrik",
+          "ref": "servering",
+          "count": "portions"
+        }
       ]
     }
   ]

@@ -42,7 +42,7 @@
       "outputName": "Förvärmd ugn (190°C)",
       "inputs": [],
       "steps": [
-        "Värm ugnen till 190°C, eller 170°C varmluft."
+        "Värm {{eq:ugn|def}} till 190°C, eller 170°C varmluft."
       ],
       "duration": 1,
       "wait": 10,
@@ -84,6 +84,13 @@
       ],
       "tips": [
         "Nöthackningen kan göras medan kakan gräddas i första fasen."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     },
     {
@@ -98,8 +105,8 @@
         }
       ],
       "steps": [
-        "Häll {{sponge_cake_mix}} i en rund bakform (20–22 cm i diameter) med bakplåtspapper och platta till med en slickepott.",
-        "Grädda i ugnen i 20 min."
+        "Häll {{sponge_cake_mix}} i en rund {{eq:bakform_1|noun}} (20–22 cm i diameter) med bakplåtspapper och platta till med en slickepott.",
+        "Grädda i {{eq:ugn|def}} i 20 min."
       ],
       "duration": 3,
       "wait": 20,
@@ -113,7 +120,9 @@
           "fanTemp": 170
         },
         {
-          "type": "bakform"
+          "type": "bakform",
+          "ref": "bakform_1",
+          "liner": "bakplatspapper"
         }
       ]
     },
@@ -154,7 +163,7 @@
         }
       ],
       "steps": [
-        "Smält {{butter}} i en stor stekpanna på medelhög värme.",
+        "Smält {{butter}} i {{eq:stekpanna_1}} på medelhög värme.",
         "Tillsätt {{powdered_sugar}}, {{syrup}}, {{flour}} och {{milk}}. Sjud under omrörning tills tjocknat, ca 3–4 min.",
         "Rör ner {{gyllene_toscakaka__chopped_nuts}} i toscaglasen."
       ],
@@ -166,7 +175,8 @@
       "heat": "medelhög",
       "equipment": [
         {
-          "type": "stekpanna_stor"
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1"
         }
       ]
     },
@@ -216,6 +226,13 @@
       ],
       "tips": [
         "Låt kakan svalna innan servering så att toscaglasen sätter sig."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
       ]
     }
   ]
