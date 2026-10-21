@@ -142,7 +142,7 @@ export class AccountView {
       </div>
       <div class="kitchen-row">
         <div class="kitchen-text" id="kitchen-fan-label"><span class="kitchen-label">Varmluft</span>
-          <span class="kitchen-help">Med varmluft visas varmluftstemperaturen. ”ca” betyder att receptet inte angav någon och att den är 20 °C lägre än vanlig ugn.</span></div>
+          <span class="kitchen-help">Oftast 20 grader lägre än vanlig ugn.</span></div>
         <div class="kitchen-seg" role="group" aria-labelledby="kitchen-fan-label">
           <button type="button" data-kitchen-fan="1" aria-pressed="${k.ovenFan}">Ja</button>
           <button type="button" data-kitchen-fan="0" aria-pressed="${!k.ovenFan}">Nej</button>
