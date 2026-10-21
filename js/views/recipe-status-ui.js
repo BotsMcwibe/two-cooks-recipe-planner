@@ -2,12 +2,16 @@
  * Personal status control (Vill laga / Lagar nu / Lagad) + clickable 1–5 stars,
  * and the compact card badge. Backed by core/user-recipe-state.js.
  */
-import * as UserState from '../core/user-recipe-state.js?v=20261021g3';
-import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261021g3';
+import * as UserState from '../core/user-recipe-state.js?v=20261021g4';
+import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261021g4';
 
 const STATUS_ICON = { want: '☆', cooking: '◔', cooked: '✓' };
 
-/** Full control for the overview modal and cook page header. */
+/**
+ * Full control for the overview modal and cook page header.
+ * Returns exactly one element (.rs-control); the catalog Godkänd seal is rendered
+ * separately via kitchenMarkHtml() so in-place refreshes never duplicate it.
+ */
 export function statusControlHtml(id, opts = {}) {
   if (!id) return '';
   const { status, rating } = UserState.get(id);
@@ -27,7 +31,7 @@ export function statusControlHtml(id, opts = {}) {
   const done = opts.allDone && status !== 'cooked'
     ? '<button type="button" class="rs-mark-done" data-status="cooked">✓ Markera som lagad</button>'
     : '';
-  return `${kitchenMarkHtml(id)}<div class="rs-control" data-id="${escapeAttr(id)}">
+  return `<div class="rs-control" data-id="${escapeAttr(id)}">
     <div class="rs-status" role="group" aria-label="Min status">${btns}</div>
     <div class="rs-stars" role="group" aria-label="Mitt betyg">${stars}${rating ? `<span class="rs-stars-value">${rating}/5</span>` : ''}</div>
     ${done}
@@ -98,7 +102,8 @@ export function refreshStatusControls($root, id, opts = {}) {
     const key = focused ? (focused.getAttribute('data-status') ? `[data-status="${focused.getAttribute('data-status')}"]` : `[data-rating="${focused.getAttribute('data-rating')}"]`) : null;
     const tmp = document.createElement('div');
     tmp.innerHTML = statusControlHtml(cid, typeof opts === 'function' ? opts(cid) : opts);
-    const next = tmp.firstElementChild;
+    const next = tmp.querySelector('.rs-control');
+    if (!next) return;
     el.replaceWith(next);
     if (key) (next.querySelector(key) || next.querySelector('button'))?.focus();
   });

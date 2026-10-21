@@ -1,9 +1,9 @@
-import { Scheduler } from '../models/scheduler.js?v=20261021g3';
-import { RecipeGraph } from '../core/recipe-graph.js?v=20261021g3';
-import { equipmentSummary, isResource, nodeEquipmentHtml, stepHeatHtml } from '../core/equipment.js?v=20261021g3';
-import { kitchenProfile } from '../core/kitchen-prefs.js?v=20261021g3';
+import { Scheduler } from '../models/scheduler.js?v=20261021g4';
+import { RecipeGraph } from '../core/recipe-graph.js?v=20261021g4';
+import { equipmentSummary, isResource, nodeEquipmentHtml, stepHeatHtml } from '../core/equipment.js?v=20261021g4';
+import { kitchenProfile } from '../core/kitchen-prefs.js?v=20261021g4';
 import { formatNiceAmount } from '../utils/helpers.js';
-import { formatStepInputText, producerMap } from '../utils/derived-inputs.js?v=20261021g3';
+import { formatStepInputText, producerMap } from '../utils/derived-inputs.js?v=20261021g4';
 import {
   allergenLabel,
   difficultyLabel,
@@ -11,11 +11,11 @@ import {
   escapeAttr,
   escapeHtml,
   starHtml,
-} from '../utils/catalog-ui.js?v=20261021g3';
-import { imgFailed, isPhotoMissing, recordPhotoFailure, recordPhotoSuccess } from '../utils/photo-fallback.js?v=20261021g3';
-import * as UserState from '../core/user-recipe-state.js?v=20261021g3';
-import { bindStatusControls, refreshStatusControls, statusControlHtml } from './recipe-status-ui.js?v=20261021g3';
-import { joinStepParts, sentenceCase } from '../utils/text.js?v=20261021g3';
+} from '../utils/catalog-ui.js?v=20261021g4';
+import { imgFailed, isPhotoMissing, recordPhotoFailure, recordPhotoSuccess } from '../utils/photo-fallback.js?v=20261021g4';
+import * as UserState from '../core/user-recipe-state.js?v=20261021g4';
+import { bindStatusControls, kitchenMarkHtml, refreshStatusControls, statusControlHtml } from './recipe-status-ui.js?v=20261021g4';
+import { joinStepParts, sentenceCase } from '../utils/text.js?v=20261021g4';
 
 /**
  * Cooking view - rich recipe page with hero, meta, ingredients, nutrition,
@@ -225,7 +225,7 @@ export class CookingView {
     html += '</div>';
     if (tags) html += `<div class="overview-tags">${tags}</div>`;
     const statusId = entry.id || this.state.selectedRecipeId;
-    if (statusId) html += statusControlHtml(statusId, { allDone: this._allDone });
+    if (statusId) html += kitchenMarkHtml(statusId) + statusControlHtml(statusId, { allDone: this._allDone });
     if (allergens) {
       html += `<div class="overview-allergens"><span class="allergens-label">Allergener:</span> ${allergens}</div>`;
     }

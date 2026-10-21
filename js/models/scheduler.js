@@ -24,8 +24,8 @@
  *   their 30 min wait starts early.
  */
 
-import { effectiveOven, isResource, recipeAfterIds, typeInfo } from '../core/equipment.js?v=20261021g3';
-import { isTakeOutNode } from '../utils/prep-phase.js?v=20261021g3';
+import { effectiveOven, isResource, recipeAfterIds, typeInfo } from '../core/equipment.js?v=20261021g4';
+import { isTakeOutNode } from '../utils/prep-phase.js?v=20261021g4';
 
 const PREP_TOLERANCE = 1;
 const DEFAULT_KITCHEN = { ovenTrays: 2, ovenFan: false };
