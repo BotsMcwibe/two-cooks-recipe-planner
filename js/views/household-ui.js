@@ -4,10 +4,10 @@
  * invite panel for #join/CODE. Rendering returns HTML strings; AccountView
  * forwards clicks/submits/changes to handle*() and re-renders on householdchange.
  */
-import * as Household from '../core/household.js?v=20261021g18';
-import { syncNow, currentUser } from '../core/sync.js?v=20261021g18';
-import { openSignIn } from './auth-ui.js?v=20261021g18';
-import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261021g18';
+import * as Household from '../core/household.js?v=20261109g19';
+import { syncNow, currentUser } from '../core/sync.js?v=20261109g19';
+import { openSignIn } from './auth-ui.js?v=20261109g19';
+import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261109g19';
 
 const fmtDay = new Intl.DateTimeFormat('sv-SE', { day: 'numeric', month: 'short' });
 /** 'Anna', 'Anna och Bo', 'Anna, Bo och Cia' */

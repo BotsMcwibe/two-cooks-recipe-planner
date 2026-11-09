@@ -10,26 +10,21 @@
  *   preference key), then write-through on every local change (optimistic; failures
  *   mark the store dirty and a full merge runs again when back online).
  */
-import { SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, SUPABASE_JS_URL } from '../config.js?v=20261021g18';
-import * as UserState from './user-recipe-state.js?v=20261021g18';
-import { prefTs, setPrefTs } from './prefs-meta.js?v=20261021g18';
-import { missingMixes, replaceMissingMixes } from './spice-prefs.js?v=20261021g18';
-import { excludedPantry, replacePantryExcluded } from './pantry-exclude.js?v=20261021g18';
-import { ownedSpices, replaceSpicesOwned } from './spices-owned.js?v=20261021g18';
-import { savedTheme, applySyncedTheme } from '../utils/theme.js?v=20261021g18';
-import { storedKitchen, replaceKitchen } from './kitchen-prefs.js?v=20261021g18';
-import { storedSettings as storedWeekSettings, replaceSettings as replaceWeekSettings, storedPlan as storedWeekPlan, replacePlan as replaceWeekPlan } from './week-plan.js?v=20261021g18';
-import { JOURNAL_KEYS, journalValue, replaceJournal, mergeJournal, setActor } from './recipe-journal.js?v=20261021g18';
-import * as Household from './household.js?v=20261021g18';
-import * as Tables from './table-sync.js?v=20261021g18';
+import { SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, SUPABASE_JS_URL } from '../config.js?v=20261109g19';
+import * as UserState from './user-recipe-state.js?v=20261109g19';
+import { prefTs, setPrefTs } from './prefs-meta.js?v=20261109g19';
+import { missingMixes, replaceMissingMixes } from './spice-prefs.js?v=20261109g19';
+import { excludedPantry, replacePantryExcluded } from './pantry-exclude.js?v=20261109g19';
+import { ownedSpices, replaceSpicesOwned } from './spices-owned.js?v=20261109g19';
+import { savedTheme, applySyncedTheme } from '../utils/theme.js?v=20261109g19';
+import { storedKitchen, replaceKitchen } from './kitchen-prefs.js?v=20261109g19';
+import { storedSettings as storedWeekSettings, replaceSettings as replaceWeekSettings, storedPlan as storedWeekPlan, replacePlan as replaceWeekPlan } from './week-plan.js?v=20261109g19';
+import { setActor } from './recipe-journal.js?v=20261109g19';
+import * as Household from './household.js?v=20261109g19';
+import * as Tables from './table-sync.js?v=20261109g19';
 
-/**
- * Household tables (0002+): when the project has them, statuses, stars, the cook
- * log, lists, Inte för oss and notes sync through table-sync.js instead of
- * user_recipe_state + the prefs JSON (status/stars are still written to
- * user_recipe_state too, for older cached clients). Otherwise the legacy path runs.
- */
-const USE_TABLES = true;
+/** Signed-in journal data uses household tables only; failures stay queued locally. */
+const RETIRED_PREF_KEYS = ['cookLog', 'recipeNotes', 'recipeLists', 'notForUs', 'cookChallenge', 'journalMigratedAt'];
 let tablesMode = false;
 
 const listeners = new Set();
@@ -135,13 +130,6 @@ function prefAdapters() {
       get: () => (appState ? appState.getShoppingData() : null),
       set: (v) => appState && appState.replaceShoppingData(v),
     },
-    // Journal maps (cook log, notes, lists, Inte för oss, challenge): merged record by record.
-    // With the household tables only the (personal) challenge stays in prefs.
-    ...Object.fromEntries(Object.keys(JOURNAL_KEYS).filter((k) => !(tablesMode && Tables.TABLE_KEYS.includes(k))).map((k) => [k, {
-      get: () => journalValue(k),
-      set: (v) => replaceJournal(k, v),
-      merge: mergeJournal,
-    }])),
   };
 }
 
@@ -150,7 +138,6 @@ function localPrefs() {
   for (const [key, a] of Object.entries(prefAdapters())) {
     const value = a.get();
     if (value == null) continue;
-    if (a.merge && !Object.keys(value).length && !prefTs(key)) continue; // never touched: nothing to send
     out[key] = { value, updatedAt: prefTs(key) };
   }
   return out;
@@ -159,13 +146,6 @@ function localPrefs() {
 // ---------------------------------------------------------------------------
 // Merge + write-through
 // ---------------------------------------------------------------------------
-const toRow = (id, rec) => ({
-  recipe_id: id,
-  status: rec.status || null,
-  rating: rec.rating || null,
-  updated_at: new Date(Number(rec.updatedAt) || Date.now()).toISOString(),
-});
-
 let merging = null;
 let mergeAgain = false;
 /** Full merge; concurrent calls are folded into one extra run. */
@@ -186,15 +166,14 @@ async function mergeOnce() {
     // Household tables? (also creates my profile + personal kitchen on first sign-in)
     // (a network/server error throws: retry later, keep the current mode)
     const hid = await Tables.detect(client, user);
-    tablesMode = USE_TABLES && !!hid;
-    Household.setMode(tablesMode ? 'tables' : 'legacy');
+    if (!hid) throw new Error('Household tables unavailable; local changes kept for retry');
+    tablesMode = true;
+    Household.setMode('tables');
     if (hid) await Household.refresh(hid).catch((err) => console.warn('[household] refresh failed', err));
     if (tablesMode) {
       await Tables.syncAll(hid);
       subscribeLive(hid);
       Household.loadFeed().catch((err) => console.warn('[feed] load failed', err));
-    } else {
-      await mergeLegacyRecipeState();
     }
     await mergePrefs();
     setDirty(false);
@@ -252,31 +231,6 @@ function unsubscribeLive() {
   clearTimeout(liveTimer);
 }
 
-async function mergeLegacyRecipeState() {
-    // Recipe state
-    const { data: rows, error } = await client.from('user_recipe_state').select('recipe_id,status,rating,updated_at');
-    if (error) throw error;
-    const remote = new Map((rows || []).map(r => [r.recipe_id, r]));
-    const push = [];
-    applying = true;
-    try {
-      for (const r of remote.values()) {
-        UserState.applyRemote(r.recipe_id, { status: r.status, rating: r.rating, updatedAt: Date.parse(r.updated_at) });
-      }
-    } finally {
-      applying = false;
-    }
-    const local = UserState.allLocal(); // after applyRemote, so seed-clears get pushed
-    for (const [id, rec] of Object.entries(local)) {
-      const r = remote.get(id);
-      if (!r || (Number(rec.updatedAt) || 0) > Date.parse(r.updated_at)) push.push(toRow(id, rec));
-    }
-    if (push.length) {
-      const { error: upErr } = await client.from('user_recipe_state').upsert(push, { onConflict: 'user_id,recipe_id' });
-      if (upErr) throw upErr;
-    }
-}
-
 async function mergePrefs() {
     // Preferences (per key)
     const { data: prefRow, error: pErr } = await client.from('user_preferences').select('prefs').maybeSingle();
@@ -288,22 +242,11 @@ async function mergePrefs() {
     let changed = !prefRow;
     applying = true;
     try {
-      // Record-merged keys: union both sides, apply locally, write back if the server lacks anything
-      for (const [key, a] of Object.entries(adapters)) {
-        if (!a.merge) continue;
+      // Only access active preference keys. Never import retired journal records.
+      for (const key of Object.keys(adapters)) {
         const rv = remotePrefs[key];
         const lv = mine[key];
-        if (!rv && !lv) continue;
-        const value = a.merge(lv ? lv.value : {}, rv ? rv.value : {});
-        const ts = Math.max(Number(rv && rv.updatedAt) || 0, Number(lv && lv.updatedAt) || 0);
-        a.set(value);
-        setPrefTs(key, ts);
-        if (!rv || JSON.stringify(value) !== JSON.stringify(rv.value)) { merged[key] = { value, updatedAt: ts }; changed = true; }
-      }
-      for (const [key, rv] of Object.entries(remotePrefs)) {
-        const lv = mine[key];
-        if (adapters[key] && adapters[key].merge) continue;
-        if (adapters[key] && rv && (!lv || (Number(rv.updatedAt) || 0) > (Number(lv.updatedAt) || 0))) {
+        if (rv && (!lv || (Number(rv.updatedAt) || 0) > (Number(lv.updatedAt) || 0))) {
           adapters[key].set(rv.value);
           setPrefTs(key, Number(rv.updatedAt) || 0);
         }
@@ -312,33 +255,11 @@ async function mergePrefs() {
       applying = false;
     }
     for (const [key, lv] of Object.entries(mine)) {
-      if (adapters[key] && adapters[key].merge) continue;
       const rv = remotePrefs[key];
       if (!rv || (Number(lv.updatedAt) || 0) > (Number(rv.updatedAt) || 0)) {
         merged[key] = lv;
         changed = true;
       }
-    }
-    if (tablesMode) {
-      // Journal records an older cached client wrote to prefs after the switch: import
-      // them once (newer than the marker); table-sync pushes them to the tables.
-      const marker = Number(remotePrefs.journalMigratedAt && remotePrefs.journalMigratedAt.value) || 0;
-      applying = true;
-      try {
-        for (const key of Tables.TABLE_KEYS) {
-          const rv = remotePrefs[key] && remotePrefs[key].value;
-          if (!rv || typeof rv !== 'object') continue;
-          const fresh = Object.fromEntries(Object.entries(rv).filter(([, rec]) => rec && (Number(rec.updatedAt) || 0) > marker));
-          if (Object.keys(fresh).length) replaceJournal(key, mergeJournal(journalValue(key), fresh));
-        }
-      } finally { applying = false; }
-      if (!marker) { const t = Date.now(); merged.journalMigratedAt = { value: t, updatedAt: t }; changed = true; }
-      else {
-        // Newer straggler records: move the marker so they're imported only once
-        const newest = Math.max(marker, ...Tables.TABLE_KEYS.flatMap((k) => Object.values((remotePrefs[k] && remotePrefs[k].value) || {}).map((r) => Number(r && r.updatedAt) || 0)));
-        if (newest > marker) { merged.journalMigratedAt = { value: newest, updatedAt: Date.now() }; changed = true; }
-      }
-      scheduleTablePush();
     }
     if (changed) await writePrefs(merged);
 }
@@ -348,20 +269,6 @@ async function writePrefs(prefs) {
     .upsert({ prefs, updated_at: new Date().toISOString() }, { onConflict: 'user_id' });
   if (error) throw error;
   markWritten();
-}
-
-async function pushRecipe(id) {
-  if (!client || !user || applying || !id) return;
-  const rec = UserState.allLocal()[id];
-  if (!rec) return;
-  try {
-    const { error } = await client.from('user_recipe_state').upsert(toRow(id, rec), { onConflict: 'user_id,recipe_id' });
-    if (error) throw error;
-    markWritten();
-  } catch (err) {
-    setDirty(true);
-    console.warn('[sync] recipe write failed, queued', err);
-  }
 }
 
 let tableTimer = null;
@@ -392,19 +299,8 @@ function schedulePrefPush() {
       if (error) throw error;
       const remote = (data && data.prefs) || {};
       const merged = { ...remote };
-      const adapters = prefAdapters();
       for (const [key, lv] of Object.entries(localPrefs())) {
         const rv = remote[key];
-        const a = adapters[key];
-        if (a && a.merge) {
-          // Union with what other devices wrote meanwhile, and show their records here too
-          const value = a.merge(lv.value, rv ? rv.value : {});
-          const ts = Math.max(Number(lv.updatedAt) || 0, Number(rv && rv.updatedAt) || 0);
-          merged[key] = { value, updatedAt: ts };
-          applying = true;
-          try { a.set(value); } finally { applying = false; }
-          continue;
-        }
         if (!rv || (Number(lv.updatedAt) || 0) >= (Number(rv.updatedAt) || 0)) merged[key] = lv;
       }
       await writePrefs(merged);
@@ -463,7 +359,6 @@ export function initSync({ state } = {}) {
 
   UserState.subscribe((id, info) => {
     if (info && info.remote) return;
-    if (id) pushRecipe(id); // user_recipe_state: kept up to date for older cached clients
     if (tablesMode) {
       if (id) Household.setMyRating(id, UserState.get(id).rating);
       scheduleTablePush();
@@ -471,7 +366,7 @@ export function initSync({ state } = {}) {
   });
   window.addEventListener('yessy:prefchange', (e) => {
     const key = e.detail && e.detail.key;
-    if (tablesMode && Tables.TABLE_KEYS.includes(key)) return; // goes to the tables instead
+    if (RETIRED_PREF_KEYS.includes(key)) return; // tables, or local-only challenge
     schedulePrefPush();
   });
   window.addEventListener('journalchange', (e) => {

@@ -2,7 +2,7 @@
  * Recipe journal (Goodreads-style, per user): cook log ("Datum lagad"), private
  * notes, own lists, "Inte för oss" and the yearly cook challenge.
  *
- * Stored in localStorage and synced via user_preferences.prefs (see sync.js) under
+ * Stored in localStorage (logged-out fallback and signed-in offline cache) under
  * the keys in JOURNAL_KEYS. Every value is a map of records with a stable id and
  * an updatedAt (epoch ms); deletes are tombstones ({ deleted: true }). Records are
  * merged one by one (newer updatedAt wins), so cook-log entries from two devices
@@ -20,11 +20,11 @@
  *
  * Signed in with the household tables (core/table-sync.js), cookLog, recipeLists and
  * notForUs are shared with the household and recipeNotes stay private; the
- * challenge goal stays personal in prefs.
+ * challenge goal stays personal and local-only (phase 5); no journal keys sync via prefs.
  *
  * Fires `journalchange` on window ({ detail: { key } }) after any change.
  */
-import { touchPref } from './prefs-meta.js?v=20261021g18';
+import { touchPref } from './prefs-meta.js?v=20261109g19';
 
 export const JOURNAL_KEYS = {
   cookLog: 'yessy.cookLog.v1',
