@@ -1,10 +1,9 @@
 /**
- * Personal per-recipe state (Goodreads-style): status + own 1–5 star rating.
+ * Recipe-state cache: household status + own 1–5 star rating.
  *
- * Stored only in this browser's localStorage (no account/server yet) under a
- * versioned key. Every visitor starts empty. Catalog fields `cooked` /
- * `personalRating` used to seed statuses and ratings; they are now only used to
- * recognise and clear those old seeded records once (see migrateSeeds).
+ * LocalStorage is the logged-out store and signed-in offline cache. Household
+ * statuses and personal ratings sync through table-sync.js. Catalog approval
+ * marks are read-only display data, never personal state.
  *
  *   get(id)                 → { status: 'want'|'cooked'|null, rating: 1..5|null }
  *   set(id, { status?, rating? })
@@ -15,12 +14,7 @@ export const STORAGE_KEY = 'jesse.recipeState.v1';
 
 export const STATUSES = ['want', 'cooked'];
 export const STATUS_LABELS = { want: 'Vill laga', cooked: 'Lagad' };
-/** Retired statuses mapped to their replacement ('cooking'/"Lagar nu" → not finished yet → 'want'). */
-const LEGACY_STATUS = { cooking: 'want' };
-
 const listeners = new Set();
-/** @type {Record<string, {status: string|null, rating: number|null}>} */
-let seeds = {};
 /** Catalog "tested in the kitchen" markers, read-only, never stored or synced. */
 let marks = {};
 /**
@@ -31,10 +25,8 @@ let marks = {};
 let local = load();
 
 function cleanStatus(v) {
-  if (Object.prototype.hasOwnProperty.call(LEGACY_STATUS, v)) return LEGACY_STATUS[v];
   return STATUSES.includes(v) ? v : null;
 }
-function isLegacyStatus(v) { return Object.prototype.hasOwnProperty.call(LEGACY_STATUS, v); }
 function cleanRating(v) {
   const n = Math.round(Number(v));
   return Number.isFinite(n) && n >= 1 && n <= 5 ? n : null;
@@ -49,22 +41,14 @@ function load() {
     const recipes = parsed && typeof parsed === 'object' ? parsed.recipes : null;
     if (!recipes || typeof recipes !== 'object' || Array.isArray(recipes)) return {};
     const out = {};
-    let migrated = false;
-    const now = Date.now();
     for (const [id, v] of Object.entries(recipes)) {
       if (!v || typeof v !== 'object') continue;
-      // Retired status (e.g. 'cooking'): migrate with a fresh timestamp so sync pushes the new value.
-      const legacy = isLegacyStatus(v.status);
-      if (legacy) migrated = true;
-      const updatedAt = legacy ? Math.max(now, (Number(v.updatedAt) || 0) + 1) : (Number(v.updatedAt) || 0);
+      const updatedAt = Number(v.updatedAt) || 0;
       out[id] = {
         status: cleanStatus(v.status), rating: cleanRating(v.rating), updatedAt,
-        statusAt: legacy ? updatedAt : (Number(v.statusAt) || updatedAt),
-        ratingAt: Number(v.ratingAt) || (Number(v.updatedAt) || 0),
+        statusAt: Number(v.statusAt) || 0,
+        ratingAt: Number(v.ratingAt) || 0,
       };
-    }
-    if (migrated) {
-      try { localStorage.setItem(STORAGE_KEY, JSON.stringify({ version: 1, recipes: out })); } catch { /* ignore */ }
     }
     return out;
   } catch {
@@ -85,12 +69,9 @@ function emit(id, remote = false) {
   }
 }
 
-/**
- * Seed from catalog fields (cooked: true → 'cooked'; personalRating out of 10 → 1–5 stars).
- * Seeds are not written to storage; they only apply while no local record exists.
- */
-export function seedFromCatalog(catalog) {
-  seeds = {};
+/** Load read-only catalog approval marks; never seed or migrate user records. */
+export function loadCatalogMarks(catalog) {
+  marks = {};
   for (const c of catalog || []) {
     if (!c || !c.id) continue;
     const cooked = c.cooked === true || (c.cooked && typeof c.cooked === 'object');
@@ -101,38 +82,8 @@ export function seedFromCatalog(catalog) {
       const outOf = Number(pr.outOf) > 0 ? Number(pr.outOf) : 10;
       rating = cleanRating((Number(pr.score) / outOf) * 5);
     }
-    if (cooked || rating) seeds[c.id] = { status: cooked ? 'cooked' : null, rating };
     if (cooked || rating) marks[c.id] = { tested: cooked, rating, score: kitchenScore(pr) };
   }
-  migrateSeeds();
-}
-
-/** One-time migration flag: when seeded records were cleared (ms). */
-export const SEED_MIGRATION_KEY = 'yessy.seedMigration.v1';
-function migratedAt() {
-  try { return Number(localStorage.getItem(SEED_MIGRATION_KEY)) || 0; } catch { return 0; }
-}
-/** True when a record is exactly what catalog seeding produced (status and rating). */
-function isSeedCopy(id, rec) {
-  const s = seeds[id];
-  if (!s || !rec) return false;
-  if (rec.status == null && rec.rating == null) return false;
-  return rec.status === s.status && rec.rating === s.rating;
-}
-/**
- * Clear local records that are exact copies of the old catalog seed, once.
- * Cleared records get a fresh updatedAt so sync writes null/null over any
- * seed-derived server rows instead of pulling them back.
- */
-function migrateSeeds() {
-  if (migratedAt()) return;
-  const now = Date.now();
-  let changed = false;
-  for (const [id, rec] of Object.entries(local)) {
-    if (isSeedCopy(id, rec)) { local[id] = { status: null, rating: null, updatedAt: now, statusAt: now, ratingAt: now }; changed = true; }
-  }
-  try { localStorage.setItem(SEED_MIGRATION_KEY, String(now)); } catch { /* ignore */ }
-  if (changed) { save(); emit(null); }
 }
 
 function kitchenScore(pr) {
@@ -190,38 +141,9 @@ window.addEventListener('storage', (e) => {
   emit(null);
 });
 
-/** Every locally stored record (not seeds), for sync. */
+/** Every locally stored record, for sync. */
 export function allLocal() {
   return Object.fromEntries(Object.entries(local).map(([id, v]) => [id, { ...v }]));
-}
-
-/**
- * Apply a record from the server when it is newer than the local one.
- * @returns {boolean} true if applied
- */
-export function applyRemote(id, rec) {
-  if (!id || !rec) return false;
-  const ts = Number(rec.updatedAt) || 0;
-  const cur = local[id];
-  if (cur && (Number(cur.updatedAt) || 0) >= ts) return false;
-  // A server row created from the old seed before the migration: clear it
-  // locally with a newer timestamp so sync overwrites it with null/null.
-  const m = migratedAt();
-  const clean = { status: cleanStatus(rec.status), rating: cleanRating(rec.rating) };
-  if (m && ts < m && isSeedCopy(id, clean)) {
-    const t = Math.max(m, ts + 1);
-    local[id] = { status: null, rating: null, updatedAt: t, statusAt: t, ratingAt: t };
-    save();
-    emit(id);
-    return true;
-  }
-  // Retired remote status (e.g. 'cooking'): store the replacement one ms newer
-  // so the next merge writes it back to the server.
-  const t = isLegacyStatus(rec.status) ? ts + 1 : ts;
-  local[id] = { status: cleanStatus(rec.status), rating: cleanRating(rec.rating), updatedAt: t, statusAt: t, ratingAt: t };
-  save();
-  emit(id, t === ts);
-  return true;
 }
 
 // ---------------------------------------------------------------------------

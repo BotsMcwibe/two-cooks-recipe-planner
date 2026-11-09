@@ -515,9 +515,8 @@ begin
 end $$;
 
 -- After import: mark added + put recipe on the submitter household's Vill laga
--- (household_recipe_state.status = 'want'). Vill laga is household-scoped since
--- phase 1; phase 5 removed the user_recipe_state dual write, so this single
--- upsert is the whole story for the kitchen.
+-- (household_recipe_state.status = 'want'). Household-scoped status:
+-- this single upsert is the only write path.
 create or replace function public.complete_recipe_inbox_import(p_id uuid, p_recipe_id text)
 returns void
 language plpgsql

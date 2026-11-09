@@ -8,9 +8,8 @@
  * merged one by one (newer updatedAt wins), so cook-log entries from two devices
  * are unioned by id and notes/lists are last-write-wins per record.
  *
- * Records carry `by` (the signed-in user id, null when local) and lists carry
- * `owner` + `members`, so a shared household can later move them to their own
- * tables without changing their shape.
+ * Records carry `by` (the signed-in user id, null when local); lists carry
+ * `owner` + `members` for household/private visibility.
  *
  *   cookLog       { [entryId]: { id, recipeId, date: 'YYYY-MM-DD', cooks?: 1|2, by, createdAt, updatedAt, deleted? } }
  *   recipeNotes   { [recipeId]: { recipeId, text, by, updatedAt } }            (text '' = cleared)
@@ -25,7 +24,7 @@
  *
  * Fires `journalchange` on window ({ detail: { key } }) after any change.
  */
-import { touchPref } from './prefs-meta.js?v=20261109g20';
+import { touchPref } from './prefs-meta.js?v=20261109g21';
 
 export const JOURNAL_KEYS = {
   cookLog: 'yessy.cookLog.v1',

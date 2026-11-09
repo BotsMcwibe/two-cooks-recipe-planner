@@ -11,26 +11,17 @@
  *
  * Stored in localStorage when logged out. Fires `weekplanchange` on window.
  */
-import { touchPref } from './prefs-meta.js?v=20261109g20';
+import { touchPref } from './prefs-meta.js?v=20261109g21';
 
 const SETTINGS_KEY = 'yessy.weekPlanSettings.v1';
 const PLAN_KEY = 'yessy.weekPlan.v1';
 
 export const DEFAULT_CATS = ['protein:chicken', 'protein:pork', 'protein:shrimp', 'tag:quick'];
-/** The first default (g11): settings still exactly equal to it are moved to DEFAULT_CATS. */
-const OLD_DEFAULT_CATS = ['protein:chicken', 'protein:fish', 'protein:pork', 'protein:beef', 'protein:shrimp', 'protein:vegetarian'];
-/** Settings version: 2 = after the four-category default. Saved v2 settings are never migrated again. */
 const SETTINGS_V = 2;
 export const MAX_PER_CAT = 7;
 
 export function defaultSettings() {
   return { v: SETTINGS_V, cats: DEFAULT_CATS.map((id) => ({ id, count: 1 })), godkandOnly: true, rerollSource: 'new' };
-}
-
-/** True for pre-v2 settings whose categories are still the untouched old default (one each). */
-function isOldDefault(v) {
-  if (!v || Number(v.v) >= SETTINGS_V || !Array.isArray(v.cats) || v.cats.length !== OLD_DEFAULT_CATS.length) return false;
-  return v.cats.every((c, i) => c && c.id === OLD_DEFAULT_CATS[i] && Math.round(Number(c.count)) === 1);
 }
 
 function readJson(key) {
@@ -43,8 +34,6 @@ const fire = (key) => window.dispatchEvent(new CustomEvent('weekplanchange', { d
 
 function cleanSettings(v) {
   if (!v || typeof v !== 'object' || !Array.isArray(v.cats)) return defaultSettings();
-  // Untouched old default → new default (keeps the Godkänd and reroll choices)
-  if (isOldDefault(v)) v = { ...v, cats: DEFAULT_CATS.map((id) => ({ id, count: 1 })) };
   const seen = new Set();
   const cats = [];
   for (const c of v.cats) {
@@ -79,14 +68,7 @@ export function weekKey(d = new Date()) {
   return `${y}-W${String(wk).padStart(2, '0')}`;
 }
 
-export function settings() {
-  const raw = readJson(SETTINGS_KEY);
-  const v = cleanSettings(raw);
-  // Store the migrated default locally, without stamping it as a user change, so a
-  // newer customised setting from another device still wins on the next sync.
-  if (raw && isOldDefault(raw)) writeJson(SETTINGS_KEY, v);
-  return v;
-}
+export function settings() { return cleanSettings(readJson(SETTINGS_KEY)); }
 export function plan() { return cleanPlan(readJson(PLAN_KEY)); }
 
 /** User change of the settings. */

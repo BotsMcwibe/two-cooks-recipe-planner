@@ -1,29 +1,29 @@
-import { AppState } from './core/state.js?v=20261109g20';
-import { parseHash, setHash } from './core/router.js?v=20261109g20';
-import { loadStaticData, RecipeRepository } from './data/loader.js?v=20261109g20';
-import { AppShell } from './views/app-shell.js?v=20261109g20';
-import { RecipeChrome } from './views/recipe-selector.js?v=20261109g20';
-import { isScalable } from './utils/catalog-ui.js?v=20261109g20';
-import { BrowseView } from './views/browse-view.js?v=20261109g20';
-import { OverviewModal } from './views/overview-modal.js?v=20261109g20';
-import { FlowGraph } from './views/flow-graph.js?v=20261109g20';
-import { CookingView } from './views/cooking-view.js?v=20261109g20';
-import { ShoppingSidebar } from './views/shopping-view.js?v=20261109g20';
+import { AppState } from './core/state.js?v=20261109g21';
+import { parseHash, setHash } from './core/router.js?v=20261109g21';
+import { loadStaticData, RecipeRepository } from './data/loader.js?v=20261109g21';
+import { AppShell } from './views/app-shell.js?v=20261109g21';
+import { RecipeChrome } from './views/recipe-selector.js?v=20261109g21';
+import { isScalable } from './utils/catalog-ui.js?v=20261109g21';
+import { BrowseView } from './views/browse-view.js?v=20261109g21';
+import { OverviewModal } from './views/overview-modal.js?v=20261109g21';
+import { FlowGraph } from './views/flow-graph.js?v=20261109g21';
+import { CookingView } from './views/cooking-view.js?v=20261109g21';
+import { ShoppingSidebar } from './views/shopping-view.js?v=20261109g21';
 import { Timer } from './views/timer.js';
-import { spiceMixTogglesHtml } from './views/spice-mix-ui.js?v=20261109g20';
-import { setMixMissing } from './core/spice-prefs.js?v=20261109g20';
-import { SpiceView } from './views/spice-view.js?v=20261109g20';
-import { PantryView } from './views/pantry-view.js?v=20261109g20';
-import * as UserState from './core/user-recipe-state.js?v=20261109g20';
-import { initSync, hasAuthRedirect, onAuthChange } from './core/sync.js?v=20261109g20';
-import * as Household from './core/household.js?v=20261109g20';
-import { AccountView } from './views/account-view.js?v=20261109g20';
-import { WeekView } from './views/week-view.js?v=20261109g20';
-import { ShoppingPage } from './views/shopping-page.js?v=20261109g20';
-import { renderCookExtras, bindCookExtras } from './views/journal-ui.js?v=20261109g20';
-import { initAuthUi } from './views/auth-ui.js?v=20261109g20';
-import { initThemeToggle } from './utils/theme.js?v=20261109g20';
-import { initBackToTop } from './utils/back-to-top.js?v=20261109g20';
+import { spiceMixTogglesHtml } from './views/spice-mix-ui.js?v=20261109g21';
+import { setMixMissing } from './core/spice-prefs.js?v=20261109g21';
+import { SpiceView } from './views/spice-view.js?v=20261109g21';
+import { PantryView } from './views/pantry-view.js?v=20261109g21';
+import * as UserState from './core/user-recipe-state.js?v=20261109g21';
+import { initSync, hasAuthRedirect, onAuthChange } from './core/sync.js?v=20261109g21';
+import * as Household from './core/household.js?v=20261109g21';
+import { AccountView } from './views/account-view.js?v=20261109g21';
+import { WeekView } from './views/week-view.js?v=20261109g21';
+import { ShoppingPage } from './views/shopping-page.js?v=20261109g21';
+import { renderCookExtras, bindCookExtras } from './views/journal-ui.js?v=20261109g21';
+import { initAuthUi } from './views/auth-ui.js?v=20261109g21';
+import { initThemeToggle } from './utils/theme.js?v=20261109g21';
+import { initBackToTop } from './utils/back-to-top.js?v=20261109g21';
 
 initThemeToggle(null);
 initBackToTop();
@@ -33,7 +33,7 @@ async function bootstrap() {
   const repository = new RecipeRepository(unitMap, baseIngredientMap, spiceData);
   const baseIngredients = Object.values(baseIngredientMap);
   const catalogById = Object.fromEntries(catalog.map(c => [c.id, c]));
-  UserState.seedFromCatalog(catalog);
+  UserState.loadCatalogMarks(catalog);
 
   const state = new AppState();
   state.currentPhase = 'browse';
@@ -177,10 +177,9 @@ async function bootstrap() {
     }
     await ensureLoaded(id);
     if (portions != null) applyPortions(portions);
-    // Legacy 'precook' redirects to cooking (gantt now lives there)
-    state.currentPhase = phase === 'precook' ? 'cooking' : phase;
+    state.currentPhase = phase;
     // Initial cook entry: allow scroll-to-current; later updates preserve scroll
-    updateUI({ autoScroll: phase === 'cooking' || phase === 'precook', preserveScroll: false });
+    updateUI({ autoScroll: phase === 'cooking', preserveScroll: false });
     syncHashFromApp({ replace: false });
   }
 
@@ -419,24 +418,8 @@ async function bootstrap() {
 
   await shoppingSidebar.render();
 
-  // Landing: browse. Clear stale selected recipe so Matlagning stays disabled
-  // until the user picks via modal — keeps HF flow clear.
-  // Keep selection if present so returning users can jump to Matlagning.
-  if (state.selectedRecipeId) {
-    try {
-      await ensureLoaded(state.selectedRecipeId);
-    } catch (e) {
-      console.warn('Could not restore recipe', e);
-      state._selectedRecipeId = null;
-    }
-  }
-  // Migrate any persisted precook phase → cooking; default landing is browse
-  // (deep link may override immediately after via applyHashFromLocation).
-  if (state.currentPhase === 'precook') {
-    state.currentPhase = 'cooking';
-  } else {
-    state.currentPhase = 'browse';
-  }
+  // Default landing is browse; the hash route below can open a recipe.
+  state.currentPhase = 'browse';
   browse.render();
 
   // Deep links: apply initial hash, then listen for back/forward / pasted URLs

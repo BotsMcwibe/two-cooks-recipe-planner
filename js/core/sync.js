@@ -10,22 +10,21 @@
  *   preference key), then write-through on every local change (optimistic; failures
  *   mark the store dirty and a full merge runs again when back online).
  */
-import { SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, SUPABASE_JS_URL } from '../config.js?v=20261109g20';
-import * as UserState from './user-recipe-state.js?v=20261109g20';
-import { prefTs, setPrefTs } from './prefs-meta.js?v=20261109g20';
-import { missingMixes, replaceMissingMixes } from './spice-prefs.js?v=20261109g20';
-import { excludedPantry, replacePantryExcluded } from './pantry-exclude.js?v=20261109g20';
-import { ownedSpices, replaceSpicesOwned } from './spices-owned.js?v=20261109g20';
-import { savedTheme, applySyncedTheme } from '../utils/theme.js?v=20261109g20';
-import { storedKitchen, replaceKitchen } from './kitchen-prefs.js?v=20261109g20';
-import { storedSettings as storedWeekSettings, replaceSettings as replaceWeekSettings, storedPlan as storedWeekPlan, replacePlan as replaceWeekPlan } from './week-plan.js?v=20261109g20';
-import { setActor, journalValue, replaceJournal, mergeJournal } from './recipe-journal.js?v=20261109g20';
-import * as Household from './household.js?v=20261109g20';
-import * as Tables from './table-sync.js?v=20261109g20';
+import { SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, SUPABASE_JS_URL } from '../config.js?v=20261109g21';
+import * as UserState from './user-recipe-state.js?v=20261109g21';
+import { prefTs, setPrefTs } from './prefs-meta.js?v=20261109g21';
+import { missingMixes, replaceMissingMixes } from './spice-prefs.js?v=20261109g21';
+import { excludedPantry, replacePantryExcluded } from './pantry-exclude.js?v=20261109g21';
+import { ownedSpices, replaceSpicesOwned } from './spices-owned.js?v=20261109g21';
+import { savedTheme, applySyncedTheme } from '../utils/theme.js?v=20261109g21';
+import { storedKitchen, replaceKitchen } from './kitchen-prefs.js?v=20261109g21';
+import { storedSettings as storedWeekSettings, replaceSettings as replaceWeekSettings, storedPlan as storedWeekPlan, replacePlan as replaceWeekPlan } from './week-plan.js?v=20261109g21';
+import { setActor, journalValue, replaceJournal, mergeJournal } from './recipe-journal.js?v=20261109g21';
+import * as Household from './household.js?v=20261109g21';
+import * as Tables from './table-sync.js?v=20261109g21';
 
-/** Signed-in journal data uses household tables only; failures stay queued locally. */
-const RETIRED_PREF_KEYS = ['cookLog', 'recipeNotes', 'recipeLists', 'notForUs', 'journalMigratedAt'];
-let tablesMode = false;
+/** Signed-in recipes/journals use household tables; challenge goals stay in account prefs. */
+let householdReady = false;
 
 const listeners = new Set();
 let client = null;
@@ -170,18 +169,15 @@ function mergeAll() {
 async function mergeOnce() {
   if (!client || !user) return;
   try {
-    // Household tables? (also creates my profile + personal kitchen on first sign-in)
-    // (a network/server error throws: retry later, keep the current mode)
-    const hid = await Tables.detect(client, user);
+    // Ensure my profile/personal kitchen, then sync the household tables.
+    const hid = await Tables.ensureHousehold(client, user);
     if (!hid) throw new Error('Household tables unavailable; local changes kept for retry');
-    tablesMode = true;
+    householdReady = true;
     Household.setMode('tables');
-    if (hid) await Household.refresh(hid).catch((err) => console.warn('[household] refresh failed', err));
-    if (tablesMode) {
-      await Tables.syncAll(hid);
-      subscribeLive(hid);
-      Household.loadFeed().catch((err) => console.warn('[feed] load failed', err));
-    }
+    await Household.refresh(hid).catch((err) => console.warn('[household] refresh failed', err));
+    await Tables.syncAll(hid);
+    subscribeLive(hid);
+    Household.loadFeed().catch((err) => console.warn('[feed] load failed', err));
     await mergePrefs();
     setDirty(false);
   } catch (err) {
@@ -295,7 +291,7 @@ async function writePrefs(prefs) {
 let tableTimer = null;
 /** Debounced write of local changes to the household tables. */
 function scheduleTablePush() {
-  if (!client || !user || !tablesMode) return;
+  if (!client || !user || !householdReady) return;
   clearTimeout(tableTimer);
   tableTimer = setTimeout(async () => {
     try {
@@ -372,7 +368,7 @@ export function initSync({ state } = {}) {
         user = session ? session.user : null;
         setActor(user && user.id);
         Household.attach(client, user);
-        if (!user) { tablesMode = false; Tables.detach(); unsubscribeLive(); Household.setMode('local'); }
+        if (!user) { householdReady = false; Tables.detach(); unsubscribeLive(); Household.setMode('local'); }
         emit();
         notifyStatus();
         if (user && user.id !== prev) mergeAll();
@@ -390,19 +386,19 @@ export function initSync({ state } = {}) {
 
   UserState.subscribe((id, info) => {
     if (info && info.remote) return;
-    if (tablesMode) {
+    if (householdReady) {
       if (id) Household.setMyRating(id, UserState.get(id).rating);
       scheduleTablePush();
     }
   });
   window.addEventListener('yessy:prefchange', (e) => {
     const key = e.detail && e.detail.key;
-    if (RETIRED_PREF_KEYS.includes(key)) return; // retired journals go to household tables
+    if (!Object.hasOwn(prefAdapters(), key)) return; // only active account preferences
     schedulePrefPush();
   });
   window.addEventListener('journalchange', (e) => {
     const key = e.detail && e.detail.key;
-    if (tablesMode && (!key || Tables.TABLE_KEYS.includes(key)) && !Tables.isApplying()) scheduleTablePush();
+    if (householdReady && (!key || Tables.TABLE_KEYS.includes(key)) && !Tables.isApplying()) scheduleTablePush();
   });
   // Fresh household data when the app comes back into view (throttled), retry when dirty
   let lastFocusSync = 0;

@@ -1,6 +1,6 @@
 # Yessy: Receptinkorg (plan)
 
-Status: plan only, nothing built yet. Updated 2026-11-09 (Europe/Stockholm) after yesber's answers. Written against `main` @ `86458b9` (phase 5 client shipped, `?v=20261109g19`; phase-5 SQL prepared, not applied).
+Status: plan only, nothing built yet. Updated 2026-11-09 (Europe/Stockholm) after yesber's answers. Current household model: `?v=20261109g21`; cleanup SQL prepared, not applied. No legacy-data preservation is required; all inbox security safeguards remain unchanged.
 SQL ready to paste (NOT applied): `docs/household-sql/20261109220329_recipe_inbox.sql` (timestamped like the phase-5 retire file; `0001`–`0005` and `20261109204933_retire_legacy_journal.sql` are taken).
 The same SQL is included at the bottom of this document.
 
@@ -10,7 +10,7 @@ The same SQL is included at the bottom of this document.
 - Inbox rows are per submitter, stamped with their household. Status: **ny → granskad → tillagd | avvisad | blockerad** (`new` / `reviewed` / `added` / `rejected` / `blocked`).
 - **Spam and SSRF safeguards** live in the submit RPC, the client, and the review fetch (rate limits, pending cap, https-only URL rules, sandboxed fetch, prompt-injection-safe extraction). The reviewer (Alfred, an LLM routine) writes **only** through a narrow RPC and never treats page text as instructions.
 - **Duplicates are rejected:** status `rejected`, suggestion `duplicate`, `duplicate_of = <existing id>`, submitter notified with a link to `#overview/<id>` (app route, not the raw external URL).
-- **On import:** `complete_recipe_inbox_import` marks the row `added` and upserts **Vill laga** on `household_recipe_state` (`status = 'want'`) for the submitter's household. Vill laga is household-scoped (phase 1+); phase 5 removed the `user_recipe_state` dual write, so this one upsert is enough. Existing **Lagad** is never downgraded.
+- **On import:** `complete_recipe_inbox_import` marks the row `added` and upserts **Vill laga** on `household_recipe_state` (`status = 'want'`) for the submitter's household. Vill laga is household-scoped; this is the only status write. Existing **Lagad** is never downgraded.
 - **Morning routine** on Alfred: first `recipe_inbox_pending_count()`; if 0, stop (no fetch, no LLM). Otherwise review `new` rows and digest to yesber.
 - Raw submitted URLs are **not rendered as clickable** for anyone except the submitter until the row is approved (`added`); after that the UI links to the in-app översikt.
 
@@ -18,7 +18,7 @@ The same SQL is included at the bottom of this document.
 
 - **App:** static ES-module app on GitHub Pages. Hash routes. No Web App Manifest / service worker yet (share-target still phase 2).
 - **Auth / households:** every signed-in user has exactly one household via `ensure_my_household()`. Publishable key + RLS; privileged SQL via user-Supabase MCP or the dashboard.
-- **Vill laga storage (post phase 5 client):** `js/core/user-recipe-state.js` `setStatus(id, 'want')` → local cache → `js/core/table-sync.js` upserts `household_recipe_state (household_id, recipe_id, status, status_at, …)`. No writes to `user_recipe_state` in g19. Shared with the whole household.
+- **Vill laga storage (post phase 5 client):** `js/core/user-recipe-state.js` `setStatus(id, 'want')` → local cache → `js/core/table-sync.js` upserts `household_recipe_state (household_id, recipe_id, status, status_at, …)`. Shared with the whole household; no legacy storage path.
 - **Categories / schema / data:** unchanged (Kyckling…Vego chips, `SCHEMA.md`, public `data/catalog.json`, `ingredients.json`, `spice-blends.json`).
 - **Docs layout:** plans and paste-ready SQL live under `html-proto-recipe/docs/` (phase 5 added `household-friends-plan.md` + `docs/household-sql/20261109204933_retire_legacy_journal.sql`). External `/workspace/recipe-project/docs/` keeps synced copies. No pointer files.
 - **Crawlers:** ICA / CityGross / HelloFresh → Recipe Graph Converter (separate bots). Import stays yesber-gated.
@@ -162,7 +162,7 @@ Use the **existing Supabase MCP** and call only `recipe_inbox_pending_count`, `r
 - SSRF via redirect to metadata/internal IPs → DNS + redirect re-validation.
 - Rate-limit evasion via many accounts → global bucket + pending cap; admin block.
 - Privileged MCP SQL → routine prompt allowlists the three RPCs only.
-- Concurrent phase-5 SQL apply is independent; inbox SQL does not touch legacy tables.
+- Household cleanup SQL is independent; inbox SQL uses only current household tables.
 
 ## Appendix: SQL
 
@@ -686,9 +686,8 @@ begin
 end $$;
 
 -- After import: mark added + put recipe on the submitter household's Vill laga
--- (household_recipe_state.status = 'want'). Vill laga is household-scoped since
--- phase 1; phase 5 removed the user_recipe_state dual write, so this single
--- upsert is the whole story for the kitchen.
+-- (household_recipe_state.status = 'want'). Household-scoped status:
+-- this single upsert is the only write path.
 create or replace function public.complete_recipe_inbox_import(p_id uuid, p_recipe_id text)
 returns void
 language plpgsql

@@ -18,7 +18,7 @@ let client = null;
 let uid = null;
 
 const st = {
-  mode: 'local', // 'local' (signed out) | 'legacy' (old tables only) | 'tables'
+  mode: 'local', // 'local' (signed out) | 'tables' (signed in)
   household: null, // { id, name, is_personal }
   members: [], // [{ user_id, role, joined_at, display_name, avatar_emoji }]
   profile: null, // my profile row

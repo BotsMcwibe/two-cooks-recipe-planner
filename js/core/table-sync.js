@@ -1,6 +1,6 @@
 /**
- * Sync with the household tables (supabase 0002/0003/0005), used by sync.js when
- * the project has them. Local stores stay the source the UI reads:
+ * Signed-in household sync (supabase 0002/0005). Local stores remain the
+ * offline cache the UI reads:
  *
  *   user-recipe-state  status  <-> household_recipe_state.status / status_at   (shared)
  *                      rating  <-> recipe_ratings.rating / rating_at            (mine)
@@ -20,9 +20,9 @@
  * this device, the shared local data is cleared first so one household's data
  * never leaks into another's.
  */
-import * as UserState from './user-recipe-state.js?v=20261109g20';
-import * as Journal from './recipe-journal.js?v=20261109g20';
-import * as Household from './household.js?v=20261109g20';
+import * as UserState from './user-recipe-state.js?v=20261109g21';
+import * as Journal from './recipe-journal.js?v=20261109g21';
+import * as Household from './household.js?v=20261109g21';
 
 const CACHE_KEY = 'yessy.tableSync.v1';
 export const TABLE_KEYS = ['cookLog', 'recipeNotes', 'recipeLists', 'notForUs'];
@@ -54,10 +54,9 @@ async function q(promise) {
 
 /**
  * Ask the server for my household (creates profile + personal kitchen if missing).
- * Returns the household id. Missing tables and network errors stay queued locally;
- * no legacy table/prefs fallback is allowed after phase 5.
+ * Returns the household id. Network errors leave local changes queued for retry.
  */
-export async function detect(c, user) {
+export async function ensureHousehold(c, user) {
   client = c;
   uid = user ? user.id : null;
   const { data, error } = await c.rpc('ensure_my_household');

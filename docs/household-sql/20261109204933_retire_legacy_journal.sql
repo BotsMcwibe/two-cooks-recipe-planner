@@ -1,58 +1,17 @@
--- Yessy phase 5: MANUAL ONLY. Do not apply automatically to the live project.
--- Deploy g20 first; review 0003 backfill/archives before running in SQL Editor.
--- Old household journals are not replayed here: that could resurrect stale data.
--- Keeps every user_recipe_state row, but retires client writes. No DROP TABLE.
--- cookChallenge remains an active account-wide preference: never prune or block it.
--- All changes are transactional and safe to re-run. No auth.users writes.
+-- Yessy phase 5: MANUAL ONLY. Do not run automatically against the live project.
+-- Deploy g21 first. Legacy data may be discarded; no archive or compatibility path.
+-- Read-only inspection found no public function/view/matview referencing this table,
+-- and no persistent migrate_prefs_to_household function. 0003 was a one-shot script.
+-- merge_recipe_state() belongs to household_recipe_state and must remain.
 begin;
 
--- Block concurrent legacy writes until the archive, prune and grants commit.
-lock table public.user_preferences, public.user_recipe_state in access exclusive mode;
-
-create schema if not exists yessy_archive;
-revoke all on schema yessy_archive from public, anon, authenticated;
-create table if not exists yessy_archive.phase5_legacy (
-  source text not null,
-  row_key text not null,
-  row_data jsonb not null,
-  archived_at timestamptz not null default now(),
-  primary key (source, row_key)
-);
-alter table yessy_archive.phase5_legacy enable row level security;
-revoke all on yessy_archive.phase5_legacy from public, anon, authenticated;
-
--- Immutable first snapshot; re-running never overwrites the pre-prune backup.
-insert into yessy_archive.phase5_legacy (source, row_key, row_data)
-select 'user_preferences', user_id::text, to_jsonb(p)
-from public.user_preferences p
-on conflict (source, row_key) do nothing;
-insert into yessy_archive.phase5_legacy (source, row_key, row_data)
-select 'user_recipe_state', user_id::text || '/' || recipe_id, to_jsonb(s)
-from public.user_recipe_state s
-on conflict (source, row_key) do nothing;
+drop table if exists public.user_recipe_state;
+-- The table's own policies, indexes, constraints and triggers are removed with it.
+-- No CASCADE: an unexpected dependency must be reviewed, not silently removed.
 
 update public.user_preferences
 set prefs = prefs - array['cookLog','recipeNotes','recipeLists','notForUs','journalMigratedAt']::text[]
 where prefs ?| array['cookLog','recipeNotes','recipeLists','notForUs','journalMigratedAt'];
-
--- A stale client cannot put retired journals back; active prefs are unaffected.
-alter table public.user_preferences drop constraint if exists prefs_no_retired_journal;
-alter table public.user_preferences add constraint prefs_no_retired_journal
-check (not (prefs ?| array['cookLog','recipeNotes','recipeLists','notForUs','journalMigratedAt']));
-
--- Preserve existing own-row SELECT/RLS, but remove every client write grant.
-alter table public.user_recipe_state enable row level security;
-revoke all on public.user_recipe_state from public, anon, authenticated;
--- Also remove any column grants (table-level REVOKE alone doesn't remove these).
-do $$
-declare col record;
-begin
-  for col in select attname from pg_attribute
-    where attrelid = 'public.user_recipe_state'::regclass and attnum > 0 and not attisdropped
-  loop
-    execute format('revoke all (%I) on public.user_recipe_state from public, anon, authenticated', col.attname);
-  end loop;
-end $$;
-grant select on public.user_recipe_state to authenticated;
+-- cookChallenge and all other active preferences stay untouched and writable.
 
 commit;
