@@ -5,18 +5,18 @@
  * area lists what the app stores: statuses, ratings, own spice mixes, theme,
  * Inköpslista and a Data section. Works logged out (local data only).
  */
-import * as UserState from '../core/user-recipe-state.js?v=20261109g19';
-import { menuExtrasHtml, themeSegHtml, bindThemeSeg } from './menu-items.js?v=20261109g19';
-import { onAuthChange, onSyncStatus, syncStatus, lastSyncTime, signOut, currentUser, isAvailable } from '../core/sync.js?v=20261109g19';
-import { openSignIn } from './auth-ui.js?v=20261109g19';
-import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261109g19';
-import { kitchenProfile, setKitchen, MAX_OVEN_TRAYS } from '../core/kitchen-prefs.js?v=20261109g19';
-import * as Journal from '../core/recipe-journal.js?v=20261109g19';
-import { agoLabel, fmtCookDate, timesLabel } from './recipe-status-ui.js?v=20261109g19';
-import { ringHtml, challengePace } from './journal-ui.js?v=20261109g19';
-import * as Household from '../core/household.js?v=20261109g19';
-import * as HouseholdUI from './household-ui.js?v=20261109g19';
-import { feedSectionBody, handleFeedClick } from './feed-ui.js?v=20261109g19';
+import * as UserState from '../core/user-recipe-state.js?v=20261109g20';
+import { menuExtrasHtml, themeSegHtml, bindThemeSeg } from './menu-items.js?v=20261109g20';
+import { onAuthChange, onSyncStatus, syncStatus, lastSyncTime, signOut, currentUser, isAvailable } from '../core/sync.js?v=20261109g20';
+import { openSignIn } from './auth-ui.js?v=20261109g20';
+import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261109g20';
+import { kitchenProfile, setKitchen, MAX_OVEN_TRAYS } from '../core/kitchen-prefs.js?v=20261109g20';
+import * as Journal from '../core/recipe-journal.js?v=20261109g20';
+import { agoLabel, fmtCookDate, timesLabel } from './recipe-status-ui.js?v=20261109g20';
+import { ringHtml, challengePace } from './journal-ui.js?v=20261109g20';
+import * as Household from '../core/household.js?v=20261109g20';
+import * as HouseholdUI from './household-ui.js?v=20261109g20';
+import { feedSectionBody, handleFeedClick } from './feed-ui.js?v=20261109g20';
 
 const LOCAL_KEYS = [
   'jesse.recipeState.v1', 'yessy.spiceMixMissing.v1', 'jesse-theme',

@@ -10,21 +10,21 @@
  *   preference key), then write-through on every local change (optimistic; failures
  *   mark the store dirty and a full merge runs again when back online).
  */
-import { SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, SUPABASE_JS_URL } from '../config.js?v=20261109g19';
-import * as UserState from './user-recipe-state.js?v=20261109g19';
-import { prefTs, setPrefTs } from './prefs-meta.js?v=20261109g19';
-import { missingMixes, replaceMissingMixes } from './spice-prefs.js?v=20261109g19';
-import { excludedPantry, replacePantryExcluded } from './pantry-exclude.js?v=20261109g19';
-import { ownedSpices, replaceSpicesOwned } from './spices-owned.js?v=20261109g19';
-import { savedTheme, applySyncedTheme } from '../utils/theme.js?v=20261109g19';
-import { storedKitchen, replaceKitchen } from './kitchen-prefs.js?v=20261109g19';
-import { storedSettings as storedWeekSettings, replaceSettings as replaceWeekSettings, storedPlan as storedWeekPlan, replacePlan as replaceWeekPlan } from './week-plan.js?v=20261109g19';
-import { setActor } from './recipe-journal.js?v=20261109g19';
-import * as Household from './household.js?v=20261109g19';
-import * as Tables from './table-sync.js?v=20261109g19';
+import { SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, SUPABASE_JS_URL } from '../config.js?v=20261109g20';
+import * as UserState from './user-recipe-state.js?v=20261109g20';
+import { prefTs, setPrefTs } from './prefs-meta.js?v=20261109g20';
+import { missingMixes, replaceMissingMixes } from './spice-prefs.js?v=20261109g20';
+import { excludedPantry, replacePantryExcluded } from './pantry-exclude.js?v=20261109g20';
+import { ownedSpices, replaceSpicesOwned } from './spices-owned.js?v=20261109g20';
+import { savedTheme, applySyncedTheme } from '../utils/theme.js?v=20261109g20';
+import { storedKitchen, replaceKitchen } from './kitchen-prefs.js?v=20261109g20';
+import { storedSettings as storedWeekSettings, replaceSettings as replaceWeekSettings, storedPlan as storedWeekPlan, replacePlan as replaceWeekPlan } from './week-plan.js?v=20261109g20';
+import { setActor, journalValue, replaceJournal, mergeJournal } from './recipe-journal.js?v=20261109g20';
+import * as Household from './household.js?v=20261109g20';
+import * as Tables from './table-sync.js?v=20261109g20';
 
 /** Signed-in journal data uses household tables only; failures stay queued locally. */
-const RETIRED_PREF_KEYS = ['cookLog', 'recipeNotes', 'recipeLists', 'notForUs', 'cookChallenge', 'journalMigratedAt'];
+const RETIRED_PREF_KEYS = ['cookLog', 'recipeNotes', 'recipeLists', 'notForUs', 'journalMigratedAt'];
 let tablesMode = false;
 
 const listeners = new Set();
@@ -126,6 +126,12 @@ function prefAdapters() {
     // Veckoplaneraren: settings and the week's picks are separate keys (newest wins per key)
     weekPlanSettings: { get: () => storedWeekSettings(), set: (v) => replaceWeekSettings(v) },
     weekPlan: { get: () => storedWeekPlan(), set: (v) => replaceWeekPlan(v) },
+    // Personal/account-wide; merge each year independently, including cleared goals.
+    cookChallenge: {
+      get: () => journalValue('cookChallenge'),
+      set: (v) => replaceJournal('cookChallenge', v),
+      merge: mergeJournal,
+    },
     shopping: {
       get: () => (appState ? appState.getShoppingData() : null),
       set: (v) => appState && appState.replaceShoppingData(v),
@@ -138,6 +144,7 @@ function localPrefs() {
   for (const [key, a] of Object.entries(prefAdapters())) {
     const value = a.get();
     if (value == null) continue;
+    if (a.merge && !Object.keys(value).length && !prefTs(key)) continue;
     out[key] = { value, updatedAt: prefTs(key) };
   }
   return out;
@@ -246,6 +253,19 @@ async function mergePrefs() {
       for (const key of Object.keys(adapters)) {
         const rv = remotePrefs[key];
         const lv = mine[key];
+        const a = adapters[key];
+        if (a.merge) {
+          if (!rv && !lv) continue;
+          const value = a.merge(lv ? lv.value : {}, rv ? rv.value : {});
+          const updatedAt = Math.max(Number(lv && lv.updatedAt) || 0, Number(rv && rv.updatedAt) || 0);
+          a.set(value);
+          setPrefTs(key, updatedAt);
+          if (!rv || JSON.stringify(value) !== JSON.stringify(rv.value)) {
+            merged[key] = { value, updatedAt };
+            changed = true;
+          }
+          continue;
+        }
         if (rv && (!lv || (Number(rv.updatedAt) || 0) > (Number(lv.updatedAt) || 0))) {
           adapters[key].set(rv.value);
           setPrefTs(key, Number(rv.updatedAt) || 0);
@@ -255,6 +275,7 @@ async function mergePrefs() {
       applying = false;
     }
     for (const [key, lv] of Object.entries(mine)) {
+      if (adapters[key].merge) continue;
       const rv = remotePrefs[key];
       if (!rv || (Number(lv.updatedAt) || 0) > (Number(rv.updatedAt) || 0)) {
         merged[key] = lv;
@@ -299,8 +320,18 @@ function schedulePrefPush() {
       if (error) throw error;
       const remote = (data && data.prefs) || {};
       const merged = { ...remote };
+      const adapters = prefAdapters();
       for (const [key, lv] of Object.entries(localPrefs())) {
         const rv = remote[key];
+        const a = adapters[key];
+        if (a.merge) {
+          const value = a.merge(lv.value, rv ? rv.value : {});
+          const updatedAt = Math.max(Number(lv.updatedAt) || 0, Number(rv && rv.updatedAt) || 0);
+          merged[key] = { value, updatedAt };
+          applying = true;
+          try { a.set(value); setPrefTs(key, updatedAt); } finally { applying = false; }
+          continue;
+        }
         if (!rv || (Number(lv.updatedAt) || 0) >= (Number(rv.updatedAt) || 0)) merged[key] = lv;
       }
       await writePrefs(merged);
@@ -366,7 +397,7 @@ export function initSync({ state } = {}) {
   });
   window.addEventListener('yessy:prefchange', (e) => {
     const key = e.detail && e.detail.key;
-    if (RETIRED_PREF_KEYS.includes(key)) return; // tables, or local-only challenge
+    if (RETIRED_PREF_KEYS.includes(key)) return; // retired journals go to household tables
     schedulePrefPush();
   });
   window.addEventListener('journalchange', (e) => {

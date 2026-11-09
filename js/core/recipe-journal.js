@@ -20,11 +20,12 @@
  *
  * Signed in with the household tables (core/table-sync.js), cookLog, recipeLists and
  * notForUs are shared with the household and recipeNotes stay private; the
- * challenge goal stays personal and local-only (phase 5); no journal keys sync via prefs.
+ * challenge goal/scope stays personal and account-wide via prefs.cookChallenge,
+ * merged per year. The other journal keys never sync via prefs.
  *
  * Fires `journalchange` on window ({ detail: { key } }) after any change.
  */
-import { touchPref } from './prefs-meta.js?v=20261109g19';
+import { touchPref } from './prefs-meta.js?v=20261109g20';
 
 export const JOURNAL_KEYS = {
   cookLog: 'yessy.cookLog.v1',

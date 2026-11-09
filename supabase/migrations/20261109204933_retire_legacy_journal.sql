@@ -1,8 +1,8 @@
 -- Yessy phase 5: MANUAL ONLY. Do not apply automatically to the live project.
--- Deploy g19 first; review 0003 backfill/archives before running in SQL Editor.
+-- Deploy g20 first; review 0003 backfill/archives before running in SQL Editor.
 -- Old household journals are not replayed here: that could resurrect stale data.
 -- Keeps every user_recipe_state row, but retires client writes. No DROP TABLE.
--- cookChallenge stays local-only in g19; its cloud value is archived, not imported.
+-- cookChallenge remains an active account-wide preference: never prune or block it.
 -- All changes are transactional and safe to re-run. No auth.users writes.
 begin;
 
@@ -32,13 +32,13 @@ from public.user_recipe_state s
 on conflict (source, row_key) do nothing;
 
 update public.user_preferences
-set prefs = prefs - array['cookLog','recipeNotes','recipeLists','notForUs','cookChallenge','journalMigratedAt']::text[]
-where prefs ?| array['cookLog','recipeNotes','recipeLists','notForUs','cookChallenge','journalMigratedAt'];
+set prefs = prefs - array['cookLog','recipeNotes','recipeLists','notForUs','journalMigratedAt']::text[]
+where prefs ?| array['cookLog','recipeNotes','recipeLists','notForUs','journalMigratedAt'];
 
 -- A stale client cannot put retired journals back; active prefs are unaffected.
 alter table public.user_preferences drop constraint if exists prefs_no_retired_journal;
 alter table public.user_preferences add constraint prefs_no_retired_journal
-check (not (prefs ?| array['cookLog','recipeNotes','recipeLists','notForUs','cookChallenge','journalMigratedAt']));
+check (not (prefs ?| array['cookLog','recipeNotes','recipeLists','notForUs','journalMigratedAt']));
 
 -- Preserve existing own-row SELECT/RLS, but remove every client write grant.
 alter table public.user_recipe_state enable row level security;
