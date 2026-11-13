@@ -11,7 +11,7 @@
  *
  * Stored in localStorage when logged out. Fires `weekplanchange` on window.
  */
-import { touchPref } from './prefs-meta.js?v=20261113g25';
+import { touchPref } from './prefs-meta.js?v=20261113g26';
 
 const SETTINGS_KEY = 'yessy.weekPlanSettings.v1';
 const PLAN_KEY = 'yessy.weekPlan.v1';

@@ -5,11 +5,11 @@
  * links to the in-app översikt (#overview/<id>), and duplicates link to the
  * recipe that already exists. Signed out: a sign-in prompt instead of the form.
  */
-import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261113g25';
-import { onAuthChange, currentUser, isAvailable } from '../core/sync.js?v=20261113g25';
-import { openSignIn } from './auth-ui.js?v=20261113g25';
-import * as Inbox from '../core/recipe-inbox.js?v=20261113g25';
-import { checkRecipeUrl, displayUrl, URL_REASON_SV, NOTE_MAX } from '../core/recipe-url.js?v=20261113g25';
+import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261113g26';
+import { onAuthChange, currentUser, isAvailable } from '../core/sync.js?v=20261113g26';
+import { openSignIn } from './auth-ui.js?v=20261113g26';
+import * as Inbox from '../core/recipe-inbox.js?v=20261113g26';
+import { checkRecipeUrl, displayUrl, URL_REASON_SV, NOTE_MAX } from '../core/recipe-url.js?v=20261113g26';
 
 /** Icon + word for every status (never colour alone). */
 export const STATUS_SV = {
