@@ -3436,3 +3436,50 @@ p.eq-serving { font-size: 0.85rem; margin: 8px 0 0; }
 .fr-add-form { margin: 6px 0 10px; }
 .fr-share { margin-top: 12px; }
 #acc-vanner .hh-member-act { display: inline-flex; gap: 6px; flex-wrap: wrap; }
+
+/* === Receptinkorgen (#inkorg) === */
+.ink-page { max-width: 760px; margin: 0 auto; display: grid; gap: 16px; }
+.ink-card { padding: 16px 18px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); }
+.ink-card h2 { font-size: 1.05rem; margin: 0 0 10px; }
+.ink-card .spice-card-head h2 { margin-bottom: 10px; }
+.ink-form { display: grid; gap: 6px; }
+.ink-form .hh-label { margin: 6px 0 0; }
+.ink-input { max-width: none; width: 100%; }
+.ink-note-input { resize: vertical; min-height: 3.2em; line-height: 1.4; }
+.ink-opt { font-weight: 400; }
+.ink-input[aria-invalid="true"] { border-color: var(--danger); border-width: 2px; }
+.ink-field-err { margin: 0; font-size: 0.84rem; color: var(--danger); font-weight: 600; }
+.ink-form-foot { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 6px; flex-wrap: wrap; }
+.ink-counter { font-size: 0.78rem; color: var(--text-muted); font-variant-numeric: tabular-nums; }
+.ink-send[disabled] { opacity: 0.65; cursor: progress; }
+.ink-msg { margin: 6px 0 0; padding: 9px 12px; border-radius: var(--radius-sm); font-size: 0.88rem; line-height: 1.4; border: 1px solid var(--border); }
+.ink-msg.is-ok { background: var(--primary-light); border-color: var(--primary); color: var(--text); }
+.ink-msg.is-error { background: var(--danger-bg); border-color: var(--danger-border); color: var(--danger); font-weight: 600; }
+.ink-signin .acc-btn { margin-top: 12px; }
+.ink-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+.ink-item { padding: 12px 0; border-top: 1px solid var(--divider-soft); display: grid; gap: 4px; min-width: 0; }
+.ink-item:first-child { border-top: none; padding-top: 2px; }
+.ink-item.is-flash { animation: ink-flash 1.6s ease-out 1; border-radius: var(--radius-sm); }
+@keyframes ink-flash { from { background: var(--primary-light); } to { background: transparent; } }
+.ink-item-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
+.ink-badge {
+  display: inline-flex; align-items: center; gap: 5px; padding: 2px 10px; border-radius: 999px;
+  font-size: 0.78rem; font-weight: 700; border: 1px solid var(--border); background: var(--surface-2); color: var(--text);
+}
+/* Colour is only a hint; the icon and the word carry the meaning. */
+.ink-badge.is-added { background: var(--primary-light); border-color: var(--primary); }
+.ink-badge.is-reviewed { background: var(--warn-light); border-color: var(--warn); color: var(--warn-text); }
+.ink-badge.is-rejected, .ink-badge.is-blocked { border-style: dashed; color: var(--text-muted); }
+.ink-date { font-size: 0.78rem; color: var(--text-muted); }
+.ink-url { font-size: 0.9rem; overflow-wrap: anywhere; min-width: 0; }
+.ink-url-text { color: var(--text); font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.82rem; }
+a.ink-url { color: var(--primary); }
+.ink-note { margin: 0; font-size: 0.88rem; color: var(--text-muted); font-style: italic; overflow-wrap: anywhere; }
+.ink-outcome { margin: 2px 0 0; font-size: 0.88rem; }
+.ink-muted { color: var(--text-muted); }
+.ink-recipe-link { color: var(--primary); font-weight: 600; }
+.ink-review { margin-top: 4px; padding: 8px 10px; border-left: 3px solid var(--separator); background: var(--surface-2); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; }
+.ink-review-h { display: block; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text-muted); }
+.ink-review p { margin: 2px 0 0; font-size: 0.86rem; white-space: pre-wrap; overflow-wrap: anywhere; }
+.ink-actions { display: flex; justify-content: flex-end; }
+.ink-acc-btn { margin-top: 4px; text-decoration: none; }

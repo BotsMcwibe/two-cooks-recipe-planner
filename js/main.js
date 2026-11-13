@@ -1,29 +1,30 @@
-import { AppState } from './core/state.js?v=20261109g21';
-import { parseHash, setHash } from './core/router.js?v=20261109g21';
-import { loadStaticData, RecipeRepository } from './data/loader.js?v=20261109g21';
-import { AppShell } from './views/app-shell.js?v=20261109g21';
-import { RecipeChrome } from './views/recipe-selector.js?v=20261109g21';
-import { isScalable } from './utils/catalog-ui.js?v=20261109g21';
-import { BrowseView } from './views/browse-view.js?v=20261109g21';
-import { OverviewModal } from './views/overview-modal.js?v=20261109g21';
-import { FlowGraph } from './views/flow-graph.js?v=20261109g21';
-import { CookingView } from './views/cooking-view.js?v=20261109g21';
-import { ShoppingSidebar } from './views/shopping-view.js?v=20261109g21';
+import { AppState } from './core/state.js?v=20261109g23';
+import { parseHash, setHash } from './core/router.js?v=20261109g23';
+import { loadStaticData, RecipeRepository } from './data/loader.js?v=20261109g23';
+import { AppShell } from './views/app-shell.js?v=20261109g23';
+import { RecipeChrome } from './views/recipe-selector.js?v=20261109g23';
+import { isScalable } from './utils/catalog-ui.js?v=20261109g23';
+import { BrowseView } from './views/browse-view.js?v=20261109g23';
+import { OverviewModal } from './views/overview-modal.js?v=20261109g23';
+import { FlowGraph } from './views/flow-graph.js?v=20261109g23';
+import { CookingView } from './views/cooking-view.js?v=20261109g23';
+import { ShoppingSidebar } from './views/shopping-view.js?v=20261109g23';
 import { Timer } from './views/timer.js';
-import { spiceMixTogglesHtml } from './views/spice-mix-ui.js?v=20261109g21';
-import { setMixMissing } from './core/spice-prefs.js?v=20261109g21';
-import { SpiceView } from './views/spice-view.js?v=20261109g21';
-import { PantryView } from './views/pantry-view.js?v=20261109g21';
-import * as UserState from './core/user-recipe-state.js?v=20261109g21';
-import { initSync, hasAuthRedirect, onAuthChange } from './core/sync.js?v=20261109g21';
-import * as Household from './core/household.js?v=20261109g21';
-import { AccountView } from './views/account-view.js?v=20261109g21';
-import { WeekView } from './views/week-view.js?v=20261109g21';
-import { ShoppingPage } from './views/shopping-page.js?v=20261109g21';
-import { renderCookExtras, bindCookExtras } from './views/journal-ui.js?v=20261109g21';
-import { initAuthUi } from './views/auth-ui.js?v=20261109g21';
-import { initThemeToggle } from './utils/theme.js?v=20261109g21';
-import { initBackToTop } from './utils/back-to-top.js?v=20261109g21';
+import { spiceMixTogglesHtml } from './views/spice-mix-ui.js?v=20261109g23';
+import { setMixMissing } from './core/spice-prefs.js?v=20261109g23';
+import { SpiceView } from './views/spice-view.js?v=20261109g23';
+import { PantryView } from './views/pantry-view.js?v=20261109g23';
+import * as UserState from './core/user-recipe-state.js?v=20261109g23';
+import { initSync, hasAuthRedirect, onAuthChange } from './core/sync.js?v=20261109g23';
+import * as Household from './core/household.js?v=20261109g23';
+import { AccountView } from './views/account-view.js?v=20261109g23';
+import { InboxView } from './views/inbox-view.js?v=20261109g23';
+import { WeekView } from './views/week-view.js?v=20261109g23';
+import { ShoppingPage } from './views/shopping-page.js?v=20261109g23';
+import { renderCookExtras, bindCookExtras } from './views/journal-ui.js?v=20261109g23';
+import { initAuthUi } from './views/auth-ui.js?v=20261109g23';
+import { initThemeToggle } from './utils/theme.js?v=20261109g23';
+import { initBackToTop } from './utils/back-to-top.js?v=20261109g23';
 
 initThemeToggle(null);
 initBackToTop();
@@ -52,6 +53,8 @@ async function bootstrap() {
   const mixNames = Object.fromEntries(Object.entries(spiceData.mixIngredients || {}).map(([id, m]) => [id, m.name]));
   const accountView = new AccountView(document.getElementById('view-account'), { state, catalog, mixNames });
   state.on('phase', (p) => { if (p !== 'account') accountView.hide(); });
+  const inboxView = new InboxView(document.getElementById('view-inbox'), { catalog });
+  state.on('phase', (p) => { if (p !== 'inbox') inboxView.hide(); });
   const weekView = new WeekView(document.getElementById('view-week'), {
     state, catalog, onOpenOverview: (id) => modal.open(id),
   });
@@ -203,6 +206,10 @@ async function bootstrap() {
       setHash('konto', null, { replace });
       return;
     }
+    if (state.currentPhase === 'inbox') {
+      setHash('inkorg', null, { replace });
+      return;
+    }
     // Översikt opened from the Inköpslista page stays on top of it; closing returns there
     if (state.currentPhase === 'shop') {
       if (modal.isOpen() && modal.recipeId) setHash('overview', modal.recipeId, { replace });
@@ -266,6 +273,15 @@ async function bootstrap() {
         const was = state.currentPhase === 'account';
         state.currentPhase = 'account';
         accountView.show();
+        if (!was) window.scrollTo(0, 0);
+        return;
+      }
+
+      if (route === 'inkorg') {
+        if (modal.isOpen()) modal.close({ silent: true });
+        const was = state.currentPhase === 'inbox';
+        state.currentPhase = 'inbox';
+        inboxView.show();
         if (!was) window.scrollTo(0, 0);
         return;
       }

@@ -5,18 +5,19 @@
  * area lists what the app stores: statuses, ratings, own spice mixes, theme,
  * Inköpslista and a Data section. Works logged out (local data only).
  */
-import * as UserState from '../core/user-recipe-state.js?v=20261109g21';
-import { menuExtrasHtml, themeSegHtml, bindThemeSeg } from './menu-items.js?v=20261109g21';
-import { onAuthChange, onSyncStatus, syncStatus, lastSyncTime, signOut, currentUser, isAvailable } from '../core/sync.js?v=20261109g21';
-import { openSignIn } from './auth-ui.js?v=20261109g21';
-import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261109g21';
-import { kitchenProfile, setKitchen, MAX_OVEN_TRAYS } from '../core/kitchen-prefs.js?v=20261109g21';
-import * as Journal from '../core/recipe-journal.js?v=20261109g21';
-import { agoLabel, fmtCookDate, timesLabel } from './recipe-status-ui.js?v=20261109g21';
-import { ringHtml, challengePace } from './journal-ui.js?v=20261109g21';
-import * as Household from '../core/household.js?v=20261109g21';
-import * as HouseholdUI from './household-ui.js?v=20261109g21';
-import { feedSectionBody, handleFeedClick } from './feed-ui.js?v=20261109g21';
+import * as UserState from '../core/user-recipe-state.js?v=20261109g23';
+import { menuExtrasHtml, themeSegHtml, bindThemeSeg } from './menu-items.js?v=20261109g23';
+import { onAuthChange, onSyncStatus, syncStatus, lastSyncTime, signOut, currentUser, isAvailable } from '../core/sync.js?v=20261109g23';
+import { openSignIn } from './auth-ui.js?v=20261109g23';
+import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261109g23';
+import { kitchenProfile, setKitchen, MAX_OVEN_TRAYS } from '../core/kitchen-prefs.js?v=20261109g23';
+import * as Journal from '../core/recipe-journal.js?v=20261109g23';
+import { agoLabel, fmtCookDate, timesLabel } from './recipe-status-ui.js?v=20261109g23';
+import { ringHtml, challengePace } from './journal-ui.js?v=20261109g23';
+import * as Household from '../core/household.js?v=20261109g23';
+import * as HouseholdUI from './household-ui.js?v=20261109g23';
+import { feedSectionBody, handleFeedClick } from './feed-ui.js?v=20261109g23';
+import * as Inbox from '../core/recipe-inbox.js?v=20261109g23';
 
 const LOCAL_KEYS = [
   'jesse.recipeState.v1', 'yessy.spiceMixMissing.v1', 'jesse-theme',
@@ -69,6 +70,7 @@ export class AccountView {
     window.addEventListener('yessy:themechange', rerender);
     window.addEventListener('yessy:prefchange', rerender);
     window.addEventListener('kitchenchange', rerender);
+    window.addEventListener('recipeinboxchange', () => { if (this.active && !this._typingInAccount()) this.render(); });
     window.addEventListener('householdchange', () => {
       if (!this.active) return;
       HouseholdUI.ensureInvitePreview(this);
@@ -88,6 +90,7 @@ export class AccountView {
 
   show() {
     this.active = true; this.menuOpen = false; this.render();
+    if (currentUser()) Inbox.refresh();
     const target = this._pendingTarget;
     this._pendingTarget = null;
     if (target) setTimeout(() => document.getElementById(target)?.scrollIntoView({ behavior: 'auto', block: 'start' }), 60);
@@ -455,7 +458,8 @@ export class AccountView {
       ['lagade', 'Lagade', groups.cooked.length], ['betyg', 'Dina betyg', ratings.length],
       ...(again.length ? [['igen', 'Laga igen?', again.length]] : []),
       ['listor', 'Mina listor', myLists.length], ['inte', 'Inte för oss', nfuIds.length],
-      ['skap', 'Kryddor, skafferi och vecka', null], ['installningar', 'Inställningar', null],
+      ['skap', 'Kryddor, skafferi och vecka', null], ['inkorg', 'Receptinkorgen', user && Inbox.pendingCount() ? Inbox.pendingCount() : null],
+      ['installningar', 'Inställningar', null],
       ['inkopslista', 'Inköpslista', shopRows.length], ['data', 'Data', null],
     ];
 
@@ -499,6 +503,7 @@ export class AccountView {
               <a class="acc-link-card" href="#skafferi"><span class="acc-link-title">🪦 Skafferiet</span><span class="acc-link-desc">Tryck på ingredienser du inte tål så tar vi bort recepten med dem.</span></a>
               <a class="acc-link-card" href="#vecka"><span class="acc-link-title">📅 Veckoplaneraren</span><span class="acc-link-desc">Få veckans recept, ett per kategori. Byt, lås och lägg allt i inköpslistan.</span></a>
             </div>`)}
+          ${section('inkorg', 'Receptinkorgen', null, this._inboxHtml(user), user ? '🔒 Bara för dig' : '')}
           ${section('installningar', 'Inställningar', null, `${this._themeHtml()}
             ${this._kitchenHtml()}`, where)}
           ${section('inkopslista', 'Inköpslista', shopRows.length, shopRows.length
@@ -520,4 +525,21 @@ export class AccountView {
       });
     }
   }
+
+  /** Mitt konto → Receptinkorgen: short summary + entry to #inkorg. */
+  _inboxHtml(user) {
+    if (!user) {
+      return `<p class="acc-empty">Hittat ett recept på nätet? Logga in så kan du klistra in länken och få det granskat och inlagt i Yessy.</p>
+        <a class="acc-btn ink-acc-btn" href="#inkorg">＋ Tipsa om recept</a>`;
+    }
+    const rows = Inbox.isLoaded() ? Inbox.items() : [];
+    const n = (s) => rows.filter((r) => r.status === s).length;
+    const parts = [
+      [n('new'), 'ny', 'nya'], [n('reviewed'), 'granskad', 'granskade'], [n('added'), 'tillagd', 'tillagda'],
+      [n('rejected') + n('blocked'), 'avvisad', 'avvisade'],
+    ].filter(([c]) => c > 0).map(([c, one, many]) => `${c} ${c === 1 ? one : many}`);
+    const summary = rows.length ? `<p class="acc-note">Mina inskick: ${parts.join(' · ')}</p>` : '<p class="acc-note">Klistra in en länk till ett recept du hittat. Länkarna granskas varje morgon, och bra recept hamnar på Vill laga.</p>';
+    return `${summary}<a class="acc-btn acc-btn-primary ink-acc-btn" href="#inkorg">＋ Tipsa om recept</a>${rows.length ? ' <a class="acc-btn ink-acc-btn" href="#inkorg">Se mina inskick</a>' : ''}`;
+  }
+
 }
