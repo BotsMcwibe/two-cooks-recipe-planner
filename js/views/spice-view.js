@@ -3,10 +3,10 @@
  * see which blends you can mix. Owned set lives in core/spices-owned.js
  * (localStorage + Supabase prefs.spicesOwned).
  */
-import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261113g24';
-import { ownedSpices, setSpiceOwned, clearSpicesOwned } from '../core/spices-owned.js?v=20261113g24';
+import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261113g25';
+import { ownedSpices, setSpiceOwned, clearSpicesOwned } from '../core/spices-owned.js?v=20261113g25';
 
-const DATA_URL = 'data/spice-blends.json?v=20261113g24';
+const DATA_URL = 'data/spice-blends.json?v=20261113g25';
 
 export class SpiceView {
   constructor(container) {

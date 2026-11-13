@@ -11,10 +11,10 @@
  *     Set: core/pantry-exclude.js.
  * Both live in localStorage and sync per account via Supabase prefs.
  */
-import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261113g24';
-import { excludedPantry, setPantryExcluded, clearPantryExcluded, loadPantry } from '../core/pantry-exclude.js?v=20261113g24';
-import { havePantry, setPantryHave, addPantryHave, clearPantryHave, spiceHaveIds, onLikelyHaveChange } from '../core/pantry-have.js?v=20261113g24';
-import { PANTRY_STAPLES, IMPLICIT_HAVE } from '../data/pantry-staples.js?v=20261113g24';
+import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261113g25';
+import { excludedPantry, setPantryExcluded, clearPantryExcluded, loadPantry } from '../core/pantry-exclude.js?v=20261113g25';
+import { havePantry, setPantryHave, addPantryHave, clearPantryHave, spiceHaveIds, onLikelyHaveChange } from '../core/pantry-have.js?v=20261113g25';
+import { PANTRY_STAPLES, IMPLICIT_HAVE } from '../data/pantry-staples.js?v=20261113g25';
 
 /** "380/230g" -> "380 g", "1,5kg" -> "1,5 kg", "6p/3l" -> "6 st". */
 export function prettySize(s) {
@@ -83,7 +83,7 @@ export class PantryView {
             <h2 id="have-sugg-h">Föreslagna basvaror</h2>
             <button type="button" class="acc-btn acc-btn-primary have-add-common">Lägg till alla vanliga</button>
           </div>
-          <p class="have-sub">Det receptsajterna räknar med att du redan har (Linas Matkasse och HelloFresh), och det våra recept använder mest. Tryck för att lägga till eller ta bort.</p>
+          <p class="have-sub">De basvaror som används mest och som är vanligt att man redan har hemma.</p>
           <h3 class="have-h3">Vanligast</h3>
           <div class="pantry-tiles have-tiles have-tiles-common"></div>
           <h3 class="have-h3">Fler vanliga i skafferiet</h3>

@@ -6,8 +6,8 @@
  * Wraps: rpc submit_recipe_inbox, select own recipe_inbox rows, delete own 'new' rows.
  * Keeps the last list in memory and fires `recipeinboxchange` on window.
  */
-import { getClient, currentUser, onAuthChange } from './sync.js?v=20261113g24';
-import { checkRecipeUrl, URL_REASON_SV, NOTE_MAX } from './recipe-url.js?v=20261113g24';
+import { getClient, currentUser, onAuthChange } from './sync.js?v=20261113g25';
+import { checkRecipeUrl, URL_REASON_SV, NOTE_MAX } from './recipe-url.js?v=20261113g25';
 
 const COLS = 'id,url,note,status,suggestion,review_notes,recipe_id,duplicate_of,created_at,reviewed_at';
 

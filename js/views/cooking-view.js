@@ -1,10 +1,10 @@
-import { likelyHave, HAVE_BADGE } from '../core/pantry-have.js?v=20261113g24';
-import { Scheduler } from '../models/scheduler.js?v=20261113g24';
-import { RecipeGraph } from '../core/recipe-graph.js?v=20261113g24';
-import { equipmentItemName, equipmentSummary, isResource, nodeEquipmentHtml, servingItems, stepHeatHtml } from '../core/equipment.js?v=20261113g24';
-import { kitchenProfile } from '../core/kitchen-prefs.js?v=20261113g24';
+import { likelyHave, HAVE_BADGE } from '../core/pantry-have.js?v=20261113g25';
+import { Scheduler } from '../models/scheduler.js?v=20261113g25';
+import { RecipeGraph } from '../core/recipe-graph.js?v=20261113g25';
+import { equipmentItemName, equipmentSummary, isResource, nodeEquipmentHtml, servingItems, stepHeatHtml } from '../core/equipment.js?v=20261113g25';
+import { kitchenProfile } from '../core/kitchen-prefs.js?v=20261113g25';
 import { formatNiceAmount } from '../utils/helpers.js';
-import { formatStepInputText, producerMap } from '../utils/derived-inputs.js?v=20261113g24';
+import { formatStepInputText, producerMap } from '../utils/derived-inputs.js?v=20261113g25';
 import {
   allergenLabel,
   difficultyLabel,
@@ -12,11 +12,11 @@ import {
   escapeAttr,
   escapeHtml,
   starHtml,
-} from '../utils/catalog-ui.js?v=20261113g24';
-import { imgFailed, isPhotoMissing, recordPhotoFailure, recordPhotoSuccess } from '../utils/photo-fallback.js?v=20261113g24';
-import * as UserState from '../core/user-recipe-state.js?v=20261113g24';
-import { bindStatusControls, kitchenMarkHtml, refreshStatusControls, statusControlHtml } from './recipe-status-ui.js?v=20261113g24';
-import { joinStepParts, sentenceCase } from '../utils/text.js?v=20261113g24';
+} from '../utils/catalog-ui.js?v=20261113g25';
+import { imgFailed, isPhotoMissing, recordPhotoFailure, recordPhotoSuccess } from '../utils/photo-fallback.js?v=20261113g25';
+import * as UserState from '../core/user-recipe-state.js?v=20261113g25';
+import { bindStatusControls, kitchenMarkHtml, refreshStatusControls, statusControlHtml } from './recipe-status-ui.js?v=20261113g25';
+import { joinStepParts, sentenceCase } from '../utils/text.js?v=20261113g25';
 
 /**
  * Cooking view - rich recipe page with hero, meta, ingredients, nutrition,
