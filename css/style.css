@@ -3436,3 +3436,61 @@ p.eq-serving { font-size: 0.85rem; margin: 8px 0 0; }
 .fr-add-form { margin: 6px 0 10px; }
 .fr-share { margin-top: 12px; }
 #acc-vanner .hh-member-act { display: inline-flex; gap: 6px; flex-wrap: wrap; }
+
+/* ---- Skafferiet "Har hemma": suggestions, chips, and dimmed "hemma" rows ---- */
+.have-badge {
+  display: inline-block; margin-left: 6px; padding: 0 7px; border-radius: 999px;
+  font-size: 0.68rem; font-weight: 600; line-height: 1.6; letter-spacing: 0.01em; vertical-align: 1px;
+  color: var(--primary); background: var(--primary-light); white-space: nowrap; text-transform: none;
+}
+:root[data-theme="dark"] .have-badge { color: #8fd9b4; background: color-mix(in srgb, var(--primary) 26%, transparent); }
+.have-card, .have-suggest {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 14px 16px; margin: 16px 0 0; box-shadow: var(--shadow);
+}
+.have-card h2, .have-suggest h2, .pantry-avoid-head h2 { font-size: 1.05rem; display: flex; align-items: center; gap: 8px; margin: 0; }
+.have-card .spice-card-head, .have-suggest .spice-card-head { flex-wrap: wrap; }
+.have-suggest .have-add-common { margin-bottom: 4px; }
+.have-suggest .have-add-common:disabled { opacity: 0.6; cursor: default; background: var(--surface-2); color: var(--text-muted); border-color: var(--border); }
+.have-sub { margin: 4px 0 10px; font-size: 0.85rem; color: var(--text-muted); line-height: 1.45; max-width: 70ch; }
+.have-sub a { color: var(--primary); font-weight: 600; }
+.have-h3 { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); margin: 12px 0 6px; }
+.have-chips { list-style: none; margin: 0 0 10px; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.have-chip {
+  display: inline-flex; align-items: center; gap: 6px; min-height: 32px; padding: 3px 10px 3px 12px; border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--primary) 45%, var(--border)); background: color-mix(in srgb, var(--primary) 10%, var(--surface));
+  color: var(--text); font: inherit; font-size: 0.85rem; cursor: pointer;
+}
+.have-chip span { color: var(--text-muted); font-size: 1rem; line-height: 1; }
+.have-chip:hover span { color: var(--danger); }
+.have-chip:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
+.have-empty { font-size: 0.85rem; color: var(--text-muted); }
+.have-add { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.have-add-input {
+  flex: 1 1 220px; min-width: 0; min-height: 38px; padding: 6px 10px; border: 1px solid var(--border); border-radius: var(--radius-sm);
+  background: var(--surface-2); color: var(--text); font: inherit; font-size: 0.9rem;
+}
+.have-add-input:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 1px; }
+.have-add-msg { font-size: 0.85rem; color: var(--text-muted); flex-basis: 100%; min-height: 1.2em; }
+.pantry-avoid-head { margin-top: 26px; }
+.pantry-page .pantry-avoid-head + .have-sub { margin-top: 2px; }
+
+/* Rows the household probably has: dimmed, never hidden */
+.overview-ing-row.is-have .ing-name, .overview-ing-row.is-have .ing-amount,
+#cooking-ingredients li.is-have .ing-name, #cooking-ingredients li.is-have .ing-amount { color: var(--text-muted); }
+.overview-ing-row.is-have .ing-thumb, #cooking-ingredients li.is-have .ing-thumb { opacity: 0.5; filter: grayscale(0.6); }
+.overview-have-note { margin: 8px 0 0; font-size: 0.82rem; color: var(--text-muted); }
+.overview-have-note .have-badge { margin-left: 0; }
+.overview-have-note a { color: var(--primary); font-weight: 600; }
+.shopping-have-group h4 { color: var(--text-muted); border-bottom-style: dashed; }
+.shopping-have-group h4 .have-badge { font-size: 0.62rem; }
+.shopping-groups .shopping-have-group li.is-have, .shopping-groups .shopping-have-group li.is-have .ing-amount { color: var(--text-muted); }
+.shopping-have-link { display: inline-block; margin-top: 4px; font-size: 0.75rem; color: var(--primary); text-decoration: none; font-weight: 600; }
+.shopping-have-link:hover { text-decoration: underline; }
+.inkop-have-group { margin-top: 18px; padding-top: 4px; border-top: 1px dashed var(--border); }
+.inkop-have-group h3 { display: flex; align-items: center; gap: 2px; }
+.inkop-have-sub { margin: 0 0 4px; font-size: 0.8rem; color: var(--text-muted); }
+.inkop-have-sub a { color: var(--primary); font-weight: 600; }
+.inkop-item.is-have .inkop-line, .inkop-item.is-have .inkop-amt { color: var(--text-muted); }
+.inkop-item.is-have .inkop-src { color: var(--text-faint); }
+.inkop-item.is-have .inkop-box { border-color: var(--border); }

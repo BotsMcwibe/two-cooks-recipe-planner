@@ -1,6 +1,6 @@
-import { RecipeGraph } from '../core/recipe-graph.js?v=20261109g21';
-import { equipmentListHtml, servingLineHtml } from '../core/equipment.js?v=20261109g21';
-import { kitchenProfile } from '../core/kitchen-prefs.js?v=20261109g21';
+import { RecipeGraph } from '../core/recipe-graph.js?v=20261113g22';
+import { equipmentListHtml, servingLineHtml } from '../core/equipment.js?v=20261113g22';
+import { kitchenProfile } from '../core/kitchen-prefs.js?v=20261113g22';
 import { formatNiceAmount } from '../utils/helpers.js';
 import {
   allergenLabel,
@@ -12,13 +12,14 @@ import {
   isScalable,
   starHtml,
   subtitleFromSearchText,
-} from '../utils/catalog-ui.js?v=20261109g21';
-import { imgFailed, isPhotoMissing, recordPhotoFailure, recordPhotoSuccess } from '../utils/photo-fallback.js?v=20261109g21';
-import * as UserState from '../core/user-recipe-state.js?v=20261109g21';
-import { spiceMixTogglesHtml } from './spice-mix-ui.js?v=20261109g21';
-import { bindStatusControls, cookLogHtml, kitchenMarkHtml, refreshStatusControls, statusControlHtml } from './recipe-status-ui.js?v=20261109g21';
-import { notesHtml, bindNotes } from './journal-ui.js?v=20261109g21';
-import { householdReviewsHtml, bindHouseholdReviews, refreshHouseholdReviews } from './household-recipe-ui.js?v=20261109g21';
+} from '../utils/catalog-ui.js?v=20261113g22';
+import { imgFailed, isPhotoMissing, recordPhotoFailure, recordPhotoSuccess } from '../utils/photo-fallback.js?v=20261113g22';
+import * as UserState from '../core/user-recipe-state.js?v=20261113g22';
+import { spiceMixTogglesHtml } from './spice-mix-ui.js?v=20261113g22';
+import { likelyHave, HAVE_BADGE } from '../core/pantry-have.js?v=20261113g22';
+import { bindStatusControls, cookLogHtml, kitchenMarkHtml, refreshStatusControls, statusControlHtml } from './recipe-status-ui.js?v=20261113g22';
+import { notesHtml, bindNotes } from './journal-ui.js?v=20261113g22';
+import { householdReviewsHtml, bindHouseholdReviews, refreshHouseholdReviews } from './household-recipe-ui.js?v=20261113g22';
 
 /**
  * HelloFresh-inspired recipe overview modal.
@@ -29,7 +30,7 @@ export class OverviewModal {
   /**
    * @param {import('../core/state.js').AppState} state
    * @param {Array<object>} catalog
-   * @param {import('../data/loader.js?v=20261109g21').RecipeRepository} repository
+   * @param {import('../data/loader.js?v=20261113g22').RecipeRepository} repository
    * @param {Array} baseIngredients
    * @param {{
    *   onCook: (id: string, portions: number) => void,
@@ -322,7 +323,7 @@ export class OverviewModal {
       .join('');
 
     const cur = this.modalPortions;
-    const { mainHtml, pantryHtml, hasPantry } = this._splitIngredients(loaded);
+    const { mainHtml, pantryHtml, hasPantry, nHave } = this._splitIngredients(loaded);
     const columnsClass = hasPantry ? 'overview-columns has-pantry' : 'overview-columns no-pantry';
 
     let html = `
@@ -370,6 +371,7 @@ export class OverviewModal {
             ${pantryHtml}
           </div>` : ''}
         </div>
+        ${this._haveNoteHtml(nHave || 0)}
         ${this._equipmentHtml(loaded)}
         <div class="overview-spice-mixes">${spiceMixTogglesHtml(loaded && loaded.spiceMixes, this._portionScale())}</div>
       </div>`;
@@ -398,6 +400,8 @@ export class OverviewModal {
 
     const main = [];
     const pantry = [];
+    const have = likelyHave();
+    let nHave = 0;
     for (const ing of baseIngs) {
       const total = totals[ing.id] || 0;
       if (!(total > 0)) continue;
@@ -405,7 +409,9 @@ export class OverviewModal {
       const thumb = ing.image
         ? `<img class="ing-thumb" src="${escapeAttr(ing.image)}" alt="" width="44" height="44" loading="lazy" decoding="async">`
         : `<span class="ing-thumb ing-thumb-placeholder" aria-hidden="true"></span>`;
-      const row = `<li class="overview-ing-row" data-ing-id="${escapeAttr(ing.id)}">${thumb}<span class="ing-name">${escapeHtml(ing.name)}</span><span class="ing-amount">${formatNiceAmount(total, unitAbbr)}</span></li>`;
+      const isHave = have.has(ing.id);
+      if (isHave) nHave++;
+      const row = `<li class="overview-ing-row${isHave ? ' is-have' : ''}" data-ing-id="${escapeAttr(ing.id)}">${thumb}<span class="ing-name">${escapeHtml(ing.name)}${isHave ? HAVE_BADGE : ''}</span><span class="ing-amount">${formatNiceAmount(total, unitAbbr)}</span></li>`;
       if (isPantryIngredient(ing)) pantry.push(row);
       else main.push(row);
     }
@@ -414,7 +420,31 @@ export class OverviewModal {
     const pantryHtml = pantry.length
       ? `<ul class="ingredient-list overview-ing-list">${pantry.join('')}</ul>`
       : '';
-    return { mainHtml, pantryHtml, hasPantry: pantry.length > 0 };
+    return { mainHtml, pantryHtml, hasPantry: pantry.length > 0, nHave };
+  }
+
+  /** Skafferiet "Har hemma" changed: re-mark the rows in place (no image reloads). */
+  refreshHave() {
+    if (!this.isOpen() || !this.loaded) return;
+    const have = likelyHave();
+    const $body = this.$root.find('#overview-body');
+    let n = 0;
+    $body.find('.overview-ing-row').each((_, li) => {
+      const on = have.has(li.getAttribute('data-ing-id'));
+      if (on) n++;
+      li.classList.toggle('is-have', on);
+      const name = li.querySelector('.ing-name');
+      const badge = name && name.querySelector('.have-badge');
+      if (on && name && !badge) name.insertAdjacentHTML('beforeend', HAVE_BADGE);
+      if (!on && badge) badge.remove();
+    });
+    $body.find('.overview-have-note').replaceWith(this._haveNoteHtml(n));
+  }
+
+  _haveNoteHtml(n) {
+    return n
+      ? `<p class="overview-have-note"><span class="have-badge">hemma</span> ${n === 1 ? 'en vara' : `${n} varor`} har du troligen redan. Ändra i <a href="#skafferi">Skafferiet</a>.</p>`
+      : '<p class="overview-have-note" hidden></p>';
   }
 
   /** Utrustning: pots/pans/plåtar per type and the oven temperature for the user's kitchen. */

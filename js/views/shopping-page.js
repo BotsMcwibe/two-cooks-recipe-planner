@@ -6,20 +6,23 @@
  * with, per ingredient, which recipes it comes from (amount per recipe when
  * split). Items can be checked off; that is kept locally per list.
  */
-import { ShoppingListAggregator } from '../core/shopping-list.js?v=20261109g21';
+import { ShoppingListAggregator } from '../core/shopping-list.js?v=20261113g22';
 import { formatNiceAmount } from '../utils/helpers.js';
-import { escapeAttr, escapeHtml, isPantryIngredient, isScalable } from '../utils/catalog-ui.js?v=20261109g21';
-import { encodeShoppingList, decodeShoppingList, shareUrl, checkedItems, setChecked, clearChecked } from '../core/shopping-link.js?v=20261109g21';
+import { escapeAttr, escapeHtml, isPantryIngredient, isScalable } from '../utils/catalog-ui.js?v=20261113g22';
+import { likelyHave, HAVE_BADGE } from '../core/pantry-have.js?v=20261113g22';
+import { encodeShoppingList, decodeShoppingList, shareUrl, checkedItems, setChecked, clearChecked } from '../core/shopping-link.js?v=20261113g22';
 
 const SHARE_SVG = '<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="2.6"/><circle cx="6" cy="12" r="2.6"/><circle cx="18" cy="19" r="2.6"/><path d="m8.3 10.8 7.4-4.4M8.3 13.2l7.4 4.4"/></g></svg>';
 
 /** Copy payload: recipe names + ingredients (same JSON shape as the sidebar). */
 export function shoppingCopyPayload(recipes, groups) {
   const payload = { recept: recipes.map((r) => ({ namn: r.name, portioner: r.portions })), ingredienser: [], skafferi: [] };
+  const have = likelyHave();
   for (const entries of Object.values(groups)) {
     for (const entry of entries) {
       const unit = entry.unit?.abbreviation || '';
       const item = { name: entry.ingredient ? entry.ingredient.name : entry.ingredientId, amount: formatNiceAmount(entry.amount, unit), unit };
+      if (have.has(entry.ingredientId)) item.hemma = true; // Skafferiet: har troligen hemma
       if (entry.recipes && entry.recipes.length) item.recept = entry.recipes.map((s) => s.name);
       (isPantryIngredient(entry.ingredient) ? payload.skafferi : payload.ingredienser).push(item);
     }
@@ -109,7 +112,12 @@ export class ShoppingPage {
     this._shareCode = encodeShoppingList(items);
     const checked = checkedItems(listKey);
     const itemKey = (e) => `${e.ingredientId}|${e.unit.type}`;
-    const allKeys = Object.values(groups).flat().map(itemKey);
+    // Skafferiet: items we probably have move to their own dimmed section (not dropped)
+    const have = likelyHave();
+    const homeEntries = Object.values(groups).flat().filter((e) => have.has(e.ingredientId))
+      .sort((a, b) => (a.ingredient?.name || '').localeCompare(b.ingredient?.name || '', 'sv'));
+    const buyGroups = Object.entries(groups).map(([name, entries]) => [name, entries.filter((e) => !have.has(e.ingredientId))]).filter(([, e]) => e.length);
+    const allKeys = buyGroups.flatMap(([, e]) => e).map(itemKey);
     const nChecked = allKeys.filter((k) => checked.has(k)).length;
 
     const recipeRows = recipes.map((r) => {
@@ -128,28 +136,34 @@ export class ShoppingPage {
     }).join('');
 
     const multi = recipes.length > 1;
-    const groupHtml = Object.entries(groups).map(([name, entries]) => `
+    const itemHtml = (e) => {
+      const k = itemKey(e);
+      const on = checked.has(k);
+      const ingName = e.ingredient ? e.ingredient.name : e.ingredientId;
+      const src = !e.recipes.length ? '' : (multi && e.recipes.length > 1
+        ? e.recipes.map((s) => `${escapeHtml(s.name)} <span class="inkop-src-amt">${escapeHtml(s.amount)}</span>`).join(' · ')
+        : e.recipes.map((s) => escapeHtml(s.name)).join(', '));
+      return `<li class="inkop-item${on ? ' is-checked' : ''}${have.has(e.ingredientId) ? ' is-have' : ''}">
+        <label>
+          <input type="checkbox" class="inkop-cb" data-key="${escapeAttr(k)}" ${on ? 'checked' : ''}>
+          <span class="inkop-box" aria-hidden="true"></span>
+          <span class="inkop-text">
+            <span class="inkop-line"><span class="inkop-amt">${escapeHtml(formatNiceAmount(e.amount, e.unit.abbreviation))}</span> <span class="inkop-name">${escapeHtml(ingName)}</span></span>
+            ${src ? `<span class="inkop-src">${src}</span>` : ''}
+          </span>
+        </label>
+      </li>`;
+    };
+    const groupHtml = buyGroups.map(([name, entries]) => `
       <section class="inkop-group">
         <h3>${escapeHtml(name)}</h3>
-        <ul class="inkop-items">${entries.map((e) => {
-          const k = itemKey(e);
-          const on = checked.has(k);
-          const ingName = e.ingredient ? e.ingredient.name : e.ingredientId;
-          const src = !e.recipes.length ? '' : (multi && e.recipes.length > 1
-            ? e.recipes.map((s) => `${escapeHtml(s.name)} <span class="inkop-src-amt">${escapeHtml(s.amount)}</span>`).join(' · ')
-            : e.recipes.map((s) => escapeHtml(s.name)).join(', '));
-          return `<li class="inkop-item${on ? ' is-checked' : ''}">
-            <label>
-              <input type="checkbox" class="inkop-cb" data-key="${escapeAttr(k)}" ${on ? 'checked' : ''}>
-              <span class="inkop-box" aria-hidden="true"></span>
-              <span class="inkop-text">
-                <span class="inkop-line"><span class="inkop-amt">${escapeHtml(formatNiceAmount(e.amount, e.unit.abbreviation))}</span> <span class="inkop-name">${escapeHtml(ingName)}</span></span>
-                ${src ? `<span class="inkop-src">${src}</span>` : ''}
-              </span>
-            </label>
-          </li>`;
-        }).join('')}</ul>
-      </section>`).join('');
+        <ul class="inkop-items">${entries.map(itemHtml).join('')}</ul>
+      </section>`).join('') + (homeEntries.length ? `
+      <section class="inkop-group inkop-have-group" aria-label="Har troligen hemma">
+        <h3>Har troligen hemma ${HAVE_BADGE}</h3>
+        <p class="inkop-have-sub">Det här brukar du ha hemma, så det räknas inte till listan. Kolla gärna ändå. <a href="#skafferi">Ändra i Skafferiet</a></p>
+        <ul class="inkop-items">${homeEntries.map(itemHtml).join('')}</ul>
+      </section>` : '');
 
     const actions = own
       ? `<button type="button" class="acc-btn acc-btn-primary inkop-share" ${items.length ? '' : 'disabled'}>${SHARE_SVG}<span>Dela</span></button>
@@ -272,8 +286,8 @@ export class ShoppingPage {
       if (!cb) return;
       setChecked(this.code == null ? 'mine' : this.code, cb.dataset.key, cb.checked);
       cb.closest('.inkop-item')?.classList.toggle('is-checked', cb.checked);
-      const all = this.el.querySelectorAll('.inkop-cb').length;
-      const on = this.el.querySelectorAll('.inkop-cb:checked').length;
+      const all = this.el.querySelectorAll('.inkop-item:not(.is-have) .inkop-cb').length;
+      const on = this.el.querySelectorAll('.inkop-item:not(.is-have) .inkop-cb:checked').length;
       const p = this.el.querySelector('.inkop-progress');
       if (p) p.textContent = `${on} av ${all} avbockade`;
     });

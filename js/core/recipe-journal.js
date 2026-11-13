@@ -24,7 +24,7 @@
  *
  * Fires `journalchange` on window ({ detail: { key } }) after any change.
  */
-import { touchPref } from './prefs-meta.js?v=20261109g21';
+import { touchPref } from './prefs-meta.js?v=20261113g22';
 
 export const JOURNAL_KEYS = {
   cookLog: 'yessy.cookLog.v1',
