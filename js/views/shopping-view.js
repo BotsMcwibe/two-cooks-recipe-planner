@@ -1,6 +1,7 @@
-import { ShoppingListAggregator } from '../core/shopping-list.js?v=20261109g21';
+import { ShoppingListAggregator } from '../core/shopping-list.js?v=20261113g22';
 import { formatNiceAmount } from '../utils/helpers.js';
-import { escapeAttr, escapeHtml, isPantryIngredient, isScalable } from '../utils/catalog-ui.js?v=20261109g21';
+import { escapeAttr, escapeHtml, isPantryIngredient, isScalable } from '../utils/catalog-ui.js?v=20261113g22';
+import { likelyHave, HAVE_BADGE } from '../core/pantry-have.js?v=20261113g22';
 
 /**
  * Persistent Inköpslista sidebar: selected recipes + portion controls + aggregated list.
@@ -13,7 +14,7 @@ export class ShoppingSidebar {
    * @param {object} unitMap
    * @param {object} baseIngredientMap
    * @param {object} tagsData
-   * @param {import('../data/loader.js?v=20261109g21').RecipeRepository} repository
+   * @param {import('../data/loader.js?v=20261113g22').RecipeRepository} repository
    */
   constructor(state, catalog, unitMap, baseIngredientMap, tagsData, repository) {
     this.state = state;
@@ -190,6 +191,7 @@ export class ShoppingSidebar {
   /** Convert the currently aggregated entries to the sender-friendly JSON shape. */
   _buildCopyPayload(groups, selectedIds = []) {
     const payload = { recept: [], ingredienser: [], skafferi: [] };
+    const have = likelyHave();
     for (const id of selectedIds) {
       const c = this.catalogById[id];
       if (c) payload.recept.push({ namn: c.name, portioner: isScalable(c) ? this.state.getShoppingPortions(id) : (c.basePortions || 4) });
@@ -204,6 +206,7 @@ export class ShoppingSidebar {
           amount: formatNiceAmount(entry.amount, unit),
           unit,
         };
+        if (have.has(entry.ingredientId)) item.hemma = true; // Skafferiet: har troligen hemma
         const target = isPantryIngredient(entry.ingredient)
           ? payload.skafferi
           : payload.ingredienser;
@@ -326,18 +329,33 @@ export class ShoppingSidebar {
         this._copyPayload = this._buildCopyPayload(groups, selectedIds);
         const groupNames = Object.keys(groups);
         if (groupNames.length) {
+          // Skafferiet: what we probably have goes last, dimmed (still listed, never dropped)
+          const have = likelyHave();
+          const homeRows = [];
+          const row = (entry, isHave) => {
+            const disp = formatNiceAmount(entry.amount, entry.unit.abbreviation);
+            const ingName = entry.ingredient ? entry.ingredient.name : entry.ingredientId;
+            return `<li${isHave ? ' class="is-have"' : ''}><span class="ing-amount">${escapeHtml(disp)}</span><span class="ing-name">${escapeHtml(ingName)}</span></li>`;
+          };
           html += '<div class="shopping-groups">';
           html += '<h4 class="shopping-ingredients-heading">Att handla</h4>';
           for (const name of groupNames) {
+            const buy = groups[name].filter((e) => !have.has(e.ingredientId));
+            homeRows.push(...groups[name].filter((e) => have.has(e.ingredientId)));
+            if (!buy.length) continue;
             html += `<div class="shopping-group">`;
             html += `<h4>${escapeHtml(name)}</h4>`;
             html += '<ul class="ingredient-list">';
-            for (const entry of groups[name]) {
-              const disp = formatNiceAmount(entry.amount, entry.unit.abbreviation);
-              const ingName = entry.ingredient ? entry.ingredient.name : entry.ingredientId;
-              html += `<li><span class="ing-amount">${escapeHtml(disp)}</span><span class="ing-name">${escapeHtml(ingName)}</span></li>`;
-            }
+            for (const entry of buy) html += row(entry, false);
             html += '</ul></div>';
+          }
+          if (homeRows.length) {
+            homeRows.sort((a, b) => (a.ingredient?.name || '').localeCompare(b.ingredient?.name || '', 'sv'));
+            html += `<div class="shopping-group shopping-have-group">`;
+            html += `<h4>Har troligen hemma ${HAVE_BADGE}</h4>`;
+            html += `<ul class="ingredient-list">${homeRows.map((e) => row(e, true)).join('')}</ul>`;
+            html += '<a class="shopping-have-link" href="#skafferi">Ändra i Skafferiet</a>';
+            html += '</div>';
           }
           html += '</div>';
         }

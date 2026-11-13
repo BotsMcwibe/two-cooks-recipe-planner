@@ -1,9 +1,10 @@
-import { Scheduler } from '../models/scheduler.js?v=20261109g21';
-import { RecipeGraph } from '../core/recipe-graph.js?v=20261109g21';
-import { equipmentItemName, equipmentSummary, isResource, nodeEquipmentHtml, servingItems, stepHeatHtml } from '../core/equipment.js?v=20261109g21';
-import { kitchenProfile } from '../core/kitchen-prefs.js?v=20261109g21';
+import { likelyHave, HAVE_BADGE } from '../core/pantry-have.js?v=20261113g22';
+import { Scheduler } from '../models/scheduler.js?v=20261113g22';
+import { RecipeGraph } from '../core/recipe-graph.js?v=20261113g22';
+import { equipmentItemName, equipmentSummary, isResource, nodeEquipmentHtml, servingItems, stepHeatHtml } from '../core/equipment.js?v=20261113g22';
+import { kitchenProfile } from '../core/kitchen-prefs.js?v=20261113g22';
 import { formatNiceAmount } from '../utils/helpers.js';
-import { formatStepInputText, producerMap } from '../utils/derived-inputs.js?v=20261109g21';
+import { formatStepInputText, producerMap } from '../utils/derived-inputs.js?v=20261113g22';
 import {
   allergenLabel,
   difficultyLabel,
@@ -11,11 +12,11 @@ import {
   escapeAttr,
   escapeHtml,
   starHtml,
-} from '../utils/catalog-ui.js?v=20261109g21';
-import { imgFailed, isPhotoMissing, recordPhotoFailure, recordPhotoSuccess } from '../utils/photo-fallback.js?v=20261109g21';
-import * as UserState from '../core/user-recipe-state.js?v=20261109g21';
-import { bindStatusControls, kitchenMarkHtml, refreshStatusControls, statusControlHtml } from './recipe-status-ui.js?v=20261109g21';
-import { joinStepParts, sentenceCase } from '../utils/text.js?v=20261109g21';
+} from '../utils/catalog-ui.js?v=20261113g22';
+import { imgFailed, isPhotoMissing, recordPhotoFailure, recordPhotoSuccess } from '../utils/photo-fallback.js?v=20261113g22';
+import * as UserState from '../core/user-recipe-state.js?v=20261113g22';
+import { bindStatusControls, kitchenMarkHtml, refreshStatusControls, statusControlHtml } from './recipe-status-ui.js?v=20261113g22';
+import { joinStepParts, sentenceCase } from '../utils/text.js?v=20261113g22';
 
 /**
  * Cooking view - rich recipe page with hero, meta, ingredients, nutrition,
@@ -554,13 +555,15 @@ export class CookingView {
 
     let html = '<h3>Ingredienser kvar</h3><ul class="ingredient-list">';
     let any = false;
+    const have = likelyHave();
     for (const ing of baseIngs) {
       const total = totals[ing.id] || 0;
       const used = checked.amounts[ing.id] || 0;
       const remaining = Math.max(total - used, 0);
       const unitAbbr = units[ing.id] || '';
       if (remaining > 0) {
-        html += `<li class="ing-jump" role="button" tabindex="0" data-ing="${escapeAttr(ing.id)}" title="Visa nästa steg med ${escapeAttr(ing.name)}"><span class="ing-amount">${formatNiceAmount(remaining, unitAbbr)}</span><span class="ing-name">${escapeHtml(ing.name)}</span></li>`;
+        const isHave = have.has(ing.id);
+        html += `<li class="ing-jump${isHave ? ' is-have' : ''}" role="button" tabindex="0" data-ing="${escapeAttr(ing.id)}" title="Visa nästa steg med ${escapeAttr(ing.name)}"><span class="ing-amount">${formatNiceAmount(remaining, unitAbbr)}</span><span class="ing-name">${escapeHtml(ing.name)}${isHave ? HAVE_BADGE : ''}</span></li>`;
         any = true;
       }
     }

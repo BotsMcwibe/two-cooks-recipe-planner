@@ -1,11 +1,12 @@
 import { Unit } from '../models/unit.js';
 import { Ingredient } from '../models/ingredient.js';
-import { Recipe } from '../models/recipe.js?v=20261109g21';
-import { equipmentVocab, setEquipmentVocab } from '../core/equipment.js?v=20261109g21';
-import { setKitchenDefaults } from '../core/kitchen-prefs.js?v=20261109g21';
-import { RecipeGraph } from '../core/recipe-graph.js?v=20261109g21';
-import { addSpiceMixSteps } from './spice-mix-steps.js?v=20261109g21';
-import { isMixMissing } from '../core/spice-prefs.js?v=20261109g21';
+import { Recipe } from '../models/recipe.js?v=20261113g22';
+import { equipmentVocab, setEquipmentVocab } from '../core/equipment.js?v=20261113g22';
+import { setKitchenDefaults } from '../core/kitchen-prefs.js?v=20261113g22';
+import { RecipeGraph } from '../core/recipe-graph.js?v=20261113g22';
+import { addSpiceMixSteps } from './spice-mix-steps.js?v=20261113g22';
+import { isMixMissing } from '../core/spice-prefs.js?v=20261113g22';
+import { setSpiceIngredientMap } from '../core/pantry-have.js?v=20261113g22';
 
 const DATA_BASE = new URL('../../data/', import.meta.url);
 
@@ -48,11 +49,11 @@ export async function loadPortionEnergyKcal(ids) {
  */
 export async function loadStaticData() {
   const [unitsRaw, ingredientsRaw, catalog, blendsRaw, equipmentRaw] = await Promise.all([
-    fetchJSON('units.json?v=20261109g21'),
-    fetchJSON('ingredients.json?v=20261109g21'),
+    fetchJSON('units.json?v=20261113g22'),
+    fetchJSON('ingredients.json?v=20261113g22'),
     fetchJSON('catalog.json'),
-    fetchJSON('spice-blends.json?v=20261109g21').catch(() => ({ spices: [], blends: [] })),
-    fetchJSON('equipment.json?v=20261109g21').catch(() => null),
+    fetchJSON('spice-blends.json?v=20261113g22').catch(() => ({ spices: [], blends: [] })),
+    fetchJSON('equipment.json?v=20261113g22').catch(() => null),
   ]);
   if (equipmentRaw) {
     setEquipmentVocab(equipmentRaw);
@@ -78,6 +79,7 @@ export async function loadStaticData() {
   }
   const blendsById = Object.fromEntries((blendsRaw.blends || []).filter(b => b.id).map(b => [b.id, b]));
   const spiceIngredientId = Object.fromEntries((blendsRaw.spices || []).map(s => [s.id, s.ingredientId]));
+  setSpiceIngredientMap(spiceIngredientId);
   const spiceData = { mixIngredients, blendsById, spiceIngredientId };
 
   return { unitMap, baseIngredientMap, ingredientTagsData, catalog, spiceData };
@@ -91,7 +93,7 @@ export class RecipeRepository {
     this.unitMap = unitMap;
     this.spiceData = spiceData;
     this.baseIngredientMap = baseIngredientMap;
-    /** @type {Map<string, { graph: RecipeGraph, root: import('../models/recipe.js?v=20261109g21').Recipe, basePortions: number, resolveMap: object, outputMap: object }>} */
+    /** @type {Map<string, { graph: RecipeGraph, root: import('../models/recipe.js?v=20261113g22').Recipe, basePortions: number, resolveMap: object, outputMap: object }>} */
     this.cache = new Map();
     /** @type {Map<string, object>} shared prep pack cache (raw JSON) */
     this.prepCache = new Map();
