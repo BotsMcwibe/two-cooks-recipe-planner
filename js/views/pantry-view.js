@@ -11,10 +11,10 @@
  *     Set: core/pantry-exclude.js.
  * Both live in localStorage and sync per account via Supabase prefs.
  */
-import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261113g22';
-import { excludedPantry, setPantryExcluded, clearPantryExcluded, loadPantry } from '../core/pantry-exclude.js?v=20261113g22';
-import { havePantry, setPantryHave, addPantryHave, clearPantryHave, spiceHaveIds, onLikelyHaveChange } from '../core/pantry-have.js?v=20261113g22';
-import { PANTRY_STAPLES, IMPLICIT_HAVE } from '../data/pantry-staples.js?v=20261113g22';
+import { escapeAttr, escapeHtml } from '../utils/catalog-ui.js?v=20261113g24';
+import { excludedPantry, setPantryExcluded, clearPantryExcluded, loadPantry } from '../core/pantry-exclude.js?v=20261113g24';
+import { havePantry, setPantryHave, addPantryHave, clearPantryHave, spiceHaveIds, onLikelyHaveChange } from '../core/pantry-have.js?v=20261113g24';
+import { PANTRY_STAPLES, IMPLICIT_HAVE } from '../data/pantry-staples.js?v=20261113g24';
 
 /** "380/230g" -> "380 g", "1,5kg" -> "1,5 kg", "6p/3l" -> "6 st". */
 export function prettySize(s) {

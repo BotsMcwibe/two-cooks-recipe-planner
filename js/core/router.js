@@ -7,6 +7,7 @@
  *   #kryddor              → kryddskåpet (spice blend calculator)
  *   #skafferi             → skafferiet (pantry staples → recipes)
  *   #vecka                → veckoplaneraren (week planner)
+ *   #inkorg               → receptinkorgen (tipsa om recept via länk)
  *   #inkop[/<code>]       → inköpslista som sida (own, or a shared list code)
  *   #join/<CODE>          → gå med i ett hushåll (Mitt konto shows the invite)
  *   #friend/<CODE>        → lägg till en vän (Mitt konto shows the request)
@@ -63,6 +64,9 @@ export function parseHash(hash = typeof location !== 'undefined' ? location.hash
   if (raw.toLowerCase() === 'konto') {
     return { route: 'konto', masterId: null };
   }
+  if (raw.toLowerCase() === 'inkorg') {
+    return { route: 'inkorg', masterId: null };
+  }
   const inv = raw.match(/^(join|friend)\/([A-Za-z0-9-]{4,20})$/i);
   if (inv) {
     return { route: inv[1].toLowerCase(), masterId: inv[2].toUpperCase().replace(/[^A-Z0-9]/g, '') };
@@ -104,6 +108,7 @@ export function hashFor(route, masterId = null) {
   if (route === 'vecka') return '#vecka';
   if (route === 'inkop') return masterId ? `#inkop/${masterId}` : '#inkop';
   if (route === 'skafferi') return '#skafferi';
+  if (route === 'inkorg') return '#inkorg';
   return '#browse';
 }
 

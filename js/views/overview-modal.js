@@ -1,6 +1,6 @@
-import { RecipeGraph } from '../core/recipe-graph.js?v=20261113g22';
-import { equipmentListHtml, servingLineHtml } from '../core/equipment.js?v=20261113g22';
-import { kitchenProfile } from '../core/kitchen-prefs.js?v=20261113g22';
+import { RecipeGraph } from '../core/recipe-graph.js?v=20261113g24';
+import { equipmentListHtml, servingLineHtml } from '../core/equipment.js?v=20261113g24';
+import { kitchenProfile } from '../core/kitchen-prefs.js?v=20261113g24';
 import { formatNiceAmount } from '../utils/helpers.js';
 import {
   allergenLabel,
@@ -12,14 +12,14 @@ import {
   isScalable,
   starHtml,
   subtitleFromSearchText,
-} from '../utils/catalog-ui.js?v=20261113g22';
-import { imgFailed, isPhotoMissing, recordPhotoFailure, recordPhotoSuccess } from '../utils/photo-fallback.js?v=20261113g22';
-import * as UserState from '../core/user-recipe-state.js?v=20261113g22';
-import { spiceMixTogglesHtml } from './spice-mix-ui.js?v=20261113g22';
-import { likelyHave, HAVE_BADGE } from '../core/pantry-have.js?v=20261113g22';
-import { bindStatusControls, cookLogHtml, kitchenMarkHtml, refreshStatusControls, statusControlHtml } from './recipe-status-ui.js?v=20261113g22';
-import { notesHtml, bindNotes } from './journal-ui.js?v=20261113g22';
-import { householdReviewsHtml, bindHouseholdReviews, refreshHouseholdReviews } from './household-recipe-ui.js?v=20261113g22';
+} from '../utils/catalog-ui.js?v=20261113g24';
+import { imgFailed, isPhotoMissing, recordPhotoFailure, recordPhotoSuccess } from '../utils/photo-fallback.js?v=20261113g24';
+import * as UserState from '../core/user-recipe-state.js?v=20261113g24';
+import { spiceMixTogglesHtml } from './spice-mix-ui.js?v=20261113g24';
+import { likelyHave, HAVE_BADGE } from '../core/pantry-have.js?v=20261113g24';
+import { bindStatusControls, cookLogHtml, kitchenMarkHtml, refreshStatusControls, statusControlHtml } from './recipe-status-ui.js?v=20261113g24';
+import { notesHtml, bindNotes } from './journal-ui.js?v=20261113g24';
+import { householdReviewsHtml, bindHouseholdReviews, refreshHouseholdReviews } from './household-recipe-ui.js?v=20261113g24';
 
 /**
  * HelloFresh-inspired recipe overview modal.
@@ -30,7 +30,7 @@ export class OverviewModal {
   /**
    * @param {import('../core/state.js').AppState} state
    * @param {Array<object>} catalog
-   * @param {import('../data/loader.js?v=20261113g22').RecipeRepository} repository
+   * @param {import('../data/loader.js?v=20261113g24').RecipeRepository} repository
    * @param {Array} baseIngredients
    * @param {{
    *   onCook: (id: string, portions: number) => void,
@@ -367,7 +367,7 @@ export class OverviewModal {
           </div>
           ${hasPantry ? `
           <div class="overview-col overview-pantry-col">
-            <h3>Skafferi</h3>
+            <h3>Basvaror</h3>
             ${pantryHtml}
           </div>` : ''}
         </div>

@@ -7,9 +7,9 @@
  *
  * likelyHave() = the marked set + tap water + spices marked in Kryddskåpet (#kryddor).
  */
-import { touchPref } from './prefs-meta.js?v=20261113g22';
-import { ownedSpices } from './spices-owned.js?v=20261113g22';
-import { IMPLICIT_HAVE } from '../data/pantry-staples.js?v=20261113g22';
+import { touchPref } from './prefs-meta.js?v=20261113g24';
+import { ownedSpices } from './spices-owned.js?v=20261113g24';
+import { IMPLICIT_HAVE } from '../data/pantry-staples.js?v=20261113g24';
 
 const KEY = 'yessy.pantryHave.v1';
 let spiceIngredientId = {};
