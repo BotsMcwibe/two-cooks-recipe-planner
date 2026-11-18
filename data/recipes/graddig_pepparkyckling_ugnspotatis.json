@@ -1,0 +1,579 @@
+{
+  "masterId": "graddig_pepparkyckling_ugnspotatis",
+  "source": "recept",
+  "rawId": "recept-3882",
+  "createdAt": 1794985717,
+  "basePortions": 4,
+  "time": {
+    "totalMin": 54,
+    "activeMin": 41,
+    "computedFrom": "graph"
+  },
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/graddig_pepparkyckling_ugnspotatis/main.jpg"
+  },
+  "ratings": {
+    "average": 5,
+    "count": 138,
+    "source": "recept"
+  },
+  "nodes": [
+    {
+      "id": "graddig_pepparkyckling_ugnspotatis__preheated_oven_200",
+      "name": "Värm ugnen",
+      "outputName": "Förvärmd ugn (200°C)",
+      "inputs": [],
+      "steps": [
+        "Sätt {{eq:ugn|def}} på 200°C."
+      ],
+      "duration": 1,
+      "wait": 10,
+      "tags": [
+        "no-timer",
+        "resource"
+      ],
+      "tips": [
+        "Receptet anger ingen uppvärmningstid; ugnen tar vanligtvis ca 10 minuter att bli varm."
+      ],
+      "oven": {
+        "temp": 200,
+        "fanTemp": 180,
+        "fanTempSource": "derived"
+      }
+    },
+    {
+      "id": "graddig_pepparkyckling_ugnspotatis__prepped_potatoes",
+      "name": "Förbered Potatisen",
+      "outputName": "Förberedd potatis",
+      "inputs": [
+        {
+          "id": "potato",
+          "amount": 1000,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Skrubba {{potato}} och lämna skalet på.",
+        "Dela eventuellt stora potatisar så de blir ungefär lika stora."
+      ],
+      "duration": 4,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Amandine är en typ av mandelpotatis: fast och tunnskalig, bra att koka och ugnsrosta. Annan fast potatis fungerar också."
+      ],
+      "devNotes": [
+        "Source step 5 only says 'Koka potatisen nästan klar. Häll av vattnet och ånga den torr.' Visible page skips numbers 4–5. Skin-on prep, even sizing, salted-water boil and 15–20 min until almost tender were fleshed out as standard method for krossad ugnspotatis; boil time is not in the source."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ]
+    },
+    {
+      "id": "graddig_pepparkyckling_ugnspotatis__chopped_onion",
+      "name": "Hacka Lök",
+      "outputName": "Hackad lök",
+      "inputs": [
+        {
+          "id": "onion",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skala och hacka {{onion}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ]
+    },
+    {
+      "id": "graddig_pepparkyckling_ugnspotatis__halved_chicken",
+      "name": "Dela Kycklingen",
+      "outputName": "Delad kycklingbröstfilé",
+      "inputs": [
+        {
+          "id": "chicken_breast",
+          "amount": 600,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Dela varje {{chicken_breast}} på längden."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada_ra",
+          "separate": true,
+          "rawKinds": [
+            "poultry"
+          ],
+          "inferred": true
+        }
+      ]
+    },
+    {
+      "id": "graddig_pepparkyckling_ugnspotatis__halved_tomatoes",
+      "name": "Dela Tomater",
+      "outputName": "Delade körsbärstomater",
+      "inputs": [
+        {
+          "id": "cherry_tomatoes",
+          "amount": 9,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Dela {{cherry_tomatoes}} på mitten."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ]
+    },
+    {
+      "id": "graddig_pepparkyckling_ugnspotatis__chopped_parsley",
+      "name": "Hacka Persilja",
+      "outputName": "Hackad persilja",
+      "inputs": [
+        {
+          "id": "parsley",
+          "amount": 2,
+          "unit": "msk"
+        }
+      ],
+      "steps": [
+        "Hacka {{parsley}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ]
+    },
+    {
+      "id": "graddig_pepparkyckling_ugnspotatis__crushed_pepper",
+      "name": "Krossa Peppar",
+      "outputName": "Krossad rosé- och grönpeppar",
+      "inputs": [
+        {
+          "id": "pink_peppercorns",
+          "amount": 1,
+          "unit": "msk"
+        },
+        {
+          "id": "green_peppercorns",
+          "amount": 1,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Krossa {{pink_peppercorns}} och {{green_peppercorns}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "graddig_pepparkyckling_ugnspotatis__boiled_potatoes",
+      "name": "Koka Potatis",
+      "outputName": "Nästan kokt potatis",
+      "inputs": [
+        {
+          "id": "graddig_pepparkyckling_ugnspotatis__prepped_potatoes",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Koka upp rikligt med saltat vatten i {{eq:kastrull_1}}.",
+        "Lägg i {{graddig_pepparkyckling_ugnspotatis__prepped_potatoes}} och koka tills den är nästan mjuk när du sticker med en kniv, ca 15–20 min."
+      ],
+      "duration": 2,
+      "wait": 20,
+      "tags": [],
+      "heat": "hög",
+      "heatSource": "inferred",
+      "devNotes": [
+        "Boil time 15–20 min and salted water are not in the source; used as a typical range for 1 kg firm potatoes cooked until almost tender. Upper bound 20 min owns the wait."
+      ],
+      "equipment": [
+        {
+          "type": "kastrull_stor",
+          "ref": "kastrull_1",
+          "sizeSource": "inferred"
+        }
+      ]
+    },
+    {
+      "id": "graddig_pepparkyckling_ugnspotatis__drained_potatoes",
+      "name": "Häll Av Potatisen",
+      "outputName": "Avångad potatis",
+      "inputs": [
+        {
+          "id": "graddig_pepparkyckling_ugnspotatis__boiled_potatoes",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Häll av vattnet från {{graddig_pepparkyckling_ugnspotatis__boiled_potatoes}} i {{eq:durkslag_1}} och låt potatisen ånga av torr i {{eq:kastrull_1|def}} någon minut."
+      ],
+      "duration": 2,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "kastrull_stor",
+          "ref": "kastrull_1",
+          "transition": "keep",
+          "sizeSource": "inferred",
+          "offHeat": true
+        },
+        {
+          "type": "durkslag",
+          "ref": "durkslag_1"
+        }
+      ]
+    },
+    {
+      "id": "graddig_pepparkyckling_ugnspotatis__browned_chicken",
+      "name": "Bryn Kyckling med Lök",
+      "outputName": "Brynt kyckling i ugnsform",
+      "inputs": [
+        {
+          "id": "graddig_pepparkyckling_ugnspotatis__halved_chicken",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "butter",
+          "amount": 1,
+          "unit": "msk"
+        },
+        {
+          "id": "graddig_pepparkyckling_ugnspotatis__chopped_onion",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{butter}} i {{eq:stekpanna_1}} på hög värme.",
+        "Bryn {{graddig_pepparkyckling_ugnspotatis__halved_chicken}} runt om.",
+        "Tillsätt {{graddig_pepparkyckling_ugnspotatis__chopped_onion}} och fräs lite till. Salta med {{salt}}.",
+        "Lägg över kycklingen i {{eq:ugnsform_1}}."
+      ],
+      "duration": 8,
+      "tags": [],
+      "heat": "hög",
+      "heatSource": "inferred",
+      "stepHeat": {
+        "2": "medelhög"
+      },
+      "devNotes": [
+        "Source says 'stekpanna' and later makes the cream sauce in the same pan (2 dl vispgrädde + 1 dl vatten + 1 dl crème fraiche, ≥ 3 dl liquid) so the pan is traktorpanna, typeSource inferred. Salt amount was missing; 1 nypa used per conversion default.",
+        "Bryn → heat hög (inferred); onion fry stepped down to medelhög."
+      ],
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "stekpanna_1",
+          "typeSource": "inferred"
+        },
+        {
+          "type": "ugnsform",
+          "ref": "ugnsform_1",
+          "sizeSource": "inferred"
+        }
+      ]
+    },
+    {
+      "id": "graddig_pepparkyckling_ugnspotatis__chicken_in_sauce",
+      "name": "Gör Pepparsås",
+      "outputName": "Kyckling i pepparsås",
+      "inputs": [
+        {
+          "id": "graddig_pepparkyckling_ugnspotatis__browned_chicken",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "whipping_cream",
+          "amount": 2,
+          "unit": "dl"
+        },
+        {
+          "id": "water",
+          "amount": 1,
+          "unit": "dl"
+        },
+        {
+          "id": "chicken_fond",
+          "amount": 1,
+          "unit": "msk"
+        },
+        {
+          "id": "creme_fraiche",
+          "amount": 1,
+          "unit": "dl"
+        },
+        {
+          "id": "chili_sauce",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "graddig_pepparkyckling_ugnspotatis__crushed_pepper",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "graddig_pepparkyckling_ugnspotatis__halved_tomatoes",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Häll {{whipping_cream}}, {{water}}, {{chicken_fond}}, {{creme_fraiche}} och {{chili_sauce}} i {{eq:stekpanna_1|def}} och koka upp.",
+        "Rör i {{graddig_pepparkyckling_ugnspotatis__crushed_pepper}} och häll såsen över {{graddig_pepparkyckling_ugnspotatis__browned_chicken}} i {{eq:ugnsform_1|def}}.",
+        "Lägg i {{graddig_pepparkyckling_ugnspotatis__halved_tomatoes}}."
+      ],
+      "duration": 4,
+      "tags": [],
+      "heat": "hög",
+      "heatSource": "inferred",
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "stekpanna_1",
+          "transition": "keep",
+          "typeSource": "inferred"
+        },
+        {
+          "type": "ugnsform",
+          "ref": "ugnsform_1",
+          "transition": "keep",
+          "sizeSource": "inferred"
+        }
+      ]
+    },
+    {
+      "id": "graddig_pepparkyckling_ugnspotatis__baked_chicken",
+      "name": "Tillaga Kycklingen i Ugnen",
+      "outputName": "Ugnsbakad pepparkyckling",
+      "inputs": [
+        {
+          "id": "graddig_pepparkyckling_ugnspotatis__chicken_in_sauce",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Tillaga {{graddig_pepparkyckling_ugnspotatis__chicken_in_sauce}} i {{eq:ugn|def}} i 200°C tills kycklingen är genomstekt, ca 20 minuter."
+      ],
+      "duration": 1,
+      "wait": 20,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "graddig_pepparkyckling_ugnspotatis__preheated_oven_200",
+          "slots": 1,
+          "temp": 200,
+          "fanTemp": 180,
+          "fanTempSource": "derived"
+        },
+        {
+          "type": "ugnsform",
+          "ref": "ugnsform_1",
+          "transition": "keep",
+          "sizeSource": "inferred"
+        }
+      ]
+    },
+    {
+      "id": "graddig_pepparkyckling_ugnspotatis__crushed_potatoes",
+      "name": "Krossa Potatisen",
+      "outputName": "Krossad potatis på plåt",
+      "inputs": [
+        {
+          "id": "graddig_pepparkyckling_ugnspotatis__drained_potatoes",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "garlic",
+          "amount": 2,
+          "unit": "klyfta"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 4,
+          "unit": "msk"
+        },
+        {
+          "id": "parmesan",
+          "amount": 50,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Lägg {{graddig_pepparkyckling_ugnspotatis__drained_potatoes}} på {{eq:plat_1}} och tryck till dem med en gaffel så de går sönder lite.",
+        "Krossa {{garlic}} och blanda med potatisen.",
+        "Ringla över {{olive_oil}}, strö över {{parmesan}} och krydda med {{salt}} och {{pepper}}."
+      ],
+      "duration": 5,
+      "tags": [],
+      "devNotes": [
+        "Source salt/pepper on the potatoes had no amounts; 1 nypa each used per conversion default. No baking paper mentioned, so plat has no liner."
+      ],
+      "equipment": [
+        {
+          "type": "plat",
+          "ref": "plat_1"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ]
+    },
+    {
+      "id": "graddig_pepparkyckling_ugnspotatis__roasted_potatoes",
+      "name": "Rosta Potatisen i Ugnen",
+      "outputName": "Krossad ugnspotatis",
+      "inputs": [
+        {
+          "id": "graddig_pepparkyckling_ugnspotatis__crushed_potatoes",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Tillaga {{graddig_pepparkyckling_ugnspotatis__crushed_potatoes}} i {{eq:ugn|def}} i 200°C tills potatisen fått färg, ca 15 minuter."
+      ],
+      "duration": 1,
+      "wait": 15,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "graddig_pepparkyckling_ugnspotatis__preheated_oven_200",
+          "slots": 1,
+          "temp": 200,
+          "fanTemp": 180,
+          "fanTempSource": "derived"
+        },
+        {
+          "type": "plat",
+          "ref": "plat_1",
+          "transition": "keep"
+        }
+      ]
+    },
+    {
+      "id": "graddig_pepparkyckling_ugnspotatis",
+      "name": "Gräddig pepparkyckling och krossad ugnspotatis",
+      "outputName": "Gräddig pepparkyckling och krossad ugnspotatis",
+      "inputs": [
+        {
+          "id": "graddig_pepparkyckling_ugnspotatis__baked_chicken",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "graddig_pepparkyckling_ugnspotatis__roasted_potatoes",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "graddig_pepparkyckling_ugnspotatis__chopped_parsley",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "pink_peppercorns",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "green_peppercorns",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{graddig_pepparkyckling_ugnspotatis__baked_chicken}} med såsen och {{graddig_pepparkyckling_ugnspotatis__roasted_potatoes}} på {{eq:servering|pl}}.",
+        "Strö över {{graddig_pepparkyckling_ugnspotatis__chopped_parsley}} och lite extra krossad {{pink_peppercorns}} och {{green_peppercorns}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "master"
+      ],
+      "tips": [
+        "En liten dutt dijonsenap i såsen ger extra smak.",
+        "Rosé- och grönpeppar kan bytas mot vanlig svartpeppar; använd då bara ca ½–1 tsk totalt, efter smak."
+      ],
+      "devNotes": [
+        "Garnish rosépeppar and grönpepparkorn had no amounts; 1 nypa each used per conversion default.",
+        "schema.org nutrition omitted: calories field is 856124 (junk). Macros would imply ~856 kcal but were not written in.",
+        "New pantry ids: chicken_fond (1 msk concentrate, not prepared stock), chili_sauce (Swedish bottled chilisås, not sweet chili), pink_peppercorns, green_peppercorns."
+      ],
+      "serving": [
+        {
+          "type": "servering_tallrik",
+          "ref": "servering",
+          "count": "portions"
+        }
+      ]
+    }
+  ]
+}

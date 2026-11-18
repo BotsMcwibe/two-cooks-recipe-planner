@@ -709,6 +709,36 @@
     ]
   },
   {
+    "id": "graddig_pepparkyckling_ugnspotatis",
+    "source": "recept",
+    "createdAt": 1794985717,
+    "name": "Gräddig pepparkyckling och krossad ugnspotatis",
+    "tags": [
+      "master",
+      "kyckling",
+      "family",
+      "glutenfri",
+      "gratin",
+      "protein:chicken",
+      "recept:category:kyckling",
+      "recept:meal:huvudratt",
+      "recept:type:gratang",
+      "recept:dietary:glutenfri"
+    ],
+    "hfTags": [],
+    "image": "assets/recipes/graddig_pepparkyckling_ugnspotatis/main.jpg",
+    "basePortions": 4,
+    "cuisine": "swedish",
+    "allergens": [
+      "dairy"
+    ],
+    "difficulty": "medium",
+    "totalMinutes": 54,
+    "searchText": "gräddig pepparkyckling krossad ugnspotatis kycklingbröst vispgrädde crème fraiche rosépeppar grönpepparkorn parmesan vitlök amandine potatis chilisås",
+    "ratingAverage": 5,
+    "ratingCount": 138
+  },
+  {
     "id": "gratinerad_aubergine",
     "source": "hellofresh",
     "createdAt": 1790851698,

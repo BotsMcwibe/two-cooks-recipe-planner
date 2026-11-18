@@ -436,6 +436,13 @@
       "image": "assets/ingredients/chicken_breast_strips.png",
       "rawAnimal": "poultry"
     },
+    "chicken_fond": {
+      "name": "Kycklingfond",
+      "tags": [
+        "basic",
+        "sauces"
+      ]
+    },
     "chicken_inner_fillet": {
       "name": "Kycklinginnerfilé",
       "tags": [
@@ -459,6 +466,12 @@
         "spices"
       ],
       "image": "assets/ingredients/chili_flakes.png"
+    },
+    "chili_sauce": {
+      "name": "Chilisås",
+      "tags": [
+        "sauces"
+      ]
     },
     "chives": {
       "name": "Gräslök",
@@ -858,6 +871,12 @@
         "canned"
       ],
       "image": "assets/ingredients/green_lentils.png"
+    },
+    "green_peppercorns": {
+      "name": "Grönpepparkorn",
+      "tags": [
+        "spices"
+      ]
     },
     "ground_beef": {
       "name": "Köttfärs",
@@ -1381,6 +1400,12 @@
         "nuts_seeds"
       ],
       "image": "assets/ingredients/pine_nuts.png"
+    },
+    "pink_peppercorns": {
+      "name": "Rosépeppar",
+      "tags": [
+        "spices"
+      ]
     },
     "pistachios": {
       "name": "Pistagenötter",
