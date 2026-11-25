@@ -4,6 +4,11 @@
   "rawId": "5d7b7ed61191fd4861353734",
   "createdAt": 1790795820,
   "basePortions": 4,
+  "time": {
+    "totalMin": 60,
+    "activeMin": 49,
+    "computedFrom": "graph"
+  },
   "sharedPrep": [],
   "images": {
     "main": "assets/recipes/lentil_gratin/main.jpg"

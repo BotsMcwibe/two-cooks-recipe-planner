@@ -1,0 +1,416 @@
+{
+  "masterId": "kycklingwok_mienudlar_ketjap",
+  "source": "hellofresh",
+  "rawId": "6a9e928b790f7867027dbe09",
+  "createdAt": 1794428443,
+  "basePortions": 4,
+  "time": {
+    "totalMin": 30,
+    "activeMin": 30,
+    "computedFrom": "graph"
+  },
+  "images": {
+    "main": "assets/recipes/kycklingwok_mienudlar_ketjap/main.jpg",
+    "byNode": {
+      "kycklingwok_mienudlar_ketjap__cooked_noodles": "assets/recipes/kycklingwok_mienudlar_ketjap/steps/cooked_noodles.jpg",
+      "kycklingwok_mienudlar_ketjap__fried_veg": "assets/recipes/kycklingwok_mienudlar_ketjap/steps/fried_veg.jpg",
+      "kycklingwok_mienudlar_ketjap__wok": "assets/recipes/kycklingwok_mienudlar_ketjap/steps/wok.jpg",
+      "kycklingwok_mienudlar_ketjap": "assets/recipes/kycklingwok_mienudlar_ketjap/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 498,
+    "perPortion": {
+      "energyKcal": 670,
+      "energyKj": 2804,
+      "fatG": 15.2,
+      "saturatedFatG": 3,
+      "carbsG": 82.1,
+      "sugarsG": 19.8,
+      "fiberG": 7.6,
+      "proteinG": 48.1,
+      "saltG": 6.7
+    }
+  },
+  "nodes": [
+    {
+      "id": "kycklingwok_mienudlar_ketjap__cooked_noodles",
+      "name": "Koka Mie-nudlar",
+      "outputName": "Kokta mie-nudlar",
+      "inputs": [
+        {
+          "id": "mie_noodles",
+          "amount": 300,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Koka upp saltat vatten i {{eq:kastrull_1}}.",
+        "Koka {{mie_noodles}} i 4 min, eller tills mjuka."
+      ],
+      "duration": 2,
+      "wait": 4,
+      "tags": [],
+      "heat": "hög",
+      "tips": [
+        "Vattnet ska vara lika salt som havsvatten."
+      ],
+      "equipment": [
+        {
+          "type": "kastrull_stor",
+          "ref": "kastrull_1"
+        }
+      ],
+      "devNotes": [
+        "HF Mie-nudlar typ mie-noodles → mie_noodles, 300 g linjärt. Rådatan säger stor kastrull. Salt i kokvattnet har ingen rad i HF:s lista och lämnas omätt. Avhällning och sköljning i nästa node så att kokets wait ligger på sista steget. Stegfotot (troligen 2 portioner) visar en mindre kastrull."
+      ]
+    },
+    {
+      "id": "kycklingwok_mienudlar_ketjap__rinsed_noodles",
+      "name": "Häll Av och Skölj Nudlarna",
+      "outputName": "Sköljda mie-nudlar",
+      "inputs": [
+        {
+          "id": "kycklingwok_mienudlar_ketjap__cooked_noodles",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Precis innan nudlarna är färdiga, skopa upp 2 dl kokvatten i en kopp och ställ åt sidan.",
+        "Häll av {{kycklingwok_mienudlar_ketjap__cooked_noodles}} i {{eq:durkslag_1}} och skölj nudlarna i kallt vatten."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "kastrull_stor",
+          "ref": "kastrull_1",
+          "transition": "keep",
+          "offHeat": true,
+          "after": "kycklingwok_mienudlar_ketjap__cooked_noodles"
+        },
+        {
+          "type": "durkslag",
+          "ref": "durkslag_1",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "HF Sparat nudelvatten 2 dl vid 4 (1 dl vid 2, 1,5 dl vid 3) används i woken som {{water}}. Skopas här och ställs åt sidan; vattnet listas som ingång i woknoden, inte här. Koppen spåras inte (litet redskap). Samma avhäll+skölj-mönster som miso_ramen_rumpstek."
+      ]
+    },
+    {
+      "id": "kycklingwok_mienudlar_ketjap__cut_paprika",
+      "name": "Strimla Paprika",
+      "outputName": "Paprikastrimlor",
+      "inputs": [
+        {
+          "id": "paprika",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skär {{paprika}} i 1 cm tunna strimlor."
+      ],
+      "duration": 3,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "HF Paprika typ bell-pepper → paprika, 2 st linjärt."
+      ]
+    },
+    {
+      "id": "kycklingwok_mienudlar_ketjap__sliced_spring_onion",
+      "name": "Skiva Salladslök",
+      "outputName": "Skivad salladslök",
+      "inputs": [
+        {
+          "id": "spring_onion",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skär {{spring_onion}} i tunna skivor."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true,
+          "after": "kycklingwok_mienudlar_ketjap__cut_paprika"
+        }
+      ],
+      "devNotes": [
+        "Salladslök 2 st linjärt. Skärs i samma HF-steg som paprikan men används bara som garnering, därför egen prep-nod."
+      ]
+    },
+    {
+      "id": "kycklingwok_mienudlar_ketjap__fried_veg",
+      "name": "Woka Grönsaker",
+      "outputName": "Wokade grönsaker",
+      "inputs": [
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "msk"
+        },
+        {
+          "id": "wok_mix",
+          "amount": 400,
+          "unit": "g"
+        },
+        {
+          "id": "kycklingwok_mienudlar_ketjap__cut_paprika",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i {{eq:stekpanna_1}} på medelhög värme.",
+        "Tillsätt {{wok_mix}} och {{kycklingwok_mienudlar_ketjap__cut_paprika}}, krydda med {{salt}} och stek i 2–3 min tills något mjuknat.",
+        "Lägg över på {{eq:tallrik_1}} och håll varmt."
+      ],
+      "duration": 4,
+      "wait": 0,
+      "tags": [],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1"
+        },
+        {
+          "type": "tallrik",
+          "ref": "tallrik_1"
+        }
+      ],
+      "devNotes": [
+        "HF Thai wokmix typ thai-vegetable-mix (id 6a2fbfd1b2e241c4bdaff34f) är en färsk grönsaksblandning (strimlad morot, kålblad m.m.), inte en torr kryddmix — ingen blendId och ingen Spice Mix-flagga. Samma SKU som i kung_pao_rakor → wok_mix, 400 g linjärt.",
+        "Olja till stekning 2 msk totalt delas 1 msk till grönsakerna och 1 msk till kycklingen. Stegtexten kallar första skvätten 'en skvätt olivolja'. FLAG. Salt till grönsaker 0,5 tsk vid 3 och 4. FLAG. 2–3 min är hands-on (duration 4). Rådatan säger stor stekpanna."
+      ]
+    },
+    {
+      "id": "kycklingwok_mienudlar_ketjap__coated_chicken",
+      "name": "Panera Kyckling i Majsstärkelse",
+      "outputName": "Majsstärkelsepanerad kyckling",
+      "inputs": [
+        {
+          "id": "chicken_breast_strips",
+          "amount": 600,
+          "unit": "g"
+        },
+        {
+          "id": "cornstarch",
+          "amount": 16,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Torka av {{chicken_breast_strips}} med hushållspapper.",
+        "Blanda kycklingen, {{cornstarch}}, {{salt}} och en nypa {{pepper}} i {{eq:skal_1}}."
+      ],
+      "duration": 3,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skal_stor",
+          "ref": "skal_1"
+        }
+      ],
+      "devNotes": [
+        "HF Strimlad kycklingbröstfilé typ chicken-breast-strips → chicken_breast_strips. Färdigstrimlad, torkas och vänds i en skål, skärs inte — därför ingen skarbrada_ra. 600 g vid 4 är linjärt från 2 (300) och 6 (900), men 375 g vid 3 och 675 g vid 5 är inte linjärt. FLAG. Salt till kött 0,5 tsk vid 3 och 4. FLAG. Majsstärkelse 16 g linjärt. Hushållspapper spåras inte. Rådatan säger stor skål."
+      ]
+    },
+    {
+      "id": "kycklingwok_mienudlar_ketjap__fried_chicken",
+      "name": "Stek Kyckling",
+      "outputName": "Stekt kyckling",
+      "inputs": [
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "msk"
+        },
+        {
+          "id": "kycklingwok_mienudlar_ketjap__coated_chicken",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i {{eq:stekpanna_1|def}} (utan att torka ur den först) på medelhög värme.",
+        "Stek {{kycklingwok_mienudlar_ketjap__coated_chicken}} i 3–4 min per sida, tills brynt och genomstekt."
+      ],
+      "duration": 8,
+      "wait": 0,
+      "tags": [],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1",
+          "transition": "keep",
+          "after": "kycklingwok_mienudlar_ketjap__fried_veg"
+        }
+      ],
+      "devNotes": [
+        "Rådatan säger uttryckligen att pannan inte torkas ur, därför transition keep. after fried_veg är resursordning (grönsakerna ligger på tallrik, ingen ingredienskant). 3–4 min per sida är hands-on (duration 8). Inget eget stegfoto; HF:s 'Stek kyckling'-bild visar den färdiga woken."
+      ]
+    },
+    {
+      "id": "kycklingwok_mienudlar_ketjap__wok",
+      "name": "Woka Nudlar, Kyckling och Grönsaker",
+      "outputName": "Kycklingwok med mie-nudlar",
+      "inputs": [
+        {
+          "id": "kycklingwok_mienudlar_ketjap__fried_chicken",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "kycklingwok_mienudlar_ketjap__fried_veg",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "ginger_paste",
+          "amount": 20,
+          "unit": "g"
+        },
+        {
+          "id": "ketjap_manis",
+          "amount": 40,
+          "unit": "g"
+        },
+        {
+          "id": "soy_sauce",
+          "amount": 40,
+          "unit": "ml"
+        },
+        {
+          "id": "balsamic_vinegar",
+          "amount": 24,
+          "unit": "ml"
+        },
+        {
+          "id": "fish_sauce",
+          "amount": 60,
+          "unit": "g"
+        },
+        {
+          "id": "kycklingwok_mienudlar_ketjap__rinsed_noodles",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "water",
+          "amount": 2,
+          "unit": "dl"
+        },
+        {
+          "id": "sugar",
+          "amount": 2,
+          "unit": "tsk"
+        },
+        {
+          "id": "sesame_oil",
+          "amount": 20,
+          "unit": "ml"
+        }
+      ],
+      "steps": [
+        "Tillsätt {{kycklingwok_mienudlar_ketjap__fried_veg}}, {{ginger_paste}}, {{ketjap_manis}}, {{soy_sauce}}, {{balsamic_vinegar}}, {{fish_sauce}}, {{kycklingwok_mienudlar_ketjap__rinsed_noodles}}, sparat nudelvatten ({{water}}), {{sugar}} och {{sesame_oil}} till {{kycklingwok_mienudlar_ketjap__fried_chicken}} i {{eq:stekpanna_1|def}}.",
+        "Stek under omrörning i 2–3 min."
+      ],
+      "duration": 4,
+      "wait": 0,
+      "tags": [],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1",
+          "transition": "keep"
+        }
+      ],
+      "devNotes": [
+        "Ny ingrediens ketjap_manis (HF Ketjap Manis typ ketjap-manis), 40 g linjärt. HF Ingefärapuré typ ginger-puree → ginger_paste, 20 g linjärt. Sojasås 40 ml, balsamvinäger 24 ml, fisksås 60 g, sesamolja 20 ml och socker 2 tsk är linjära.",
+        "2 dl nudelvatten plus såser är ca 3,3 dl totalt, men det är en kort wokning under omrörning (inte sjud/puttra) och checkern räknar bara water (2 dl), under 3 dl-tröskeln. Rådatan säger stor stekpanna; stegfotona visar en vanlig stekpanna. Därför stekpanna_stor, inte traktörpanna. FLAG volymen. 2–3 min är hands-on (duration 4)."
+      ]
+    },
+    {
+      "id": "kycklingwok_mienudlar_ketjap",
+      "name": "Snabblagad kycklingwok",
+      "outputName": "Snabblagad kycklingwok med mie-nudlar och salladslök",
+      "inputs": [
+        {
+          "id": "kycklingwok_mienudlar_ketjap__wok",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "kycklingwok_mienudlar_ketjap__sliced_spring_onion",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{kycklingwok_mienudlar_ketjap__wok}} i {{eq:servering|pl}}.",
+        "Strö över {{kycklingwok_mienudlar_ketjap__sliced_spring_onion}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_skal",
+          "ref": "servering",
+          "count": "portions"
+        }
+      ],
+      "devNotes": [
+        "All näring behållen, inklusive fiber 7,6 g (670 kcal). Vete vikt in i gluten. Bekräftade allergener gluten, soy, sulphites (balsamvinäger), fish (fisksås) och sesame (sesamolja). Inga spår-allergener på kortet. Taggarna laktosfri och äggfri stämmer (ingen mjölk, inget ägg).",
+        "Rådatan säger 'tallrikar', men serverings- och huvudfotot visar skålar — servering_skal. HF totalTime och prepTime PT15M behållna (supersnabb; nudlar och grönsaker överlappar). FLAG: schemat är tight mot 3–4 min per sida på kycklingen. HF difficulty 1 → easy. Cuisine chinese (HF Kinesisk).",
+        "clonedFrom/dubbletterna 68adc44f9bc786cb212c51c3 och 6a7c83786a29680aee4ff078 konverterades inte, inte heller 5eda43ecc46d6e104d574622 (spetskål och aprikoschutney) eller 622241e18558c73e5e55c97c (jasminris, kokosmjölk och broccoli)."
+      ]
+    }
+  ]
+}

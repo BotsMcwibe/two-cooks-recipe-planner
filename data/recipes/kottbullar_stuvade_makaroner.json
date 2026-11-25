@@ -1,0 +1,437 @@
+{
+  "masterId": "kottbullar_stuvade_makaroner",
+  "source": "hellofresh",
+  "rawId": "6a9e92a9548a82de3e1a7333",
+  "createdAt": 1794420372,
+  "basePortions": 4,
+  "time": {
+    "totalMin": 51,
+    "activeMin": 51,
+    "computedFrom": "graph"
+  },
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/kottbullar_stuvade_makaroner/main.jpg",
+    "byNode": {
+      "kottbullar_stuvade_makaroner__sides": "assets/recipes/kottbullar_stuvade_makaroner/steps/sides.jpg",
+      "kottbullar_stuvade_makaroner__rolled_meatballs": "assets/recipes/kottbullar_stuvade_makaroner/steps/rolled_meatballs.jpg",
+      "kottbullar_stuvade_makaroner__fried_meatballs": "assets/recipes/kottbullar_stuvade_makaroner/steps/fried_meatballs.jpg",
+      "kottbullar_stuvade_makaroner__cooked_pasta": "assets/recipes/kottbullar_stuvade_makaroner/steps/cooked_pasta.jpg",
+      "kottbullar_stuvade_makaroner__creamed_macaroni": "assets/recipes/kottbullar_stuvade_makaroner/steps/creamed_macaroni.jpg",
+      "kottbullar_stuvade_makaroner": "assets/recipes/kottbullar_stuvade_makaroner/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 614,
+    "perPortion": {
+      "energyKcal": 1003,
+      "energyKj": 4196,
+      "fatG": 46.5,
+      "saturatedFatG": 25.4,
+      "carbsG": 97.3,
+      "sugarsG": 16.9,
+      "fiberG": 6.8,
+      "proteinG": 49.8,
+      "saltG": 3
+    }
+  },
+  "nodes": [
+    {
+      "id": "kottbullar_stuvade_makaroner__chopped_onion",
+      "name": "Hacka Lök",
+      "outputName": "Finhackad lök",
+      "inputs": [
+        {
+          "id": "onion",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Finhacka {{onion}}."
+      ],
+      "duration": 3,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "Lök 1 st vid både 3 och 4 portioner; 4-portionsvärdet används."
+      ]
+    },
+    {
+      "id": "kottbullar_stuvade_makaroner__sides",
+      "name": "Hacka Persilja och Skär Grönsaker",
+      "outputName": "Persilja, rädisor och grönsaksstavar",
+      "inputs": [
+        {
+          "id": "parsley",
+          "amount": 10,
+          "unit": "g"
+        },
+        {
+          "id": "carrot",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "cucumber",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "radish",
+          "amount": 150,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Finhacka {{parsley}}.",
+        "Skär {{carrot}} (oskalad) och {{cucumber}} i 1 cm tunna stavar.",
+        "Skär {{radish}} i kvartar."
+      ],
+      "duration": 6,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "Alla går till mastern (persilja som garnering, resten som tillbehör), därför en prepnode.",
+        "Bladpersilja: HF 10 g vid 2, 3 och 4 portioner, 20 g vid 5–6 — troligen förpackningsstorlek. Författad som 10 g vid 4 portioner med linjär skalning (5 g vid 2, 15 g vid 6). FLAG.",
+        "Gurka 1 st vid både 3 och 4 portioner."
+      ]
+    },
+    {
+      "id": "kottbullar_stuvade_makaroner__rolled_meatballs",
+      "name": "Rulla Köttbullar",
+      "outputName": "Råa köttbullar",
+      "inputs": [
+        {
+          "id": "ground_beef",
+          "amount": 450,
+          "unit": "g"
+        },
+        {
+          "id": "kottbullar_stuvade_makaroner__chopped_onion",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "egg",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "panko",
+          "amount": 50,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Blanda {{ground_beef}}, {{kottbullar_stuvade_makaroner__chopped_onion}}, {{egg}}, {{panko}} och {{salt}} i {{eq:skal_1}}.",
+        "Rulla färsen till köttbullar med fuktiga händer (4 per person) och lägg dem på {{eq:tallrik_1}}."
+      ],
+      "duration": 8,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skal_stor",
+          "ref": "skal_1"
+        },
+        {
+          "type": "tallrik",
+          "ref": "tallrik_1"
+        }
+      ],
+      "devNotes": [
+        "HF Nötfärs (beef-mince) → ground_beef (befintlig 'Köttfärs'). FLAG. Panko 50 g och salt 0,5 tsk vid både 3 och 4 portioner.",
+        "Färsen skärs inte, den blandas och rullas i skål (jfr norska_kottbullar), därför ingen skarbrada_ra."
+      ]
+    },
+    {
+      "id": "kottbullar_stuvade_makaroner__fried_meatballs",
+      "name": "Stek Köttbullar",
+      "outputName": "Stekta köttbullar",
+      "inputs": [
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "kottbullar_stuvade_makaroner__rolled_meatballs",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i {{eq:traktorpanna_1}} på medelhög värme.",
+        "Stek {{kottbullar_stuvade_makaroner__rolled_meatballs}} i 12–14 min, eller tills brynta och genomstekta. Vänd då och då. Sänk till medelvärme när de är brynta.",
+        "Ställ åt sidan på {{eq:tallrik_2}} och håll varmt."
+      ],
+      "duration": 16,
+      "wait": 0,
+      "tags": [],
+      "heat": "medelhög",
+      "stepHeat": {
+        "1": "medel"
+      },
+      "tips": [
+        "Köttbullarna är färdiglagade när de inte längre är rosa i mitten."
+      ],
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred"
+        },
+        {
+          "type": "tallrik",
+          "ref": "tallrik_2"
+        }
+      ],
+      "devNotes": [
+        "Vändning under 12–14 min är hands-on, därför duration och ingen wait. Olivolja utan rad → 1 skvätt.",
+        "Rådatan säger stor stekpanna, men samma panna (urtorkad) tar sedan 3 dl matlagningsgrädde + 3 dl mjölk + 3 dl vatten (9 dl vätska) som vispas till stuvning, plus 360 g pasta — därför traktörpanna (typeSource inferred) i hela kedjan. En ren tallrik (tallrik_2) för de stekta köttbullarna, inte samma som de råa."
+      ]
+    },
+    {
+      "id": "kottbullar_stuvade_makaroner__cooked_pasta",
+      "name": "Koka Makaroner",
+      "outputName": "Kokta makaroner",
+      "inputs": [
+        {
+          "id": "macaroni",
+          "amount": 360,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Koka upp saltat vatten i {{eq:kastrull_1}}.",
+        "Koka {{macaroni}} i 3 min, eller tills al dente."
+      ],
+      "duration": 3,
+      "wait": 3,
+      "tags": [],
+      "heat": "hög",
+      "heatSource": "inferred",
+      "tips": [
+        "Kokvattnet ska vara lika salt som havsvatten.",
+        "Al dente betyder att pastan är genomkokt men fortfarande har tuggmotstånd."
+      ],
+      "equipment": [
+        {
+          "type": "kastrull_stor",
+          "ref": "kastrull_1"
+        }
+      ],
+      "devNotes": [
+        "Ny ingrediens macaroni (Makaroner). Salt i kokvattnet har ingen rad i HF:s lista."
+      ]
+    },
+    {
+      "id": "kottbullar_stuvade_makaroner__drained_pasta",
+      "name": "Häll Av Makaronerna",
+      "outputName": "Avrunna makaroner",
+      "inputs": [
+        {
+          "id": "kottbullar_stuvade_makaroner__cooked_pasta",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Häll av {{kottbullar_stuvade_makaroner__cooked_pasta}} i {{eq:durkslag_1}}. Lägg pastan i {{eq:skal_2}} och ställ åt sidan."
+      ],
+      "duration": 1,
+      "wait": 0,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "durkslag",
+          "ref": "durkslag_1",
+          "inferred": true
+        },
+        {
+          "type": "skal",
+          "ref": "skal_2"
+        }
+      ],
+      "devNotes": [
+        "Rådatan säger bara 'en skål'. Durkslag nämns inte men behövs för avhällningen. Egen node så att kokningens wait ligger på sista steget."
+      ]
+    },
+    {
+      "id": "kottbullar_stuvade_makaroner__cream_mix",
+      "name": "Blanda Gräddsås",
+      "outputName": "Gräddblandning",
+      "inputs": [
+        {
+          "id": "cooking_cream",
+          "amount": 300,
+          "unit": "ml"
+        },
+        {
+          "id": "milk",
+          "amount": 3,
+          "unit": "dl"
+        },
+        {
+          "id": "water",
+          "amount": 3,
+          "unit": "dl"
+        },
+        {
+          "id": "vegetable_bouillon",
+          "amount": 8,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Blanda {{cooking_cream}}, {{milk}}, {{water}} och {{vegetable_bouillon}} i {{eq:skal_3}}."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skal_medelstor",
+          "ref": "skal_3"
+        }
+      ],
+      "devNotes": [
+        "HF Buljong (vegetable-stock) → vegetable_bouillon."
+      ]
+    },
+    {
+      "id": "kottbullar_stuvade_makaroner__creamed_macaroni",
+      "name": "Gör Stuvade Makaroner",
+      "outputName": "Stuvade makaroner",
+      "inputs": [
+        {
+          "id": "butter",
+          "amount": 4,
+          "unit": "msk"
+        },
+        {
+          "id": "flour",
+          "amount": 4,
+          "unit": "msk"
+        },
+        {
+          "id": "kottbullar_stuvade_makaroner__cream_mix",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "parmesan",
+          "amount": 40,
+          "unit": "g"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "kottbullar_stuvade_makaroner__drained_pasta",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Torka ur {{eq:traktorpanna_1|def}} och smält {{butter}} i den på medelvärme.",
+        "Tillsätt {{flour}} och vispa ihop till en smet, cirka 1–2 min.",
+        "Vispa ner {{kottbullar_stuvade_makaroner__cream_mix}} lite i taget i 3–4 min, tills såsen tjocknat.",
+        "Rör ner {{salt}}, {{parmesan}} och en nypa {{pepper}}. Vänd ner {{kottbullar_stuvade_makaroner__drained_pasta}} i såsen."
+      ],
+      "duration": 9,
+      "wait": 0,
+      "tags": [],
+      "heat": "medel",
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred",
+          "transition": "wipe",
+          "after": "kottbullar_stuvade_makaroner__fried_meatballs"
+        }
+      ],
+      "devNotes": [
+        "Vispa roux och sås är hands-on, därför duration och ingen wait. Smöret smälts i pannan, ingen Ta fram-node. Salt till sås 0,5 tsk vid både 3 och 4 portioner. HF Parmigiano Reggiano → parmesan.",
+        "Samma panna som köttbullarna: after är resursordning (köttbullarna serveras vid sidan av, inte i stuvningen)."
+      ]
+    },
+    {
+      "id": "kottbullar_stuvade_makaroner",
+      "name": "Köttbullar med stuvade makaroner",
+      "outputName": "Köttbullar med stuvade makaroner",
+      "inputs": [
+        {
+          "id": "kottbullar_stuvade_makaroner__creamed_macaroni",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "kottbullar_stuvade_makaroner__fried_meatballs",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "kottbullar_stuvade_makaroner__sides",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{kottbullar_stuvade_makaroner__creamed_macaroni}} i {{eq:servering|pl}} och toppa med {{kottbullar_stuvade_makaroner__fried_meatballs}} och persiljan från {{kottbullar_stuvade_makaroner__sides}}.",
+        "Servera med rädisor, morots- och gurkstavar."
+      ],
+      "duration": 3,
+      "tags": [
+        "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_djup_tallrik",
+          "ref": "servering",
+          "count": "portions"
+        }
+      ],
+      "devNotes": [
+        "HF:s sista steg nämner inte köttbullarna; de läggs upp med pastan (hålls varma på tallrik)."
+      ]
+    }
+  ]
+}

@@ -4,6 +4,11 @@
   "rawId": "67af1ef728cb4b22b5761e52",
   "createdAt": 1790854403,
   "basePortions": 4,
+  "time": {
+    "totalMin": 32,
+    "activeMin": 16,
+    "computedFrom": "graph"
+  },
   "sharedPrep": [],
   "images": {
     "main": "assets/recipes/pulled_pork_taquitos/main.jpg",

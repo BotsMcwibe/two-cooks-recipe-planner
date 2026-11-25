@@ -4,6 +4,11 @@
   "rawId": "linas-131199",
   "createdAt": 1791056876,
   "basePortions": 4,
+  "time": {
+    "totalMin": 25,
+    "activeMin": 22,
+    "computedFrom": "graph"
+  },
   "sharedPrep": [],
   "images": {
     "main": "assets/recipes/zaatar_flaskkotlett/main.jpg"

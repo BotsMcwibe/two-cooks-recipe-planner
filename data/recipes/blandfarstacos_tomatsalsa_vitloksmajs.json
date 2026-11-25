@@ -1,0 +1,364 @@
+{
+  "masterId": "blandfarstacos_tomatsalsa_vitloksmajs",
+  "source": "hellofresh",
+  "rawId": "6a9e9289790f7867027dbdd3",
+  "createdAt": 1794429159,
+  "basePortions": 4,
+  "time": {
+    "totalMin": 30,
+    "activeMin": 30,
+    "computedFrom": "graph"
+  },
+  "images": {
+    "main": "assets/recipes/blandfarstacos_tomatsalsa_vitloksmajs/main.jpg",
+    "byNode": {
+      "blandfarstacos_tomatsalsa_vitloksmajs__tomato_salsa": "assets/recipes/blandfarstacos_tomatsalsa_vitloksmajs/steps/tomato_salsa.jpg",
+      "blandfarstacos_tomatsalsa_vitloksmajs__garlic_corn": "assets/recipes/blandfarstacos_tomatsalsa_vitloksmajs/steps/garlic_corn.jpg",
+      "blandfarstacos_tomatsalsa_vitloksmajs__fried_mushrooms": "assets/recipes/blandfarstacos_tomatsalsa_vitloksmajs/steps/fried_mushrooms.jpg",
+      "blandfarstacos_tomatsalsa_vitloksmajs__hidden_mince": "assets/recipes/blandfarstacos_tomatsalsa_vitloksmajs/steps/hidden_mince.jpg",
+      "blandfarstacos_tomatsalsa_vitloksmajs__warmed_tortillas": "assets/recipes/blandfarstacos_tomatsalsa_vitloksmajs/steps/warmed_tortillas.jpg",
+      "blandfarstacos_tomatsalsa_vitloksmajs": "assets/recipes/blandfarstacos_tomatsalsa_vitloksmajs/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 628,
+    "perPortion": {
+      "energyKcal": 970,
+      "energyKj": 4059,
+      "fatG": 53.9,
+      "saturatedFatG": 25.1,
+      "carbsG": 79.1,
+      "sugarsG": 13.7,
+      "fiberG": 8.3,
+      "proteinG": 42.9,
+      "saltG": 5.3
+    }
+  },
+  "nodes": [
+    {
+      "id": "blandfarstacos_tomatsalsa_vitloksmajs__lime_wedges",
+      "name": "Skär Citrus i Klyftor",
+      "outputName": "Citrusklyftor",
+      "inputs": [
+        {
+          "id": "lime",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skär {{lime}} i klyftor."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "HF Citrusfrukt typ lime → lime. 1 st vid 2, 3 och 4 portioner, 2 st vid 5 och 6 — förpackning. Författad som 1 st vid 4 portioner med linjär skalning. Delas: 0,5 st (en generös skvätt saft) till tomatsalsan, 0,5 st (resterande klyftor) till mastern. Produktfotot visar citron och lime; serveringsfotot ser ut som citron. FLAG."
+      ]
+    },
+    {
+      "id": "blandfarstacos_tomatsalsa_vitloksmajs__tomato_salsa",
+      "name": "Blanda Tomatsalsa",
+      "outputName": "Tomatsalsa",
+      "inputs": [
+        {
+          "id": "tomato",
+          "amount": 4,
+          "unit": "st"
+        },
+        {
+          "id": "blandfarstacos_tomatsalsa_vitloksmajs__lime_wedges",
+          "amount": 0.5,
+          "unit": "st"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Finhacka {{tomato}}.",
+        "Blanda tomaten, en generös skvätt citrussaft från {{blandfarstacos_tomatsalsa_vitloksmajs__lime_wedges}}, {{salt}} och en nypa {{pepper}} i {{eq:skal_2}}."
+      ],
+      "duration": 5,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true,
+          "after": "blandfarstacos_tomatsalsa_vitloksmajs__lime_wedges"
+        },
+        {
+          "type": "skal_liten",
+          "ref": "skal_2"
+        }
+      ],
+      "devNotes": [
+        "HF Tomat typ organic tomatoes → tomato, 4 st linjärt. Salt till salsa 0,5 tsk vid 3 och 4 (0,25 tsk vid 2; saknas vid 5 och 6). FLAG. Peppar har ingen rad i HF:s lista, därför 1 nypa. Rådatan säger liten skål."
+      ]
+    },
+    {
+      "id": "blandfarstacos_tomatsalsa_vitloksmajs__garlic_corn",
+      "name": "Stek Vitlöksmajs",
+      "outputName": "Vitlöksmajs",
+      "inputs": [
+        {
+          "id": "garlic",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "canned_corn",
+          "amount": 300,
+          "unit": "g"
+        },
+        {
+          "id": "butter",
+          "amount": 2,
+          "unit": "msk"
+        }
+      ],
+      "steps": [
+        "Finhacka eller pressa {{garlic}}.",
+        "Häll av {{canned_corn}}.",
+        "Smält {{butter}} i {{eq:stekpanna_2}} på medelhög värme.",
+        "Stek majs och vitlök i 4–5 min, tills majsen är lätt brynt."
+      ],
+      "duration": 6,
+      "wait": 0,
+      "tags": [],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true,
+          "after": "blandfarstacos_tomatsalsa_vitloksmajs__tomato_salsa"
+        },
+        {
+          "type": "stekpanna_medelstor",
+          "ref": "stekpanna_2"
+        }
+      ],
+      "devNotes": [
+        "HF Majs typ corn → canned_corn (rådatan säger 'Häll av majs'), 300 g linjärt. Vitlök 2 st linjärt. Smör till majs 2 msk linjärt (saknas vid 5 och 6). FLAG. 4–5 min är hands-on (duration 6). Rådatan säger medelstor stekpanna; ingen sjudning, därför inte traktörpanna. Pannan hålls undan tills servering (färsen steks i en annan panna)."
+      ]
+    },
+    {
+      "id": "blandfarstacos_tomatsalsa_vitloksmajs__fried_mushrooms",
+      "name": "Stek Svamp och Lök",
+      "outputName": "Stekt svamp och lök",
+      "inputs": [
+        {
+          "id": "mushrooms",
+          "amount": 400,
+          "unit": "g"
+        },
+        {
+          "id": "red_onion",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        }
+      ],
+      "steps": [
+        "Smula {{mushrooms}} fint i {{eq:skal_1}}.",
+        "Finhacka {{red_onion}} och blanda den med svampen.",
+        "Hetta upp {{olive_oil}} i {{eq:stekpanna_1}} på hög värme.",
+        "Stek svamp och lök i 4–5 min, tills något brynt."
+      ],
+      "duration": 6,
+      "wait": 0,
+      "tags": [],
+      "heat": "hög",
+      "equipment": [
+        {
+          "type": "skal_medelstor",
+          "ref": "skal_1"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true,
+          "after": "blandfarstacos_tomatsalsa_vitloksmajs__garlic_corn"
+        },
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1"
+        }
+      ],
+      "devNotes": [
+        "HF Champinjoner typ champinjoner → mushrooms, 400 g linjärt. HF Lök typ red-onion → red_onion, 1 st linjärt (stekfotot visar tydligt rödlök). Rådatan säger medelstor skål och stor stekpanna. Olivolja har ingen rad i HF:s lista, därför standard 1 skvätt. 4–5 min är hands-on (duration 6).",
+        "Rådatan säger 'smula svampen fint' så den ska kunna gömmas i färsen, men steg- och serveringsfotona visar skivade, synliga champinjoner. FLAG."
+      ]
+    },
+    {
+      "id": "blandfarstacos_tomatsalsa_vitloksmajs__hidden_mince",
+      "name": "Stek Blandfärs med Gömd Svamp",
+      "outputName": "Kryddad blandfärs med svamp",
+      "inputs": [
+        {
+          "id": "blandfarstacos_tomatsalsa_vitloksmajs__fried_mushrooms",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "mixed_mince",
+          "amount": 500,
+          "unit": "g"
+        },
+        {
+          "id": "hello_fiesta",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Tillsätt {{mixed_mince}}, {{hello_fiesta}} och {{salt}} i {{eq:stekpanna_1|def}} med {{blandfarstacos_tomatsalsa_vitloksmajs__fried_mushrooms}}.",
+        "Stek i 4–5 min, tills färsen är brynt. Var noga med att finfördela färsen så att grönsakerna inte syns."
+      ],
+      "duration": 6,
+      "wait": 0,
+      "tags": [],
+      "heat": "hög",
+      "tips": [
+        "Köttfärsen är färdiglagad när den är genomstekt och utan inslag av rosa."
+      ],
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1",
+          "transition": "keep"
+        }
+      ],
+      "devNotes": [
+        "HF Blandfärs typ blandfars → mixed_mince (rawAnimal meat), 500 g linjärt. Färsen går ur förpackningen rakt i pannan och skärs inte, därför ingen skarbrada_ra. Salt till kött 1 tsk vid 3 och 4 (0,5 tsk vid 2; saknas vid 5 och 6). FLAG. 4–5 min är hands-on (duration 6).",
+        "Ny ingrediens hello_fiesta (HF Hello Fiesta typ spice-mix-fiesta), 8 g linjärt. Torr kryddmix, inte samma produkt som tex_mex/taco_seasoning (annan färg och struktur på produktfotot) — saknar blendId, FLAG för Spice Mix.",
+        "Rådatans steg 4 säger 'i stekpannan med majs', men rubriken är gömd svamp i färsen, serveringen håller majsen separat, och stegfotot visar färsen i svamppannan. Därför stor stekpanna efter fried_mushrooms, inte majspannan. FLAG överbliven text."
+      ]
+    },
+    {
+      "id": "blandfarstacos_tomatsalsa_vitloksmajs__warmed_tortillas",
+      "name": "Värm Tortillas",
+      "outputName": "Varma minitortillas",
+      "inputs": [
+        {
+          "id": "mini_tortillas",
+          "amount": 16,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Värm {{mini_tortillas}} i 30–60 sek i {{eq:mikro_1|def}}."
+      ],
+      "duration": 1,
+      "wait": 1,
+      "tags": [],
+      "tips": [
+        "Om du inte har mikro: värm ugnen till 220°C/200°C varmluft och värm tortillas täckta med folie i 4–5 min."
+      ],
+      "equipment": [
+        {
+          "type": "mikro",
+          "ref": "mikro_1"
+        }
+      ],
+      "devNotes": [
+        "HF Minitortillas typ minitortillas → mini_tortillas, 16 st linjärt (4 per portion). Mikron är förstahandsmetoden enligt rådatan (30–60 sek, därför duration 1 och wait 1), samma mönster som asiatiska_raktacos / wraps_plantbitar_potatis. Ugn 220/200 + folie bara i tipset — ingen ugnsnod och ingen preheated_oven_220, så --trays 1 förblir rent. Stegfotot visar foliealternativet. FLAG. Folie spåras inte."
+      ]
+    },
+    {
+      "id": "blandfarstacos_tomatsalsa_vitloksmajs",
+      "name": "Blandfärstacos med tomatsalsa och vitlöksmajs",
+      "outputName": "Blandfärstacos med tomatsalsa och vitlöksmajs",
+      "inputs": [
+        {
+          "id": "blandfarstacos_tomatsalsa_vitloksmajs__warmed_tortillas",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "blandfarstacos_tomatsalsa_vitloksmajs__hidden_mince",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "blandfarstacos_tomatsalsa_vitloksmajs__garlic_corn",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "blandfarstacos_tomatsalsa_vitloksmajs__tomato_salsa",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "grated_cheddar",
+          "amount": 100,
+          "unit": "g"
+        },
+        {
+          "id": "sour_cream",
+          "amount": 150,
+          "unit": "ml"
+        },
+        {
+          "id": "blandfarstacos_tomatsalsa_vitloksmajs__lime_wedges",
+          "amount": 0.5,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Fördela {{blandfarstacos_tomatsalsa_vitloksmajs__hidden_mince}}, {{blandfarstacos_tomatsalsa_vitloksmajs__garlic_corn}} och {{blandfarstacos_tomatsalsa_vitloksmajs__tomato_salsa}} på {{blandfarstacos_tomatsalsa_vitloksmajs__warmed_tortillas}}.",
+        "Toppa med {{grated_cheddar}} och en klick {{sour_cream}}.",
+        "Lägg upp tacosen på {{eq:servering|pl}} och servera med resterande {{blandfarstacos_tomatsalsa_vitloksmajs__lime_wedges}}."
+      ],
+      "duration": 4,
+      "tags": [
+        "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_tallrik",
+          "ref": "servering",
+          "count": "portions"
+        }
+      ],
+      "devNotes": [
+        "All näring behållen, inklusive fiber 8,3 g (970 kcal). Vete vikt in i gluten. Bekräftade allergener gluten och dairy (gräddfil, cheddar, smör). Spår av senap och soja utelämnade. Taggen äggfri stämmer.",
+        "HF Cheddarost, riven typ grated-cheddar-cheese → grated_cheddar, 100 g linjärt. HF Gräddfil typ sour-cream → sour_cream, 150 ml vid 4; 114 ml vid 3 och 189 ml vid 5 är inte linjärt (förpackningsstorlekar). FLAG. Rådatan räknar upp färs, majs och salsa var för sig; huvudfotot visar majs och salsa hoprörda i en skål som styling. Servering på tallrikar enligt rådata och foto (gräddfil som klick på tacosen).",
+        "HF totalTime PT25M behållen; prepTime är PT30M. FLAG att 25 min är tight men möjligt med parallellt arbete (salsa under majsstejning). HF difficulty 1 → easy. Cuisine mexican (HF Mexikansk).",
+        "clonedFrom 69dcdaa06bb16e39e1b838cc och dubbletterna 6a2ab3e31f9f329b3991e19c och 6a7c83a96a29680aee4ff141 konverterades inte."
+      ]
+    }
+  ]
+}

@@ -4,6 +4,11 @@
   "rawId": "linas-46431",
   "createdAt": 1791054767,
   "basePortions": 2,
+  "time": {
+    "totalMin": 26,
+    "activeMin": 25,
+    "computedFrom": "graph"
+  },
   "sharedPrep": [],
   "images": {
     "main": "assets/recipes/katalansk_raksoppa/main.jpg"

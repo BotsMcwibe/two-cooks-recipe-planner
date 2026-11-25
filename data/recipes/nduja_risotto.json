@@ -1,0 +1,461 @@
+{
+  "masterId": "nduja_risotto",
+  "source": "hellofresh",
+  "rawId": "6a9e92a656a4cfbb9638f570",
+  "createdAt": 1794420921,
+  "basePortions": 4,
+  "time": {
+    "totalMin": 52,
+    "activeMin": 51,
+    "computedFrom": "graph"
+  },
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/nduja_risotto/main.jpg",
+    "byNode": {
+      "nduja_risotto__risotto_base": "assets/recipes/nduja_risotto/steps/risotto_base.jpg",
+      "nduja_risotto__risotto": "assets/recipes/nduja_risotto/steps/risotto.jpg",
+      "nduja_risotto__braised_leek": "assets/recipes/nduja_risotto/steps/braised_leek.jpg",
+      "nduja_risotto__finished_risotto": "assets/recipes/nduja_risotto/steps/finished_risotto.jpg",
+      "nduja_risotto__ricotta_cream": "assets/recipes/nduja_risotto/steps/ricotta_cream.jpg",
+      "nduja_risotto": "assets/recipes/nduja_risotto/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 436,
+    "perPortion": {
+      "energyKcal": 904,
+      "energyKj": 3781,
+      "fatG": 56.2,
+      "saturatedFatG": 26.2,
+      "carbsG": 81.2,
+      "sugarsG": 13,
+      "fiberG": 6.5,
+      "proteinG": 18.8,
+      "saltG": 4.5
+    }
+  },
+  "nodes": [
+    {
+      "id": "nduja_risotto__aromatics",
+      "name": "Hacka Lök, Tomat och Vitlök",
+      "outputName": "Hackad lök, tomat och vitlök",
+      "inputs": [
+        {
+          "id": "onion",
+          "amount": 4,
+          "unit": "st"
+        },
+        {
+          "id": "tomato",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "garlic",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Finhacka {{onion}} och {{tomato}}.",
+        "Finhacka eller pressa {{garlic}}."
+      ],
+      "duration": 6,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "Alla tre går till samma fräsning, därför en prepnode. HF-typ organic tomatoes → tomato."
+      ]
+    },
+    {
+      "id": "nduja_risotto__risotto_base",
+      "name": "Fräs Ris",
+      "outputName": "Fräst risottoris med lök och tomat",
+      "inputs": [
+        {
+          "id": "butter",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "nduja_risotto__aromatics",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "chili_flakes",
+          "amount": 2,
+          "unit": "g"
+        },
+        {
+          "id": "risotto_rice",
+          "amount": 300,
+          "unit": "g"
+        },
+        {
+          "id": "balsamic_vinegar",
+          "amount": 24,
+          "unit": "ml"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{butter}} i {{eq:traktorpanna_1}} på medelhög värme.",
+        "Stek {{nduja_risotto__aromatics}} i 1–2 min, eller tills mjuka.",
+        "Tillsätt {{chili_flakes}} och {{risotto_rice}} och fräs i 1–2 min, eller tills lätt genomskinligt. Tillsätt {{balsamic_vinegar}} och låt avdunsta i 1 min."
+      ],
+      "duration": 6,
+      "wait": 0,
+      "tags": [],
+      "heat": "medelhög",
+      "tips": [
+        "Skippa chili eller använd mindre om du inte tycker om stark mat."
+      ],
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred"
+        }
+      ],
+      "devNotes": [
+        "Rådatan säger stor stekpanna, men samma panna tar sedan 12 dl vatten och riset sjuds 18–22 min under omrörning (≈1,8 l), därför traktörpanna (typeSource inferred) i hela risottokedjan. Smör till stekning 2 msk smälts i pannan, ingen Ta fram-node.",
+        "Chiliflakes 2 g (inte 1 g/nypa). HF:s risottosteg delat i fräsning, första sjudning och nduja-fas för att hålla ≤4 delsteg och ge ndujan en egen node när 8–10 min återstår."
+      ]
+    },
+    {
+      "id": "nduja_risotto__risotto_first",
+      "name": "Sjud Risotto",
+      "outputName": "Risotto, 10 min kvar",
+      "inputs": [
+        {
+          "id": "nduja_risotto__risotto_base",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "water",
+          "amount": 12,
+          "unit": "dl"
+        },
+        {
+          "id": "chicken_bouillon",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Rör i {{water}}, {{chicken_bouillon}} och {{salt}} i {{nduja_risotto__risotto_base}} och koka upp.",
+        "Sänk till medelvärme och sjud under regelbunden omrörning i ca 12 min, tills det återstår 8–10 min av totalt 18–22 min."
+      ],
+      "duration": 14,
+      "wait": 0,
+      "tags": [],
+      "heat": "medel",
+      "stepHeat": {
+        "0": "hög"
+      },
+      "heatSource": "inferred",
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred",
+          "transition": "keep"
+        }
+      ],
+      "devNotes": [
+        "Risotto under regelbunden omrörning är hands-on: duration (ingen wait). Medelvärme står i rådatan; bara 'koka upp' (hög) är inferred. Första fasen = 22 − 10 = 12 min (övre gränsen 22, övre 'återstår 8–10 min'). Vatten 12 dl, salt till risotto 0,5 tsk (samma vid 3). HF Buljong (chicken-stock-powder) → chicken_bouillon."
+      ]
+    },
+    {
+      "id": "nduja_risotto__risotto",
+      "name": "Rör Ner Nduja",
+      "outputName": "Nduja-risotto",
+      "inputs": [
+        {
+          "id": "nduja_risotto__risotto_first",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "nduja",
+          "amount": 160,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Vänd ner {{nduja}} i {{nduja_risotto__risotto_first}} när det återstår 8–10 min av tillagningstiden.",
+        "Sjud under regelbunden omrörning i ytterligare 8–10 min, eller tills buljongen är absorberad och riset är al dente."
+      ],
+      "duration": 10,
+      "wait": 0,
+      "tags": [],
+      "heat": "medel",
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred",
+          "transition": "keep"
+        }
+      ],
+      "devNotes": [
+        "Ny ingrediens nduja (kryddig smörbar korv, processed_meat; skärs inte, därför ingen skarbrada_ra). Omörning är hands-on, duration 10 och ingen wait."
+      ]
+    },
+    {
+      "id": "nduja_risotto__finished_risotto",
+      "name": "Rör Ner Ost",
+      "outputName": "Krämig nduja-risotto",
+      "inputs": [
+        {
+          "id": "nduja_risotto__risotto",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "parmesan",
+          "amount": 40,
+          "unit": "g"
+        },
+        {
+          "id": "butter",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Ta av {{eq:traktorpanna_1|def}} med {{nduja_risotto__risotto}} från värmen och rör i finriven {{parmesan}} och {{butter}}.",
+        "Krydda med en generös nypa {{salt}} och {{pepper}}."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [],
+      "tips": [
+        "Tillsätt en skvätt vatten om risotton verkar torr."
+      ],
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred",
+          "transition": "keep",
+          "offHeat": true
+        }
+      ],
+      "devNotes": [
+        "Smör till risotto 2 msk. HF Parmigiano Reggiano → parmesan. 'Generös nypa' utan rad → 1 nypa vardera."
+      ]
+    },
+    {
+      "id": "nduja_risotto__sliced_leek",
+      "name": "Skär Purjolök",
+      "outputName": "Purjolök i skivor",
+      "inputs": [
+        {
+          "id": "leek",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skölj av och rensa {{leek}} och skär den i 2 cm tjocka skivor."
+      ],
+      "duration": 4,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ]
+    },
+    {
+      "id": "nduja_risotto__fried_leek",
+      "name": "Stek Purjolök",
+      "outputName": "Stekt purjolök",
+      "inputs": [
+        {
+          "id": "olive_oil",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "nduja_risotto__sliced_leek",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i {{eq:stekpanna_1}} på medelhög värme.",
+        "Tillsätt {{nduja_risotto__sliced_leek}} i ett jämnt lager och stek i 2–3 min, tills brynt."
+      ],
+      "duration": 5,
+      "wait": 0,
+      "tags": [],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1"
+        }
+      ],
+      "devNotes": [
+        "Andra stora stekpannan (risotton sjuder samtidigt i traktörpannan). Olja till stekning 2 msk."
+      ]
+    },
+    {
+      "id": "nduja_risotto__braised_leek",
+      "name": "Tillaga Purjolök under Lock",
+      "outputName": "Mjukstekt purjolök",
+      "inputs": [
+        {
+          "id": "nduja_risotto__fried_leek",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "butter",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "water",
+          "amount": 2,
+          "unit": "dl"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Tillsätt {{butter}}, {{water}} och {{salt}} till {{nduja_risotto__fried_leek}} i {{eq:stekpanna_1|def}}.",
+        "Tillaga under lock i 3–4 min, eller tills purjolöken är mjuk. Krydda med en nypa {{pepper}}."
+      ],
+      "duration": 1,
+      "wait": 4,
+      "tags": [],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1",
+          "transition": "keep",
+          "lid": true
+        }
+      ],
+      "devNotes": [
+        "Smör till purjolök 2 msk, vatten 2 dl, salt 0,5 tsk (samma vid 3). 2 dl vätska under lock efter stekning, men liten volym och kort tid — behållen som stekpanna (inte traktörpanna; under 3 dl, ingen stekpanna-liquid-varning). FLAG. Peppar är hopslaget med väntesteget så att wait ligger sist."
+      ]
+    },
+    {
+      "id": "nduja_risotto__ricotta_cream",
+      "name": "Blanda Ricotta",
+      "outputName": "Ricotta med mjölk",
+      "inputs": [
+        {
+          "id": "ricotta",
+          "amount": 100,
+          "unit": "g"
+        },
+        {
+          "id": "milk",
+          "amount": 4,
+          "unit": "msk"
+        }
+      ],
+      "steps": [
+        "Blanda {{ricotta}} och {{milk}} i {{eq:skal_liten}}."
+      ],
+      "duration": 1,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skal_liten"
+        }
+      ],
+      "devNotes": [
+        "Ny ingrediens ricotta. Mjölk till ricotta 4 msk. Kall blandning, därför prep."
+      ]
+    },
+    {
+      "id": "nduja_risotto",
+      "name": "Nduja-risotto",
+      "outputName": "Nduja-risotto",
+      "inputs": [
+        {
+          "id": "nduja_risotto__finished_risotto",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "nduja_risotto__ricotta_cream",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "nduja_risotto__braised_leek",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{nduja_risotto__finished_risotto}} på {{eq:servering|pl}} och toppa med klickar av {{nduja_risotto__ricotta_cream}} och {{nduja_risotto__braised_leek}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_tallrik",
+          "ref": "servering",
+          "count": "portions"
+        }
+      ],
+      "devNotes": [
+        "HF-namnet var '[SPICY] Nduja-risotto'. '[SPICY]' är en HF-namntag och är borttaget från titeln (jfr §2, korta bort marknadsföringsfluff). Mappad till curated tag 'spicy'. Finns inte som HF-tag-slug; hfTags följer recipe.tags (bl.a. bold-flavours)."
+      ]
+    }
+  ]
+}

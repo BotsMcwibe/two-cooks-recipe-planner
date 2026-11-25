@@ -4,6 +4,11 @@
   "rawId": "6a68913797f1e02209174497",
   "createdAt": 1790795819,
   "basePortions": 4,
+  "time": {
+    "totalMin": 24,
+    "activeMin": 24,
+    "computedFrom": "graph"
+  },
   "sharedPrep": [],
   "images": {
     "main": "assets/recipes/bacon_tortelloni_tomato/main.jpg",

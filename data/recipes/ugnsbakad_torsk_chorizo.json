@@ -1,0 +1,404 @@
+{
+  "masterId": "ugnsbakad_torsk_chorizo",
+  "source": "hellofresh",
+  "rawId": "6a9e92a6548a82de3e1a72c7",
+  "createdAt": 1794421027,
+  "basePortions": 4,
+  "time": {
+    "totalMin": 53,
+    "activeMin": 24,
+    "computedFrom": "graph"
+  },
+  "sharedPrep": [
+    "preheated_oven_220"
+  ],
+  "images": {
+    "main": "assets/recipes/ugnsbakad_torsk_chorizo/main.jpg",
+    "byNode": {
+      "ugnsbakad_torsk_chorizo__prepped_veg": "assets/recipes/ugnsbakad_torsk_chorizo/steps/prepped_veg.jpg",
+      "ugnsbakad_torsk_chorizo__roasted_veg": "assets/recipes/ugnsbakad_torsk_chorizo/steps/roasted_veg.jpg",
+      "ugnsbakad_torsk_chorizo__garlic_mayo": "assets/recipes/ugnsbakad_torsk_chorizo/steps/garlic_mayo.jpg",
+      "ugnsbakad_torsk_chorizo__seasoned_cod": "assets/recipes/ugnsbakad_torsk_chorizo/steps/seasoned_cod.jpg",
+      "ugnsbakad_torsk_chorizo__baked_cod": "assets/recipes/ugnsbakad_torsk_chorizo/steps/baked_cod.jpg",
+      "ugnsbakad_torsk_chorizo": "assets/recipes/ugnsbakad_torsk_chorizo/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 628,
+    "perPortion": {
+      "energyKcal": 664,
+      "energyKj": 2779,
+      "fatG": 34.4,
+      "saturatedFatG": 6,
+      "carbsG": 47.5,
+      "sugarsG": 12.3,
+      "proteinG": 38.6,
+      "saltG": 3.1
+    }
+  },
+  "nodes": [
+    {
+      "id": "ugnsbakad_torsk_chorizo__prepped_veg",
+      "name": "Skär Potatis, Paprika och Lök",
+      "outputName": "Potatis, paprika och lökklyftor",
+      "inputs": [
+        {
+          "id": "potato",
+          "amount": 800,
+          "unit": "g"
+        },
+        {
+          "id": "paprika",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "red_onion",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Halvera {{potato}}.",
+        "Skär {{paprika}} i 2 cm breda skivor.",
+        "Skär {{red_onion}} i 2 cm breda klyftor."
+      ],
+      "duration": 6,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "HF Lök har typ red-onion, mappad till red_onion. HF-typ organic-potatoes → potato. Alla tre rostas i första ugnsfasen, därför en prepnode."
+      ]
+    },
+    {
+      "id": "ugnsbakad_torsk_chorizo__halved_tomatoes",
+      "name": "Halvera Körsbärstomater",
+      "outputName": "Halverade körsbärstomater",
+      "inputs": [
+        {
+          "id": "cherry_tomatoes",
+          "amount": 250,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Halvera {{cherry_tomatoes}}."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "Egen prepnode: tomaterna läggs i formen först när 10 min återstår, inte i första rostningen."
+      ]
+    },
+    {
+      "id": "ugnsbakad_torsk_chorizo__roasted_veg",
+      "name": "Rosta Grönsaker",
+      "outputName": "Halvrostade grönsaker, 10 min kvar",
+      "inputs": [
+        {
+          "id": "ugnsbakad_torsk_chorizo__prepped_veg",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        },
+        {
+          "id": "smoked_paprika",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Blanda {{ugnsbakad_torsk_chorizo__prepped_veg}}, {{olive_oil}}, {{salt}}, {{smoked_paprika}} och en nypa {{pepper}} i {{eq:ugnsform_1}} och jämna ut allt.",
+        "Rosta i {{eq:ugn|def}} i ca 20 min, tills det återstår 10 min av totalt 25–30 min."
+      ],
+      "duration": 3,
+      "wait": 20,
+      "tags": [],
+      "tips": [
+        "Använd fler formar om det blir för trångt."
+      ],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "preheated_oven_220",
+          "slots": 1,
+          "temp": 220,
+          "fanTemp": 200
+        },
+        {
+          "type": "ugnsform_stor",
+          "ref": "ugnsform_1",
+          "sizeSource": "inferred"
+        }
+      ],
+      "devNotes": [
+        "Olja till grönsaker 2 msk, salt till grönsaker 1 tsk (samma vid 3; linjärt från 2). Första fasen 20 min = övre 30 minus de 10 som återstår enligt rådatan. Fisken tillagas sedan 10–12 min (något längre än '10 min kvar'); totalt ca 32 min. FLAG.",
+        "Rådatan säger ugnsform. 800 g potatis + paprika och lök, sedan fisk och chorizo, ryms bäst i ugnsform_stor (sizeSource inferred)."
+      ]
+    },
+    {
+      "id": "ugnsbakad_torsk_chorizo__garlic_mayo",
+      "name": "Gör Vitlöksmajonnäs",
+      "outputName": "Vitlöksmajonnäs",
+      "inputs": [
+        {
+          "id": "garlic",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "mayonnaise",
+          "amount": 50,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Finhacka eller pressa {{garlic}}.",
+        "Blanda {{mayonnaise}}, vitlöken och en nypa {{salt}} och {{pepper}} i {{eq:skal_liten}}."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        },
+        {
+          "type": "skal_liten"
+        }
+      ]
+    },
+    {
+      "id": "ugnsbakad_torsk_chorizo__lemon_parsley",
+      "name": "Skär Citrus och Hacka Persilja",
+      "outputName": "Citrusklyftor och hackad persilja",
+      "inputs": [
+        {
+          "id": "lemon",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "parsley",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Grovhacka {{parsley}}.",
+        "Skär {{lemon}} i klyftor."
+      ],
+      "duration": 3,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "Båda går till mastern (persilja över formen, klyftor att pressa över), därför en prepnode.",
+        "HF Citrusfrukt (typ lemon) → lemon. 1 st vid 2 och 4 portioner, 2 st vid 6 — förpackning. Författad som 1 st vid 4 portioner med linjär skalning.",
+        "HF Bladpersilja 1 st vid 2 och 4 portioner, 2 st vid 6 — samma packregel, 1 st vid 4 portioner med linjär skalning."
+      ]
+    },
+    {
+      "id": "ugnsbakad_torsk_chorizo__seasoned_cod",
+      "name": "Krydda Torsk",
+      "outputName": "Kryddad torsk",
+      "inputs": [
+        {
+          "id": "cod_fillet",
+          "amount": 500,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Torka {{cod_fillet}} med hushållspapper och krydda med {{salt}} och en nypa {{pepper}}."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "tallrik",
+          "ref": "tallrik_1",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "HF Torsk (cod) → cod_fillet (Torskfilé, rawAnimal fish). Fisken skärs inte och rådatan nämner ingen bräda; den torkas och kryddas på en tallrik, därför ingen skarbrada_ra. Salt till fisk 0,5 tsk (samma vid 3)."
+      ]
+    },
+    {
+      "id": "ugnsbakad_torsk_chorizo__baked_cod",
+      "name": "Tillaga Torsk och Chorizo",
+      "outputName": "Ugnsbakad torsk med chorizo och grönsaker",
+      "inputs": [
+        {
+          "id": "ugnsbakad_torsk_chorizo__roasted_veg",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "ugnsbakad_torsk_chorizo__halved_tomatoes",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "chorizo",
+          "amount": 120,
+          "unit": "g"
+        },
+        {
+          "id": "ugnsbakad_torsk_chorizo__seasoned_cod",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 2,
+          "unit": "msk"
+        }
+      ],
+      "steps": [
+        "Ta ut {{eq:ugnsform_1|def}} och tillsätt {{ugnsbakad_torsk_chorizo__halved_tomatoes}} och {{chorizo}} till {{ugnsbakad_torsk_chorizo__roasted_veg}}.",
+        "Lägg {{ugnsbakad_torsk_chorizo__seasoned_cod}} ovanpå grönsakerna och ringla över {{olive_oil}}.",
+        "Sätt in i {{eq:ugn|def}} och tillaga i 10–12 min, tills fisken är färdiglagad."
+      ],
+      "duration": 3,
+      "wait": 12,
+      "tags": [],
+      "tips": [
+        "Fisken är klar när fiskköttet är ogenomskinligt och lätt faller isär."
+      ],
+      "equipment": [
+        {
+          "type": "ugnsform_stor",
+          "ref": "ugnsform_1",
+          "sizeSource": "inferred",
+          "transition": "keep"
+        },
+        {
+          "type": "ugn",
+          "after": "preheated_oven_220",
+          "slots": 1,
+          "temp": 220,
+          "fanTemp": 200
+        }
+      ],
+      "devNotes": [
+        "HF Tärnad chorizo → chorizo (färdigtärnad, ingen rawAnimal). Olja till fisk 2 msk."
+      ]
+    },
+    {
+      "id": "ugnsbakad_torsk_chorizo",
+      "name": "Ugnsbakad torsk, chorizo och grönsaker",
+      "outputName": "Ugnsbakad torsk, chorizo och grönsaker",
+      "inputs": [
+        {
+          "id": "ugnsbakad_torsk_chorizo__baked_cod",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "ugnsbakad_torsk_chorizo__lemon_parsley",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "ugnsbakad_torsk_chorizo__garlic_mayo",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Ställ fram {{eq:ugnsform_1|def}} med {{ugnsbakad_torsk_chorizo__baked_cod}} på bordet och strö över persiljan från {{ugnsbakad_torsk_chorizo__lemon_parsley}}.",
+        "Servera med en klick {{ugnsbakad_torsk_chorizo__garlic_mayo}} och citrusklyftor att pressa över, på {{eq:servering|pl}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "master"
+      ],
+      "equipment": [
+        {
+          "type": "ugnsform_stor",
+          "ref": "ugnsform_1",
+          "sizeSource": "inferred",
+          "transition": "keep"
+        }
+      ],
+      "serving": [
+        {
+          "type": "servering_tallrik",
+          "ref": "servering",
+          "count": "portions"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,615 @@
+{
+  "masterId": "hjortstek_paronrisotto",
+  "source": "hellofresh",
+  "rawId": "6a915db7f3876e995cfb5949",
+  "createdAt": 1792603872,
+  "basePortions": 4,
+  "time": {
+    "totalMin": 70,
+    "activeMin": 70,
+    "computedFrom": "graph"
+  },
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/hjortstek_paronrisotto/main.jpg",
+    "byNode": {
+      "hjortstek_paronrisotto__diced_pear": "assets/recipes/hjortstek_paronrisotto/steps/prep.jpg",
+      "hjortstek_paronrisotto__risotto": "assets/recipes/hjortstek_paronrisotto/steps/risotto.jpg",
+      "hjortstek_paronrisotto__seared_venison": "assets/recipes/hjortstek_paronrisotto/steps/seared_venison.jpg",
+      "hjortstek_paronrisotto__salad": "assets/recipes/hjortstek_paronrisotto/steps/salad.jpg",
+      "hjortstek_paronrisotto__brown_butter": "assets/recipes/hjortstek_paronrisotto/steps/brown_butter.jpg",
+      "hjortstek_paronrisotto": "assets/recipes/hjortstek_paronrisotto/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 566,
+    "perPortion": {
+      "energyKcal": 1137,
+      "energyKj": 4758,
+      "fatG": 68.5,
+      "saturatedFatG": 29,
+      "carbsG": 86.7,
+      "sugarsG": 18.3,
+      "fiberG": 9.8,
+      "proteinG": 45.2,
+      "saltG": 4.6
+    }
+  },
+  "nodes": [
+    {
+      "id": "hjortstek_paronrisotto__roomtemp_meat",
+      "name": "Ta fram köttet",
+      "outputName": "Rumstempererad hjortstek",
+      "inputs": [
+        {
+          "id": "venison_pepper_steak",
+          "amount": 480,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Ta fram {{venison_pepper_steak}} ur kylen så att det blir rumstempererat."
+      ],
+      "duration": 1,
+      "wait": 30,
+      "tags": [
+        "prep"
+      ],
+      "devNotes": [
+        "Rådatan: 'Ta fram kött så det blir rumstempererat och krydda det med salt' → Ta fram-node (§4.6 regel 9), 30 min. Saltet läggs på i stekningsnoden. HF Hjortstek, pepparmarinerad → ny ingrediens venison_pepper_steak (rawAnimal meat)."
+      ]
+    },
+    {
+      "id": "hjortstek_paronrisotto__diced_pear",
+      "name": "Tärna Päron",
+      "outputName": "Tärnat päron",
+      "inputs": [
+        {
+          "id": "pear",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Halvera, kärna ur och tärna {{pear}} i 1 cm stora bitar."
+      ],
+      "duration": 3,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ]
+    },
+    {
+      "id": "hjortstek_paronrisotto__onion_garlic",
+      "name": "Hacka Lök och Vitlök",
+      "outputName": "Finhackad lök och vitlök",
+      "inputs": [
+        {
+          "id": "shallot",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "garlic",
+          "amount": 4,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Finhacka {{shallot}} och finhacka eller pressa {{garlic}}."
+      ],
+      "duration": 4,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "HF Lök (typ shallot) → shallot."
+      ]
+    },
+    {
+      "id": "hjortstek_paronrisotto__chopped_hazelnuts",
+      "name": "Hacka Hasselnötter",
+      "outputName": "Hackade hasselnötter",
+      "inputs": [
+        {
+          "id": "hazelnuts",
+          "amount": 40,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Hacka {{hazelnuts}}."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "HF Hasselnötter, rostade → hazelnuts (redan rostade, ingen värme här). FLAG om rostade ska vara egen id."
+      ]
+    },
+    {
+      "id": "hjortstek_paronrisotto__chopped_chives",
+      "name": "Hacka Gräslök",
+      "outputName": "Finhackad gräslök",
+      "inputs": [
+        {
+          "id": "chives",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Finhacka {{chives}}."
+      ],
+      "duration": 1,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "Gräslök: HF 1 st (knippe/förpackning) vid 2, 3 och 4 portioner, 2 st vid 6. Garnering; författad som 1 st vid 4 portioner med linjär skalning (0,5 vid 2, 1,5 vid 6 nära HF:s 2). FLAG."
+      ]
+    },
+    {
+      "id": "hjortstek_paronrisotto__risotto_base",
+      "name": "Fräs Ris",
+      "outputName": "Fräst risottoris med lök",
+      "inputs": [
+        {
+          "id": "butter",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "hjortstek_paronrisotto__onion_garlic",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "risotto_rice",
+          "amount": 300,
+          "unit": "g"
+        },
+        {
+          "id": "white_wine_vinegar",
+          "amount": 24,
+          "unit": "ml"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{butter}} i {{eq:traktorpanna_1}} på medelhög värme.",
+        "Stek {{hjortstek_paronrisotto__onion_garlic}} i 1–2 min, eller tills mjuka.",
+        "Tillsätt {{risotto_rice}} och fräs i 1–2 min, eller tills lätt genomskinligt. Tillsätt {{white_wine_vinegar}} och låt avdunsta i 1 min."
+      ],
+      "duration": 6,
+      "wait": 0,
+      "tags": [],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred"
+        }
+      ],
+      "devNotes": [
+        "Rådatan säger stor stekpanna, men samma panna tar sedan 12 dl vatten + päron och riset sjuds 18–22 min (≈1,8 l), därför traktörpanna (typeSource inferred) i hela risottokedjan. Smör till risotto 2 msk (samma vid 3); smälts, ingen Ta fram-node.",
+        "HF:s risottosteg delat i fräsning och sjudning för att hålla ≤4 delsteg."
+      ]
+    },
+    {
+      "id": "hjortstek_paronrisotto__risotto",
+      "name": "Sjud Päronrisotto",
+      "outputName": "Päronrisotto",
+      "inputs": [
+        {
+          "id": "hjortstek_paronrisotto__risotto_base",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "hjortstek_paronrisotto__diced_pear",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "water",
+          "amount": 12,
+          "unit": "dl"
+        },
+        {
+          "id": "chicken_bouillon",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Rör i {{hjortstek_paronrisotto__diced_pear}}, {{water}}, {{chicken_bouillon}} och {{salt}} i {{hjortstek_paronrisotto__risotto_base}} och koka upp.",
+        "Sänk till medelvärme och sjud under regelbunden omrörning i 18–22 min, eller tills buljongen är absorberad och riset är al dente."
+      ],
+      "duration": 22,
+      "wait": 0,
+      "tags": [],
+      "heat": "medel",
+      "stepHeat": {
+        "0": "hög"
+      },
+      "heatSource": "inferred",
+      "tips": [
+        "Tillsätt en skvätt vatten om risotton verkar torr."
+      ],
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred",
+          "transition": "keep"
+        }
+      ],
+      "devNotes": [
+        "Risotto under regelbunden omrörning är hands-on: i duration (22 = övre gränsen), ingen wait (§4.1). Medelvärme står i rådatan; bara 'koka upp' (hög) är inferred.",
+        "Vatten till risotto 12 dl, salt till risotto 1 tsk. HF Buljong (chicken-stock-powder) → chicken_bouillon."
+      ]
+    },
+    {
+      "id": "hjortstek_paronrisotto__seared_venison",
+      "name": "Stek Hjortstek",
+      "outputName": "Stekt och vilad hjortstek",
+      "inputs": [
+        {
+          "id": "hjortstek_paronrisotto__roomtemp_meat",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        }
+      ],
+      "steps": [
+        "Krydda {{hjortstek_paronrisotto__roomtemp_meat}} med {{salt}}.",
+        "Hetta upp {{olive_oil}} i {{eq:stekpanna_1}} på medelhög värme.",
+        "Stek köttet i 5–6 min per sida, eller tills brynt.",
+        "Låt köttet vila i ett foliepaket tills servering. Det fortsätter tillagas något under tiden det vilar."
+      ],
+      "duration": 13,
+      "wait": 0,
+      "tags": [],
+      "heat": "medelhög",
+      "tips": [
+        "Stek i ytterligare 1–2 min för genomstekt."
+      ],
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1"
+        }
+      ],
+      "devNotes": [
+        "Andra stora stekpannan (rådatan: 'en stor stekpanna' under tiden som risotton sjuder). Ingen vätska, därför stekpanna. Stekning per sida är hands-on → duration. Vilan 'tills servering' är ingen wait (§4.1 regel 7). Salt till kött 0,5 tsk (samma vid 3). Olivoljan har ingen egen rad → 1 skvätt.",
+        "Köttet saltas utan att skäras, därför ingen skarbrada_ra."
+      ]
+    },
+    {
+      "id": "hjortstek_paronrisotto__brown_butter",
+      "name": "Bryn Smör med Hasselnötter",
+      "outputName": "Brynt smör med hasselnötter",
+      "inputs": [
+        {
+          "id": "butter",
+          "amount": 6,
+          "unit": "msk"
+        },
+        {
+          "id": "hjortstek_paronrisotto__chopped_hazelnuts",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{butter}} i {{eq:stekpanna_1|def}} som användes till köttet (torka inte ur den först) på medelhög värme och stek tills det är brynt.",
+        "Tillsätt {{hjortstek_paronrisotto__chopped_hazelnuts}} och rör om. Ta av från värmen."
+      ],
+      "duration": 4,
+      "wait": 0,
+      "tags": [],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1",
+          "transition": "keep",
+          "after": "hjortstek_paronrisotto__seared_venison"
+        }
+      ],
+      "devNotes": [
+        "Smör till glaze 6 msk (smälts och bryns, ingen Ta fram-node). Samma panna som köttet: after är resursordning, ingen ingredienskant."
+      ]
+    },
+    {
+      "id": "hjortstek_paronrisotto__sliced_venison",
+      "name": "Skiva Hjortstek",
+      "outputName": "Skivad hjortstek",
+      "inputs": [
+        {
+          "id": "hjortstek_paronrisotto__seared_venison",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skär {{hjortstek_paronrisotto__seared_venison}} i tunna skivor innan servering."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "Stekt kött skärs på den vanliga (rena) skärbrädan; inget rått kött har skurits i receptet, därför ingen skarbrada_ra."
+      ]
+    },
+    {
+      "id": "hjortstek_paronrisotto__shaved_fennel",
+      "name": "Hyvla Fänkål",
+      "outputName": "Hyvlad fänkål",
+      "inputs": [
+        {
+          "id": "fennel",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Halvera {{fennel}} och använd en potatisskalare för att skala den på längden.",
+        "Finhacka den innersta delen som kan vara svår att skala. Kasta stjälken."
+      ],
+      "duration": 4,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ]
+    },
+    {
+      "id": "hjortstek_paronrisotto__dressing",
+      "name": "Blanda Dressing",
+      "outputName": "Granatäppeldressing",
+      "inputs": [
+        {
+          "id": "pomegranate_molasses",
+          "amount": 30,
+          "unit": "g"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 4,
+          "unit": "msk"
+        },
+        {
+          "id": "sugar",
+          "amount": 1,
+          "unit": "tsk"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Blanda {{pomegranate_molasses}} med {{olive_oil}}, {{sugar}} och en nypa {{salt}} och {{pepper}} i {{eq:skal_1}}."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skal_stor",
+          "ref": "skal_1"
+        }
+      ],
+      "devNotes": [
+        "HF Granatäpplesirap → ny ingrediens pomegranate_molasses. Olja till dressing 4 msk, socker 1 tsk."
+      ]
+    },
+    {
+      "id": "hjortstek_paronrisotto__salad",
+      "name": "Vänd Ihop Salladen",
+      "outputName": "Fänkålssallad",
+      "inputs": [
+        {
+          "id": "hjortstek_paronrisotto__dressing",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "hjortstek_paronrisotto__shaved_fennel",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "mixed_salad",
+          "amount": 100,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Vänd ner {{hjortstek_paronrisotto__shaved_fennel}} och {{mixed_salad}} i {{hjortstek_paronrisotto__dressing}} i {{eq:skal_1|def}}."
+      ],
+      "duration": 1,
+      "wait": 0,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "skal_stor",
+          "ref": "skal_1",
+          "transition": "keep"
+        }
+      ],
+      "devNotes": [
+        "Kall, men inte prep: salladen vänds ihop nära servering så att den inte blir slak. HF Salladsmix → mixed_salad."
+      ]
+    },
+    {
+      "id": "hjortstek_paronrisotto__finished_risotto",
+      "name": "Rör Ner Ost",
+      "outputName": "Krämig päronrisotto",
+      "inputs": [
+        {
+          "id": "hjortstek_paronrisotto__risotto",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "grated_gruyere",
+          "amount": 100,
+          "unit": "g"
+        },
+        {
+          "id": "parmesan",
+          "amount": 40,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Ta av {{eq:traktorpanna_1|def}} med {{hjortstek_paronrisotto__risotto}} från värmen och rör i {{grated_gruyere}} och finriven {{parmesan}}.",
+        "Krydda generöst med {{salt}} och {{pepper}}."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred",
+          "transition": "keep",
+          "offHeat": true
+        }
+      ],
+      "devNotes": [
+        "HF Riven gruyère → ny ingrediens grated_gruyere; Parmigiano Reggiano → parmesan. 'Krydda generöst' utan rad → 1 nypa vardera."
+      ]
+    },
+    {
+      "id": "hjortstek_paronrisotto",
+      "name": "Pepparmarinerad hjortstek på päronrisotto",
+      "outputName": "Pepparmarinerad hjortstek på päronrisotto",
+      "inputs": [
+        {
+          "id": "hjortstek_paronrisotto__finished_risotto",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "hjortstek_paronrisotto__sliced_venison",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "hjortstek_paronrisotto__brown_butter",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "hjortstek_paronrisotto__chopped_chives",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "hjortstek_paronrisotto__salad",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{hjortstek_paronrisotto__finished_risotto}} i {{eq:servering|pl}} och toppa med {{hjortstek_paronrisotto__sliced_venison}}.",
+        "Ringla över {{hjortstek_paronrisotto__brown_butter}} och garnera med {{hjortstek_paronrisotto__chopped_chives}}.",
+        "Servera med {{hjortstek_paronrisotto__salad}} vid sidan av."
+      ],
+      "duration": 3,
+      "tags": [
+        "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_djup_tallrik",
+          "ref": "servering",
+          "count": "portions"
+        }
+      ]
+    }
+  ]
+}

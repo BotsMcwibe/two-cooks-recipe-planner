@@ -4,6 +4,11 @@
   "rawId": "695b77565c0be345fe765ab3",
   "createdAt": 1791040883,
   "basePortions": 4,
+  "time": {
+    "totalMin": 58,
+    "activeMin": 41,
+    "computedFrom": "graph"
+  },
   "sharedPrep": [],
   "images": {
     "main": "assets/recipes/caesar_kycklingsallad/main.jpg",

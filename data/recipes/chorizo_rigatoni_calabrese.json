@@ -4,6 +4,11 @@
   "rawId": "62a3019cb69eb23bebb10d39",
   "createdAt": 1791036455,
   "basePortions": 4,
+  "time": {
+    "totalMin": 25,
+    "activeMin": 25,
+    "computedFrom": "graph"
+  },
   "sharedPrep": [],
   "images": {
     "main": "assets/recipes/chorizo_rigatoni_calabrese/main.jpg",

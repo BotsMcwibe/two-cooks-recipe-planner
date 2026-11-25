@@ -4,6 +4,11 @@
   "rawId": "669a2dd69b6afed05f6419e5",
   "createdAt": 1791037262,
   "basePortions": 4,
+  "time": {
+    "totalMin": 56,
+    "activeMin": 39,
+    "computedFrom": "graph"
+  },
   "sharedPrep": [],
   "images": {
     "main": "assets/recipes/panerat_citronpepparflask/main.jpg",

@@ -1,0 +1,540 @@
+{
+  "masterId": "citrusstekt_kolja",
+  "source": "hellofresh",
+  "rawId": "6a9e929056a4cfbb9638f352",
+  "createdAt": 1794427435,
+  "basePortions": 4,
+  "time": {
+    "totalMin": 58,
+    "activeMin": 38,
+    "computedFrom": "graph"
+  },
+  "images": {
+    "main": "assets/recipes/citrusstekt_kolja/main.jpg",
+    "byNode": {
+      "citrusstekt_kolja__roasted_roots": "assets/recipes/citrusstekt_kolja/steps/roasted_roots.jpg",
+      "citrusstekt_kolja__citrus_broth": "assets/recipes/citrusstekt_kolja/steps/citrus_broth.jpg",
+      "citrusstekt_kolja__roasted_veg": "assets/recipes/citrusstekt_kolja/steps/roasted_veg.jpg",
+      "citrusstekt_kolja__seared_fish": "assets/recipes/citrusstekt_kolja/steps/seared_fish.jpg",
+      "citrusstekt_kolja__fish_in_sauce": "assets/recipes/citrusstekt_kolja/steps/fish_in_sauce.jpg",
+      "citrusstekt_kolja": "assets/recipes/citrusstekt_kolja/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 660,
+    "perPortion": {
+      "energyKcal": 652,
+      "energyKj": 2729,
+      "fatG": 28.6,
+      "saturatedFatG": 6.3,
+      "carbsG": 55.7,
+      "sugarsG": 8.9,
+      "proteinG": 41.6,
+      "saltG": 4
+    }
+  },
+  "nodes": [
+    {
+      "id": "citrusstekt_kolja__preheated_oven_240",
+      "name": "Värm ugnen",
+      "outputName": "Förvärmd ugn (240°C)",
+      "inputs": [],
+      "steps": [
+        "Värm {{eq:ugn|def}} till 240°C, eller 220°C varmluft."
+      ],
+      "duration": 1,
+      "wait": 12,
+      "tags": [
+        "no-timer",
+        "resource"
+      ],
+      "tips": [
+        "Ugnen tar vanligtvis 10–15 minuter att värmas upp."
+      ],
+      "devNotes": [
+        "HF anger 240°C/220°C varmluft — lokal ugnsnode, inte preheated_oven_220."
+      ],
+      "oven": {
+        "temp": 240,
+        "fanTemp": 220
+      }
+    },
+    {
+      "id": "citrusstekt_kolja__cut_roots",
+      "name": "Skär Potatis och Palsternacka",
+      "outputName": "Tärnad potatis och palsternacka",
+      "inputs": [
+        {
+          "id": "potato",
+          "amount": 1000,
+          "unit": "g"
+        },
+        {
+          "id": "parsnip",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skär {{potato}} och {{parsnip}} (oskalade) i 2 cm stora bitar."
+      ],
+      "duration": 6,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "HF Potatis typ organic-potatoes → potato, 1000 g vid 4 portioner (500/1000/1500 linjärt 2/4/6; 800 g vid 3, 1300 g vid 5). FLAG. Palsternacka 1 st vid 3 och 4 (0,5 st vid 2 är linjärt från 4; 1,5 st vid 5 och 6)."
+      ]
+    },
+    {
+      "id": "citrusstekt_kolja__roasted_roots",
+      "name": "Rosta Rotfrukter, Första Fas",
+      "outputName": "Halvrostad potatis och palsternacka",
+      "inputs": [
+        {
+          "id": "citrusstekt_kolja__cut_roots",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "salt",
+          "amount": 0.25,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Placera {{citrusstekt_kolja__cut_roots}} på {{eq:plat_1}} med bakplåtspapper.",
+        "Blanda med {{olive_oil}}, {{salt}} och en nypa {{pepper}}.",
+        "Rosta i {{eq:ugn|def}} i 25–35 min, eller tills gyllene."
+      ],
+      "duration": 3,
+      "wait": 20,
+      "tags": [],
+      "tips": [
+        "Använd fler plåtar om det blir för trångt."
+      ],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "citrusstekt_kolja__preheated_oven_240",
+          "slots": 1,
+          "temp": 240,
+          "fanTemp": 220
+        },
+        {
+          "type": "plat",
+          "ref": "plat_1",
+          "liner": "bakplatspapper"
+        }
+      ],
+      "devNotes": [
+        "Olivolja till rotfrukter saknas i HF:s lista, därför standard 1 skvätt. Salt till grönsaker 0,5 tsk totalt (samma vid 3) delas: 0,25 tsk här och 0,25 tsk på broccolin. Första fasen 20 min = övre 35 minus de 15 som återstår när broccolin går in.",
+        "1000 g potatis plus 1 palsternacka, senare 500 g broccoli, på en plåt enligt rådatan, med tipset om fler plåtar. FLAG."
+      ]
+    },
+    {
+      "id": "citrusstekt_kolja__cut_broccoli",
+      "name": "Skär Broccoli",
+      "outputName": "Broccolibitar",
+      "inputs": [
+        {
+          "id": "broccoli",
+          "amount": 500,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Skär broccolibuketter och stjälken från {{broccoli}} i 2 cm stora bitar."
+      ],
+      "duration": 4,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true,
+          "after": "citrusstekt_kolja__cut_roots"
+        }
+      ],
+      "devNotes": [
+        "Broccoli 500 g vid 3 och 4 portioner (250 g vid 2, 750 g vid 5 och 6). FLAG."
+      ]
+    },
+    {
+      "id": "citrusstekt_kolja__roasted_veg",
+      "name": "Tillsätt Broccoli",
+      "outputName": "Ugnsrostade rotfrukter och broccoli",
+      "inputs": [
+        {
+          "id": "citrusstekt_kolja__roasted_roots",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "citrusstekt_kolja__cut_broccoli",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "salt",
+          "amount": 0.25,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "När det återstår 15 min av tillagningstiden, placera {{citrusstekt_kolja__cut_broccoli}} på {{eq:plat_1|def}} med {{citrusstekt_kolja__roasted_roots}}.",
+        "Ringla över {{olive_oil}} och krydda med {{salt}} och en nypa {{pepper}}.",
+        "Rosta i {{eq:ugn|def}} resterande tid."
+      ],
+      "duration": 2,
+      "wait": 15,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "plat",
+          "ref": "plat_1",
+          "liner": "bakplatspapper",
+          "transition": "keep"
+        },
+        {
+          "type": "ugn",
+          "after": "citrusstekt_kolja__preheated_oven_240",
+          "slots": 1,
+          "temp": 240,
+          "fanTemp": 220
+        }
+      ],
+      "devNotes": [
+        "Olivolja till broccoli saknas i HF:s lista, därför standard 1 skvätt. En plåt, inte en andra — --trays 1 ska vara rent för den här rätten."
+      ]
+    },
+    {
+      "id": "citrusstekt_kolja__lemon_wedges",
+      "name": "Skär Citrus i Klyftor",
+      "outputName": "Citronklyftor",
+      "inputs": [
+        {
+          "id": "lemon",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skär {{lemon}} i klyftor."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true,
+          "after": "citrusstekt_kolja__cut_broccoli"
+        }
+      ],
+      "devNotes": [
+        "HF Citrusfrukt typ lemon → lemon. 1 st vid 2, 3 och 4 portioner, 2 st vid 6 — förpackning. Författad som 1 st vid 4 portioner med linjär skalning. Delas: 0,5 st (saft) till citrusbuljongen, 0,5 st (resterande klyftor) till mastern."
+      ]
+    },
+    {
+      "id": "citrusstekt_kolja__chopped_dill",
+      "name": "Grovhacka Dill",
+      "outputName": "Grovhackad dill",
+      "inputs": [
+        {
+          "id": "dill",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Grovhacka {{dill}}."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true,
+          "after": "citrusstekt_kolja__lemon_wedges"
+        }
+      ],
+      "devNotes": [
+        "HF Dill typ dill 1 st vid 2, 3 och 4 portioner, 2 st vid 6 — förpackning. Författad som 1 st vid 4 portioner med linjär skalning. Delas: hälften (0,5 st) i buljongen, resten (0,5 st) som garnering."
+      ]
+    },
+    {
+      "id": "citrusstekt_kolja__citrus_broth",
+      "name": "Blanda Citrusbuljong",
+      "outputName": "Citrusbuljong",
+      "inputs": [
+        {
+          "id": "garlic",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "water",
+          "amount": 1,
+          "unit": "dl"
+        },
+        {
+          "id": "vegetable_bouillon",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "id": "citrusstekt_kolja__lemon_wedges",
+          "amount": 0.5,
+          "unit": "st"
+        },
+        {
+          "id": "citrusstekt_kolja__chopped_dill",
+          "amount": 0.5,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Finhacka eller pressa {{garlic}}.",
+        "Blanda {{water}}, {{vegetable_bouillon}}, {{garlic}}, en generös skvätt saft från {{citrusstekt_kolja__lemon_wedges}} och hälften av {{citrusstekt_kolja__chopped_dill}} i {{eq:skal_1}}."
+      ],
+      "duration": 3,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skal_liten",
+          "ref": "skal_1"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true,
+          "after": "citrusstekt_kolja__chopped_dill"
+        }
+      ],
+      "devNotes": [
+        "HF Buljong typ vegetable-stock → vegetable_bouillon, 8 g (samma vid 3). Vatten till sås 1 dl (samma vid 3; 0,5 dl vid 2). Vitlök 2 st (samma vid 3). Rådatan säger liten skål. 'Skölj salladsmix' i samma HF-steg ligger i vändnoden, där mixen används."
+      ]
+    },
+    {
+      "id": "citrusstekt_kolja__seared_fish",
+      "name": "Stek Kolja, Skinnsida Ner",
+      "outputName": "Ansad kolja med skinnsida ner",
+      "inputs": [
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "msk"
+        },
+        {
+          "id": "haddock",
+          "amount": 500,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Torka av {{haddock}} med hushållspapper och krydda med {{salt}} när det återstår 10 min av grönsakernas tillagningstid.",
+        "Hetta upp {{olive_oil}} i {{eq:stekpanna_1}} på medelhög värme.",
+        "Stek fisken med skinnsidan ner i 3–4 min."
+      ],
+      "duration": 6,
+      "wait": 0,
+      "tags": [],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1"
+        }
+      ],
+      "devNotes": [
+        "HF Kolja typ haddock → haddock (rawAnimal fish), 500 g vid 4 portioner, linjärt. Fisken skärs inte; den torkas och kryddas och går i pannan, därför ingen skarbrada_ra. Hushållspapper spåras inte. Salt till fisk 0,5 tsk (samma vid 3). Olja till stekning 1 msk vid 4 (0,5 msk vid både 2 och 3). FLAG.",
+        "3–4 min skinnsida ner är hands-on, därför duration 6 och ingen wait (samma bedömning som citronstekt_lax / stekt_lax_citrus_smorsas). Rådatan säger stor stekpanna."
+      ]
+    },
+    {
+      "id": "citrusstekt_kolja__fish_in_sauce",
+      "name": "Stek Kolja i Citrusbuljong",
+      "outputName": "Citrusstekt kolja",
+      "inputs": [
+        {
+          "id": "citrusstekt_kolja__seared_fish",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "citrusstekt_kolja__citrus_broth",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "butter",
+          "amount": 2,
+          "unit": "msk"
+        }
+      ],
+      "steps": [
+        "Vänd {{citrusstekt_kolja__seared_fish}} och tillsätt {{citrusstekt_kolja__citrus_broth}} och {{butter}}.",
+        "Stek i ytterligare 2–3 min, eller tills genomstekt."
+      ],
+      "duration": 4,
+      "wait": 0,
+      "tags": [],
+      "heat": "medelhög",
+      "tips": [
+        "Fisken är klar när fiskköttet är vitt/ogenomskinligt och lätt faller isär."
+      ],
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1",
+          "transition": "keep"
+        }
+      ],
+      "devNotes": [
+        "Smör till sås 2 msk (samma vid 3), smälts i pannan — inget rumstempererat, därför ingen Ta fram-node. Citrusbuljongen är ca 1 dl vatten + buljong, saft och smör; kort stek 2–3 min i samma panna efter att fisken vänds, långt under 3 dl — stekpanna_stor, inte traktörpanna. Andra stekningen är hands-on (duration 4)."
+      ]
+    },
+    {
+      "id": "citrusstekt_kolja__sesame_veg",
+      "name": "Vänd Salladsmix och Sesam med Grönsaker",
+      "outputName": "Sesamgrönsaker med salladsmix",
+      "inputs": [
+        {
+          "id": "citrusstekt_kolja__roasted_veg",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "mixed_salad",
+          "amount": 100,
+          "unit": "g"
+        },
+        {
+          "id": "sesame_seeds",
+          "amount": 20,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Skölj {{mixed_salad}}.",
+        "Vänd {{citrusstekt_kolja__roasted_veg}} med {{mixed_salad}} och {{sesame_seeds}} på {{eq:plat_1|def}}."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "plat",
+          "ref": "plat_1",
+          "liner": "bakplatspapper",
+          "transition": "keep",
+          "offHeat": true,
+          "after": "citrusstekt_kolja__roasted_veg"
+        }
+      ],
+      "devNotes": [
+        "HF Salladsmix typ organic-salad-mix → mixed_salad, 100 g vid 4 (60 g vid 2, 80 g vid 3, 160 g vid 6 — inte linjärt). FLAG. HF Sesamfrön, rostade → sesame_seeds, 20 g (samma vid 3). Egen node så att rostningens wait ligger på sista steget."
+      ]
+    },
+    {
+      "id": "citrusstekt_kolja",
+      "name": "Citrusstekt kolja",
+      "outputName": "Citrusstekt kolja med ugnsrostade sesamgrönsaker och aioli",
+      "inputs": [
+        {
+          "id": "citrusstekt_kolja__fish_in_sauce",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "citrusstekt_kolja__sesame_veg",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "citrusstekt_kolja__lemon_wedges",
+          "amount": 0.5,
+          "unit": "st"
+        },
+        {
+          "id": "citrusstekt_kolja__chopped_dill",
+          "amount": 0.5,
+          "unit": "st"
+        },
+        {
+          "id": "aioli",
+          "amount": 80,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{citrusstekt_kolja__fish_in_sauce}} och {{citrusstekt_kolja__sesame_veg}} på {{eq:servering|pl}}.",
+        "Skeda citrusbuljongen från {{eq:stekpanna_1|def}} över fisken och garnera med {{citrusstekt_kolja__lemon_wedges}} och resterande {{citrusstekt_kolja__chopped_dill}}.",
+        "Servera med {{aioli}}."
+      ],
+      "duration": 3,
+      "tags": [
+        "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_tallrik",
+          "ref": "servering",
+          "count": "portions"
+        }
+      ],
+      "devNotes": [
+        "Kostfiber 42,9 g slängd som orimlig. 652 kcal och övrig näring behållen. Allergen dairy tillagd: smör till sås 2 msk. HF-kortet hade bara spår av mjölk. Fisk, ägg, senap, selleri och sesam fanns redan (aioli, buljong, sesamfrön, kolja).",
+        "clonedFrom 63aaaa5d92c25465fb350cb9 (Citrusstekt tilapia) och syskonen 6a4b76deceb866f38d441eca (tilapia) och 6540fba5e06ba9910277ecde (sej) konverterades inte. kryddig_citrusbakad_kolja och calabresekolja är andra rätter och är orörda."
+      ]
+    }
+  ]
+}

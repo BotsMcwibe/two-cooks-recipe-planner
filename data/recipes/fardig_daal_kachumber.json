@@ -4,6 +4,11 @@
   "rawId": "linas-135102",
   "createdAt": 1791056876,
   "basePortions": 4,
+  "time": {
+    "totalMin": 17,
+    "activeMin": 15,
+    "computedFrom": "graph"
+  },
   "sharedPrep": [],
   "images": {
     "main": "assets/recipes/fardig_daal_kachumber/main.jpg"

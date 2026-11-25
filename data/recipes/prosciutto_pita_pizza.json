@@ -4,6 +4,11 @@
   "rawId": "66b5fb06b70d6250be604d13",
   "createdAt": 1790853972,
   "basePortions": 4,
+  "time": {
+    "totalMin": 22,
+    "activeMin": 12,
+    "computedFrom": "graph"
+  },
   "sharedPrep": [],
   "images": {
     "main": "assets/recipes/prosciutto_pita_pizza/main.jpg",

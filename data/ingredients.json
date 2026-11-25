@@ -82,6 +82,13 @@
     }
   },
   "ingredients": {
+    "adobo_spice_mix": {
+      "name": "Adobokrydda",
+      "tags": [
+        "spices",
+        "spice_blend"
+      ]
+    },
     "aioli": {
       "name": "Aioli",
       "tags": [
@@ -103,6 +110,19 @@
         "fresh"
       ],
       "image": "assets/ingredients/apple.png"
+    },
+    "apricot_chutney": {
+      "name": "Aprikoschutney",
+      "tags": [
+        "sauces"
+      ],
+      "image": "assets/ingredients/apricot_chutney.png"
+    },
+    "asian_dressing": {
+      "name": "Asiatisk dressing",
+      "tags": [
+        "sauces"
+      ]
     },
     "asian_mayonnaise": {
       "name": "Asiatisk majonnäs",
@@ -167,6 +187,13 @@
       "image": "assets/ingredients/baharat.png",
       "blendId": "baharat"
     },
+    "balsamic_cream": {
+      "name": "Balsamicokräm",
+      "tags": [
+        "sauces"
+      ],
+      "image": "assets/ingredients/balsamic_cream.png"
+    },
     "balsamic_vinegar": {
       "name": "Balsamvinäger",
       "tags": [
@@ -174,6 +201,13 @@
         "basic"
       ],
       "image": "assets/ingredients/balsamic_vinegar.png"
+    },
+    "bao_buns": {
+      "name": "Bao-bröd",
+      "tags": [
+        "grains",
+        "bread"
+      ]
     },
     "basil": {
       "name": "Basilika",
@@ -270,6 +304,12 @@
       ],
       "image": "assets/ingredients/broccolini.png"
     },
+    "brown_sauce": {
+      "name": "Brunsås",
+      "tags": [
+        "sauces"
+      ]
+    },
     "brussels_sprouts": {
       "name": "Brysselkål",
       "tags": [
@@ -348,6 +388,13 @@
       ],
       "image": "assets/ingredients/canned_tomatoes.png"
     },
+    "cannellini_beans": {
+      "name": "Cannelinibönor",
+      "tags": [
+        "legumes",
+        "canned"
+      ]
+    },
     "carrot": {
       "name": "Morot",
       "tags": [
@@ -364,6 +411,12 @@
       ],
       "image": "assets/ingredients/carrot_julienne.png"
     },
+    "carrot_leek_precut": {
+      "name": "Morot och purjolök, hackad",
+      "tags": [
+        "vegetables"
+      ]
+    },
     "cashews": {
       "name": "Cashewnötter",
       "tags": [
@@ -378,6 +431,13 @@
         "fresh"
       ],
       "image": "assets/ingredients/cauliflower.png"
+    },
+    "celeriac": {
+      "name": "Rotselleri",
+      "tags": [
+        "vegetables",
+        "fresh"
+      ]
     },
     "celery": {
       "name": "Bladselleri",
@@ -450,6 +510,14 @@
         "fresh"
       ],
       "image": "assets/ingredients/chicken_inner_fillet.png",
+      "rawAnimal": "poultry"
+    },
+    "chicken_inner_fillet_bbq": {
+      "name": "Kycklinginnerfilé, BBQ-marinerad",
+      "tags": [
+        "meat",
+        "fresh"
+      ],
       "rawAnimal": "poultry"
     },
     "chickpeas": {
@@ -534,6 +602,7 @@
         "fish",
         "fresh"
       ],
+      "image": "assets/ingredients/cod_fillet.png",
       "rawAnimal": "fish"
     },
     "cold_smoked_salmon": {
@@ -542,6 +611,13 @@
         "fish"
       ],
       "image": "assets/ingredients/cold_smoked_salmon.png"
+    },
+    "confit_duck_leg": {
+      "name": "Sous vide-anklår, confiterat",
+      "tags": [
+        "meat"
+      ],
+      "image": "assets/ingredients/confit_duck_leg.png"
     },
     "cooking_cream": {
       "name": "Matlagningsgrädde",
@@ -570,6 +646,12 @@
         "grains"
       ],
       "image": "assets/ingredients/couscous.png"
+    },
+    "cracked_black_pepper": {
+      "name": "Grovmalen svartpeppar",
+      "tags": [
+        "spices"
+      ]
     },
     "cream_cheese": {
       "name": "Färskost",
@@ -679,6 +761,13 @@
       ],
       "image": "assets/ingredients/falafel.png"
     },
+    "falukorv": {
+      "name": "Falukorv",
+      "tags": [
+        "processed_meat",
+        "meat"
+      ]
+    },
     "fennel": {
       "name": "Fänkål",
       "tags": [
@@ -765,6 +854,13 @@
       ],
       "image": "assets/ingredients/fresh_thyme.png"
     },
+    "ga_laksa": {
+      "name": "Ga-Laksa",
+      "tags": [
+        "spices",
+        "spice_blend"
+      ]
+    },
     "garam_masala": {
       "name": "Garam masala",
       "tags": [
@@ -828,6 +924,21 @@
       ],
       "image": "assets/ingredients/girasoli.png"
     },
+    "gnocchi": {
+      "name": "Gnocchi",
+      "tags": [
+        "grains",
+        "fresh"
+      ]
+    },
+    "goan_xacuti_spice_mix": {
+      "name": "Goan Xacuti",
+      "tags": [
+        "spices",
+        "spice_blend"
+      ],
+      "image": "assets/ingredients/goan_xacuti_spice_mix.png"
+    },
     "goat_cheese": {
       "name": "Getost",
       "tags": [
@@ -835,6 +946,26 @@
         "fresh"
       ],
       "image": "assets/ingredients/goat_cheese.png"
+    },
+    "gochujang": {
+      "name": "Gochujang",
+      "tags": [
+        "sauces"
+      ]
+    },
+    "grana_padano_shavings": {
+      "name": "Grana Padano, flingor",
+      "tags": [
+        "dairy"
+      ],
+      "image": "assets/ingredients/grana_padano_shavings.png"
+    },
+    "grated_cheddar": {
+      "name": "Cheddarost, riven",
+      "tags": [
+        "dairy"
+      ],
+      "image": "assets/ingredients/grated_cheddar.png"
     },
     "grated_cheese": {
       "name": "Riven ost",
@@ -847,6 +978,18 @@
       "name": "Riven ingefära",
       "tags": [
         "spices"
+      ]
+    },
+    "grated_gouda": {
+      "name": "Riven gouda",
+      "tags": [
+        "dairy"
+      ]
+    },
+    "grated_gruyere": {
+      "name": "Riven gruyère",
+      "tags": [
+        "dairy"
       ]
     },
     "grated_mozzarella": {
@@ -863,6 +1006,12 @@
         "fresh"
       ],
       "image": "assets/ingredients/green_asparagus.png"
+    },
+    "green_curry_paste": {
+      "name": "Grön currypasta",
+      "tags": [
+        "sauces"
+      ]
     },
     "green_lentils": {
       "name": "Gröna linser",
@@ -886,6 +1035,13 @@
       ],
       "image": "assets/ingredients/ground_beef.png",
       "rawAnimal": "meat"
+    },
+    "guanciale": {
+      "name": "Guanciale",
+      "tags": [
+        "processed_meat",
+        "meat"
+      ]
     },
     "haddock": {
       "name": "Kolja",
@@ -934,6 +1090,14 @@
       ],
       "image": "assets/ingredients/hazelnuts.png"
     },
+    "hello_fiesta": {
+      "name": "Hello Fiesta",
+      "tags": [
+        "spices",
+        "spice_blend"
+      ],
+      "image": "assets/ingredients/hello_fiesta.png"
+    },
     "hello_sunrise": {
       "name": "Spansk paprikakrydda",
       "tags": [
@@ -941,6 +1105,15 @@
         "spice_blend"
       ],
       "blendId": "hello_sunrise"
+    },
+    "herb_marinated_pork_chop": {
+      "name": "Fläskkotlett, örtmarinerad",
+      "tags": [
+        "meat",
+        "fresh"
+      ],
+      "image": "assets/ingredients/herb_marinated_pork_chop.png",
+      "rawAnimal": "meat"
     },
     "hoisin_sauce": {
       "name": "Hoisinsås",
@@ -992,6 +1165,13 @@
       ],
       "image": "assets/ingredients/ketchup.png"
     },
+    "ketjap_manis": {
+      "name": "Ketjap Manis",
+      "tags": [
+        "sauces"
+      ],
+      "image": "assets/ingredients/ketjap_manis.png"
+    },
     "kidney_beans": {
       "name": "Kidneybönor",
       "tags": [
@@ -1006,6 +1186,7 @@
         "seafood",
         "fresh"
       ],
+      "image": "assets/ingredients/king_prawns.png",
       "rawAnimal": "shellfish"
     },
     "kohlrabi": {
@@ -1013,6 +1194,13 @@
       "tags": [
         "vegetables",
         "fresh"
+      ],
+      "image": "assets/ingredients/kohlrabi.png"
+    },
+    "korean_bbq_sauce": {
+      "name": "Koreansk BBQ-sås",
+      "tags": [
+        "sauces"
       ]
     },
     "lamb_rump": {
@@ -1082,6 +1270,12 @@
         "grains"
       ]
     },
+    "macaroni": {
+      "name": "Makaroner",
+      "tags": [
+        "grains"
+      ]
+    },
     "mamas_favorit": {
       "name": "Italiensk örtmix",
       "tags": [
@@ -1097,6 +1291,13 @@
         "fresh"
       ],
       "image": "assets/ingredients/mango.png"
+    },
+    "marinated_artichokes": {
+      "name": "Kronärtskockor, marinerade",
+      "tags": [
+        "vegetables",
+        "canned"
+      ]
     },
     "matyoghurt": {
       "name": "Matyoghurt (10%)",
@@ -1165,6 +1366,12 @@
         "fresh"
       ]
     },
+    "miso_paste": {
+      "name": "Misopasta",
+      "tags": [
+        "sauces"
+      ]
+    },
     "mixed_mince": {
       "name": "Blandfärs",
       "tags": [
@@ -1197,6 +1404,14 @@
       ],
       "image": "assets/ingredients/mushrooms.png"
     },
+    "mussels": {
+      "name": "Blåmusslor",
+      "tags": [
+        "seafood",
+        "fresh"
+      ],
+      "rawAnimal": "shellfish"
+    },
     "mustard": {
       "name": "Senap",
       "tags": [
@@ -1210,6 +1425,21 @@
       "tags": [
         "grains"
       ]
+    },
+    "nduja": {
+      "name": "Nduja",
+      "tags": [
+        "processed_meat",
+        "meat"
+      ]
+    },
+    "nduja_pepper_ravioli": {
+      "name": "Ravioli med nduja och paprika",
+      "tags": [
+        "grains",
+        "fresh"
+      ],
+      "image": "assets/ingredients/nduja_pepper_ravioli.png"
     },
     "noodles": {
       "name": "Nudlar",
@@ -1259,6 +1489,12 @@
       ],
       "image": "assets/ingredients/orange.png"
     },
+    "orecchiette": {
+      "name": "Orecchiette",
+      "tags": [
+        "grains"
+      ]
+    },
     "oregano": {
       "name": "Oregano",
       "tags": [
@@ -1275,6 +1511,13 @@
         "organic"
       ],
       "image": "assets/ingredients/organic_lemon.png"
+    },
+    "oyster_mushrooms": {
+      "name": "Ostronskivling",
+      "tags": [
+        "vegetables",
+        "fresh"
+      ]
     },
     "pak_choi": {
       "name": "Pak choi",
@@ -1301,6 +1544,13 @@
         "eggs"
       ],
       "image": "assets/ingredients/pancake_mix.png"
+    },
+    "paneer": {
+      "name": "Paneer",
+      "tags": [
+        "dairy",
+        "fresh"
+      ]
     },
     "paneng_red_curry": {
       "name": "Paneng red curry",
@@ -1357,6 +1607,13 @@
       ],
       "image": "assets/ingredients/passata.png"
     },
+    "passion_fruit": {
+      "name": "Passionsfrukt",
+      "tags": [
+        "fruits",
+        "fresh"
+      ]
+    },
     "pasta": {
       "name": "Pasta",
       "tags": [
@@ -1385,6 +1642,13 @@
         "grains"
       ],
       "image": "assets/ingredients/pearl_couscous.png"
+    },
+    "penne": {
+      "name": "Penne",
+      "tags": [
+        "grains"
+      ],
+      "image": "assets/ingredients/penne.png"
     },
     "pepper": {
       "name": "Peppar",
@@ -1422,12 +1686,33 @@
       ],
       "image": "assets/ingredients/pita_bread.png"
     },
+    "pizza_dough": {
+      "name": "Pizzadeg",
+      "tags": [
+        "grains",
+        "baking"
+      ],
+      "image": "assets/ingredients/pizza_dough.png"
+    },
+    "plant_based_chicken_strips": {
+      "name": "Plantbaserade kycklingbitar",
+      "tags": [],
+      "image": "assets/ingredients/plant_based_chicken_strips.png"
+    },
     "pointed_cabbage": {
       "name": "Förskuren spetskål",
       "tags": [
         "vegetables",
         "fresh"
       ]
+    },
+    "pomegranate": {
+      "name": "Granatäpple",
+      "tags": [
+        "fruits",
+        "fresh"
+      ],
+      "image": "assets/ingredients/pomegranate.png"
     },
     "ponzu_dressing": {
       "name": "Ponzudressing",
@@ -1484,6 +1769,12 @@
       ],
       "image": "assets/ingredients/powdered_sugar.png"
     },
+    "precooked_beets": {
+      "name": "Rödbetor, förkokta",
+      "tags": [
+        "vegetables"
+      ]
+    },
     "prosciutto": {
       "name": "Prosciutto",
       "tags": [
@@ -1533,6 +1824,12 @@
         "vegetables"
       ]
     },
+    "red_curry_paste": {
+      "name": "Röd currypasta",
+      "tags": [
+        "sauces"
+      ]
+    },
     "red_lentils": {
       "name": "Röda linser",
       "tags": [
@@ -1552,6 +1849,13 @@
       "name": "Rödvinssås",
       "tags": [
         "sauces"
+      ],
+      "image": "assets/ingredients/red_wine_sauce.png"
+    },
+    "remoulade": {
+      "name": "Remouladsås",
+      "tags": [
+        "sauces"
       ]
     },
     "rice": {
@@ -1560,6 +1864,13 @@
         "grains"
       ],
       "image": "assets/ingredients/rice.png"
+    },
+    "ricotta": {
+      "name": "Ricotta",
+      "tags": [
+        "dairy",
+        "fresh"
+      ]
     },
     "rigatoni": {
       "name": "Rigatoni",
@@ -1573,6 +1884,19 @@
         "grains"
       ],
       "image": "assets/ingredients/risotto_rice.png"
+    },
+    "roasted_cashews": {
+      "name": "Cashewnötter, rostade",
+      "tags": [
+        "nuts_seeds"
+      ]
+    },
+    "roasted_hazelnuts": {
+      "name": "Hasselnötter, rostade",
+      "tags": [
+        "nuts_seeds"
+      ],
+      "image": "assets/ingredients/roasted_hazelnuts.png"
     },
     "romaine_lettuce": {
       "name": "Romansallad",
@@ -1687,6 +2011,14 @@
         "fresh"
       ]
     },
+    "shredded_salad_mix": {
+      "name": "Strimlad salladsmix",
+      "tags": [
+        "vegetables",
+        "fresh"
+      ],
+      "image": "assets/ingredients/shredded_salad_mix.png"
+    },
     "shrimp": {
       "name": "Räkor",
       "tags": [
@@ -1726,6 +2058,12 @@
       ],
       "image": "assets/ingredients/smoked_paprika.png"
     },
+    "smoky_pepper_paste": {
+      "name": "Rökt paprikapaste",
+      "tags": [
+        "sauces"
+      ]
+    },
     "sour_cream": {
       "name": "Gräddfil",
       "tags": [
@@ -1735,6 +2073,13 @@
     },
     "sourdough_baguette": {
       "name": "Surdegsbaguette",
+      "tags": [
+        "grains",
+        "bread"
+      ]
+    },
+    "sourdough_rolls": {
+      "name": "Surdegsfrallor",
       "tags": [
         "grains",
         "bread"
@@ -1795,6 +2140,13 @@
         "sauces"
       ],
       "image": "assets/ingredients/sriracha.png"
+    },
+    "stirred_lingonberries": {
+      "name": "Rårörda lingon",
+      "tags": [
+        "fruits",
+        "sauces"
+      ]
     },
     "sugar": {
       "name": "Socker",
@@ -1871,6 +2223,12 @@
       ],
       "image": "assets/ingredients/tarragon.png"
     },
+    "teriyaki_sauce": {
+      "name": "Teriyakisås",
+      "tags": [
+        "sauces"
+      ]
+    },
     "tex_mex": {
       "name": "Tacokrydda",
       "tags": [
@@ -1879,6 +2237,12 @@
       ],
       "image": "assets/ingredients/tex_mex.png",
       "blendId": "taco_seasoning"
+    },
+    "tofu": {
+      "name": "Tofu",
+      "tags": [
+        "fresh"
+      ]
     },
     "tomato": {
       "name": "Tomat",
@@ -1911,6 +2275,14 @@
       ],
       "image": "assets/ingredients/tortillas.png"
     },
+    "trout": {
+      "name": "Öring",
+      "tags": [
+        "fish",
+        "fresh"
+      ],
+      "rawAnimal": "fish"
+    },
     "truffle_oil": {
       "name": "Tryffelolja",
       "tags": [
@@ -1931,11 +2303,18 @@
       ],
       "image": "assets/ingredients/umami_sauce.png"
     },
+    "vegan_asian_mayo": {
+      "name": "Vegansk asiatisk majonnäs",
+      "tags": [
+        "sauces"
+      ]
+    },
     "vegan_sriracha_mayo": {
       "name": "Vegansk srirachamajonnäs",
       "tags": [
         "sauces"
-      ]
+      ],
+      "image": "assets/ingredients/vegan_sriracha_mayo.png"
     },
     "vegetable_bouillon": {
       "name": "Grönsaksbuljong",
@@ -1978,6 +2357,13 @@
         "dairy"
       ]
     },
+    "white_cabbage": {
+      "name": "Vitkål",
+      "tags": [
+        "vegetables",
+        "fresh"
+      ]
+    },
     "white_pepper": {
       "name": "Vitpeppar",
       "tags": [
@@ -1992,17 +2378,30 @@
       ],
       "image": "assets/ingredients/white_wine_vinegar.png"
     },
+    "whole_wheat_tortillas": {
+      "name": "Tortillabröd, fullkorn",
+      "tags": [
+        "grains"
+      ]
+    },
     "wholegrain_mustard": {
       "name": "Grov senap",
       "tags": [
         "sauces"
-      ]
+      ],
+      "image": "assets/ingredients/wholegrain_mustard.png"
     },
     "wok_mix": {
       "name": "Wokmix",
       "tags": [
         "vegetables",
         "fresh"
+      ]
+    },
+    "worcestershire_sauce": {
+      "name": "Worcestershiresås",
+      "tags": [
+        "sauces"
       ]
     },
     "yeast": {
@@ -2179,6 +2578,86 @@
       "name": "Sumak",
       "tags": [
         "spices"
+      ]
+    },
+    "fried_onion": {
+      "name": "Rostad lök",
+      "tags": [
+        "vegetables"
+      ]
+    },
+    "precooked_small_potatoes": {
+      "name": "Småpotatis, förkokt",
+      "tags": [
+        "vegetables"
+      ]
+    },
+    "buttermilk_lemon_dressing": {
+      "name": "Citrondressing med kärnmjölk",
+      "tags": [
+        "sauces",
+        "dairy"
+      ]
+    },
+    "venison_pepper_steak": {
+      "name": "Hjortstek, pepparmarinerad",
+      "tags": [
+        "meat",
+        "fresh"
+      ],
+      "rawAnimal": "meat"
+    },
+    "pomegranate_molasses": {
+      "name": "Granatäpplesirap",
+      "tags": [
+        "sauces"
+      ]
+    },
+    "cornstarch": {
+      "name": "Majsstärkelse",
+      "tags": [
+        "baking",
+        "basic"
+      ]
+    },
+    "spetskal": {
+      "name": "Spetskål",
+      "tags": [
+        "vegetables",
+        "fresh"
+      ]
+    },
+    "lasagne_sheets": {
+      "name": "Färska lasagneplattor",
+      "tags": [
+        "grains",
+        "fresh"
+      ]
+    },
+    "crispy_chili_oil": {
+      "name": "Krispig chiliolja",
+      "tags": [
+        "oils",
+        "sauces"
+      ]
+    },
+    "toasted_onion_powder": {
+      "name": "Rostat lökpulver",
+      "tags": [
+        "spices"
+      ]
+    },
+    "cauliflower_florets": {
+      "name": "Blomkålsbuketter",
+      "tags": [
+        "vegetables",
+        "fresh"
+      ]
+    },
+    "chopped_onion": {
+      "name": "Hackad lök",
+      "tags": [
+        "vegetables"
       ]
     }
   }

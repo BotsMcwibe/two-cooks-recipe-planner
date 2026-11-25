@@ -1,0 +1,382 @@
+{
+  "masterId": "korean_bbq_chicken_bao",
+  "source": "hellofresh",
+  "rawId": "6a9e9292790f7867027dbe8a",
+  "createdAt": 1794426602,
+  "basePortions": 4,
+  "time": {
+    "totalMin": 27,
+    "activeMin": 27,
+    "computedFrom": "graph"
+  },
+  "images": {
+    "main": "assets/recipes/korean_bbq_chicken_bao/main.jpg",
+    "byNode": {
+      "korean_bbq_chicken_bao__pear_ginger_slaw": "assets/recipes/korean_bbq_chicken_bao/steps/pear_ginger_slaw.jpg",
+      "korean_bbq_chicken_bao__trimmed_beans": "assets/recipes/korean_bbq_chicken_bao/steps/trimmed_beans.jpg",
+      "korean_bbq_chicken_bao__bbq_glaze": "assets/recipes/korean_bbq_chicken_bao/steps/bbq_glaze.jpg",
+      "korean_bbq_chicken_bao__fried_beans": "assets/recipes/korean_bbq_chicken_bao/steps/fried_beans.jpg",
+      "korean_bbq_chicken_bao__glazed_chicken": "assets/recipes/korean_bbq_chicken_bao/steps/glazed_chicken.jpg",
+      "korean_bbq_chicken_bao__warmed_bao": "assets/recipes/korean_bbq_chicken_bao/steps/warmed_bao.jpg",
+      "korean_bbq_chicken_bao": "assets/recipes/korean_bbq_chicken_bao/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 575,
+    "perPortion": {
+      "energyKcal": 638,
+      "energyKj": 2668,
+      "fatG": 13.3,
+      "saturatedFatG": 2.3,
+      "carbsG": 83.4,
+      "sugarsG": 25,
+      "proteinG": 47,
+      "fiberG": 10.5,
+      "saltG": 3.5
+    }
+  },
+  "nodes": [
+    {
+      "id": "korean_bbq_chicken_bao__pear_ginger_slaw",
+      "name": "Blanda Päron-ingefärsslaw",
+      "outputName": "Päron-ingefärsslaw",
+      "inputs": [
+        {
+          "id": "pear",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "ginger",
+          "amount": 4,
+          "unit": "tsk"
+        },
+        {
+          "id": "shredded_red_cabbage",
+          "amount": 300,
+          "unit": "g"
+        },
+        {
+          "id": "sesame_seeds",
+          "amount": 10,
+          "unit": "g"
+        },
+        {
+          "id": "lime",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        },
+        {
+          "id": "sugar",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Halvera, kärna ur och skär {{pear}} i tunna skivor.",
+        "Halvera {{lime}}.",
+        "Riv {{ginger}} (oskalad) fint.",
+        "Blanda {{pear}}, {{ginger}}, {{shredded_red_cabbage}}, {{sesame_seeds}}, en generös skvätt saft från {{lime}}, {{salt}}, {{sugar}} och en nypa {{pepper}} i {{eq:skal_1}}."
+      ],
+      "duration": 6,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        },
+        {
+          "type": "rivjarn",
+          "ref": "rivjarn",
+          "inferred": true
+        },
+        {
+          "type": "skal_stor",
+          "ref": "skal_1"
+        }
+      ],
+      "devNotes": [
+        "HF Citrusfrukt typ lime 1 st vid 2, 3 och 4 portioner (2 st vid 6) — pack, 1 st vid 4 med linjär skalning. Resterande halvor serveras inte (saften går i slawen).",
+        "Socker till slaw 0,5 tsk (samma vid 3) står i yields men nämns inte i slawsteget; tillsatt i blandningen. Salt till slaw 1 tsk (samma vid 3).",
+        "HF Sesamfrön, rostade 20 g delas: 10 g i slawen, 10 g i glazen → sesame_seeds (redan rostade, samma mappning som hoisin_pulled_pork_bao)."
+      ]
+    },
+    {
+      "id": "korean_bbq_chicken_bao__trimmed_beans",
+      "name": "Ansa Haricots Verts och Hacka Vitlök",
+      "outputName": "Anade haricots verts och hackad vitlök",
+      "inputs": [
+        {
+          "id": "haricots_verts",
+          "amount": 300,
+          "unit": "g"
+        },
+        {
+          "id": "garlic",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Ansa {{haricots_verts}}.",
+        "Finhacka eller pressa {{garlic}}."
+      ],
+      "duration": 4,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "Samma vanliga bräda som slawen (päron, lime, ingefära, bönor, vitlök). Kycklingen är färdigstrimlad och går rakt i pannan, därför ingen skarbrada_ra."
+      ]
+    },
+    {
+      "id": "korean_bbq_chicken_bao__bbq_glaze",
+      "name": "Blanda Koreansk BBQ-glaze",
+      "outputName": "Koreansk BBQ-glaze",
+      "inputs": [
+        {
+          "id": "korean_bbq_sauce",
+          "amount": 150,
+          "unit": "g"
+        },
+        {
+          "id": "toasted_onion_powder",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "id": "sesame_seeds",
+          "amount": 10,
+          "unit": "g"
+        },
+        {
+          "id": "water",
+          "amount": 1,
+          "unit": "dl"
+        }
+      ],
+      "steps": [
+        "Blanda {{korean_bbq_sauce}}, {{toasted_onion_powder}}, {{sesame_seeds}} och {{water}} i {{eq:skal_2}}."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skal_liten",
+          "ref": "skal_2"
+        }
+      ],
+      "devNotes": [
+        "Ny ingrediens korean_bbq_sauce (HF Koreansk BBQ-sås typ korean-bbq-sauce, 150 g; 120 g vid 3 — inte linjärt från 4). Det är en sås, inte en torr kryddmix — ingen Spice Mix-flagga.",
+        "Ny ingrediens toasted_onion_powder (HF Rostat lökpulver typ toasted-onion-powder, 8 g linjärt), inte befintliga onion_powder (Lökpulver).",
+        "Steg 4 säger 'Tillsätt koreansk BBQ-sås', men såsen är redan blandad med lökpulver, resterande sesam och 1 dl vatten här — hela glazen går i kycklingpannan."
+      ]
+    },
+    {
+      "id": "korean_bbq_chicken_bao__fried_beans",
+      "name": "Stek Haricots Verts",
+      "outputName": "Stekta vitlöksbönor",
+      "inputs": [
+        {
+          "id": "korean_bbq_chicken_bao__trimmed_beans",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "chili_flakes",
+          "amount": 2,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i {{eq:stekpanna_1}} på medelhög värme.",
+        "Stek {{korean_bbq_chicken_bao__trimmed_beans}} med {{chili_flakes}} och en nypa {{salt}} i 3–4 min, eller tills mjuka."
+      ],
+      "duration": 4,
+      "wait": 0,
+      "tags": [],
+      "heat": "medelhög",
+      "tips": [
+        "Skippa chili eller använd mindre om du inte tycker om stark mat.",
+        "Tillsätt en skvätt vatten till stekpannan för att påskynda tillagningsprocessen."
+      ],
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1"
+        }
+      ],
+      "devNotes": [
+        "Olja till stekning 1 msk (samma vid 3; 0,5 msk vid 2) går till kycklingpannan. Bönorna får 'en skvätt olivolja' utan egen rad, därför standard 1 skvätt.",
+        "Skvätten vatten i tipset är inte en sjudning ≥ 2 dl — stekpanna_stor, inte traktörpanna. 3–4 min är hands-on stek (duration 4, övre gräns)."
+      ]
+    },
+    {
+      "id": "korean_bbq_chicken_bao__glazed_chicken",
+      "name": "Stek Kyckling i Koreansk BBQ-sås",
+      "outputName": "Koreansk BBQ-kyckling",
+      "inputs": [
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "msk"
+        },
+        {
+          "id": "chicken_breast_strips",
+          "amount": 600,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "korean_bbq_chicken_bao__bbq_glaze",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Under tiden, hetta upp {{olive_oil}} i {{eq:stekpanna_2}} på medelhög värme.",
+        "Tillsätt {{chicken_breast_strips}} och krydda med {{salt}}. Stek i 4–5 min, eller tills gyllene och genomstekt. Vänd den då och då.",
+        "Tillsätt {{korean_bbq_chicken_bao__bbq_glaze}} och sjud i 1 min, tills tjocknat."
+      ],
+      "duration": 6,
+      "wait": 1,
+      "tags": [],
+      "heat": "medelhög",
+      "tips": [
+        "Kycklingen är färdiglagad när köttet inte längre är rosa i mitten.",
+        "Tvätta händer och köksredskap noggrant efter hantering av rå kyckling."
+      ],
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_2"
+        }
+      ],
+      "devNotes": [
+        "Kycklingen är färdigstrimlad (chicken_breast_strips) och skärs inte, därför ingen skarbrada_ra. Salt till kött 0,5 tsk (samma vid 3). 600 g vid 4 är linjärt från 2 (300) och 6 (900), men 375 g vid 3 och 675 g vid 5 är inte linjärt.",
+        "Rådatan säger 'ny stor stekpanna'. Glazen är ca 2,5 dl (150 g sås + 1 dl vatten) och sjuds 1 min tills tjocknat — en kort glaze, under checkerns 3 dl-tröskel och samma bedömning som umami_glazed_chickpeas / honungsglaze, därför stekpanna_stor, inte traktörpanna. 4–5 min stek är hands-on (duration 6); 1 min-sjuden äger wait på sista steget."
+      ]
+    },
+    {
+      "id": "korean_bbq_chicken_bao__warmed_bao",
+      "name": "Värm Bao-bröd",
+      "outputName": "Varma bao-bröd",
+      "inputs": [
+        {
+          "id": "bao_buns",
+          "amount": 8,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Klipp ett hål i vardera sida av paketet med {{bao_buns}} och värm på full effekt i {{eq:mikro}} i 40 sek, eller placera bröden i {{eq:sil}} och ånga under lock över kokande vatten i 3–5 min.",
+        "Separera bröden i {{eq:sil|def}} och ånga dem i omgångar vid behov."
+      ],
+      "duration": 1,
+      "wait": 0,
+      "tags": [],
+      "tips": [
+        "Ånga eller värm bröden precis innan servering, så de håller sig varma och mjuka.",
+        "Har du ingen mikrovågsugn, koka upp vatten i en medelstor kastrull i början och ånga bröden i en sil under lock i 3–5 min. Du kan också använda en ångkorg av bambu."
+      ],
+      "equipment": [
+        {
+          "type": "mikro"
+        },
+        {
+          "type": "sil",
+          "optional": true,
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "Samma mikromönster som hoisin_pulled_pork_bao: mikro är förstahandsmetod (40 sek, därför duration 1 och ingen wait). Silen är alternativet utan mikro och optional. Rådatans 'koka upp vatten i en medelstor kastrull om du inte har en mikrovågsugn' och ångkorg av bambu ligger bara i tipset, ingen obligatorisk kastrull-node. Bao-bröd 8 st vid 4 portioner, linjärt (4/6/8/10/12) → befintliga bao_buns."
+      ]
+    },
+    {
+      "id": "korean_bbq_chicken_bao",
+      "name": "Korean BBQ Chicken Bao Buns",
+      "outputName": "Korean BBQ Chicken Bao Buns",
+      "inputs": [
+        {
+          "id": "korean_bbq_chicken_bao__warmed_bao",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "korean_bbq_chicken_bao__glazed_chicken",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "korean_bbq_chicken_bao__pear_ginger_slaw",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "korean_bbq_chicken_bao__fried_beans",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Fyll {{korean_bbq_chicken_bao__warmed_bao}} med {{korean_bbq_chicken_bao__glazed_chicken}} och {{korean_bbq_chicken_bao__pear_ginger_slaw}}.",
+        "Servera med {{korean_bbq_chicken_bao__fried_beans}} och resterande slaw på {{eq:servering|pl}}."
+      ],
+      "duration": 4,
+      "tags": [
+        "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_tallrik",
+          "ref": "servering",
+          "count": "portions"
+        }
+      ],
+      "devNotes": [
+        "Bao, kyckling, slaw och bönor på tallrik enligt stegfoto och huvudbild; resterande slaw läggs på samma tallrik, ingen extra serveringsskål. Officiellt HF-namn på engelska behållet."
+      ]
+    }
+  ]
+}

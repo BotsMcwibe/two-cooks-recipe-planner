@@ -4,6 +4,11 @@
   "rawId": "660ff2ca9064812f617082c7",
   "createdAt": 1791042265,
   "basePortions": 2,
+  "time": {
+    "totalMin": 30,
+    "activeMin": 17,
+    "computedFrom": "graph"
+  },
   "sharedPrep": [
     "preheated_oven_220"
   ],
@@ -17,7 +22,7 @@
     }
   },
   "ratings": {
-    "average": 4.0,
+    "average": 4,
     "count": 1,
     "source": "hellofresh"
   },

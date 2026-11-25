@@ -1,0 +1,345 @@
+{
+  "masterId": "honung_senapsglaserad_flaskkotlett",
+  "source": "hellofresh",
+  "rawId": "6a9e929e56a4cfbb9638f45d",
+  "createdAt": 1794423184,
+  "basePortions": 4,
+  "time": {
+    "totalMin": 45,
+    "activeMin": 19,
+    "computedFrom": "graph"
+  },
+  "images": {
+    "main": "assets/recipes/honung_senapsglaserad_flaskkotlett/main.jpg",
+    "byNode": {
+      "honung_senapsglaserad_flaskkotlett__prepped_veg": "assets/recipes/honung_senapsglaserad_flaskkotlett/steps/prepped_veg.jpg",
+      "honung_senapsglaserad_flaskkotlett__honey_mustard_glaze": "assets/recipes/honung_senapsglaserad_flaskkotlett/steps/honey_mustard_glaze.jpg",
+      "honung_senapsglaserad_flaskkotlett__roasted_veg_first": "assets/recipes/honung_senapsglaserad_flaskkotlett/steps/roasted_veg_first.jpg",
+      "honung_senapsglaserad_flaskkotlett__roasted_sheet": "assets/recipes/honung_senapsglaserad_flaskkotlett/steps/roasted_sheet.jpg",
+      "honung_senapsglaserad_flaskkotlett": "assets/recipes/honung_senapsglaserad_flaskkotlett/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 677,
+    "perPortion": {
+      "energyKcal": 613,
+      "energyKj": 2564,
+      "fatG": 21.8,
+      "saturatedFatG": 10.2,
+      "carbsG": 70.4,
+      "sugarsG": 12.5,
+      "proteinG": 34.7,
+      "saltG": 3.9
+    }
+  },
+  "nodes": [
+    {
+      "id": "honung_senapsglaserad_flaskkotlett__preheated_oven_240",
+      "name": "Värm ugnen",
+      "outputName": "Förvärmd ugn (240°C)",
+      "inputs": [],
+      "steps": [
+        "Värm {{eq:ugn|def}} till 240°C, eller 220°C varmluft."
+      ],
+      "duration": 1,
+      "wait": 12,
+      "tags": [
+        "no-timer",
+        "resource"
+      ],
+      "tips": [
+        "Ugnen tar vanligtvis 10–15 minuter att värmas upp."
+      ],
+      "oven": {
+        "temp": 240,
+        "fanTemp": 220
+      },
+      "devNotes": [
+        "HF anger 240°C/220°C varmluft — lokal ugnsnode, inte preheated_oven_220."
+      ]
+    },
+    {
+      "id": "honung_senapsglaserad_flaskkotlett__prepped_veg",
+      "name": "Skär Potatis, Lök och Vitlök",
+      "outputName": "Potatis, lök och vitlök",
+      "inputs": [
+        {
+          "id": "potato",
+          "amount": 1000,
+          "unit": "g"
+        },
+        {
+          "id": "red_onion",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "garlic",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skär {{potato}} (oskalad) i 2 cm stora bitar.",
+        "Skär {{red_onion}} i 2 cm breda klyftor.",
+        "Finhacka eller pressa {{garlic}}."
+      ],
+      "duration": 8,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "HF Lök typ red-onion → red_onion. HF-typ organic-potatoes → potato."
+      ]
+    },
+    {
+      "id": "honung_senapsglaserad_flaskkotlett__honey_mustard_glaze",
+      "name": "Gör Honung- och Senapsglaze",
+      "outputName": "Honung- och senapsglaze",
+      "inputs": [
+        {
+          "id": "wholegrain_mustard",
+          "amount": 25,
+          "unit": "g"
+        },
+        {
+          "id": "honey",
+          "amount": 50,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Blanda {{wholegrain_mustard}}, {{honey}} och {{salt}} i {{eq:skal_1}}."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skal_liten",
+          "ref": "skal_1"
+        }
+      ],
+      "devNotes": [
+        "HF Grov senap 12 g vid 2 och 25 g vid 4 (linjärt vore 24 g). 4-portionsvärdet 25 g används. Salt till glaze 0,5 tsk (samma vid 3). Honung 50 g är linjär från 2; 40 g vid 3 och 65 g vid 5 är avrundade."
+      ]
+    },
+    {
+      "id": "honung_senapsglaserad_flaskkotlett__roasted_veg_first",
+      "name": "Rosta Potatis och Lök, Första Fas",
+      "outputName": "Halvrostad potatis och lök",
+      "inputs": [
+        {
+          "id": "honung_senapsglaserad_flaskkotlett__prepped_veg",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "fresh_thyme",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Placera {{honung_senapsglaserad_flaskkotlett__prepped_veg}} och {{fresh_thyme}} på {{eq:plat_1}} med bakplåtspapper.",
+        "Blanda med {{olive_oil}}, {{salt}} och en nypa {{pepper}}.",
+        "Rosta i {{eq:ugn|def}} i 20–25 min, eller tills gyllene."
+      ],
+      "duration": 3,
+      "wait": 10,
+      "tags": [],
+      "tips": [
+        "Använd fler plåtar om det blir för trångt."
+      ],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "honung_senapsglaserad_flaskkotlett__preheated_oven_240",
+          "slots": 1,
+          "temp": 240,
+          "fanTemp": 220
+        },
+        {
+          "type": "plat",
+          "ref": "plat_1",
+          "liner": "bakplatspapper"
+        }
+      ],
+      "devNotes": [
+        "Olivoljan har ingen rad i HF:s lista, därför standard 1 skvätt. Salt till grönsaker 1 tsk (samma vid 3).",
+        "Första fasen 10 min = övre 25 minus de 15 som återstår när purjolök, morot, broccolini och kotlett tillsätts.",
+        "1000 g potatis + lök redan runt plåtens oneLayerG (1000 g); därefter ytterligare 400 g morot/purjolök, 400 g broccolini och 500 g kotlett. En plåt enligt rådatan, med HF:s tips om fler vid trängsel. FLAG."
+      ]
+    },
+    {
+      "id": "honung_senapsglaserad_flaskkotlett__seasoned_pork",
+      "name": "Krydda Fläskkotletter",
+      "outputName": "Kryddade fläskkotletter",
+      "inputs": [
+        {
+          "id": "herb_marinated_pork_chop",
+          "amount": 500,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Krydda {{herb_marinated_pork_chop}} med en nypa {{salt}} på {{eq:tallrik_1}}."
+      ],
+      "duration": 1,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "tallrik",
+          "ref": "tallrik_1",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "HF Fläskkotlett, örtmarinerad → herb_marinated_pork_chop (redan i katalogen, rawAnimal meat). Kotletterna skärs inte och rådatan nämner ingen bräda; de kryddas på en tallrik, därför ingen skarbrada_ra. Inget rumstempererat i rådatan, därför ingen Ta fram-node."
+      ]
+    },
+    {
+      "id": "honung_senapsglaserad_flaskkotlett__roasted_sheet",
+      "name": "Rosta Grönsaker och Kotlett",
+      "outputName": "Ugnsbakad fläskkotlett och grönsaker",
+      "inputs": [
+        {
+          "id": "honung_senapsglaserad_flaskkotlett__roasted_veg_first",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "carrot_leek_precut",
+          "amount": 400,
+          "unit": "g"
+        },
+        {
+          "id": "broccolini",
+          "amount": 400,
+          "unit": "g"
+        },
+        {
+          "id": "honung_senapsglaserad_flaskkotlett__seasoned_pork",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Tillsätt {{carrot_leek_precut}} och {{broccolini}} till {{honung_senapsglaserad_flaskkotlett__roasted_veg_first}} på {{eq:plat_1|def}} när det återstår 12–15 min av potatisens tillagningstid.",
+        "Placera {{honung_senapsglaserad_flaskkotlett__seasoned_pork}} i mitten av {{eq:plat_1|def}}.",
+        "Rosta resterande tid."
+      ],
+      "duration": 2,
+      "wait": 15,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "plat",
+          "ref": "plat_1",
+          "liner": "bakplatspapper",
+          "transition": "keep"
+        },
+        {
+          "type": "ugn",
+          "after": "honung_senapsglaserad_flaskkotlett__preheated_oven_240",
+          "slots": 1,
+          "temp": 240,
+          "fanTemp": 220
+        }
+      ],
+      "devNotes": [
+        "Ny ingrediens carrot_leek_precut (Morot och purjolök, hackad), 400 g vid 4 portioner. Broccolini och den färdighackade mixen skärs inte enligt rådatan.",
+        "Rå fläskkotlett läggs i mitten av samma plåt som de redan rostade grönsakerna; allt rostas vidare 12–15 min. Grönsakerna är inte färdig mat ännu. tallrik_1 återanvänds inte till färdig mat. FLAG för gemensam plåt."
+      ]
+    },
+    {
+      "id": "honung_senapsglaserad_flaskkotlett",
+      "name": "Honung- och senapsglaserad fläskkotlett i ugn",
+      "outputName": "Honung- och senapsglaserad fläskkotlett i ugn",
+      "inputs": [
+        {
+          "id": "honung_senapsglaserad_flaskkotlett__roasted_sheet",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "honung_senapsglaserad_flaskkotlett__honey_mustard_glaze",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "creme_fraiche",
+          "amount": 150,
+          "unit": "ml"
+        }
+      ],
+      "steps": [
+        "Ställ fram {{eq:plat_1|def}} med {{honung_senapsglaserad_flaskkotlett__roasted_sheet}} på bordet.",
+        "Ringla över {{honung_senapsglaserad_flaskkotlett__honey_mustard_glaze}} och toppa med {{creme_fraiche}}. Servera på {{eq:servering|pl}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "master"
+      ],
+      "equipment": [
+        {
+          "type": "plat",
+          "ref": "plat_1",
+          "liner": "bakplatspapper",
+          "transition": "keep"
+        }
+      ],
+      "serving": [
+        {
+          "type": "servering_tallrik",
+          "ref": "servering",
+          "count": "portions"
+        }
+      ],
+      "devNotes": [
+        "Kostfiber 41,5 g slängd som orimlig. HF totalTime PT15M och prepTime PT45M ser omkastade ut; totalMinutes 45 (ca 15 min aktivt + 25 min ugn).",
+        "Samma clonedFrom 69f21dbe3ace2ca2f08f08dd har också rårecepten 6a44d72fbcb653703ca9aea3 och 6a7c83826f37d7d9bf9fe392 ('Honung- och senapstoppad fläskkotlett i ugn'): samma ingredienser men morot/purjolök går in redan i första ugnsfasen och bara broccolini tillsätts senare. Inte konverterade.",
+        "HF Timjan 1 st vid 2 och 4 portioner, 2 st vid 6 — förpackning. Författad som 1 st vid 4 portioner med linjär skalning."
+      ]
+    }
+  ]
+}

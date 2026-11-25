@@ -1,0 +1,375 @@
+{
+  "masterId": "potatis_purjolokssoppa_bacon",
+  "source": "hellofresh",
+  "rawId": "6a9e929e56a4cfbb9638f442",
+  "createdAt": 1794423391,
+  "basePortions": 4,
+  "time": {
+    "totalMin": 37,
+    "activeMin": 25,
+    "computedFrom": "graph"
+  },
+  "sharedPrep": [
+    "preheated_oven_220"
+  ],
+  "images": {
+    "main": "assets/recipes/potatis_purjolokssoppa_bacon/main.jpg",
+    "byNode": {
+      "potatis_purjolokssoppa_bacon__prepped_veg": "assets/recipes/potatis_purjolokssoppa_bacon/steps/prepped_veg.jpg",
+      "potatis_purjolokssoppa_bacon__fried_bacon": "assets/recipes/potatis_purjolokssoppa_bacon/steps/fried_bacon.jpg",
+      "potatis_purjolokssoppa_bacon__simmered_soup": "assets/recipes/potatis_purjolokssoppa_bacon/steps/simmered_soup.jpg",
+      "potatis_purjolokssoppa_bacon__finished_soup": "assets/recipes/potatis_purjolokssoppa_bacon/steps/finished_soup.jpg",
+      "potatis_purjolokssoppa_bacon__warm_rolls": "assets/recipes/potatis_purjolokssoppa_bacon/steps/warm_rolls.jpg",
+      "potatis_purjolokssoppa_bacon": "assets/recipes/potatis_purjolokssoppa_bacon/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 595,
+    "perPortion": {
+      "energyKcal": 715,
+      "energyKj": 2993,
+      "fatG": 30,
+      "saturatedFatG": 14.8,
+      "carbsG": 84.6,
+      "sugarsG": 10.2,
+      "proteinG": 25.8,
+      "saltG": 4
+    }
+  },
+  "nodes": [
+    {
+      "id": "potatis_purjolokssoppa_bacon__prepped_veg",
+      "name": "Skär Potatis och Purjolök",
+      "outputName": "Potatis, purjolök och timjan",
+      "inputs": [
+        {
+          "id": "potato",
+          "amount": 1000,
+          "unit": "g"
+        },
+        {
+          "id": "leek",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "fresh_thyme",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skala och tärna {{potato}} i 2 cm stora bitar.",
+        "Skölj av och rensa {{leek}} och skär den sedan i tunna skivor.",
+        "Plocka bladen från {{fresh_thyme}}."
+      ],
+      "duration": 10,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Se till att purjolöken är ordentligt sköljd och rensad.",
+        "Håll längst upp på timjanstjälken och dra med fingrarna längs stjälken för att frigöra bladen."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "HF-typ organic-potatoes → potato. HF Timjan 1 st vid 2 och 4 portioner, 2 st vid 6 — förpackning. Författad som 1 st vid 4 portioner med linjär skalning."
+      ]
+    },
+    {
+      "id": "potatis_purjolokssoppa_bacon__fried_bacon",
+      "name": "Stek Bacon",
+      "outputName": "Stekt bacon",
+      "inputs": [
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "bacon",
+          "amount": 280,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i {{eq:traktorpanna_1}} på medelhög värme.",
+        "Stek {{bacon}} i 4–5 min, eller tills gyllene.",
+        "Lägg över på {{eq:tallrik_1}} och håll varmt."
+      ],
+      "duration": 2,
+      "wait": 5,
+      "tags": [],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred"
+        },
+        {
+          "type": "tallrik",
+          "ref": "tallrik_1"
+        }
+      ],
+      "devNotes": [
+        "HF Bacon, tärnad → bacon (färdigtärnad, skärs inte, därför ingen skarbrada_ra). Olivolja saknas i HF:s lista, därför standard 1 skvätt.",
+        "Rådatan säger stor stekpanna. Samma panna (torka inte ur) tar sedan 8 dl vatten + 1000 g potatis + 2 purjolökar som sjuds under lock (sjudvolym ca 2,2–2,4 l; färdig soppa med 3 dl grädde ca 2,5–2,7 l). kastrull_medelstor (2,5 l) är för liten (regeln: >1,8 l → stor). stekpanna_stor (3 l) är trång med lock och stavmixer. kastrull_stor och traktörpanna är båda 4 l och rymmer. Traktörpanna valdes enligt stek-sedan-sjud-regeln (typeSource inferred) i hela kedjan. FLAG: samma typfråga som för CityGross-mastern potatis_purjolokssoppa (kastrull_stor vs traktörpanna) — den mastern är orörd."
+      ]
+    },
+    {
+      "id": "potatis_purjolokssoppa_bacon__simmered_soup",
+      "name": "Sjud Soppan",
+      "outputName": "Sjuden potatis- och purjolökssoppa",
+      "inputs": [
+        {
+          "id": "potatis_purjolokssoppa_bacon__prepped_veg",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "chicken_bouillon",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "id": "water",
+          "amount": 8,
+          "unit": "dl"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{eq:traktorpanna_1|def}} igen (utan att torka ur den) på medelhög värme.",
+        "Stek purjolöken från {{potatis_purjolokssoppa_bacon__prepped_veg}} i 2–3 min, eller tills något mjuknat.",
+        "Tillsätt potatis och timjan från {{potatis_purjolokssoppa_bacon__prepped_veg}}, {{chicken_bouillon}}, {{water}}, {{salt}} och en nypa {{pepper}}. Koka upp, sänk till medelvärme och sjud under lock i 13–15 min."
+      ],
+      "duration": 4,
+      "wait": 15,
+      "tags": [],
+      "heat": "medelhög",
+      "stepHeat": {
+        "2": "medel"
+      },
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred",
+          "transition": "keep",
+          "lid": true,
+          "after": "potatis_purjolokssoppa_bacon__fried_bacon"
+        }
+      ],
+      "devNotes": [
+        "HF Buljong (chicken-stock-powder) → chicken_bouillon, 8 g. Vatten till soppa 8 dl vid 4 portioner (5 dl vid 2 — inte linjärt; linjärt vore 10 dl). FLAG.",
+        "Salt till soppa 0,25 tsk vid 2 och 1 tsk vid 3 och 4 (4× hopp 2→4). 4-portionsvärdet 1 tsk används och skalas linjärt. FLAG. Fräsningen 2–3 min är aktiv tid; wait ligger på sjudningen."
+      ]
+    },
+    {
+      "id": "potatis_purjolokssoppa_bacon__finished_soup",
+      "name": "Mixa Soppan",
+      "outputName": "Krämig potatis- och purjolökssoppa",
+      "inputs": [
+        {
+          "id": "potatis_purjolokssoppa_bacon__simmered_soup",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "cooking_cream",
+          "amount": 300,
+          "unit": "ml"
+        }
+      ],
+      "steps": [
+        "Mixa {{potatis_purjolokssoppa_bacon__simmered_soup}} slät med {{eq:stavmixer_1}}.",
+        "Rör ner {{cooking_cream}}."
+      ],
+      "duration": 3,
+      "wait": 0,
+      "tags": [],
+      "tips": [
+        "Mixa en kortare stund om du vill ha soppan tjockare.",
+        "Om du inte har en mixer kan du använda en potatisstöt för en lite tjockare konsistens.",
+        "Tillsätt en skvätt vatten om soppan blir för tjock."
+      ],
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred",
+          "transition": "keep",
+          "offHeat": true
+        },
+        {
+          "type": "stavmixer",
+          "ref": "stavmixer_1"
+        }
+      ],
+      "devNotes": [
+        "HF Matlagningsgrädde (light-cooking-cream) → cooking_cream, 300 ml. Stavmixer i pannan; vanlig mixer (1,5 l) rymmer inte ca 2,6 l soppa och nämns bara som alternativ i tipset. Potatisstöten spåras inte (litet redskap)."
+      ]
+    },
+    {
+      "id": "potatis_purjolokssoppa_bacon__halved_rolls",
+      "name": "Halvera Surdegsfrallor",
+      "outputName": "Halverade surdegsfrallor",
+      "inputs": [
+        {
+          "id": "sourdough_rolls",
+          "amount": 4,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Halvera {{sourdough_rolls}}."
+      ],
+      "duration": 1,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true,
+          "after": "potatis_purjolokssoppa_bacon__prepped_veg"
+        }
+      ],
+      "devNotes": [
+        "Ny ingrediens sourdough_rolls (Surdegsfrallor), 4 st vid 4 portioner (1 per person; linjär 2/3/4/5/6)."
+      ]
+    },
+    {
+      "id": "potatis_purjolokssoppa_bacon__warm_rolls",
+      "name": "Rosta Surdegsfrallor",
+      "outputName": "Varma surdegsfrallor",
+      "inputs": [
+        {
+          "id": "potatis_purjolokssoppa_bacon__halved_rolls",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Lägg {{potatis_purjolokssoppa_bacon__halved_rolls}} direkt på {{eq:galler_1|def}} och rosta i {{eq:ugn|def}} i 5–6 min, eller tills genomvarma."
+      ],
+      "duration": 1,
+      "wait": 6,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "preheated_oven_220",
+          "slots": 1,
+          "temp": 220,
+          "fanTemp": 200
+        },
+        {
+          "type": "galler",
+          "ref": "galler_1"
+        }
+      ],
+      "devNotes": [
+        "220°C/200°C varmluft = delad prep preheated_oven_220."
+      ]
+    },
+    {
+      "id": "potatis_purjolokssoppa_bacon__chopped_parsley",
+      "name": "Hacka Persilja",
+      "outputName": "Hackad persilja",
+      "inputs": [
+        {
+          "id": "parsley",
+          "amount": 20,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Finhacka {{parsley}}."
+      ],
+      "duration": 1,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true,
+          "after": "potatis_purjolokssoppa_bacon__halved_rolls"
+        }
+      ],
+      "devNotes": [
+        "HF Bladpersilja 10/15/20/25/30 g vid 2–6 portioner, linjär. Inte förpackning."
+      ]
+    },
+    {
+      "id": "potatis_purjolokssoppa_bacon",
+      "name": "Krämig potatis- och purjolökssoppa",
+      "outputName": "Krämig potatis- och purjolökssoppa",
+      "inputs": [
+        {
+          "id": "potatis_purjolokssoppa_bacon__finished_soup",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "potatis_purjolokssoppa_bacon__fried_bacon",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "potatis_purjolokssoppa_bacon__chopped_parsley",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "potatis_purjolokssoppa_bacon__warm_rolls",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Häll {{potatis_purjolokssoppa_bacon__finished_soup}} i {{eq:servering|pl}}.",
+        "Toppa med {{potatis_purjolokssoppa_bacon__fried_bacon}} och {{potatis_purjolokssoppa_bacon__chopped_parsley}}.",
+        "Servera med {{potatis_purjolokssoppa_bacon__warm_rolls}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_djup_skal",
+          "ref": "servering",
+          "count": "portions"
+        }
+      ],
+      "devNotes": [
+        "Kostfiber 39,4 g slängd som orimlig. HF totalTime PT15M och prepTime PT30M ser omkastade ut; totalMinutes 30 (bacon + sjudning 15 min + bröd).",
+        "Samma clonedFrom 69773d1e6aaab04ab650c66d har också rårecepten 69c3dc23d795c2c9e4003bbb och 6a839822ee0be9e8e287958c, markerade som dubbletter och inte konverterade. 5d58feaa8c18f200080386c9 är en köttfri variant med samma namn, fortfarande i kön — inte konverterad. CityGross-mastern potatis_purjolokssoppa är en annan rätt och är orörd."
+      ]
+    }
+  ]
+}

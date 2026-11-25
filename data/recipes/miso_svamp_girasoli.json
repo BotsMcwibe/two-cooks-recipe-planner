@@ -1,0 +1,340 @@
+{
+  "masterId": "miso_svamp_girasoli",
+  "source": "hellofresh",
+  "rawId": "6a915db9f3876e995cfb5994",
+  "createdAt": 1792603134,
+  "basePortions": 4,
+  "time": {
+    "totalMin": 20,
+    "activeMin": 19,
+    "computedFrom": "graph"
+  },
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/miso_svamp_girasoli/main.jpg",
+    "byNode": {
+      "miso_svamp_girasoli__chopped_mushrooms": "assets/recipes/miso_svamp_girasoli/steps/chopped_mushrooms.jpg",
+      "miso_svamp_girasoli__fried_mushrooms": "assets/recipes/miso_svamp_girasoli/steps/fried_mushrooms.jpg",
+      "miso_svamp_girasoli__pasta_sauce": "assets/recipes/miso_svamp_girasoli/steps/pasta_sauce.jpg",
+      "miso_svamp_girasoli": "assets/recipes/miso_svamp_girasoli/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 418,
+    "perPortion": {
+      "energyKcal": 730,
+      "energyKj": 3052,
+      "fatG": 47.2,
+      "saturatedFatG": 23.6,
+      "carbsG": 51.5,
+      "sugarsG": 16.4,
+      "fiberG": 5.4,
+      "proteinG": 22.1,
+      "saltG": 4
+    }
+  },
+  "nodes": [
+    {
+      "id": "miso_svamp_girasoli__chopped_garlic",
+      "name": "Hacka Vitlök",
+      "outputName": "Finhackad vitlök",
+      "inputs": [
+        {
+          "id": "garlic",
+          "amount": 4,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Finhacka eller pressa {{garlic}}."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ]
+    },
+    {
+      "id": "miso_svamp_girasoli__chopped_mushrooms",
+      "name": "Hacka Svamp",
+      "outputName": "Grovhackad portobello",
+      "inputs": [
+        {
+          "id": "portobello",
+          "amount": 300,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Grovhacka {{portobello}}."
+      ],
+      "duration": 3,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "HF hackar tomat och svamp i samma steg; delade per destination (svampen steks, tomaten går i såsen)."
+      ]
+    },
+    {
+      "id": "miso_svamp_girasoli__chopped_tomato",
+      "name": "Hacka Tomat",
+      "outputName": "Grovhackad tomat",
+      "inputs": [
+        {
+          "id": "tomato",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Grovhacka {{tomato}}."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "HF-typ organic tomatoes → tomato. 2 st vid både 3 och 4 portioner; 4-portionsvärdet används."
+      ]
+    },
+    {
+      "id": "miso_svamp_girasoli__fried_mushrooms",
+      "name": "Stek Svamp och Vitlök",
+      "outputName": "Stekt svamp med vitlök",
+      "inputs": [
+        {
+          "id": "olive_oil",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "miso_svamp_girasoli__chopped_mushrooms",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "miso_svamp_girasoli__chopped_garlic",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i {{eq:traktorpanna_1}} på medelhög värme.",
+        "Stek {{miso_svamp_girasoli__chopped_mushrooms}} i 3–4 min, eller tills brynt. Tillsätt {{miso_svamp_girasoli__chopped_garlic}} och stek i 30 sek, tills väldoftande."
+      ],
+      "duration": 5,
+      "wait": 0,
+      "tags": [],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred"
+        }
+      ],
+      "devNotes": [
+        "Olja till stekning 2 msk (4 portioner; samma vid 3).",
+        "Rådatan säger stor stekpanna, men samma panna tar sedan 1,5 dl matlagningsgrädde + 2 dl vatten (3,5 dl vätska) och 600 g färsk pasta som sjuds 3–4 min (totalt ≈1,3 l), därför traktörpanna (typeSource inferred). FLAG: användaren behöll stekpanna för girasoli_creamy_paprika (confirmed), men där kokas pastan separat; här kokas pastan i pannan."
+      ]
+    },
+    {
+      "id": "miso_svamp_girasoli__pasta_sauce",
+      "name": "Sjud Pasta i Misosås",
+      "outputName": "Girasoli i miso- och svampsås",
+      "inputs": [
+        {
+          "id": "miso_svamp_girasoli__fried_mushrooms",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "miso_svamp_girasoli__chopped_tomato",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "cooking_cream",
+          "amount": 150,
+          "unit": "ml"
+        },
+        {
+          "id": "vegetable_bouillon",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "id": "miso_paste",
+          "amount": 30,
+          "unit": "g"
+        },
+        {
+          "id": "parmesan",
+          "amount": 20,
+          "unit": "g"
+        },
+        {
+          "id": "water",
+          "amount": 2,
+          "unit": "dl"
+        },
+        {
+          "id": "girasoli",
+          "amount": 600,
+          "unit": "g"
+        },
+        {
+          "id": "butter",
+          "amount": 4,
+          "unit": "msk"
+        }
+      ],
+      "steps": [
+        "Tillsätt {{miso_svamp_girasoli__chopped_tomato}}, {{cooking_cream}}, {{vegetable_bouillon}}, {{miso_paste}}, {{parmesan}}, {{water}}, {{girasoli}} och {{butter}} till {{miso_svamp_girasoli__fried_mushrooms}} i {{eq:traktorpanna_1|def}} och rör om.",
+        "Sjud i 3–4 min, tills såsen tjocknar något och pastan är al dente."
+      ],
+      "duration": 2,
+      "wait": 4,
+      "tags": [],
+      "heat": "medellåg",
+      "heatSource": "inferred",
+      "tips": [
+        "Al dente betyder att pastan är genomkokt men fortfarande har tuggmotstånd."
+      ],
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred",
+          "transition": "keep"
+        }
+      ],
+      "devNotes": [
+        "HF Buljong (vegetable-stock) 8 g → vegetable_bouillon. Misopasta → ny ingrediens miso_paste. Grana Padano, flingor → parmesan (samma som bacon_tortelloni_tomato); rådatan kallar den finriven ost. FLAG.",
+        "Vatten till sås 2 dl, smör till sås 4 msk (4 portioner; samma vid 3). Smöret smälts i såsen, inget rumstempererat smör, därför ingen Ta fram-node.",
+        "HF:s VIKTIGT-ruta ('halva mängden av vissa ingredienser') gäller HF-kassens förpackningar och är utelämnad. Rucola och paprika ('under tiden') är egna prepnoder."
+      ]
+    },
+    {
+      "id": "miso_svamp_girasoli__rinsed_rucola",
+      "name": "Skölj Rucola",
+      "outputName": "Sköljd rucola",
+      "inputs": [
+        {
+          "id": "rucola",
+          "amount": 70,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Skölj {{rucola}}."
+      ],
+      "duration": 1,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "devNotes": [
+        "70 g vid både 3 och 4 portioner; 4-portionsvärdet används."
+      ]
+    },
+    {
+      "id": "miso_svamp_girasoli__chopped_paprika",
+      "name": "Hacka Paprika",
+      "outputName": "Grovhackad paprika",
+      "inputs": [
+        {
+          "id": "paprika",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Grovhacka {{paprika}}."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ]
+    },
+    {
+      "id": "miso_svamp_girasoli",
+      "name": "Snabb miso- och svampgirasoli",
+      "outputName": "Snabb miso- och svampgirasoli",
+      "inputs": [
+        {
+          "id": "miso_svamp_girasoli__pasta_sauce",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "miso_svamp_girasoli__rinsed_rucola",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "miso_svamp_girasoli__chopped_paprika",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{miso_svamp_girasoli__pasta_sauce}} i {{eq:servering|pl}}.",
+        "Toppa med {{miso_svamp_girasoli__rinsed_rucola}} och {{miso_svamp_girasoli__chopped_paprika}}.",
+        "Ringla eventuellt över lite {{olive_oil}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_skal",
+          "ref": "servering",
+          "count": "portions"
+        }
+      ],
+      "devNotes": [
+        "Olivolja att ringla över har ingen rad i HF:s lista, därför standard 1 skvätt (valfri)."
+      ]
+    }
+  ]
+}

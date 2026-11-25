@@ -1,0 +1,453 @@
+{
+  "masterId": "bacon_notfars_cannelloni",
+  "source": "hellofresh",
+  "rawId": "6a9e92a6790f7867027dc05c",
+  "createdAt": 1794420695,
+  "basePortions": 4,
+  "time": {
+    "totalMin": 52,
+    "activeMin": 37,
+    "computedFrom": "graph"
+  },
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/bacon_notfars_cannelloni/main.jpg",
+    "byNode": {
+      "bacon_notfars_cannelloni__chopped_onion": "assets/recipes/bacon_notfars_cannelloni/steps/chopped_onion.jpg",
+      "bacon_notfars_cannelloni__filling": "assets/recipes/bacon_notfars_cannelloni/steps/filling.jpg",
+      "bacon_notfars_cannelloni__tomato_sauce": "assets/recipes/bacon_notfars_cannelloni/steps/tomato_sauce.jpg",
+      "bacon_notfars_cannelloni__filled_cannelloni": "assets/recipes/bacon_notfars_cannelloni/steps/filled_cannelloni.jpg",
+      "bacon_notfars_cannelloni__baked_cannelloni": "assets/recipes/bacon_notfars_cannelloni/steps/baked_cannelloni.jpg",
+      "bacon_notfars_cannelloni": "assets/recipes/bacon_notfars_cannelloni/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 671,
+    "perPortion": {
+      "energyKcal": 1136,
+      "energyKj": 4754,
+      "fatG": 63.4,
+      "saturatedFatG": 27.8,
+      "carbsG": 79.9,
+      "sugarsG": 18.3,
+      "fiberG": 8.2,
+      "proteinG": 62.2,
+      "saltG": 7.8
+    }
+  },
+  "nodes": [
+    {
+      "id": "bacon_notfars_cannelloni__preheated_oven_240",
+      "name": "Värm ugnen",
+      "outputName": "Förvärmd ugn (240°C)",
+      "inputs": [],
+      "steps": [
+        "Värm {{eq:ugn|def}} till 240°C, eller 220°C varmluft."
+      ],
+      "duration": 1,
+      "wait": 12,
+      "tags": [
+        "no-timer",
+        "resource"
+      ],
+      "tips": [
+        "Ugnen tar vanligtvis 10–15 minuter att värmas upp."
+      ],
+      "oven": {
+        "temp": 240,
+        "fanTemp": 220
+      },
+      "devNotes": [
+        "HF anger 240°C/220°C varmluft — lokal ugnsnode, inte preheated_oven_220."
+      ]
+    },
+    {
+      "id": "bacon_notfars_cannelloni__chopped_onion",
+      "name": "Hacka Lök",
+      "outputName": "Finhackad lök",
+      "inputs": [
+        {
+          "id": "onion",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Finhacka {{onion}}."
+      ],
+      "duration": 3,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ]
+    },
+    {
+      "id": "bacon_notfars_cannelloni__chopped_basil",
+      "name": "Hacka Basilika",
+      "outputName": "Finhackad basilika",
+      "inputs": [
+        {
+          "id": "basil",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Finhacka {{basil}}."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "Basilika: HF 1 st vid 2 och 4 portioner, 2 st vid 6 — förpackning/kruka. Författad som 1 st vid 4 portioner med linjär skalning (0,5 st vid 2, 1,5 st vid 6)."
+      ]
+    },
+    {
+      "id": "bacon_notfars_cannelloni__filling",
+      "name": "Stek Fyllning",
+      "outputName": "Bacon- och nötfärsfyllning",
+      "inputs": [
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "bacon_notfars_cannelloni__chopped_onion",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "bacon",
+          "amount": 280,
+          "unit": "g"
+        },
+        {
+          "id": "ground_beef",
+          "amount": 450,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "garlic_herb_seasoning",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "id": "grated_cheddar",
+          "amount": 100,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i {{eq:traktorpanna_1}} på medelhög värme.",
+        "Stek {{bacon_notfars_cannelloni__chopped_onion}} i 1–2 min, eller tills mjukt.",
+        "Tillsätt {{bacon}} och {{ground_beef}} och krydda med {{salt}} och {{garlic_herb_seasoning}}. Stek i 4–5 min, eller tills brynt.",
+        "Vänd ner {{grated_cheddar}} i {{eq:traktorpanna_1|def}}. Lägg över fyllningen på {{eq:tallrik_1}}."
+      ],
+      "duration": 9,
+      "wait": 0,
+      "tags": [],
+      "heat": "medelhög",
+      "tips": [
+        "Köttfärsen är färdiglagad när den är genomstekt och utan inslag av rosa."
+      ],
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred"
+        },
+        {
+          "type": "tallrik",
+          "ref": "tallrik_1"
+        }
+      ],
+      "devNotes": [
+        "HF Nötfärs → ground_beef. Bacon, tärnad → bacon (färdigtärnad, skärs inte, därför ingen skarbrada_ra). Salt till kött 0,5 tsk (samma vid 3). Första oljan är 'en skvätt' enligt texten; yield-raden 'Olja till stekning' 2 msk används i såsen.",
+        "Rådatan säger stor stekpanna, men samma panna tar sedan 780 g krossade tomater + 3,5 dl vatten som sjuds 5–7 min (≈11 dl vätska), därför traktörpanna (typeSource inferred)."
+      ]
+    },
+    {
+      "id": "bacon_notfars_cannelloni__tomato_sauce",
+      "name": "Gör Tomatsås",
+      "outputName": "Tomatsås med basilika",
+      "inputs": [
+        {
+          "id": "olive_oil",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "canned_tomatoes",
+          "amount": 780,
+          "unit": "g"
+        },
+        {
+          "id": "bacon_notfars_cannelloni__chopped_basil",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "water",
+          "amount": 3.5,
+          "unit": "dl"
+        },
+        {
+          "id": "beef_bouillon",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "id": "sugar",
+          "amount": 2,
+          "unit": "tsk"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i {{eq:traktorpanna_1|def}} på medelhög värme.",
+        "Tillsätt {{canned_tomatoes}}, {{bacon_notfars_cannelloni__chopped_basil}}, {{water}}, {{beef_bouillon}}, {{sugar}}, {{salt}} och en nypa {{pepper}}.",
+        "Låt koka upp och sjud sedan på medelvärme i 5–7 min, eller tills något tjocknat."
+      ],
+      "duration": 3,
+      "wait": 7,
+      "tags": [],
+      "heat": "medelhög",
+      "stepHeat": {
+        "2": "medel"
+      },
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred",
+          "transition": "keep",
+          "after": "bacon_notfars_cannelloni__filling"
+        }
+      ],
+      "devNotes": [
+        "Olja till stekning 2 msk, salt till sås 0,5 tsk, socker 2 tsk. Vatten till sås 3,5 dl vid 4 portioner (2 dl vid 2, 2,5 dl vid 3 — inte linjärt 2→4). FLAG.",
+        "HF Krossade tomater (typ krossade-tomater-vitlok-lok) → canned_tomatoes. FLAG. HF Buljong (beef-stock-powder) → beef_bouillon. after filling är resursordning (fyllningen går inte i såsen)."
+      ]
+    },
+    {
+      "id": "bacon_notfars_cannelloni__filled_cannelloni",
+      "name": "Fyll Cannelloni",
+      "outputName": "Fyllda cannelloni",
+      "inputs": [
+        {
+          "id": "lasagne_sheets",
+          "amount": 400,
+          "unit": "g"
+        },
+        {
+          "id": "bacon_notfars_cannelloni__filling",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Halvera {{lasagne_sheets}} på längden så att du får 4 cannelloni per person.",
+        "Koka plattorna i saltat vatten i {{eq:kastrull_1}} i 1–2 min, eller tills något mjuka. Häll av vattnet i {{eq:durkslag_1}}.",
+        "Placera plattorna på {{eq:skarbrada|def}} och fördela {{bacon_notfars_cannelloni__filling}} mellan dem.",
+        "Rulla ihop plattorna till en storlek som passar i {{eq:ugnsform_1|def}}."
+      ],
+      "duration": 10,
+      "wait": 2,
+      "tags": [],
+      "heat": "hög",
+      "heatSource": "inferred",
+      "equipment": [
+        {
+          "type": "kastrull_stor",
+          "ref": "kastrull_1"
+        },
+        {
+          "type": "durkslag",
+          "ref": "durkslag_1",
+          "inferred": true
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        },
+        {
+          "type": "ugnsform_stor",
+          "ref": "ugnsform_1",
+          "sizeSource": "inferred"
+        }
+      ],
+      "devNotes": [
+        "Ny ingrediens lasagne_sheets (Färska lasagneplattor). 400 g ger 4 cannelloni per person efter halvering. Fyllningen är tillagad, därför vanlig skärbräda. Wait 2 på koksteget; rullningen efteråt är kort och lämnas i samma node så att koket inte delas onödigt — FLAG om koket bör vara egen node.",
+        "Salt i kokvattnet har ingen rad i HF:s lista."
+      ]
+    },
+    {
+      "id": "bacon_notfars_cannelloni__baked_cannelloni",
+      "name": "Gratinera Cannelloni",
+      "outputName": "Gratinerad cannelloni",
+      "inputs": [
+        {
+          "id": "bacon_notfars_cannelloni__tomato_sauce",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "bacon_notfars_cannelloni__filled_cannelloni",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "mornay_sauce",
+          "amount": 200,
+          "unit": "g"
+        },
+        {
+          "id": "parmesan",
+          "amount": 80,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Bre ut ett tunt lager {{bacon_notfars_cannelloni__tomato_sauce}} i {{eq:ugnsform_1}} och placera {{bacon_notfars_cannelloni__filled_cannelloni}} på såsen.",
+        "Häll resterande sås över cannellonin och se till att pastan är väl täckt.",
+        "Toppa med ett jämnt lager {{mornay_sauce}}. Strö över finriven {{parmesan}}.",
+        "Gratinera i {{eq:ugn|def}} i 10 min, eller tills osten är gyllene."
+      ],
+      "duration": 4,
+      "wait": 10,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "bacon_notfars_cannelloni__preheated_oven_240",
+          "slots": 1,
+          "temp": 240,
+          "fanTemp": 220
+        },
+        {
+          "type": "ugnsform_stor",
+          "ref": "ugnsform_1",
+          "sizeSource": "inferred",
+          "transition": "keep"
+        }
+      ],
+      "devNotes": [
+        "Mornaysås fanns redan som mornay_sauce. HF Parmigiano Reggiano → parmesan. Rådatan säger bara ugnsform; 16 cannelloni + sås + 200 g mornay ≈ över 2,6 l → ugnsform_stor (inferred)."
+      ]
+    },
+    {
+      "id": "bacon_notfars_cannelloni__salad",
+      "name": "Blanda Sallad",
+      "outputName": "Sallad med pinjenötter och balsamicokräm",
+      "inputs": [
+        {
+          "id": "mixed_salad",
+          "amount": 100,
+          "unit": "g"
+        },
+        {
+          "id": "pine_nuts",
+          "amount": 20,
+          "unit": "g"
+        },
+        {
+          "id": "balsamic_cream",
+          "amount": 16,
+          "unit": "ml"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        }
+      ],
+      "steps": [
+        "Blanda {{mixed_salad}}, {{pine_nuts}}, {{balsamic_cream}}, en nypa {{salt}} och {{olive_oil}} i {{eq:skal_stor}}."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "skal_stor"
+        }
+      ],
+      "devNotes": [
+        "Kall, men inte prep: blandas under gratineringen (rådatan: 'under tiden') så att salladen inte blir slak. Salladsmix 100 g vid 4 portioner (60 g vid 2, 160 g vid 6 — inte linjärt). FLAG. Olivolja till salladen har ingen rad, därför standard 1 skvätt."
+      ]
+    },
+    {
+      "id": "bacon_notfars_cannelloni",
+      "name": "Bacon- och nötfärscannelloni",
+      "outputName": "Bacon- och nötfärscannelloni",
+      "inputs": [
+        {
+          "id": "bacon_notfars_cannelloni__baked_cannelloni",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "bacon_notfars_cannelloni__salad",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{bacon_notfars_cannelloni__baked_cannelloni}} på {{eq:servering|pl}}.",
+        "Servera med {{bacon_notfars_cannelloni__salad}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "master"
+      ],
+      "tips": [
+        "Låt cannellonin svalna något innan du serverar den, så blir den lättare att hantera."
+      ],
+      "serving": [
+        {
+          "type": "servering_tallrik",
+          "ref": "servering",
+          "count": "portions"
+        }
+      ]
+    }
+  ]
+}

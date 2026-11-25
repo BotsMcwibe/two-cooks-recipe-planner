@@ -4,6 +4,11 @@
   "rawId": "67f924eea3ffaf7fe8736639",
   "createdAt": 1791041301,
   "basePortions": 4,
+  "time": {
+    "totalMin": 24,
+    "activeMin": 24,
+    "computedFrom": "graph"
+  },
   "sharedPrep": [],
   "images": {
     "main": "assets/recipes/asiatisk_rakwok/main.jpg",

@@ -1,0 +1,281 @@
+{
+  "masterId": "goan_xacuti_plantbitar",
+  "source": "hellofresh",
+  "rawId": "6a9e9287790f7867027dbd89",
+  "createdAt": 1794429989,
+  "basePortions": 4,
+  "time": {
+    "totalMin": 19,
+    "activeMin": 19,
+    "computedFrom": "graph"
+  },
+  "images": {
+    "main": "assets/recipes/goan_xacuti_plantbitar/main.jpg",
+    "byNode": {
+      "goan_xacuti_plantbitar__simmered_rice": "assets/recipes/goan_xacuti_plantbitar/steps/simmered_rice.jpg",
+      "goan_xacuti_plantbitar__slaw": "assets/recipes/goan_xacuti_plantbitar/steps/slaw.jpg",
+      "goan_xacuti_plantbitar__fried_strips": "assets/recipes/goan_xacuti_plantbitar/steps/fried_strips.jpg",
+      "goan_xacuti_plantbitar": "assets/recipes/goan_xacuti_plantbitar/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 446,
+    "perPortion": {
+      "energyKcal": 786,
+      "energyKj": 3288,
+      "fatG": 35,
+      "saturatedFatG": 3.8,
+      "carbsG": 94.4,
+      "sugarsG": 22.4,
+      "fiberG": 7.6,
+      "proteinG": 27.9,
+      "saltG": 6
+    }
+  },
+  "nodes": [
+    {
+      "id": "goan_xacuti_plantbitar__simmered_rice",
+      "name": "Koka Jasminris",
+      "outputName": "Kokt jasminris",
+      "inputs": [
+        {
+          "id": "water",
+          "amount": 6,
+          "unit": "dl"
+        },
+        {
+          "id": "jasmine_rice",
+          "amount": 300,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Koka upp {{water}} i {{eq:kastrull_1}}.",
+        "Rör i {{jasmine_rice}} och {{salt}}, sänk till låg värme och sjud under lock i 14 min. Ta sedan av {{eq:kastrull_1|def}} från värmen."
+      ],
+      "duration": 2,
+      "wait": 14,
+      "tags": [],
+      "heat": "hög",
+      "tips": [
+        "Riset ska ångkoka, så tjuvkika inte!"
+      ],
+      "equipment": [
+        {
+          "type": "kastrull_medelstor",
+          "ref": "kastrull_1",
+          "lid": true
+        }
+      ],
+      "devNotes": [
+        "Rådatan säger medelstor kastrull och låg värme. 'Koka upp' (hög) är inferred. 'Ta av kastrullen från värme' är inlagt i sjudsteget så att timern ligger på sista steget. Ingen vilotid anges, därför ingen extra vilonod. Vatten till ris 6 dl linjärt (saknas vid 5 och 6). Salt till ris 1 tsk (samma vid 3; saknas vid 5 och 6).",
+        "Det här receptets step0_0 saknas som egen fil; raw-wrappern pekar på 6a839800e487134be04a86d3__step0_0.jpg (Harissakryddade koljafiskkakor). Fotot är en kastrull med kokt vitt ris och används till risnoden. FLAG."
+      ]
+    },
+    {
+      "id": "goan_xacuti_plantbitar__sliced_leek",
+      "name": "Skiva Purjolök",
+      "outputName": "Skivad purjolök",
+      "inputs": [
+        {
+          "id": "leek",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Halvera och skölj {{leek}} och skär den i tunna skivor."
+      ],
+      "duration": 3,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "Purjolök 1 st vid 3 och 4 portioner (0,5 st vid 2, 1,5 st vid 5 och 6) — inte linjärt. FLAG."
+      ]
+    },
+    {
+      "id": "goan_xacuti_plantbitar__slaw",
+      "name": "Blanda Asiatisk Slaw",
+      "outputName": "Asiatisk slaw",
+      "inputs": [
+        {
+          "id": "kohlrabi",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "shredded_salad_mix",
+          "amount": 300,
+          "unit": "g"
+        },
+        {
+          "id": "vegan_sriracha_mayo",
+          "amount": 100,
+          "unit": "g"
+        },
+        {
+          "id": "water",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Skala och skär {{kohlrabi}} i ½ cm tunna stavar.",
+        "Blanda kålrabbi, {{shredded_salad_mix}}, {{vegan_sriracha_mayo}}, {{water}} och {{salt}} i {{eq:skal_1}} och ställ åt sidan."
+      ],
+      "duration": 6,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skal_stor",
+          "ref": "skal_1"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true,
+          "after": "goan_xacuti_plantbitar__sliced_leek"
+        }
+      ],
+      "devNotes": [
+        "HF Strimlad salladsmix → shredded_salad_mix; steget säger 'kålmix' — samma vara. 300 g vid 3 och 4 (150 g vid 2, 450 g vid 5 och 6). FLAG.",
+        "Kålrabbi, vit 1 st vid 3 och 4 (0,5 st vid 2, 1,5 st vid 5 och 6) — inte linjärt. FLAG. Vegansk srirachamajonnäs 100 g, linjärt. Vatten till slaw 2 msk och salt till slaw 1 tsk (samma vid 3; saknas vid 5 och 6)."
+      ]
+    },
+    {
+      "id": "goan_xacuti_plantbitar__fried_strips",
+      "name": "Stek Vegostrimlor",
+      "outputName": "Stekta xacuti-vegostrimlor",
+      "inputs": [
+        {
+          "id": "olive_oil",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "plant_based_chicken_strips",
+          "amount": 400,
+          "unit": "g"
+        },
+        {
+          "id": "goan_xacuti_plantbitar__sliced_leek",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "goan_xacuti_spice_mix",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "id": "chili_flakes",
+          "amount": 1,
+          "unit": "g"
+        },
+        {
+          "id": "soy_sauce",
+          "amount": 40,
+          "unit": "ml"
+        },
+        {
+          "id": "sweet_chili_sauce",
+          "amount": 80,
+          "unit": "g"
+        },
+        {
+          "id": "water",
+          "amount": 4,
+          "unit": "msk"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i {{eq:stekpanna_1}} på medelhög värme.",
+        "Stek {{plant_based_chicken_strips}} och {{goan_xacuti_plantbitar__sliced_leek}} i 3–4 min, eller tills brynt.",
+        "Tillsätt {{goan_xacuti_spice_mix}} och {{chili_flakes}} och stek i 30 sek, tills väldoftande.",
+        "Tillsätt {{soy_sauce}}, {{sweet_chili_sauce}} och {{water}} och vänd runt."
+      ],
+      "duration": 6,
+      "wait": 0,
+      "tags": [],
+      "heat": "medelhög",
+      "tips": [
+        "Skippa chili eller använd mindre om du inte tycker om stark mat."
+      ],
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1"
+        }
+      ],
+      "devNotes": [
+        "Återanvänder plant_based_chicken_strips (samma HF-SKU 692db6821ca49f0d8bd386df som pankopanerade_plantbitar och wraps_plantbitar_potatis), 400 g linjärt. Färdigstrimlade, skärs inte, och är inte rå animalisk protein — ingen skarbrada_ra.",
+        "Ny ingrediens goan_xacuti_spice_mix (Goan Xacuti, typ goan-xacuti-spice-mix), torr HF-kryddmix. Ingenting i spice-blends.json ännu — utan blendId. FLAG till Spice Mix-boten. 8 g vid 3 och 4 (4 g vid 2, 12 g vid 5 och 6). FLAG.",
+        "Rådatan säger stor stekpanna. Kort glaze-vändning: 40 ml sojasås + 80 g sweet chilisås + 4 msk vatten (ca 1,8 dl totalt, varav bara vattnet räknas i LIQUID_IDS, 0,6 dl) — under 3 dl-tröskeln, därför stekpanna_stor, inte traktörpanna. 3–4 min är hands-on, därför duration 6 och ingen wait.",
+        "Chiliflakes 1 g vid 3 och 4 (0,5 g vid 2, 1,5 g vid 5 och 6). Sojasås 40 ml och sweet chilisås 80 g vid 3 och 4. Olja till stekning 2 msk och vatten till sås 4 msk vid 3 och 4 (saknas vid 5 och 6). FLAG."
+      ]
+    },
+    {
+      "id": "goan_xacuti_plantbitar",
+      "name": "Snabbstekta goan xacuti-vegostrimlor",
+      "inputs": [
+        {
+          "id": "goan_xacuti_plantbitar__simmered_rice",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "goan_xacuti_plantbitar__fried_strips",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "goan_xacuti_plantbitar__slaw",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{goan_xacuti_plantbitar__simmered_rice}} i {{eq:servering|pl}} och toppa med {{goan_xacuti_plantbitar__fried_strips}} och {{goan_xacuti_plantbitar__slaw}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_skal",
+          "ref": "servering",
+          "count": "portions"
+        }
+      ],
+      "devNotes": [
+        "All näring behållen inklusive fiber 7,6 g och 786 kcal. HF totalTime/prepTime PT15M är tight mot uppkok plus 14 min rissjud — totalMinutes 20.",
+        "HF-kökstyp är goan (Goansk) — nytt cuisine-värde, inte hopslaget till indian. FLAG.",
+        "clonedFrom 657ac71e5b66803087b19353 och varianten 6698980c… samt dubbletterna 6a44d766… och 6a7c83a6… är samma eller närbesläktade rätter och konverterades inte."
+      ]
+    }
+  ]
+}

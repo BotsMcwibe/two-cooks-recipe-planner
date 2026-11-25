@@ -1,0 +1,737 @@
+{
+  "masterId": "kaldolmar_graddsas_potatismos",
+  "source": "egen",
+  "createdAt": 1795527271,
+  "basePortions": 6,
+  "time": {
+    "totalMin": 137,
+    "activeMin": 105,
+    "computedFrom": "graph"
+  },
+  "sharedPrep": [],
+  "nodes": [
+    {
+      "id": "kaldolmar_graddsas_potatismos__cored_cabbage",
+      "name": "Skär ur Kålstocken",
+      "outputName": "Kålhuvud utan stock",
+      "inputs": [
+        {
+          "id": "white_cabbage",
+          "amount": 1,
+          "unit": "huvud"
+        }
+      ],
+      "steps": [
+        "Ta bort eventuella fula ytterblad från {{white_cabbage}}. Till 6 portioner behövs ett huvud på ca 1,8–2 kg.",
+        "Skär runt stocken med en spetsig kniv, ca 6–8 cm djupt, och dra ut den så att bladen lossnar lättare när kålen kokar."
+      ],
+      "duration": 4,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "tips": [
+        "Välj ett stort, löst vitkålshuvud med stora ytterblad. Ett hårt, kompakt huvud ger mindre blad som spricker lättare."
+      ]
+    },
+    {
+      "id": "kaldolmar_graddsas_potatismos__blanched_leaves",
+      "name": "Koka Kålbladen",
+      "outputName": "Förvällda kålblad",
+      "inputs": [
+        {
+          "id": "kaldolmar_graddsas_potatismos__cored_cabbage",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "water",
+          "amount": 4,
+          "unit": "l"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "msk"
+        }
+      ],
+      "steps": [
+        "Koka upp {{water}} med {{salt}} i {{eq:kastrull_1}}.",
+        "Sänk ner {{kaldolmar_graddsas_potatismos__cored_cabbage}} med snittytan nedåt och låt sjuda på medelhög värme.",
+        "Lossa de yttre bladen ett i taget med en gaffel och en tång när de blivit mjuka och böjliga, efter ca 2–3 min per blad. Vänd huvudet om bladen inne i kålen lossnar sämre.",
+        "Lyft upp bladen och låt rinna av i {{eq:durkslag_1}}. Fortsätt tills du har ca 4 hela blad per portion (22–24 blad till 6 portioner)."
+      ],
+      "duration": 22,
+      "wait": 0,
+      "tags": [],
+      "heat": "hög",
+      "stepHeat": {
+        "1": "medelhög"
+      },
+      "heatSource": "inferred",
+      "equipment": [
+        {
+          "type": "gryta",
+          "ref": "kastrull_1",
+          "typeSource": "inferred"
+        },
+        {
+          "type": "durkslag",
+          "ref": "durkslag_1"
+        }
+      ],
+      "tips": [
+        "Snabbare med vattenkokare: koka upp vattnet där och häll över i grytan.",
+        "Bladen ska vara mjuka nog att vika utan att spricka men inte sladdriga. Små innerblad kan läggas två och två, omlott.",
+        "Strimla den kål som blir över och lägg den i botten på ugnsformen, eller spara den till kålsoppa eller pytt."
+      ],
+      "devNotes": [
+        "Uppkokningen ligger i samma node (som potatisen i norska_kottbullar) så att kokvattnet inte räknas in i dolmarnas volym. Lossandet av bladen är aktivt arbete (2–3 min per blad, flera blad i taget), därför duration 22 och ingen wait. 4 l vatten så att ett helt kålhuvud på ca 2 kg täcks; gryta (5 l) i stället för stor kastrull (4 l) av samma skäl."
+      ]
+    },
+    {
+      "id": "kaldolmar_graddsas_potatismos__trimmed_leaves",
+      "name": "Putsa Kålbladen",
+      "outputName": "Putsade kålblad",
+      "inputs": [
+        {
+          "id": "kaldolmar_graddsas_potatismos__blanched_leaves",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Låt {{kaldolmar_graddsas_potatismos__blanched_leaves}} rinna av och svalna så att du kan hantera dem.",
+        "Lägg bladen med utsidan uppåt på {{eq:skarbrada|def}} och skär ner den tjocka mittnerven längst ner på varje blad så att den blir lika tunn som resten av bladet."
+      ],
+      "duration": 6,
+      "wait": 0,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "after": "kaldolmar_graddsas_potatismos__cored_cabbage"
+        }
+      ],
+      "tips": [
+        "Skär nerven tunn i stället för att skära bort den helt, så håller bladet ihop när du rullar."
+      ]
+    },
+    {
+      "id": "kaldolmar_graddsas_potatismos__cooked_rice",
+      "name": "Koka Ris",
+      "outputName": "Kokt ris",
+      "inputs": [
+        {
+          "id": "rice",
+          "amount": 1,
+          "unit": "dl"
+        },
+        {
+          "id": "water",
+          "amount": 2,
+          "unit": "dl"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Koka upp {{rice}}, {{water}} och en nypa {{salt}} i {{eq:kastrull_3}}.",
+        "Lägg på locket, sänk till låg värme och låt riset sjuda i 15 min, tills vattnet har kokat in."
+      ],
+      "duration": 2,
+      "wait": 15,
+      "tags": [],
+      "heat": "hög",
+      "stepHeat": {
+        "1": "låg"
+      },
+      "heatSource": "inferred",
+      "equipment": [
+        {
+          "type": "kastrull_liten",
+          "ref": "kastrull_3",
+          "lid": true,
+          "sizeSource": "inferred"
+        }
+      ],
+      "tips": [
+        "1 dl okokt ris blir ca 3 dl kokt. Har du kallt, kokt ris över går det lika bra att använda 3 dl av det."
+      ]
+    },
+    {
+      "id": "kaldolmar_graddsas_potatismos__chopped_onion",
+      "name": "Hacka Lök",
+      "outputName": "Hackad lök",
+      "inputs": [
+        {
+          "id": "onion",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skala och finhacka {{onion}}."
+      ],
+      "duration": 3,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "after": "kaldolmar_graddsas_potatismos__trimmed_leaves"
+        }
+      ]
+    },
+    {
+      "id": "kaldolmar_graddsas_potatismos__fried_onion",
+      "name": "Fräs Lök",
+      "outputName": "Fräst lök",
+      "inputs": [
+        {
+          "id": "butter",
+          "amount": 1,
+          "unit": "msk"
+        },
+        {
+          "id": "kaldolmar_graddsas_potatismos__chopped_onion",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Smält {{butter}} i {{eq:stekpanna_1}} på medelvärme.",
+        "Fräs {{kaldolmar_graddsas_potatismos__chopped_onion}} i 4–5 min, tills den är mjuk och blank men inte brynt. Häll över löken i {{eq:skal_1}} och låt den svalna."
+      ],
+      "duration": 5,
+      "wait": 0,
+      "tags": [],
+      "heat": "medel",
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "stekpanna_1",
+          "typeSource": "inferred"
+        },
+        {
+          "type": "skal_stor",
+          "ref": "skal_1"
+        }
+      ],
+      "devNotes": [
+        "Löken fräses i samma traktörpanna som dolmarna sedan bryns i; den torkas ur innan dolmarna bryns."
+      ]
+    },
+    {
+      "id": "kaldolmar_graddsas_potatismos__filling",
+      "name": "Blanda Färsen",
+      "outputName": "Kåldolmsfärs",
+      "inputs": [
+        {
+          "id": "kaldolmar_graddsas_potatismos__fried_onion",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "kaldolmar_graddsas_potatismos__cooked_rice",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "mixed_mince",
+          "amount": 800,
+          "unit": "g"
+        },
+        {
+          "id": "egg",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "milk",
+          "amount": 1.5,
+          "unit": "dl"
+        },
+        {
+          "id": "salt",
+          "amount": 1.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "white_pepper",
+          "amount": 4,
+          "unit": "krm"
+        },
+        {
+          "id": "allspice",
+          "amount": 2,
+          "unit": "krm"
+        }
+      ],
+      "steps": [
+        "Låt {{kaldolmar_graddsas_potatismos__cooked_rice}} svalna några minuter. Lägg riset i {{eq:skal_1|def}} med {{kaldolmar_graddsas_potatismos__fried_onion}}.",
+        "Tillsätt {{mixed_mince}}, {{egg}}, {{milk}}, {{salt}}, {{white_pepper}} och {{allspice}}.",
+        "Blanda till en jämn, ganska lös färs, gärna med händerna, ca 1 min. Arbeta inte färsen längre än så."
+      ],
+      "duration": 5,
+      "wait": 0,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "skal_stor",
+          "ref": "skal_1",
+          "transition": "keep"
+        }
+      ],
+      "tips": [
+        "Provstek en liten klick färs i stekpannan och smaka av med mer salt eller peppar innan du rullar.",
+        "Riset och löken ska bara vara ljumma när de blandas med färsen."
+      ],
+      "devNotes": [
+        "Mängderna är den klassiska 500 g-färsen skalad till 800 g (×1,6): 1 dl okokt ris ≈ 3 dl kokt, 2 lökar, 2 ägg, 1,5 dl mjölk, 1,5 tsk salt."
+      ]
+    },
+    {
+      "id": "kaldolmar_graddsas_potatismos__rolled_dolmar",
+      "name": "Rulla Kåldolmar",
+      "outputName": "Rullade kåldolmar",
+      "inputs": [
+        {
+          "id": "kaldolmar_graddsas_potatismos__filling",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "kaldolmar_graddsas_potatismos__trimmed_leaves",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Lägg ett av {{kaldolmar_graddsas_potatismos__trimmed_leaves}} med den nerskurna nerven mot dig.",
+        "Lägg ca 2 rågade msk (ca 60 g) av {{kaldolmar_graddsas_potatismos__filling}} på den nedre delen av bladet.",
+        "Vik upp nederkanten över färsen, vik in sidorna och rulla ihop till ett tätt paket. Lägg det med skarven nedåt på {{eq:tallrik_1}}.",
+        "Fortsätt tills färsen är slut. Det blir ca 4 kåldolmar per portion (22–24 st till 6 portioner)."
+      ],
+      "duration": 15,
+      "wait": 0,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "tallrik",
+          "ref": "tallrik_1"
+        }
+      ],
+      "tips": [
+        "Fördela färsen jämnt: dela den i 4 lika delar i skålen och gör 6 dolmar av varje del, så blir alla lika stora och klara samtidigt.",
+        "Stora ytterblad kan delas på mitten längs nerven och ge två dolmar."
+      ]
+    },
+    {
+      "id": "kaldolmar_graddsas_potatismos__browned_dolmar",
+      "name": "Bryn Kåldolmar",
+      "outputName": "Brynta kåldolmar",
+      "inputs": [
+        {
+          "id": "kaldolmar_graddsas_potatismos__rolled_dolmar",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "butter",
+          "amount": 3,
+          "unit": "msk"
+        }
+      ],
+      "steps": [
+        "Torka ur {{eq:stekpanna_1|def}} och smält en tredjedel av {{butter}} på medelhög värme.",
+        "Bryn {{kaldolmar_graddsas_potatismos__rolled_dolmar}} i 3 omgångar, med skarven nedåt först, ca 2 min per sida tills de fått fin färg runt om. Ta ny smör till varje omgång.",
+        "Lägg dolmarna tätt i ett lager, skarven nedåt, i {{eq:ugnsform_1}}. Låt {{eq:stekpanna_1|def}} stå kvar med stekskyn."
+      ],
+      "duration": 14,
+      "wait": 0,
+      "tags": [],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "stekpanna_1",
+          "typeSource": "inferred",
+          "transition": "wipe"
+        },
+        {
+          "type": "ugnsform_stor",
+          "ref": "ugnsform_1",
+          "sizeSource": "inferred"
+        }
+      ],
+      "tips": [
+        "Låt dolmarna vara i fred tills de fått färg, då släpper de från pannan och håller ihop.",
+        "Formen ska vara ca 30×40 cm (långpanna eller stor ugnsform). Får inte alla plats, använd en extra form på ca 20×25 cm bredvid."
+      ]
+    },
+    {
+      "id": "kaldolmar_graddsas_potatismos__pan_stock",
+      "name": "Koka Ur Pannan",
+      "outputName": "Buljong med stekskyn",
+      "inputs": [
+        {
+          "id": "water",
+          "amount": 4,
+          "unit": "dl"
+        },
+        {
+          "id": "beef_bouillon",
+          "amount": 10,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Häll {{water}} och smula ner {{beef_bouillon}} i {{eq:stekpanna_1|def}}.",
+        "Koka upp och skrapa loss stekskyn från botten, ca 1 min."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [],
+      "heat": "hög",
+      "heatSource": "inferred",
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "stekpanna_1",
+          "typeSource": "inferred",
+          "transition": "keep",
+          "after": "kaldolmar_graddsas_potatismos__browned_dolmar"
+        }
+      ],
+      "devNotes": [
+        "10 g buljong = 1 köttbuljongtärning till 4 dl vatten. Traktörpanna eftersom 4 dl vätska kokas upp i samma panna som dolmarna bryns i."
+      ]
+    },
+    {
+      "id": "kaldolmar_graddsas_potatismos__preheated_oven_200",
+      "name": "Värm ugnen",
+      "outputName": "Förvärmd ugn (200°C)",
+      "inputs": [],
+      "steps": [
+        "Sätt {{eq:ugn|def}} på 200°C."
+      ],
+      "duration": 1,
+      "wait": 10,
+      "tags": [
+        "no-timer",
+        "resource"
+      ],
+      "tips": [
+        "Ugnen tar vanligtvis ca 10 minuter att bli varm. Sätt på den medan du rullar dolmarna."
+      ],
+      "oven": {
+        "temp": 200,
+        "fanTemp": 180,
+        "fanTempSource": "derived"
+      }
+    },
+    {
+      "id": "kaldolmar_graddsas_potatismos__baked_dolmar",
+      "name": "Grädda Kåldolmar",
+      "outputName": "Ugnsbakade kåldolmar med sky",
+      "inputs": [
+        {
+          "id": "kaldolmar_graddsas_potatismos__browned_dolmar",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "syrup",
+          "amount": 3,
+          "unit": "msk"
+        },
+        {
+          "id": "kaldolmar_graddsas_potatismos__pan_stock",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Ringla {{syrup}} (ljus sirap) jämnt över dolmarna i {{eq:ugnsform_1|def}}.",
+        "Häll {{kaldolmar_graddsas_potatismos__pan_stock}} runt dolmarna, inte över dem, så att sirapen stannar kvar på ytan.",
+        "Grädda {{kaldolmar_graddsas_potatismos__browned_dolmar}} mitt i {{eq:ugn|def}} i 45 min. Ös med skyn var 15:e minut (3 gånger). De är klara när de är mörkt glansiga och genomvarma (minst 72°C i mitten)."
+      ],
+      "duration": 2,
+      "wait": 45,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "ugnsform_stor",
+          "ref": "ugnsform_1",
+          "transition": "keep"
+        },
+        {
+          "type": "ugn",
+          "after": "kaldolmar_graddsas_potatismos__preheated_oven_200",
+          "slots": 1,
+          "temp": 200,
+          "fanTemp": 180,
+          "fanTempSource": "derived"
+        }
+      ],
+      "tips": [
+        "Vill du ha extra mörk, söt yta: ös en sista gång och höj till 225°C de sista 5 minuterna.",
+        "Ser skyn ut att koka in, häll på 1 dl vatten."
+      ],
+      "devNotes": [
+        "Ösningen (3 × ca 1 min) ingår i den passiva gräddningen och ligger i stegtexten; wait 45 enligt receptet."
+      ]
+    },
+    {
+      "id": "kaldolmar_graddsas_potatismos__cream_sauce",
+      "name": "Gör Gräddsås",
+      "outputName": "Gräddsås",
+      "inputs": [
+        {
+          "id": "kaldolmar_graddsas_potatismos__baked_dolmar",
+          "amount": 0.2,
+          "unit": "st"
+        },
+        {
+          "id": "whipping_cream",
+          "amount": 3,
+          "unit": "dl"
+        },
+        {
+          "id": "flour",
+          "amount": 1.5,
+          "unit": "msk"
+        },
+        {
+          "id": "water",
+          "amount": 0.5,
+          "unit": "dl"
+        },
+        {
+          "id": "soy_sauce",
+          "amount": 2,
+          "unit": "tsk"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "white_pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Luta {{eq:ugnsform_1|def}} och sila skyn från {{kaldolmar_graddsas_potatismos__baked_dolmar}} genom {{eq:sil}} ner i {{eq:kastrull_4}}. Täck dolmarna med folie så att de håller värmen.",
+        "Tillsätt {{whipping_cream}} och koka upp på medelhög värme.",
+        "Vispa {{flour}} och {{water}} slätt i {{eq:skal_liten}}. Vispa ner redningen i såsen och låt sjuda under omrörning i 3–4 min, tills den tjocknat och mjölsmaken försvunnit.",
+        "Smaka av med {{soy_sauce}}, en nypa {{salt}} och {{white_pepper}}."
+      ],
+      "duration": 8,
+      "wait": 0,
+      "tags": [],
+      "heat": "medelhög",
+      "stepHeat": {
+        "2": "medellåg"
+      },
+      "equipment": [
+        {
+          "type": "ugnsform_stor",
+          "ref": "ugnsform_1",
+          "transition": "keep"
+        },
+        {
+          "type": "kastrull_medelstor",
+          "ref": "kastrull_4",
+          "sizeSource": "inferred"
+        },
+        {
+          "type": "sil"
+        },
+        {
+          "type": "skal_liten"
+        }
+      ],
+      "tips": [
+        "För tjock sås: späd med lite vatten eller mjölk. För tunn: sjud ett par minuter till.",
+        "Skyn är redan salt av buljongen och sojan, så smaka innan du saltar."
+      ],
+      "devNotes": [
+        "Skyn är en biprodukt av gräddningen: 0,2 st av den gräddade formen går till såsen och 0,8 st (dolmarna) till mastern. Uppskattad andel, inte från ett källrecept."
+      ]
+    },
+    {
+      "id": "kaldolmar_graddsas_potatismos__diced_potato",
+      "name": "Tärna Potatis",
+      "outputName": "Tärnad potatis",
+      "inputs": [
+        {
+          "id": "potato",
+          "amount": 1500,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Skala och tärna {{potato}} i 2 cm stora bitar."
+      ],
+      "duration": 7,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true,
+          "after": "kaldolmar_graddsas_potatismos__chopped_onion"
+        }
+      ],
+      "tips": [
+        "Mjöliga sorter som King Edward eller Bintje ger det luftigaste moset."
+      ]
+    },
+    {
+      "id": "kaldolmar_graddsas_potatismos__boiled_potato",
+      "name": "Koka Potatis",
+      "outputName": "Kokt potatis",
+      "inputs": [
+        {
+          "id": "kaldolmar_graddsas_potatismos__diced_potato",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Koka upp {{eq:kastrull_2}} med saltat vatten.",
+        "Koka {{kaldolmar_graddsas_potatismos__diced_potato}} i 11–13 min, eller tills bitarna enkelt kan delas med en kniv."
+      ],
+      "duration": 2,
+      "wait": 13,
+      "tags": [],
+      "heat": "hög",
+      "heatSource": "inferred",
+      "equipment": [
+        {
+          "type": "kastrull_stor",
+          "ref": "kastrull_2",
+          "sizeSource": "inferred"
+        }
+      ],
+      "tips": [
+        "Sätt på potatisvattnet när dolmarna har ca 25 min kvar i ugnen, så blir moset och såsen klara samtidigt."
+      ],
+      "devNotes": [
+        "Salt till kokvattnet har ingen mängd. 1,5 tsk salt hör till moset. Stor kastrull för 1,5 kg potatis (norska_kottbullar har medelstor för 1 kg)."
+      ]
+    },
+    {
+      "id": "kaldolmar_graddsas_potatismos__potato_mash",
+      "name": "Mosa Potatis",
+      "outputName": "Potatismos",
+      "inputs": [
+        {
+          "id": "kaldolmar_graddsas_potatismos__boiled_potato",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "milk",
+          "amount": 9,
+          "unit": "msk"
+        },
+        {
+          "id": "salt",
+          "amount": 1.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Häll av vattnet. Mosa {{kaldolmar_graddsas_potatismos__boiled_potato}} med {{milk}}, {{salt}} och en nypa {{pepper}}. Ställ åt sidan under lock."
+      ],
+      "duration": 4,
+      "wait": 0,
+      "tags": [],
+      "tips": [
+        "En klick smör (ca 2 msk) gör moset krämigare.",
+        "Värm mjölken innan du mosar, så blir moset smidigare. Vill du ha lösare mos, späd med 1–2 dl extra varm mjölk."
+      ],
+      "equipment": [
+        {
+          "type": "kastrull_stor",
+          "ref": "kastrull_2",
+          "transition": "keep",
+          "offHeat": true,
+          "lid": true
+        }
+      ],
+      "devNotes": [
+        "Kopierad från norska_kottbullar__potato_mash och skalad ×1,5 (4 → 6 portioner): 1000 g → 1500 g potatis, 6 → 9 msk mjölk, 1 → 1,5 tsk salt; peppar kvar på 1 nypa."
+      ]
+    },
+    {
+      "id": "kaldolmar_graddsas_potatismos",
+      "name": "Kåldolmar med gräddsås, potatismos och lingon",
+      "outputName": "Kåldolmar med gräddsås, potatismos och lingon",
+      "inputs": [
+        {
+          "id": "kaldolmar_graddsas_potatismos__baked_dolmar",
+          "amount": 0.8,
+          "unit": "st"
+        },
+        {
+          "id": "kaldolmar_graddsas_potatismos__cream_sauce",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "kaldolmar_graddsas_potatismos__potato_mash",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "stirred_lingonberries",
+          "amount": 3,
+          "unit": "dl"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{kaldolmar_graddsas_potatismos__potato_mash}} och {{kaldolmar_graddsas_potatismos__baked_dolmar}} på {{eq:servering|pl}}, ca 4 dolmar per person.",
+        "Häll över {{kaldolmar_graddsas_potatismos__cream_sauce}} och servera med {{stirred_lingonberries}}."
+      ],
+      "duration": 3,
+      "tags": [
+        "master"
+      ],
+      "tips": [
+        "Kåldolmar blir ännu godare dagen efter. Värm dem i formen, täckta med folie, i 175°C i ca 20 min."
+      ],
+      "serving": [
+        {
+          "type": "servering_tallrik",
+          "ref": "servering",
+          "count": "portions"
+        }
+      ]
+    }
+  ]
+}

@@ -4,6 +4,11 @@
   "rawId": "6655aaded9c97d64003b1def",
   "createdAt": 1790853297,
   "basePortions": 4,
+  "time": {
+    "totalMin": 53,
+    "activeMin": 38,
+    "computedFrom": "graph"
+  },
   "sharedPrep": [],
   "images": {
     "main": "assets/recipes/bbq_lax_ranch/main.jpg",

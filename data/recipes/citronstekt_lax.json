@@ -4,6 +4,11 @@
   "rawId": "677659581d65e30dd089145a",
   "createdAt": 1791034710,
   "basePortions": 4,
+  "time": {
+    "totalMin": 51,
+    "activeMin": 36,
+    "computedFrom": "graph"
+  },
   "sharedPrep": [],
   "images": {
     "main": "assets/recipes/citronstekt_lax/main.jpg",

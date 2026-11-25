@@ -1,0 +1,428 @@
+{
+  "masterId": "indisk_flaskkotlett_basmati",
+  "source": "hellofresh",
+  "rawId": "6a9e928a790f7867027dbdef",
+  "createdAt": 1794428714,
+  "basePortions": 4,
+  "time": {
+    "totalMin": 32,
+    "activeMin": 32,
+    "computedFrom": "graph"
+  },
+  "images": {
+    "main": "assets/recipes/indisk_flaskkotlett_basmati/main.jpg",
+    "byNode": {
+      "indisk_flaskkotlett_basmati__rested_rice": "assets/recipes/indisk_flaskkotlett_basmati/steps/rested_rice.jpg",
+      "indisk_flaskkotlett_basmati__pickled_onion": "assets/recipes/indisk_flaskkotlett_basmati/steps/pickled_onion.jpg",
+      "indisk_flaskkotlett_basmati__pomegranate_salad": "assets/recipes/indisk_flaskkotlett_basmati/steps/pomegranate_salad.jpg",
+      "indisk_flaskkotlett_basmati__coriander_yoghurt": "assets/recipes/indisk_flaskkotlett_basmati/steps/coriander_yoghurt.jpg",
+      "indisk_flaskkotlett_basmati__glazed_pork": "assets/recipes/indisk_flaskkotlett_basmati/steps/glazed_pork.jpg",
+      "indisk_flaskkotlett_basmati": "assets/recipes/indisk_flaskkotlett_basmati/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 518,
+    "perPortion": {
+      "energyKcal": 620,
+      "energyKj": 2594,
+      "fatG": 13.8,
+      "saturatedFatG": 5.4,
+      "carbsG": 96.4,
+      "sugarsG": 22.2,
+      "fiberG": 5.7,
+      "proteinG": 34.4,
+      "saltG": 4.6
+    }
+  },
+  "nodes": [
+    {
+      "id": "indisk_flaskkotlett_basmati__simmered_rice",
+      "name": "Koka Ris",
+      "outputName": "Sjudet basmatiris",
+      "inputs": [
+        {
+          "id": "water",
+          "amount": 6,
+          "unit": "dl"
+        },
+        {
+          "id": "basmati_rice",
+          "amount": 300,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Koka upp {{water}} i {{eq:kastrull_1}}.",
+        "Rör i {{basmati_rice}} och {{salt}}, sänk till medellåg värme och sjud under lock i 10 min."
+      ],
+      "duration": 2,
+      "wait": 10,
+      "tags": [],
+      "heat": "hög",
+      "equipment": [
+        {
+          "type": "kastrull_medelstor",
+          "ref": "kastrull_1",
+          "lid": true
+        }
+      ],
+      "devNotes": [
+        "Rådatan säger medelstor kastrull. Vatten till ris 6 dl linjärt (saknas vid 5 och 6). FLAG. Salt till ris 1 tsk vid 3 och 4 (0,5 tsk vid 2; saknas vid 5 och 6). FLAG. Vila i nästa node så att sjudningens wait ligger på sista steget. Stegfotot är lånat från en annan HF-rå (troligen 2 portioner) och visar en mindre kastrull."
+      ]
+    },
+    {
+      "id": "indisk_flaskkotlett_basmati__rested_rice",
+      "name": "Vila Riset",
+      "outputName": "Vilat basmatiris",
+      "inputs": [
+        {
+          "id": "indisk_flaskkotlett_basmati__simmered_rice",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Ta av {{eq:kastrull_1|def}} från värmen och låt {{indisk_flaskkotlett_basmati__simmered_rice}} vila under lock i 10 min."
+      ],
+      "duration": 1,
+      "wait": 10,
+      "tags": [],
+      "tips": [
+        "Riset ska ångkoka, så tjuvkika inte!"
+      ],
+      "equipment": [
+        {
+          "type": "kastrull_medelstor",
+          "ref": "kastrull_1",
+          "lid": true,
+          "transition": "keep",
+          "offHeat": true,
+          "after": "indisk_flaskkotlett_basmati__simmered_rice"
+        }
+      ],
+      "devNotes": [
+        "Rådatan säger uttryckligen att riset ska vila under lock i 10 min, därför egen vilonod (inte påhittad)."
+      ]
+    },
+    {
+      "id": "indisk_flaskkotlett_basmati__pickled_onion",
+      "name": "Sylta Lök",
+      "outputName": "Syltad rödlök",
+      "inputs": [
+        {
+          "id": "red_onion",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "lime",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "sugar",
+          "amount": 0.5,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Halvera {{red_onion}} och skär den i tunna skivor.",
+        "Halvera {{lime}}.",
+        "Blanda löken, en generös skvätt citrussaft, {{salt}} och {{sugar}} i {{eq:skal_1}}."
+      ],
+      "duration": 4,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        },
+        {
+          "type": "skal_stor",
+          "ref": "skal_1"
+        }
+      ],
+      "devNotes": [
+        "HF Lök typ red-onion → red_onion, 1 st linjärt. Produktfotot visar rödlök, gul lök och schalottenlök tillsammans, men typen är red-onion och sylt-/salladsfotona är tydligt lila. FLAG.",
+        "HF Citrusfrukt typ lime → lime. 1 st vid 2, 3 och 4 portioner, 2 st vid 5 och 6 — förpackning. Författad som 1 st vid 4 portioner med linjär skalning. All saft går i inläggningen. Produktfotot visar både citron och lime. FLAG.",
+        "Salt och socker till inläggning 0,5 tsk vid 3 och 4 (0,25 tsk vid 2; saknas vid 5 och 6). FLAG. Rådatan säger stor skål."
+      ]
+    },
+    {
+      "id": "indisk_flaskkotlett_basmati__pomegranate_seeds",
+      "name": "Lossa Granatäpplekärnor",
+      "outputName": "Granatäpplekärnor",
+      "inputs": [
+        {
+          "id": "pomegranate",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Rulla {{pomegranate}} mot arbetsytan så kärnorna lossnar.",
+        "Dela det på mitten, sänk ner halvorna i {{eq:skal_2}} med vatten och lossa försiktigt kärnorna med händerna.",
+        "Låt kärnorna sjunka till botten, ta bort de vita hinnorna från ytan och häll av vattnet."
+      ],
+      "duration": 5,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Lossa kärnorna under vatten för att förhindra att köket färgas rosa!"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true,
+          "after": "indisk_flaskkotlett_basmati__pickled_onion"
+        },
+        {
+          "type": "skal",
+          "ref": "skal_2"
+        }
+      ],
+      "devNotes": [
+        "Ny ingrediens pomegranate (HF Granatäpple typ pomegranate), 1 st linjärt. Arbetsvattnet i skålen är omätt och listas inte som ingång. Rådatan anger ingen storlek på skålen, därför typ skal."
+      ]
+    },
+    {
+      "id": "indisk_flaskkotlett_basmati__pomegranate_salad",
+      "name": "Gör Granatäppelsallad",
+      "outputName": "Granatäppelsallad",
+      "inputs": [
+        {
+          "id": "cucumber",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "tomato",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "indisk_flaskkotlett_basmati__pomegranate_seeds",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "indisk_flaskkotlett_basmati__pickled_onion",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "mint",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Grovhacka {{cucumber}} och {{tomato}}.",
+        "Vänd ner {{indisk_flaskkotlett_basmati__pomegranate_seeds}}, gurka och tomat i {{eq:skal_1|def}} med {{indisk_flaskkotlett_basmati__pickled_onion}}.",
+        "Grovhacka {{mint}} och vänd ner i salladen."
+      ],
+      "duration": 4,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true,
+          "after": "indisk_flaskkotlett_basmati__pomegranate_seeds"
+        },
+        {
+          "type": "skal_stor",
+          "ref": "skal_1",
+          "transition": "keep",
+          "after": "indisk_flaskkotlett_basmati__pickled_onion"
+        }
+      ],
+      "devNotes": [
+        "HF Gurka typ cucumber → cucumber. 1 st vid 3 och 4 (0,5 st vid 2, 1,5 st vid 5 och 6). FLAG. Tomat typ organic tomatoes → tomato, 2 st linjärt.",
+        "HF Mynta typ mint → mint. 1 st vid 2, 3 och 4 portioner, 2 st vid 5 och 6 — förpackning. Författad som 1 st vid 4 portioner med linjär skalning. All mynta går i salladen. Hackas först i det här steget (HF gör mynta och koriander var för sig i samma råsteg)."
+      ]
+    },
+    {
+      "id": "indisk_flaskkotlett_basmati__coriander_yoghurt",
+      "name": "Blanda Korianderyoghurt",
+      "outputName": "Korianderyoghurt",
+      "inputs": [
+        {
+          "id": "yoghurt",
+          "amount": 150,
+          "unit": "g"
+        },
+        {
+          "id": "coriander",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Grovhacka {{coriander}}.",
+        "Blanda {{yoghurt}}, koriandern och en nypa {{salt}} och {{pepper}} i {{eq:skal_3}}."
+      ],
+      "duration": 3,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true,
+          "after": "indisk_flaskkotlett_basmati__pomegranate_salad"
+        },
+        {
+          "type": "skal_liten",
+          "ref": "skal_3"
+        }
+      ],
+      "devNotes": [
+        "HF Yoghurt typ yoghurt → yoghurt. 150 g vid 4; 120 g vid 3 och 195 g vid 5 är inte linjärt (förpackningsstorlekar). FLAG. Salt och peppar till yoghurten har ingen rad i HF:s lista, därför 1 nypa vardera enligt 'en nypa salt och peppar'. Rådatan säger liten skål.",
+        "HF Koriander typ organic-coriander → coriander. 1 st vid 2, 3 och 4 portioner, 2 st vid 5 och 6 — förpackning. Författad som 1 st vid 4 portioner med linjär skalning. All koriander går i yoghurten."
+      ]
+    },
+    {
+      "id": "indisk_flaskkotlett_basmati__glazed_pork",
+      "name": "Stek och Glasera Fläskkotletter",
+      "outputName": "Glaserade fläskkotletter",
+      "inputs": [
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "herb_marinated_pork_chop",
+          "amount": 500,
+          "unit": "g"
+        },
+        {
+          "id": "milda_mahal",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "id": "soy_sauce",
+          "amount": 40,
+          "unit": "ml"
+        },
+        {
+          "id": "apricot_chutney",
+          "amount": 100,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i {{eq:stekpanna_1}} på medelhög värme.",
+        "Tillsätt {{herb_marinated_pork_chop}} och krydda med {{milda_mahal}}.",
+        "Stek köttet i 3–4 min per sida, eller tills brynt och genomstekt.",
+        "Tillsätt {{soy_sauce}} och {{apricot_chutney}} i {{eq:stekpanna_1|def}}, vänd köttet så det täcks och stek i 30 sek, tills karamelliserat."
+      ],
+      "duration": 9,
+      "wait": 0,
+      "tags": [],
+      "heat": "medelhög",
+      "tips": [
+        "Köttet är färdiglagat när det är utan inslag av rosa."
+      ],
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1"
+        }
+      ],
+      "devNotes": [
+        "HF Fläskkotlett, örtmarinerad typ herb-marinated-pork-chops, samma SKU 6762b60a0d25660579f3c6a9 som i flaskkotlett_medelhav_couscous → herb_marinated_pork_chop, 500 g linjärt. Kotletterna går hela från förpackningen till pannan och skärs inte råa, därför ingen skarbrada_ra. Ingen 'rumstempererat' i rådatan, därför ingen Ta fram-node. Serveringsfotot visar skivat kött; skivningen görs vid uppläggning.",
+        "Milda Mahal typ milda-mahal, 8 g linjärt, befintlig blendId milda_mahal — återanvänd, ingen Spice Mix-flagga.",
+        "Aprikoschutney fanns inte i någon tidigare master trots att id skulle återanvändas; ny ingrediens apricot_chutney (HF typ aprikoschutney), 100 g linjärt. Sojasås med lågt saltinnehåll typ low-salt-soy-sauce har identisk produktbild som befintlig soy_sauce — återanvänd soy_sauce, 40 ml linjärt. FLAG att HF kallar den lågsaltad.",
+        "Olivoljan har ingen rad i HF:s lista, därför standard 1 skvätt. 3–4 min per sida plus 30 sek glasyr är hands-on (duration 9). Soja 40 ml + chutney 100 g är ca 1,4 dl, kort karamellisering, inte sjud — därför stekpanna_stor som rådatan säger, inte traktörpanna. Stegfotot visar en vanlig stekpanna."
+      ]
+    },
+    {
+      "id": "indisk_flaskkotlett_basmati",
+      "name": "Kryddiga fläskkotletter på indiskt vis",
+      "outputName": "Kryddiga fläskkotletter på indiskt vis med granatäppelsallad och korianderyoghurt",
+      "inputs": [
+        {
+          "id": "indisk_flaskkotlett_basmati__rested_rice",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "indisk_flaskkotlett_basmati__glazed_pork",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "indisk_flaskkotlett_basmati__pomegranate_salad",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "indisk_flaskkotlett_basmati__coriander_yoghurt",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skär {{indisk_flaskkotlett_basmati__glazed_pork}} i skivor. Lägg upp {{indisk_flaskkotlett_basmati__rested_rice}}, köttet och {{indisk_flaskkotlett_basmati__pomegranate_salad}} i {{eq:servering|pl}}.",
+        "Servera med {{indisk_flaskkotlett_basmati__coriander_yoghurt}} i {{eq:servering_dipp|pl}}."
+      ],
+      "duration": 3,
+      "tags": [
+        "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_skal",
+          "ref": "servering",
+          "count": "portions"
+        },
+        {
+          "type": "servering_skal",
+          "ref": "servering_dipp",
+          "count": "portions"
+        }
+      ],
+      "devNotes": [
+        "All näring behållen, inklusive fiber 5,7 g (620 kcal). Vete vikt in i gluten. Bekräftade allergener gluten, soy och dairy (yoghurt). Inga spår-allergener på kortet. Taggen äggfri stämmer.",
+        "Rådatan säger 'tallrikar', men serverings- och huvudfotot visar skålar plus yoghurten i små skålar vid sidan — servering_skal och servering_skal som dipp. HF totalTime och prepTime PT25M behållna (ris 10 min sjud + 10 min vila, kött och sallad parallellt). HF difficulty 1 → easy. Cuisine indian (HF Indisk).",
+        "clonedFrom/dubbletterna 686bc196700c002ea1507278 och 6a71a45d49f0ffd1f674fe07 konverterades inte. Befintliga fläskkotlett-masters (bl.a. flaskkotlett_dragonsas, flaskkotlett_citronpepparsas, flaskkotlett_medelhav_couscous, zaatar_flaskkotlett, honung_senapsglaserad_flaskkotlett) är andra rätter och lämnades orörda."
+      ]
+    }
+  ]
+}

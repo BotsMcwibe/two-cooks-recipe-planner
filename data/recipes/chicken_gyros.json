@@ -4,6 +4,11 @@
   "rawId": "660ff2df9064812f61708339",
   "createdAt": 1790851546,
   "basePortions": 4,
+  "time": {
+    "totalMin": 26,
+    "activeMin": 26,
+    "computedFrom": "graph"
+  },
   "sharedPrep": [],
   "images": {
     "main": "assets/recipes/chicken_gyros/main.jpg",

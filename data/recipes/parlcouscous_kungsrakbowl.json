@@ -1,0 +1,466 @@
+{
+  "masterId": "parlcouscous_kungsrakbowl",
+  "source": "hellofresh",
+  "rawId": "6a9e928656a4cfbb9638f2e6",
+  "createdAt": 1794430237,
+  "basePortions": 4,
+  "time": {
+    "totalMin": 32,
+    "activeMin": 32,
+    "computedFrom": "graph"
+  },
+  "images": {
+    "main": "assets/recipes/parlcouscous_kungsrakbowl/main.jpg",
+    "byNode": {
+      "parlcouscous_kungsrakbowl__cooked_couscous": "assets/recipes/parlcouscous_kungsrakbowl/steps/cooked_couscous.jpg",
+      "parlcouscous_kungsrakbowl__zucchini_ribbons": "assets/recipes/parlcouscous_kungsrakbowl/steps/zucchini_ribbons.jpg",
+      "parlcouscous_kungsrakbowl__zucchini_salad": "assets/recipes/parlcouscous_kungsrakbowl/steps/zucchini_salad.jpg",
+      "parlcouscous_kungsrakbowl__vinaigrette": "assets/recipes/parlcouscous_kungsrakbowl/steps/vinaigrette.jpg",
+      "parlcouscous_kungsrakbowl__fried_prawns": "assets/recipes/parlcouscous_kungsrakbowl/steps/fried_prawns.jpg",
+      "parlcouscous_kungsrakbowl": "assets/recipes/parlcouscous_kungsrakbowl/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 476,
+    "perPortion": {
+      "energyKcal": 667,
+      "energyKj": 2790,
+      "fatG": 26.8,
+      "saturatedFatG": 5.2,
+      "carbsG": 70.5,
+      "sugarsG": 8.1,
+      "fiberG": 11.6,
+      "proteinG": 31.4,
+      "saltG": 5.5
+    }
+  },
+  "nodes": [
+    {
+      "id": "parlcouscous_kungsrakbowl__cooked_couscous",
+      "name": "Koka Pärlcouscous",
+      "outputName": "Kokt pärlcouscous",
+      "inputs": [
+        {
+          "id": "water",
+          "amount": 8,
+          "unit": "dl"
+        },
+        {
+          "id": "pearl_couscous",
+          "amount": 335,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Koka upp {{water}} i {{eq:kastrull_1}} med {{salt}}.",
+        "Tillsätt {{pearl_couscous}}, sänk till medellåg värme och sjud i 12–15 min, eller tills al dente."
+      ],
+      "duration": 3,
+      "wait": 15,
+      "tags": [],
+      "heat": "medellåg",
+      "equipment": [
+        {
+          "type": "kastrull_medelstor",
+          "ref": "kastrull_1"
+        }
+      ],
+      "devNotes": [
+        "Återanvänder pearl_couscous från citronpepparlax_parlcouscous (samma HF-SKU 687993375a587f17f459c938; typ=pearl-barley men namn Pärlcouscous), 335 g vid 4 portioner (170/225/335/395/505 g — inte linjärt). FLAG. Rådatan säger medelstor kastrull. Vatten till pärlcouscous 8 dl linjärt (saknas vid 5 och 6). Salt till pärlcouscous 1 tsk (samma vid 3; saknas vid 5 och 6). Inget lock i rådatan. Avhällning i nästa node så att sjudningens wait ligger på sista steget."
+      ]
+    },
+    {
+      "id": "parlcouscous_kungsrakbowl__drained_couscous",
+      "name": "Häll Av Pärlcouscous",
+      "outputName": "Avhalt pärlcouscous",
+      "inputs": [
+        {
+          "id": "parlcouscous_kungsrakbowl__cooked_couscous",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Häll av {{parlcouscous_kungsrakbowl__cooked_couscous}} från {{eq:kastrull_1|def}} i {{eq:durkslag_1}}."
+      ],
+      "duration": 1,
+      "wait": 0,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "kastrull_medelstor",
+          "ref": "kastrull_1",
+          "transition": "keep",
+          "offHeat": true,
+          "after": "parlcouscous_kungsrakbowl__cooked_couscous"
+        },
+        {
+          "type": "durkslag",
+          "ref": "durkslag_1",
+          "inferred": true
+        }
+      ]
+    },
+    {
+      "id": "parlcouscous_kungsrakbowl__minced_garlic",
+      "name": "Finhacka Vitlök",
+      "outputName": "Finhackad vitlök",
+      "inputs": [
+        {
+          "id": "garlic",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Finhacka eller pressa {{garlic}}."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "Vitlök 2 st vid 3 och 4 portioner (1 st vid 2, 3 st vid 5 och 6) — inte linjärt. FLAG."
+      ]
+    },
+    {
+      "id": "parlcouscous_kungsrakbowl__zucchini_ribbons",
+      "name": "Skala Zucchini i Band",
+      "outputName": "Zucchiniband",
+      "inputs": [
+        {
+          "id": "zucchini",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skala {{zucchini}} i långa band med en potatisskalare."
+      ],
+      "duration": 4,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true,
+          "after": "parlcouscous_kungsrakbowl__minced_garlic"
+        }
+      ],
+      "devNotes": [
+        "Zucchini 2 st, linjärt. Potatisskalaren spåras inte (litet redskap). Stegfotot visar även hackad chili, pressad vitlök, halverad citron och skivad avokado — de förbereds i egna noder."
+      ]
+    },
+    {
+      "id": "parlcouscous_kungsrakbowl__sliced_avocado",
+      "name": "Skiva Avokado",
+      "outputName": "Skivad avokado",
+      "inputs": [
+        {
+          "id": "avocado",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Halvera och kärna ur {{avocado}}. Gröp ur med en sked och skär i tunna skivor."
+      ],
+      "duration": 4,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true,
+          "after": "parlcouscous_kungsrakbowl__zucchini_ribbons"
+        }
+      ],
+      "devNotes": [
+        "Avokado 2 st vid 3 och 4 portioner (1 st vid 2, 3 st vid 5 och 6) — inte linjärt. FLAG. Serveras som topping, inte vänd i zucchinisalladen. Skeden spåras inte."
+      ]
+    },
+    {
+      "id": "parlcouscous_kungsrakbowl__zucchini_salad",
+      "name": "Blanda Zucchinisallad",
+      "outputName": "Zucchinisallad",
+      "inputs": [
+        {
+          "id": "olive_oil",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "lemon",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "parlcouscous_kungsrakbowl__zucchini_ribbons",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Halvera {{lemon}}.",
+        "Blanda {{olive_oil}}, saften från citronen, {{salt}} och en nypa {{pepper}} i {{eq:skal_1}}. Vänd ner {{parlcouscous_kungsrakbowl__zucchini_ribbons}} och ställ åt sidan."
+      ],
+      "duration": 3,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skal_medelstor",
+          "ref": "skal_1"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true,
+          "after": "parlcouscous_kungsrakbowl__sliced_avocado"
+        }
+      ],
+      "devNotes": [
+        "HF Citrusfrukt typ=lemon → lemon, 2 st vid 3 och 4 (1 st vid 2, 3 st vid 5 och 6) — inte linjärt, men linjärt mellan 2 och 4. FLAG. All saft går i zucchinidressingen. Olja till dressing 2 msk linjärt (saknas vid 5 och 6). Salt till dressing 0,5 tsk (samma vid 3; saknas vid 5 och 6). 'En nypa peppar' fanns inte i yields → 1 nypa."
+      ]
+    },
+    {
+      "id": "parlcouscous_kungsrakbowl__vinaigrette",
+      "name": "Gör Koriandervinägrett",
+      "outputName": "Koriandervinägrett",
+      "inputs": [
+        {
+          "id": "fresh_chili",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "coriander",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "white_wine_vinegar",
+          "amount": 12,
+          "unit": "ml"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "sugar",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "msk"
+        }
+      ],
+      "steps": [
+        "Halvera, kärna ur och finhacka {{fresh_chili}}.",
+        "Finhacka bladen från {{coriander}}.",
+        "Blanda chili, koriander, {{white_wine_vinegar}}, {{salt}}, {{sugar}} och {{olive_oil}} i {{eq:skal_2}}."
+      ],
+      "duration": 4,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Skippa chili eller använd mindre om du inte tycker om stark mat."
+      ],
+      "equipment": [
+        {
+          "type": "skal_liten",
+          "ref": "skal_2"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true,
+          "after": "parlcouscous_kungsrakbowl__zucchini_salad"
+        }
+      ],
+      "devNotes": [
+        "Koriander typ=organic-coriander 1 st vid 2, 3 och 4 (2 st vid 5 och 6) — förpackning. Författad som 1 st vid 4 portioner med linjär skalning. All koriander går i vinägretten. FLAG.",
+        "Chili 1 st vid 3 och 4 (0,5 st vid 2, 1,5 st vid 5 och 6). Rådatan stavade 'Havera' — författat som Halvera. FLAG. Vitvinsvinäger 12 ml, salt till vinägrett 0,5 tsk, socker till vinägrett 0,5 tsk och olja till vinägrett 1 msk (samma vid 3; olja/socker/salt saknas vid 5 och 6)."
+      ]
+    },
+    {
+      "id": "parlcouscous_kungsrakbowl__fried_prawns",
+      "name": "Stek Räkor",
+      "outputName": "Stekta kungsräkor",
+      "inputs": [
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "king_prawns",
+          "amount": 480,
+          "unit": "g"
+        },
+        {
+          "id": "parlcouscous_kungsrakbowl__minced_garlic",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "tex_mex",
+          "amount": 10,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i {{eq:stekpanna_1}} på medelhög värme.",
+        "Tillsätt {{king_prawns}} och {{parlcouscous_kungsrakbowl__minced_garlic}} och krydda med {{salt}} och {{tex_mex}}.",
+        "Stek i 1–2 min per sida, eller tills räkorna är gyllene och genomstekta."
+      ],
+      "duration": 5,
+      "wait": 0,
+      "tags": [],
+      "heat": "medelhög",
+      "tips": [
+        "Räkorna är färdiga när de är rosa utanpå och ogenomskinliga i mitten."
+      ],
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1"
+        }
+      ],
+      "devNotes": [
+        "Återanvänder king_prawns (samma HF-SKU 676534fb7de812ab262716de, typ king-prawns, som asiatiska_raktacos, asiatisk_rakwok, kung_pao_rakor och marockanska_pil_pil_rakor). 480 g vid 4 (240/320/480/560/720 g; 3-portionsvärdet 320 g är inte linjärt). FLAG. Räkorna steks hela, skärs inte — ingen skarbrada_ra (samma bedömning som kung_pao_rakor). rawAnimal är shellfish.",
+        "Rådatan säger stor stekpanna och en skvätt olivolja (ingen egen oljerad till stekning → 1 skvätt). Ingen vätska tillsätts i pannan, därför inte traktörpanna. 1–2 min per sida är hands-on, därför duration 5 och ingen wait. 480 g under stekpanna_stor oneLayerG 650 g. Salt till räkor 0,5 tsk (samma vid 3; saknas vid 5 och 6).",
+        "HF Tex-Mex typ=mexican-spice → tex_mex (befintlig blendId taco_seasoning), 10 g vid 3 och 4 (5 g vid 2, 15 g vid 5 och 6). Ingen ny Spice Mix-flagga."
+      ]
+    },
+    {
+      "id": "parlcouscous_kungsrakbowl__dressed_couscous",
+      "name": "Vänd Ner Vinägrett i Couscous",
+      "outputName": "Pärlcouscous med vinägrett och spenat",
+      "inputs": [
+        {
+          "id": "parlcouscous_kungsrakbowl__drained_couscous",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "parlcouscous_kungsrakbowl__vinaigrette",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "baby_spinach",
+          "amount": 60,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Skölj {{baby_spinach}}.",
+        "Lägg tillbaka {{parlcouscous_kungsrakbowl__drained_couscous}} i {{eq:kastrull_1|def}}. Rör ner {{parlcouscous_kungsrakbowl__vinaigrette}} och spenaten precis innan servering."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "kastrull_medelstor",
+          "ref": "kastrull_1",
+          "transition": "keep",
+          "offHeat": true,
+          "after": "parlcouscous_kungsrakbowl__drained_couscous"
+        }
+      ],
+      "devNotes": [
+        "HF Spenat typ=organic-baby-spinach → baby_spinach, 60 g vid 3 och 4 (30 g vid 2, 90 g vid 5 och 6). FLAG. Rådatan lägger vinägrett och spenat i couscousen i räksteget; egen node så att det sker precis innan servering, inte i stekpannan. Huvudbilden visar en klick vinägrett i en skål vid sidan — styling; stegfotot och råtexten rör ner all vinägrett i couscousen."
+      ]
+    },
+    {
+      "id": "parlcouscous_kungsrakbowl",
+      "name": "Pärlcouscous- och räkbowl",
+      "inputs": [
+        {
+          "id": "parlcouscous_kungsrakbowl__dressed_couscous",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "parlcouscous_kungsrakbowl__zucchini_salad",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "parlcouscous_kungsrakbowl__sliced_avocado",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "parlcouscous_kungsrakbowl__fried_prawns",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{parlcouscous_kungsrakbowl__dressed_couscous}} i {{eq:servering|pl}} och toppa med {{parlcouscous_kungsrakbowl__zucchini_salad}}, {{parlcouscous_kungsrakbowl__sliced_avocado}} och {{parlcouscous_kungsrakbowl__fried_prawns}}."
+      ],
+      "duration": 3,
+      "tags": [
+        "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_skal",
+          "ref": "servering",
+          "count": "portions"
+        }
+      ],
+      "devNotes": [
+        "All näring behållen inklusive fiber 11,6 g och 667 kcal. HF-taggen under-650-kcal stämmer inte med 667 kcal — taggen är ändå med i hfTags. FLAG. totalMinutes 25 följer HF totalTime/prepTime PT25M (couscous 15 min plus överlappande prep och en kort stekning).",
+        "Rådatan säger 'tallrikar'; namn, dinner-bowls-tagg och foto visar en skål → servering_skal. FLAG.",
+        "HF-kök är fusion-cuisine (tom slug) → cuisine fusion, samma värde som citronpepparlax_parlcouscous. clonedFrom 6647359f7d59947cc3a71ff9 fanns inte i raw-lagret. Varianten 668e76e9… konverterades inte."
+      ]
+    }
+  ]
+}

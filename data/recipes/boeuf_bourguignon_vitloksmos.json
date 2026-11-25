@@ -4,6 +4,11 @@
   "rawId": "6593e328c7596f421e53b6c6",
   "createdAt": 1791040102,
   "basePortions": 4,
+  "time": {
+    "totalMin": 44,
+    "activeMin": 36,
+    "computedFrom": "graph"
+  },
   "sharedPrep": [],
   "images": {
     "main": "assets/recipes/boeuf_bourguignon_vitloksmos/main.jpg",

@@ -4,6 +4,11 @@
   "rawId": "6707d8119e048437c2cbc158",
   "createdAt": 1791039978,
   "basePortions": 4,
+  "time": {
+    "totalMin": 29,
+    "activeMin": 27,
+    "computedFrom": "graph"
+  },
   "sharedPrep": [],
   "images": {
     "main": "assets/recipes/sej_sweet_chili_sojaglaze/main.jpg",

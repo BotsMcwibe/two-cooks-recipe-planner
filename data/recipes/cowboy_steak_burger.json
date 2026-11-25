@@ -4,6 +4,11 @@
   "rawId": "6807d3b436fada069711ca10",
   "createdAt": 1790852559,
   "basePortions": 4,
+  "time": {
+    "totalMin": 57,
+    "activeMin": 32,
+    "computedFrom": "graph"
+  },
   "sharedPrep": [],
   "images": {
     "main": "assets/recipes/cowboy_steak_burger/main.jpg",

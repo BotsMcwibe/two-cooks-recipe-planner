@@ -1,0 +1,470 @@
+{
+  "masterId": "cajunkryddad_pulled_chicken",
+  "source": "hellofresh",
+  "rawId": "6a915dbef3876e995cfb5a24",
+  "createdAt": 1792602461,
+  "basePortions": 4,
+  "time": {
+    "totalMin": 53,
+    "activeMin": 34,
+    "computedFrom": "graph"
+  },
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/cajunkryddad_pulled_chicken/main.jpg",
+    "byNode": {
+      "cajunkryddad_pulled_chicken__roasted_potatoes": "assets/recipes/cajunkryddad_pulled_chicken/steps/roasted_potatoes.jpg",
+      "cajunkryddad_pulled_chicken__avocado_mash": "assets/recipes/cajunkryddad_pulled_chicken/steps/avocado_mash.jpg",
+      "cajunkryddad_pulled_chicken__roasted_chicken": "assets/recipes/cajunkryddad_pulled_chicken/steps/roasted_chicken.jpg",
+      "cajunkryddad_pulled_chicken__fried_veg": "assets/recipes/cajunkryddad_pulled_chicken/steps/fried_veg.jpg",
+      "cajunkryddad_pulled_chicken": "assets/recipes/cajunkryddad_pulled_chicken/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 624,
+    "perPortion": {
+      "energyKcal": 577,
+      "energyKj": 2415,
+      "fatG": 24.2,
+      "saturatedFatG": 10.3,
+      "carbsG": 43,
+      "sugarsG": 10.4,
+      "proteinG": 48.4,
+      "saltG": 4.2
+    }
+  },
+  "nodes": [
+    {
+      "id": "cajunkryddad_pulled_chicken__preheated_oven_240",
+      "name": "Värm ugnen",
+      "outputName": "Förvärmd ugn (240°C)",
+      "inputs": [],
+      "steps": [
+        "Värm {{eq:ugn|def}} till 240°C, eller 220°C varmluft."
+      ],
+      "duration": 1,
+      "wait": 12,
+      "tags": [
+        "no-timer",
+        "resource"
+      ],
+      "tips": [
+        "Ugnen tar vanligtvis 10–15 minuter att värmas upp."
+      ],
+      "oven": {
+        "temp": 240,
+        "fanTemp": 220
+      },
+      "devNotes": [
+        "HF anger 240°C/220°C varmluft — lokal ugnsnode, inte preheated_oven_220."
+      ]
+    },
+    {
+      "id": "cajunkryddad_pulled_chicken__potato_wedges",
+      "name": "Skär Potatisklyftor",
+      "outputName": "Potatisklyftor",
+      "inputs": [
+        {
+          "id": "potato",
+          "amount": 600,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Skär {{potato}} (oskalad) i 2 cm breda klyftor."
+      ],
+      "duration": 4,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "HF-typ organic-potatoes, mappad till potato."
+      ]
+    },
+    {
+      "id": "cajunkryddad_pulled_chicken__roasted_potatoes",
+      "name": "Rosta Klyftpotatis",
+      "outputName": "Rostad klyftpotatis",
+      "inputs": [
+        {
+          "id": "cajunkryddad_pulled_chicken__potato_wedges",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Lägg {{cajunkryddad_pulled_chicken__potato_wedges}} på {{eq:plat_1}} med bakplåtspapper. Blanda med {{olive_oil}}, {{salt}} och en nypa {{pepper}}.",
+        "Rosta i {{eq:ugn|def}} i 25–35 min, eller tills gyllene."
+      ],
+      "duration": 2,
+      "wait": 35,
+      "tags": [],
+      "tips": [
+        "Använd fler plåtar om det blir för trångt."
+      ],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "cajunkryddad_pulled_chicken__preheated_oven_240",
+          "slots": 1,
+          "temp": 240,
+          "fanTemp": 220
+        },
+        {
+          "type": "plat",
+          "ref": "plat_1",
+          "liner": "bakplatspapper"
+        }
+      ],
+      "devNotes": [
+        "Salt till potatis 1 tsk (4 portioner). Olivoljan till potatisen har ingen rad i HF:s lista (Olja till grönsaker gäller paprikan och löken), därför standard 1 skvätt. Peppar utan mängd, 1 nypa."
+      ]
+    },
+    {
+      "id": "cajunkryddad_pulled_chicken__onion_paprika",
+      "name": "Skär Lök och Paprika",
+      "outputName": "Skivad lök och paprikastrimlor",
+      "inputs": [
+        {
+          "id": "red_onion",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "paprika",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Halvera {{red_onion}} och skär i tunna skivor.",
+        "Skär {{paprika}} i 1 cm tunna strimlor."
+      ],
+      "duration": 5,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "HF Lök har typ red-onion, mappad till red_onion. Båda går till samma stekning, därför en prepnode."
+      ]
+    },
+    {
+      "id": "cajunkryddad_pulled_chicken__chopped_tomato",
+      "name": "Hacka Tomat",
+      "outputName": "Grovhackad tomat",
+      "inputs": [
+        {
+          "id": "tomato",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Grovhacka {{tomato}}."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ]
+    },
+    {
+      "id": "cajunkryddad_pulled_chicken__lime_wedges",
+      "name": "Skär Citrusfrukt",
+      "outputName": "Limeklyftor",
+      "inputs": [
+        {
+          "id": "lime",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skär {{lime}} i klyftor."
+      ],
+      "duration": 1,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "HF Citrusfrukt (typ lime) → lime. HF har 1 st vid 2, 3 och 4 portioner och 2 st vid 5–6. Författad som 1 st vid 4 portioner (HF:s 4-portionsvärde); linjär skalning ger 0,5 st vid 2 och 1,5 st vid 6, vilket räcker till en skvätt saft plus klyftor. FLAG för granskning.",
+        "Delning: 0,25 st pressas i avokadomoset (en generös skvätt), 0,75 st serveras som klyftor (resterande). HF anger ingen proportion; uppskattad. FLAG."
+      ]
+    },
+    {
+      "id": "cajunkryddad_pulled_chicken__avocado_mash",
+      "name": "Gör Avokadomos",
+      "outputName": "Avokadomos",
+      "inputs": [
+        {
+          "id": "avocado",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "cajunkryddad_pulled_chicken__lime_wedges",
+          "amount": 0.25,
+          "unit": "st"
+        },
+        {
+          "id": "yoghurt",
+          "amount": 150,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Halvera och kärna ur {{avocado}}. Gröp ur den med en sked.",
+        "Mosa avokadon med {{salt}}, en nypa {{pepper}} och en generös skvätt saft från {{cajunkryddad_pulled_chicken__lime_wedges}} i {{eq:skal_medelstor}}.",
+        "Rör ner {{yoghurt}}."
+      ],
+      "duration": 4,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        },
+        {
+          "type": "skal_medelstor"
+        }
+      ],
+      "devNotes": [
+        "Salt till guacamole 0,5 tsk (4 portioner)."
+      ]
+    },
+    {
+      "id": "cajunkryddad_pulled_chicken__roasted_chicken",
+      "name": "Tillaga Kyckling i Ugnen",
+      "outputName": "Ugnstillagad adobokyckling",
+      "inputs": [
+        {
+          "id": "chicken_breast",
+          "amount": 600,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "adobo_spice_mix",
+          "amount": 8,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Lägg {{chicken_breast}} på {{eq:plat_2}} med bakplåtspapper. Krydda med {{salt}} och {{adobo_spice_mix}}.",
+        "Tillaga i {{eq:ugn|def}} i 17–19 min, eller tills genomstekt."
+      ],
+      "duration": 2,
+      "wait": 19,
+      "tags": [],
+      "tips": [
+        "Tvätta händer och köksredskap noggrant efter hantering av rå kyckling.",
+        "Kycklingen är färdiglagad när köttet inte längre är rosa i mitten."
+      ],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "cajunkryddad_pulled_chicken__preheated_oven_240",
+          "slots": 1,
+          "temp": 240,
+          "fanTemp": 220
+        },
+        {
+          "type": "plat",
+          "ref": "plat_2",
+          "liner": "bakplatspapper"
+        }
+      ],
+      "devNotes": [
+        "Salt till kött 0,5 tsk (4 portioner). Adobokrydda saknar blend i spice-blends.json; ny ingrediens adobo_spice_mix utan blendId. FLAG till Spice Mix-boten.",
+        "HF säger 'en annan plåt': egen plåt bredvid potatisen, 2 plåtar samtidigt i ugnen (ryms i standardprofilen 2). Kycklingen skärs inte rå, därför ingen skarbrada_ra."
+      ]
+    },
+    {
+      "id": "cajunkryddad_pulled_chicken__fried_veg",
+      "name": "Stek Paprika och Lök",
+      "outputName": "Cajunstekt paprika och lök",
+      "inputs": [
+        {
+          "id": "olive_oil",
+          "amount": 0.5,
+          "unit": "msk"
+        },
+        {
+          "id": "cajunkryddad_pulled_chicken__onion_paprika",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "cajun_spice_mix",
+          "amount": 8,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i {{eq:stekpanna_stor}} på medelhög värme.",
+        "Stek {{cajunkryddad_pulled_chicken__onion_paprika}} och {{cajun_spice_mix}} i 4–5 min, tills något mjuknat."
+      ],
+      "duration": 6,
+      "wait": 0,
+      "tags": [],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "stekpanna_stor"
+        }
+      ],
+      "devNotes": [
+        "Olja till grönsaker 0,5 msk (4 portioner). Ay Cajun-ba → cajun_spice_mix. Stekning utan vätska, därför stekpanna (ingen traktörpanna)."
+      ]
+    },
+    {
+      "id": "cajunkryddad_pulled_chicken__pulled_chicken",
+      "name": "Riv Kyckling",
+      "outputName": "Pulled chicken",
+      "inputs": [
+        {
+          "id": "cajunkryddad_pulled_chicken__roasted_chicken",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Använd 2 gafflar för att riva {{cajunkryddad_pulled_chicken__roasted_chicken}} i strimlor."
+      ],
+      "duration": 3,
+      "wait": 0,
+      "tags": []
+    },
+    {
+      "id": "cajunkryddad_pulled_chicken",
+      "name": "Cajunkryddad pulled chicken med klyftpotatis",
+      "outputName": "Cajunkryddad pulled chicken med klyftpotatis",
+      "inputs": [
+        {
+          "id": "cajunkryddad_pulled_chicken__roasted_potatoes",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "cajunkryddad_pulled_chicken__pulled_chicken",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "cajunkryddad_pulled_chicken__fried_veg",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "cajunkryddad_pulled_chicken__chopped_tomato",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "grated_cheddar",
+          "amount": 100,
+          "unit": "g"
+        },
+        {
+          "id": "cajunkryddad_pulled_chicken__avocado_mash",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "cajunkryddad_pulled_chicken__lime_wedges",
+          "amount": 0.75,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{cajunkryddad_pulled_chicken__roasted_potatoes}} i {{eq:servering|pl}} och toppa med {{cajunkryddad_pulled_chicken__pulled_chicken}}.",
+        "Servera {{cajunkryddad_pulled_chicken__fried_veg}}, {{cajunkryddad_pulled_chicken__chopped_tomato}}, {{grated_cheddar}}, {{cajunkryddad_pulled_chicken__avocado_mash}} och resterande {{cajunkryddad_pulled_chicken__lime_wedges}} i separata {{eq:servering_skalar|pl}}.",
+        "Välj dina egna favorittillbehör!"
+      ],
+      "duration": 3,
+      "tags": [
+        "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_djup_tallrik",
+          "ref": "servering",
+          "count": "portions"
+        },
+        {
+          "type": "servering_skal",
+          "ref": "servering_skalar",
+          "count": 5
+        }
+      ],
+      "devNotes": [
+        "Bygg-din-egen-tallrik: fem tillbehör i separata skålar (paprika/lök, tomat, ost, avokadomos, citrusklyftor)."
+      ]
+    }
+  ]
+}

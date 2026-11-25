@@ -1,0 +1,440 @@
+{
+  "masterId": "pankopanerade_plantbitar",
+  "source": "hellofresh",
+  "rawId": "6a9e9292790f7867027dbeab",
+  "createdAt": 1794426096,
+  "basePortions": 4,
+  "time": {
+    "totalMin": 37,
+    "activeMin": 36,
+    "computedFrom": "graph"
+  },
+  "images": {
+    "main": "assets/recipes/pankopanerade_plantbitar/main.jpg",
+    "byNode": {
+      "pankopanerade_plantbitar__pickled_onion": "assets/recipes/pankopanerade_plantbitar/steps/pickled_onion.jpg",
+      "pankopanerade_plantbitar__breaded_strips": "assets/recipes/pankopanerade_plantbitar/steps/breaded_strips.jpg",
+      "pankopanerade_plantbitar__fried_strips": "assets/recipes/pankopanerade_plantbitar/steps/fried_strips.jpg",
+      "pankopanerade_plantbitar__cabbage_salad": "assets/recipes/pankopanerade_plantbitar/steps/cabbage_salad.jpg",
+      "pankopanerade_plantbitar__teriyaki_sauce": "assets/recipes/pankopanerade_plantbitar/steps/teriyaki_sauce.jpg",
+      "pankopanerade_plantbitar": "assets/recipes/pankopanerade_plantbitar/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 441,
+    "perPortion": {
+      "energyKcal": 973,
+      "energyKj": 4070,
+      "fatG": 45.1,
+      "saturatedFatG": 5.6,
+      "carbsG": 113,
+      "sugarsG": 13.3,
+      "proteinG": 29.9,
+      "fiberG": 5.7,
+      "saltG": 5.3
+    }
+  },
+  "nodes": [
+    {
+      "id": "pankopanerade_plantbitar__grated_aromatics",
+      "name": "Riv Ingefära och Vitlök",
+      "outputName": "Riven ingefära och vitlök",
+      "inputs": [
+        {
+          "id": "ginger",
+          "amount": 4,
+          "unit": "tsk"
+        },
+        {
+          "id": "garlic",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Riv {{ginger}} (oskalad) och {{garlic}} fint."
+      ],
+      "duration": 3,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        },
+        {
+          "type": "rivjarn",
+          "ref": "rivjarn",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "Ingefära 4 tsk vid både 3 och 4 portioner (2 tsk vid 2, 6 tsk vid 5 och 6). Vitlök 2 st vid 3 och 4 (1 st vid 2, 3 st vid 5 och 6). Oskalad enligt rådatan."
+      ]
+    },
+    {
+      "id": "pankopanerade_plantbitar__simmered_rice",
+      "name": "Koka Ingefärs- och Vitlöksris",
+      "outputName": "Sjudet ingefärs- och vitlöksris",
+      "inputs": [
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "msk"
+        },
+        {
+          "id": "pankopanerade_plantbitar__grated_aromatics",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "water",
+          "amount": 5.5,
+          "unit": "dl"
+        },
+        {
+          "id": "long_grain_rice",
+          "amount": 300,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i {{eq:kastrull_1}} på medelvärme. Fräs {{pankopanerade_plantbitar__grated_aromatics}} i 30 sek, eller tills väldoftande.",
+        "Tillsätt {{water}} och koka upp. Rör i {{long_grain_rice}} och {{salt}}, sänk till medellåg värme och sjud under lock i 14 min."
+      ],
+      "duration": 3,
+      "wait": 14,
+      "tags": [],
+      "tips": [
+        "Riset ska ångkoka, så tjuvkika inte."
+      ],
+      "heat": "medel",
+      "equipment": [
+        {
+          "type": "kastrull_medelstor",
+          "ref": "kastrull_1",
+          "lid": true
+        }
+      ],
+      "devNotes": [
+        "Rådatan säger medelstor kastrull. HF Långkornigt vitt ris → long_grain_rice, 300 g linjärt. Olja till ris 1 msk vid 4 (0,5 msk vid både 2 och 3). Vatten till ris 5,5 dl vid 4 (3 dl vid 2, 4 dl vid 3 — inte linjärt från 2). FLAG. Salt till ris 1 tsk vid både 3 och 4. Vila i nästa node så att sjudningens wait ligger på sista steget."
+      ]
+    },
+    {
+      "id": "pankopanerade_plantbitar__rested_rice",
+      "name": "Vila Riset",
+      "outputName": "Vilat ingefärs- och vitlöksris",
+      "inputs": [
+        {
+          "id": "pankopanerade_plantbitar__simmered_rice",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Ta av {{eq:kastrull_1|def}} från värmen och låt {{pankopanerade_plantbitar__simmered_rice}} vila under lock i 10 min."
+      ],
+      "duration": 1,
+      "wait": 10,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "kastrull_medelstor",
+          "ref": "kastrull_1",
+          "transition": "keep",
+          "offHeat": true,
+          "lid": true,
+          "after": "pankopanerade_plantbitar__simmered_rice"
+        }
+      ]
+    },
+    {
+      "id": "pankopanerade_plantbitar__pickled_onion",
+      "name": "Sylta Rödlök",
+      "outputName": "Syltad rödlök",
+      "inputs": [
+        {
+          "id": "lime",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "red_onion",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "sugar",
+          "amount": 0.5,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Halvera {{lime}}.",
+        "Skär {{red_onion}} i tunna skivor.",
+        "Blanda löken, saften från {{lime}}, {{salt}} och {{sugar}} i {{eq:skal_1}} och ställ åt sidan."
+      ],
+      "duration": 4,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skal_liten",
+          "ref": "skal_1"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true,
+          "after": "pankopanerade_plantbitar__grated_aromatics"
+        }
+      ],
+      "devNotes": [
+        "HF Citrusfrukt typ lime → lime. 1 st vid 2, 3 och 4 portioner, 2 st vid 5 och 6 — förpackning. Författad som 1 st vid 4 portioner med linjär skalning. All saft går i inläggningen; halvorna serveras inte.",
+        "HF Lök typ red-onion → red_onion, 1 st vid 3 och 4 (0,5 st vid 2, 1,5 st vid 5 och 6). Salt och socker till inläggning 0,5 tsk vardera vid både 3 och 4."
+      ]
+    },
+    {
+      "id": "pankopanerade_plantbitar__breaded_strips",
+      "name": "Panera Plantbaserade Bitar",
+      "outputName": "Pankopanerade plantbaserade bitar",
+      "inputs": [
+        {
+          "id": "plant_based_chicken_strips",
+          "amount": 400,
+          "unit": "g"
+        },
+        {
+          "id": "flour",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "egg",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "panko",
+          "amount": 75,
+          "unit": "g"
+        },
+        {
+          "id": "ginger_ninja",
+          "amount": 10,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Lägg {{plant_based_chicken_strips}} i {{eq:skal_2}} och vänd runt med {{flour}}.",
+        "Vispa {{egg}} i {{eq:skal_3}} och vänd ner det i {{eq:skal_2|def}} med bitarna.",
+        "Rör ner {{panko}} och {{ginger_ninja}}."
+      ],
+      "duration": 6,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Pressa försiktigt fast panko på strimlorna."
+      ],
+      "equipment": [
+        {
+          "type": "skal_medelstor",
+          "ref": "skal_2"
+        },
+        {
+          "type": "skal_liten",
+          "ref": "skal_3"
+        }
+      ],
+      "devNotes": [
+        "Ny ingrediens plant_based_chicken_strips (Plantbaserade kycklingbitar, typ plant-based-chicken-strips), 400 g linjärt. Ingen rawAnimal, därför ingen skarbrada_ra.",
+        "Ägg till panering 1 st vid 2, 3 och 4 portioner (rådatan: använd hälften av ägget till 2P). Författad som 1 ägg vid 4 enligt raw, pack-stil. 400 g bitar + 2 msk mjöl + 75 g panko är i knappaste laget jämfört med liknande paneringar som använder 2 ägg till 500–600 g; följer raw eftersom 2P-tipset gör 1 ägg vid 4 avsiktligt. FLAG.",
+        "Panko 75 g och Ginger Ninja 10 g vid både 3 och 4 (50/5 g vid 2, 125/15 g vid 5 och 6). Mjöl till panering 2 msk vid 3 och 4. Ginger Ninja → ginger_ninja (blendId finns)."
+      ]
+    },
+    {
+      "id": "pankopanerade_plantbitar__fried_strips",
+      "name": "Stek Plantbaserade Bitar",
+      "outputName": "Stekta pankopanerade bitar",
+      "inputs": [
+        {
+          "id": "olive_oil",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "pankopanerade_plantbitar__breaded_strips",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{eq:stekpanna_1}} på medelhög värme och tillsätt {{olive_oil}} så det täcker {{eq:stekpanna_1|def}}.",
+        "Stek {{pankopanerade_plantbitar__breaded_strips}} i omgångar i 2–3 min på varje sida, eller tills gyllene.",
+        "Ställ åt sidan på {{eq:tallrik_1}} med hushållspapper."
+      ],
+      "duration": 12,
+      "wait": 0,
+      "tags": [],
+      "heat": "medelhög",
+      "tips": [
+        "Tillsätt mer olivolja om strimlorna fastnar på pannan."
+      ],
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1",
+          "confirmed": true
+        },
+        {
+          "type": "tallrik",
+          "ref": "tallrik_1"
+        }
+      ],
+      "devNotes": [
+        "Rådatan säger stor stekpanna. Bara stekning i olja, ingen sjudning → stekpanna, inte traktörpanna. Olja till stekning 2 msk; tipset om mer olja om det fastnar lämnas som tips. 2–3 min per sida i omgångar är hands-on, därför duration 12 och wait 0. Hushållspapper spåras inte."
+      ]
+    },
+    {
+      "id": "pankopanerade_plantbitar__cabbage_salad",
+      "name": "Blanda Kålsallad",
+      "outputName": "Asiatisk kålsallad",
+      "inputs": [
+        {
+          "id": "shredded_salad_mix",
+          "amount": 300,
+          "unit": "g"
+        },
+        {
+          "id": "pankopanerade_plantbitar__pickled_onion",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "msk"
+        }
+      ],
+      "steps": [
+        "Blanda {{shredded_salad_mix}}, {{pankopanerade_plantbitar__pickled_onion}} och {{olive_oil}} i {{eq:skal_4}}."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "skal_stor",
+          "ref": "skal_4"
+        }
+      ],
+      "devNotes": [
+        "Ny ingrediens shredded_salad_mix (Strimlad salladsmix, typ strimlad-salladsmix), 300 g vid 3 och 4 (150 g vid 2, 450 g vid 5 och 6). Inte mixed_salad (Salladsmix) och inte cabbage_mix (Kålmix); beskrivningen säger 'färdig kålmix' men bilden är en strimlad mix med sallad, kål och morot. FLAG. Olja till sallad 1 msk vid 3 och 4. Kall, men inte prep: blandas efter stekningen, nära servering."
+      ]
+    },
+    {
+      "id": "pankopanerade_plantbitar__teriyaki_sauce",
+      "name": "Blanda Teriyakisås",
+      "outputName": "Utspädd teriyakisås",
+      "inputs": [
+        {
+          "id": "teriyaki_sauce",
+          "amount": 75,
+          "unit": "g"
+        },
+        {
+          "id": "water",
+          "amount": 2,
+          "unit": "msk"
+        }
+      ],
+      "steps": [
+        "Blanda {{teriyaki_sauce}} och {{water}} i {{eq:skal_5}}."
+      ],
+      "duration": 1,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skal_liten",
+          "ref": "skal_5"
+        }
+      ],
+      "devNotes": [
+        "Teriyakisås 75 g och vatten till sås 2 msk vid både 3 och 4 (37,5 g / 1 msk vid 2, 112,5 g vid 5 och 6)."
+      ]
+    },
+    {
+      "id": "pankopanerade_plantbitar",
+      "name": "Pankopanerade plantbaserade bitar",
+      "outputName": "Pankopanerade plantbaserade bitar",
+      "inputs": [
+        {
+          "id": "pankopanerade_plantbitar__rested_rice",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "pankopanerade_plantbitar__fried_strips",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "pankopanerade_plantbitar__cabbage_salad",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "pankopanerade_plantbitar__teriyaki_sauce",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "vegan_asian_mayo",
+          "amount": 100,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{pankopanerade_plantbitar__rested_rice}}, {{pankopanerade_plantbitar__fried_strips}} och {{pankopanerade_plantbitar__cabbage_salad}} i {{eq:servering|pl}}.",
+        "Toppa bitarna med {{pankopanerade_plantbitar__teriyaki_sauce}} och servera med en klick {{vegan_asian_mayo}}."
+      ],
+      "duration": 3,
+      "tags": [
+        "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_skal",
+          "ref": "servering",
+          "count": "portions"
+        }
+      ],
+      "devNotes": [
+        "All näring behållen inklusive fiber 5,7 g och 973 kcal. Vegetarisk, inte vegansk (ägg i paneringen). Vegansk asiatisk majonnäs 100 g linjärt, toppas som klick, inte tillagad.",
+        "HF totalTime och prepTime är båda PT25M. Riset tar 14 min sjudning + 10 min vila plus uppkok, men övrigt arbete går parallellt; catalog totalMinutes följer 25. FLAG att tidsschemat är tight.",
+        "clonedFrom 67ee502c55618e84fd30f9f1 har ingen raw-fil och ingen master. Dubbletten 68ee08f69a6dfb54e982563e är samma recept och konverterades inte."
+      ]
+    }
+  ]
+}

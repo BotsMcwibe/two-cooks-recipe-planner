@@ -4,6 +4,11 @@
   "rawId": "64ae8cefb22c4a8c5919a9c8",
   "createdAt": 1791037531,
   "basePortions": 4,
+  "time": {
+    "totalMin": 56,
+    "activeMin": 55,
+    "computedFrom": "graph"
+  },
   "sharedPrep": [],
   "images": {
     "main": "assets/recipes/appel_pannbiff/main.jpg",

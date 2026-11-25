@@ -4,6 +4,11 @@
   "rawId": "64ae8ce6565e2133abaa5178",
   "createdAt": 1791040287,
   "basePortions": 4,
+  "time": {
+    "totalMin": 47,
+    "activeMin": 47,
+    "computedFrom": "graph"
+  },
   "sharedPrep": [],
   "images": {
     "main": "assets/recipes/norska_kottbullar/main.jpg",

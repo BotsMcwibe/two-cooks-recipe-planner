@@ -1,0 +1,478 @@
+{
+  "masterId": "vegetarisk_tortellonigratang",
+  "source": "hellofresh",
+  "rawId": "6a915db84f9a309bb69cd9e8",
+  "createdAt": 1792603739,
+  "basePortions": 4,
+  "time": {
+    "totalMin": 32,
+    "activeMin": 27,
+    "computedFrom": "graph"
+  },
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/vegetarisk_tortellonigratang/main.jpg",
+    "byNode": {
+      "vegetarisk_tortellonigratang__panko_mix": "assets/recipes/vegetarisk_tortellonigratang/steps/panko_mix.jpg",
+      "vegetarisk_tortellonigratang__fried_veg": "assets/recipes/vegetarisk_tortellonigratang/steps/fried_veg.jpg",
+      "vegetarisk_tortellonigratang__cream_sauce": "assets/recipes/vegetarisk_tortellonigratang/steps/cream_sauce.jpg",
+      "vegetarisk_tortellonigratang__pasta_in_sauce": "assets/recipes/vegetarisk_tortellonigratang/steps/pasta_in_sauce.jpg",
+      "vegetarisk_tortellonigratang__gratin": "assets/recipes/vegetarisk_tortellonigratang/steps/gratin.jpg",
+      "vegetarisk_tortellonigratang": "assets/recipes/vegetarisk_tortellonigratang/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 556,
+    "perPortion": {
+      "energyKcal": 914,
+      "energyKj": 3825,
+      "fatG": 47.5,
+      "saturatedFatG": 15.8,
+      "carbsG": 91.3,
+      "sugarsG": 22.1,
+      "fiberG": 8.9,
+      "proteinG": 27.5,
+      "saltG": 5.1
+    }
+  },
+  "nodes": [
+    {
+      "id": "vegetarisk_tortellonigratang__preheated_oven_240",
+      "name": "Värm ugnen",
+      "outputName": "Förvärmd ugn (240°C)",
+      "inputs": [],
+      "steps": [
+        "Värm {{eq:ugn|def}} till 240°C, eller 220°C varmluft."
+      ],
+      "duration": 1,
+      "wait": 12,
+      "tags": [
+        "no-timer",
+        "resource"
+      ],
+      "tips": [
+        "Ugnen tar vanligtvis 10–15 minuter att värmas upp."
+      ],
+      "oven": {
+        "temp": 240,
+        "fanTemp": 220
+      },
+      "devNotes": [
+        "HF anger 240°C/220°C varmluft — lokal ugnsnode, inte preheated_oven_220."
+      ]
+    },
+    {
+      "id": "vegetarisk_tortellonigratang__onion_garlic",
+      "name": "Hacka Vitlök och Lök",
+      "outputName": "Finhackad vitlök och lök",
+      "inputs": [
+        {
+          "id": "garlic",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "onion",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Finhacka eller pressa {{garlic}}.",
+        "Finhacka {{onion}}."
+      ],
+      "duration": 4,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "Vitlök 2 st och lök 2 st vid både 3 och 4 portioner; 4-portionsvärdena används."
+      ]
+    },
+    {
+      "id": "vegetarisk_tortellonigratang__tomato_paprika_basil",
+      "name": "Skär Tomat och Paprika",
+      "outputName": "Tomat- och paprikabitar med basilika",
+      "inputs": [
+        {
+          "id": "tomato",
+          "amount": 4,
+          "unit": "st"
+        },
+        {
+          "id": "paprika",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "basil",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skär {{tomato}} och {{paprika}} i 2 cm stora bitar.",
+        "Grovhacka bladen från {{basil}}."
+      ],
+      "duration": 5,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "Paprika: HF 1 st vid 2, 3 och 4 portioner, 2 st vid 6. Huvudgrönsak, så den ska skala; författad som HF:s 4-portionsvärde 1 st med linjär skalning (0,5 vid 2, 1,5 vid 6 nära HF:s 2). FLAG: linjärt från HF:s 2-portionsvärde vore 2 st vid 4 portioner; HF:s näringsvärden bygger på 1 st, därför 1 st.",
+        "Basilika: HF 1 st (kruka/förpackning) vid 2, 3 och 4 portioner, 2 st vid 6. Författad som 1 st vid 4 portioner med linjär skalning. FLAG.",
+        "HF-typ organic tomatoes → tomato. Alla tre går till samma stekning, därför en prepnode."
+      ]
+    },
+    {
+      "id": "vegetarisk_tortellonigratang__rinsed_rucola",
+      "name": "Skölj Rucola",
+      "outputName": "Sköljd rucola",
+      "inputs": [
+        {
+          "id": "rucola",
+          "amount": 70,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Skölj {{rucola}}."
+      ],
+      "duration": 1,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ]
+    },
+    {
+      "id": "vegetarisk_tortellonigratang__panko_mix",
+      "name": "Blanda Pankotopping",
+      "outputName": "Pankomix",
+      "inputs": [
+        {
+          "id": "panko",
+          "amount": 50,
+          "unit": "g"
+        },
+        {
+          "id": "parmesan",
+          "amount": 40,
+          "unit": "g"
+        },
+        {
+          "id": "sunflower_seeds",
+          "amount": 40,
+          "unit": "g"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 4,
+          "unit": "msk"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Blanda {{panko}}, riven {{parmesan}}, {{sunflower_seeds}}, {{olive_oil}} och en nypa {{salt}} och {{pepper}} i {{eq:skal_liten}}."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skal_liten"
+        }
+      ],
+      "devNotes": [
+        "HF Parmigiano Reggiano PDO → parmesan. Olja till pangrattato 4 msk. Salt utan egen rad → 1 nypa."
+      ]
+    },
+    {
+      "id": "vegetarisk_tortellonigratang__fried_veg",
+      "name": "Fräs Grönsaker",
+      "outputName": "Fräst tomat, paprika och lök",
+      "inputs": [
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "msk"
+        },
+        {
+          "id": "tomato_paste",
+          "amount": 70,
+          "unit": "g"
+        },
+        {
+          "id": "vegetarisk_tortellonigratang__onion_garlic",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "vegetarisk_tortellonigratang__tomato_paprika_basil",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i {{eq:traktorpanna_1}} på medelhög värme.",
+        "Tillsätt {{tomato_paste}} och {{vegetarisk_tortellonigratang__onion_garlic}} och fräs i 30 sek.",
+        "Tillsätt {{vegetarisk_tortellonigratang__tomato_paprika_basil}} och krydda med {{salt}} och en nypa {{pepper}}. Stek under omrörning i 1–2 min."
+      ],
+      "duration": 4,
+      "wait": 0,
+      "tags": [],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred"
+        }
+      ],
+      "devNotes": [
+        "Olja till stekning 1 msk, salt till grönsaker 1 tsk (4 portioner; samma vid 3).",
+        "Rådatan säger stor stekpanna (helst ugnssäker), men samma panna tar sedan 3 dl matlagningsgrädde + 4 dl vatten som sjuds, sedan 600 g tortelloni, och går in i ugnen (≈2 l totalt), därför traktörpanna (typeSource inferred). FLAG: pannan bör vara ugnssäker; HF-tipset om ugnsform finns kvar."
+      ]
+    },
+    {
+      "id": "vegetarisk_tortellonigratang__cream_sauce",
+      "name": "Sjud Gräddsås",
+      "outputName": "Tomatgräddsås",
+      "inputs": [
+        {
+          "id": "vegetarisk_tortellonigratang__fried_veg",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "cooking_cream",
+          "amount": 300,
+          "unit": "ml"
+        },
+        {
+          "id": "vegetable_bouillon",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "id": "water",
+          "amount": 4,
+          "unit": "dl"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Sänk till medelvärme. Tillsätt {{cooking_cream}}, {{vegetable_bouillon}} och {{water}} till {{vegetarisk_tortellonigratang__fried_veg}} i {{eq:traktorpanna_1|def}} och sjud under omrörning i 2–3 min.",
+        "Krydda med {{salt}} och en nypa {{pepper}}."
+      ],
+      "duration": 4,
+      "wait": 0,
+      "tags": [],
+      "heat": "medel",
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred",
+          "transition": "keep"
+        }
+      ],
+      "devNotes": [
+        "Sjudning under omrörning är hands-on, därför i duration och ingen wait. Grädde 300 ml, vatten 4 dl, salt till sås 0,5 tsk, buljong (vegetable-stock) 8 g → vegetable_bouillon; samma vid 3 och 4."
+      ]
+    },
+    {
+      "id": "vegetarisk_tortellonigratang__pasta_in_sauce",
+      "name": "Koka Tortelloni i Såsen",
+      "outputName": "Tortelloni i tomatgräddsås",
+      "inputs": [
+        {
+          "id": "vegetarisk_tortellonigratang__cream_sauce",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "tortelloni",
+          "amount": 600,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Rör ner {{tortelloni}} i {{vegetarisk_tortellonigratang__cream_sauce}} och koka tills såsen har tjocknat och pastan är mjuk, 1–2 min.",
+        "Tillsätt en extra skvätt vatten om såsen blir för tjock."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [],
+      "heat": "medel",
+      "heatSource": "inferred",
+      "tips": [
+        "Lägg över pasta och sås i en ugnsform om pannan inte är ugnssäker."
+      ],
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred",
+          "transition": "keep"
+        }
+      ],
+      "devNotes": [
+        "HF Tortelloni (spinach-and-ricotta) → tortelloni. FLAG om fyllningen ska vara egen id. Extravattnet är valfritt och utan mängd, därför ingen input."
+      ]
+    },
+    {
+      "id": "vegetarisk_tortellonigratang__gratin",
+      "name": "Gratinera",
+      "outputName": "Tortellonigratäng",
+      "inputs": [
+        {
+          "id": "vegetarisk_tortellonigratang__pasta_in_sauce",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "vegetarisk_tortellonigratang__panko_mix",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Strö {{vegetarisk_tortellonigratang__panko_mix}} över {{vegetarisk_tortellonigratang__pasta_in_sauce}} och gratinera {{eq:traktorpanna_1|def}} i {{eq:ugn|def}} i 5–7 min, eller tills toppingen börjar bli krispig."
+      ],
+      "duration": 1,
+      "wait": 7,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred",
+          "transition": "keep",
+          "offHeat": true
+        },
+        {
+          "type": "ugn",
+          "after": "vegetarisk_tortellonigratang__preheated_oven_240",
+          "slots": 1,
+          "temp": 240,
+          "fanTemp": 220
+        }
+      ],
+      "devNotes": [
+        "Pannan går in i ugnen (1 ugnsplats). Rådatan gratinerar i pannan; ugnsform bara som HF-tips, därför ingen ugnsform spårad."
+      ]
+    },
+    {
+      "id": "vegetarisk_tortellonigratang__rucola_salad",
+      "name": "Blanda Rucolasallad",
+      "outputName": "Rucola med balsamvinäger",
+      "inputs": [
+        {
+          "id": "vegetarisk_tortellonigratang__rinsed_rucola",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "balsamic_vinegar",
+          "amount": 12,
+          "unit": "ml"
+        }
+      ],
+      "steps": [
+        "Blanda {{vegetarisk_tortellonigratang__rinsed_rucola}} och {{balsamic_vinegar}} i {{eq:skal}}."
+      ],
+      "duration": 1,
+      "wait": 0,
+      "tags": [],
+      "tips": [
+        "Tillsätt eventuellt en skvätt olivolja till salladen."
+      ],
+      "equipment": [
+        {
+          "type": "skal"
+        }
+      ],
+      "devNotes": [
+        "Kall, men inte prep: blandas under gratineringen så att rucolan inte blir slak. Rådatan säger bara 'en skål' → osorterad skal."
+      ]
+    },
+    {
+      "id": "vegetarisk_tortellonigratang",
+      "name": "Vegetarisk tortellonigratäng",
+      "outputName": "Vegetarisk tortellonigratäng",
+      "inputs": [
+        {
+          "id": "vegetarisk_tortellonigratang__gratin",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "vegetarisk_tortellonigratang__rucola_salad",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{vegetarisk_tortellonigratang__gratin}} i {{eq:servering|pl}} och toppa med {{vegetarisk_tortellonigratang__rucola_salad}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_skal",
+          "ref": "servering",
+          "count": "portions"
+        }
+      ]
+    }
+  ]
+}

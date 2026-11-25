@@ -1,0 +1,437 @@
+{
+  "masterId": "chili_con_kottbullar",
+  "source": "hellofresh",
+  "rawId": "6a9e929f56a4cfbb9638f478",
+  "createdAt": 1794422931,
+  "basePortions": 4,
+  "time": {
+    "totalMin": 31,
+    "activeMin": 23,
+    "computedFrom": "graph"
+  },
+  "images": {
+    "main": "assets/recipes/chili_con_kottbullar/main.jpg",
+    "byNode": {
+      "chili_con_kottbullar__simmered_rice": "assets/recipes/chili_con_kottbullar/steps/simmered_rice.jpg",
+      "chili_con_kottbullar__rolled_meatballs": "assets/recipes/chili_con_kottbullar/steps/rolled_meatballs.jpg",
+      "chili_con_kottbullar__fried_meatballs": "assets/recipes/chili_con_kottbullar/steps/fried_meatballs.jpg",
+      "chili_con_kottbullar__chili_meatballs": "assets/recipes/chili_con_kottbullar/steps/chili_meatballs.jpg",
+      "chili_con_kottbullar__cilantro_rice": "assets/recipes/chili_con_kottbullar/steps/cilantro_rice.jpg",
+      "chili_con_kottbullar": "assets/recipes/chili_con_kottbullar/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 580,
+    "perPortion": {
+      "energyKcal": 730,
+      "energyKj": 3055,
+      "fatG": 24.6,
+      "saturatedFatG": 8.7,
+      "carbsG": 96.4,
+      "sugarsG": 15.5,
+      "fiberG": 9.7,
+      "proteinG": 38.6,
+      "saltG": 4.5
+    }
+  },
+  "nodes": [
+    {
+      "id": "chili_con_kottbullar__simmered_rice",
+      "name": "Koka Ris",
+      "outputName": "Kokt basmatiris",
+      "inputs": [
+        {
+          "id": "water",
+          "amount": 6,
+          "unit": "dl"
+        },
+        {
+          "id": "basmati_rice",
+          "amount": 300,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Koka upp {{water}} i {{eq:kastrull_1}}.",
+        "Rör i {{basmati_rice}} och {{salt}}, sänk till medellåg värme och sjud under lock i 10 min."
+      ],
+      "duration": 2,
+      "wait": 10,
+      "tags": [],
+      "heat": "hög",
+      "stepHeat": {
+        "1": "medellåg"
+      },
+      "tips": [
+        "Riset ska ångkoka, så tjuvkika inte!"
+      ],
+      "equipment": [
+        {
+          "type": "kastrull_medelstor",
+          "ref": "kastrull_1",
+          "lid": true
+        }
+      ],
+      "devNotes": [
+        "Rådatan säger medelstor kastrull. Vatten till ris 6 dl, salt till ris 1 tsk (samma vid 3)."
+      ]
+    },
+    {
+      "id": "chili_con_kottbullar__rested_rice",
+      "name": "Låt Riset Vila",
+      "outputName": "Ångat basmatiris",
+      "inputs": [
+        {
+          "id": "chili_con_kottbullar__simmered_rice",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Ta av {{chili_con_kottbullar__simmered_rice}} i {{eq:kastrull_1|def}} från värmen och låt vila under lock i 10 min."
+      ],
+      "duration": 1,
+      "wait": 10,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "kastrull_medelstor",
+          "ref": "kastrull_1",
+          "lid": true,
+          "transition": "keep",
+          "offHeat": true
+        }
+      ]
+    },
+    {
+      "id": "chili_con_kottbullar__sliced_paprika",
+      "name": "Skär Paprika",
+      "outputName": "Paprikaskivor",
+      "inputs": [
+        {
+          "id": "paprika",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skär {{paprika}} i 1 cm tunna skivor."
+      ],
+      "duration": 3,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ]
+    },
+    {
+      "id": "chili_con_kottbullar__rolled_meatballs",
+      "name": "Rulla Köttbullar",
+      "outputName": "Råa köttbullar",
+      "inputs": [
+        {
+          "id": "ground_beef",
+          "amount": 450,
+          "unit": "g"
+        },
+        {
+          "id": "egg",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "breadcrumbs",
+          "amount": 50,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Blanda {{ground_beef}}, {{egg}}, {{breadcrumbs}} och en nypa {{salt}} i {{eq:skal_1}}.",
+        "Rulla färsen till köttbullar med fuktiga händer (5 per person) och placera dem på {{eq:tallrik_1}}."
+      ],
+      "duration": 8,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skal_stor",
+          "ref": "skal_1"
+        },
+        {
+          "type": "tallrik",
+          "ref": "tallrik_1"
+        }
+      ],
+      "devNotes": [
+        "HF Nötfärs (beef-mince) → ground_beef (befintlig 'Köttfärs'). FLAG. Färsen skärs inte, den blandas och rullas i skål, därför ingen skarbrada_ra. Råa köttbullar på tallrik_1; de tillagade stannar i pannan, så ingen andra tallrik behövs och tallrik_1 återanvänds inte till färdig mat.",
+        "Ägg till köttbullar 2 st (samma vid 3). Salt är 'en nypa' i texten, ingen egen rad."
+      ]
+    },
+    {
+      "id": "chili_con_kottbullar__fried_meatballs",
+      "name": "Stek Köttbullar och Paprika",
+      "outputName": "Brynta köttbullar och paprika",
+      "inputs": [
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "msk"
+        },
+        {
+          "id": "chili_con_kottbullar__rolled_meatballs",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "chili_con_kottbullar__sliced_paprika",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i {{eq:traktorpanna_1}} på medelhög värme.",
+        "Stek {{chili_con_kottbullar__rolled_meatballs}} och {{chili_con_kottbullar__sliced_paprika}} i 3–5 min, eller tills brynt. Vänd då och då."
+      ],
+      "duration": 2,
+      "wait": 5,
+      "tags": [],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred"
+        }
+      ],
+      "devNotes": [
+        "Rådatan säger stor stekpanna, men samma panna tar sedan 780 g krossade tomater + 4 msk vatten (ca 8 dl) som sjuds → traktörpanna, typeSource inferred, i hela kedjan. Olja till stekning 1 msk (0,5 msk vid 2; mängden vid 3 är null i rådatan och ignoreras)."
+      ]
+    },
+    {
+      "id": "chili_con_kottbullar__chili_meatballs",
+      "name": "Sjud Chili med Köttbullar",
+      "outputName": "Chili con köttbullar",
+      "inputs": [
+        {
+          "id": "chili_con_kottbullar__fried_meatballs",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "cajun_spice_mix",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "id": "smoked_paprika",
+          "amount": 4,
+          "unit": "g"
+        },
+        {
+          "id": "chili_flakes",
+          "amount": 2,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "canned_tomatoes",
+          "amount": 780,
+          "unit": "g"
+        },
+        {
+          "id": "water",
+          "amount": 4,
+          "unit": "msk"
+        }
+      ],
+      "steps": [
+        "Tillsätt {{cajun_spice_mix}}, {{smoked_paprika}}, {{chili_flakes}} och {{salt}} till {{chili_con_kottbullar__fried_meatballs}} i {{eq:traktorpanna_1|def}}. Stek i 30 sekunder, tills väldoftande.",
+        "Tillsätt {{canned_tomatoes}} och {{water}}. Sjud på medelvärme i 5–8 min, tills såsen har tjocknat och köttbullarna är genomstekta."
+      ],
+      "duration": 1,
+      "wait": 8,
+      "tags": [],
+      "heat": "medelhög",
+      "stepHeat": {
+        "1": "medel"
+      },
+      "tips": [
+        "Köttbullarna är färdiglagade när de inte längre är rosa i mitten.",
+        "Skippa chili eller använd mindre om du inte tycker om stark mat.",
+        "Tillsätt eventuellt en klick smör till såsen."
+      ],
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred",
+          "transition": "keep"
+        }
+      ],
+      "devNotes": [
+        "HF Ay Cajun-ba (cajun-spice-mix) → cajun_spice_mix (blendId finns). HF Krossade tomater typ krossade-tomater-vitlok-lok → canned_tomatoes. FLAG.",
+        "Salt till sås 0,5 tsk, vatten till sås 4 msk (samma salt vid 3). 30-sekundersfräsningen är aktiv tid; wait ligger på sjudningen.",
+        "HF:s VIKTIGT-ruta om 'halva mängden av vissa ingredienser' gäller kassens förpackningar och är utelämnad; mängderna här är redan 4-portionsvärden. Smöret i tipset är valfritt och finns inte i inköpslistan, därför ingen Ta fram-node."
+      ]
+    },
+    {
+      "id": "chili_con_kottbullar__chopped_coriander",
+      "name": "Hacka Koriander",
+      "outputName": "Hackad koriander",
+      "inputs": [
+        {
+          "id": "coriander",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Grovhacka {{coriander}}."
+      ],
+      "duration": 1,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true,
+          "after": "chili_con_kottbullar__sliced_paprika"
+        }
+      ],
+      "devNotes": [
+        "HF Koriander 1 st vid 2 och 4 portioner, 2 st vid 6 — förpackning. Författad som 1 st vid 4 portioner med linjär skalning."
+      ]
+    },
+    {
+      "id": "chili_con_kottbullar__lime_wedges",
+      "name": "Skär Citrusfrukt",
+      "outputName": "Limeklyftor",
+      "inputs": [
+        {
+          "id": "lime",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skär {{lime}} i kvartar."
+      ],
+      "duration": 1,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true,
+          "after": "chili_con_kottbullar__chopped_coriander"
+        }
+      ],
+      "devNotes": [
+        "HF Citrusfrukt (typ lime) → lime. 1 st vid 2 och 4 portioner, 2 st vid 6 — förpackning. Författad som 1 st vid 4 portioner med linjär skalning. Serveras som klyftor att pressa över."
+      ]
+    },
+    {
+      "id": "chili_con_kottbullar__cilantro_rice",
+      "name": "Rör Ner Koriander i Riset",
+      "outputName": "Korianderris",
+      "inputs": [
+        {
+          "id": "chili_con_kottbullar__rested_rice",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "chili_con_kottbullar__chopped_coriander",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Rör ner {{chili_con_kottbullar__chopped_coriander}} i {{chili_con_kottbullar__rested_rice}} i {{eq:kastrull_1|def}} precis före servering."
+      ],
+      "duration": 1,
+      "wait": 0,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "kastrull_medelstor",
+          "ref": "kastrull_1",
+          "lid": true,
+          "transition": "keep",
+          "offHeat": true
+        }
+      ]
+    },
+    {
+      "id": "chili_con_kottbullar",
+      "name": "Chili con köttbullar",
+      "outputName": "Chili con köttbullar",
+      "inputs": [
+        {
+          "id": "chili_con_kottbullar__cilantro_rice",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "chili_con_kottbullar__chili_meatballs",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "sour_cream",
+          "amount": 75,
+          "unit": "ml"
+        },
+        {
+          "id": "chili_con_kottbullar__lime_wedges",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{chili_con_kottbullar__cilantro_rice}}, {{chili_con_kottbullar__chili_meatballs}} och såsen i {{eq:servering|pl}}.",
+        "Servera med {{sour_cream}} och {{chili_con_kottbullar__lime_wedges}} att pressa över."
+      ],
+      "duration": 2,
+      "tags": [
+        "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_djup_tallrik",
+          "ref": "servering",
+          "count": "portions"
+        }
+      ]
+    }
+  ]
+}

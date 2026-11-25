@@ -4,6 +4,11 @@
   "rawId": "66f569a1afc789d8d72bd02b",
   "createdAt": 1790854273,
   "basePortions": 4,
+  "time": {
+    "totalMin": 54,
+    "activeMin": 19,
+    "computedFrom": "graph"
+  },
   "scalable": false,
   "sharedPrep": [],
   "images": {

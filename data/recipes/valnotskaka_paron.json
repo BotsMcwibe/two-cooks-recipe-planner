@@ -4,6 +4,11 @@
   "rawId": "65cf61fa52f6e2fd05ccdd00",
   "createdAt": 1791042125,
   "basePortions": 8,
+  "time": {
+    "totalMin": 56,
+    "activeMin": 18,
+    "computedFrom": "graph"
+  },
   "scalable": false,
   "sharedPrep": [],
   "images": {
@@ -16,7 +21,7 @@
     }
   },
   "ratings": {
-    "average": 4.0,
+    "average": 4,
     "count": 1,
     "source": "hellofresh"
   },

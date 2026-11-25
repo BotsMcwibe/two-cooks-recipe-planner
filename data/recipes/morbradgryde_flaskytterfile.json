@@ -1,0 +1,459 @@
+{
+  "masterId": "morbradgryde_flaskytterfile",
+  "source": "hellofresh",
+  "rawId": "6a9e92a656a4cfbb9638f576",
+  "createdAt": 1794420807,
+  "basePortions": 4,
+  "time": {
+    "totalMin": 39,
+    "activeMin": 38,
+    "computedFrom": "graph"
+  },
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/morbradgryde_flaskytterfile/main.png",
+    "byNode": {
+      "morbradgryde_flaskytterfile__simmered_rice": "assets/recipes/morbradgryde_flaskytterfile/steps/simmered_rice.jpg",
+      "morbradgryde_flaskytterfile__prepped_veg": "assets/recipes/morbradgryde_flaskytterfile/steps/prepped_veg.jpg",
+      "morbradgryde_flaskytterfile__fried_pork": "assets/recipes/morbradgryde_flaskytterfile/steps/fried_pork.jpg",
+      "morbradgryde_flaskytterfile__sauce": "assets/recipes/morbradgryde_flaskytterfile/steps/sauce.jpg",
+      "morbradgryde_flaskytterfile__stew": "assets/recipes/morbradgryde_flaskytterfile/steps/stew.jpg",
+      "morbradgryde_flaskytterfile": "assets/recipes/morbradgryde_flaskytterfile/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 574,
+    "perPortion": {
+      "energyKcal": 784,
+      "energyKj": 3280,
+      "fatG": 29.9,
+      "saturatedFatG": 13.1,
+      "carbsG": 86.6,
+      "sugarsG": 17.3,
+      "fiberG": 7.2,
+      "proteinG": 42.4,
+      "saltG": 4.7
+    }
+  },
+  "nodes": [
+    {
+      "id": "morbradgryde_flaskytterfile__simmered_rice",
+      "name": "Koka Ris",
+      "outputName": "Kokt ris",
+      "inputs": [
+        {
+          "id": "water",
+          "amount": 5.5,
+          "unit": "dl"
+        },
+        {
+          "id": "long_grain_rice",
+          "amount": 300,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Koka upp {{water}} i {{eq:kastrull_1}}.",
+        "Tillsätt {{long_grain_rice}} och {{salt}}, sänk till medellåg värme och sjud under lock i 14 min."
+      ],
+      "duration": 2,
+      "wait": 14,
+      "tags": [],
+      "heat": "hög",
+      "stepHeat": {
+        "1": "medellåg"
+      },
+      "heatSource": "inferred",
+      "tips": [
+        "Riset ska ångkoka, så tjuvkika inte!"
+      ],
+      "equipment": [
+        {
+          "type": "kastrull_medelstor",
+          "ref": "kastrull_1",
+          "lid": true
+        }
+      ],
+      "devNotes": [
+        "Bara 'koka upp' (hög) är inferred; medellåg står i rådatan. Vatten till ris 5,5 dl vid 4 portioner (3 dl vid 2 — inte linjärt; linjärt vore 6 dl). FLAG. Salt till ris 1 tsk (samma vid 3)."
+      ]
+    },
+    {
+      "id": "morbradgryde_flaskytterfile__rested_rice",
+      "name": "Låt Riset Vila",
+      "outputName": "Ångat ris",
+      "inputs": [
+        {
+          "id": "morbradgryde_flaskytterfile__simmered_rice",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Ta av {{morbradgryde_flaskytterfile__simmered_rice}} i {{eq:kastrull_1|def}} från värmen och låt stå under lock i 10 min."
+      ],
+      "duration": 1,
+      "wait": 10,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "kastrull_medelstor",
+          "ref": "kastrull_1",
+          "transition": "keep",
+          "offHeat": true,
+          "lid": true
+        }
+      ]
+    },
+    {
+      "id": "morbradgryde_flaskytterfile__prepped_veg",
+      "name": "Skär Morot, Lök och Svamp",
+      "outputName": "Tärnad morot, hackad lök och skivad svamp",
+      "inputs": [
+        {
+          "id": "carrot",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "onion",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "mushrooms",
+          "amount": 200,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Tärna {{carrot}} (oskalad) i 1 cm stora bitar.",
+        "Finhacka {{onion}}.",
+        "Skär {{mushrooms}} i tunna skivor."
+      ],
+      "duration": 6,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "Alla tre går till samma stekning, därför en prepnode. HF Champinjoner → mushrooms."
+      ]
+    },
+    {
+      "id": "morbradgryde_flaskytterfile__sliced_pork",
+      "name": "Skär Fläskytterfilé",
+      "outputName": "Skivad fläskytterfilé",
+      "inputs": [
+        {
+          "id": "pork_tenderloin",
+          "amount": 600,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Skär {{pork_tenderloin}} i 2 cm tjocka skivor på en separat {{eq:skarbrada_ra|noun}}. Krydda med en nypa {{salt}} och {{pepper}}."
+      ],
+      "duration": 4,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada_ra",
+          "separate": true,
+          "rawKinds": [
+            "meat"
+          ]
+        }
+      ],
+      "devNotes": [
+        "Rådatan säger uttryckligen 'på en separat skärbräda' → skarbrada_ra (inte inferred). Brädan används inte till annat efteråt. Salt och peppar till köttet har ingen rad, därför 1 nypa vardera."
+      ]
+    },
+    {
+      "id": "morbradgryde_flaskytterfile__fried_pork",
+      "name": "Stek Fläskytterfilé",
+      "outputName": "Stekt fläskytterfilé",
+      "inputs": [
+        {
+          "id": "olive_oil",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "morbradgryde_flaskytterfile__sliced_pork",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i {{eq:traktorpanna_1}} på medelhög värme.",
+        "Stek {{morbradgryde_flaskytterfile__sliced_pork}} i 2–3 min per sida, eller tills gyllene och genomstekt. Ställ åt sidan på {{eq:tallrik_1}}."
+      ],
+      "duration": 8,
+      "wait": 0,
+      "tags": [],
+      "heat": "medelhög",
+      "tips": [
+        "Köttet är färdiglagat när det är utan inslag av rosa."
+      ],
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred"
+        },
+        {
+          "type": "tallrik",
+          "ref": "tallrik_1"
+        }
+      ],
+      "devNotes": [
+        "Olja till stekning 2 msk. Stekning per sida är hands-on, därför duration och ingen wait.",
+        "Rådatan säger stor stekpanna, men samma panna tar sedan 3 dl matlagningsgrädde + 390 g krossade tomater + 2 dl vatten (cirka 9 dl vätska) som sjuds, därför traktörpanna (typeSource inferred) i hela kedjan."
+      ]
+    },
+    {
+      "id": "morbradgryde_flaskytterfile__fried_veg",
+      "name": "Stek Lök, Svamp och Morot",
+      "outputName": "Stekt lök, svamp och morot",
+      "inputs": [
+        {
+          "id": "morbradgryde_flaskytterfile__prepped_veg",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "smoked_paprika",
+          "amount": 4,
+          "unit": "g"
+        },
+        {
+          "id": "jorden_runt",
+          "amount": 8,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Tillsätt löken från {{morbradgryde_flaskytterfile__prepped_veg}}, {{smoked_paprika}} och {{jorden_runt}} i {{eq:traktorpanna_1|def}} och fräs i 1–2 min på medelhög värme, eller tills väldoftande.",
+        "Tillsätt svamp och morot och stek i 5–6 min, eller tills mjukt."
+      ],
+      "duration": 8,
+      "wait": 0,
+      "tags": [],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred",
+          "transition": "keep",
+          "after": "morbradgryde_flaskytterfile__fried_pork"
+        }
+      ],
+      "devNotes": [
+        "Ingen ny olja; samma panna som köttet (torkas inte ur). after är resursordning (köttet kommer tillbaka i grytan)."
+      ]
+    },
+    {
+      "id": "morbradgryde_flaskytterfile__chopped_parsley",
+      "name": "Hacka Persilja",
+      "outputName": "Finhackad persilja",
+      "inputs": [
+        {
+          "id": "parsley",
+          "amount": 10,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Finhacka {{parsley}}."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "HF Kruspersilja (organic-parsley-curled) → parsley. 10 g vid 2 och 4 portioner, 20 g vid 6 — förpackning. Författad som 10 g vid 4 portioner med linjär skalning (5 g vid 2, 15 g vid 6). FLAG om kruspersilja ska ha egen id."
+      ]
+    },
+    {
+      "id": "morbradgryde_flaskytterfile__sauce",
+      "name": "Sjud Tomatgräddsås",
+      "outputName": "Tomatgräddsås med grönsaker",
+      "inputs": [
+        {
+          "id": "morbradgryde_flaskytterfile__fried_veg",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "cooking_cream",
+          "amount": 300,
+          "unit": "ml"
+        },
+        {
+          "id": "vegetable_bouillon",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "id": "canned_tomatoes",
+          "amount": 390,
+          "unit": "g"
+        },
+        {
+          "id": "tomato_paste",
+          "amount": 70,
+          "unit": "g"
+        },
+        {
+          "id": "water",
+          "amount": 2,
+          "unit": "dl"
+        }
+      ],
+      "steps": [
+        "Rör ner {{cooking_cream}}, {{vegetable_bouillon}}, {{canned_tomatoes}}, {{tomato_paste}} och {{water}} i {{morbradgryde_flaskytterfile__fried_veg}} i {{eq:traktorpanna_1|def}}.",
+        "Sjud i 2–3 min, eller tills såsen tjocknar."
+      ],
+      "duration": 2,
+      "wait": 3,
+      "tags": [],
+      "heat": "medellåg",
+      "heatSource": "inferred",
+      "tips": [
+        "Tillsätt en skvätt vatten om såsen är för tjock."
+      ],
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred",
+          "transition": "keep"
+        }
+      ],
+      "devNotes": [
+        "Vatten till sås 2 dl. HF Krossade tomater (typ chopped-tomatoes) 390 g vid 4 portioner → canned_tomatoes. HF:s VIKTIGT-ruta om 'halva mängden' gäller kassens förpackningar (195 g vid 2 portioner) och är utelämnad."
+      ]
+    },
+    {
+      "id": "morbradgryde_flaskytterfile__stew",
+      "name": "Vänd Ner Köttet",
+      "outputName": "Mørbradgryde",
+      "inputs": [
+        {
+          "id": "morbradgryde_flaskytterfile__sauce",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "morbradgryde_flaskytterfile__fried_pork",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Tillsätt {{morbradgryde_flaskytterfile__fried_pork}} till {{morbradgryde_flaskytterfile__sauce}} i {{eq:traktorpanna_1|def}} och sjud i 30 sek, tills genomvarmt.",
+        "Krydda med {{salt}} och en generös nypa {{pepper}}."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [],
+      "heat": "medellåg",
+      "heatSource": "inferred",
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred",
+          "transition": "keep"
+        }
+      ],
+      "devNotes": [
+        "30 sek är för kort för en wait, därför duration. Salt till sås 1 tsk. Egen node så att såsens wait ligger på sista steget."
+      ]
+    },
+    {
+      "id": "morbradgryde_flaskytterfile",
+      "name": "”Mørbradgryde” på fläskytterfilé",
+      "outputName": "”Mørbradgryde” på fläskytterfilé",
+      "inputs": [
+        {
+          "id": "morbradgryde_flaskytterfile__rested_rice",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "morbradgryde_flaskytterfile__stew",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "morbradgryde_flaskytterfile__chopped_parsley",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{morbradgryde_flaskytterfile__rested_rice}} på {{eq:servering|pl}} och toppa med {{morbradgryde_flaskytterfile__stew}}.",
+        "Garnera med {{morbradgryde_flaskytterfile__chopped_parsley}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_tallrik",
+          "ref": "servering",
+          "count": "portions"
+        }
+      ]
+    }
+  ]
+}

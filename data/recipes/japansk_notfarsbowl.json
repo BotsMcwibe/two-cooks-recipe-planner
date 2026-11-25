@@ -4,6 +4,11 @@
   "rawId": "62cbc0084743ced996b0dc52",
   "createdAt": 1791041676,
   "basePortions": 4,
+  "time": {
+    "totalMin": 31,
+    "activeMin": 30,
+    "computedFrom": "graph"
+  },
   "sharedPrep": [],
   "images": {
     "main": "assets/recipes/japansk_notfarsbowl/main.jpg",

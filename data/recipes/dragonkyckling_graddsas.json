@@ -1,0 +1,462 @@
+{
+  "masterId": "dragonkyckling_graddsas",
+  "source": "hellofresh",
+  "rawId": "6a915db84f9a309bb69cda03",
+  "createdAt": 1792603623,
+  "basePortions": 4,
+  "time": {
+    "totalMin": 34,
+    "activeMin": 32,
+    "computedFrom": "graph"
+  },
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/dragonkyckling_graddsas/main.jpg",
+    "byNode": {
+      "dragonkyckling_graddsas__simmered_rice": "assets/recipes/dragonkyckling_graddsas/steps/simmered_rice.jpg",
+      "dragonkyckling_graddsas__onion_garlic": "assets/recipes/dragonkyckling_graddsas/steps/onion_garlic.jpg",
+      "dragonkyckling_graddsas__fried_chicken": "assets/recipes/dragonkyckling_graddsas/steps/fried_chicken.jpg",
+      "dragonkyckling_graddsas__fried_aromatics": "assets/recipes/dragonkyckling_graddsas/steps/fried_aromatics.jpg",
+      "dragonkyckling_graddsas__cream_sauce": "assets/recipes/dragonkyckling_graddsas/steps/cream_sauce.jpg",
+      "dragonkyckling_graddsas": "assets/recipes/dragonkyckling_graddsas/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 532,
+    "perPortion": {
+      "energyKcal": 752,
+      "energyKj": 3145,
+      "fatG": 23.8,
+      "saturatedFatG": 10,
+      "carbsG": 88.3,
+      "sugarsG": 15.1,
+      "fiberG": 9.4,
+      "proteinG": 48.9,
+      "saltG": 5.5
+    }
+  },
+  "nodes": [
+    {
+      "id": "dragonkyckling_graddsas__simmered_rice",
+      "name": "Koka Ris",
+      "outputName": "Kokt jasminris",
+      "inputs": [
+        {
+          "id": "water",
+          "amount": 6,
+          "unit": "dl"
+        },
+        {
+          "id": "jasmine_rice",
+          "amount": 300,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Koka upp {{water}} i {{eq:kastrull_1}}.",
+        "Rör i {{jasmine_rice}} och {{salt}}, sänk till medellåg värme och sjud under lock i 12 min."
+      ],
+      "duration": 2,
+      "wait": 12,
+      "tags": [],
+      "heat": "hög",
+      "stepHeat": {
+        "1": "medellåg"
+      },
+      "heatSource": "inferred",
+      "tips": [
+        "Riset ska ångkoka, så tjuvkika inte!"
+      ],
+      "equipment": [
+        {
+          "type": "kastrull_medelstor",
+          "ref": "kastrull_1",
+          "lid": true
+        }
+      ],
+      "devNotes": [
+        "Bara 'koka upp' (hög) är inferred; medellåg står i rådatan. Vatten till ris 6 dl, salt till ris 1 tsk (4 portioner; salt samma vid 3). Kok och vila är två waits, därför två noder (§4.1)."
+      ]
+    },
+    {
+      "id": "dragonkyckling_graddsas__rested_rice",
+      "name": "Låt Riset Vila",
+      "outputName": "Ångat jasminris",
+      "inputs": [
+        {
+          "id": "dragonkyckling_graddsas__simmered_rice",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Ta av {{dragonkyckling_graddsas__simmered_rice}} i {{eq:kastrull_1|def}} från värmen och låt vila under lock i 10 min."
+      ],
+      "duration": 1,
+      "wait": 10,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "kastrull_medelstor",
+          "ref": "kastrull_1",
+          "transition": "keep",
+          "offHeat": true,
+          "lid": true
+        }
+      ]
+    },
+    {
+      "id": "dragonkyckling_graddsas__onion_garlic",
+      "name": "Hacka Lök och Vitlök",
+      "outputName": "Finhackad lök och vitlök",
+      "inputs": [
+        {
+          "id": "onion",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "garlic",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Finhacka {{onion}}.",
+        "Finhacka eller pressa {{garlic}}."
+      ],
+      "duration": 4,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "Vitlöksklyfta: HF har 2 st vid 2, 3 och 4 portioner och 4 st vid 6. Vitlök är en smakbas och ska skala; författad som 2 st vid 4 portioner (HF:s 4-portionsvärde) med linjär skalning (1 st vid 2, 3 st vid 6). FLAG: HF:s 2 st vid 2 portioner tyder på att 4 portioner kunde tåla 3–4 klyftor."
+      ]
+    },
+    {
+      "id": "dragonkyckling_graddsas__leek_chili_tomato",
+      "name": "Skär Purjolök, Chili och Soltorkade Tomater",
+      "outputName": "Purjolök, chili och soltorkade tomater",
+      "inputs": [
+        {
+          "id": "leek",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "fresh_chili",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "sun_dried_tomatoes",
+          "amount": 100,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Halvera och skölj sedan av {{leek}}. Skär den i tunna skivor.",
+        "Halvera, kärna ur och skär {{fresh_chili}} i tunna skivor.",
+        "Finhacka {{sun_dried_tomatoes}}."
+      ],
+      "duration": 6,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "tips": [
+        "Se till att purjolöken är ordentligt sköljd och rensad.",
+        "Skippa chili eller använd mindre om du inte tycker om stark mat."
+      ],
+      "devNotes": [
+        "HF skär dessa i stekningssteget; som prepnode kan det göras före. Delad från lök/vitlök för att hålla ≤4 delsteg (båda går till samma stekning). Chili 1 st vid både 3 och 4."
+      ]
+    },
+    {
+      "id": "dragonkyckling_graddsas__chopped_tarragon",
+      "name": "Hacka Dragon",
+      "outputName": "Finhackad dragon",
+      "inputs": [
+        {
+          "id": "tarragon",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Finhacka dragonbladen från {{tarragon}}."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "Dragon: HF 1 st vid 2, 3 och 4 portioner, 2 st vid 6 — troligen en kruka/knippe. Författad som 1 st vid 4 portioner med linjär skalning (0,5 vid 2 räcker; 1,5 vid 6 nära HF:s 2). FLAG.",
+        "Delning enligt rådatan: hälften (0,5 st) i såsen före servering, resten (0,5 st) som garnering."
+      ]
+    },
+    {
+      "id": "dragonkyckling_graddsas__fried_chicken",
+      "name": "Stek Kyckling",
+      "outputName": "Stekt kyckling",
+      "inputs": [
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "chicken_breast_strips",
+          "amount": 600,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i {{eq:traktorpanna_1}} på medelhög värme.",
+        "Tillsätt {{chicken_breast_strips}} och krydda med {{salt}}. Stek i 4–5 min, eller tills gyllene och genomstekt. Vänd den då och då.",
+        "Lägg över på {{eq:tallrik_1}}."
+      ],
+      "duration": 6,
+      "wait": 0,
+      "tags": [],
+      "heat": "medelhög",
+      "tips": [
+        "Kycklingen är färdiglagad när köttet inte längre är rosa i mitten.",
+        "Tvätta händer och köksredskap noggrant efter hantering av rå kyckling."
+      ],
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred"
+        },
+        {
+          "type": "tallrik",
+          "ref": "tallrik_1"
+        }
+      ],
+      "devNotes": [
+        "Kycklingen är färdigstrimlad (chicken_breast_strips) och skärs inte, därför ingen skarbrada_ra. Salt till kött 0,5 tsk (samma vid 3). Olivoljan har ingen egen rad, därför standard 1 skvätt.",
+        "Rådatan säger stor stekpanna, men samma panna (torkas inte ur) tar sedan 3 dl matlagningsgrädde + 2 dl vatten som sjuds under lock, därför traktörpanna (typeSource inferred) i hela kedjan."
+      ]
+    },
+    {
+      "id": "dragonkyckling_graddsas__fried_aromatics",
+      "name": "Stek Lök och Purjolök",
+      "outputName": "Stekt lök, purjolök och soltorkade tomater",
+      "inputs": [
+        {
+          "id": "olive_oil",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "dragonkyckling_graddsas__onion_garlic",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "dragonkyckling_graddsas__leek_chili_tomato",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i {{eq:traktorpanna_1|def}} (utan att torka ur den) på medelvärme.",
+        "Stek {{dragonkyckling_graddsas__onion_garlic}} och {{dragonkyckling_graddsas__leek_chili_tomato}} i 4–5 min, tills löken mjuknat."
+      ],
+      "duration": 6,
+      "wait": 0,
+      "tags": [],
+      "heat": "medel",
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred",
+          "transition": "keep",
+          "after": "dragonkyckling_graddsas__fried_chicken"
+        }
+      ],
+      "devNotes": [
+        "Olja till sås 2 msk. Samma panna som kycklingen: after är resursordning (kycklingen kommer tillbaka i såsen)."
+      ]
+    },
+    {
+      "id": "dragonkyckling_graddsas__cream_sauce",
+      "name": "Sjud Gräddsås",
+      "outputName": "Kyckling i gräddsås",
+      "inputs": [
+        {
+          "id": "dragonkyckling_graddsas__fried_aromatics",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "dragonkyckling_graddsas__fried_chicken",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "cooking_cream",
+          "amount": 300,
+          "unit": "ml"
+        },
+        {
+          "id": "chicken_bouillon",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "id": "lemon",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "water",
+          "amount": 2,
+          "unit": "dl"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Lägg tillbaka {{dragonkyckling_graddsas__fried_chicken}} i {{eq:traktorpanna_1|def}} med {{dragonkyckling_graddsas__fried_aromatics}}.",
+        "Halvera {{lemon}}. Tillsätt {{cooking_cream}}, {{chicken_bouillon}}, en generös skvätt citronsaft, {{water}}, {{salt}} och en nypa {{pepper}}.",
+        "Sjud under lock i 3–4 min, eller tills något tjocknat."
+      ],
+      "duration": 2,
+      "wait": 4,
+      "tags": [],
+      "heat": "medellåg",
+      "heatSource": "inferred",
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred",
+          "transition": "keep",
+          "lid": true
+        }
+      ],
+      "devNotes": [
+        "HF Citrusfrukt (typ lemon) → lemon. 1 st vid 2, 3 och 4 portioner, 2 st vid 6. Bara en generös skvätt saft används; författad som 1 st vid 4 portioner med linjär skalning (0,5 st vid 2 räcker). HF halverar citronen i prepsteget; här i samma node som saften används (citronen har bara en destination). FLAG.",
+        "HF Buljong (chicken-stock-powder) → chicken_bouillon. Vatten till sås 2 dl, salt till sås 1 tsk."
+      ]
+    },
+    {
+      "id": "dragonkyckling_graddsas__finished_sauce",
+      "name": "Rör Ner Dragon",
+      "outputName": "Dragonkyckling i gräddsås",
+      "inputs": [
+        {
+          "id": "dragonkyckling_graddsas__cream_sauce",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "dragonkyckling_graddsas__chopped_tarragon",
+          "amount": 0.5,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Precis före servering, rör ner hälften av {{dragonkyckling_graddsas__chopped_tarragon}} i {{dragonkyckling_graddsas__cream_sauce}}."
+      ],
+      "duration": 1,
+      "wait": 0,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred",
+          "transition": "keep",
+          "offHeat": true
+        }
+      ],
+      "devNotes": [
+        "Egen node så att sjudningens wait ligger på sista steget (§4.1 regel 4)."
+      ]
+    },
+    {
+      "id": "dragonkyckling_graddsas",
+      "name": "Dragonkyckling i gräddsås",
+      "outputName": "Dragonkyckling i gräddsås",
+      "inputs": [
+        {
+          "id": "dragonkyckling_graddsas__rested_rice",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "dragonkyckling_graddsas__finished_sauce",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "dragonkyckling_graddsas__chopped_tarragon",
+          "amount": 0.5,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{dragonkyckling_graddsas__rested_rice}} och {{dragonkyckling_graddsas__finished_sauce}} i {{eq:servering|pl}}.",
+        "Garnera med resterande {{dragonkyckling_graddsas__chopped_tarragon}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_djup_tallrik",
+          "ref": "servering",
+          "count": "portions"
+        }
+      ]
+    }
+  ]
+}

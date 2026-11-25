@@ -4,6 +4,11 @@
   "rawId": "citygross-R00103",
   "createdAt": 1791056383,
   "basePortions": 4,
+  "time": {
+    "totalMin": 31,
+    "activeMin": 22,
+    "computedFrom": "graph"
+  },
   "sharedPrep": [],
   "images": {
     "main": "assets/recipes/potatis_purjolokssoppa/main.jpg"

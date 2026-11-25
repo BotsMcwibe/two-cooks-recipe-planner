@@ -4,6 +4,11 @@
   "rawId": "6853f90d5bd0c1208002a235",
   "createdAt": 1790852363,
   "basePortions": 4,
+  "time": {
+    "totalMin": 34,
+    "activeMin": 14,
+    "computedFrom": "graph"
+  },
   "sharedPrep": [],
   "images": {
     "main": "assets/recipes/chocolate_granola/main.jpg",

@@ -1,0 +1,375 @@
+{
+  "masterId": "chorizo_harissaspaghetti",
+  "source": "hellofresh",
+  "rawId": "6a9e9294790f7867027dbee4",
+  "createdAt": 1794425531,
+  "basePortions": 4,
+  "time": {
+    "totalMin": 19,
+    "activeMin": 17,
+    "computedFrom": "graph"
+  },
+  "images": {
+    "main": "assets/recipes/chorizo_harissaspaghetti/main.jpg",
+    "byNode": {
+      "chorizo_harissaspaghetti__rinsed_spinach": "assets/recipes/chorizo_harissaspaghetti/steps/rinsed_spinach.jpg",
+      "chorizo_harissaspaghetti__torn_mozzarella": "assets/recipes/chorizo_harissaspaghetti/steps/torn_mozzarella.jpg",
+      "chorizo_harissaspaghetti__chopped_basil": "assets/recipes/chorizo_harissaspaghetti/steps/chopped_basil.jpg",
+      "chorizo_harissaspaghetti__pasta_in_sauce": "assets/recipes/chorizo_harissaspaghetti/steps/pasta_in_sauce.jpg",
+      "chorizo_harissaspaghetti": "assets/recipes/chorizo_harissaspaghetti/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 468,
+    "perPortion": {
+      "energyKcal": 917,
+      "energyKj": 3835,
+      "fatG": 45,
+      "saturatedFatG": 18.5,
+      "carbsG": 82.8,
+      "sugarsG": 16.5,
+      "proteinG": 40.9,
+      "fiberG": 7.9,
+      "saltG": 5.6
+    }
+  },
+  "nodes": [
+    {
+      "id": "chorizo_harissaspaghetti__cooked_pasta",
+      "name": "Koka Spaghetti",
+      "outputName": "Kokt spaghetti",
+      "inputs": [
+        {
+          "id": "spaghetti",
+          "amount": 360,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Koka upp saltat vatten i {{eq:kastrull_1}}.",
+        "Koka {{spaghetti}} i 8–9 min, eller tills al dente."
+      ],
+      "duration": 2,
+      "wait": 9,
+      "tags": [],
+      "heat": "hög",
+      "equipment": [
+        {
+          "type": "kastrull_stor",
+          "ref": "kastrull_1"
+        }
+      ],
+      "devNotes": [
+        "HF Spaghetti → spaghetti, 360 g vid 4 portioner, linjärt 180/270/360/450/540. Rådatan säger stor kastrull. Salt i kokvattnet har ingen rad i HF:s lista och lämnas omätt (samma mönster som ricotta_soltorkad_tomatpasta). Avhällning i nästa node så att kokets wait ligger på sista steget."
+      ]
+    },
+    {
+      "id": "chorizo_harissaspaghetti__drained_pasta",
+      "name": "Häll Av Spaghettin",
+      "outputName": "Avhälld spaghetti",
+      "inputs": [
+        {
+          "id": "chorizo_harissaspaghetti__cooked_pasta",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Precis innan pastan är färdig, skopa upp 2 dl kokvatten i en kopp och ställ åt sidan.",
+        "Häll av {{chorizo_harissaspaghetti__cooked_pasta}} från {{eq:kastrull_1|def}} i {{eq:durkslag_1}} och lägg tillbaka pastan i {{eq:kastrull_1|def}}."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "kastrull_stor",
+          "ref": "kastrull_1",
+          "transition": "keep",
+          "offHeat": true,
+          "after": "chorizo_harissaspaghetti__cooked_pasta"
+        },
+        {
+          "type": "durkslag",
+          "ref": "durkslag_1",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "HF Sparat pastavatten 2 dl (samma vid 4; 1 dl vid 2, 1,5 dl vid 3) används i såsen som {{water}}. Skopas här och ställs åt sidan; vattnet listas som ingång i såsnoden, inte här, så att pastakokets vatten inte dubbelräknas i volymen."
+      ]
+    },
+    {
+      "id": "chorizo_harissaspaghetti__fried_chorizo",
+      "name": "Stek Chorizo",
+      "outputName": "Stekt chorizo",
+      "inputs": [
+        {
+          "id": "olive_oil",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "chorizo",
+          "amount": 240,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i {{eq:traktorpanna_1}} på medelhög värme.",
+        "Stek {{chorizo}} i 4–6 min, eller tills genomstekt."
+      ],
+      "duration": 2,
+      "wait": 6,
+      "tags": [],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred"
+        }
+      ],
+      "devNotes": [
+        "HF Tärnad chorizo → chorizo (färdigtärnad, ingen rawAnimal; samma som ugnsbakad_torsk_chorizo). Ingen skärbräda och ingen skarbrada_ra. 240 g vid 4, linjärt 120/180/240/300/360. Olja till stekning 2 msk.",
+        "Rådatan säger stor stekpanna. Samma panna får sedan 780 g krossade tomater + 2 dl pastavatten som sjuds — infereras till traktörpanna. FLAG typ. Inget lock i rådatan."
+      ]
+    },
+    {
+      "id": "chorizo_harissaspaghetti__rinsed_spinach",
+      "name": "Skölj Spenat",
+      "outputName": "Sköljd spenat",
+      "inputs": [
+        {
+          "id": "baby_spinach",
+          "amount": 100,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Skölj {{baby_spinach}}."
+      ],
+      "duration": 1,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "devNotes": [
+        "HF Spenat typ organic-baby-spinach → baby_spinach, 100 g vid 4 portioner (60 g vid 2, 75 g vid 3, 135 g vid 5, 160 g vid 6 — inte linjärt från 2). FLAG."
+      ]
+    },
+    {
+      "id": "chorizo_harissaspaghetti__torn_mozzarella",
+      "name": "Riv Mozzarella i Bitar",
+      "outputName": "Mozzarella i bitar",
+      "inputs": [
+        {
+          "id": "mozzarella",
+          "amount": 250,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Häll av och riv {{mozzarella}} i bitar."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "devNotes": [
+        "HF Mozzarella typ fresh-mozzarella → mozzarella. 250 g vid både 3 och 4 portioner (125 g vid 2, 375 g vid 5 och 6). 'Riv i bitar' betyder slita för hand, inte riva på rivjärn. Avhällning av lagen, ingen skärbräda."
+      ]
+    },
+    {
+      "id": "chorizo_harissaspaghetti__chopped_basil",
+      "name": "Grovhacka Basilika",
+      "outputName": "Grovhackad basilika",
+      "inputs": [
+        {
+          "id": "basil",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Grovhacka {{basil}}."
+      ],
+      "duration": 1,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "HF Basilika 1 st vid 2, 3 och 4 portioner, 2 st vid 5 och 6 — förpackning. Författad som 1 st vid 4 portioner med linjär skalning."
+      ]
+    },
+    {
+      "id": "chorizo_harissaspaghetti__harissa_sauce",
+      "name": "Sjud Harissasås",
+      "outputName": "Chorizo- och harissasås",
+      "inputs": [
+        {
+          "id": "chorizo_harissaspaghetti__fried_chorizo",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "harissa",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "id": "chicken_bouillon",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "id": "canned_tomatoes",
+          "amount": 780,
+          "unit": "g"
+        },
+        {
+          "id": "water",
+          "amount": 2,
+          "unit": "dl"
+        },
+        {
+          "id": "sugar",
+          "amount": 2,
+          "unit": "tsk"
+        },
+        {
+          "id": "butter",
+          "amount": 2,
+          "unit": "msk"
+        }
+      ],
+      "steps": [
+        "Tillsätt {{harissa}}, {{chicken_bouillon}}, {{canned_tomatoes}}, sparat pastavatten ({{water}}), {{sugar}} och {{butter}} till {{chorizo_harissaspaghetti__fried_chorizo}} i {{eq:traktorpanna_1|def}}.",
+        "Sjud i 2–3 min, eller tills såsen tjocknar något."
+      ],
+      "duration": 2,
+      "wait": 3,
+      "tags": [],
+      "heat": "medel",
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred",
+          "transition": "keep",
+          "after": "chorizo_harissaspaghetti__fried_chorizo"
+        }
+      ],
+      "devNotes": [
+        "HF Harissakrydda typ harissa, 8 g → befintlig harissa ('Harissa (torr)', spice_blend, blendId harissa). Det är en torr HelloFresh-kryddblandning, inte pasta. 8 g vid både 3 och 4 (4 g vid 2, 12 g vid 5 och 6).",
+        "HF Buljong typ chicken-stock-powder → chicken_bouillon, 8 g vid 3 och 4 (4 g vid 2, 12 g vid 5 och 6). Krossade tomater typ krossade-tomater-vitlok-lok → canned_tomatoes, 780 g linjärt. FLAG typ. Socker till sås 2 tsk, smör till sås 2 msk. Smöret smälter i såsen; rådatan säger inte rumstempererat, ingen Ta fram-nod."
+      ]
+    },
+    {
+      "id": "chorizo_harissaspaghetti__pasta_in_sauce",
+      "name": "Vänd Ner Pasta och Spenat",
+      "outputName": "Spaghetti i chorizo- och harissasås",
+      "inputs": [
+        {
+          "id": "chorizo_harissaspaghetti__harissa_sauce",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "chorizo_harissaspaghetti__drained_pasta",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "chorizo_harissaspaghetti__rinsed_spinach",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Vänd ner {{chorizo_harissaspaghetti__drained_pasta}} och {{chorizo_harissaspaghetti__rinsed_spinach}} i {{chorizo_harissaspaghetti__harissa_sauce}} i {{eq:traktorpanna_1|def}}.",
+        "Krydda med {{salt}} och {{pepper}}."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [],
+      "heat": "medel",
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred",
+          "transition": "keep",
+          "after": "chorizo_harissaspaghetti__harissa_sauce"
+        }
+      ]
+    },
+    {
+      "id": "chorizo_harissaspaghetti",
+      "name": "Snabb chorizo- och harissaspaghetti",
+      "outputName": "Snabb chorizo- och harissaspaghetti",
+      "inputs": [
+        {
+          "id": "chorizo_harissaspaghetti__pasta_in_sauce",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "chorizo_harissaspaghetti__torn_mozzarella",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "pine_nuts",
+          "amount": 20,
+          "unit": "g"
+        },
+        {
+          "id": "chorizo_harissaspaghetti__chopped_basil",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{chorizo_harissaspaghetti__pasta_in_sauce}} i {{eq:servering|pl}} och toppa med {{chorizo_harissaspaghetti__torn_mozzarella}}, {{pine_nuts}} och {{chorizo_harissaspaghetti__chopped_basil}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_skal",
+          "ref": "servering",
+          "count": "portions"
+        }
+      ],
+      "devNotes": [
+        "All näring behållen inklusive fiber 7,9 g och 917 kcal.",
+        "Pinjenötter 20 g vid 3 och 4 portioner (10 g vid 2, 30 g vid 5 och 6) strös över råa; rådatan rostas dem inte. FLAG 3-portionskopia tillsammans med mozzarella, harissa och buljong.",
+        "Allergener gluten och dairy (vete hopslaget i gluten). Inga tydligt saknade. Senap/soja/spannmålsspår i raw är traces-only och tas inte med. Pinjenötter lades inte till som nuts (ofta utanför EU:s nötgrupp; HF listade dem inte). Äggfri tagg — spaghetti utan ägg, inget ägg tillagt.",
+        "clonedFrom 677bcad060847ae8211b0ed5 har ingen raw-fil och ingen master. Dubbletten 67dd37f8200ef299d970fd79 är samma recept och konverterades inte."
+      ]
+    }
+  ]
+}

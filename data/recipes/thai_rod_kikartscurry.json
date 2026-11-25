@@ -1,0 +1,357 @@
+{
+  "masterId": "thai_rod_kikartscurry",
+  "source": "hellofresh",
+  "rawId": "6a9e92a456a4cfbb9638f52b",
+  "createdAt": 1794421317,
+  "basePortions": 4,
+  "time": {
+    "totalMin": 19,
+    "activeMin": 16,
+    "computedFrom": "graph"
+  },
+  "images": {
+    "main": "assets/recipes/thai_rod_kikartscurry/main.jpg",
+    "byNode": {
+      "thai_rod_kikartscurry__simmered_rice": "assets/recipes/thai_rod_kikartscurry/steps/simmered_rice.jpg",
+      "thai_rod_kikartscurry__fried_chickpeas": "assets/recipes/thai_rod_kikartscurry/steps/fried_chickpeas.jpg",
+      "thai_rod_kikartscurry__curry_sauce": "assets/recipes/thai_rod_kikartscurry/steps/curry_sauce.jpg",
+      "thai_rod_kikartscurry": "assets/recipes/thai_rod_kikartscurry/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 468,
+    "perPortion": {
+      "energyKcal": 730,
+      "energyKj": 3053,
+      "fatG": 34.3,
+      "saturatedFatG": 16.3,
+      "carbsG": 89.9,
+      "sugarsG": 8.5,
+      "fiberG": 12,
+      "proteinG": 18,
+      "saltG": 5.3
+    }
+  },
+  "nodes": [
+    {
+      "id": "thai_rod_kikartscurry__simmered_rice",
+      "name": "Koka Ris",
+      "outputName": "Kokt basmatiris",
+      "inputs": [
+        {
+          "id": "water",
+          "amount": 6,
+          "unit": "dl"
+        },
+        {
+          "id": "basmati_rice",
+          "amount": 300,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Koka upp {{water}} i {{eq:kastrull_1}}.",
+        "Rör i {{basmati_rice}} och {{salt}}, sänk till medellåg värme och sjud under lock i 10 min."
+      ],
+      "duration": 2,
+      "wait": 10,
+      "tags": [],
+      "heat": "hög",
+      "stepHeat": {
+        "1": "medellåg"
+      },
+      "tips": [
+        "Riset ska ångkoka, så tjuvkika inte!"
+      ],
+      "equipment": [
+        {
+          "type": "kastrull_medelstor",
+          "ref": "kastrull_1",
+          "lid": true
+        }
+      ],
+      "devNotes": [
+        "Rådatan säger medelstor kastrull. Vatten till ris 6 dl, salt till ris 1 tsk (samma vid 3 portioner; linjärt från 2)."
+      ]
+    },
+    {
+      "id": "thai_rod_kikartscurry__rested_rice",
+      "name": "Låt Riset Vila",
+      "outputName": "Ångat basmatiris",
+      "inputs": [
+        {
+          "id": "thai_rod_kikartscurry__simmered_rice",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Ta av {{thai_rod_kikartscurry__simmered_rice}} i {{eq:kastrull_1|def}} från värmen och låt vila under lock tills servering."
+      ],
+      "duration": 1,
+      "wait": 0,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "kastrull_medelstor",
+          "ref": "kastrull_1",
+          "lid": true,
+          "transition": "keep",
+          "offHeat": true
+        }
+      ],
+      "devNotes": [
+        "HF anger ingen vilotid, bara 'tills servering'. Ingen påhittad 10-minuterstimer."
+      ]
+    },
+    {
+      "id": "thai_rod_kikartscurry__prepped_chickpeas",
+      "name": "Skär Paprika och Häll Av Kikärtor",
+      "outputName": "Paprikaskivor och avhällda kikärtor",
+      "inputs": [
+        {
+          "id": "paprika",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "chickpeas",
+          "amount": 780,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Skär {{paprika}} i 1 cm tunna skivor.",
+        "Häll av {{chickpeas}} i {{eq:durkslag_1}}."
+      ],
+      "duration": 3,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        },
+        {
+          "type": "durkslag",
+          "ref": "durkslag_1",
+          "inferred": true
+        }
+      ]
+    },
+    {
+      "id": "thai_rod_kikartscurry__prepped_spinach_lime",
+      "name": "Skölj Spenat och Halvera Lime",
+      "outputName": "Sköljd spenat och halverad lime",
+      "inputs": [
+        {
+          "id": "baby_spinach",
+          "amount": 60,
+          "unit": "g"
+        },
+        {
+          "id": "lime",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skölj {{baby_spinach}}.",
+        "Halvera {{lime}}."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true,
+          "after": "thai_rod_kikartscurry__prepped_chickpeas"
+        }
+      ],
+      "devNotes": [
+        "HF Citrusfrukt (typ lime) → lime. 1 st vid 2 och 4 portioner, 2 st vid 6 — förpackning. Författad som 1 st vid 4 portioner med linjär skalning.",
+        "HF Spenat (organic-baby-spinach) → baby_spinach. Sköljning utan durkslag, samma mönster som andra spenatnoder; brädan efter paprika/kikärtor så de inte överlappar."
+      ]
+    },
+    {
+      "id": "thai_rod_kikartscurry__fried_chickpeas",
+      "name": "Stek Kikärtor och Paprika",
+      "outputName": "Stekta kikärtor och paprika",
+      "inputs": [
+        {
+          "id": "olive_oil",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "thai_rod_kikartscurry__prepped_chickpeas",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i {{eq:traktorpanna_1}} på medelhög värme.",
+        "Stek {{thai_rod_kikartscurry__prepped_chickpeas}} i 3–4 min, tills något mjuka."
+      ],
+      "duration": 2,
+      "wait": 4,
+      "tags": [],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred"
+        }
+      ],
+      "devNotes": [
+        "Rådatan säger stor stekpanna, men 360 ml kokosmjölk plus 40 ml sojasås (4 dl) sjuds i samma panna → traktörpanna, typeSource inferred. Olja till grönsaker 2 msk (samma vid 3)."
+      ]
+    },
+    {
+      "id": "thai_rod_kikartscurry__curry_sauce",
+      "name": "Sjud Röd Curry",
+      "outputName": "Röd kikärtscurry, utan spenat",
+      "inputs": [
+        {
+          "id": "thai_rod_kikartscurry__fried_chickpeas",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "red_curry_paste",
+          "amount": 60,
+          "unit": "g"
+        },
+        {
+          "id": "milda_mahal",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "id": "soy_sauce",
+          "amount": 40,
+          "unit": "ml"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "coconut_milk",
+          "amount": 360,
+          "unit": "ml"
+        }
+      ],
+      "steps": [
+        "Tillsätt {{red_curry_paste}} och {{milda_mahal}} till {{thai_rod_kikartscurry__fried_chickpeas}} i {{eq:traktorpanna_1|def}}. Stek i 30 sek, tills väldoftande.",
+        "Rör ner {{soy_sauce}}, {{salt}} och {{coconut_milk}}. Sänk till medelvärme och sjud i 1–2 min, tills tjocknat."
+      ],
+      "duration": 2,
+      "wait": 2,
+      "tags": [],
+      "heat": "medelhög",
+      "stepHeat": {
+        "1": "medel"
+      },
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred",
+          "transition": "keep"
+        }
+      ],
+      "devNotes": [
+        "Salt till sås 0,5 tsk (samma vid 3). 30-sekundersfräsningen är aktiv tid, inte en wait."
+      ]
+    },
+    {
+      "id": "thai_rod_kikartscurry__finished_curry",
+      "name": "Rör Ner Spenat och Lime",
+      "outputName": "Röd kikärtscurry",
+      "inputs": [
+        {
+          "id": "thai_rod_kikartscurry__curry_sauce",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "thai_rod_kikartscurry__prepped_spinach_lime",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Rör ner spenaten och en skvätt limesaft från {{thai_rod_kikartscurry__prepped_spinach_lime}} i {{thai_rod_kikartscurry__curry_sauce}} i {{eq:traktorpanna_1|def}} precis innan servering."
+      ],
+      "duration": 1,
+      "wait": 0,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred",
+          "transition": "keep"
+        }
+      ],
+      "devNotes": [
+        "Egen nod så att sjudningens wait ligger på sista steget i föregående nod.",
+        "heat medel: spenaten rörs ner i den sjudande såsen så den slokar; krävs av stovetop-no-heat."
+      ],
+      "heat": "medel"
+    },
+    {
+      "id": "thai_rod_kikartscurry",
+      "name": "Snabb thailändsk röd kikärtscurry",
+      "outputName": "Snabb thailändsk röd kikärtscurry",
+      "inputs": [
+        {
+          "id": "thai_rod_kikartscurry__rested_rice",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "thai_rod_kikartscurry__finished_curry",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "crispy_chili_oil",
+          "amount": 40,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{thai_rod_kikartscurry__rested_rice}} och {{thai_rod_kikartscurry__finished_curry}} i {{eq:servering|pl}}.",
+        "Toppa med {{crispy_chili_oil}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_skal",
+          "ref": "servering",
+          "count": "portions"
+        }
+      ]
+    }
+  ]
+}

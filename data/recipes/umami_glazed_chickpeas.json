@@ -4,6 +4,11 @@
   "rawId": "66ab66b46afd9575ba9cd9ec",
   "createdAt": 1790853846,
   "basePortions": 4,
+  "time": {
+    "totalMin": 33,
+    "activeMin": 33,
+    "computedFrom": "graph"
+  },
   "sharedPrep": [],
   "images": {
     "main": "assets/recipes/umami_glazed_chickpeas/main.jpg",

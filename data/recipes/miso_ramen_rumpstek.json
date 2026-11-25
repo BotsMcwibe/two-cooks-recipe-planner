@@ -1,0 +1,479 @@
+{
+  "masterId": "miso_ramen_rumpstek",
+  "source": "hellofresh",
+  "rawId": "6a9e929d548a82de3e1a723f",
+  "createdAt": 1794423873,
+  "basePortions": 4,
+  "time": {
+    "totalMin": 43,
+    "activeMin": 29,
+    "computedFrom": "graph"
+  },
+  "images": {
+    "main": "assets/recipes/miso_ramen_rumpstek/main.jpg",
+    "byNode": {
+      "miso_ramen_rumpstek__cooked_noodles": "assets/recipes/miso_ramen_rumpstek/steps/cooked_noodles.jpg",
+      "miso_ramen_rumpstek__chili_garlic_oil": "assets/recipes/miso_ramen_rumpstek/steps/chili_garlic_oil.jpg",
+      "miso_ramen_rumpstek__fried_steak": "assets/recipes/miso_ramen_rumpstek/steps/fried_steak.jpg",
+      "miso_ramen_rumpstek__ramen_broth": "assets/recipes/miso_ramen_rumpstek/steps/ramen_broth.jpg",
+      "miso_ramen_rumpstek__ramen": "assets/recipes/miso_ramen_rumpstek/steps/ramen.jpg",
+      "miso_ramen_rumpstek": "assets/recipes/miso_ramen_rumpstek/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 545,
+    "perPortion": {
+      "energyKcal": 884,
+      "energyKj": 3698,
+      "fatG": 35.2,
+      "saturatedFatG": 8.4,
+      "carbsG": 91.4,
+      "sugarsG": 18.7,
+      "fiberG": 7.6,
+      "proteinG": 49.1,
+      "saltG": 11.1
+    }
+  },
+  "nodes": [
+    {
+      "id": "miso_ramen_rumpstek__roomtemp_meat",
+      "name": "Ta fram köttet",
+      "outputName": "Rumstempererad rumpstek",
+      "inputs": [
+        {
+          "id": "rump_steak",
+          "amount": 600,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Ta fram {{rump_steak}} ur kylen så att det blir rumstempererat."
+      ],
+      "duration": 1,
+      "wait": 30,
+      "tags": [
+        "prep"
+      ],
+      "devNotes": [
+        "Rådatan: 'Ta fram kött så det blir rumstempererat och krydda det med salt' → Ta fram-node (§4.6 regel 9), 30 min. Salt till kött (0,5 tsk) läggs på i stekningsnoden, samma mönster som hjortstek_paronrisotto och rumpstek_pepparsas_broccolini. HF Rumpstek → rump_steak (redan i katalogen, rawAnimal meat)."
+      ]
+    },
+    {
+      "id": "miso_ramen_rumpstek__cooked_noodles",
+      "name": "Koka Nudlar",
+      "outputName": "Kokta mie-nudlar",
+      "inputs": [
+        {
+          "id": "mie_noodles",
+          "amount": 300,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Koka upp saltat vatten i {{eq:kastrull_1}}.",
+        "Koka {{mie_noodles}} i 4 min, eller tills mjuka."
+      ],
+      "duration": 2,
+      "wait": 4,
+      "tags": [],
+      "heat": "hög",
+      "tips": [
+        "Vattnet ska vara lika salt som havsvatten."
+      ],
+      "equipment": [
+        {
+          "type": "kastrull_stor",
+          "ref": "kastrull_1"
+        }
+      ],
+      "devNotes": [
+        "Rådatan säger stor kastrull. Salt i kokvattnet har ingen rad i HF:s lista. Nudlarna silas och kastrullen återanvänds till buljongen."
+      ]
+    },
+    {
+      "id": "miso_ramen_rumpstek__rinsed_noodles",
+      "name": "Häll Av och Skölj Nudlar",
+      "outputName": "Sköljda mie-nudlar",
+      "inputs": [
+        {
+          "id": "miso_ramen_rumpstek__cooked_noodles",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Häll av {{miso_ramen_rumpstek__cooked_noodles}} i {{eq:durkslag_1}} och skölj nudlarna i kallt vatten."
+      ],
+      "duration": 1,
+      "wait": 0,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "kastrull_stor",
+          "ref": "kastrull_1",
+          "transition": "keep",
+          "offHeat": true
+        },
+        {
+          "type": "durkslag",
+          "ref": "durkslag_1",
+          "inferred": true
+        }
+      ]
+    },
+    {
+      "id": "miso_ramen_rumpstek__chili_garlic_oil",
+      "name": "Gör Chili- och Vitlöksolja",
+      "outputName": "Chili- och vitlöksolja",
+      "inputs": [
+        {
+          "id": "garlic",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "chili_flakes",
+          "amount": 2,
+          "unit": "g"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 4,
+          "unit": "msk"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Finhacka eller pressa {{garlic}}.",
+        "Blanda vitlök, {{chili_flakes}}, {{olive_oil}} och {{salt}} i {{eq:skal_1}}."
+      ],
+      "duration": 3,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Skippa chili eller använd mindre om du inte tycker om stark mat."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        },
+        {
+          "type": "skal_liten",
+          "ref": "skal_1"
+        }
+      ],
+      "devNotes": [
+        "All vitlök går i oljan, inte i buljongen. Olja till chiliolja 4 msk, salt till chiliolja 0,5 tsk (samma vid 3)."
+      ]
+    },
+    {
+      "id": "miso_ramen_rumpstek__prepped_veg",
+      "name": "Hacka Pak Choi och Ingefära",
+      "outputName": "Hackad pak choi och ingefära",
+      "inputs": [
+        {
+          "id": "pak_choi",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "ginger",
+          "amount": 4,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Grovhacka {{pak_choi}}.",
+        "Finhacka {{ginger}}."
+      ],
+      "duration": 4,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true,
+          "after": "miso_ramen_rumpstek__chili_garlic_oil"
+        }
+      ],
+      "devNotes": [
+        "Ingefära 4 tsk (enhet som i rådatan, typ ginger)."
+      ]
+    },
+    {
+      "id": "miso_ramen_rumpstek__sliced_spring_onion",
+      "name": "Skiva Salladslök",
+      "outputName": "Skivad salladslök",
+      "inputs": [
+        {
+          "id": "spring_onion",
+          "amount": 4,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skär {{spring_onion}} i tunna skivor."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true,
+          "after": "miso_ramen_rumpstek__prepped_veg"
+        }
+      ]
+    },
+    {
+      "id": "miso_ramen_rumpstek__fried_steak",
+      "name": "Stek Rumpstek",
+      "outputName": "Stekt rumpstek",
+      "inputs": [
+        {
+          "id": "olive_oil",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "miso_ramen_rumpstek__roomtemp_meat",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i {{eq:stekpanna_1}} på medelhög värme.",
+        "Stek {{miso_ramen_rumpstek__roomtemp_meat}} i 3–4 min per sida, eller tills brynt. Krydda med {{salt}}.",
+        "Låt köttet vila i ett foliepaket tills servering. Det kommer att fortsätta tillagas något under tiden det vilar."
+      ],
+      "duration": 8,
+      "wait": 0,
+      "tags": [],
+      "heat": "medelhög",
+      "tips": [
+        "Stek i ytterligare 1–2 min för genomstekt."
+      ],
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1"
+        }
+      ],
+      "devNotes": [
+        "Köttet saltas och steks utan att skäras rått, därför ingen skarbrada_ra. Salt till kött 0,5 tsk (samma vid 3). Olja till stekning 2 msk. 600 g rumpstek ryms i ett lager i stekpanna_stor (oneLayerG 650 g).",
+        "Ingen vätska i stekpannan, därför inte traktörpanna. Buljongen kokas i kastrullen. Stekning per sida är hands-on, därför duration och ingen wait. Vilan i folie 'tills servering' är ingen wait (§4.1 regel 7). Folie spåras inte."
+      ]
+    },
+    {
+      "id": "miso_ramen_rumpstek__ramen_broth",
+      "name": "Sjud Misobuljong",
+      "outputName": "Misobuljong med pak choi och majs",
+      "inputs": [
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "miso_ramen_rumpstek__prepped_veg",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "canned_corn",
+          "amount": 300,
+          "unit": "g"
+        },
+        {
+          "id": "water",
+          "amount": 12,
+          "unit": "dl"
+        },
+        {
+          "id": "beef_bouillon",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "id": "miso_paste",
+          "amount": 120,
+          "unit": "g"
+        },
+        {
+          "id": "soy_sauce",
+          "amount": 80,
+          "unit": "ml"
+        },
+        {
+          "id": "white_wine_vinegar",
+          "amount": 24,
+          "unit": "ml"
+        },
+        {
+          "id": "sugar",
+          "amount": 2,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i {{eq:kastrull_1|def}} på medelhög värme.",
+        "Fräs {{miso_ramen_rumpstek__prepped_veg}} i 1–2 min.",
+        "Häll av {{canned_corn}}. Tillsätt majs, {{water}}, {{beef_bouillon}}, {{miso_paste}}, {{soy_sauce}}, {{white_wine_vinegar}} och {{sugar}} och koka upp. Sänk till medelvärme och sjud under lock i 2–3 min."
+      ],
+      "duration": 3,
+      "wait": 3,
+      "tags": [],
+      "heat": "medelhög",
+      "stepHeat": {
+        "2": "medel"
+      },
+      "equipment": [
+        {
+          "type": "kastrull_stor",
+          "ref": "kastrull_1",
+          "transition": "keep",
+          "lid": true,
+          "after": "miso_ramen_rumpstek__rinsed_noodles"
+        }
+      ],
+      "devNotes": [
+        "Olivolja till fräsningen saknas i HF:s lista, därför standard 1 skvätt. Vatten till soppa 12 dl vid 4 portioner (7 dl vid 2 — inte linjärt; linjärt vore 14 dl). FLAG.",
+        "HF Majs → canned_corn, 300 g vid 3 och 4 portioner (150 g vid 2, 450 g vid 6; 2/4/6 är linjärt). HF Buljong typ beef-stock-powder → beef_bouillon, 8 g. Socker till soppa 2 tsk.",
+        "Sjudvolym ca 12 dl vatten + 300 g majs + 2 pak choi, därefter 300 g nudlar (totalt ca 2 l). Rådatan säger stor kastrull (4 l); kastrull_medelstor (2,5 l) vore för trång. Samma kastrull som nudlarna, after rinsed_noodles."
+      ]
+    },
+    {
+      "id": "miso_ramen_rumpstek__ramen",
+      "name": "Vänd Ner Nudlar i Buljongen",
+      "outputName": "Miso-ramen",
+      "inputs": [
+        {
+          "id": "miso_ramen_rumpstek__ramen_broth",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "miso_ramen_rumpstek__rinsed_noodles",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Vänd ner {{miso_ramen_rumpstek__rinsed_noodles}} i {{miso_ramen_rumpstek__ramen_broth}} i {{eq:kastrull_1|def}}."
+      ],
+      "duration": 1,
+      "wait": 0,
+      "tags": [],
+      "heat": "medel",
+      "equipment": [
+        {
+          "type": "kastrull_stor",
+          "ref": "kastrull_1",
+          "transition": "keep"
+        }
+      ]
+    },
+    {
+      "id": "miso_ramen_rumpstek__sliced_steak",
+      "name": "Skiva Rumpstek",
+      "outputName": "Skivad rumpstek",
+      "inputs": [
+        {
+          "id": "miso_ramen_rumpstek__fried_steak",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skär {{miso_ramen_rumpstek__fried_steak}} i tunna skivor precis före servering."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true,
+          "after": "miso_ramen_rumpstek__sliced_spring_onion"
+        }
+      ],
+      "devNotes": [
+        "Stekt kött skärs på den vanliga (rena) skärbrädan; inget rått kött har skurits i receptet, därför ingen skarbrada_ra."
+      ]
+    },
+    {
+      "id": "miso_ramen_rumpstek",
+      "name": "Miso-ramen-nudlar med rumpstek",
+      "outputName": "Miso-ramen-nudlar med rumpstek",
+      "inputs": [
+        {
+          "id": "miso_ramen_rumpstek__ramen",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "miso_ramen_rumpstek__sliced_steak",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "miso_ramen_rumpstek__sliced_spring_onion",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "fried_onion",
+          "amount": 60,
+          "unit": "g"
+        },
+        {
+          "id": "miso_ramen_rumpstek__chili_garlic_oil",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Häll upp {{miso_ramen_rumpstek__ramen}} i {{eq:servering|pl}}.",
+        "Toppa med {{miso_ramen_rumpstek__sliced_steak}}, {{miso_ramen_rumpstek__sliced_spring_onion}} och {{fried_onion}}.",
+        "Ringla över {{miso_ramen_rumpstek__chili_garlic_oil}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_djup_skal",
+          "ref": "servering",
+          "count": "portions"
+        }
+      ],
+      "devNotes": [
+        "Salt 11,1 g/portion är mycket högt men ungefär förenligt med 120 g misopasta + 80 ml sojasås + 8 g köttbuljong + 1 tsk tillsatt salt (kött och chiliolja) på 4 portioner (uppskattning ca 9 g/portion; HF:s värde kan räkna något saltare miso/soja). Inte slängt. FLAG.",
+        "HF totalTime/prepTime PT30M räknar troligen inte in Ta fram-vilans överlapp; totalMinutes 40 (30 min Ta fram överlappar nudelkok och prepp, därefter stek och buljong).",
+        "clonedFrom-originalet 684841bf56532819dcc170ed är samma recept (samma 4-portionsmängder) och konverterades inte. Inget befintligt master för hfId, namn eller clonedFrom."
+      ]
+    }
+  ]
+}

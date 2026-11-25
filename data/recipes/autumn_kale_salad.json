@@ -4,6 +4,11 @@
   "rawId": "66bf587011ecbd46e2d07668",
   "createdAt": 1790854064,
   "basePortions": 4,
+  "time": {
+    "totalMin": 49,
+    "activeMin": 22,
+    "computedFrom": "graph"
+  },
   "sharedPrep": [],
   "images": {
     "main": "assets/recipes/autumn_kale_salad/main.jpg",

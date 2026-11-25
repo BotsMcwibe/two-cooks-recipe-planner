@@ -4,6 +4,11 @@
   "rawId": "63be847d7c361f9347ada82b",
   "createdAt": 1791039812,
   "basePortions": 4,
+  "time": {
+    "totalMin": 56,
+    "activeMin": 31,
+    "computedFrom": "graph"
+  },
   "sharedPrep": [],
   "images": {
     "main": "assets/recipes/stekt_kolja_dragonsas/main.jpg",

@@ -1,0 +1,544 @@
+{
+  "masterId": "marry_me_chicken_pasta",
+  "source": "hellofresh",
+  "rawId": "6a915db64f9a309bb69cd9b8",
+  "createdAt": 1792604234,
+  "basePortions": 4,
+  "time": {
+    "totalMin": 48,
+    "activeMin": 48,
+    "computedFrom": "graph"
+  },
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/marry_me_chicken_pasta/main.jpg",
+    "byNode": {
+      "marry_me_chicken_pasta__cooked_pasta": "assets/recipes/marry_me_chicken_pasta/steps/cooked_pasta.jpg",
+      "marry_me_chicken_pasta__pounded_chicken": "assets/recipes/marry_me_chicken_pasta/steps/pounded_chicken.jpg",
+      "marry_me_chicken_pasta__fried_chicken": "assets/recipes/marry_me_chicken_pasta/steps/fried_chicken.jpg",
+      "marry_me_chicken_pasta__mushroom_sauce": "assets/recipes/marry_me_chicken_pasta/steps/mushroom_sauce.jpg",
+      "marry_me_chicken_pasta__caprese": "assets/recipes/marry_me_chicken_pasta/steps/caprese.jpg",
+      "marry_me_chicken_pasta": "assets/recipes/marry_me_chicken_pasta/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 704,
+    "perPortion": {
+      "energyKcal": 1074,
+      "energyKj": 4493,
+      "fatG": 47.9,
+      "saturatedFatG": 22.6,
+      "carbsG": 90.7,
+      "sugarsG": 14.7,
+      "fiberG": 6.5,
+      "proteinG": 68.8,
+      "saltG": 5.4
+    }
+  },
+  "nodes": [
+    {
+      "id": "marry_me_chicken_pasta__cooked_pasta",
+      "name": "Koka Pasta",
+      "outputName": "Kokt orecchiette",
+      "inputs": [
+        {
+          "id": "orecchiette",
+          "amount": 360,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Koka upp saltat vatten i {{eq:kastrull_1}}.",
+        "Koka {{orecchiette}} i 11–12 min, eller tills al dente."
+      ],
+      "duration": 2,
+      "wait": 12,
+      "tags": [],
+      "heat": "hög",
+      "heatSource": "inferred",
+      "tips": [
+        "Kokvattnet ska vara lika salt som havsvatten.",
+        "Al dente betyder att pastan är genomkokt men fortfarande har tuggmotstånd."
+      ],
+      "equipment": [
+        {
+          "type": "kastrull_stor",
+          "ref": "kastrull_1"
+        }
+      ],
+      "devNotes": [
+        "Ny ingrediens orecchiette. Salt i kokvattnet har ingen rad i HF:s lista; nämns bara i text."
+      ]
+    },
+    {
+      "id": "marry_me_chicken_pasta__drained_pasta",
+      "name": "Häll Av Pastan",
+      "outputName": "Avrunnen pasta och sparat pastavatten",
+      "inputs": [
+        {
+          "id": "marry_me_chicken_pasta__cooked_pasta",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skopa upp ca 2 dl kokvatten från {{marry_me_chicken_pasta__cooked_pasta}} i en kopp och ställ åt sidan.",
+        "Häll av vattnet och lägg tillbaka pastan i {{eq:kastrull_1|def}}."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "kastrull_stor",
+          "ref": "kastrull_1",
+          "transition": "keep",
+          "offHeat": true
+        }
+      ],
+      "devNotes": [
+        "HF Sparat pastavatten 2 dl (shipped false) är en biprodukt av pastakoket, inte en inköpsvara (§6 DROP). Utgången innehåller både pastan och det sparade vattnet och används 1 st i såsen. Rådatan skopar upp vattnet 'precis innan pastan är färdig'; här direkt före avhällningen så att kokets wait ligger på sista steget."
+      ]
+    },
+    {
+      "id": "marry_me_chicken_pasta__onion_mushroom",
+      "name": "Hacka Lök och Riv Svamp",
+      "outputName": "Hackad lök och riven ostronskivling",
+      "inputs": [
+        {
+          "id": "red_onion",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "oyster_mushrooms",
+          "amount": 400,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Finhacka {{red_onion}}.",
+        "Riv {{oyster_mushrooms}} i grova bitar."
+      ],
+      "duration": 4,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "HF Lök (typ red-onion) → red_onion. Ostronskivling → ny ingrediens oyster_mushrooms."
+      ]
+    },
+    {
+      "id": "marry_me_chicken_pasta__sliced_mozzarella_tomato",
+      "name": "Skiva Mozzarella och Tomat",
+      "outputName": "Skivad mozzarella och tomat",
+      "inputs": [
+        {
+          "id": "mozzarella",
+          "amount": 250,
+          "unit": "g"
+        },
+        {
+          "id": "tomato",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Häll av {{mozzarella}} och skär den i 0,5 cm tunna skivor.",
+        "Skär {{tomato}} i tunna skivor."
+      ],
+      "duration": 3,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "HF-typ organic tomatoes → tomato; fresh-mozzarella → mozzarella."
+      ]
+    },
+    {
+      "id": "marry_me_chicken_pasta__caprese",
+      "name": "Lägg Upp Tomatsallad",
+      "outputName": "Tomat- och mozzarellasallad",
+      "inputs": [
+        {
+          "id": "marry_me_chicken_pasta__sliced_mozzarella_tomato",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "basil",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Plocka bladen från {{basil}}.",
+        "Varva {{marry_me_chicken_pasta__sliced_mozzarella_tomato}} och basilikan i en cirkel på {{eq:salladstallrik}}.",
+        "Krydda med en nypa {{salt}} och {{pepper}}."
+      ],
+      "duration": 3,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "devNotes": [
+        "Rådatan lägger salladen 'under tiden' som såsen sjuder; kall och tål att stå, därför prep. Tallriken är serveringstallriken för salladen (master serving 'salladstallrik').",
+        "Basilika 2 st vid 4 portioner (1,5 vid 3), skalar linjärt."
+      ]
+    },
+    {
+      "id": "marry_me_chicken_pasta__pounded_chicken",
+      "name": "Banka Kyckling",
+      "outputName": "Bankad kycklingbröstfilé",
+      "inputs": [
+        {
+          "id": "chicken_breast_bbq",
+          "amount": 600,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Lägg {{chicken_breast_bbq}} mellan två bakplåtspapper på en separat {{eq:skarbrada_ra|noun}}.",
+        "Banka den med {{eq:kotthammare}} eller {{eq:kavel}} tills den har fått en jämn tjocklek på ca 2 cm."
+      ],
+      "duration": 4,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Tvätta händer och köksredskap noggrant efter att ha hanterat rå kyckling."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada_ra",
+          "separate": true,
+          "inferred": true,
+          "rawKinds": [
+            "poultry"
+          ]
+        },
+        {
+          "type": "kotthammare",
+          "optional": true
+        },
+        {
+          "type": "kavel",
+          "optional": true
+        }
+      ],
+      "devNotes": [
+        "HF Kycklingbröstfilé, BBQ-marinerad → chicken_breast_bbq. Bankning av rå kyckling → egen bräda skarbrada_ra (inferred; rådatan nämner ingen bräda). Brädan används inte igen; den stekta kycklingen skivas på den vanliga brädan."
+      ]
+    },
+    {
+      "id": "marry_me_chicken_pasta__toasted_pine_nuts",
+      "name": "Rosta Pinjenötter",
+      "outputName": "Rostade pinjenötter",
+      "inputs": [
+        {
+          "id": "pine_nuts",
+          "amount": 20,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{eq:traktorpanna_1}} på medelhög värme.",
+        "Rosta {{pine_nuts}} i 3–4 min, eller tills gyllene. Lägg över i en liten skål."
+      ],
+      "duration": 5,
+      "wait": 0,
+      "tags": [],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred"
+        }
+      ],
+      "devNotes": [
+        "Rådatan säger stor stekpanna och använder 'samma stekpanna' genom hela kedjan: nötter → kyckling → svampsås med 3 dl matlagningsgrädde + 1,5 dl gräddfil som sjuds, sedan pasta och 2 dl pastavatten (≈2 l). Därför traktörpanna (typeSource inferred) på alla noder i kedjan."
+      ]
+    },
+    {
+      "id": "marry_me_chicken_pasta__fried_chicken",
+      "name": "Stek Kyckling",
+      "outputName": "Stekt kyckling",
+      "inputs": [
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "marry_me_chicken_pasta__pounded_chicken",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i samma {{eq:traktorpanna_1|noun}} på medelhög värme.",
+        "Tillsätt {{marry_me_chicken_pasta__pounded_chicken}} och krydda med {{salt}}. Stek i 2 min per sida, eller tills brynt.",
+        "Sänk till medelvärme och stek i ytterligare 2–3 min per sida, eller tills genomstekt.",
+        "Lägg över på {{eq:tallrik_1}} och håll varmt."
+      ],
+      "duration": 11,
+      "wait": 0,
+      "tags": [],
+      "heat": "medelhög",
+      "stepHeat": {
+        "2": "medel"
+      },
+      "tips": [
+        "Kycklingen är färdiglagad när köttet inte längre är rosa i mitten."
+      ],
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred",
+          "transition": "keep",
+          "after": "marry_me_chicken_pasta__toasted_pine_nuts"
+        },
+        {
+          "type": "tallrik",
+          "ref": "tallrik_1"
+        }
+      ],
+      "devNotes": [
+        "Stekning per sida är hands-on, därför duration 11 och ingen wait. Salt till kött 0,5 tsk (samma vid 3). Olivoljan har ingen egen rad → 1 skvätt. after: resursordning efter nötterna."
+      ]
+    },
+    {
+      "id": "marry_me_chicken_pasta__mushroom_sauce",
+      "name": "Gör Krämig Svampsås",
+      "outputName": "Krämig svampsås",
+      "inputs": [
+        {
+          "id": "olive_oil",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "marry_me_chicken_pasta__onion_mushroom",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "tomato_paste",
+          "amount": 140,
+          "unit": "g"
+        },
+        {
+          "id": "chicken_bouillon",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "id": "sour_cream",
+          "amount": 150,
+          "unit": "ml"
+        },
+        {
+          "id": "cooking_cream",
+          "amount": 300,
+          "unit": "ml"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i samma {{eq:traktorpanna_1|noun}} på medelhög värme.",
+        "Stek {{marry_me_chicken_pasta__onion_mushroom}} och {{salt}} i 3–4 min, eller tills brynt.",
+        "Tillsätt {{tomato_paste}}, {{chicken_bouillon}}, {{sour_cream}} och {{cooking_cream}}.",
+        "Sänk till låg värme och sjud i 1–2 min, eller tills något tjocknat."
+      ],
+      "duration": 7,
+      "wait": 2,
+      "tags": [],
+      "heat": "medelhög",
+      "stepHeat": {
+        "3": "låg"
+      },
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred",
+          "transition": "keep",
+          "after": "marry_me_chicken_pasta__fried_chicken"
+        }
+      ],
+      "devNotes": [
+        "Olja till stekning 2 msk (totalt 2 msk vid 4 portioner; skvätten till kycklingen är standard), salt till grönsaker 0,5 tsk (samma vid 3). HF Buljong (chicken-stock-powder) → chicken_bouillon. after: resursordning efter kycklingen (den går till servering, inte i såsen)."
+      ]
+    },
+    {
+      "id": "marry_me_chicken_pasta__pasta_in_sauce",
+      "name": "Vänd Ner Pasta och Spenat",
+      "outputName": "Pasta i krämig svampsås",
+      "inputs": [
+        {
+          "id": "marry_me_chicken_pasta__mushroom_sauce",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "marry_me_chicken_pasta__drained_pasta",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "baby_spinach",
+          "amount": 100,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Rör ner {{marry_me_chicken_pasta__drained_pasta}} med det sparade pastavattnet och {{baby_spinach}} i {{marry_me_chicken_pasta__mushroom_sauce}} precis före servering."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [],
+      "heat": "låg",
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred",
+          "transition": "keep"
+        }
+      ],
+      "devNotes": [
+        "HF Spenat (organic-baby-spinach) → baby_spinach. Värmen fortsätter på låg från såsen."
+      ]
+    },
+    {
+      "id": "marry_me_chicken_pasta__sliced_chicken",
+      "name": "Skiva Kyckling",
+      "outputName": "Skivad kyckling",
+      "inputs": [
+        {
+          "id": "marry_me_chicken_pasta__fried_chicken",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skär {{marry_me_chicken_pasta__fried_chicken}} i tunna skivor."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "Stekt kyckling skärs på den vanliga brädan (inte skarbrada_ra)."
+      ]
+    },
+    {
+      "id": "marry_me_chicken_pasta",
+      "name": "\"Marry me chicken\"-pasta i krämig svampsås",
+      "outputName": "\"Marry me chicken\"-pasta i krämig svampsås",
+      "inputs": [
+        {
+          "id": "marry_me_chicken_pasta__pasta_in_sauce",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "marry_me_chicken_pasta__sliced_chicken",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "parmesan",
+          "amount": 40,
+          "unit": "g"
+        },
+        {
+          "id": "marry_me_chicken_pasta__toasted_pine_nuts",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "balsamic_cream",
+          "amount": 16,
+          "unit": "ml"
+        },
+        {
+          "id": "marry_me_chicken_pasta__caprese",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{marry_me_chicken_pasta__pasta_in_sauce}} i {{eq:servering|pl}} och toppa med {{marry_me_chicken_pasta__sliced_chicken}}.",
+        "Strö över finriven {{parmesan}} och {{marry_me_chicken_pasta__toasted_pine_nuts}}.",
+        "Ringla {{balsamic_cream}} över {{marry_me_chicken_pasta__caprese}} och servera den vid sidan av."
+      ],
+      "duration": 3,
+      "tags": [
+        "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_djup_tallrik",
+          "ref": "servering",
+          "count": "portions"
+        },
+        {
+          "type": "servering_tallrik",
+          "ref": "salladstallrik",
+          "count": 1
+        }
+      ],
+      "devNotes": [
+        "HF markerar isAddon: true men receptet har 6 riktiga steg; konverterat som fullständigt recept. HF Parmigiano Reggiano → parmesan; Balsamicokräm → ny ingrediens balsamic_cream."
+      ]
+    }
+  ]
+}

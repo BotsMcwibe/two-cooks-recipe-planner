@@ -4,6 +4,11 @@
   "rawId": "6511645d3e0981e84af20618",
   "createdAt": 1791038921,
   "basePortions": 4,
+  "time": {
+    "totalMin": 27,
+    "activeMin": 27,
+    "computedFrom": "graph"
+  },
   "sharedPrep": [],
   "images": {
     "main": "assets/recipes/kramig_medelhavs_kyckling/main.jpg",

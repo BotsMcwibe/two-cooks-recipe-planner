@@ -1,0 +1,392 @@
+{
+  "masterId": "honung_harissa_gronsaker_korv",
+  "source": "hellofresh",
+  "rawId": "6a915dbaf3876e995cfb59a9",
+  "createdAt": 1792603025,
+  "basePortions": 4,
+  "time": {
+    "totalMin": 48,
+    "activeMin": 22,
+    "computedFrom": "graph"
+  },
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/honung_harissa_gronsaker_korv/main.jpg",
+    "byNode": {
+      "honung_harissa_gronsaker_korv__roasted_veg": "assets/recipes/honung_harissa_gronsaker_korv/steps/roasted_veg.jpg",
+      "honung_harissa_gronsaker_korv__roasted_potatoes_first": "assets/recipes/honung_harissa_gronsaker_korv/steps/roasted_potatoes.jpg",
+      "honung_harissa_gronsaker_korv__potatoes_sausage": "assets/recipes/honung_harissa_gronsaker_korv/steps/potatoes_sausage.jpg",
+      "honung_harissa_gronsaker_korv__sauce": "assets/recipes/honung_harissa_gronsaker_korv/steps/sauce.jpg",
+      "honung_harissa_gronsaker_korv__feta_topped": "assets/recipes/honung_harissa_gronsaker_korv/steps/feta_topped.jpg",
+      "honung_harissa_gronsaker_korv": "assets/recipes/honung_harissa_gronsaker_korv/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 786,
+    "perPortion": {
+      "energyKcal": 1006,
+      "energyKj": 4209,
+      "fatG": 53.7,
+      "saturatedFatG": 21.6,
+      "carbsG": 95.5,
+      "sugarsG": 29.3,
+      "fiberG": 16.3,
+      "proteinG": 29,
+      "saltG": 7.5
+    }
+  },
+  "nodes": [
+    {
+      "id": "honung_harissa_gronsaker_korv__preheated_oven_240",
+      "name": "Värm ugnen",
+      "outputName": "Förvärmd ugn (240°C)",
+      "inputs": [],
+      "steps": [
+        "Värm {{eq:ugn|def}} till 240°C, eller 220°C varmluft."
+      ],
+      "duration": 1,
+      "wait": 12,
+      "tags": [
+        "no-timer",
+        "resource"
+      ],
+      "tips": [
+        "Ugnen tar vanligtvis 10–15 minuter att värmas upp."
+      ],
+      "oven": {
+        "temp": 240,
+        "fanTemp": 220
+      },
+      "devNotes": [
+        "HF anger 240°C/220°C varmluft — lokal ugnsnode, inte preheated_oven_220."
+      ]
+    },
+    {
+      "id": "honung_harissa_gronsaker_korv__cut_veg",
+      "name": "Skär Rotfrukter och Lök",
+      "outputName": "Rotfruktsstavar och lökklyftor",
+      "inputs": [
+        {
+          "id": "carrot",
+          "amount": 4,
+          "unit": "st"
+        },
+        {
+          "id": "parsnip",
+          "amount": 4,
+          "unit": "st"
+        },
+        {
+          "id": "red_onion",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skär {{carrot}} och {{parsnip}} (oskalade) i 1 cm tunna stavar.",
+        "Skär {{red_onion}} i 2 cm breda klyftor."
+      ],
+      "duration": 7,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "HF Lök har typ red-onion, mappad till red_onion."
+      ]
+    },
+    {
+      "id": "honung_harissa_gronsaker_korv__roasted_veg",
+      "name": "Rosta Grönsaker",
+      "outputName": "Honungs- och harissarostade grönsaker",
+      "inputs": [
+        {
+          "id": "honung_harissa_gronsaker_korv__cut_veg",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "honey",
+          "amount": 25,
+          "unit": "g"
+        },
+        {
+          "id": "harissa",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Lägg {{honung_harissa_gronsaker_korv__cut_veg}} på {{eq:plat_1}} med bakplåtspapper och blanda med {{olive_oil}}, {{honey}}, {{harissa}}, {{salt}} och en nypa {{pepper}}.",
+        "Rosta i {{eq:ugn|def}} i 15–25 min, eller tills mjukt."
+      ],
+      "duration": 3,
+      "wait": 25,
+      "tags": [],
+      "tips": [
+        "Använd fler plåtar om det blir för trångt."
+      ],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "honung_harissa_gronsaker_korv__preheated_oven_240",
+          "slots": 1,
+          "temp": 240,
+          "fanTemp": 220
+        },
+        {
+          "type": "plat",
+          "ref": "plat_1",
+          "liner": "bakplatspapper"
+        }
+      ],
+      "devNotes": [
+        "Olivoljan har ingen rad i HF:s lista, därför standard 1 skvätt. Salt till grönsaker 1 tsk (4 portioner). Harissakrydda → harissa (blend finns).",
+        "HF:s VIKTIGT-ruta ('halva mängden av vissa ingredienser – dubbelkolla ingredienslistan') gäller HF-kassens förpackningar och är utelämnad; mängderna här är redan 4-portionsvärden."
+      ]
+    },
+    {
+      "id": "honung_harissa_gronsaker_korv__roasted_potatoes_first",
+      "name": "Rosta Krossad Potatis",
+      "outputName": "Halvrostad krossad potatis",
+      "inputs": [
+        {
+          "id": "precooked_small_potatoes",
+          "amount": 2,
+          "unit": "förp"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Lägg {{precooked_small_potatoes}} på ena halvan av {{eq:plat_2}} med bakplåtspapper. Lämna plats för korven på den andra halvan.",
+        "Krossa potatisen med botten på ett glas.",
+        "Blanda med {{olive_oil}}, {{salt}} och en nypa {{pepper}}.",
+        "Rosta i {{eq:ugn|def}} i ca 10 min, tills det återstår 15 min av grönsakernas tid."
+      ],
+      "duration": 4,
+      "wait": 10,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "honung_harissa_gronsaker_korv__preheated_oven_240",
+          "slots": 1,
+          "temp": 240,
+          "fanTemp": 220
+        },
+        {
+          "type": "plat",
+          "ref": "plat_2",
+          "liner": "bakplatspapper"
+        }
+      ],
+      "devNotes": [
+        "HF Småpotatis, förkokt: 2 st vid 4 portioner = förpackningar (ingen vikt angiven) → ny ingrediens precooked_small_potatoes, 2 förp. FLAG.",
+        "Potatisen rostas totalt 20–25 min; korven läggs på samma plåt de sista 15 min. Första fasen = 25 − 15 = 10 min (jfr bacon-på-potatis i §4.1).",
+        "Olivoljan har ingen rad i HF:s lista, därför standard 1 skvätt. Salt till potatis 1 tsk (4 portioner). Glaset för att krossa är ett köksredskap och spåras inte."
+      ]
+    },
+    {
+      "id": "honung_harissa_gronsaker_korv__potatoes_sausage",
+      "name": "Ugnsstek Korv",
+      "outputName": "Rostad potatis och korv",
+      "inputs": [
+        {
+          "id": "honung_harissa_gronsaker_korv__roasted_potatoes_first",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "sausage",
+          "amount": 640,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "När det återstår 15 min av grönsakernas tillagningstid, lägg {{sausage}} på den andra halvan av {{eq:plat_2|def}} med {{honung_harissa_gronsaker_korv__roasted_potatoes_first}}.",
+        "Ugnsstek i ca 15 min, eller tills korven är gyllene och genomstekt och potatisen är klar."
+      ],
+      "duration": 1,
+      "wait": 15,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "plat",
+          "ref": "plat_2",
+          "transition": "keep"
+        },
+        {
+          "type": "ugn",
+          "after": "honung_harissa_gronsaker_korv__preheated_oven_240",
+          "slots": 1,
+          "temp": 240,
+          "fanTemp": 220
+        }
+      ],
+      "devNotes": [
+        "Korven läggs hel på plåten och skärs inte, därför ingen skärbräda. HF Korv (typ sausage) → sausage."
+      ]
+    },
+    {
+      "id": "honung_harissa_gronsaker_korv__sauce",
+      "name": "Gör Thousand Island-sås",
+      "outputName": "Thousand island-sås",
+      "inputs": [
+        {
+          "id": "yoghurt",
+          "amount": 150,
+          "unit": "g"
+        },
+        {
+          "id": "mayonnaise",
+          "amount": 50,
+          "unit": "g"
+        },
+        {
+          "id": "ketchup",
+          "amount": 4,
+          "unit": "msk"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "worcestershire_sauce",
+          "amount": 16,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Blanda {{yoghurt}}, {{mayonnaise}}, {{ketchup}}, {{salt}} och {{worcestershire_sauce}} i {{eq:skal_liten}}."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skal_liten"
+        }
+      ],
+      "devNotes": [
+        "FLAG: HF Salt till sås är 0,25 tsk vid 2, 0,75 vid 3 och 1 tsk vid 4 portioner (4× hopp 2→4). Basvärde satt till 0,5 tsk vid 4 portioner (2-portionsvärdet × 2) och skalas linjärt; 1 tsk i ca 2,5 dl sås med ketchup och worcestershiresås vore för salt.",
+        "Worcestershiresås 16 g vid både 3 och 4 portioner. Ketchup till sås 4 msk. HF Majonnas → mayonnaise."
+      ]
+    },
+    {
+      "id": "honung_harissa_gronsaker_korv__feta_topped",
+      "name": "Smula Över Feta",
+      "outputName": "Grönsaker, potatis och korv med feta",
+      "inputs": [
+        {
+          "id": "honung_harissa_gronsaker_korv__roasted_veg",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "honung_harissa_gronsaker_korv__potatoes_sausage",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "feta_cheese",
+          "amount": 100,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Smula {{feta_cheese}} över {{honung_harissa_gronsaker_korv__roasted_veg}} och {{honung_harissa_gronsaker_korv__potatoes_sausage}}."
+      ],
+      "duration": 1,
+      "wait": 0,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "plat",
+          "ref": "plat_1",
+          "transition": "keep"
+        },
+        {
+          "type": "plat",
+          "ref": "plat_2",
+          "transition": "keep"
+        }
+      ],
+      "devNotes": [
+        "Rådatan säger inte vilken plåt fetan smulas över; den läggs över allt på plåtarna."
+      ]
+    },
+    {
+      "id": "honung_harissa_gronsaker_korv",
+      "name": "Honungs- och harissarostade grönsaker och korv",
+      "outputName": "Honungs- och harissarostade grönsaker och korv",
+      "inputs": [
+        {
+          "id": "honung_harissa_gronsaker_korv__feta_topped",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "honung_harissa_gronsaker_korv__sauce",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{honung_harissa_gronsaker_korv__feta_topped}} på {{eq:servering|pl}}.",
+        "Servera med en klick {{honung_harissa_gronsaker_korv__sauce}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_tallrik",
+          "ref": "servering",
+          "count": "portions"
+        }
+      ]
+    }
+  ]
+}

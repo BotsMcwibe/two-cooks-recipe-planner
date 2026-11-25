@@ -1,0 +1,285 @@
+{
+  "masterId": "flaskkotlett_citronpepparsas",
+  "source": "hellofresh",
+  "rawId": "6a9e929e56a4cfbb9638f42d",
+  "createdAt": 1794423536,
+  "basePortions": 4,
+  "time": {
+    "totalMin": 17,
+    "activeMin": 17,
+    "computedFrom": "graph"
+  },
+  "images": {
+    "main": "assets/recipes/flaskkotlett_citronpepparsas/main.jpg",
+    "byNode": {
+      "flaskkotlett_citronpepparsas__boiled_potatoes": "assets/recipes/flaskkotlett_citronpepparsas/steps/boiled_potatoes.jpg",
+      "flaskkotlett_citronpepparsas__apple_salad": "assets/recipes/flaskkotlett_citronpepparsas/steps/apple_salad.jpg",
+      "flaskkotlett_citronpepparsas__pork_in_sauce": "assets/recipes/flaskkotlett_citronpepparsas/steps/pork_in_sauce.jpg",
+      "flaskkotlett_citronpepparsas": "assets/recipes/flaskkotlett_citronpepparsas/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 636,
+    "perPortion": {
+      "energyKcal": 680,
+      "energyKj": 2845,
+      "fatG": 33.8,
+      "saturatedFatG": 16.1,
+      "carbsG": 60.6,
+      "sugarsG": 13.2,
+      "fiberG": 8.1,
+      "proteinG": 33,
+      "saltG": 3.6
+    }
+  },
+  "nodes": [
+    {
+      "id": "flaskkotlett_citronpepparsas__boiled_potatoes",
+      "name": "Koka Potatis",
+      "outputName": "Kokt småpotatis",
+      "inputs": [
+        {
+          "id": "precooked_small_potatoes",
+          "amount": 2,
+          "unit": "förp"
+        }
+      ],
+      "steps": [
+        "Koka upp saltat vatten i {{eq:kastrull_1}}.",
+        "Koka {{precooked_small_potatoes}} i 3–5 min, eller tills genomvarma."
+      ],
+      "duration": 2,
+      "wait": 5,
+      "tags": [],
+      "heat": "hög",
+      "equipment": [
+        {
+          "type": "kastrull_medelstor",
+          "ref": "kastrull_1"
+        }
+      ],
+      "devNotes": [
+        "HF Småpotatis, förkokt: 2 st vid 4 portioner = förpackningar (ingen vikt) → precooked_small_potatoes, 2 förp (samma som honung_harissa_gronsaker_korv). Rådatan säger medelstor kastrull. Salt i kokvattnet har ingen rad i HF:s lista (Salt till potatis används efter avhälldningen)."
+      ]
+    },
+    {
+      "id": "flaskkotlett_citronpepparsas__buttered_potatoes",
+      "name": "Vänd Smör i Potatisen",
+      "outputName": "Smörad småpotatis",
+      "inputs": [
+        {
+          "id": "flaskkotlett_citronpepparsas__boiled_potatoes",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "butter",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Häll av {{flaskkotlett_citronpepparsas__boiled_potatoes}} i {{eq:durkslag_1}} och lägg tillbaka potatisen i {{eq:kastrull_1|def}}.",
+        "Vänd ner {{butter}} och {{salt}} och sätt åt sidan under lock."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "kastrull_medelstor",
+          "ref": "kastrull_1",
+          "transition": "keep",
+          "offHeat": true,
+          "lid": true
+        },
+        {
+          "type": "durkslag",
+          "ref": "durkslag_1",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "Smör till potatis 2 msk och salt till potatis 1 tsk (samma vid 3). Smöret vänds i den varma potatisen, inget rumstempererat i rådatan, därför ingen Ta fram-node. Under lock till servering är ingen klockad vila — ingen wait."
+      ]
+    },
+    {
+      "id": "flaskkotlett_citronpepparsas__apple_salad",
+      "name": "Gör Äppel- och Gurksallad",
+      "outputName": "Äppel- och gurksallad",
+      "inputs": [
+        {
+          "id": "apple",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "cucumber",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "lime",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "msk"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "dill",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Halvera och kärna ur {{apple}}. Grovhacka äpple och {{cucumber}}.",
+        "Halvera {{lime}}.",
+        "Tillsätt gurka, äpple, saften från {{lime}}, {{olive_oil}} och {{salt}} i {{eq:skal_1}}.",
+        "Riv {{dill}} grovt, lägg den i {{eq:skal_1|def}} och vänd runt."
+      ],
+      "duration": 6,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        },
+        {
+          "type": "skal_medelstor",
+          "ref": "skal_1"
+        }
+      ],
+      "devNotes": [
+        "HF Citrusfrukt (typ lime) → lime. 1 st vid 2 och 4 portioner, 2 st vid 6 — förpackning. Författad som 1 st vid 4 portioner med linjär skalning. Saften används i salladen.",
+        "HF Dill 1 st vid 2 och 4 portioner, 2 st vid 6 — förpackning. Författad som 1 st vid 4 portioner med linjär skalning. Olja till sallad 1 msk, salt till sallad 0,5 tsk (samma vid 3). Rådatan säger medelstor skål."
+      ]
+    },
+    {
+      "id": "flaskkotlett_citronpepparsas__pork_in_sauce",
+      "name": "Stek Fläskkotlett i Citronpepparsås",
+      "outputName": "Fläskkotlett i citronpepparsås",
+      "inputs": [
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "msk"
+        },
+        {
+          "id": "sliced_pork_chop",
+          "amount": 500,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "lemon_pepper",
+          "amount": 4,
+          "unit": "g"
+        },
+        {
+          "id": "chicken_bouillon",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "id": "cooking_cream",
+          "amount": 300,
+          "unit": "ml"
+        },
+        {
+          "id": "water",
+          "amount": 1,
+          "unit": "dl"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i {{eq:traktorpanna_1}} på medelhög värme.",
+        "Tillsätt {{sliced_pork_chop}} och krydda varje sida med en nypa {{salt}}. Stek i 1–2 min per sida, eller tills gyllene och genomstekt.",
+        "Sänk till medelvärme och tillsätt {{lemon_pepper}}, {{chicken_bouillon}}, {{cooking_cream}} och {{water}}. Rör om och sjud i 1–2 min, tills genomvarmt."
+      ],
+      "duration": 5,
+      "wait": 2,
+      "tags": [],
+      "heat": "medelhög",
+      "stepHeat": {
+        "2": "medel"
+      },
+      "tips": [
+        "Köttet är färdiglagat när det är utan inslag av rosa."
+      ],
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred"
+        }
+      ],
+      "devNotes": [
+        "HF Skivad fläskkotlett → sliced_pork_chop (redan i katalogen, rawAnimal meat). Kotletterna är färdigskivade och går från förpackningen till pannan; ingen skärbräda och inget rumstempererat i rådatan, därför ingen skarbrada_ra och ingen Ta fram-node.",
+        "Rådatan säger stor stekpanna, men samma panna tar sedan 300 ml matlagningsgrädde + 1 dl vatten (4 dl) som sjuds med köttet kvar i pannan → traktörpanna, typeSource inferred. Stekning per sida är hands-on; wait ligger på den korta sjudningen.",
+        "HF stavar 'matlagningsflöde' i steget; avser matlagningsgrädde (light-cooking-cream) → cooking_cream. HF Buljong (chicken-stock-powder) → chicken_bouillon, 8 g. Olja till stekning 1 msk, vatten till sås 1 dl (samma vid 3). Citronpeppar 4 g (samma vid 3; linjärt 2/4/6)."
+      ]
+    },
+    {
+      "id": "flaskkotlett_citronpepparsas",
+      "name": "Lättlagad fläskkotlett i citronpepparsås",
+      "outputName": "Lättlagad fläskkotlett i citronpepparsås",
+      "inputs": [
+        {
+          "id": "flaskkotlett_citronpepparsas__buttered_potatoes",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "flaskkotlett_citronpepparsas__pork_in_sauce",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "flaskkotlett_citronpepparsas__apple_salad",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{flaskkotlett_citronpepparsas__buttered_potatoes}}, {{flaskkotlett_citronpepparsas__pork_in_sauce}} och {{flaskkotlett_citronpepparsas__apple_salad}} på {{eq:servering|pl}}.",
+        "Toppa köttet med såsen."
+      ],
+      "duration": 2,
+      "tags": [
+        "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_tallrik",
+          "ref": "servering",
+          "count": "portions"
+        }
+      ],
+      "devNotes": [
+        "Samma clonedFrom 659e655c70cc438cf4f77bce har också rårecepten 6a71a3ece8e5c2a7fd0dccdd (samma namn) och 65faa28889ba98305e89c047 ('Fläskkotlett i krämig citronpepparsås'), markerade som dubbletter och inte konverterade. Befintliga fläskkotlett-masters är andra rätter och är orörda."
+      ]
+    }
+  ]
+}

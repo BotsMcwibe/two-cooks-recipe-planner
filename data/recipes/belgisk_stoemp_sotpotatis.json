@@ -1,0 +1,533 @@
+{
+  "masterId": "belgisk_stoemp_sotpotatis",
+  "source": "hellofresh",
+  "rawId": "6a915dbcf3876e995cfb59e1",
+  "createdAt": 1792602759,
+  "basePortions": 4,
+  "time": {
+    "totalMin": 51,
+    "activeMin": 51,
+    "computedFrom": "graph"
+  },
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/belgisk_stoemp_sotpotatis/main.jpg",
+    "byNode": {
+      "belgisk_stoemp_sotpotatis__mash": "assets/recipes/belgisk_stoemp_sotpotatis/steps/mash.jpg",
+      "belgisk_stoemp_sotpotatis__roasted_veg": "assets/recipes/belgisk_stoemp_sotpotatis/steps/roasted_veg.jpg",
+      "belgisk_stoemp_sotpotatis__toasted_walnuts": "assets/recipes/belgisk_stoemp_sotpotatis/steps/toasted_walnuts.jpg",
+      "belgisk_stoemp_sotpotatis__caramelized_onion": "assets/recipes/belgisk_stoemp_sotpotatis/steps/caramelized_onion.jpg",
+      "belgisk_stoemp_sotpotatis__stoemp": "assets/recipes/belgisk_stoemp_sotpotatis/steps/stoemp.jpg",
+      "belgisk_stoemp_sotpotatis": "assets/recipes/belgisk_stoemp_sotpotatis/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 738,
+    "perPortion": {
+      "energyKcal": 667,
+      "energyKj": 2790,
+      "fatG": 27.6,
+      "saturatedFatG": 10.1,
+      "carbsG": 80.8,
+      "sugarsG": 18.7,
+      "proteinG": 21.6,
+      "saltG": 5.1
+    }
+  },
+  "nodes": [
+    {
+      "id": "belgisk_stoemp_sotpotatis__preheated_oven_240",
+      "name": "Värm ugnen",
+      "outputName": "Förvärmd ugn (240°C)",
+      "inputs": [],
+      "steps": [
+        "Värm {{eq:ugn|def}} till 240°C, eller 220°C varmluft."
+      ],
+      "duration": 1,
+      "wait": 12,
+      "tags": [
+        "no-timer",
+        "resource"
+      ],
+      "tips": [
+        "Ugnen tar vanligtvis 10–15 minuter att värmas upp."
+      ],
+      "oven": {
+        "temp": 240,
+        "fanTemp": 220
+      },
+      "devNotes": [
+        "HF anger 240°C/220°C varmluft — lokal ugnsnode, inte preheated_oven_220."
+      ]
+    },
+    {
+      "id": "belgisk_stoemp_sotpotatis__diced_roots",
+      "name": "Skala och Tärna Potatis",
+      "outputName": "Tärnad potatis och sötpotatis",
+      "inputs": [
+        {
+          "id": "potato",
+          "amount": 600,
+          "unit": "g"
+        },
+        {
+          "id": "sweet_potato",
+          "amount": 900,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Skala och tärna {{potato}} och {{sweet_potato}} i 2 cm stora bitar."
+      ],
+      "duration": 8,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "HF-typ organic-potatoes, mappad till potato."
+      ]
+    },
+    {
+      "id": "belgisk_stoemp_sotpotatis__boiled_roots",
+      "name": "Koka Potatis och Sötpotatis",
+      "outputName": "Kokt potatis och sötpotatis",
+      "inputs": [
+        {
+          "id": "belgisk_stoemp_sotpotatis__diced_roots",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Koka upp saltat vatten i {{eq:kastrull_1}}.",
+        "Koka {{belgisk_stoemp_sotpotatis__diced_roots}} i 11–13 min, eller tills de enkelt kan delas med en kniv."
+      ],
+      "duration": 2,
+      "wait": 13,
+      "tags": [],
+      "heat": "hög",
+      "heatSource": "inferred",
+      "equipment": [
+        {
+          "type": "kastrull_stor",
+          "ref": "kastrull_1"
+        }
+      ],
+      "devNotes": [
+        "Salt i kokvattnet har ingen rad i HF:s lista; nämns bara i text. Storleken stor står i rådatan."
+      ]
+    },
+    {
+      "id": "belgisk_stoemp_sotpotatis__mash",
+      "name": "Mosa Potatis och Sötpotatis",
+      "outputName": "Potatis- och sötpotatismos",
+      "inputs": [
+        {
+          "id": "belgisk_stoemp_sotpotatis__boiled_roots",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "milk",
+          "amount": 6,
+          "unit": "msk"
+        },
+        {
+          "id": "salt",
+          "amount": 2,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Häll av vattnet och mosa {{belgisk_stoemp_sotpotatis__boiled_roots}} med {{milk}}, {{salt}} och en nypa {{pepper}} i {{eq:kastrull_1|def}}.",
+        "Ställ åt sidan under lock."
+      ],
+      "duration": 4,
+      "wait": 0,
+      "tags": [],
+      "tips": [
+        "Tillsätt en klick smör för att göra moset extra krämigt."
+      ],
+      "equipment": [
+        {
+          "type": "kastrull_stor",
+          "ref": "kastrull_1",
+          "transition": "keep",
+          "offHeat": true,
+          "lid": true,
+          "hold": true
+        }
+      ],
+      "devNotes": [
+        "Mjölk till mos 6 msk, salt till mos 2 tsk (4 portioner). Smöret är bara ett valfritt HF-tips, därför ingen Ta fram-node och inget smör i inköpslistan."
+      ]
+    },
+    {
+      "id": "belgisk_stoemp_sotpotatis__tomato_paprika",
+      "name": "Skär Tomater och Paprika",
+      "outputName": "Halverade tomater och tärnad paprika",
+      "inputs": [
+        {
+          "id": "cherry_tomatoes",
+          "amount": 250,
+          "unit": "g"
+        },
+        {
+          "id": "paprika",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Halvera {{cherry_tomatoes}}.",
+        "Tärna {{paprika}} i 2 cm stora bitar."
+      ],
+      "duration": 4,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ]
+    },
+    {
+      "id": "belgisk_stoemp_sotpotatis__sliced_onion",
+      "name": "Skiva Lök",
+      "outputName": "Skivad rödlök",
+      "inputs": [
+        {
+          "id": "red_onion",
+          "amount": 4,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Halvera {{red_onion}} och skär den i tunna skivor."
+      ],
+      "duration": 4,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "HF Lök har typ red-onion, mappad till red_onion. All lök går till den karamelliserade löken (inte på plåten)."
+      ]
+    },
+    {
+      "id": "belgisk_stoemp_sotpotatis__roasted_veg",
+      "name": "Rosta Tomater och Paprika",
+      "outputName": "Rostade tomater och paprika",
+      "inputs": [
+        {
+          "id": "belgisk_stoemp_sotpotatis__tomato_paprika",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "buon_appetito",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Lägg {{belgisk_stoemp_sotpotatis__tomato_paprika}} på {{eq:plat_1}} med bakplåtspapper. Blanda med {{olive_oil}}, {{buon_appetito}}, {{salt}} och en nypa {{pepper}}.",
+        "Rosta i {{eq:ugn|def}} i 15–17 min, eller tills mjukt."
+      ],
+      "duration": 2,
+      "wait": 17,
+      "tags": [],
+      "tips": [
+        "Använd fler plåtar om det blir för trångt."
+      ],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "belgisk_stoemp_sotpotatis__preheated_oven_240",
+          "slots": 1,
+          "temp": 240,
+          "fanTemp": 220
+        },
+        {
+          "type": "plat",
+          "ref": "plat_1",
+          "liner": "bakplatspapper"
+        }
+      ],
+      "devNotes": [
+        "Olivoljan till plåten har ingen rad i HF:s lista, därför standard 1 skvätt. Salt till grönsaker 0,5 tsk (4 portioner)."
+      ]
+    },
+    {
+      "id": "belgisk_stoemp_sotpotatis__toasted_walnuts",
+      "name": "Rosta Valnötter",
+      "outputName": "Rostade valnötter",
+      "inputs": [
+        {
+          "id": "walnuts",
+          "amount": 40,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{eq:stekpanna_1}} på medelhög värme.",
+        "Rosta {{walnuts}} i 3–4 min, eller tills gyllene."
+      ],
+      "duration": 5,
+      "wait": 0,
+      "tags": [],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1"
+        }
+      ],
+      "devNotes": [
+        "Torrostning kräver omrörning, därför hands-on (duration) och ingen wait."
+      ]
+    },
+    {
+      "id": "belgisk_stoemp_sotpotatis__chopped_walnuts",
+      "name": "Hacka Valnötter",
+      "outputName": "Hackade rostade valnötter",
+      "inputs": [
+        {
+          "id": "belgisk_stoemp_sotpotatis__toasted_walnuts",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Finhacka {{belgisk_stoemp_sotpotatis__toasted_walnuts}}."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "Inte prep: hackar en rostad produkt (§4.4 regel 3)."
+      ]
+    },
+    {
+      "id": "belgisk_stoemp_sotpotatis__caramelized_onion",
+      "name": "Karamellisera Lök",
+      "outputName": "Karamelliserad lök",
+      "inputs": [
+        {
+          "id": "olive_oil",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "belgisk_stoemp_sotpotatis__sliced_onion",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "balsamic_vinegar",
+          "amount": 24,
+          "unit": "ml"
+        },
+        {
+          "id": "water",
+          "amount": 8,
+          "unit": "msk"
+        },
+        {
+          "id": "sugar",
+          "amount": 2,
+          "unit": "tsk"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Torka ur {{eq:stekpanna_1|def}}.",
+        "Hetta upp {{olive_oil}} i {{eq:stekpanna_1|def}} på medelvärme.",
+        "Stek {{belgisk_stoemp_sotpotatis__sliced_onion}} i 5–6 min, tills mjuk.",
+        "Tillsätt {{balsamic_vinegar}}, {{water}}, {{sugar}} och {{salt}}. Rör om och stek i 3–5 min, eller tills karamelliserad."
+      ],
+      "duration": 13,
+      "wait": 0,
+      "tags": [],
+      "heat": "medel",
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1",
+          "transition": "wipe",
+          "after": "belgisk_stoemp_sotpotatis__toasted_walnuts"
+        }
+      ],
+      "devNotes": [
+        "Olja 2 msk, vatten 8 msk, socker 2 tsk, salt 0,5 tsk till karamelliserad lök (4 portioner). Vätskan är ca 1,4 dl (24 ml balsamvinäger + 8 msk vatten) som kokas in till en glaze, därför stekpanna och ingen traktörpanna.",
+        "Lökstekningen och inkokningen kräver omrörning, därför allt i duration och ingen wait. Samma panna som valnötterna: after toasted_walnuts är en resursordning, ingen ingredienskant."
+      ]
+    },
+    {
+      "id": "belgisk_stoemp_sotpotatis__stoemp",
+      "name": "Rör Ihop Stoemp",
+      "outputName": "Stoemp",
+      "inputs": [
+        {
+          "id": "belgisk_stoemp_sotpotatis__mash",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "belgisk_stoemp_sotpotatis__roasted_veg",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "mustard",
+          "amount": 30,
+          "unit": "g"
+        },
+        {
+          "id": "belgisk_stoemp_sotpotatis__caramelized_onion",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "feta_cheese",
+          "amount": 100,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Rör ner {{belgisk_stoemp_sotpotatis__roasted_veg}}, {{mustard}}, {{belgisk_stoemp_sotpotatis__caramelized_onion}} och hälften av {{feta_cheese}} i {{belgisk_stoemp_sotpotatis__mash}} i {{eq:kastrull_1|def}}."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "kastrull_stor",
+          "ref": "kastrull_1",
+          "transition": "keep",
+          "offHeat": true
+        }
+      ],
+      "devNotes": [
+        "Feta 200 g delas enligt rådatan: hälften (100 g) här, resten (100 g) som topping."
+      ]
+    },
+    {
+      "id": "belgisk_stoemp_sotpotatis__rinsed_rucola",
+      "name": "Skölj Rucola",
+      "outputName": "Sköljd rucola",
+      "inputs": [
+        {
+          "id": "rucola",
+          "amount": 70,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Skölj {{rucola}}."
+      ],
+      "duration": 1,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "devNotes": [
+        "HF organic-rucola → rucola. 40 g vid 2 och 70 g vid 4 portioner (inte linjärt); 4-portionsvärdet används."
+      ]
+    },
+    {
+      "id": "belgisk_stoemp_sotpotatis",
+      "name": "Belgisk stoemp på sötpotatis och feta",
+      "outputName": "Belgisk stoemp på sötpotatis och feta",
+      "inputs": [
+        {
+          "id": "belgisk_stoemp_sotpotatis__stoemp",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "belgisk_stoemp_sotpotatis__rinsed_rucola",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "feta_cheese",
+          "amount": 100,
+          "unit": "g"
+        },
+        {
+          "id": "belgisk_stoemp_sotpotatis__chopped_walnuts",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{belgisk_stoemp_sotpotatis__stoemp}} i {{eq:servering|pl}}.",
+        "Toppa med {{belgisk_stoemp_sotpotatis__rinsed_rucola}} och resterande {{feta_cheese}}.",
+        "Strö över {{belgisk_stoemp_sotpotatis__chopped_walnuts}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_djup_tallrik",
+          "ref": "servering",
+          "count": "portions"
+        }
+      ]
+    }
+  ]
+}

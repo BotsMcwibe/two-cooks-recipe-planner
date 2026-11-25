@@ -4,6 +4,11 @@
   "rawId": "6a8398386a08324360c8e062",
   "createdAt": 1790796736,
   "basePortions": 4,
+  "time": {
+    "totalMin": 36,
+    "activeMin": 31,
+    "computedFrom": "graph"
+  },
   "sharedPrep": [],
   "images": {
     "main": "assets/recipes/kottbullar_tomatsas/main.jpg",

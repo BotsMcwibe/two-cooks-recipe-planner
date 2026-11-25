@@ -1,0 +1,557 @@
+{
+  "masterId": "kryddig_citrusbakad_kolja",
+  "source": "hellofresh",
+  "rawId": "6a9e9294790f7867027dbef6",
+  "createdAt": 1794425341,
+  "basePortions": 4,
+  "time": {
+    "totalMin": 56,
+    "activeMin": 33,
+    "computedFrom": "graph"
+  },
+  "images": {
+    "main": "assets/recipes/kryddig_citrusbakad_kolja/main.jpg",
+    "byNode": {
+      "kryddig_citrusbakad_kolja__roasted_veg_first": "assets/recipes/kryddig_citrusbakad_kolja/steps/roasted_veg_first.jpg",
+      "kryddig_citrusbakad_kolja__seasoned_fish": "assets/recipes/kryddig_citrusbakad_kolja/steps/seasoned_fish.jpg",
+      "kryddig_citrusbakad_kolja__chimichurri": "assets/recipes/kryddig_citrusbakad_kolja/steps/chimichurri.jpg",
+      "kryddig_citrusbakad_kolja__roasted_veg": "assets/recipes/kryddig_citrusbakad_kolja/steps/roasted_veg.jpg",
+      "kryddig_citrusbakad_kolja__smoked_mayo": "assets/recipes/kryddig_citrusbakad_kolja/steps/smoked_mayo.jpg",
+      "kryddig_citrusbakad_kolja": "assets/recipes/kryddig_citrusbakad_kolja/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 648,
+    "perPortion": {
+      "energyKcal": 704,
+      "energyKj": 2947,
+      "fatG": 31.7,
+      "saturatedFatG": 3.3,
+      "carbsG": 65.3,
+      "sugarsG": 13.4,
+      "proteinG": 40.8,
+      "saltG": 3.1
+    }
+  },
+  "nodes": [
+    {
+      "id": "kryddig_citrusbakad_kolja__preheated_oven_240",
+      "name": "Värm ugnen",
+      "outputName": "Förvärmd ugn (240°C)",
+      "inputs": [],
+      "steps": [
+        "Värm {{eq:ugn|def}} till 240°C, eller 220°C varmluft."
+      ],
+      "duration": 1,
+      "wait": 12,
+      "tags": [
+        "no-timer",
+        "resource"
+      ],
+      "tips": [
+        "Ugnen tar vanligtvis 10–15 minuter att värmas upp."
+      ],
+      "oven": {
+        "temp": 240,
+        "fanTemp": 220
+      },
+      "devNotes": [
+        "HF anger 240°C/220°C varmluft — lokal ugnsnode, inte preheated_oven_220."
+      ]
+    },
+    {
+      "id": "kryddig_citrusbakad_kolja__cut_potato_onion",
+      "name": "Tärna Potatis och Skär Lök",
+      "outputName": "Tärnad potatis och lökklyftor",
+      "inputs": [
+        {
+          "id": "potato",
+          "amount": 1000,
+          "unit": "g"
+        },
+        {
+          "id": "red_onion",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Tärna {{potato}} (oskalad) i 2 cm stora bitar.",
+        "Skär {{red_onion}} i 2 cm tjocka klyftor."
+      ],
+      "duration": 6,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "HF Lök typ red-onion → red_onion, 2 st vid 3 och 4 portioner (1 st vid 2, 3 st vid 6). Potatis 1000 g vid 4 (500/1000/1500 linjärt 2/4/6; 800 g vid 3, 1300 g vid 5)."
+      ]
+    },
+    {
+      "id": "kryddig_citrusbakad_kolja__roasted_veg_first",
+      "name": "Rosta Potatis och Lök, Första Fas",
+      "outputName": "Halvrostad potatis och lök",
+      "inputs": [
+        {
+          "id": "kryddig_citrusbakad_kolja__cut_potato_onion",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "tex_mex",
+          "amount": 10,
+          "unit": "g"
+        },
+        {
+          "id": "smoked_paprika",
+          "amount": 4,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Placera {{kryddig_citrusbakad_kolja__cut_potato_onion}} på {{eq:plat_1}} med bakplåtspapper.",
+        "Blanda med {{olive_oil}}, {{salt}}, en nypa {{pepper}}, hälften av {{tex_mex}} och hälften av {{smoked_paprika}}.",
+        "Rosta i {{eq:ugn|def}} i 25–35 min, eller tills mjukt."
+      ],
+      "duration": 3,
+      "wait": 20,
+      "tags": [],
+      "tips": [
+        "Använd flera plåtar om det blir för trångt."
+      ],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "kryddig_citrusbakad_kolja__preheated_oven_240",
+          "slots": 1,
+          "temp": 240,
+          "fanTemp": 220
+        },
+        {
+          "type": "plat",
+          "ref": "plat_1",
+          "liner": "bakplatspapper"
+        }
+      ],
+      "devNotes": [
+        "Olivolja till grönsaker saknas i HF:s lista, därför standard 1 skvätt. Salt till grönsaker 0,5 tsk (samma vid 3). Tex-Mex typ mexican-spice → tex_mex (blendId taco_seasoning), 20 g totalt vid 3 och 4; 10 g här och 10 g på fisken. Rökt paprikapulver 8 g totalt; 4 g här och 4 g i majonnäsen.",
+        "1000 g potatis ligger på plåtens oneLayerG; plus 2 rödlök och senare 300 g majs och 300 g brysselkål blir trångt. En plåt enligt rådatan, med tipset om fler plåtar. FLAG.",
+        "Första fasen 20 min = övre 35 minus de 15 som återstår när majs, brysselkål och fisk går in."
+      ]
+    },
+    {
+      "id": "kryddig_citrusbakad_kolja__trimmed_brussels",
+      "name": "Halvera Brysselkål",
+      "outputName": "Halverad brysselkål",
+      "inputs": [
+        {
+          "id": "brussels_sprouts",
+          "amount": 300,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Ta bort de yttersta bladen från {{brussels_sprouts}} och halvera den."
+      ],
+      "duration": 4,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true,
+          "after": "kryddig_citrusbakad_kolja__cut_potato_onion"
+        }
+      ],
+      "devNotes": [
+        "HF Brysselkål → brussels_sprouts, 300 g vid 4 portioner, linjärt 2/4/6. Går in i andra rostningsfasen, därför egen prepnode."
+      ]
+    },
+    {
+      "id": "kryddig_citrusbakad_kolja__lime_slices",
+      "name": "Skiva Lime",
+      "outputName": "Limeskivor",
+      "inputs": [
+        {
+          "id": "lime",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skär {{lime}} i tunna skivor."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true,
+          "after": "kryddig_citrusbakad_kolja__trimmed_brussels"
+        }
+      ],
+      "devNotes": [
+        "HF Citrusfrukt typ lime → lime, 2 st vid 3 och 4 portioner (1 st vid 2, 3 st vid 6) — linjärt 2/4/6. Skivorna läggs på fisken, inte som pack."
+      ]
+    },
+    {
+      "id": "kryddig_citrusbakad_kolja__seasoned_fish",
+      "name": "Förbered Fisk",
+      "outputName": "Kryddad kolja med lime",
+      "inputs": [
+        {
+          "id": "haddock",
+          "amount": 500,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "tex_mex",
+          "amount": 10,
+          "unit": "g"
+        },
+        {
+          "id": "kryddig_citrusbakad_kolja__lime_slices",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Torka {{haddock}} med hushållspapper. Krydda med {{salt}}, en nypa {{pepper}} och resterande {{tex_mex}} på {{eq:tallrik_1}}.",
+        "Placera fisken i {{eq:ugnsform_1}} med bakplåtspapper och lägg {{kryddig_citrusbakad_kolja__lime_slices}} ovanpå. Ställ åt sidan."
+      ],
+      "duration": 4,
+      "wait": 0,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "tallrik",
+          "ref": "tallrik_1",
+          "inferred": true
+        },
+        {
+          "type": "ugnsform",
+          "ref": "ugnsform_1",
+          "liner": "bakplatspapper"
+        }
+      ],
+      "devNotes": [
+        "HF Kolja typ haddock → haddock (rawAnimal fish), 500 g vid 4 portioner, linjärt. Fisken skärs inte; den torkas och kryddas på en tallrik och går i ugnsformen, därför ingen skarbrada_ra. Hushållspapper spåras inte.",
+        "Salt till fisk 1 tsk vid 3 och 4 portioner (0,25 tsk vid 2) — inte linjärt från 2-portion. FLAG."
+      ]
+    },
+    {
+      "id": "kryddig_citrusbakad_kolja__chimichurri",
+      "name": "Blanda Chimichurri",
+      "outputName": "Chimichurri",
+      "inputs": [
+        {
+          "id": "coriander",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "parsley",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "chili_flakes",
+          "amount": 1,
+          "unit": "g"
+        },
+        {
+          "id": "water",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Finhacka {{coriander}} och {{parsley}}.",
+        "Blanda koriander, persilja, {{chili_flakes}}, {{water}}, {{olive_oil}} och en nypa {{salt}} och {{pepper}} i {{eq:skal_1}}. Ställ åt sidan."
+      ],
+      "duration": 5,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Skippa chili eller använd mindre om du inte tycker om stark mat."
+      ],
+      "equipment": [
+        {
+          "type": "skal_liten",
+          "ref": "skal_1"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true,
+          "after": "kryddig_citrusbakad_kolja__lime_slices"
+        }
+      ],
+      "devNotes": [
+        "HF Koriander typ organic-coriander och Bladpersilja typ organic-parsley-flat: 1 st vid 2, 3 och 4 portioner, 2 st vid 6 — förpackningar. Författade som 1 st vid 4 portioner med linjär skalning. Vatten till chimichurri 2 msk, olja till chimichurri 2 msk (samma vatten vid 3; olja 1,5 msk vid 3). Chiliflakes 1 g vid 3 och 4. Salt och peppar är nypor enligt steget, inte salt-till-grönsaker."
+      ]
+    },
+    {
+      "id": "kryddig_citrusbakad_kolja__roasted_veg",
+      "name": "Tillsätt Majs och Brysselkål",
+      "outputName": "Ugnsrostade grönsaker",
+      "inputs": [
+        {
+          "id": "kryddig_citrusbakad_kolja__roasted_veg_first",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "canned_corn",
+          "amount": 300,
+          "unit": "g"
+        },
+        {
+          "id": "kryddig_citrusbakad_kolja__trimmed_brussels",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Häll av {{canned_corn}} i {{eq:durkslag_1}}.",
+        "När det återstår 15 min av tillagningstiden, tillsätt majs och {{kryddig_citrusbakad_kolja__trimmed_brussels}} till {{eq:plat_1|def}} med {{kryddig_citrusbakad_kolja__roasted_veg_first}}.",
+        "Rosta klart i {{eq:ugn|def}} i 15 min."
+      ],
+      "duration": 2,
+      "wait": 15,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "plat",
+          "ref": "plat_1",
+          "liner": "bakplatspapper",
+          "transition": "keep"
+        },
+        {
+          "type": "ugn",
+          "after": "kryddig_citrusbakad_kolja__preheated_oven_240",
+          "slots": 1,
+          "temp": 240,
+          "fanTemp": 220
+        },
+        {
+          "type": "durkslag",
+          "ref": "durkslag_1",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "HF Majs typ corn → canned_corn (hälls av), 300 g vid 3 och 4 portioner (150 g vid 2, 450 g vid 6)."
+      ]
+    },
+    {
+      "id": "kryddig_citrusbakad_kolja__baked_fish",
+      "name": "Ugnsbaka Kolja",
+      "outputName": "Citrusbakad kolja",
+      "inputs": [
+        {
+          "id": "kryddig_citrusbakad_kolja__seasoned_fish",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Ugnsbaka {{kryddig_citrusbakad_kolja__seasoned_fish}} i {{eq:ugn|def}} i 12–15 min, eller tills gyllene och genomstekt."
+      ],
+      "duration": 1,
+      "wait": 15,
+      "tags": [],
+      "tips": [
+        "Fisken är klar när fiskköttet är vitt/ogenomskinligt och lätt faller isär."
+      ],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": [
+            "kryddig_citrusbakad_kolja__preheated_oven_240",
+            "kryddig_citrusbakad_kolja__roasted_veg_first"
+          ],
+          "slots": 1,
+          "temp": 240,
+          "fanTemp": 220
+        },
+        {
+          "type": "ugnsform",
+          "ref": "ugnsform_1",
+          "liner": "bakplatspapper",
+          "transition": "keep",
+          "after": "kryddig_citrusbakad_kolja__seasoned_fish"
+        }
+      ],
+      "devNotes": [
+        "ugnsform enligt rådatan, inte en andra plåt. after på ugnen inkluderar första rostningsfasen så att fisken bakas under de sista 12–15 min (samma fönster som majs och brysselkål), inte under hela 35 min. Plåt och ugnsform tar 2 ugnsplatser samtidigt; standardkök 2 plåtar. Ingen timing-only ingredienskant. FLAG för --trays 1."
+      ]
+    },
+    {
+      "id": "kryddig_citrusbakad_kolja__smoked_mayo",
+      "name": "Blanda Rökig Majonnäs",
+      "outputName": "Rökig majonnäs",
+      "inputs": [
+        {
+          "id": "mayonnaise",
+          "amount": 100,
+          "unit": "g"
+        },
+        {
+          "id": "smoked_paprika",
+          "amount": 4,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Blanda {{mayonnaise}} och resten av {{smoked_paprika}} i {{eq:skal_2}}."
+      ],
+      "duration": 1,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skal_liten",
+          "ref": "skal_2"
+        }
+      ],
+      "devNotes": [
+        "HF Majonnas → mayonnaise, 100 g vid 4 portioner, linjärt. Resterande 4 g rökt paprikapulver."
+      ]
+    },
+    {
+      "id": "kryddig_citrusbakad_kolja__dressed_veg",
+      "name": "Vänd Chimichurri med Grönsaker",
+      "outputName": "Grönsaker med chimichurri",
+      "inputs": [
+        {
+          "id": "kryddig_citrusbakad_kolja__roasted_veg",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "kryddig_citrusbakad_kolja__chimichurri",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Vänd {{kryddig_citrusbakad_kolja__chimichurri}} med {{kryddig_citrusbakad_kolja__roasted_veg}} på {{eq:plat_1|def}} precis innan servering."
+      ],
+      "duration": 1,
+      "wait": 0,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "plat",
+          "ref": "plat_1",
+          "liner": "bakplatspapper",
+          "transition": "keep",
+          "offHeat": true,
+          "after": "kryddig_citrusbakad_kolja__roasted_veg"
+        }
+      ]
+    },
+    {
+      "id": "kryddig_citrusbakad_kolja",
+      "name": "Kryddig citrusbakad kolja",
+      "outputName": "Kryddig citrusbakad kolja",
+      "inputs": [
+        {
+          "id": "kryddig_citrusbakad_kolja__dressed_veg",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "kryddig_citrusbakad_kolja__baked_fish",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "kryddig_citrusbakad_kolja__smoked_mayo",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{kryddig_citrusbakad_kolja__dressed_veg}} i {{eq:servering|pl}}.",
+        "Toppa med {{kryddig_citrusbakad_kolja__baked_fish}} och en klick {{kryddig_citrusbakad_kolja__smoked_mayo}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_djup_tallrik",
+          "ref": "servering",
+          "count": "portions"
+        }
+      ],
+      "devNotes": [
+        "Kostfiber 42,3 g slängd som orimlig. 704 kcal och övrig näring behållen. HF totalTime PT20M är orimligt mot 25–35 min ugn; prepTime PT35M. totalMinutes 40.",
+        "clonedFrom-originalet 683dc1566329c8e5b72241b0 och dubbletten 6a71a46249f0ffd1f674fe22 är samma rätt (där är bladpersilja 10 g i stället för 1 st förpackning) och konverterades inte. calabresekolja och stekt_kolja_dragonsas är andra rätter och är orörda."
+      ]
+    }
+  ]
+}

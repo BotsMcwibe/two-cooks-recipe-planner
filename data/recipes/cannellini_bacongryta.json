@@ -1,0 +1,422 @@
+{
+  "masterId": "cannellini_bacongryta",
+  "source": "hellofresh",
+  "rawId": "6a915db9f3876e995cfb5988",
+  "createdAt": 1792603244,
+  "basePortions": 4,
+  "time": {
+    "totalMin": 31,
+    "activeMin": 28,
+    "computedFrom": "graph"
+  },
+  "sharedPrep": [
+    "preheated_oven_220"
+  ],
+  "images": {
+    "main": "assets/recipes/cannellini_bacongryta/main.jpg",
+    "byNode": {
+      "cannellini_bacongryta__fried_bacon": "assets/recipes/cannellini_bacongryta/steps/fried_bacon.jpg",
+      "cannellini_bacongryta__aromatics": "assets/recipes/cannellini_bacongryta/steps/aromatics.jpg",
+      "cannellini_bacongryta__warm_baguette": "assets/recipes/cannellini_bacongryta/steps/warm_baguette.jpg",
+      "cannellini_bacongryta__bean_stew": "assets/recipes/cannellini_bacongryta/steps/bean_stew.jpg",
+      "cannellini_bacongryta__finished_stew": "assets/recipes/cannellini_bacongryta/steps/finished_stew.jpg",
+      "cannellini_bacongryta": "assets/recipes/cannellini_bacongryta/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 688,
+    "perPortion": {
+      "energyKcal": 1040,
+      "energyKj": 4350,
+      "fatG": 39.2,
+      "saturatedFatG": 18.4,
+      "carbsG": 120.3,
+      "sugarsG": 23.3,
+      "fiberG": 20.2,
+      "proteinG": 42.1,
+      "saltG": 7.2
+    }
+  },
+  "nodes": [
+    {
+      "id": "cannellini_bacongryta__fried_bacon",
+      "name": "Stek Bacon",
+      "outputName": "Stekt bacon",
+      "inputs": [
+        {
+          "id": "bacon",
+          "amount": 280,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{eq:traktorpanna_1}} på medelhög värme.",
+        "Stek {{bacon}} i 4–5 min, eller tills gyllene.",
+        "Ställ åt sidan på {{eq:tallrik_1}}."
+      ],
+      "duration": 6,
+      "wait": 0,
+      "tags": [],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred"
+        },
+        {
+          "type": "tallrik",
+          "ref": "tallrik_1"
+        }
+      ],
+      "devNotes": [
+        "HF Bacon, tärnad → bacon (färdigtärnad, skärs inte, därför ingen skarbrada_ra).",
+        "Rådatan säger medelstor stekpanna, men samma panna (torka inte ur) tar sedan 780 g krossade tomater + 2 dl vatten + 70 g tomatpuré och 760 g bönor som sjuds i 3–4 + 2–3 min (≈2 l totalt), därför traktörpanna (typeSource inferred) i hela kedjan."
+      ]
+    },
+    {
+      "id": "cannellini_bacongryta__aromatics",
+      "name": "Skär Lök, Vitlök och Soltorkade Tomater",
+      "outputName": "Skivad lök, hackad vitlök och soltorkade tomater",
+      "inputs": [
+        {
+          "id": "onion",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "garlic",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "sun_dried_tomatoes",
+          "amount": 50,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Halvera {{onion}} och skär i tunna skivor.",
+        "Finhacka eller pressa {{garlic}}.",
+        "Finhacka {{sun_dried_tomatoes}}."
+      ],
+      "duration": 5,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "Alla tre steks tillsammans, därför en prepnode."
+      ]
+    },
+    {
+      "id": "cannellini_bacongryta__rinsed_spinach",
+      "name": "Skölj Spenat",
+      "outputName": "Sköljd spenat",
+      "inputs": [
+        {
+          "id": "baby_spinach",
+          "amount": 60,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Skölj {{baby_spinach}}."
+      ],
+      "duration": 1,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "devNotes": [
+        "HF Spenat (organic-baby-spinach) → baby_spinach."
+      ]
+    },
+    {
+      "id": "cannellini_bacongryta__rinsed_beans",
+      "name": "Skölj Cannelinibönor",
+      "outputName": "Sköljda cannelinibönor",
+      "inputs": [
+        {
+          "id": "cannellini_beans",
+          "amount": 760,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Häll av och skölj {{cannellini_beans}} i {{eq:durkslag_1}}."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "durkslag",
+          "ref": "durkslag_1",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "Ny ingrediens cannellini_beans (konserv). 760 g = 2 × 380 g enligt HF:s 2-portionsvärde. Durkslag nämns inte men behövs för att skölja bönorna. Rådatan säger 'under tiden' medan löken steks; som prepnode kan det göras före."
+      ]
+    },
+    {
+      "id": "cannellini_bacongryta__warm_baguette",
+      "name": "Värm Baguette",
+      "outputName": "Varm baguette",
+      "inputs": [
+        {
+          "id": "baguette",
+          "amount": 4,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Placera {{baguette}} direkt på {{eq:galler_1|def}} och värm i {{eq:ugn|def}} i 7–8 min."
+      ],
+      "duration": 1,
+      "wait": 8,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "preheated_oven_220",
+          "slots": 1,
+          "temp": 220,
+          "fanTemp": 200
+        },
+        {
+          "type": "galler",
+          "ref": "galler_1"
+        }
+      ],
+      "devNotes": [
+        "HF Baguette (stenugnsbakad) → baguette. 220°C/200°C varmluft = delad prep preheated_oven_220."
+      ]
+    },
+    {
+      "id": "cannellini_bacongryta__tomato_base",
+      "name": "Gör Tomatsås",
+      "outputName": "Tomatsås med lök och soltorkade tomater",
+      "inputs": [
+        {
+          "id": "butter",
+          "amount": 4,
+          "unit": "msk"
+        },
+        {
+          "id": "cannellini_bacongryta__aromatics",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "tomato_paste",
+          "amount": 70,
+          "unit": "g"
+        },
+        {
+          "id": "sugar",
+          "amount": 1,
+          "unit": "tsk"
+        },
+        {
+          "id": "canned_tomatoes",
+          "amount": 780,
+          "unit": "g"
+        },
+        {
+          "id": "water",
+          "amount": 2,
+          "unit": "dl"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{butter}} i samma {{eq:traktorpanna_1|noun}} (torka inte ur den först) på medelhög värme.",
+        "Stek {{cannellini_bacongryta__aromatics}} i 2–3 min.",
+        "Tillsätt {{tomato_paste}}, {{sugar}}, {{canned_tomatoes}}, {{water}} och {{salt}}. Sänk till medelvärme och sjud i 3–4 min. Rör om då och då."
+      ],
+      "duration": 5,
+      "wait": 4,
+      "tags": [],
+      "heat": "medelhög",
+      "stepHeat": {
+        "2": "medel"
+      },
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred",
+          "transition": "keep",
+          "after": "cannellini_bacongryta__fried_bacon"
+        }
+      ],
+      "devNotes": [
+        "Smör till stekning 4 msk smälts i pannan, inget rumstempererat smör, därför ingen Ta fram-node. Salt till grönsaker 0,5 tsk (4 portioner; samma vid 3). Socker 1 tsk, vatten 2 dl.",
+        "HF Krossade tomater (typ krossade-tomater-vitlok-lok) → canned_tomatoes. FLAG. Samma panna som baconet: after fried_bacon är resursordning, ingen ingredienskant (baconet går in senare)."
+      ]
+    },
+    {
+      "id": "cannellini_bacongryta__bean_stew",
+      "name": "Sjud Bönor",
+      "outputName": "Bönor i tomatsås",
+      "inputs": [
+        {
+          "id": "cannellini_bacongryta__tomato_base",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "cannellini_bacongryta__rinsed_beans",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Tillsätt {{cannellini_bacongryta__rinsed_beans}} till {{cannellini_bacongryta__tomato_base}} och sjud i ytterligare 2–3 min."
+      ],
+      "duration": 1,
+      "wait": 3,
+      "tags": [],
+      "heat": "medel",
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred",
+          "transition": "keep"
+        }
+      ]
+    },
+    {
+      "id": "cannellini_bacongryta__finished_stew",
+      "name": "Rör Ner Bacon och Spenat",
+      "outputName": "Cannellini- och bacongryta",
+      "inputs": [
+        {
+          "id": "cannellini_bacongryta__bean_stew",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "cannellini_bacongryta__fried_bacon",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "cannellini_bacongryta__rinsed_spinach",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Tillsätt {{cannellini_bacongryta__fried_bacon}} och {{cannellini_bacongryta__rinsed_spinach}} till {{cannellini_bacongryta__bean_stew}} i {{eq:traktorpanna_1|def}} och rör om tills spenaten är mjuk."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [],
+      "heat": "medel",
+      "heatSource": "inferred",
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred",
+          "transition": "keep"
+        }
+      ]
+    },
+    {
+      "id": "cannellini_bacongryta__sliced_baguette",
+      "name": "Skiva Baguette",
+      "outputName": "Skivad baguette",
+      "inputs": [
+        {
+          "id": "cannellini_bacongryta__warm_baguette",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skär {{cannellini_bacongryta__warm_baguette}} i 2 cm tjocka skivor."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "Inte prep: skivar det uppvärmda brödet."
+      ]
+    },
+    {
+      "id": "cannellini_bacongryta",
+      "name": "Italiensk cannellini- och bacongryta",
+      "outputName": "Italiensk cannellini- och bacongryta",
+      "inputs": [
+        {
+          "id": "cannellini_bacongryta__finished_stew",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "parmesan",
+          "amount": 40,
+          "unit": "g"
+        },
+        {
+          "id": "cannellini_bacongryta__sliced_baguette",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Toppa {{cannellini_bacongryta__finished_stew}} med riven {{parmesan}} och ställ fram {{eq:traktorpanna_1|def}} direkt på bordet.",
+        "Servera med {{cannellini_bacongryta__sliced_baguette}} på {{eq:servering|pl}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "master"
+      ],
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred",
+          "transition": "keep",
+          "offHeat": true
+        }
+      ],
+      "serving": [
+        {
+          "type": "servering_tallrik",
+          "ref": "servering",
+          "count": "portions"
+        }
+      ],
+      "devNotes": [
+        "HF stavar 'cannelini'; namnet rättat till cannellini. HF Parmigiano Reggiano PDO → parmesan (som shepherds_pie_blandfars). Grytan serveras i pannan; tallrikar per portion är underförstått."
+      ]
+    }
+  ]
+}

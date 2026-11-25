@@ -1,0 +1,547 @@
+{
+  "masterId": "stekt_lax_citrus_smorsas",
+  "source": "hellofresh",
+  "rawId": "6a9e929b790f7867027dbf8d",
+  "createdAt": 1794424169,
+  "basePortions": 4,
+  "time": {
+    "totalMin": 54,
+    "activeMin": 36,
+    "computedFrom": "graph"
+  },
+  "images": {
+    "main": "assets/recipes/stekt_lax_citrus_smorsas/main.jpg",
+    "byNode": {
+      "stekt_lax_citrus_smorsas__roasted_potatoes_first": "assets/recipes/stekt_lax_citrus_smorsas/steps/roasted_potatoes.jpg",
+      "stekt_lax_citrus_smorsas__sauce_aromatics": "assets/recipes/stekt_lax_citrus_smorsas/steps/sauce_aromatics.jpg",
+      "stekt_lax_citrus_smorsas__mustard_creme": "assets/recipes/stekt_lax_citrus_smorsas/steps/mustard_creme.jpg",
+      "stekt_lax_citrus_smorsas__fried_salmon": "assets/recipes/stekt_lax_citrus_smorsas/steps/fried_salmon.jpg",
+      "stekt_lax_citrus_smorsas__citrus_butter_sauce": "assets/recipes/stekt_lax_citrus_smorsas/steps/citrus_butter_sauce.jpg",
+      "stekt_lax_citrus_smorsas": "assets/recipes/stekt_lax_citrus_smorsas/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 664,
+    "perPortion": {
+      "energyKcal": 796,
+      "energyKj": 3332,
+      "fatG": 46.2,
+      "saturatedFatG": 14.6,
+      "carbsG": 59.5,
+      "sugarsG": 12,
+      "proteinG": 36.4,
+      "saltG": 3.9
+    }
+  },
+  "nodes": [
+    {
+      "id": "stekt_lax_citrus_smorsas__preheated_oven_240",
+      "name": "Värm ugnen",
+      "outputName": "Förvärmd ugn (240°C)",
+      "inputs": [],
+      "steps": [
+        "Värm {{eq:ugn|def}} till 240°C, eller 220°C varmluft."
+      ],
+      "duration": 1,
+      "wait": 12,
+      "tags": [
+        "no-timer",
+        "resource"
+      ],
+      "tips": [
+        "Ugnen tar vanligtvis 10–15 minuter att värmas upp."
+      ],
+      "oven": {
+        "temp": 240,
+        "fanTemp": 220
+      },
+      "devNotes": [
+        "HF anger 240°C/220°C varmluft — lokal ugnsnode, inte preheated_oven_220."
+      ]
+    },
+    {
+      "id": "stekt_lax_citrus_smorsas__cut_potatoes",
+      "name": "Skär Potatis",
+      "outputName": "Potatisklyftor",
+      "inputs": [
+        {
+          "id": "potato",
+          "amount": 1000,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Skär {{potato}} (oskalad) i klyftor."
+      ],
+      "duration": 6,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "HF-typ organic-potatoes → potato. 1000 g vid 4 portioner, linjärt 2/4/6."
+      ]
+    },
+    {
+      "id": "stekt_lax_citrus_smorsas__roasted_potatoes_first",
+      "name": "Rosta Potatis, Första Fas",
+      "outputName": "Halvrostad potatis",
+      "inputs": [
+        {
+          "id": "stekt_lax_citrus_smorsas__cut_potatoes",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Placera {{stekt_lax_citrus_smorsas__cut_potatoes}} på {{eq:plat_1}} med bakplåtspapper.",
+        "Blanda med {{olive_oil}}, {{salt}} och en nypa {{pepper}}.",
+        "Rosta i {{eq:ugn|def}} i 25–35 min, eller tills mjuka och lätt brynta."
+      ],
+      "duration": 3,
+      "wait": 25,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "stekt_lax_citrus_smorsas__preheated_oven_240",
+          "slots": 1,
+          "temp": 240,
+          "fanTemp": 220
+        },
+        {
+          "type": "plat",
+          "ref": "plat_1",
+          "liner": "bakplatspapper"
+        }
+      ],
+      "devNotes": [
+        "Olivolja till potatis saknas i HF:s lista, därför standard 1 skvätt. Salt till potatis 1 tsk (samma vid 3). Första fasen 25 min = övre 35 minus de 10 som återstår när sockerärtor och rädisor tillsätts.",
+        "1000 g potatis ligger exakt på plåtens oneLayerG; därefter 250 g rädisor och 2 st sockerärtor. En plåt enligt rådatan. FLAG."
+      ]
+    },
+    {
+      "id": "stekt_lax_citrus_smorsas__trimmed_radishes",
+      "name": "Ansa Rädisor",
+      "outputName": "Ansade rädisor",
+      "inputs": [
+        {
+          "id": "radish",
+          "amount": 250,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Ansa {{radish}}."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true,
+          "after": "stekt_lax_citrus_smorsas__cut_potatoes"
+        }
+      ],
+      "devNotes": [
+        "HF anger 250,5 g vid 3 och 4 portioner (120 g vid 2, 370,5 g vid 6). Avrundat till 250 g vid 4. FLAG."
+      ]
+    },
+    {
+      "id": "stekt_lax_citrus_smorsas__roasted_veg",
+      "name": "Rosta Sockerärtor och Rädisor med Potatis",
+      "outputName": "Ugnsrostade grönsaker",
+      "inputs": [
+        {
+          "id": "stekt_lax_citrus_smorsas__roasted_potatoes_first",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "sugar_snaps",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "stekt_lax_citrus_smorsas__trimmed_radishes",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Tillsätt {{sugar_snaps}} och {{stekt_lax_citrus_smorsas__trimmed_radishes}} till {{stekt_lax_citrus_smorsas__roasted_potatoes_first}} på {{eq:plat_1|def}} när det återstår 10 min av potatisens tillagningstid.",
+        "Rosta i 8–10 min, tills något mjukare."
+      ],
+      "duration": 1,
+      "wait": 10,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "plat",
+          "ref": "plat_1",
+          "liner": "bakplatspapper",
+          "transition": "keep"
+        },
+        {
+          "type": "ugn",
+          "after": "stekt_lax_citrus_smorsas__preheated_oven_240",
+          "slots": 1,
+          "temp": 240,
+          "fanTemp": 220
+        }
+      ],
+      "devNotes": [
+        "HF Sockerärtor 2 st vid 3 och 4 portioner (1 st vid 2, 3 st vid 6) — enhet st som i rådatan, troligen påse/förpackning. Samma id sugar_snaps som bao_sweet_chili_oring.",
+        "Rådatan säger både 'när det återstår 10 min' och 'Rosta i 8–10 min'. Wait 10 = övre intervallet och '10 min kvar'."
+      ]
+    },
+    {
+      "id": "stekt_lax_citrus_smorsas__sauce_aromatics",
+      "name": "Hacka Schalottenlök, Dill och Vitlök",
+      "outputName": "Schalottenlök, dill och vitlök",
+      "inputs": [
+        {
+          "id": "shallot",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "dill",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "garlic",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Finhacka {{shallot}} och {{dill}}.",
+        "Finhacka eller pressa {{garlic}}."
+      ],
+      "duration": 4,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true,
+          "after": "stekt_lax_citrus_smorsas__trimmed_radishes"
+        }
+      ],
+      "devNotes": [
+        "HF Lök typ shallot → shallot, 2 st vid 3 och 4 portioner. HF Dill 1 st vid 2 och 4 portioner, 2 st vid 6 — förpackning. Författad som 1 st vid 4 portioner med linjär skalning. Vitlök 2 st (samma vid 3)."
+      ]
+    },
+    {
+      "id": "stekt_lax_citrus_smorsas__lemon_wedges",
+      "name": "Skär Citrusfrukt",
+      "outputName": "Citronklyftor",
+      "inputs": [
+        {
+          "id": "lemon",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skär {{lemon}} i klyftor."
+      ],
+      "duration": 1,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true,
+          "after": "stekt_lax_citrus_smorsas__sauce_aromatics"
+        }
+      ],
+      "devNotes": [
+        "HF Citrusfrukt (typ lemon) → lemon. 1 st vid 2 och 4 portioner, 2 st vid 6 — förpackning. Författad som 1 st vid 4 portioner med linjär skalning. En generös skvätt saft går i såsen; resterande klyftor serveras inte enligt rådatan."
+      ]
+    },
+    {
+      "id": "stekt_lax_citrus_smorsas__sliced_spring_onion",
+      "name": "Skiva Salladslök",
+      "outputName": "Skivad salladslök",
+      "inputs": [
+        {
+          "id": "spring_onion",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skär {{spring_onion}} i tunna skivor."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true,
+          "after": "stekt_lax_citrus_smorsas__lemon_wedges"
+        }
+      ],
+      "devNotes": [
+        "Salladslök 2 st vid 3 och 4 portioner."
+      ]
+    },
+    {
+      "id": "stekt_lax_citrus_smorsas__mustard_creme",
+      "name": "Blanda Honungs- och Senapsdressing",
+      "outputName": "Honungs- och senapsdressing med crème fraiche",
+      "inputs": [
+        {
+          "id": "creme_fraiche",
+          "amount": 150,
+          "unit": "ml"
+        },
+        {
+          "id": "honey_mustard_dressing",
+          "amount": 40,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Blanda {{creme_fraiche}}, {{honey_mustard_dressing}} och en nypa {{salt}} och {{pepper}} i {{eq:skal_1}}."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skal_liten",
+          "ref": "skal_1"
+        }
+      ],
+      "devNotes": [
+        "Crème fraiche 150 ml och honung- & senapsdressing 40 g vid både 3 och 4 portioner (linjärt 2/4/6)."
+      ]
+    },
+    {
+      "id": "stekt_lax_citrus_smorsas__fried_salmon",
+      "name": "Stek Lax",
+      "outputName": "Stekt laxfilé",
+      "inputs": [
+        {
+          "id": "olive_oil",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "salmon_fillet",
+          "amount": 500,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i {{eq:stekpanna_1}} på medelhög värme.",
+        "Torka av {{salmon_fillet}} med lite hushållspapper, krydda med {{salt}} och stek med skinnsidan ner i 3–4 min.",
+        "Vänd och stek i ytterligare 3–5 min, eller tills genomstekt. Ställ åt sidan på {{eq:tallrik_1}}."
+      ],
+      "duration": 9,
+      "wait": 0,
+      "tags": [],
+      "heat": "medelhög",
+      "tips": [
+        "Laxen är färdiglagad när köttet är ogenomskinligt i mitten."
+      ],
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1"
+        },
+        {
+          "type": "tallrik",
+          "ref": "tallrik_1"
+        }
+      ],
+      "devNotes": [
+        "HF Laxfilé → salmon_fillet (rawAnimal fish). Fisken skärs inte; den torkas och kryddas och går i pannan, därför ingen skarbrada_ra. Hushållspapper spåras inte. Salt till fisk 0,5 tsk, olja till stekning 2 msk (samma vid 3).",
+        "Stekning per sida är hands-on, därför duration och ingen wait. Rådatan säger stor stekpanna. Tillagad lax på tallrik_1; den återanvänds inte till annat."
+      ]
+    },
+    {
+      "id": "stekt_lax_citrus_smorsas__citrus_butter_sauce",
+      "name": "Gör Citrus- och Smörsås",
+      "outputName": "Citrus- och smörsås",
+      "inputs": [
+        {
+          "id": "butter",
+          "amount": 1,
+          "unit": "msk"
+        },
+        {
+          "id": "stekt_lax_citrus_smorsas__sauce_aromatics",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "stekt_lax_citrus_smorsas__lemon_wedges",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "water",
+          "amount": 2,
+          "unit": "dl"
+        },
+        {
+          "id": "vegetable_bouillon",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "id": "flour",
+          "amount": 1,
+          "unit": "msk"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Låt {{eq:stekpanna_1|def}} svalna av lite, torka ur den och hetta upp den på medelvärme.",
+        "Stek {{butter}} och schalottenlök från {{stekt_lax_citrus_smorsas__sauce_aromatics}} i 1–2 min, eller tills mjuk. Tillsätt vitlök från {{stekt_lax_citrus_smorsas__sauce_aromatics}} och stek i ytterligare 30 sekunder.",
+        "Rör i {{water}}, {{vegetable_bouillon}}, {{flour}}, en generös skvätt saft från {{stekt_lax_citrus_smorsas__lemon_wedges}} och dillen från {{stekt_lax_citrus_smorsas__sauce_aromatics}}. Krydda med {{salt}} och en nypa {{pepper}}. Sjud i 3–4 min, tills lätt tjocknad."
+      ],
+      "duration": 3,
+      "wait": 4,
+      "tags": [],
+      "heat": "medel",
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1",
+          "transition": "keep",
+          "after": "stekt_lax_citrus_smorsas__fried_salmon"
+        }
+      ],
+      "devNotes": [
+        "Fisken är lyft ur pannan; pannan torkas ur. Vatten till sås 2 dl + 1 msk smör och en skvätt citron (totalt ca 2,2 dl, kort sjudning 3–4 min) ligger på gränsen för 'liten sås efter att köttet/fisken ställts åt sidan' (≤ ~2 dl, ≤ ~0,6 l) → stekpanna_stor, inte traktörpanna. check-equipment varnar först vid ≥ 3 dl. FLAG.",
+        "HF Buljong typ vegetable-stock → vegetable_bouillon, 8 g. Mjöl till sås 1 msk → flour (vetemjöl). Smör 1 msk smälts i pannan, inget rumstempererat, därför ingen Ta fram-node. Salt till sås 0,5 tsk (samma vid 3)."
+      ]
+    },
+    {
+      "id": "stekt_lax_citrus_smorsas",
+      "name": "Stekt lax i citrus- och smörsås",
+      "outputName": "Stekt lax i citrus- och smörsås",
+      "inputs": [
+        {
+          "id": "stekt_lax_citrus_smorsas__roasted_veg",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "stekt_lax_citrus_smorsas__fried_salmon",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "stekt_lax_citrus_smorsas__citrus_butter_sauce",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "stekt_lax_citrus_smorsas__mustard_creme",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "stekt_lax_citrus_smorsas__sliced_spring_onion",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{stekt_lax_citrus_smorsas__roasted_veg}} och {{stekt_lax_citrus_smorsas__fried_salmon}} på {{eq:servering|pl}}.",
+        "Ringla {{stekt_lax_citrus_smorsas__citrus_butter_sauce}} över laxen och servera {{stekt_lax_citrus_smorsas__mustard_creme}} i {{eq:servering_dressing|def}} vid sidan av.",
+        "Garnera med {{stekt_lax_citrus_smorsas__sliced_spring_onion}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_tallrik",
+          "ref": "servering",
+          "count": "portions"
+        },
+        {
+          "type": "servering_skal",
+          "ref": "servering_dressing",
+          "count": 1
+        }
+      ],
+      "devNotes": [
+        "Kostfiber 40,4 g slängd som orimlig. HF listar receptet som vetefri och gluten bara som spår, men såsen innehåller 1 msk vetemjöl — gluten tillagd som allergen. FLAG.",
+        "clonedFrom-originalet 63a2c312f3f6a3e5b6d2c115 är samma recept (samma namn och 4-portionsmängder; dill där 10 g istället för 1 st) och konverterades inte. 632466494b97e91b8ed6952e ('Stekt lax i citron- och smörsås') är en äldre släkting, inte konverterad. pannstekt_lax och citronstekt_lax är andra rätter och är orörda."
+      ]
+    }
+  ]
+}

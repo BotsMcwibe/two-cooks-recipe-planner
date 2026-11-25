@@ -4,6 +4,11 @@
   "rawId": "66e968c7fc7cbf38fecf2d3f",
   "createdAt": 1791039093,
   "basePortions": 4,
+  "time": {
+    "totalMin": 55,
+    "activeMin": 48,
+    "computedFrom": "graph"
+  },
   "sharedPrep": [],
   "images": {
     "main": "assets/recipes/spanskinspirerad_kyckling_romesco/main.jpg",

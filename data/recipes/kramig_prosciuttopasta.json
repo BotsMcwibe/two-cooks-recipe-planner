@@ -4,6 +4,11 @@
   "rawId": "61b9c556dc65d108172fd87a",
   "createdAt": 1791036048,
   "basePortions": 4,
+  "time": {
+    "totalMin": 30,
+    "activeMin": 25,
+    "computedFrom": "graph"
+  },
   "sharedPrep": [],
   "images": {
     "main": "assets/recipes/kramig_prosciuttopasta/main.jpg",

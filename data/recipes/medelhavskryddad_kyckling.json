@@ -4,6 +4,11 @@
   "rawId": "65fc563709492af87e81517f",
   "createdAt": 1791035423,
   "basePortions": 4,
+  "time": {
+    "totalMin": 57,
+    "activeMin": 35,
+    "computedFrom": "graph"
+  },
   "sharedPrep": [],
   "images": {
     "main": "assets/recipes/medelhavskryddad_kyckling/main.jpg",

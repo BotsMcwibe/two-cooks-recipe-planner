@@ -4,6 +4,11 @@
   "rawId": "6511645eadeb498a75282ae5",
   "createdAt": 1791035577,
   "basePortions": 4,
+  "time": {
+    "totalMin": 30,
+    "activeMin": 30,
+    "computedFrom": "graph"
+  },
   "sharedPrep": [],
   "images": {
     "main": "assets/recipes/pannstekt_lax/main.jpg",

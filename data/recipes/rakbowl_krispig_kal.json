@@ -4,6 +4,11 @@
   "rawId": "linas-131127",
   "createdAt": 1791056876,
   "basePortions": 4,
+  "time": {
+    "totalMin": 32,
+    "activeMin": 32,
+    "computedFrom": "graph"
+  },
   "sharedPrep": [],
   "images": {
     "main": "assets/recipes/rakbowl_krispig_kal/main.jpg"

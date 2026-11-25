@@ -1,0 +1,341 @@
+{
+  "masterId": "flaskkotlett_dragonsas",
+  "source": "hellofresh",
+  "rawId": "6a9e9291548a82de3e1a71df",
+  "createdAt": 1794427062,
+  "basePortions": 4,
+  "time": {
+    "totalMin": 17,
+    "activeMin": 17,
+    "computedFrom": "graph"
+  },
+  "images": {
+    "main": "assets/recipes/flaskkotlett_dragonsas/main.jpg",
+    "byNode": {
+      "flaskkotlett_dragonsas__boiled_potatoes": "assets/recipes/flaskkotlett_dragonsas/steps/boiled_potatoes.jpg",
+      "flaskkotlett_dragonsas__fried_pork": "assets/recipes/flaskkotlett_dragonsas/steps/fried_pork.jpg",
+      "flaskkotlett_dragonsas__carrot_salad": "assets/recipes/flaskkotlett_dragonsas/steps/carrot_salad.jpg",
+      "flaskkotlett_dragonsas": "assets/recipes/flaskkotlett_dragonsas/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 557,
+    "perPortion": {
+      "energyKcal": 717,
+      "energyKj": 2998,
+      "fatG": 39.7,
+      "saturatedFatG": 17.1,
+      "carbsG": 53,
+      "sugarsG": 9.2,
+      "proteinG": 33,
+      "fiberG": 7,
+      "saltG": 2.8
+    }
+  },
+  "nodes": [
+    {
+      "id": "flaskkotlett_dragonsas__boiled_potatoes",
+      "name": "Koka Potatis",
+      "outputName": "Uppvärmd förkokt småpotatis",
+      "inputs": [
+        {
+          "id": "precooked_small_potatoes",
+          "amount": 2,
+          "unit": "förp"
+        }
+      ],
+      "steps": [
+        "Koka upp saltat vatten i {{eq:kastrull_1}}.",
+        "Koka {{precooked_small_potatoes}} i 3–5 min, eller tills genomvarma."
+      ],
+      "duration": 2,
+      "wait": 5,
+      "tags": [],
+      "heat": "hög",
+      "equipment": [
+        {
+          "type": "kastrull_stor",
+          "ref": "kastrull_1"
+        }
+      ],
+      "devNotes": [
+        "HF Småpotatis, förkokt typ pre-cooked-baby-potatoes: 2 st vid 3 och 4 portioner (1 st vid 2, 3 st vid 5 och 6) = förpackningar (ingen vikt) → precooked_small_potatoes, 2 förp (samma som flaskkotlett_citronpepparsas). FLAG. Rådatan säger stor kastrull. Salt i kokvattnet har ingen rad i HF:s lista (Salt till potatis används efter avhälldningen)."
+      ]
+    },
+    {
+      "id": "flaskkotlett_dragonsas__buttered_potatoes",
+      "name": "Vänd Smör i Potatisen",
+      "outputName": "Smörslungad småpotatis",
+      "inputs": [
+        {
+          "id": "flaskkotlett_dragonsas__boiled_potatoes",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "butter",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Häll av {{flaskkotlett_dragonsas__boiled_potatoes}} i {{eq:durkslag_1}} och lägg tillbaka potatisen i {{eq:kastrull_1|def}}.",
+        "Rör ner {{butter}}, {{salt}} och en nypa {{pepper}}. Sätt åt sidan under lock."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "kastrull_stor",
+          "ref": "kastrull_1",
+          "transition": "keep",
+          "offHeat": true,
+          "lid": true,
+          "hold": true
+        },
+        {
+          "type": "durkslag",
+          "ref": "durkslag_1",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "Smör till potatis 2 msk och salt till potatis 0,5 tsk (samma vid 3; 1 msk och 0,25 tsk vid 2). Smöret rörs i den varma potatisen, inget rumstempererat i rådatan, därför ingen Ta fram-node. Under lock till servering är ingen klockad vila — ingen wait."
+      ]
+    },
+    {
+      "id": "flaskkotlett_dragonsas__fried_pork",
+      "name": "Stek Fläskkotlett",
+      "outputName": "Stekt fläskkotlett",
+      "inputs": [
+        {
+          "id": "olive_oil",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "sliced_pork_chop",
+          "amount": 500,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i {{eq:traktorpanna_1}} på hög värme.",
+        "Tillsätt {{sliced_pork_chop}} och krydda med {{salt}}. Stek i 1–2 min per sida, eller tills gyllene och genomstekt.",
+        "Lägg över på {{eq:tallrik_1}} och håll varmt."
+      ],
+      "duration": 4,
+      "wait": 0,
+      "tags": [],
+      "heat": "hög",
+      "tips": [
+        "Köttet är färdiglagat när det är utan inslag av rosa."
+      ],
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred"
+        },
+        {
+          "type": "tallrik",
+          "ref": "tallrik_1"
+        }
+      ],
+      "devNotes": [
+        "HF Skivad fläskkotlett typ flaskkotlett-skivad → sliced_pork_chop (rawAnimal meat). Kotletterna är färdigskivade och går från förpackningen till pannan; ingen skärbräda, därför ingen skarbrada_ra. Salt till kött 0,5 tsk och olja till stekning 2 msk (samma vid 3; halva vid 2). 1–2 min per sida är hands-on (duration 4).",
+        "Rådatan säger stor stekpanna, men samma panna (torkas inte ur) tar sedan 300 ml matlagningsgrädde + 2 msk vatten (≈ 3,3 dl) som sjuds 2–3 min — över checkerns 3 dl-tröskel, därför traktörpanna (typeSource inferred) i hela kedjan."
+      ]
+    },
+    {
+      "id": "flaskkotlett_dragonsas__chopped_tarragon",
+      "name": "Finhacka Dragon",
+      "outputName": "Finhackad dragon",
+      "inputs": [
+        {
+          "id": "tarragon",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Finhacka {{tarragon}}."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "HF Dragon typ tarragon 1 st vid 2, 3 och 4 portioner, 2 st vid 6 — förpackning. Författad som 1 st vid 4 portioner med linjär skalning. All dragon går i såsen (ingen garnering i rådatan)."
+      ]
+    },
+    {
+      "id": "flaskkotlett_dragonsas__carrot_salad",
+      "name": "Blanda Morotssallad",
+      "outputName": "Sallad med morotsjulienne",
+      "inputs": [
+        {
+          "id": "mixed_salad",
+          "amount": 100,
+          "unit": "g"
+        },
+        {
+          "id": "carrot_julienne",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Skölj {{mixed_salad}}.",
+        "Blanda {{mixed_salad}}, {{carrot_julienne}}, {{olive_oil}} och en nypa {{pepper}} i {{eq:skal_1}}."
+      ],
+      "duration": 3,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skal_medelstor",
+          "ref": "skal_1",
+          "sizeSource": "inferred"
+        }
+      ],
+      "devNotes": [
+        "HF Salladsmix typ organic-salad-mix → mixed_salad, 100 g vid 4 portioner (60 g vid 2 och 3, 160 g vid 6 — inte linjärt). FLAG. HF Morot, Julienne typ carrot-julienne 1 st vid 2, 3 och 4 portioner, 2 st vid 6 — förpackning. Författad som 1 st vid 4 portioner med linjär skalning. Olja till sallad 2 msk (samma vid 3). Moroten är färdigstrimlad, ingen skärbräda. Rådatan säger bara 'en skål' → skal_medelstor, sizeSource inferred."
+      ]
+    },
+    {
+      "id": "flaskkotlett_dragonsas__tarragon_sauce",
+      "name": "Sjud Dragonsås",
+      "outputName": "Dragonsås",
+      "inputs": [
+        {
+          "id": "cooking_cream",
+          "amount": 300,
+          "unit": "ml"
+        },
+        {
+          "id": "chicken_bouillon",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "id": "water",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "flaskkotlett_dragonsas__chopped_tarragon",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{eq:traktorpanna_1|def}} (utan att torka ur den) på medelhög värme.",
+        "Tillsätt {{cooking_cream}}, {{chicken_bouillon}}, {{water}}, {{flaskkotlett_dragonsas__chopped_tarragon}} och en nypa {{pepper}}. Sjud i 2–3 min, eller tills något tjocknat."
+      ],
+      "duration": 1,
+      "wait": 3,
+      "tags": [],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred",
+          "transition": "keep",
+          "after": "flaskkotlett_dragonsas__fried_pork"
+        }
+      ],
+      "devNotes": [
+        "HF Matlagningsgrädde typ light-cooking-cream → cooking_cream, 300 ml (samma vid 3; 150 ml vid 2). HF Buljong typ chicken-stock-powder → chicken_bouillon, 8 g (samma vid 3). Vatten till sås 2 msk (samma vid 3). after eftersom köttet lyfts ur innan såsen sjuds (ingen ingrediens-edge från steknoden). 2–3 min-sjuden äger wait (övre gräns)."
+      ]
+    },
+    {
+      "id": "flaskkotlett_dragonsas",
+      "name": "Snabb pannstekt fläskkotlett och dragonsås",
+      "outputName": "Snabb pannstekt fläskkotlett och dragonsås",
+      "inputs": [
+        {
+          "id": "flaskkotlett_dragonsas__fried_pork",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "flaskkotlett_dragonsas__buttered_potatoes",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "flaskkotlett_dragonsas__carrot_salad",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "flaskkotlett_dragonsas__tarragon_sauce",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{flaskkotlett_dragonsas__fried_pork}}, {{flaskkotlett_dragonsas__buttered_potatoes}} och {{flaskkotlett_dragonsas__carrot_salad}} på {{eq:servering|pl}}.",
+        "Toppa köttet med {{flaskkotlett_dragonsas__tarragon_sauce}}."
+      ],
+      "duration": 3,
+      "tags": [
+        "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_tallrik",
+          "ref": "servering",
+          "count": "portions"
+        }
+      ],
+      "devNotes": [
+        "HF cuisine type central-european med tom slug; catalog cuisine satt till scandinavian (samma typ av rätt som flaskkotlett_citronpepparsas). totalMinutes 15 följer HF. Befintliga fläskkotlett- och dragon-masters är andra rätter och är orörda."
+      ]
+    }
+  ]
+}

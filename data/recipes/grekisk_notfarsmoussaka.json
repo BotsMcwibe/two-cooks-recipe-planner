@@ -4,6 +4,11 @@
   "rawId": "68c2e7a7f65599931600e695",
   "createdAt": 1791041815,
   "basePortions": 4,
+  "time": {
+    "totalMin": 48,
+    "activeMin": 32,
+    "computedFrom": "graph"
+  },
   "sharedPrep": [],
   "images": {
     "main": "assets/recipes/grekisk_notfarsmoussaka/main.jpg",

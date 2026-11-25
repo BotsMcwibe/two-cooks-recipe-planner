@@ -4,6 +4,11 @@
   "rawId": "67f7d1d9853dfb1d75b4931d",
   "createdAt": 1790851790,
   "basePortions": 4,
+  "time": {
+    "totalMin": 32,
+    "activeMin": 17,
+    "computedFrom": "graph"
+  },
   "sharedPrep": [],
   "images": {
     "main": "assets/recipes/caesar_asparagus_salad/main.jpg",

@@ -1,0 +1,549 @@
+{
+  "masterId": "rumpstek_persiljepotatis_broccolini",
+  "source": "hellofresh",
+  "rawId": "6a9e9288790f7867027dbd9d",
+  "createdAt": 1794429411,
+  "basePortions": 4,
+  "time": {
+    "totalMin": 44,
+    "activeMin": 44,
+    "computedFrom": "graph"
+  },
+  "sharedPrep": [
+    "preheated_oven_220"
+  ],
+  "images": {
+    "main": "assets/recipes/rumpstek_persiljepotatis_broccolini/main.jpg",
+    "byNode": {
+      "rumpstek_persiljepotatis_broccolini__roasted_parsnip": "assets/recipes/rumpstek_persiljepotatis_broccolini/steps/roasted_parsnip.jpg",
+      "rumpstek_persiljepotatis_broccolini__boiled_potatoes": "assets/recipes/rumpstek_persiljepotatis_broccolini/steps/boiled_potatoes.jpg",
+      "rumpstek_persiljepotatis_broccolini__fried_broccolini": "assets/recipes/rumpstek_persiljepotatis_broccolini/steps/fried_broccolini.jpg",
+      "rumpstek_persiljepotatis_broccolini__fried_steak": "assets/recipes/rumpstek_persiljepotatis_broccolini/steps/fried_steak.jpg",
+      "rumpstek_persiljepotatis_broccolini__mustard_sauce": "assets/recipes/rumpstek_persiljepotatis_broccolini/steps/mustard_sauce.jpg",
+      "rumpstek_persiljepotatis_broccolini": "assets/recipes/rumpstek_persiljepotatis_broccolini/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 644,
+    "perPortion": {
+      "energyKcal": 657,
+      "energyKj": 2750,
+      "fatG": 27.1,
+      "saturatedFatG": 7.7,
+      "carbsG": 66.7,
+      "sugarsG": 14.7,
+      "proteinG": 40.1,
+      "saltG": 3.7
+    }
+  },
+  "nodes": [
+    {
+      "id": "rumpstek_persiljepotatis_broccolini__roomtemp_meat",
+      "name": "Ta fram köttet",
+      "outputName": "Rumstempererad rumpstek",
+      "inputs": [
+        {
+          "id": "rump_steak",
+          "amount": 600,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Ta fram {{rump_steak}} ur kylen så att det blir rumstempererat och krydda med {{salt}}."
+      ],
+      "duration": 1,
+      "wait": 30,
+      "tags": [
+        "prep"
+      ],
+      "devNotes": [
+        "Rådatan: 'Ta fram kött så det blir rumstempererat och krydda med salt' → Ta fram-node (§4.6), 30 min. Salt till kött 0,5 tsk vid 3 och 4 (0,25 tsk vid 2; saknas vid 5 och 6) läggs på här, som rådatan säger. FLAG. HF Rumpstek typ rump-steak, samma SKU 650aabba32e9107c6db992aa som i rumpstek_pepparsas_broccolini → rump_steak (rawAnimal meat), 600 g linjärt."
+      ]
+    },
+    {
+      "id": "rumpstek_persiljepotatis_broccolini__cut_parsnip",
+      "name": "Skär Palsternacka",
+      "outputName": "Palsternacksstavar",
+      "inputs": [
+        {
+          "id": "parsnip",
+          "amount": 4,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skala och skär {{parsnip}} i 1 cm breda stavar."
+      ],
+      "duration": 6,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "HF Palsternacka typ parsnip → parsnip, 4 st linjärt."
+      ]
+    },
+    {
+      "id": "rumpstek_persiljepotatis_broccolini__roasted_parsnip",
+      "name": "Rosta Palsternacka",
+      "outputName": "Rostad palsternacka",
+      "inputs": [
+        {
+          "id": "rumpstek_persiljepotatis_broccolini__cut_parsnip",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Placera {{rumpstek_persiljepotatis_broccolini__cut_parsnip}} på {{eq:plat_1}} med bakplåtspapper.",
+        "Blanda med {{olive_oil}}, {{salt}} och en nypa {{pepper}}.",
+        "Rosta i {{eq:ugn|def}} i 15–20 min, eller tills gyllene."
+      ],
+      "duration": 3,
+      "wait": 20,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "preheated_oven_220",
+          "slots": 1,
+          "temp": 220,
+          "fanTemp": 200
+        },
+        {
+          "type": "plat",
+          "ref": "plat_1",
+          "liner": "bakplatspapper"
+        }
+      ],
+      "devNotes": [
+        "HF anger 220°C/200°C varmluft — exakt match, därför delad pack preheated_oven_220. Olivolja till rotfrukter saknas i HF:s lista, därför standard 1 skvätt. Salt till rotfrukter 0,5 tsk vid 3 och 4 (0,25 tsk vid 2; saknas vid 5 och 6). FLAG. Wait 20 = övre intervallet. En plåt enligt rådatan; --trays 1 ska vara rent."
+      ]
+    },
+    {
+      "id": "rumpstek_persiljepotatis_broccolini__halved_lemon",
+      "name": "Halvera Citrus",
+      "outputName": "Halverad citron",
+      "inputs": [
+        {
+          "id": "lemon",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Halvera {{lemon}}."
+      ],
+      "duration": 1,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true,
+          "after": "rumpstek_persiljepotatis_broccolini__cut_parsnip"
+        }
+      ],
+      "devNotes": [
+        "HF Citrusfrukt typ lemon → lemon. 1 st vid 2, 3 och 4 portioner, 2 st vid 5 och 6 — förpackning. Författad som 1 st vid 4 portioner med linjär skalning. All saft går på broccolini (ingen klyftor till servering). Produktfotot visar citron och lime. FLAG."
+      ]
+    },
+    {
+      "id": "rumpstek_persiljepotatis_broccolini__boiled_potatoes",
+      "name": "Koka Potatis",
+      "outputName": "Kokt potatis",
+      "inputs": [
+        {
+          "id": "potato",
+          "amount": 800,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Koka upp saltat vatten i {{eq:kastrull_1}}.",
+        "Koka {{potato}} i 12–15 min, eller tills den enkelt kan delas med en kniv."
+      ],
+      "duration": 2,
+      "wait": 15,
+      "tags": [],
+      "heat": "hög",
+      "equipment": [
+        {
+          "type": "kastrull_medelstor",
+          "ref": "kastrull_1"
+        }
+      ],
+      "devNotes": [
+        "HF Potatis typ organic-potatoes → potato, 800 g linjärt. Rådatan säger inte att potatisen skärs, och både kok- och serveringsfotot visar hela småpotatisar — kokas som den är (samma bedömning som kottfarslimpa_graddsas). Rådatan säger medelstor kastrull. Salt i kokvattnet har ingen rad i HF:s lista och lämnas omätt. Avhällning i nästa node så att kokets wait ligger på sista steget."
+      ]
+    },
+    {
+      "id": "rumpstek_persiljepotatis_broccolini__drained_potatoes",
+      "name": "Häll Av Potatisen",
+      "outputName": "Avrunnen potatis",
+      "inputs": [
+        {
+          "id": "rumpstek_persiljepotatis_broccolini__boiled_potatoes",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Häll av {{rumpstek_persiljepotatis_broccolini__boiled_potatoes}} i {{eq:durkslag_1}}.",
+        "Krydda potatisen med en nypa {{salt}} och {{pepper}} i {{eq:kastrull_1|def}} och ställ åt sidan under lock."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "kastrull_medelstor",
+          "ref": "kastrull_1",
+          "transition": "keep",
+          "offHeat": true,
+          "lid": true,
+          "after": "rumpstek_persiljepotatis_broccolini__boiled_potatoes"
+        },
+        {
+          "type": "durkslag",
+          "ref": "durkslag_1",
+          "inferred": true
+        }
+      ]
+    },
+    {
+      "id": "rumpstek_persiljepotatis_broccolini__fried_broccolini",
+      "name": "Stek Broccolini",
+      "outputName": "Stekt broccolini",
+      "inputs": [
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "broccolini",
+          "amount": 200,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "rumpstek_persiljepotatis_broccolini__halved_lemon",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i {{eq:stekpanna_2}} på medelhög värme.",
+        "Stek {{broccolini}} i 5–7 min, eller tills mjuk. Krydda med {{salt}} och en nypa {{pepper}}.",
+        "Ta av {{eq:stekpanna_2|def}} från värme och pressa över en generös skvätt saft från {{rumpstek_persiljepotatis_broccolini__halved_lemon}}.",
+        "Lägg över broccolini på {{eq:tallrik_1}} och håll varm."
+      ],
+      "duration": 8,
+      "wait": 0,
+      "tags": [],
+      "heat": "medelhög",
+      "tips": [
+        "Tillsätt en skvätt vatten till pannan för att påskynda tillagningsprocessen."
+      ],
+      "equipment": [
+        {
+          "type": "stekpanna_medelstor",
+          "ref": "stekpanna_2"
+        },
+        {
+          "type": "tallrik",
+          "ref": "tallrik_1"
+        }
+      ],
+      "devNotes": [
+        "HF Broccolini typ broccolini, samma SKU 5f6c8d27d0609d74336046c5 som i rumpstek_pepparsas_broccolini → broccolini, 200 g vid 3 och 4 (100 g vid 2, 300 g vid 5 och 6). FLAG. Skärs inte enligt rådatan. Olivolja till stekning saknas i HF:s lista, därför standard 1 skvätt. Salt till grönsaker 0,5 tsk vid 3 och 4. FLAG. 5–7 min är hands-on (duration 8). Rådatan säger medelstor stekpanna (en annan panna än steken). Skvätt vatten bara i tipset, inte som ingång."
+      ]
+    },
+    {
+      "id": "rumpstek_persiljepotatis_broccolini__fried_steak",
+      "name": "Stek Rumpstek",
+      "outputName": "Stekt rumpstek",
+      "inputs": [
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "rumpstek_persiljepotatis_broccolini__roomtemp_meat",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i {{eq:stekpanna_1}} på medelhög värme.",
+        "Stek {{rumpstek_persiljepotatis_broccolini__roomtemp_meat}} i 3–4 min per sida, eller tills brynt.",
+        "Låt köttet vila i ett foliepaket tills servering. Det kommer att fortsätta tillagas något under tiden det vilar."
+      ],
+      "duration": 8,
+      "wait": 0,
+      "tags": [],
+      "heat": "medelhög",
+      "tips": [
+        "Stek i ytterligare 1–2 min för genomstekt."
+      ],
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1"
+        }
+      ],
+      "devNotes": [
+        "Köttet saltas vid Ta fram och steks utan att skäras rått, därför ingen skarbrada_ra. Olivolja till stekning saknas i HF:s lista, därför standard 1 skvätt. 600 g rumpstek ryms i ett lager i stekpanna_stor (oneLayerG 650 g). Stekning per sida är hands-on (duration 8). Vilan i folie 'tills servering' är ingen wait (§4.1). Folie spåras inte. Rådatan säger stor stekpanna — en annan panna än broccolini. Såsen görs i en skål, inte i pannan, därför inte traktörpanna. Stegfotot visar en vanlig stekpanna."
+      ]
+    },
+    {
+      "id": "rumpstek_persiljepotatis_broccolini__mustard_sauce",
+      "name": "Blanda Senapssås",
+      "outputName": "Dragon- och senapssås",
+      "inputs": [
+        {
+          "id": "tarragon",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "garlic",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "shallot",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "wholegrain_mustard",
+          "amount": 25,
+          "unit": "g"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 4,
+          "unit": "msk"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Grovhacka {{tarragon}}.",
+        "Finhacka eller pressa {{garlic}}.",
+        "Finhacka {{shallot}}.",
+        "Blanda dragon, vitlök, {{wholegrain_mustard}}, schalottenlöken, {{olive_oil}}, {{salt}} och en nypa {{pepper}} i {{eq:skal_1}}."
+      ],
+      "duration": 5,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true,
+          "after": "rumpstek_persiljepotatis_broccolini__halved_lemon"
+        },
+        {
+          "type": "skal_liten",
+          "ref": "skal_1"
+        }
+      ],
+      "devNotes": [
+        "HF Dragon typ tarragon → tarragon. 1 st vid 2, 3 och 4 portioner, 2 st vid 5 och 6 — förpackning. Författad som 1 st vid 4 portioner med linjär skalning. All dragon går i såsen.",
+        "HF Lök typ shallot, och rådatan säger 'schalottenlök' → shallot, 1 st vid 3 och 4. FLAG. Produktfotot är en generic lökbild (rödlök, gul lök och schalottenlök). Vitlök 2 st vid 3 och 4. FLAG. HF Grov senap typ wholegrain-mustard → wholegrain_mustard, 25 g vid 3 och 4 (12 g vid 2, 37 g vid 5 och 6). FLAG. Olja till sås 4 msk och salt till sås 0,5 tsk vid 3 och 4 (saknas vid 5 och 6). FLAG. Rådatan säger liten skål — kall vinaigrette, inte en pannsås."
+      ]
+    },
+    {
+      "id": "rumpstek_persiljepotatis_broccolini__parsley_potatoes",
+      "name": "Vänd Potatis med Persilja och Smör",
+      "outputName": "Smörslungad persiljepotatis",
+      "inputs": [
+        {
+          "id": "rumpstek_persiljepotatis_broccolini__drained_potatoes",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "parsley",
+          "amount": 10,
+          "unit": "g"
+        },
+        {
+          "id": "butter",
+          "amount": 2,
+          "unit": "msk"
+        }
+      ],
+      "steps": [
+        "Grovhacka {{parsley}}.",
+        "Vänd {{rumpstek_persiljepotatis_broccolini__drained_potatoes}} med persiljan och {{butter}} i {{eq:kastrull_1|def}}."
+      ],
+      "duration": 3,
+      "wait": 0,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true,
+          "after": "rumpstek_persiljepotatis_broccolini__mustard_sauce"
+        },
+        {
+          "type": "kastrull_medelstor",
+          "ref": "kastrull_1",
+          "transition": "keep",
+          "offHeat": true,
+          "after": "rumpstek_persiljepotatis_broccolini__drained_potatoes"
+        }
+      ],
+      "devNotes": [
+        "HF Bladpersilja typ organic-parsley-flat → parsley. 10 g vid 2, 3 och 4 portioner, 20 g vid 5 och 6 — förpackning. Författad som 10 g vid 4 portioner med linjär skalning. All persilja går i potatisen. Smör till potatis 2 msk vid 3 och 4 (1 msk vid 2; saknas vid 5 och 6). FLAG. Inget 'rumstempererat' för smöret, därför ingen Ta fram-node för smör."
+      ]
+    },
+    {
+      "id": "rumpstek_persiljepotatis_broccolini__sliced_steak",
+      "name": "Skiva Rumpstek",
+      "outputName": "Skivad rumpstek",
+      "inputs": [
+        {
+          "id": "rumpstek_persiljepotatis_broccolini__fried_steak",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skär {{rumpstek_persiljepotatis_broccolini__fried_steak}} i tunna skivor."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true,
+          "after": "rumpstek_persiljepotatis_broccolini__parsley_potatoes"
+        }
+      ],
+      "devNotes": [
+        "Stekt kött skärs på den vanliga (rena) skärbrädan; inget rått kött har skurits i receptet, därför ingen skarbrada_ra."
+      ]
+    },
+    {
+      "id": "rumpstek_persiljepotatis_broccolini",
+      "name": "Rumpstek och smörslungad persiljepotatis",
+      "outputName": "Rumpstek och smörslungad persiljepotatis med palsternacka, broccolini och senapssås",
+      "inputs": [
+        {
+          "id": "rumpstek_persiljepotatis_broccolini__parsley_potatoes",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "rumpstek_persiljepotatis_broccolini__sliced_steak",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "rumpstek_persiljepotatis_broccolini__roasted_parsnip",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "rumpstek_persiljepotatis_broccolini__fried_broccolini",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "rumpstek_persiljepotatis_broccolini__mustard_sauce",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{rumpstek_persiljepotatis_broccolini__parsley_potatoes}}, {{rumpstek_persiljepotatis_broccolini__sliced_steak}}, {{rumpstek_persiljepotatis_broccolini__roasted_parsnip}} och {{rumpstek_persiljepotatis_broccolini__fried_broccolini}} på {{eq:servering|pl}}.",
+        "Ringla {{rumpstek_persiljepotatis_broccolini__mustard_sauce}} över köttet."
+      ],
+      "duration": 2,
+      "tags": [
+        "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_tallrik",
+          "ref": "servering",
+          "count": "portions"
+        }
+      ],
+      "devNotes": [
+        "Kostfiber 37,5 g slängd som orimlig. 657 kcal och övrig näring behållen. Allergen dairy tillagd: smör till potatis 2 msk. HF-kortet hade bara senap (såsen). Inga spår-allergener listade. Taggarna vetefri och äggfri stämmer.",
+        "HF totalTime och prepTime PT30M räknar troligen inte in Ta fram-vilans överlapp; roast 15–20 min och potatiskok ryms under de 30 minuten, men steken (3–4 min per sida) ligger efter. totalMinutes 40. FLAG. HF difficulty 1 → easy. Cuisine european (HF typ western-european, namn Western European; samma katalogvärde som rumpstek_pepparsas_broccolini). Servering på tallrikar enligt rådata och foto.",
+        "clonedFrom/dubbletten 6751701bf339375a8f11a065 konverterades inte, inte heller varianten 67b5b605249223e3b085a1b2 (dragon- och senapssås med sparris). rumpstek_pepparsas_broccolini är syskonet och lämnades orört."
+      ]
+    }
+  ]
+}

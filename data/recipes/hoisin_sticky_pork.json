@@ -4,6 +4,11 @@
   "rawId": "citygross-R45884",
   "createdAt": 1791056383,
   "basePortions": 4,
+  "time": {
+    "totalMin": 15,
+    "activeMin": 15,
+    "computedFrom": "graph"
+  },
   "sharedPrep": [],
   "images": {
     "main": "assets/recipes/hoisin_sticky_pork/main.jpg"

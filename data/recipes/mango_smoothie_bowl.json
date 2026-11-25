@@ -4,6 +4,11 @@
   "rawId": "693056779351d52b5c2635e8",
   "createdAt": 1790852665,
   "basePortions": 4,
+  "time": {
+    "totalMin": 13,
+    "activeMin": 13,
+    "computedFrom": "graph"
+  },
   "sharedPrep": [],
   "images": {
     "main": "assets/recipes/mango_smoothie_bowl/main.jpg",

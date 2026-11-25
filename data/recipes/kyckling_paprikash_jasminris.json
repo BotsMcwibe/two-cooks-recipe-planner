@@ -1,0 +1,320 @@
+{
+  "masterId": "kyckling_paprikash_jasminris",
+  "source": "hellofresh",
+  "rawId": "6a9e929056a4cfbb9638f36d",
+  "createdAt": 1794427223,
+  "basePortions": 4,
+  "time": {
+    "totalMin": 20,
+    "activeMin": 16,
+    "computedFrom": "graph"
+  },
+  "images": {
+    "main": "assets/recipes/kyckling_paprikash_jasminris/main.jpg",
+    "byNode": {
+      "kyckling_paprikash_jasminris__fried_chicken": "assets/recipes/kyckling_paprikash_jasminris/steps/fried_chicken.jpg",
+      "kyckling_paprikash_jasminris__paprikash": "assets/recipes/kyckling_paprikash_jasminris/steps/paprikash.jpg",
+      "kyckling_paprikash_jasminris": "assets/recipes/kyckling_paprikash_jasminris/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 578,
+    "perPortion": {
+      "energyKcal": 881,
+      "energyKj": 3686,
+      "fatG": 41.8,
+      "saturatedFatG": 18.2,
+      "carbsG": 82.5,
+      "sugarsG": 15.5,
+      "proteinG": 48.9,
+      "fiberG": 5.9,
+      "saltG": 4.9
+    }
+  },
+  "nodes": [
+    {
+      "id": "kyckling_paprikash_jasminris__simmered_rice",
+      "name": "Koka Jasminris",
+      "outputName": "Sjudet jasminris",
+      "inputs": [
+        {
+          "id": "water",
+          "amount": 6,
+          "unit": "dl"
+        },
+        {
+          "id": "jasmine_rice",
+          "amount": 300,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Koka upp {{water}} i {{eq:kastrull_1}}.",
+        "Rör i {{jasmine_rice}} och {{salt}}, sänk till medellåg värme och sjud under lock i 14 min."
+      ],
+      "duration": 2,
+      "wait": 14,
+      "tags": [],
+      "heat": "hög",
+      "tips": [
+        "Riset ska ångkoka, så tjuvkika inte!"
+      ],
+      "equipment": [
+        {
+          "type": "kastrull_medelstor",
+          "ref": "kastrull_1",
+          "lid": true
+        }
+      ],
+      "devNotes": [
+        "Rådatan säger medelstor kastrull. Vatten till ris 6 dl linjärt från 2 (3 dl) men 5 dl vid 3 (inte 4,5). FLAG. Salt till ris 1 tsk (samma vid 3). Ingen vilotid i rådatan (bara 'Ta av kastrullen från värme') — avtagningen är en egen node så att sjudningens wait ligger på sista steget."
+      ]
+    },
+    {
+      "id": "kyckling_paprikash_jasminris__cooked_rice",
+      "name": "Ta Av Riset",
+      "outputName": "Kokt jasminris",
+      "inputs": [
+        {
+          "id": "kyckling_paprikash_jasminris__simmered_rice",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Ta av {{kyckling_paprikash_jasminris__simmered_rice}} i {{eq:kastrull_1|def}} från värmen."
+      ],
+      "duration": 1,
+      "wait": 0,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "kastrull_medelstor",
+          "ref": "kastrull_1",
+          "lid": true,
+          "transition": "keep",
+          "offHeat": true,
+          "after": "kyckling_paprikash_jasminris__simmered_rice"
+        }
+      ],
+      "devNotes": [
+        "Ingen 10-minutersvila i rådatan, därför wait 0. Locket lämnas på tills servering."
+      ]
+    },
+    {
+      "id": "kyckling_paprikash_jasminris__fried_chicken",
+      "name": "Stek Kyckling och Lök",
+      "outputName": "Stekt kyckling och lök",
+      "inputs": [
+        {
+          "id": "olive_oil",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "chicken_breast_strips",
+          "amount": 600,
+          "unit": "g"
+        },
+        {
+          "id": "chopped_onion",
+          "amount": 200,
+          "unit": "g"
+        },
+        {
+          "id": "smoked_paprika",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "id": "tomato_paste",
+          "amount": 70,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i {{eq:traktorpanna_1}} på medelhög värme.",
+        "Stek {{chicken_breast_strips}} och {{chopped_onion}} i 3–4 min, eller tills löken är genomskinlig.",
+        "Tillsätt {{smoked_paprika}} och {{tomato_paste}} till {{eq:traktorpanna_1|def}} och stek i ytterligare 1 min, eller tills kycklingen är genomstekt."
+      ],
+      "duration": 5,
+      "wait": 0,
+      "tags": [],
+      "heat": "medelhög",
+      "tips": [
+        "Kycklingen är färdiglagad när köttet inte längre är rosa i mitten.",
+        "Tvätta händer och köksredskap noggrant efter hantering av rå kyckling."
+      ],
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred"
+        }
+      ],
+      "devNotes": [
+        "Kycklingen är färdigstrimlad (chicken_breast_strips) och skärs inte, därför ingen skarbrada_ra. 600 g vid 4 är linjärt från 2 (300) och 6 (900), men 375 g vid 3 och 675 g vid 5 är inte linjärt. Olja till stekning 2 msk (samma vid 3).",
+        "Ny ingrediens chopped_onion (HF Hackad lök typ chopped-onion, 200 g linjärt). Steg 1 säger fortfarande 'skär lök i tunna skivor' (kvar från föräldrakortet 6555e04e med hel lök 2 st); löken är färdighackad och går rakt i pannan, ingen skärnode. Rökt paprikapulver är en enskild krydda (smoked_paprika), inte en kryddmix. Tomatpuré 70 g och paprikapulver 8 g är samma vid 3 och 4.",
+        "Rådatan säger stor stekpanna, men samma panna tar sedan 300 g crème fraiche + 2 dl vatten + 40 ml sojasås (≈ 5,4 dl) som sjuds 2–3 min — över checkerns 3 dl-tröskel, därför traktörpanna (typeSource inferred) i hela kedjan. 3–4 min plus 1 min är hands-on (duration 5)."
+      ]
+    },
+    {
+      "id": "kyckling_paprikash_jasminris__paprikash",
+      "name": "Sjud Paprikash",
+      "outputName": "Kyckling paprikash",
+      "inputs": [
+        {
+          "id": "kyckling_paprikash_jasminris__fried_chicken",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "creme_fraiche",
+          "amount": 300,
+          "unit": "g"
+        },
+        {
+          "id": "water",
+          "amount": 2,
+          "unit": "dl"
+        },
+        {
+          "id": "chicken_bouillon",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "id": "soy_sauce",
+          "amount": 40,
+          "unit": "ml"
+        }
+      ],
+      "steps": [
+        "Sänk till medelvärme och tillsätt {{creme_fraiche}}, {{water}}, {{chicken_bouillon}} och {{soy_sauce}} till {{eq:traktorpanna_1|def}} med {{kyckling_paprikash_jasminris__fried_chicken}}.",
+        "Sjud i 2–3 min, eller tills tjocknat och genomvarmt."
+      ],
+      "duration": 1,
+      "wait": 3,
+      "tags": [],
+      "heat": "medel",
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred",
+          "transition": "keep"
+        }
+      ],
+      "devNotes": [
+        "HF Crème fraiche 300 g (samma vid 3; 150 g vid 2). HF Buljong typ chicken-stock-powder → chicken_bouillon, 8 g (samma vid 3). Sojasås 40 ml (samma vid 3). Vatten till sås 2 dl linjärt. 2–3 min-sjuden äger wait (övre gräns)."
+      ]
+    },
+    {
+      "id": "kyckling_paprikash_jasminris__cucumber_salad",
+      "name": "Blanda Gurksallad",
+      "outputName": "Gurk- och morotssallad",
+      "inputs": [
+        {
+          "id": "cucumber",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "shredded_salad_mix",
+          "amount": 300,
+          "unit": "g"
+        },
+        {
+          "id": "carrot_julienne",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "white_wine_vinegar",
+          "amount": 24,
+          "unit": "ml"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Skär {{cucumber}} i tunna skivor.",
+        "Blanda {{cucumber}}, {{shredded_salad_mix}}, {{carrot_julienne}}, {{white_wine_vinegar}}, {{olive_oil}} och {{salt}} i {{eq:skal_1}}."
+      ],
+      "duration": 4,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        },
+        {
+          "type": "skal_medelstor",
+          "ref": "skal_1"
+        }
+      ],
+      "devNotes": [
+        "HF Strimlad salladsmix typ strimlad-salladsmix → shredded_salad_mix, 300 g linjärt. HF Morot, Julienne 1 st vid 3 och 4 portioner (0,5 st vid 2 är linjärt från 4; 1,5 st vid 5 och 6). FLAG 3=4. Olja till sallad 2 msk och salt till sallad 0,5 tsk (samma vid 3). Gurka 1 st linjärt. Rådatan säger medelstor skål. Moroten är färdigstrimlad; bara gurkan skärs, på vanlig bräda."
+      ]
+    },
+    {
+      "id": "kyckling_paprikash_jasminris",
+      "name": "Kyckling paprikash",
+      "outputName": "Kyckling paprikash med jasminris och gurksallad",
+      "inputs": [
+        {
+          "id": "kyckling_paprikash_jasminris__cooked_rice",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "kyckling_paprikash_jasminris__paprikash",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "kyckling_paprikash_jasminris__cucumber_salad",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{kyckling_paprikash_jasminris__cooked_rice}} i {{eq:servering|pl}}.",
+        "Toppa med {{kyckling_paprikash_jasminris__paprikash}}.",
+        "Servera med {{kyckling_paprikash_jasminris__cucumber_salad}}."
+      ],
+      "duration": 3,
+      "tags": [
+        "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_skal",
+          "ref": "servering",
+          "count": "portions"
+        }
+      ],
+      "devNotes": [
+        "Rådatan säger 'Lägg upp ris i skålar'; stegfotot visar ris, gryta och sallad i samma skål. HF totalTime PT15M (beskrivningen: 'på en kvart') behålls, men schemat är tight: riset sjuder 14 min efter att vattnet kokat upp. FLAG. Cuisine hungarian (HF Ungersk) — nytt värde i katalogen. girasoli_creamy_paprika och övriga paprikash-varianter (kål- och äppelsallad, långkornigt ris) är andra rätter och är orörda."
+      ]
+    }
+  ]
+}

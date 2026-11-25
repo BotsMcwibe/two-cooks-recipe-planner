@@ -4,6 +4,11 @@
   "rawId": "6655aad956caac7d7918709c",
   "createdAt": 1790852559,
   "basePortions": 4,
+  "time": {
+    "totalMin": 36,
+    "activeMin": 36,
+    "computedFrom": "graph"
+  },
   "sharedPrep": [],
   "images": {
     "main": "assets/recipes/rump_steak_basil_sauce/main.jpg",

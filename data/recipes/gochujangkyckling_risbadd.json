@@ -1,0 +1,389 @@
+{
+  "masterId": "gochujangkyckling_risbadd",
+  "source": "hellofresh",
+  "rawId": "6a915db6f3876e995cfb5914",
+  "createdAt": 1792604095,
+  "basePortions": 4,
+  "time": {
+    "totalMin": 51,
+    "activeMin": 22,
+    "computedFrom": "graph"
+  },
+  "sharedPrep": [
+    "preheated_oven_220"
+  ],
+  "images": {
+    "main": "assets/recipes/gochujangkyckling_risbadd/main.jpg",
+    "byNode": {
+      "gochujangkyckling_risbadd__shredded_cabbage": "assets/recipes/gochujangkyckling_risbadd/steps/shredded_cabbage.jpg",
+      "gochujangkyckling_risbadd__ginger_dressing": "assets/recipes/gochujangkyckling_risbadd/steps/ginger_dressing.jpg",
+      "gochujangkyckling_risbadd__marinated_chicken": "assets/recipes/gochujangkyckling_risbadd/steps/marinated_chicken.jpg",
+      "gochujangkyckling_risbadd__rice_first": "assets/recipes/gochujangkyckling_risbadd/steps/rice_first.jpg",
+      "gochujangkyckling_risbadd__rice_chicken": "assets/recipes/gochujangkyckling_risbadd/steps/rice_chicken.jpg",
+      "gochujangkyckling_risbadd": "assets/recipes/gochujangkyckling_risbadd/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 503,
+    "perPortion": {
+      "energyKcal": 785,
+      "energyKj": 3284,
+      "fatG": 32,
+      "saturatedFatG": 4.2,
+      "carbsG": 79.6,
+      "sugarsG": 12,
+      "fiberG": 5.8,
+      "proteinG": 49.4,
+      "saltG": 5.9
+    }
+  },
+  "nodes": [
+    {
+      "id": "gochujangkyckling_risbadd__boiling_water",
+      "name": "Koka Upp Vatten",
+      "outputName": "Kokande vatten till ris",
+      "inputs": [
+        {
+          "id": "water",
+          "amount": 6,
+          "unit": "dl"
+        }
+      ],
+      "steps": [
+        "Koka upp {{water}} i {{eq:kastrull_1}}."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [],
+      "heat": "hög",
+      "heatSource": "inferred",
+      "equipment": [
+        {
+          "type": "kastrull_medelstor",
+          "ref": "kastrull_1"
+        }
+      ],
+      "devNotes": [
+        "Vatten till ris 6 dl (4 portioner). Ingen tid i rådatan för uppkoket, därför ingen wait."
+      ]
+    },
+    {
+      "id": "gochujangkyckling_risbadd__shredded_cabbage",
+      "name": "Strimla Spetskål",
+      "outputName": "Strimlad spetskål",
+      "inputs": [
+        {
+          "id": "spetskal",
+          "amount": 400,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Halvera {{spetskal}} på längden och strimla den tunt."
+      ],
+      "duration": 3,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "HF Spetskål (hel, ska strimlas) → ny ingrediens spetskal; befintliga pointed_cabbage är 'Förskuren spetskål'. FLAG."
+      ]
+    },
+    {
+      "id": "gochujangkyckling_risbadd__quartered_pak_choi",
+      "name": "Skär Pak Choi",
+      "outputName": "Pak choi i kvartar",
+      "inputs": [
+        {
+          "id": "pak_choi",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skär {{pak_choi}} i kvartar."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ]
+    },
+    {
+      "id": "gochujangkyckling_risbadd__ginger_dressing",
+      "name": "Blanda Ingefärsdressing",
+      "outputName": "Ingefärsdressing",
+      "inputs": [
+        {
+          "id": "soy_sauce",
+          "amount": 40,
+          "unit": "ml"
+        },
+        {
+          "id": "white_wine_vinegar",
+          "amount": 24,
+          "unit": "ml"
+        },
+        {
+          "id": "ginger_paste",
+          "amount": 20,
+          "unit": "g"
+        },
+        {
+          "id": "sesame_oil",
+          "amount": 20,
+          "unit": "ml"
+        }
+      ],
+      "steps": [
+        "Blanda {{soy_sauce}}, {{white_wine_vinegar}}, {{ginger_paste}} och hälften av {{sesame_oil}} i {{eq:skal_liten}}. Ställ åt sidan."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skal_liten"
+        }
+      ],
+      "devNotes": [
+        "Sesamolja 40 ml delas enligt rådatan: hälften (20 ml) här, resten (20 ml) i risvattnet. HF Ingefärapuré → ginger_paste."
+      ]
+    },
+    {
+      "id": "gochujangkyckling_risbadd__marinated_chicken",
+      "name": "Skär och Marinera Kyckling",
+      "outputName": "Gochujangmarinerad kyckling",
+      "inputs": [
+        {
+          "id": "chicken_breast",
+          "amount": 600,
+          "unit": "g"
+        },
+        {
+          "id": "gochujang",
+          "amount": 60,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Skär varje {{chicken_breast}} i 3 delar på en separat {{eq:skarbrada_ra|noun}}.",
+        "Blanda kycklingen, {{gochujang}} och {{salt}} i {{eq:skal_medelstor}}."
+      ],
+      "duration": 4,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Tvätta händer och köksredskap noggrant efter hantering av rå kyckling."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada_ra",
+          "separate": true,
+          "rawKinds": [
+            "poultry"
+          ]
+        },
+        {
+          "type": "skal_medelstor"
+        }
+      ],
+      "devNotes": [
+        "Rådatan säger uttryckligen 'på en separat skärbräda' → skarbrada_ra (inte inferred). Brädan används inte till annat efteråt. Salt till kött 0,5 tsk (samma vid 3). Ny ingrediens gochujang."
+      ]
+    },
+    {
+      "id": "gochujangkyckling_risbadd__rice_first",
+      "name": "Ugnsbaka Ris och Spetskål",
+      "outputName": "Ris och spetskål, 20 min kvar",
+      "inputs": [
+        {
+          "id": "gochujangkyckling_risbadd__boiling_water",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "sesame_oil",
+          "amount": 20,
+          "unit": "ml"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        },
+        {
+          "id": "basmati_rice",
+          "amount": 300,
+          "unit": "g"
+        },
+        {
+          "id": "gochujangkyckling_risbadd__shredded_cabbage",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Blanda {{gochujangkyckling_risbadd__boiling_water}} med resterande {{sesame_oil}} och {{salt}} i en tillbringare.",
+        "Häll {{basmati_rice}} i {{eq:ugnsform_1}}, häll över vattnet och rör om.",
+        "Toppa med ett jämnt lager {{gochujangkyckling_risbadd__shredded_cabbage}} och täck med lock eller aluminiumfolie.",
+        "Tillaga i {{eq:ugn|def}} i ca 10 min, tills det återstår 20 min av risets totalt 30 min."
+      ],
+      "duration": 4,
+      "wait": 10,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "preheated_oven_220",
+          "slots": 1,
+          "temp": 220,
+          "fanTemp": 200
+        },
+        {
+          "type": "ugnsform_stor",
+          "ref": "ugnsform_1",
+          "lid": true
+        }
+      ],
+      "devNotes": [
+        "Riset ugnsbakas i formen i totalt 30 min; kyckling och pak choi läggs på när det återstår 15–20 min. Första fasen = 30 − 20 = 10 min (övre gränsen 20 för att kycklingen ska bli genomstekt), andra fasen 20 min (§4.1 regel 5).",
+        "Salt till ris 1 tsk (samma vid 3). Tillbringaren spåras inte (finns inte i vokabulären). Rådatan säger stor ugnsform → ugnsform_stor; lock eller folie → lid."
+      ]
+    },
+    {
+      "id": "gochujangkyckling_risbadd__rice_chicken",
+      "name": "Ugnsbaka Kyckling på Riset",
+      "outputName": "Gochujangkyckling på risbädd",
+      "inputs": [
+        {
+          "id": "gochujangkyckling_risbadd__rice_first",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "gochujangkyckling_risbadd__quartered_pak_choi",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "gochujangkyckling_risbadd__marinated_chicken",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Ta ut {{eq:ugnsform_1|def}} och toppa {{gochujangkyckling_risbadd__rice_first}} med {{gochujangkyckling_risbadd__quartered_pak_choi}} och {{gochujangkyckling_risbadd__marinated_chicken}}.",
+        "Täck ordentligt med folie eller lock och tillaga i ytterligare ca 20 min i {{eq:ugn|def}}."
+      ],
+      "duration": 2,
+      "wait": 20,
+      "tags": [],
+      "tips": [
+        "Kycklingen är färdiglagad när köttet inte längre är rosa i mitten."
+      ],
+      "equipment": [
+        {
+          "type": "ugnsform_stor",
+          "ref": "ugnsform_1",
+          "transition": "keep",
+          "lid": true
+        },
+        {
+          "type": "ugn",
+          "after": "preheated_oven_220",
+          "slots": 1,
+          "temp": 220,
+          "fanTemp": 200
+        }
+      ]
+    },
+    {
+      "id": "gochujangkyckling_risbadd",
+      "name": "Ugnsbakad koreansk gochujangkyckling på risbädd",
+      "outputName": "Ugnsbakad koreansk gochujangkyckling på risbädd",
+      "inputs": [
+        {
+          "id": "gochujangkyckling_risbadd__rice_chicken",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "gochujangkyckling_risbadd__ginger_dressing",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "vegan_asian_mayo",
+          "amount": 100,
+          "unit": "g"
+        },
+        {
+          "id": "chili_flakes",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "sesame_seeds",
+          "amount": 20,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Ställ fram {{eq:ugnsform_1|def}} med {{gochujangkyckling_risbadd__rice_chicken}} på bordet.",
+        "Ringla över {{gochujangkyckling_risbadd__ginger_dressing}} och {{vegan_asian_mayo}}.",
+        "Toppa med {{chili_flakes}} och {{sesame_seeds}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "master"
+      ],
+      "tips": [
+        "Skippa chili eller använd mindre om du inte tycker om stark mat."
+      ],
+      "equipment": [
+        {
+          "type": "ugnsform_stor",
+          "ref": "ugnsform_1",
+          "transition": "keep"
+        }
+      ],
+      "serving": [
+        {
+          "type": "servering_tallrik",
+          "ref": "servering",
+          "count": "portions"
+        }
+      ],
+      "devNotes": [
+        "Chiliflakes 1 g vid 3 och 4 portioner → 1 nypa (§3 regel 8). HF Sesamfrön, rostade → sesame_seeds. Vegansk asiatisk majonnäs → ny ingrediens vegan_asian_mayo. Formen ställs på bordet; tallrikar per portion underförstått."
+      ]
+    }
+  ]
+}

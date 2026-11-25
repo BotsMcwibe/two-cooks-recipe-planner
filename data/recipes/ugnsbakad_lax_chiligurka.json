@@ -4,6 +4,11 @@
   "rawId": "linas-131123",
   "createdAt": 1791056876,
   "basePortions": 4,
+  "time": {
+    "totalMin": 22,
+    "activeMin": 21,
+    "computedFrom": "graph"
+  },
   "sharedPrep": [],
   "images": {
     "main": "assets/recipes/ugnsbakad_lax_chiligurka/main.jpg"

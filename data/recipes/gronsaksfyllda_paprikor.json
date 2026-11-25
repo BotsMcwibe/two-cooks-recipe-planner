@@ -4,6 +4,11 @@
   "rawId": "5d5924920b44ec001425eadd",
   "createdAt": 1790795820,
   "basePortions": 4,
+  "time": {
+    "totalMin": 57,
+    "activeMin": 39,
+    "computedFrom": "graph"
+  },
   "sharedPrep": [],
   "images": {
     "main": "assets/recipes/gronsaksfyllda_paprikor/main.jpg"

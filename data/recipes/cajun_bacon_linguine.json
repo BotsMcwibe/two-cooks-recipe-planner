@@ -4,6 +4,11 @@
   "rawId": "6a689113640e6eb29c2ac561",
   "createdAt": 1790796855,
   "basePortions": 4,
+  "time": {
+    "totalMin": 16,
+    "activeMin": 12,
+    "computedFrom": "graph"
+  },
   "sharedPrep": [],
   "images": {
     "main": "assets/recipes/cajun_bacon_linguine/main.jpg",

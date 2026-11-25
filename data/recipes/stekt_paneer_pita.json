@@ -1,0 +1,522 @@
+{
+  "masterId": "stekt_paneer_pita",
+  "source": "hellofresh",
+  "rawId": "6a9e92a3790f7867027dc029",
+  "createdAt": 1794421515,
+  "basePortions": 4,
+  "time": {
+    "totalMin": 57,
+    "activeMin": 32,
+    "computedFrom": "graph"
+  },
+  "images": {
+    "main": "assets/recipes/stekt_paneer_pita/main.jpg",
+    "byNode": {
+      "stekt_paneer_pita__potato_fries": "assets/recipes/stekt_paneer_pita/steps/potato_fries.jpg",
+      "stekt_paneer_pita__prepped_salad": "assets/recipes/stekt_paneer_pita/steps/prepped_salad.jpg",
+      "stekt_paneer_pita__garlic_sauce": "assets/recipes/stekt_paneer_pita/steps/garlic_sauce.jpg",
+      "stekt_paneer_pita__fried_paneer": "assets/recipes/stekt_paneer_pita/steps/fried_paneer.jpg",
+      "stekt_paneer_pita__warm_pita": "assets/recipes/stekt_paneer_pita/steps/warm_pita.jpg",
+      "stekt_paneer_pita": "assets/recipes/stekt_paneer_pita/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 578,
+    "perPortion": {
+      "energyKcal": 976,
+      "energyKj": 4085,
+      "fatG": 51.3,
+      "saturatedFatG": 19.4,
+      "carbsG": 89,
+      "sugarsG": 12.3,
+      "proteinG": 38.2,
+      "saltG": 6.5
+    }
+  },
+  "nodes": [
+    {
+      "id": "stekt_paneer_pita__preheated_oven_240",
+      "name": "Värm ugnen",
+      "outputName": "Förvärmd ugn (240°C)",
+      "inputs": [],
+      "steps": [
+        "Värm {{eq:ugn|def}} till 240°C, eller 220°C varmluft."
+      ],
+      "duration": 1,
+      "wait": 12,
+      "tags": [
+        "no-timer",
+        "resource"
+      ],
+      "tips": [
+        "Ugnen tar vanligtvis 10–15 minuter att värmas upp."
+      ],
+      "oven": {
+        "temp": 240,
+        "fanTemp": 220
+      },
+      "devNotes": [
+        "HF anger 240°C/220°C varmluft — lokal ugnsnode, inte preheated_oven_220."
+      ]
+    },
+    {
+      "id": "stekt_paneer_pita__potato_fries",
+      "name": "Skär Pommes",
+      "outputName": "Potatisstavar",
+      "inputs": [
+        {
+          "id": "potato",
+          "amount": 1000,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Skär {{potato}} (oskalad) i 1 cm tunna pommes."
+      ],
+      "duration": 6,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "HF-typ organic-potatoes → potato."
+      ]
+    },
+    {
+      "id": "stekt_paneer_pita__roasted_potatoes_first",
+      "name": "Rosta Pommes, Första Fas",
+      "outputName": "Halvrostade pommes, 3 min kvar",
+      "inputs": [
+        {
+          "id": "stekt_paneer_pita__potato_fries",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "dried_oregano",
+          "amount": 1,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Lägg {{stekt_paneer_pita__potato_fries}} på {{eq:plat_1}} med bakplåtspapper. Blanda med {{olive_oil}}, {{dried_oregano}}, {{salt}} och en nypa {{pepper}}.",
+        "Rosta i {{eq:ugn|def}} i ca 32 min, tills det återstår 2–3 min av totalt 25–35 min."
+      ],
+      "duration": 3,
+      "wait": 32,
+      "tags": [],
+      "tips": [
+        "Använd fler plåtar om det blir för trångt."
+      ],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "stekt_paneer_pita__preheated_oven_240",
+          "slots": 1,
+          "temp": 240,
+          "fanTemp": 220
+        },
+        {
+          "type": "plat",
+          "ref": "plat_1",
+          "liner": "bakplatspapper"
+        }
+      ],
+      "devNotes": [
+        "Olja till potatis saknas i HF:s lista, därför standard 1 skvätt. Salt till potatis 1 tsk (samma vid 3).",
+        "1000 g pommes är exakt plat:s oneLayerG; en plåt, med HF:s tips om fler vid trängsel.",
+        "Första fasen 32 min = övre 35 minus de 2–3 min då pitabrödet bakas på gallret samtidigt."
+      ]
+    },
+    {
+      "id": "stekt_paneer_pita__roasted_potatoes",
+      "name": "Färdigrosta Pommes",
+      "outputName": "Rostade pommes",
+      "inputs": [
+        {
+          "id": "stekt_paneer_pita__roasted_potatoes_first",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Låt {{eq:plat_1|def}} med {{stekt_paneer_pita__roasted_potatoes_first}} vara kvar i {{eq:ugn|def}} och rosta i ytterligare 2–3 min, tills gyllene och mjuka."
+      ],
+      "duration": 1,
+      "wait": 3,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "plat",
+          "ref": "plat_1",
+          "liner": "bakplatspapper",
+          "transition": "keep"
+        },
+        {
+          "type": "ugn",
+          "after": "stekt_paneer_pita__preheated_oven_240",
+          "slots": 1,
+          "temp": 240,
+          "fanTemp": 220
+        }
+      ]
+    },
+    {
+      "id": "stekt_paneer_pita__warm_pita",
+      "name": "Värm Pitabröd",
+      "outputName": "Uppvärmda pitabröd",
+      "inputs": [
+        {
+          "id": "pita_bread",
+          "amount": 4,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Placera {{pita_bread}} direkt på {{eq:galler_1|def}} och baka i {{eq:ugn|def}} i 2–3 min, eller tills uppvärmda."
+      ],
+      "duration": 1,
+      "wait": 3,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": [
+            "stekt_paneer_pita__preheated_oven_240",
+            "stekt_paneer_pita__roasted_potatoes_first"
+          ],
+          "slots": 1,
+          "temp": 240,
+          "fanTemp": 220
+        },
+        {
+          "type": "galler",
+          "ref": "galler_1"
+        }
+      ],
+      "devNotes": [
+        "Rådatan bakar pitabrödet på gallret under sista minuterna av potatistiden (samtidigt som paneer steks). Galler och plåt tar 2 ugnsspår i 3 min; standardprofilen har 2 plåtar."
+      ]
+    },
+    {
+      "id": "stekt_paneer_pita__prepped_salad",
+      "name": "Förbered Sallad",
+      "outputName": "Morotsband, rucola och soltorkade tomater",
+      "inputs": [
+        {
+          "id": "carrot",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "rucola",
+          "amount": 70,
+          "unit": "g"
+        },
+        {
+          "id": "sun_dried_tomatoes",
+          "amount": 50,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Skala {{carrot}} i långa band med en potatisskalare och finhacka den sista innersta biten.",
+        "Skölj {{rucola}}.",
+        "Grovhacka {{sun_dried_tomatoes}}."
+      ],
+      "duration": 5,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true,
+          "after": "stekt_paneer_pita__potato_fries"
+        }
+      ],
+      "devNotes": [
+        "Potatisskalare är ett handredskap och spåras inte som utrustning.",
+        "HF Rucola 40 g vid 2, 70 g vid 3–4 och 110 g vid 5–6 portioner — inte linjärt (40→70 är 1,75×). Författad som 70 g vid 4 portioner. FLAG."
+      ]
+    },
+    {
+      "id": "stekt_paneer_pita__salad",
+      "name": "Blanda Sallad",
+      "outputName": "Morots- och rucolasallad",
+      "inputs": [
+        {
+          "id": "stekt_paneer_pita__prepped_salad",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Lägg {{stekt_paneer_pita__prepped_salad}}, {{olive_oil}}, {{salt}} och en nypa {{pepper}} i {{eq:skal_1}} och blanda ihop precis innan servering."
+      ],
+      "duration": 1,
+      "wait": 0,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "skal_medelstor",
+          "ref": "skal_1"
+        }
+      ],
+      "devNotes": [
+        "Olja till sallad 2 msk, salt till sallad 0,5 tsk (samma vid 3). Inte taggad prep eftersom den blandas precis innan servering."
+      ]
+    },
+    {
+      "id": "stekt_paneer_pita__garlic_sauce",
+      "name": "Gör Vitlökssås",
+      "outputName": "Vitlökssås",
+      "inputs": [
+        {
+          "id": "garlic",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "sour_cream",
+          "amount": 150,
+          "unit": "ml"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Finhacka eller pressa {{garlic}}.",
+        "Blanda vitlöken, {{sour_cream}}, {{salt}} och en nypa {{pepper}} i {{eq:skal_liten}} och ställ åt sidan."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true,
+          "after": "stekt_paneer_pita__prepped_salad"
+        },
+        {
+          "type": "skal_liten"
+        }
+      ],
+      "devNotes": [
+        "Salt till dressing 0,5 tsk (samma vid 3)."
+      ]
+    },
+    {
+      "id": "stekt_paneer_pita__sliced_paneer",
+      "name": "Skär och Krydda Paneer",
+      "outputName": "Kryddade paneerskivor",
+      "inputs": [
+        {
+          "id": "paneer",
+          "amount": 400,
+          "unit": "g"
+        },
+        {
+          "id": "hello_sunrise",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Skär {{paneer}} i tunna skivor (2 per person).",
+        "Krydda osten med {{hello_sunrise}} och {{salt}} på båda sidor."
+      ],
+      "duration": 4,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true,
+          "after": "stekt_paneer_pita__garlic_sauce"
+        }
+      ],
+      "devNotes": [
+        "Ny ingrediens paneer (ingen rawAnimal; vanlig skärbräda). Hello Sunrise har redan blendId.",
+        "Salt till vegoprotein 0,5 tsk finns i HF:s lista men nämns inte i stegtexten (bara Hello Sunrise). Inlagd i kryddningen. FLAG."
+      ]
+    },
+    {
+      "id": "stekt_paneer_pita__fried_paneer",
+      "name": "Stek Paneer",
+      "outputName": "Stekt paneer",
+      "inputs": [
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "stekt_paneer_pita__sliced_paneer",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i {{eq:stekpanna_1}} på medelhög värme när det återstår 10 min av potatisens tillagningstid.",
+        "Stek {{stekt_paneer_pita__sliced_paneer}} i 2–3 min per sida, eller tills gyllene."
+      ],
+      "duration": 2,
+      "wait": 6,
+      "tags": [],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1"
+        }
+      ],
+      "devNotes": [
+        "Rådatan säger stor stekpanna. Bara en skvätt olja, ingen sjudning → stekpanna, inte traktörpanna. Oljan till stekning saknas i HF:s lista, därför 1 skvätt."
+      ]
+    },
+    {
+      "id": "stekt_paneer_pita__filled_pita",
+      "name": "Fyll Pitabröd",
+      "outputName": "Fyllda pitabröd",
+      "inputs": [
+        {
+          "id": "stekt_paneer_pita__warm_pita",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "stekt_paneer_pita__garlic_sauce",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "stekt_paneer_pita__fried_paneer",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "stekt_paneer_pita__salad",
+          "amount": 0.5,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skär en öppning i {{stekt_paneer_pita__warm_pita}}.",
+        "Fyll pitabröden med {{stekt_paneer_pita__garlic_sauce}}, {{stekt_paneer_pita__fried_paneer}} och hälften av {{stekt_paneer_pita__salad}}."
+      ],
+      "duration": 3,
+      "wait": 0,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true,
+          "after": "stekt_paneer_pita__sliced_paneer"
+        }
+      ]
+    },
+    {
+      "id": "stekt_paneer_pita",
+      "name": "Stekt paneer i pitabröd",
+      "outputName": "Stekt paneer i pitabröd",
+      "inputs": [
+        {
+          "id": "stekt_paneer_pita__filled_pita",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "stekt_paneer_pita__roasted_potatoes",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "stekt_paneer_pita__salad",
+          "amount": 0.5,
+          "unit": "st"
+        },
+        {
+          "id": "vegan_sriracha_mayo",
+          "amount": 100,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{stekt_paneer_pita__filled_pita}}, {{stekt_paneer_pita__roasted_potatoes}} och resterande {{stekt_paneer_pita__salad}} på {{eq:servering|pl}}.",
+        "Servera med en klick {{vegan_sriracha_mayo}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_tallrik",
+          "ref": "servering",
+          "count": "portions"
+        }
+      ]
+    }
+  ]
+}

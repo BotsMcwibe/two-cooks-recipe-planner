@@ -1,0 +1,453 @@
+{
+  "masterId": "atidua_bongryta_ghana",
+  "source": "hellofresh",
+  "rawId": "6a9e929756a4cfbb9638f3c7",
+  "createdAt": 1794424959,
+  "basePortions": 4,
+  "time": {
+    "totalMin": 33,
+    "activeMin": 32,
+    "computedFrom": "graph"
+  },
+  "images": {
+    "main": "assets/recipes/atidua_bongryta_ghana/main.jpg",
+    "byNode": {
+      "atidua_bongryta_ghana__chopped_aromatics": "assets/recipes/atidua_bongryta_ghana/steps/chopped_aromatics.jpg",
+      "atidua_bongryta_ghana__tomato_sauce": "assets/recipes/atidua_bongryta_ghana/steps/tomato_sauce.jpg",
+      "atidua_bongryta_ghana__mashed_beans": "assets/recipes/atidua_bongryta_ghana/steps/mashed_beans.jpg",
+      "atidua_bongryta_ghana__bean_stew": "assets/recipes/atidua_bongryta_ghana/steps/bean_stew.jpg",
+      "atidua_bongryta_ghana__roasted_pita": "assets/recipes/atidua_bongryta_ghana/steps/roasted_pita.jpg",
+      "atidua_bongryta_ghana": "assets/recipes/atidua_bongryta_ghana/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 582,
+    "perPortion": {
+      "energyKcal": 695,
+      "energyKj": 2907,
+      "fatG": 29.9,
+      "saturatedFatG": 7.7,
+      "carbsG": 74.7,
+      "sugarsG": 20.2,
+      "proteinG": 22.7,
+      "fiberG": 15,
+      "saltG": 6.2
+    }
+  },
+  "nodes": [
+    {
+      "id": "atidua_bongryta_ghana__preheated_oven_200",
+      "name": "Värm ugnen",
+      "outputName": "Förvärmd ugn (200°C)",
+      "inputs": [],
+      "steps": [
+        "Värm {{eq:ugn|def}} till 200°C, eller 180°C varmluft."
+      ],
+      "duration": 1,
+      "wait": 12,
+      "tags": [
+        "no-timer",
+        "resource"
+      ],
+      "tips": [
+        "Ugnen tar vanligtvis 10–15 minuter att värmas upp."
+      ],
+      "oven": {
+        "temp": 200,
+        "fanTemp": 180
+      },
+      "devNotes": [
+        "HF anger 200°C/180°C varmluft — lokal ugnsnode, inte preheated_oven_220."
+      ]
+    },
+    {
+      "id": "atidua_bongryta_ghana__chopped_aromatics",
+      "name": "Hacka Morot, Lök, Vitlök och Ingefära",
+      "outputName": "Hackad morot, lök, vitlök och ingefära",
+      "inputs": [
+        {
+          "id": "carrot",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "onion",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "garlic",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "ginger",
+          "amount": 4,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Finhacka {{carrot}} och {{onion}}.",
+        "Finhacka eller pressa {{garlic}}.",
+        "Riv {{ginger}} (oskalad) fint."
+      ],
+      "duration": 6,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "Ingefära 4 tsk (enhet som i rådatan, typ ginger), linjärt 2/4/6. Morot, lök och vitlök 2 st vid 4 portioner, linjärt."
+      ]
+    },
+    {
+      "id": "atidua_bongryta_ghana__tomato_sauce",
+      "name": "Stek Grönsaker och Sjud Tomatsås",
+      "outputName": "Tomatsås till böngryta",
+      "inputs": [
+        {
+          "id": "olive_oil",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "atidua_bongryta_ghana__chopped_aromatics",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "smoky_pepper_paste",
+          "amount": 80,
+          "unit": "g"
+        },
+        {
+          "id": "canned_tomatoes",
+          "amount": 780,
+          "unit": "g"
+        },
+        {
+          "id": "vegetable_bouillon",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "id": "sugar",
+          "amount": 2,
+          "unit": "tsk"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i {{eq:traktorpanna_1}} på medelhög värme.",
+        "Stek morot och lök från {{atidua_bongryta_ghana__chopped_aromatics}} i 5–6 min.",
+        "Tillsätt vitlök och ingefära från {{atidua_bongryta_ghana__chopped_aromatics}} och {{smoky_pepper_paste}} och stek i 1–2 min.",
+        "Tillsätt {{canned_tomatoes}}, {{vegetable_bouillon}}, {{sugar}} och {{salt}}. Sänk till medelvärme och sjud i 8–10 min."
+      ],
+      "duration": 8,
+      "wait": 10,
+      "tags": [],
+      "heat": "medel",
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred"
+        }
+      ],
+      "devNotes": [
+        "Rådatan säger stor kastrull, men morot och lök steks först och därefter tillsätts 780 g krossade tomater (ca 7,8 dl) som sjuds 8–10 min, sedan bönor och spenat (totalt ca 2 l) → traktörpanna, typeSource inferred. FLAG.",
+        "Ny ingrediens smoky_pepper_paste (Rökt paprikapaste), 80 g vid 4 portioner, linjärt. Det är en pasta, inte en kryddmix, därför ingen spice_blend/blendId.",
+        "HF Krossade tomater typ chopped-tomatoes → canned_tomatoes, 780 g linjärt. Buljong typ vegetable-stock → vegetable_bouillon, 8 g. Olja till stekning 2 msk (samma vid 3), socker till sås 2 tsk, salt till sås 1 tsk (samma vid 3). Ingen vattenrad."
+      ]
+    },
+    {
+      "id": "atidua_bongryta_ghana__mashed_beans",
+      "name": "Mosa Bönor och Skölj Spenat",
+      "outputName": "Mosade svarta bönor och sköljd spenat",
+      "inputs": [
+        {
+          "id": "black_beans",
+          "amount": 780,
+          "unit": "g"
+        },
+        {
+          "id": "baby_spinach",
+          "amount": 60,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Häll av {{black_beans}} i {{eq:durkslag_1}}.",
+        "Mosa bönorna lätt med en gaffel i {{eq:skal_1}}.",
+        "Skölj {{baby_spinach}}."
+      ],
+      "duration": 5,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "durkslag",
+          "ref": "durkslag_1",
+          "inferred": true
+        },
+        {
+          "type": "skal_medelstor",
+          "ref": "skal_1"
+        }
+      ],
+      "devNotes": [
+        "HF Svarta bönor → black_beans, 780 g vid 4 portioner, linjärt 2/4/6. HF Spenat typ organic-baby-spinach → baby_spinach, 60 g linjärt. Samma destination (gryta), därför en prepnode."
+      ]
+    },
+    {
+      "id": "atidua_bongryta_ghana__bean_stew",
+      "name": "Tillsätt Spenat och Bönor",
+      "outputName": "Böngryta",
+      "inputs": [
+        {
+          "id": "atidua_bongryta_ghana__tomato_sauce",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "atidua_bongryta_ghana__mashed_beans",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Tillsätt spenat och bönor från {{atidua_bongryta_ghana__mashed_beans}} till {{atidua_bongryta_ghana__tomato_sauce}} i {{eq:traktorpanna_1|def}}.",
+        "Sjud i ytterligare 5 min, tills spenaten har mjuknat och såsen har tjocknat."
+      ],
+      "duration": 1,
+      "wait": 5,
+      "tags": [],
+      "heat": "medel",
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred",
+          "transition": "keep",
+          "after": "atidua_bongryta_ghana__tomato_sauce"
+        }
+      ],
+      "devNotes": [
+        "Rådatan säger både 'när det återstår 8 min av tillagningstiden' och att tomatsåsen sjuds 8–10 min, därefter 'sjud i ytterligare 5 min'. Det finns ingen längre ugnsstek som de 8 minuterna kan syfta på (pitebrödet bakas bara 3–4 min). Modellerat som sjudning 8–10 min och därefter ytterligare 5 min efter att bönor och spenat tillsatts. FLAG."
+      ]
+    },
+    {
+      "id": "atidua_bongryta_ghana__chopped_toppings",
+      "name": "Hacka Cashewnötter och Smula Feta",
+      "outputName": "Hackade cashewnötter och smulad feta",
+      "inputs": [
+        {
+          "id": "roasted_cashews",
+          "amount": 40,
+          "unit": "g"
+        },
+        {
+          "id": "feta_cheese",
+          "amount": 100,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Grovhacka {{roasted_cashews}}.",
+        "Smula {{feta_cheese}}."
+      ],
+      "duration": 3,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true,
+          "after": "atidua_bongryta_ghana__chopped_aromatics"
+        }
+      ],
+      "devNotes": [
+        "Ny ingrediens roasted_cashews (Cashewnötter, rostade), 40 g vid 4 portioner, linjärt — redan rostade, därför ingen rostning i receptet. Inte samma id som cashews (råa). HF Feta → feta_cheese, 100 g linjärt. Båda toppas på grytan, därför en prepnode."
+      ]
+    },
+    {
+      "id": "atidua_bongryta_ghana__parsley_oil",
+      "name": "Blanda Persiljeolja",
+      "outputName": "Persiljeolja",
+      "inputs": [
+        {
+          "id": "parsley",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Grovhacka {{parsley}}.",
+        "Blanda persilja, {{olive_oil}}, {{salt}} och en nypa {{pepper}} i {{eq:skal_2}}."
+      ],
+      "duration": 3,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skal_liten",
+          "ref": "skal_2"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true,
+          "after": "atidua_bongryta_ghana__chopped_toppings"
+        }
+      ],
+      "devNotes": [
+        "HF Bladpersilja typ organic-parsley-flat → parsley. 1 st vid 2, 3 och 4 portioner, 2 st vid 6 — förpackning. Författad som 1 st vid 4 portioner med linjär skalning. Olja till örtolja 2 msk, salt till örtolja 0,5 tsk (samma vid 3). Peppar saknas i HF:s lista, därför standard 1 nypa."
+      ]
+    },
+    {
+      "id": "atidua_bongryta_ghana__roasted_pita",
+      "name": "Rosta Pitabröd",
+      "outputName": "Rostade pitabröd",
+      "inputs": [
+        {
+          "id": "pita_bread",
+          "amount": 4,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Placera {{pita_bread}} på {{eq:plat_1}} med bakplåtspapper.",
+        "Rosta i {{eq:ugn|def}} i 3–4 min, eller tills uppvärmda."
+      ],
+      "duration": 1,
+      "wait": 4,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "atidua_bongryta_ghana__preheated_oven_200",
+          "slots": 1,
+          "temp": 200,
+          "fanTemp": 180
+        },
+        {
+          "type": "plat",
+          "ref": "plat_1",
+          "liner": "bakplatspapper"
+        }
+      ],
+      "devNotes": [
+        "HF Pitabröd → pita_bread, 4 st (1 per portion). Rådatan använder plåt med bakplåtspapper, inte ugnsgaller. En plåt."
+      ]
+    },
+    {
+      "id": "atidua_bongryta_ghana__parsley_pita",
+      "name": "Pensla och Halvera Pita",
+      "outputName": "Persiljepita",
+      "inputs": [
+        {
+          "id": "atidua_bongryta_ghana__roasted_pita",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "atidua_bongryta_ghana__parsley_oil",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Pensla {{atidua_bongryta_ghana__roasted_pita}} med {{atidua_bongryta_ghana__parsley_oil}} och halvera dem."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true,
+          "after": "atidua_bongryta_ghana__parsley_oil"
+        }
+      ],
+      "devNotes": [
+        "Egen node så att ugnswait ligger på sista steget i rostningen."
+      ]
+    },
+    {
+      "id": "atidua_bongryta_ghana",
+      "name": "Atidua: böngryta från Ghana",
+      "outputName": "Atidua: böngryta från Ghana",
+      "inputs": [
+        {
+          "id": "atidua_bongryta_ghana__bean_stew",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "atidua_bongryta_ghana__chopped_toppings",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "atidua_bongryta_ghana__parsley_pita",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{atidua_bongryta_ghana__bean_stew}} i {{eq:servering|pl}} och toppa med {{atidua_bongryta_ghana__chopped_toppings}}.",
+        "Servera med {{atidua_bongryta_ghana__parsley_pita}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_djup_tallrik",
+          "ref": "servering",
+          "count": "portions"
+        }
+      ],
+      "devNotes": [
+        "All näring behållen inklusive fiber 15 g och 695 kcal. Salt 6,2 g/portion är något högt men behållet.",
+        "clonedFrom 6a688d0b640e6eb29c2ac0f6 har ingen raw-fil och ingen master. Inga syskon att hoppa över."
+      ]
+    }
+  ]
+}

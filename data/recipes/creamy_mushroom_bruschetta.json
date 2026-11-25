@@ -4,6 +4,11 @@
   "rawId": "68de2747396adcc61a3ebf91",
   "createdAt": 1790852912,
   "basePortions": 4,
+  "time": {
+    "totalMin": 27,
+    "activeMin": 18,
+    "computedFrom": "graph"
+  },
   "sharedPrep": [
     "preheated_oven_220"
   ],

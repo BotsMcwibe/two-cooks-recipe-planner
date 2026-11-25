@@ -4,6 +4,11 @@
   "rawId": "6481815cf0b225130ecebcf9",
   "createdAt": 1791035037,
   "basePortions": 4,
+  "time": {
+    "totalMin": 39,
+    "activeMin": 39,
+    "computedFrom": "graph"
+  },
   "sharedPrep": [],
   "images": {
     "main": "assets/recipes/stekt_flask_graslokssas/main.jpg",

@@ -4,6 +4,11 @@
   "rawId": "665987945a85f96229972b8f",
   "createdAt": 1790853630,
   "basePortions": 4,
+  "time": {
+    "totalMin": 15,
+    "activeMin": 15,
+    "computedFrom": "graph"
+  },
   "sharedPrep": [],
   "images": {
     "main": "assets/recipes/curry_chickpea_wraps/main.jpg",

@@ -1,0 +1,469 @@
+{
+  "masterId": "kramig_indisk_kycklingcurry",
+  "source": "hellofresh",
+  "rawId": "6a9e9291790f7867027dbe56",
+  "createdAt": 1794426889,
+  "basePortions": 4,
+  "time": {
+    "totalMin": 44,
+    "activeMin": 36,
+    "computedFrom": "graph"
+  },
+  "images": {
+    "main": "assets/recipes/kramig_indisk_kycklingcurry/main.jpg",
+    "byNode": {
+      "kramig_indisk_kycklingcurry__rested_rice": "assets/recipes/kramig_indisk_kycklingcurry/steps/rested_rice.jpg",
+      "kramig_indisk_kycklingcurry__fried_chicken": "assets/recipes/kramig_indisk_kycklingcurry/steps/fried_chicken.jpg",
+      "kramig_indisk_kycklingcurry__chopped_onion_carrot": "assets/recipes/kramig_indisk_kycklingcurry/steps/chopped_onion_carrot.jpg",
+      "kramig_indisk_kycklingcurry__chopped_garnish": "assets/recipes/kramig_indisk_kycklingcurry/steps/chopped_garnish.jpg",
+      "kramig_indisk_kycklingcurry__simmered_sauce": "assets/recipes/kramig_indisk_kycklingcurry/steps/simmered_sauce.jpg",
+      "kramig_indisk_kycklingcurry__warmed_curry": "assets/recipes/kramig_indisk_kycklingcurry/steps/warmed_curry.jpg",
+      "kramig_indisk_kycklingcurry": "assets/recipes/kramig_indisk_kycklingcurry/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 651,
+    "perPortion": {
+      "energyKcal": 890,
+      "energyKj": 3722,
+      "fatG": 38.1,
+      "saturatedFatG": 20.5,
+      "carbsG": 89.5,
+      "sugarsG": 17.1,
+      "proteinG": 50,
+      "fiberG": 9.9,
+      "saltG": 5.6
+    }
+  },
+  "nodes": [
+    {
+      "id": "kramig_indisk_kycklingcurry__simmered_rice",
+      "name": "Koka Ris",
+      "outputName": "Sjudet basmatiris",
+      "inputs": [
+        {
+          "id": "water",
+          "amount": 6,
+          "unit": "dl"
+        },
+        {
+          "id": "basmati_rice",
+          "amount": 300,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Koka upp {{water}} i {{eq:kastrull_1}}.",
+        "Rör i {{basmati_rice}} och {{salt}}, sänk till medellåg värme och sjud under lock i 10 min."
+      ],
+      "duration": 2,
+      "wait": 10,
+      "tags": [],
+      "heat": "hög",
+      "tips": [
+        "Riset ska ångkoka, så tjuvkika inte!"
+      ],
+      "equipment": [
+        {
+          "type": "kastrull_medelstor",
+          "ref": "kastrull_1",
+          "lid": true
+        }
+      ],
+      "devNotes": [
+        "Rådatan säger medelstor kastrull. Vatten till ris 6 dl linjärt. Salt till ris 1 tsk (samma vid 3; 0,5 tsk vid 2). Vila i nästa node så att sjudningens wait ligger på sista steget."
+      ]
+    },
+    {
+      "id": "kramig_indisk_kycklingcurry__rested_rice",
+      "name": "Vila Riset",
+      "outputName": "Vilat basmatiris",
+      "inputs": [
+        {
+          "id": "kramig_indisk_kycklingcurry__simmered_rice",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Ta av {{eq:kastrull_1|def}} från värmen och låt {{kramig_indisk_kycklingcurry__simmered_rice}} vila under lock i 10 min."
+      ],
+      "duration": 1,
+      "wait": 10,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "kastrull_medelstor",
+          "ref": "kastrull_1",
+          "lid": true,
+          "transition": "keep",
+          "offHeat": true,
+          "after": "kramig_indisk_kycklingcurry__simmered_rice"
+        }
+      ]
+    },
+    {
+      "id": "kramig_indisk_kycklingcurry__fried_chicken",
+      "name": "Stek Kyckling",
+      "outputName": "Stekt kyckling",
+      "inputs": [
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "chicken_breast_strips",
+          "amount": 600,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i {{eq:kastrull_2}} på medelhög värme.",
+        "Tillsätt {{chicken_breast_strips}} och krydda med {{salt}}. Stek i 4–5 min, eller tills gyllene och genomstekt. Vänd den då och då.",
+        "Ställ åt sidan på {{eq:tallrik_1}}."
+      ],
+      "duration": 6,
+      "wait": 0,
+      "tags": [],
+      "heat": "medelhög",
+      "tips": [
+        "Kycklingen är färdiglagad när köttet inte längre är rosa i mitten.",
+        "Tvätta händer och köksredskap noggrant efter hantering av rå kyckling."
+      ],
+      "equipment": [
+        {
+          "type": "kastrull_stor",
+          "ref": "kastrull_2"
+        },
+        {
+          "type": "tallrik",
+          "ref": "tallrik_1"
+        }
+      ],
+      "devNotes": [
+        "Kycklingen är färdigstrimlad (chicken_breast_strips) och skärs inte, därför ingen skarbrada_ra. 600 g vid 4 är linjärt från 2 (300) och 6 (900), men 375 g vid 3 och 675 g vid 5 är inte linjärt. Salt till kött 0,5 tsk (samma vid 3).",
+        "Rådatan säger stor kastrull (samma panna, utan att torkas ur, tar sedan grönsaker och sås). Olja till stekning 2 msk (1,5 msk vid 3) går till grönsaksfräset; kycklingen får 'en skvätt olivolja' utan egen rad, därför standard 1 skvätt. 4–5 min är hands-on stek (duration 6)."
+      ]
+    },
+    {
+      "id": "kramig_indisk_kycklingcurry__chopped_onion_carrot",
+      "name": "Grovhacka Lök och Morot",
+      "outputName": "Grovhackad lök och morot",
+      "inputs": [
+        {
+          "id": "onion",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "carrot",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Grovhacka {{onion}} och {{carrot}}."
+      ],
+      "duration": 4,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "Egen prepnode eftersom lök och morot går till såsen, medan persilja och jordnötter går till mastern. Blomkålsbuketter skärs inte (färdiga buketter)."
+      ]
+    },
+    {
+      "id": "kramig_indisk_kycklingcurry__chopped_garnish",
+      "name": "Hacka Persilja och Jordnötter",
+      "outputName": "Hackad persilja och grovhackade jordnötter",
+      "inputs": [
+        {
+          "id": "parsley",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "salted_peanuts",
+          "amount": 40,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Finhacka {{parsley}}.",
+        "Grovhacka {{salted_peanuts}}."
+      ],
+      "duration": 3,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "HF Bladpersilja typ organic-parsley-flat → parsley. 1 st vid 2, 3 och 4 portioner, 2 st vid 6 — förpackning. Författad som 1 st vid 4 portioner med linjär skalning. Båda går till mastern som topping, därför en prepnode. Samma vanliga bräda som löken och moroten; ingen skarbrada_ra."
+      ]
+    },
+    {
+      "id": "kramig_indisk_kycklingcurry__fried_veg",
+      "name": "Fräs Grönsaker och Kryddor",
+      "outputName": "Frästa grönsaker och kryddor",
+      "inputs": [
+        {
+          "id": "olive_oil",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "kramig_indisk_kycklingcurry__chopped_onion_carrot",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "cauliflower_florets",
+          "amount": 400,
+          "unit": "g"
+        },
+        {
+          "id": "ginger_paste",
+          "amount": 20,
+          "unit": "g"
+        },
+        {
+          "id": "curry_on",
+          "amount": 16,
+          "unit": "g"
+        },
+        {
+          "id": "milda_mahal",
+          "amount": 16,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i {{eq:kastrull_2|def}} (utan att torka ur den) på medelhög värme.",
+        "Stek {{kramig_indisk_kycklingcurry__chopped_onion_carrot}} och {{cauliflower_florets}} i 5–6 min, eller tills något mjuknat.",
+        "Tillsätt {{ginger_paste}}, {{curry_on}}, {{milda_mahal}} och {{salt}} och stek i ytterligare 1–2 min, tills väldoftande."
+      ],
+      "duration": 8,
+      "wait": 0,
+      "tags": [],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "kastrull_stor",
+          "ref": "kastrull_2",
+          "transition": "keep",
+          "after": "kramig_indisk_kycklingcurry__fried_chicken"
+        }
+      ],
+      "devNotes": [
+        "Ny ingrediens cauliflower_florets (HF Blomkålsbuketter typ cauliflower-florets), inte befintliga cauliflower (hel Blomkål som ska delas). 400 g vid både 3 och 4 portioner (200 g vid 2, 600 g vid 5 och 6). FLAG.",
+        "HF Ingefärapuré typ ginger-puree → ginger_paste (samma mappning som gochujangkyckling_risbadd). Curry on och Milda Mahal har redan blendId (curry_on, milda_mahal) — återanvända, ingen ny Spice Mix-flagga. Salt till grönsaker 1 tsk (samma vid 3).",
+        "5–6 min plus 1–2 min är hands-on fräs (duration 8, övre gräns). Sjudningen med vätska är en egen node så wait ligger på sista steget. Inte traktörpanna: rådatan namnger stor kastrull."
+      ]
+    },
+    {
+      "id": "kramig_indisk_kycklingcurry__simmered_sauce",
+      "name": "Sjud Currysås",
+      "outputName": "Sjuden currysås",
+      "inputs": [
+        {
+          "id": "kramig_indisk_kycklingcurry__fried_veg",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "coconut_milk",
+          "amount": 360,
+          "unit": "ml"
+        },
+        {
+          "id": "canned_tomatoes",
+          "amount": 390,
+          "unit": "g"
+        },
+        {
+          "id": "water",
+          "amount": 2,
+          "unit": "dl"
+        }
+      ],
+      "steps": [
+        "Tillsätt {{coconut_milk}}, {{canned_tomatoes}} och {{water}} till {{eq:kastrull_2|def}} med {{kramig_indisk_kycklingcurry__fried_veg}} och låt koka upp.",
+        "Sänk till medelvärme och sjud under lock i 10–12 min, tills grönsakerna mjuknat."
+      ],
+      "duration": 2,
+      "wait": 12,
+      "tags": [],
+      "heat": "medel",
+      "equipment": [
+        {
+          "type": "kastrull_stor",
+          "ref": "kastrull_2",
+          "lid": true,
+          "transition": "keep"
+        }
+      ],
+      "devNotes": [
+        "360 ml kokosmjölk + 390 g krossade tomater + 2 dl vatten ≈ 9,5 dl vätska plus grönsaker i stor kastrull (4 l). 10–12 min-sjuden äger wait (övre gräns)."
+      ]
+    },
+    {
+      "id": "kramig_indisk_kycklingcurry__blended_sauce",
+      "name": "Mixa Såsen",
+      "outputName": "Mixad currysås",
+      "inputs": [
+        {
+          "id": "kramig_indisk_kycklingcurry__simmered_sauce",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "butter",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        },
+        {
+          "id": "sugar",
+          "amount": 2,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Ta av {{eq:kastrull_2|def}} från värmen, tillsätt {{butter}}, {{salt}} och {{sugar}} och mixa {{kramig_indisk_kycklingcurry__simmered_sauce}} slät med {{eq:stavmixer_1}}."
+      ],
+      "duration": 3,
+      "wait": 0,
+      "tags": [],
+      "tips": [
+        "Du kan också mixa såsen i en vanlig mixer."
+      ],
+      "equipment": [
+        {
+          "type": "kastrull_stor",
+          "ref": "kastrull_2",
+          "transition": "keep",
+          "offHeat": true
+        },
+        {
+          "type": "stavmixer",
+          "ref": "stavmixer_1"
+        }
+      ],
+      "devNotes": [
+        "Socker till sås 2 tsk linjärt står i yields men nämns inte i stegen; tillsatt här tillsammans med smör och salt. Salt till sås 1 tsk (samma vid 3). Smör till sås 2 msk, ingen Ta fram (rådatan säger inte rumstempererat).",
+        "Stavmixer är förstahandsmetod i rådatan och mixar i kastrullen (ca 1,5–2 l sås). Vanlig mixer (kapacitet 1,5 l) nämns som alternativ och ligger bara i tipset."
+      ]
+    },
+    {
+      "id": "kramig_indisk_kycklingcurry__warmed_curry",
+      "name": "Värm Kyckling i Såsen",
+      "outputName": "Krämig indisk kycklingcurry",
+      "inputs": [
+        {
+          "id": "kramig_indisk_kycklingcurry__blended_sauce",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "kramig_indisk_kycklingcurry__fried_chicken",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Tillsätt {{kramig_indisk_kycklingcurry__fried_chicken}} till {{kramig_indisk_kycklingcurry__blended_sauce}} och värm på medelvärme i 1–2 min, eller tills genomvarmt."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [],
+      "heat": "medel",
+      "equipment": [
+        {
+          "type": "kastrull_stor",
+          "ref": "kastrull_2",
+          "transition": "keep"
+        }
+      ],
+      "devNotes": [
+        "1–2 min är hands-on uppvärmning (duration 2, övre gräns), inte en passiv wait. Egen node så att mixningen är av värmen och uppvärmningen har egen heat."
+      ]
+    },
+    {
+      "id": "kramig_indisk_kycklingcurry",
+      "name": "Krämig indisk kycklingcurry",
+      "outputName": "Krämig indisk kycklingcurry",
+      "inputs": [
+        {
+          "id": "kramig_indisk_kycklingcurry__rested_rice",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "kramig_indisk_kycklingcurry__warmed_curry",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "kramig_indisk_kycklingcurry__chopped_garnish",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{kramig_indisk_kycklingcurry__rested_rice}} och {{kramig_indisk_kycklingcurry__warmed_curry}} i {{eq:servering|pl}}.",
+        "Toppa med {{kramig_indisk_kycklingcurry__chopped_garnish}}."
+      ],
+      "duration": 3,
+      "tags": [
+        "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_djup_tallrik",
+          "ref": "servering",
+          "count": "portions"
+        }
+      ],
+      "devNotes": [
+        "HF totalTime PT25M och prepTime PT35M; riset är 10 min sjud + 10 min vila och såsen sjuder 10–12 min efter 5–6 + 1–2 min fräs, vilket inte ryms i 25 min även med parallellt arbete. Catalog totalMinutes satt till 35. FLAG.",
+        "Allergen dairy tillagd: smör till sås 2 msk. HF-kortet hade bara spår av mjölk. Jordnötter fanns redan. Kokosmjölk är inte mejeri."
+      ]
+    }
+  ]
+}

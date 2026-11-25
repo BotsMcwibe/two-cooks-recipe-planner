@@ -4,6 +4,11 @@
   "rawId": "64fb1e6771b62ce12834188d",
   "createdAt": 1791036851,
   "basePortions": 4,
+  "time": {
+    "totalMin": 20,
+    "activeMin": 19,
+    "computedFrom": "graph"
+  },
   "sharedPrep": [],
   "images": {
     "main": "assets/recipes/kramig_medelhavs_rakpasta/main.jpg",

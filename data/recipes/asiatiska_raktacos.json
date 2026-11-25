@@ -4,6 +4,11 @@
   "rawId": "6a71a469e8e5c2a7fd0dcfe2",
   "createdAt": 1791041462,
   "basePortions": 4,
+  "time": {
+    "totalMin": 24,
+    "activeMin": 24,
+    "computedFrom": "graph"
+  },
   "sharedPrep": [],
   "images": {
     "main": "assets/recipes/asiatiska_raktacos/main.jpg",

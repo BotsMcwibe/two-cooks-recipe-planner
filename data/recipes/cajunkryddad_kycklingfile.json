@@ -4,6 +4,11 @@
   "rawId": "6a4fb291c80ad488c9bd0581",
   "createdAt": 1791041990,
   "basePortions": 4,
+  "time": {
+    "totalMin": 57,
+    "activeMin": 35,
+    "computedFrom": "graph"
+  },
   "sharedPrep": [],
   "images": {
     "main": "assets/recipes/cajunkryddad_kycklingfile/main.jpg",
@@ -32,7 +37,7 @@
     }
   },
   "ratings": {
-    "average": 4.0,
+    "average": 4,
     "count": 2,
     "source": "hellofresh"
   },

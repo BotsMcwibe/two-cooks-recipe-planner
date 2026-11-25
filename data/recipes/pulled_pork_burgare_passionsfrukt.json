@@ -1,0 +1,438 @@
+{
+  "masterId": "pulled_pork_burgare_passionsfrukt",
+  "source": "hellofresh",
+  "rawId": "6a9e9299548a82de3e1a720f",
+  "createdAt": 1794425141,
+  "basePortions": 4,
+  "time": {
+    "totalMin": 54,
+    "activeMin": 29,
+    "computedFrom": "graph"
+  },
+  "images": {
+    "main": "assets/recipes/pulled_pork_burgare_passionsfrukt/main.jpg",
+    "byNode": {
+      "pulled_pork_burgare_passionsfrukt__pulled_pork_bbq": "assets/recipes/pulled_pork_burgare_passionsfrukt/steps/pulled_pork_bbq.jpg",
+      "pulled_pork_burgare_passionsfrukt__cabbage_slaw": "assets/recipes/pulled_pork_burgare_passionsfrukt/steps/cabbage_slaw.jpg",
+      "pulled_pork_burgare_passionsfrukt__passion_sauce": "assets/recipes/pulled_pork_burgare_passionsfrukt/steps/passion_sauce.jpg",
+      "pulled_pork_burgare_passionsfrukt": "assets/recipes/pulled_pork_burgare_passionsfrukt/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 738,
+    "perPortion": {
+      "energyKcal": 985,
+      "energyKj": 4122,
+      "fatG": 41.9,
+      "saturatedFatG": 9.9,
+      "carbsG": 116.7,
+      "sugarsG": 31.7,
+      "proteinG": 38.9,
+      "saltG": 6.4
+    }
+  },
+  "nodes": [
+    {
+      "id": "pulled_pork_burgare_passionsfrukt__preheated_oven_240",
+      "name": "Värm ugnen",
+      "outputName": "Förvärmd ugn (240°C)",
+      "inputs": [],
+      "steps": [
+        "Värm {{eq:ugn|def}} till 240°C, eller 220°C varmluft."
+      ],
+      "duration": 1,
+      "wait": 12,
+      "tags": [
+        "no-timer",
+        "resource"
+      ],
+      "tips": [
+        "Ugnen tar vanligtvis 10–15 minuter att värmas upp."
+      ],
+      "oven": {
+        "temp": 240,
+        "fanTemp": 220
+      },
+      "devNotes": [
+        "HF anger 240°C/220°C varmluft — lokal ugnsnode, inte preheated_oven_220."
+      ]
+    },
+    {
+      "id": "pulled_pork_burgare_passionsfrukt__cut_roots",
+      "name": "Skär Potatis och Palsternacka",
+      "outputName": "Potatis- och palsternacksklyftor",
+      "inputs": [
+        {
+          "id": "potato",
+          "amount": 1000,
+          "unit": "g"
+        },
+        {
+          "id": "parsnip",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skär {{potato}} och {{parsnip}} (oskalade) i 2 cm breda klyftor."
+      ],
+      "duration": 6,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "HF Potatis typ organic-potatoes → potato, 1000 g vid 4 portioner (500/1000/1500 linjärt 2/4/6; 800 g vid 3, 1300 g vid 5). Palsternacka 1 st vid 3 och 4 (0,5 vid 2, 1,5 vid 6)."
+      ]
+    },
+    {
+      "id": "pulled_pork_burgare_passionsfrukt__roasted_veg",
+      "name": "Rosta Rotfrukter",
+      "outputName": "Rostade rotfrukter",
+      "inputs": [
+        {
+          "id": "pulled_pork_burgare_passionsfrukt__cut_roots",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Placera {{pulled_pork_burgare_passionsfrukt__cut_roots}} på {{eq:plat_1}} med bakplåtspapper.",
+        "Blanda med {{olive_oil}}, {{salt}} och en nypa {{pepper}}.",
+        "Rosta i {{eq:ugn|def}} i 25–35 min, eller tills gyllene."
+      ],
+      "duration": 3,
+      "wait": 35,
+      "tags": [],
+      "tips": [
+        "Använd fler plåtar om det blir för trångt."
+      ],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "pulled_pork_burgare_passionsfrukt__preheated_oven_240",
+          "slots": 1,
+          "temp": 240,
+          "fanTemp": 220
+        },
+        {
+          "type": "plat",
+          "ref": "plat_1",
+          "liner": "bakplatspapper"
+        }
+      ],
+      "devNotes": [
+        "Olivolja till rotfrukter saknas i HF:s lista (bara olja till slaw), därför standard 1 skvätt. Salt till potatis 1 tsk (samma vid 3).",
+        "1000 g potatis ligger på plåtens oneLayerG; plus 1 palsternacka (~120 g) blir trångt. En plåt enligt rådatan, med tipset om fler plåtar. FLAG."
+      ]
+    },
+    {
+      "id": "pulled_pork_burgare_passionsfrukt__simmered_pork",
+      "name": "Sjud Pulled Pork",
+      "outputName": "Sjuden pulled pork",
+      "inputs": [
+        {
+          "id": "pulled_pork",
+          "amount": 600,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Placera {{pulled_pork}} och sky från förpackningen i {{eq:kastrull_1}}.",
+        "Hetta upp {{eq:kastrull_1|def}} på medelvärme och låt sjuda under lock i 10–12 min."
+      ],
+      "duration": 2,
+      "wait": 12,
+      "tags": [],
+      "heat": "medel",
+      "equipment": [
+        {
+          "type": "kastrull_medelstor",
+          "ref": "kastrull_1",
+          "sizeSource": "inferred",
+          "lid": true
+        }
+      ],
+      "devNotes": [
+        "Återanvänder pulled_pork som i hoisin_pulled_pork_bao och pulled_pork_taquitos (ingen rawAnimal; färdiglagat). 600 g vid 3 och 4 portioner (300 g vid 2, 900 g vid 6) — linjärt 2/4/6. Sky från förpackningen är inte en separat ingrediens.",
+        "Rådatan säger bara 'en kastrull med lock'. 600 g kött + sky ≈ 0,7–0,8 l → kastrull_medelstor (sizeSource inferred), samma som hoisin_pulled_pork_bao. Inte traktörpanna: ingen stekning, rådatan namnger kastrull."
+      ]
+    },
+    {
+      "id": "pulled_pork_burgare_passionsfrukt__pulled_pork_bbq",
+      "name": "Rör Ner BBQ-sås och Riv Köttet",
+      "outputName": "Pulled pork i BBQ-sås",
+      "inputs": [
+        {
+          "id": "pulled_pork_burgare_passionsfrukt__simmered_pork",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "bbq_sauce",
+          "amount": 120,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Tillsätt {{bbq_sauce}} till {{pulled_pork_burgare_passionsfrukt__simmered_pork}} i {{eq:kastrull_1|def}}.",
+        "Använd 2 gafflar för att riva tills köttet är helt strimlat."
+      ],
+      "duration": 3,
+      "wait": 0,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "kastrull_medelstor",
+          "ref": "kastrull_1",
+          "sizeSource": "inferred",
+          "transition": "keep",
+          "offHeat": true,
+          "after": "pulled_pork_burgare_passionsfrukt__simmered_pork"
+        }
+      ],
+      "devNotes": [
+        "HF BBQ-sås → bbq_sauce, 120 g vid 3 och 4 portioner (60 g vid 2, 180 g vid 6). Egen node så att sjudningens wait ligger på sista steget."
+      ]
+    },
+    {
+      "id": "pulled_pork_burgare_passionsfrukt__cabbage_slaw",
+      "name": "Blanda Citrus- och Kålsallad",
+      "outputName": "Citrus- och kålsallad",
+      "inputs": [
+        {
+          "id": "shredded_red_cabbage",
+          "amount": 150,
+          "unit": "g"
+        },
+        {
+          "id": "carrot",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "spring_onion",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "lime",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Riv {{carrot}} grovt.",
+        "Skär {{spring_onion}} i tunna skivor.",
+        "Halvera {{lime}}.",
+        "Blanda {{shredded_red_cabbage}}, morot, salladslök, en generös skvätt saft från {{lime}}, {{olive_oil}}, {{salt}} och en nypa {{pepper}} i {{eq:skal_1}}."
+      ],
+      "duration": 6,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skal_stor",
+          "ref": "skal_1"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true,
+          "after": "pulled_pork_burgare_passionsfrukt__cut_roots"
+        }
+      ],
+      "devNotes": [
+        "HF Rödkål, förskuren → shredded_red_cabbage (inte red_cabbage), 150 g vid 3 och 4 portioner (75 g vid 2, 225 g vid 6). Citrusfrukt typ lime → lime. 1 st vid 2, 3 och 4 portioner, 2 st vid 6 — förpackning. Författad som 1 st vid 4 portioner med linjär skalning. En generös skvätt saft går i salladen; halvorna serveras inte.",
+        "Salladslök 2 st vid 3 och 4 (dubbletten 686bcdbe700c002ea15078f6 har 4 st vid 4 — inte konverterad). FLAG. Olja till slaw 2 msk, salt till slaw 0,5 tsk (samma vid 3). Rådatan stavade 'salladlsök'."
+      ]
+    },
+    {
+      "id": "pulled_pork_burgare_passionsfrukt__passion_sauce",
+      "name": "Laga Passionsfruktsås",
+      "outputName": "Passionsfruktsås",
+      "inputs": [
+        {
+          "id": "passion_fruit",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "sugar",
+          "amount": 2,
+          "unit": "tsk"
+        },
+        {
+          "id": "water",
+          "amount": 1,
+          "unit": "dl"
+        }
+      ],
+      "steps": [
+        "Halvera {{passion_fruit}} och gröp ur kärnor och fruktkött i {{eq:kastrull_2}}.",
+        "Tillsätt {{sugar}} och {{water}} och koka upp. Sjud i 2–3 min, tills tjocknat. Lägg över i {{eq:skal_2}}."
+      ],
+      "duration": 3,
+      "wait": 3,
+      "tags": [],
+      "heat": "medel",
+      "equipment": [
+        {
+          "type": "kastrull_liten",
+          "ref": "kastrull_2"
+        },
+        {
+          "type": "skal_liten",
+          "ref": "skal_2"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true,
+          "after": "pulled_pork_burgare_passionsfrukt__cabbage_slaw"
+        }
+      ],
+      "devNotes": [
+        "Ny ingrediens passion_fruit (Passionsfrukt), 2 st vid 3 och 4 portioner (1 st vid 2, 3 st vid 6). Socker till sås 2 tsk och vatten till sås 1 dl (samma vid 3). Rådatan säger liten kastrull; ca 1 dl plus fruktkött ryms. Såsen läggs över i en liten skål enligt rådatan och stegfotot."
+      ]
+    },
+    {
+      "id": "pulled_pork_burgare_passionsfrukt__warmed_buns",
+      "name": "Värm Briochebröd",
+      "outputName": "Uppvärmda briochebröd",
+      "inputs": [
+        {
+          "id": "brioche_bun",
+          "amount": 4,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Dela {{brioche_bun}} på mitten.",
+        "Placera bröden direkt på {{eq:galler_1|def}} och värm i {{eq:ugn|def}} i 1–2 min, eller tills uppvärmda."
+      ],
+      "duration": 2,
+      "wait": 2,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "pulled_pork_burgare_passionsfrukt__preheated_oven_240",
+          "slots": 1,
+          "temp": 240,
+          "fanTemp": 220
+        },
+        {
+          "type": "galler",
+          "ref": "galler_1"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true,
+          "after": "pulled_pork_burgare_passionsfrukt__passion_sauce"
+        }
+      ],
+      "devNotes": [
+        "HF Briochebröd → brioche_bun, 4 st (1 per portion). Rådatan säger 'under tiden' (under såsen / slutet av rotfruktsrostningen) och direkt på ugnsgallret. Plåt och galler kan överlappa sista 1–2 min och tar 1 ugnsplats var (standardkök 2 plåtar). Ingen timing-only-edge för att tvinga in 1-plåt (§4.6). FLAG för --trays 1."
+      ]
+    },
+    {
+      "id": "pulled_pork_burgare_passionsfrukt",
+      "name": "Pulled pork-burgare och passionsfruktsås",
+      "outputName": "Pulled pork-burgare och passionsfruktsås",
+      "inputs": [
+        {
+          "id": "pulled_pork_burgare_passionsfrukt__warmed_buns",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "pulled_pork_burgare_passionsfrukt__pulled_pork_bbq",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "pulled_pork_burgare_passionsfrukt__passion_sauce",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "pulled_pork_burgare_passionsfrukt__cabbage_slaw",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "pulled_pork_burgare_passionsfrukt__roasted_veg",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "mayonnaise",
+          "amount": 50,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Fyll {{pulled_pork_burgare_passionsfrukt__warmed_buns}} med {{pulled_pork_burgare_passionsfrukt__pulled_pork_bbq}}, {{pulled_pork_burgare_passionsfrukt__passion_sauce}} och {{pulled_pork_burgare_passionsfrukt__cabbage_slaw}}.",
+        "Servera med {{pulled_pork_burgare_passionsfrukt__roasted_veg}} och {{mayonnaise}} på {{eq:servering|pl}}."
+      ],
+      "duration": 3,
+      "tags": [
+        "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_tallrik",
+          "ref": "servering",
+          "count": "portions"
+        }
+      ],
+      "devNotes": [
+        "Kostfiber 45 g slängd som orimlig. 985 kcal och övrig näring behållen. HF 'Majonnas' → mayonnaise; äggallergen fanns redan i HF-listan.",
+        "clonedFrom 671a224dfeb5bb81ef3adf91 har ingen raw-fil och ingen master. Dubbletterna 686bcdbe700c002ea15078f6 och 6a7c83a46a29680aee4ff11d (samma namn, samma clonedFrom) konverterades inte. hoisin_pulled_pork_bao och pulled_pork_taquitos är andra rätter och är orörda.",
+        "HF totalTime PT20M är orimligt mot 25–35 min ugn; prepTime PT30M. totalMinutes 40."
+      ]
+    }
+  ]
+}

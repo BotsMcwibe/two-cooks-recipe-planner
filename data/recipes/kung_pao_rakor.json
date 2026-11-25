@@ -1,0 +1,350 @@
+{
+  "masterId": "kung_pao_rakor",
+  "source": "hellofresh",
+  "rawId": "6a915db74f9a309bb69cd9d4",
+  "createdAt": 1792603981,
+  "basePortions": 4,
+  "time": {
+    "totalMin": 22,
+    "activeMin": 20,
+    "computedFrom": "graph"
+  },
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/kung_pao_rakor/main.jpg",
+    "byNode": {
+      "kung_pao_rakor__fried_shrimp": "assets/recipes/kung_pao_rakor/steps/fried_shrimp.jpg",
+      "kung_pao_rakor__sauce": "assets/recipes/kung_pao_rakor/steps/sauce.jpg",
+      "kung_pao_rakor__kung_pao": "assets/recipes/kung_pao_rakor/steps/kung_pao.jpg",
+      "kung_pao_rakor": "assets/recipes/kung_pao_rakor/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 511,
+    "perPortion": {
+      "energyKcal": 593,
+      "energyKj": 2482,
+      "fatG": 11.1,
+      "saturatedFatG": 1.9,
+      "carbsG": 95.5,
+      "sugarsG": 21.2,
+      "fiberG": 6.6,
+      "proteinG": 33.6,
+      "saltG": 7.5
+    }
+  },
+  "nodes": [
+    {
+      "id": "kung_pao_rakor__rice",
+      "name": "Koka Ris",
+      "outputName": "Kokt jasminris",
+      "inputs": [
+        {
+          "id": "water",
+          "amount": 6,
+          "unit": "dl"
+        },
+        {
+          "id": "jasmine_rice",
+          "amount": 300,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Koka upp {{water}} i {{eq:kastrull_1}}.",
+        "Rör i {{jasmine_rice}} och {{salt}}, sänk till medellåg värme och sjud under lock i 14 min. Ta sedan av {{eq:kastrull_1|def}} från värmen."
+      ],
+      "duration": 2,
+      "wait": 14,
+      "tags": [],
+      "heat": "hög",
+      "stepHeat": {
+        "1": "medellåg"
+      },
+      "heatSource": "inferred",
+      "tips": [
+        "Riset ska ångkoka, så tjuvkika inte!"
+      ],
+      "equipment": [
+        {
+          "type": "kastrull_medelstor",
+          "ref": "kastrull_1",
+          "lid": true
+        }
+      ],
+      "devNotes": [
+        "Bara 'koka upp' (hög) är inferred; medellåg står i rådatan. 'Ta av från värmen' är inlagt i sjudsteget så att timern ligger på sista steget (§4.1 regel 4). Vatten 6 dl, salt till ris 1 tsk (samma vid 3)."
+      ]
+    },
+    {
+      "id": "kung_pao_rakor__fried_shrimp",
+      "name": "Stek Räkor",
+      "outputName": "Stekta kungsräkor",
+      "inputs": [
+        {
+          "id": "king_prawns",
+          "amount": 640,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        }
+      ],
+      "steps": [
+        "Krydda {{king_prawns}} med {{salt}}.",
+        "Hetta upp {{olive_oil}} i {{eq:traktorpanna_1}} på medelhög värme.",
+        "Stek räkorna i 1–2 min per sida, eller tills gyllene och genomstekta. Ställ åt sidan på {{eq:tallrik_1}}."
+      ],
+      "duration": 5,
+      "wait": 0,
+      "tags": [],
+      "heat": "medelhög",
+      "tips": [
+        "Räkorna är färdiga när de är rosa utanpå och ogenomskinliga i mitten."
+      ],
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred"
+        },
+        {
+          "type": "tallrik",
+          "ref": "tallrik_1"
+        }
+      ],
+      "devNotes": [
+        "HF Kungsräkor → king_prawns (rawAnimal shellfish). Räkorna saltas och steks hela; ingen skärning, därför ingen skarbrada_ra. Kungsräkor 320 g vid 3 men 640 g vid 4 (HF-ojämnhet); 4-portionsvärdet används. Salt till räkor 0,5 tsk (samma vid 3). Olivoljan har ingen egen rad → 1 skvätt.",
+        "Rådatan säger stor stekpanna, men samma panna (urtorkad) tar sedan såsen med 3,6 dl vatten + ca 2 dl såser som sjuds tills den tjocknar (≈5,5 dl vätska, ≈1,5 l totalt med grönsaker och räkor) — inte en skvätt glaze. Därför traktörpanna (typeSource inferred) i hela kedjan."
+      ]
+    },
+    {
+      "id": "kung_pao_rakor__sauce",
+      "name": "Blanda Kung Pao-sås",
+      "outputName": "Kung pao-sås",
+      "inputs": [
+        {
+          "id": "water",
+          "amount": 3.6,
+          "unit": "dl"
+        },
+        {
+          "id": "cornstarch",
+          "amount": 16,
+          "unit": "g"
+        },
+        {
+          "id": "sweet_chili_sauce",
+          "amount": 80,
+          "unit": "g"
+        },
+        {
+          "id": "hoisin_sauce",
+          "amount": 60,
+          "unit": "g"
+        },
+        {
+          "id": "soy_sauce",
+          "amount": 40,
+          "unit": "ml"
+        },
+        {
+          "id": "sriracha",
+          "amount": 16,
+          "unit": "ml"
+        }
+      ],
+      "steps": [
+        "Blanda {{water}} och {{cornstarch}} i {{eq:skal_liten}} till en jämn smet.",
+        "Rör ner {{sweet_chili_sauce}}, {{hoisin_sauce}}, {{soy_sauce}} och {{sriracha}} och ställ åt sidan."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Skippa sriracha eller använd mindre om du inte tycker om stark mat."
+      ],
+      "equipment": [
+        {
+          "type": "skal_liten"
+        }
+      ],
+      "devNotes": [
+        "Vatten till sås: HF 2 dl vid 2, 3 dl vid 3 och 3,6 dl vid 4 portioner (inte linjärt); 4-portionsvärdet 3,6 dl används. FLAG. Ny ingrediens cornstarch (Majsstärkelse). Sriracha, hoisin, soja och sweet chili samma vid 3 och 4."
+      ]
+    },
+    {
+      "id": "kung_pao_rakor__cut_veg",
+      "name": "Skär Paprika och Salladslök",
+      "outputName": "Paprikastrimlor och skivad salladslök",
+      "inputs": [
+        {
+          "id": "paprika",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "spring_onion",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skär {{paprika}} i 1 cm tunna strimlor.",
+        "Skär {{spring_onion}} i tunna skivor."
+      ],
+      "duration": 4,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "HF Paprika, grön → paprika (färg ej egen id). FLAG. Båda går till samma stekning."
+      ]
+    },
+    {
+      "id": "kung_pao_rakor__fried_veg",
+      "name": "Stek Grönsaker",
+      "outputName": "Stekta grönsaker",
+      "inputs": [
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "msk"
+        },
+        {
+          "id": "kung_pao_rakor__cut_veg",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "wok_mix",
+          "amount": 400,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Torka ur {{eq:traktorpanna_1|def}}. Hetta upp {{olive_oil}} i den på hög värme.",
+        "Stek {{kung_pao_rakor__cut_veg}}, {{wok_mix}} och {{salt}} i 2–3 min, eller tills mjukt."
+      ],
+      "duration": 4,
+      "wait": 0,
+      "tags": [],
+      "heat": "hög",
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred",
+          "transition": "wipe",
+          "after": "kung_pao_rakor__fried_shrimp"
+        }
+      ],
+      "devNotes": [
+        "HF Thai wokmix → wok_mix. FLAG. Olja till stekning 1 msk, salt till grönsaker 0,5 tsk (samma vid 3). Samma panna som räkorna: after är resursordning (räkorna kommer tillbaka i såsen)."
+      ]
+    },
+    {
+      "id": "kung_pao_rakor__kung_pao",
+      "name": "Sjud Kung Pao",
+      "outputName": "Kung pao-räkor",
+      "inputs": [
+        {
+          "id": "kung_pao_rakor__fried_veg",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "kung_pao_rakor__sauce",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "kung_pao_rakor__fried_shrimp",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Tillsätt {{kung_pao_rakor__sauce}} och {{kung_pao_rakor__fried_shrimp}} till {{kung_pao_rakor__fried_veg}} och sjud i 1–2 min, eller tills såsen tjocknar."
+      ],
+      "duration": 1,
+      "wait": 2,
+      "tags": [],
+      "heat": "medellåg",
+      "heatSource": "inferred",
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred",
+          "transition": "keep"
+        }
+      ]
+    },
+    {
+      "id": "kung_pao_rakor",
+      "name": "Kinesiska kung pao-räkor",
+      "outputName": "Kinesiska kung pao-räkor",
+      "inputs": [
+        {
+          "id": "kung_pao_rakor__rice",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "kung_pao_rakor__kung_pao",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "salted_peanuts",
+          "amount": 40,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{kung_pao_rakor__rice}} och {{kung_pao_rakor__kung_pao}} på {{eq:servering|pl}}.",
+        "Strö över {{salted_peanuts}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_tallrik",
+          "ref": "servering",
+          "count": "portions"
+        }
+      ]
+    }
+  ]
+}

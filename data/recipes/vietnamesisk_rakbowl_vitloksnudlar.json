@@ -4,6 +4,11 @@
   "rawId": "66e9435b00a3edabf7af994c",
   "createdAt": 1791038018,
   "basePortions": 4,
+  "time": {
+    "totalMin": 38,
+    "activeMin": 38,
+    "computedFrom": "graph"
+  },
   "sharedPrep": [],
   "images": {
     "main": "assets/recipes/vietnamesisk_rakbowl_vitloksnudlar/main.jpg",

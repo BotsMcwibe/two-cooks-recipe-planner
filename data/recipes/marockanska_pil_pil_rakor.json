@@ -1,0 +1,471 @@
+{
+  "masterId": "marockanska_pil_pil_rakor",
+  "source": "hellofresh",
+  "rawId": "6a9e92a256a4cfbb9638f4b3",
+  "createdAt": 1794422243,
+  "basePortions": 4,
+  "time": {
+    "totalMin": 35,
+    "activeMin": 26,
+    "computedFrom": "graph"
+  },
+  "images": {
+    "main": "assets/recipes/marockanska_pil_pil_rakor/main.jpg",
+    "byNode": {
+      "marockanska_pil_pil_rakor__chopped_aromatics": "assets/recipes/marockanska_pil_pil_rakor/steps/chopped_aromatics.jpg",
+      "marockanska_pil_pil_rakor__fried_veg": "assets/recipes/marockanska_pil_pil_rakor/steps/fried_veg.jpg",
+      "marockanska_pil_pil_rakor__simmered_rice": "assets/recipes/marockanska_pil_pil_rakor/steps/simmered_rice.jpg",
+      "marockanska_pil_pil_rakor__fried_shrimp": "assets/recipes/marockanska_pil_pil_rakor/steps/fried_shrimp.jpg",
+      "marockanska_pil_pil_rakor__pil_pil_sauce": "assets/recipes/marockanska_pil_pil_rakor/steps/pil_pil_sauce.jpg",
+      "marockanska_pil_pil_rakor": "assets/recipes/marockanska_pil_pil_rakor/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 731,
+    "perPortion": {
+      "energyKcal": 571,
+      "energyKj": 2390,
+      "fatG": 9.5,
+      "saturatedFatG": 1.6,
+      "carbsG": 92.5,
+      "sugarsG": 24.8,
+      "fiberG": 10.5,
+      "proteinG": 29.2,
+      "saltG": 5.8
+    }
+  },
+  "nodes": [
+    {
+      "id": "marockanska_pil_pil_rakor__chopped_aromatics",
+      "name": "Hacka Vitlök och Lök",
+      "outputName": "Hackad vitlök och skivad lök",
+      "inputs": [
+        {
+          "id": "garlic",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "onion",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Finhacka eller pressa {{garlic}}.",
+        "Halvera och skär {{onion}} i tunna skivor."
+      ],
+      "duration": 4,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "HF Lök har typ onion → onion (gul lök). Hälften går till riset och hälften till såsen, därför en prepnode som delas 0,5 + 0,5."
+      ]
+    },
+    {
+      "id": "marockanska_pil_pil_rakor__diced_paprika",
+      "name": "Tärna Paprika",
+      "outputName": "Tärnad paprika",
+      "inputs": [
+        {
+          "id": "paprika",
+          "amount": 4,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Tärna {{paprika}} i 1 cm stora bitar."
+      ],
+      "duration": 4,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true,
+          "after": "marockanska_pil_pil_rakor__chopped_aromatics"
+        }
+      ]
+    },
+    {
+      "id": "marockanska_pil_pil_rakor__chopped_tomato",
+      "name": "Hacka Tomat",
+      "outputName": "Grovhackad tomat",
+      "inputs": [
+        {
+          "id": "tomato",
+          "amount": 4,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Grovhacka {{tomato}}."
+      ],
+      "duration": 3,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true,
+          "after": "marockanska_pil_pil_rakor__diced_paprika"
+        }
+      ],
+      "devNotes": [
+        "HF-typ organic tomatoes → tomato."
+      ]
+    },
+    {
+      "id": "marockanska_pil_pil_rakor__fried_veg",
+      "name": "Stek Lök och Paprika",
+      "outputName": "Stekt lök och paprika",
+      "inputs": [
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "msk"
+        },
+        {
+          "id": "marockanska_pil_pil_rakor__chopped_aromatics",
+          "amount": 0.5,
+          "unit": "st"
+        },
+        {
+          "id": "smoked_paprika",
+          "amount": 4,
+          "unit": "g"
+        },
+        {
+          "id": "marockanska_pil_pil_rakor__diced_paprika",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i {{eq:kastrull_1}} på medelhög värme.",
+        "Stek {{marockanska_pil_pil_rakor__chopped_aromatics}} (hälften), hälften av det rökta paprikapulvret ({{smoked_paprika}}) och {{marockanska_pil_pil_rakor__diced_paprika}} i 6–8 min, eller tills grönsakerna börjar bli brynta."
+      ],
+      "duration": 2,
+      "wait": 8,
+      "tags": [],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "kastrull_stor",
+          "ref": "kastrull_1"
+        }
+      ],
+      "devNotes": [
+        "Rådatan säger stor kastrull (behållen, inte traktörpanna). Olja till stekning 2 msk totalt: 1 msk här ('hälften') och 1 msk i såspannan. Salt till ris och vatten kommer i nästa nod."
+      ]
+    },
+    {
+      "id": "marockanska_pil_pil_rakor__simmered_rice",
+      "name": "Koka Kryddris",
+      "outputName": "Marockanskt kryddris",
+      "inputs": [
+        {
+          "id": "marockanska_pil_pil_rakor__fried_veg",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "basmati_rice",
+          "amount": 300,
+          "unit": "g"
+        },
+        {
+          "id": "vegetable_bouillon",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        },
+        {
+          "id": "water",
+          "amount": 6,
+          "unit": "dl"
+        }
+      ],
+      "steps": [
+        "Tillsätt {{basmati_rice}} till {{marockanska_pil_pil_rakor__fried_veg}} i {{eq:kastrull_1|def}} och stek i 1 min, tills riset blir genomskinligt.",
+        "Tillsätt {{vegetable_bouillon}}, {{salt}} och {{water}}. Koka upp, sänk till medelvärme och sjud under lock i 10–12 min, tills vattnet är helt absorberat och riset är färdigkokt."
+      ],
+      "duration": 2,
+      "wait": 12,
+      "tags": [],
+      "heat": "medelhög",
+      "stepHeat": {
+        "1": "medel"
+      },
+      "equipment": [
+        {
+          "type": "kastrull_stor",
+          "ref": "kastrull_1",
+          "transition": "keep",
+          "lid": true
+        }
+      ],
+      "devNotes": [
+        "HF Buljong (vegetable-stock) → vegetable_bouillon. Vatten till ris 6 dl, salt till ris 1 tsk (samma vid 3). 1-minutersfräsningen är aktiv tid i duration; wait ligger på sjudningen."
+      ]
+    },
+    {
+      "id": "marockanska_pil_pil_rakor__chopped_parsley",
+      "name": "Hacka Persilja",
+      "outputName": "Hackad persilja",
+      "inputs": [
+        {
+          "id": "parsley",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Grovhacka {{parsley}}."
+      ],
+      "duration": 1,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true,
+          "after": "marockanska_pil_pil_rakor__chopped_tomato"
+        }
+      ],
+      "devNotes": [
+        "HF Bladpersilja 1 st vid 2 och 4 portioner, 2 st vid 6 — förpackning. Författad som 1 st vid 4 portioner med linjär skalning. Hälften i såsen, hälften som garnering."
+      ]
+    },
+    {
+      "id": "marockanska_pil_pil_rakor__fried_shrimp",
+      "name": "Stek Räkor",
+      "outputName": "Stekta räkor",
+      "inputs": [
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "king_prawns",
+          "amount": 480,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i {{eq:traktorpanna_1}} på medelhög värme.",
+        "Tillsätt {{king_prawns}} och krydda med {{salt}}. Stek i 1–2 min per sida, eller tills gyllene och genomstekta. Ställ åt sidan på {{eq:tallrik_1}}."
+      ],
+      "duration": 5,
+      "wait": 0,
+      "tags": [],
+      "heat": "medelhög",
+      "tips": [
+        "Räkorna är färdiga när de är rosa utanpå och ogenomskinliga i mitten."
+      ],
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred"
+        },
+        {
+          "type": "tallrik",
+          "ref": "tallrik_1"
+        }
+      ],
+      "devNotes": [
+        "HF Kungsräkor (king-prawns) → king_prawns (rawAnimal shellfish). Räkorna saltas och steks hela; ingen skärning, därför ingen skarbrada_ra. Salt till räkor 0,5 tsk (samma vid 3).",
+        "Rådatan säger stor stekpanna, men samma panna (utan att torkas ur) tar sedan 780 g passata som sjuds 4–7 min → traktörpanna, typeSource inferred, i hela kedjan.",
+        "Oljan till räkorna är 'en skvätt' i texten, utöver de 2 msk som delas mellan kastrull och sås. FLAG.",
+        "Stekning per sida är hands-on, därför duration 5 och ingen wait (samma mönster som kung_pao_rakor)."
+      ]
+    },
+    {
+      "id": "marockanska_pil_pil_rakor__sauce_base",
+      "name": "Stek Tomatsåsbas",
+      "outputName": "Stekt tomat- och vitlöksbas",
+      "inputs": [
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "msk"
+        },
+        {
+          "id": "marockanska_pil_pil_rakor__chopped_aromatics",
+          "amount": 0.5,
+          "unit": "st"
+        },
+        {
+          "id": "smoked_paprika",
+          "amount": 4,
+          "unit": "g"
+        },
+        {
+          "id": "marockanska_pil_pil_rakor__chopped_tomato",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "sugar",
+          "amount": 1,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i samma {{eq:traktorpanna_1|noun}} (torka inte ur den först) på medelhög värme.",
+        "Stek resterande {{marockanska_pil_pil_rakor__chopped_aromatics}}, resten av det rökta paprikapulvret ({{smoked_paprika}}), {{marockanska_pil_pil_rakor__chopped_tomato}} och {{sugar}} i 3–4 min."
+      ],
+      "duration": 1,
+      "wait": 4,
+      "tags": [],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred",
+          "transition": "keep",
+          "after": "marockanska_pil_pil_rakor__fried_shrimp"
+        }
+      ],
+      "devNotes": [
+        "Socker till sås 1 tsk (samma vid 3). after är resursordning eftersom räkorna inte är input förrän i en senare nod."
+      ]
+    },
+    {
+      "id": "marockanska_pil_pil_rakor__pil_pil_sauce",
+      "name": "Sjud Pil Pil-sås",
+      "outputName": "Pil pil-sås",
+      "inputs": [
+        {
+          "id": "marockanska_pil_pil_rakor__sauce_base",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "marockanska_pil_pil_rakor__chopped_parsley",
+          "amount": 0.5,
+          "unit": "st"
+        },
+        {
+          "id": "passata",
+          "amount": 780,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Tillsätt hälften av {{marockanska_pil_pil_rakor__chopped_parsley}} och {{passata}} till {{marockanska_pil_pil_rakor__sauce_base}} i {{eq:traktorpanna_1|def}}. Sänk till medelvärme och sjud i 4–7 min, tills tjocknat."
+      ],
+      "duration": 1,
+      "wait": 7,
+      "tags": [],
+      "heat": "medel",
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred",
+          "transition": "keep"
+        }
+      ]
+    },
+    {
+      "id": "marockanska_pil_pil_rakor__shrimp_in_sauce",
+      "name": "Vänd Ner Räkor",
+      "outputName": "Pil pil-räkor",
+      "inputs": [
+        {
+          "id": "marockanska_pil_pil_rakor__pil_pil_sauce",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "marockanska_pil_pil_rakor__fried_shrimp",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Vänd ner {{marockanska_pil_pil_rakor__fried_shrimp}} i {{marockanska_pil_pil_rakor__pil_pil_sauce}} i {{eq:traktorpanna_1|def}} precis innan servering."
+      ],
+      "duration": 1,
+      "wait": 0,
+      "tags": [],
+      "heat": "medel",
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred",
+          "transition": "keep"
+        }
+      ]
+    },
+    {
+      "id": "marockanska_pil_pil_rakor",
+      "name": "Marockanska pil pil-räkor",
+      "outputName": "Marockanska pil pil-räkor",
+      "inputs": [
+        {
+          "id": "marockanska_pil_pil_rakor__simmered_rice",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "marockanska_pil_pil_rakor__shrimp_in_sauce",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "marockanska_pil_pil_rakor__chopped_parsley",
+          "amount": 0.5,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{marockanska_pil_pil_rakor__simmered_rice}} och {{marockanska_pil_pil_rakor__shrimp_in_sauce}} i {{eq:servering|pl}} och garnera med resterande {{marockanska_pil_pil_rakor__chopped_parsley}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_djup_tallrik",
+          "ref": "servering",
+          "count": "portions"
+        }
+      ]
+    }
+  ]
+}

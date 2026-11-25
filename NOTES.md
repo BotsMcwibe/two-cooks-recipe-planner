@@ -52,7 +52,7 @@ Legacy `js/data/recipes/*.js` RecipeBuilder modules are **not** imported by the 
      ]
    }
    ```
-2. Add a catalog entry in `data/catalog.json` (`id`, `name`, `basePortions`, optional `tags`, `cuisine`, `allergens`, `difficulty`, `totalMinutes`, `searchText`, `image`).
+2. Add a catalog entry in `data/catalog.json` (`id`, `name`, `basePortions`, optional `tags`, `cuisine`, `allergens`, `difficulty`, `totalMinutes`, `searchText`, `image`). `totalMinutes` and the master `time` block are written by `node scripts/compute-times.mjs <masterId>` from the graph, never copied from the source site.
 3. Reuse shared packs under `data/prep/` when prep is identical; otherwise keep nodes local with namespaced ids.
 4. Add any new base ingredients to `data/ingredients.json`.
 5. Run `node scripts/validate-recipes.mjs`.

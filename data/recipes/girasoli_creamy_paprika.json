@@ -4,6 +4,11 @@
   "rawId": "6a689121d5e939e3a7ce577c",
   "createdAt": 1790795941,
   "basePortions": 4,
+  "time": {
+    "totalMin": 19,
+    "activeMin": 17,
+    "computedFrom": "graph"
+  },
   "sharedPrep": [],
   "images": {
     "main": "assets/recipes/girasoli_creamy_paprika/main.jpg",

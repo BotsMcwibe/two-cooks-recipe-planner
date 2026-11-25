@@ -1,0 +1,369 @@
+{
+  "masterId": "japansk_teriyaki_tofu_wok",
+  "source": "hellofresh",
+  "rawId": "6a9e92a2790f7867027dc015",
+  "createdAt": 1794421802,
+  "basePortions": 4,
+  "time": {
+    "totalMin": 29,
+    "activeMin": 20,
+    "computedFrom": "graph"
+  },
+  "images": {
+    "main": "assets/recipes/japansk_teriyaki_tofu_wok/main.jpg",
+    "byNode": {
+      "japansk_teriyaki_tofu_wok__simmered_rice": "assets/recipes/japansk_teriyaki_tofu_wok/steps/simmered_rice.jpg",
+      "japansk_teriyaki_tofu_wok__floured_tofu": "assets/recipes/japansk_teriyaki_tofu_wok/steps/floured_tofu.jpg",
+      "japansk_teriyaki_tofu_wok__fried_tofu": "assets/recipes/japansk_teriyaki_tofu_wok/steps/fried_tofu.jpg",
+      "japansk_teriyaki_tofu_wok": "assets/recipes/japansk_teriyaki_tofu_wok/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 452,
+    "perPortion": {
+      "energyKcal": 665,
+      "energyKj": 2781,
+      "fatG": 25.1,
+      "saturatedFatG": 3.7,
+      "carbsG": 83.1,
+      "sugarsG": 13.4,
+      "fiberG": 7.4,
+      "proteinG": 31.8,
+      "saltG": 4.3
+    }
+  },
+  "nodes": [
+    {
+      "id": "japansk_teriyaki_tofu_wok__simmered_rice",
+      "name": "Koka Jasminris",
+      "outputName": "Kokt jasminris",
+      "inputs": [
+        {
+          "id": "water",
+          "amount": 6,
+          "unit": "dl"
+        },
+        {
+          "id": "jasmine_rice",
+          "amount": 300,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Koka upp {{water}} i {{eq:kastrull_1}}.",
+        "Rör i {{jasmine_rice}} och {{salt}}, sänk till låg värme och sjud under lock i 14 min. Ta sedan av {{eq:kastrull_1|def}} från värmen."
+      ],
+      "duration": 2,
+      "wait": 14,
+      "tags": [],
+      "heat": "hög",
+      "stepHeat": {
+        "1": "låg"
+      },
+      "tips": [
+        "Riset ska ångkoka, så tjuvkika inte!"
+      ],
+      "equipment": [
+        {
+          "type": "kastrull_medelstor",
+          "ref": "kastrull_1",
+          "lid": true
+        }
+      ],
+      "devNotes": [
+        "Rådatan säger medelstor kastrull och låg värme (inte medellåg). 'Koka upp' (hög) är inferred. 'Ta av från värmen' är inlagt i sjudsteget så att timern ligger på sista steget. Ingen vilotid anges, därför ingen extra vilonod. Vatten till ris 6 dl, salt till ris 1 tsk."
+      ]
+    },
+    {
+      "id": "japansk_teriyaki_tofu_wok__floured_tofu",
+      "name": "Tärna och Mjöla Tofu",
+      "outputName": "Mjölad tofu",
+      "inputs": [
+        {
+          "id": "tofu",
+          "amount": 360,
+          "unit": "g"
+        },
+        {
+          "id": "flour",
+          "amount": 1,
+          "unit": "msk"
+        }
+      ],
+      "steps": [
+        "Tärna {{tofu}} i 2 cm stora bitar och torka av dem.",
+        "Vänd tofun med {{flour}} i {{eq:skal_stor}}."
+      ],
+      "duration": 4,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        },
+        {
+          "type": "skal_stor"
+        }
+      ],
+      "devNotes": [
+        "Ny ingrediens tofu. Mjöl till vegoprotein 1 msk."
+      ]
+    },
+    {
+      "id": "japansk_teriyaki_tofu_wok__prepped_veg",
+      "name": "Skär Broccoli, Svamp och Vitlök",
+      "outputName": "Broccoli, portobello och vitlök",
+      "inputs": [
+        {
+          "id": "garlic",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "portobello",
+          "amount": 300,
+          "unit": "g"
+        },
+        {
+          "id": "broccoli",
+          "amount": 500,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Finhacka eller pressa {{garlic}}.",
+        "Riv {{portobello}} i cirka 2 cm stora bitar.",
+        "Skär {{broccoli}}buketter och stjälken i 2 cm stora bitar."
+      ],
+      "duration": 6,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true,
+          "after": "japansk_teriyaki_tofu_wok__floured_tofu"
+        }
+      ],
+      "devNotes": [
+        "HF Portobello (typ portobello-polish) → portobello. Alla tre går till samma stekning, därför en prepnode."
+      ]
+    },
+    {
+      "id": "japansk_teriyaki_tofu_wok__sliced_onion",
+      "name": "Skiva Salladslök",
+      "outputName": "Skivad salladslök",
+      "inputs": [
+        {
+          "id": "spring_onion",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skär {{spring_onion}} i tunna skivor."
+      ],
+      "duration": 1,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true,
+          "after": "japansk_teriyaki_tofu_wok__prepped_veg"
+        }
+      ]
+    },
+    {
+      "id": "japansk_teriyaki_tofu_wok__fried_tofu",
+      "name": "Stek Tofu",
+      "outputName": "Stekt tofu",
+      "inputs": [
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "msk"
+        },
+        {
+          "id": "japansk_teriyaki_tofu_wok__floured_tofu",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i {{eq:traktorpanna_1}} på medelhög värme.",
+        "Stek {{japansk_teriyaki_tofu_wok__floured_tofu}} i 3–4 min, tills brynt. Vänd då och då. Lägg över på {{eq:tallrik_1}}."
+      ],
+      "duration": 2,
+      "wait": 4,
+      "tags": [],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred"
+        },
+        {
+          "type": "tallrik",
+          "ref": "tallrik_1",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "Rådatan säger stor stekpanna, men 2 dl vatten plus 40 ml sojasås, 150 g teriyakisås och 20 ml sesamolja (ca 4 dl vätska) sjuds i samma panna efter stekning → traktörpanna, typeSource inferred.",
+        "Olja till stekning 2 msk totalt; delad 1 msk till tofun och 1 msk till grönsakerna. Första steget kallas 'en generös skvätt' i texten. FLAG."
+      ]
+    },
+    {
+      "id": "japansk_teriyaki_tofu_wok__fried_veg",
+      "name": "Stek Broccoli och Svamp",
+      "outputName": "Stekt broccoli och svamp",
+      "inputs": [
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "msk"
+        },
+        {
+          "id": "japansk_teriyaki_tofu_wok__prepped_veg",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Torka ur {{eq:traktorpanna_1|def}}. Hetta upp {{olive_oil}} i den på medelhög värme.",
+        "Stek {{japansk_teriyaki_tofu_wok__prepped_veg}} i 3–5 min, tills brynt."
+      ],
+      "duration": 2,
+      "wait": 5,
+      "tags": [],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred",
+          "transition": "wipe",
+          "after": "japansk_teriyaki_tofu_wok__fried_tofu"
+        }
+      ]
+    },
+    {
+      "id": "japansk_teriyaki_tofu_wok__teriyaki_veg",
+      "name": "Sjud Teriyakisås",
+      "outputName": "Grönsaker i teriyakisås",
+      "inputs": [
+        {
+          "id": "japansk_teriyaki_tofu_wok__fried_veg",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "soy_sauce",
+          "amount": 40,
+          "unit": "ml"
+        },
+        {
+          "id": "teriyaki_sauce",
+          "amount": 150,
+          "unit": "g"
+        },
+        {
+          "id": "water",
+          "amount": 2,
+          "unit": "dl"
+        },
+        {
+          "id": "sesame_oil",
+          "amount": 20,
+          "unit": "ml"
+        }
+      ],
+      "steps": [
+        "Tillsätt {{soy_sauce}}, {{teriyaki_sauce}}, {{water}} och {{sesame_oil}} till {{japansk_teriyaki_tofu_wok__fried_veg}} i {{eq:traktorpanna_1|def}} och sjud i 3–5 min, tills såsen tjocknar."
+      ],
+      "duration": 1,
+      "wait": 5,
+      "tags": [],
+      "heat": "medel",
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred",
+          "transition": "keep"
+        }
+      ],
+      "devNotes": [
+        "Ny ingrediens teriyaki_sauce. Vatten till sås 2 dl. Tofun läggs inte tillbaka i pannan; den toppas vid uppläggning."
+      ]
+    },
+    {
+      "id": "japansk_teriyaki_tofu_wok",
+      "name": "Snabblagad japansk teriyaki-tofu-wok",
+      "outputName": "Snabblagad japansk teriyaki-tofu-wok",
+      "inputs": [
+        {
+          "id": "japansk_teriyaki_tofu_wok__simmered_rice",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "japansk_teriyaki_tofu_wok__fried_tofu",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "japansk_teriyaki_tofu_wok__teriyaki_veg",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "japansk_teriyaki_tofu_wok__sliced_onion",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "sesame_seeds",
+          "amount": 20,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{japansk_teriyaki_tofu_wok__simmered_rice}} i {{eq:servering|pl}} och toppa med {{japansk_teriyaki_tofu_wok__fried_tofu}} och {{japansk_teriyaki_tofu_wok__teriyaki_veg}}.",
+        "Garnera med {{japansk_teriyaki_tofu_wok__sliced_onion}} och {{sesame_seeds}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_djup_tallrik",
+          "ref": "servering",
+          "count": "portions"
+        }
+      ],
+      "devNotes": [
+        "HF Sesamfrön, rostade → sesame_seeds (redan rostade, ingen extra rostning)."
+      ]
+    }
+  ]
+}

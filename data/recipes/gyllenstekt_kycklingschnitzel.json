@@ -4,6 +4,11 @@
   "rawId": "67038f2002cdf0b40ec360c5",
   "createdAt": 1791035248,
   "basePortions": 4,
+  "time": {
+    "totalMin": 48,
+    "activeMin": 48,
+    "computedFrom": "graph"
+  },
   "sharedPrep": [],
   "images": {
     "main": "assets/recipes/gyllenstekt_kycklingschnitzel/main.jpg",

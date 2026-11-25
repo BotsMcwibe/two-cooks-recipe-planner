@@ -4,6 +4,11 @@
   "rawId": "6a6890f5640e6eb29c2ac42f",
   "createdAt": 1790851435,
   "basePortions": 4,
+  "time": {
+    "totalMin": 25,
+    "activeMin": 25,
+    "computedFrom": "graph"
+  },
   "sharedPrep": [],
   "images": {
     "main": "assets/recipes/falafel_bulgur_bowl/main.jpg",

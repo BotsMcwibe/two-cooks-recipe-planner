@@ -1,0 +1,495 @@
+{
+  "masterId": "kramig_miso_ostronskivling_penne",
+  "source": "hellofresh",
+  "rawId": "6a9e928c790f7867027dbe1e",
+  "createdAt": 1794428217,
+  "basePortions": 4,
+  "time": {
+    "totalMin": 33,
+    "activeMin": 32,
+    "computedFrom": "graph"
+  },
+  "images": {
+    "main": "assets/recipes/kramig_miso_ostronskivling_penne/main.jpg",
+    "byNode": {
+      "kramig_miso_ostronskivling_penne__toasted_pangrattato": "assets/recipes/kramig_miso_ostronskivling_penne/steps/toasted_pangrattato.jpg",
+      "kramig_miso_ostronskivling_penne__fried_mushrooms": "assets/recipes/kramig_miso_ostronskivling_penne/steps/fried_mushrooms.jpg",
+      "kramig_miso_ostronskivling_penne__miso_garlic": "assets/recipes/kramig_miso_ostronskivling_penne/steps/miso_garlic.jpg",
+      "kramig_miso_ostronskivling_penne__pasta_sauce": "assets/recipes/kramig_miso_ostronskivling_penne/steps/pasta_sauce.jpg",
+      "kramig_miso_ostronskivling_penne": "assets/recipes/kramig_miso_ostronskivling_penne/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 380,
+    "perPortion": {
+      "energyKcal": 877,
+      "energyKj": 3669,
+      "fatG": 45.6,
+      "saturatedFatG": 20,
+      "carbsG": 89.6,
+      "sugarsG": 8.1,
+      "fiberG": 5.4,
+      "proteinG": 27,
+      "saltG": 2.9
+    }
+  },
+  "nodes": [
+    {
+      "id": "kramig_miso_ostronskivling_penne__cooked_pasta",
+      "name": "Koka Penne",
+      "outputName": "Kokt penne",
+      "inputs": [
+        {
+          "id": "penne",
+          "amount": 360,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Koka upp saltat vatten i {{eq:kastrull_1}}.",
+        "Koka {{penne}} i 11 min, eller tills al dente."
+      ],
+      "duration": 2,
+      "wait": 11,
+      "tags": [],
+      "heat": "hög",
+      "tips": [
+        "Kokvattnet ska vara lika salt som havsvatten.",
+        "Al dente betyder att pastan är genomkokt men fortfarande har tuggmotstånd."
+      ],
+      "equipment": [
+        {
+          "type": "kastrull_stor",
+          "ref": "kastrull_1"
+        }
+      ],
+      "devNotes": [
+        "Ny ingrediens penne (HF Penne typ penne), 360 g vid 4 portioner, linjärt 180/270/360/450/540. Rådatan säger stor kastrull. Salt i kokvattnet har ingen rad i HF:s lista och lämnas omätt (samma mönster som chorizo_harissaspaghetti). Avhällning i nästa node så att kokets wait ligger på sista steget. Steg 1 saknar foto (0-baserade filer börjar på step1_0 = pangrattato)."
+      ]
+    },
+    {
+      "id": "kramig_miso_ostronskivling_penne__drained_pasta",
+      "name": "Häll Av Pastan",
+      "outputName": "Avhälld penne",
+      "inputs": [
+        {
+          "id": "kramig_miso_ostronskivling_penne__cooked_pasta",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Precis innan pastan är färdig, skopa upp 3 dl kokvatten i en kopp och ställ åt sidan.",
+        "Häll av {{kramig_miso_ostronskivling_penne__cooked_pasta}} från {{eq:kastrull_1|def}} i {{eq:durkslag_1}} och lägg tillbaka pastan i {{eq:kastrull_1|def}}."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "kastrull_stor",
+          "ref": "kastrull_1",
+          "transition": "keep",
+          "offHeat": true,
+          "after": "kramig_miso_ostronskivling_penne__cooked_pasta"
+        },
+        {
+          "type": "durkslag",
+          "ref": "durkslag_1",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "HF Sparat pastavatten 3 dl vid 4 (1,5 dl vid 2, 2,5 dl vid 3) används i såsen som {{water}}. Skopas här och ställs åt sidan; vattnet listas som ingång i såsnoden, inte här, så att pastakokets vatten inte dubbelräknas. Koppen spåras inte (litet redskap)."
+      ]
+    },
+    {
+      "id": "kramig_miso_ostronskivling_penne__toasted_pangrattato",
+      "name": "Gör Pangrattato",
+      "outputName": "Rostad panko och solroskärnor",
+      "inputs": [
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "msk"
+        },
+        {
+          "id": "panko",
+          "amount": 50,
+          "unit": "g"
+        },
+        {
+          "id": "sunflower_seeds",
+          "amount": 40,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i {{eq:traktorpanna_1}} på medelhög värme.",
+        "Stek {{panko}} och {{sunflower_seeds}} i 3–4 min, tills gyllene och krispiga.",
+        "Krydda med {{salt}} och en nypa {{pepper}} och ställ åt sidan i {{eq:skal_1}}."
+      ],
+      "duration": 5,
+      "wait": 0,
+      "tags": [],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred"
+        },
+        {
+          "type": "skal_liten",
+          "ref": "skal_1"
+        }
+      ],
+      "devNotes": [
+        "Panko 50 g linjärt. Solroskärnor 40 g vid 3 och 4 portioner (20 g vid 2, 60 g vid 5 och 6). FLAG. Olja till stekning 1 msk (0,75 msk vid 3). FLAG. Salt till pangrattato 0,5 tsk vid 3 och 4. Rostningen kräver omrörning, därför duration 5 och ingen wait. Persiljan rörs i precis innan servering, i en senare nod.",
+        "Rådatan säger stor stekpanna och återanvänder samma panna till svamp och sås. Såsen får 3 dl pastavatten + 150 ml crème fraiche + 4 msk smör (ca 5,1 dl) som sjuds 1–2 min — över 3 dl-tröskeln, därför traktörpanna på hela kedjan (typeSource inferred). FLAG: stegfotona visar en vanlig stekpanna (sannolikt 2-portionsbild)."
+      ]
+    },
+    {
+      "id": "kramig_miso_ostronskivling_penne__sliced_onion",
+      "name": "Skiva Lök",
+      "outputName": "Skivad lök",
+      "inputs": [
+        {
+          "id": "onion",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skär {{onion}} i tunna skivor."
+      ],
+      "duration": 3,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "HF Lök typ onion → onion, 2 st vid 4 portioner, linjärt."
+      ]
+    },
+    {
+      "id": "kramig_miso_ostronskivling_penne__chopped_parsley",
+      "name": "Finhacka Persilja",
+      "outputName": "Finhackad bladpersilja",
+      "inputs": [
+        {
+          "id": "parsley",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Finhacka {{parsley}}."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true,
+          "after": "kramig_miso_ostronskivling_penne__sliced_onion"
+        }
+      ],
+      "devNotes": [
+        "HF Bladpersilja typ organic-parsley-flat → parsley. 1 st vid 2, 3 och 4 portioner, 2 st vid 5 och 6 — förpackning. Författad som 1 st vid 4 portioner med linjär skalning. All persilja går i pangrattatot."
+      ]
+    },
+    {
+      "id": "kramig_miso_ostronskivling_penne__chopped_garlic",
+      "name": "Finhacka Vitlök",
+      "outputName": "Finhackad vitlök",
+      "inputs": [
+        {
+          "id": "garlic",
+          "amount": 4,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Finhacka eller pressa {{garlic}}."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true,
+          "after": "kramig_miso_ostronskivling_penne__chopped_parsley"
+        }
+      ],
+      "devNotes": [
+        "Vitlök 4 st linjärt (2/3/4/5/6)."
+      ]
+    },
+    {
+      "id": "kramig_miso_ostronskivling_penne__rinsed_spinach",
+      "name": "Skölj Spenat",
+      "outputName": "Sköljd spenat",
+      "inputs": [
+        {
+          "id": "baby_spinach",
+          "amount": 100,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Skölj {{baby_spinach}}."
+      ],
+      "duration": 1,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "devNotes": [
+        "HF Spenat typ organic-baby-spinach → baby_spinach, 100 g vid 4 portioner (60 g vid 2, 75 g vid 3, 135 g vid 5, 160 g vid 6 — inte linjärt från 2). FLAG. Samma mängder och id som chorizo_harissaspaghetti."
+      ]
+    },
+    {
+      "id": "kramig_miso_ostronskivling_penne__fried_mushrooms",
+      "name": "Stek Ostronskivling och Lök",
+      "outputName": "Stekt ostronskivling och lök",
+      "inputs": [
+        {
+          "id": "olive_oil",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "oyster_mushrooms",
+          "amount": 400,
+          "unit": "g"
+        },
+        {
+          "id": "kramig_miso_ostronskivling_penne__sliced_onion",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Torka ur {{eq:traktorpanna_1|def}} och hetta upp {{olive_oil}} i den på medelhög värme.",
+        "Riv {{oyster_mushrooms}} i grova bitar direkt i {{eq:traktorpanna_1|def}} och stek i 2–3 min, eller tills brynt.",
+        "Tillsätt {{kramig_miso_ostronskivling_penne__sliced_onion}} och stek i ytterligare 3–4 min, tills mjuk."
+      ],
+      "duration": 8,
+      "wait": 0,
+      "tags": [],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred",
+          "transition": "wipe",
+          "after": "kramig_miso_ostronskivling_penne__toasted_pangrattato"
+        }
+      ],
+      "devNotes": [
+        "HF Ostronskivling typ oyster-mushrooms → oyster_mushrooms (samma id som i miso_svamp_girasoli-pantry), 400 g linjärt. Svampen rivs direkt i pannan, inte på bräda, därför ingen skärbräda och ingen skarbrada_ra. Olja till grönsaker 2 msk.",
+        "Två korta stekomgångar kräver omrörning, därför duration 8 och ingen wait. Samma panna som pangrattatot: after toasted_pangrattato, transition wipe (smulor)."
+      ]
+    },
+    {
+      "id": "kramig_miso_ostronskivling_penne__miso_garlic",
+      "name": "Tillsätt Miso och Vitlök",
+      "outputName": "Svamp med miso och vitlök",
+      "inputs": [
+        {
+          "id": "kramig_miso_ostronskivling_penne__fried_mushrooms",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "kramig_miso_ostronskivling_penne__chopped_garlic",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "miso_paste",
+          "amount": 60,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Tillsätt {{kramig_miso_ostronskivling_penne__chopped_garlic}} och {{miso_paste}} till {{kramig_miso_ostronskivling_penne__fried_mushrooms}} i {{eq:traktorpanna_1|def}} och stek i 1 min, tills väldoftande."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred",
+          "transition": "keep"
+        }
+      ],
+      "devNotes": [
+        "HF Misopasta typ miso-paste → miso_paste (återanvänd från miso_svamp_girasoli), 60 g linjärt. Stegtexten säger 'vitlök och buljong' men ingredienslistan har misopasta, ingen buljong; bildtexten är 'Tillsätt miso'. Leftover från ett syskonkort. FLAG."
+      ]
+    },
+    {
+      "id": "kramig_miso_ostronskivling_penne__pasta_sauce",
+      "name": "Sjud Pasta i Misosås",
+      "outputName": "Penne i krämig miso- och svampsås",
+      "inputs": [
+        {
+          "id": "kramig_miso_ostronskivling_penne__miso_garlic",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "creme_fraiche",
+          "amount": 150,
+          "unit": "ml"
+        },
+        {
+          "id": "water",
+          "amount": 3,
+          "unit": "dl"
+        },
+        {
+          "id": "grana_padano_shavings",
+          "amount": 40,
+          "unit": "g"
+        },
+        {
+          "id": "kramig_miso_ostronskivling_penne__drained_pasta",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "butter",
+          "amount": 4,
+          "unit": "msk"
+        },
+        {
+          "id": "kramig_miso_ostronskivling_penne__rinsed_spinach",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Rör ner {{creme_fraiche}}, sparat pastavatten ({{water}}), {{grana_padano_shavings}}, {{kramig_miso_ostronskivling_penne__drained_pasta}}, {{butter}} och {{kramig_miso_ostronskivling_penne__rinsed_spinach}} i {{eq:traktorpanna_1|def}} med {{kramig_miso_ostronskivling_penne__miso_garlic}}.",
+        "Sjud i 1–2 min, tills såsen har tjocknat och spenaten mjuknat."
+      ],
+      "duration": 2,
+      "wait": 2,
+      "tags": [],
+      "heat": "medel",
+      "tips": [
+        "Tillsätt en extra skvätt kokvatten om pastan verkar torr."
+      ],
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred",
+          "transition": "keep"
+        }
+      ],
+      "devNotes": [
+        "Crème fraiche 150 ml vid 4 (114 ml vid 3 inte linjärt från 75). FLAG. Smör till sås 4 msk smälts i såsen — ingen Ta fram-node. HF Grana Padano, flingor typ grana-padano-shavings → grana_padano_shavings (inte parmesan), 40 g linjärt; all ost går i såsen som 'finriven ost', ingen garnering. FLAG.",
+        "3 dl pastavatten + 150 ml crème fraiche + 4 msk smör är ca 5,1 dl som sjuds efter stekning — traktörpanna, inte stekpanna."
+      ]
+    },
+    {
+      "id": "kramig_miso_ostronskivling_penne__herb_pangrattato",
+      "name": "Rör Ner Persilja i Pangrattato",
+      "outputName": "Örtpangrattato",
+      "inputs": [
+        {
+          "id": "kramig_miso_ostronskivling_penne__toasted_pangrattato",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "kramig_miso_ostronskivling_penne__chopped_parsley",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Rör ner {{kramig_miso_ostronskivling_penne__chopped_parsley}} i {{kramig_miso_ostronskivling_penne__toasted_pangrattato}} i {{eq:skal_1|def}} precis innan servering."
+      ],
+      "duration": 1,
+      "wait": 0,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "skal_liten",
+          "ref": "skal_1",
+          "transition": "keep"
+        }
+      ]
+    },
+    {
+      "id": "kramig_miso_ostronskivling_penne",
+      "name": "Krämig miso- och ostronskivlingpenne",
+      "outputName": "Krämig miso- och ostronskivlingpenne med Grana Padano, örtpangrattato och spenat",
+      "inputs": [
+        {
+          "id": "kramig_miso_ostronskivling_penne__pasta_sauce",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "kramig_miso_ostronskivling_penne__herb_pangrattato",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{kramig_miso_ostronskivling_penne__pasta_sauce}} i {{eq:servering|pl}}.",
+        "Toppa med {{kramig_miso_ostronskivling_penne__herb_pangrattato}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_skal",
+          "ref": "servering",
+          "count": "portions"
+        }
+      ],
+      "devNotes": [
+        "All näring behållen, inklusive fiber 5,4 g (877 kcal). Vete vikt in i gluten. Bekräftade allergener gluten, soy (miso), dairy (crème fraiche, smör, Grana Padano) och egg. Spår av nötter, jordnötter, sesam, senap och soja utelämnade.",
+        "HF totalTime och prepTime PT20M behållna; pastakoket på 11 min överlappar pangrattato och svampstekning. FLAG: schemat är tight. HF difficulty 1 → easy. Cuisine fusion (HF Fusion cuisine, tom slug).",
+        "clonedFrom/dubbletten 64c78b1f2864fe111ef96c4d och syskonen 656de493…, 659d003f… och 68510dab… konverterades inte. miso_svamp_girasoli är en annan rätt och är orörd; miso_paste och oyster_mushrooms återanvända därifrån."
+      ]
+    }
+  ]
+}

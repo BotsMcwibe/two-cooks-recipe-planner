@@ -1,0 +1,534 @@
+{
+  "masterId": "tagliatelle_ankragu",
+  "source": "hellofresh",
+  "rawId": "6a9e929956a4cfbb9638f3fd",
+  "createdAt": 1794425072,
+  "basePortions": 4,
+  "time": {
+    "totalMin": 54,
+    "activeMin": 35,
+    "computedFrom": "graph"
+  },
+  "images": {
+    "main": "assets/recipes/tagliatelle_ankragu/main.jpg",
+    "byNode": {
+      "tagliatelle_ankragu__roasted_duck": "assets/recipes/tagliatelle_ankragu/steps/roasted_duck.jpg",
+      "tagliatelle_ankragu__tomato_salad": "assets/recipes/tagliatelle_ankragu/steps/tomato_salad.jpg",
+      "tagliatelle_ankragu__sauce_aromatics": "assets/recipes/tagliatelle_ankragu/steps/sauce_aromatics.jpg",
+      "tagliatelle_ankragu__duck_ragu": "assets/recipes/tagliatelle_ankragu/steps/duck_ragu.jpg",
+      "tagliatelle_ankragu__cooked_pasta": "assets/recipes/tagliatelle_ankragu/steps/cooked_pasta.jpg",
+      "tagliatelle_ankragu": "assets/recipes/tagliatelle_ankragu/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 732,
+    "perPortion": {
+      "energyKcal": 1185,
+      "energyKj": 4959,
+      "fatG": 59.1,
+      "saturatedFatG": 14.4,
+      "carbsG": 90.2,
+      "sugarsG": 20,
+      "proteinG": 69.5,
+      "fiberG": 14.2,
+      "saltG": 5.9
+    }
+  },
+  "nodes": [
+    {
+      "id": "tagliatelle_ankragu__preheated_oven_240",
+      "name": "Värm ugnen",
+      "outputName": "Förvärmd ugn (240°C)",
+      "inputs": [],
+      "steps": [
+        "Värm {{eq:ugn|def}} till 240°C, eller 220°C varmluft."
+      ],
+      "duration": 1,
+      "wait": 12,
+      "tags": [
+        "no-timer",
+        "resource"
+      ],
+      "tips": [
+        "Ugnen tar vanligtvis 10–15 minuter att värmas upp."
+      ],
+      "oven": {
+        "temp": 240,
+        "fanTemp": 220
+      },
+      "devNotes": [
+        "HF anger 240°C/220°C varmluft — lokal ugnsnode, inte preheated_oven_220."
+      ]
+    },
+    {
+      "id": "tagliatelle_ankragu__boiling_water",
+      "name": "Koka Upp Pastavatten",
+      "outputName": "Kokande pastavatten",
+      "inputs": [],
+      "steps": [
+        "Koka upp saltat vatten i {{eq:kastrull_1}}."
+      ],
+      "duration": 2,
+      "wait": 10,
+      "tags": [],
+      "heat": "hög",
+      "equipment": [
+        {
+          "type": "kastrull_stor",
+          "ref": "kastrull_1",
+          "lid": true
+        }
+      ],
+      "devNotes": [
+        "Rådatan säger stor kastrull med saltat vatten, utan mängd. Vatten och salt till pastakoket saknas i HF:s lista och lämnas omätta (samma mönster som kottfarslimpa_graddsas och marry_me_chicken_pasta)."
+      ]
+    },
+    {
+      "id": "tagliatelle_ankragu__roasted_duck",
+      "name": "Ugnsstek Anklår",
+      "outputName": "Ugnsstekta anklår",
+      "inputs": [
+        {
+          "id": "confit_duck_leg",
+          "amount": 860,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Placera {{confit_duck_leg}} på {{eq:plat_1}} med bakplåtspapper, med skinnsidan uppåt. Släng resterande sky från förpackningen.",
+        "Krydda skinnet med {{salt}} och tillaga i {{eq:ugn|def}} i 30 min."
+      ],
+      "duration": 2,
+      "wait": 30,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "tagliatelle_ankragu__preheated_oven_240",
+          "slots": 1,
+          "temp": 240,
+          "fanTemp": 220
+        },
+        {
+          "type": "plat",
+          "ref": "plat_1",
+          "liner": "bakplatspapper"
+        }
+      ],
+      "devNotes": [
+        "Ny ingrediens confit_duck_leg (Sous vide-anklår, confiterat), 860 g vid 4 portioner, linjärt 2/4/6. Förkokt/konfiterat, därför ingen rawAnimal och ingen skarbrada_ra — låren läggs hela på plåten, inte skärs. Sky från förpackningen slängs, inte en ingrediens.",
+        "Salt till kött 0,5 tsk (samma vid 3). 860 g under plåtens oneLayerG 1000 g; fyra anklår ryms på en plåt."
+      ]
+    },
+    {
+      "id": "tagliatelle_ankragu__tomato_salad",
+      "name": "Blanda Tomat- och Kronärtskockssallad",
+      "outputName": "Tomat- och kronärtskockssallad",
+      "inputs": [
+        {
+          "id": "tomato",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "rucola",
+          "amount": 70,
+          "unit": "g"
+        },
+        {
+          "id": "marinated_artichokes",
+          "amount": 200,
+          "unit": "g"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Skär {{tomato}} i 1 cm breda klyftor.",
+        "Skölj {{rucola}}.",
+        "Grovhacka {{marinated_artichokes}}.",
+        "Blanda rucola, tomat, kronärtskockor, {{olive_oil}} och {{salt}} i {{eq:skal_1}}. Ställ åt sidan."
+      ],
+      "duration": 6,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skal_stor",
+          "ref": "skal_1"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "Ny ingrediens marinated_artichokes (Kronärtskockor, marinerade), 200 g vid 4 portioner, linjärt 2/4/6.",
+        "Rucola 70 g vid 3 och 4 portioner (40 g vid 2, 110 g vid 5 och 6) — inte linjärt. FLAG. Olja till sallad 2 msk, salt till sallad 0,5 tsk (samma vid 3). Valnötter och balsamicokräm läggs på vid servering, inte i blandningen."
+      ]
+    },
+    {
+      "id": "tagliatelle_ankragu__sauce_aromatics",
+      "name": "Hacka Morot, Lök, Vitlök och Basilika",
+      "outputName": "Hackad morot, lök, vitlök och basilika",
+      "inputs": [
+        {
+          "id": "carrot",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "onion",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "garlic",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "basil",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Finhacka {{carrot}} (oskalad) och {{onion}}.",
+        "Finhacka eller pressa {{garlic}}.",
+        "Grovhacka {{basil}}."
+      ],
+      "duration": 6,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true,
+          "after": "tagliatelle_ankragu__tomato_salad"
+        }
+      ],
+      "devNotes": [
+        "HF Basilika 1 st vid 2, 3 och 4 portioner, 2 st vid 6 — förpackning. Författad som 1 st vid 4 portioner med linjär skalning. Id basil (HF-namn Basilika), inte fresh_basil.",
+        "Morot och lök 2 st, vitlök 2 st (enhet st som majoriteten av mästarna). Moroten oskalad enligt rådatan."
+      ]
+    },
+    {
+      "id": "tagliatelle_ankragu__chopped_walnuts",
+      "name": "Grovhacka Valnötter",
+      "outputName": "Hackade valnötter",
+      "inputs": [
+        {
+          "id": "walnuts",
+          "amount": 40,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Grovhacka {{walnuts}}."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true,
+          "after": "tagliatelle_ankragu__sauce_aromatics"
+        }
+      ],
+      "devNotes": [
+        "Valnötter 40 g vid 3 och 4 portioner (20 g vid 2, 60 g vid 5 och 6) — inte linjärt från 2-portion. FLAG. Går på salladen vid servering, inte i ragun."
+      ]
+    },
+    {
+      "id": "tagliatelle_ankragu__grated_parmesan",
+      "name": "Riv Parmesan",
+      "outputName": "Riven parmesan",
+      "inputs": [
+        {
+          "id": "parmesan",
+          "amount": 40,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Riv {{parmesan}} fint."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "devNotes": [
+        "HF Parmigiano Reggiano PDO → parmesan, 40 g vid 4 portioner, linjärt. Hälften i ragun, hälften som topping (0,5 + 0,5 st)."
+      ]
+    },
+    {
+      "id": "tagliatelle_ankragu__tomato_ragu",
+      "name": "Sjud Tomat- och Rödvinssås",
+      "outputName": "Tomat- och rödvinssås",
+      "inputs": [
+        {
+          "id": "olive_oil",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "tagliatelle_ankragu__sauce_aromatics",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "passata",
+          "amount": 400,
+          "unit": "g"
+        },
+        {
+          "id": "water",
+          "amount": 2,
+          "unit": "dl"
+        },
+        {
+          "id": "red_wine_sauce",
+          "amount": 120,
+          "unit": "g"
+        },
+        {
+          "id": "tagliatelle_ankragu__grated_parmesan",
+          "amount": 0.5,
+          "unit": "st"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i {{eq:traktorpanna_1}} på medelhög värme.",
+        "Stek vitlök, lök och morot från {{tagliatelle_ankragu__sauce_aromatics}} i 2–3 min, eller tills det doftar vitlök och löken är genomskinlig.",
+        "Tillsätt {{passata}}, {{water}}, {{red_wine_sauce}}, basilikan från {{tagliatelle_ankragu__sauce_aromatics}}, hälften av {{tagliatelle_ankragu__grated_parmesan}} och {{salt}}.",
+        "Koka upp, sänk till låg värme och låt sjuda under lock i {{eq:traktorpanna_1|def}} i 12–15 min."
+      ],
+      "duration": 4,
+      "wait": 15,
+      "tags": [],
+      "heat": "låg",
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred",
+          "lid": true
+        }
+      ],
+      "devNotes": [
+        "Rådatan säger stor kastrull för såsen, men aromater steks först och därefter tillsätts 400 g passata + 2 dl vatten + 120 g rödvinssås (ca 7,2 dl plus grönsaker och ost) och det sjuds under lock 12–15 min → traktörpanna, typeSource inferred. Pastavattnet tar den stora kastrullen parallellt. FLAG.",
+        "HF Passata; steget säger 'krossade tomater' — samma vara. Olja till stekning 2 msk (samma vid 3), salt till sås 1 tsk (samma vid 3), vatten till sås 2 dl linjärt. Rödvinssås 120 g."
+      ]
+    },
+    {
+      "id": "tagliatelle_ankragu__duck_ragu",
+      "name": "Riv Anka och Vänd Ner i Såsen",
+      "outputName": "Ragu på konfiterad anka",
+      "inputs": [
+        {
+          "id": "tagliatelle_ankragu__roasted_duck",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "tagliatelle_ankragu__tomato_ragu",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Riv {{tagliatelle_ankragu__roasted_duck}} i mindre bitar med två gafflar. Släng benet.",
+        "Vänd ner ankköttet i {{tagliatelle_ankragu__tomato_ragu}} i {{eq:traktorpanna_1|def}}."
+      ],
+      "duration": 4,
+      "wait": 0,
+      "tags": [],
+      "heat": "låg",
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred",
+          "transition": "keep",
+          "after": "tagliatelle_ankragu__tomato_ragu"
+        }
+      ],
+      "devNotes": [
+        "Köttet rives med gafflar efter ugnen, inte på skärbräda. Ben slängs. Egen node så att sjudningens wait ligger på sista steget i såsen."
+      ]
+    },
+    {
+      "id": "tagliatelle_ankragu__cooked_pasta",
+      "name": "Koka Tagliatelle",
+      "outputName": "Kokt tagliatelle",
+      "inputs": [
+        {
+          "id": "fresh_tagliatelle",
+          "amount": 500,
+          "unit": "g"
+        },
+        {
+          "id": "tagliatelle_ankragu__boiling_water",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Koka {{fresh_tagliatelle}} i {{tagliatelle_ankragu__boiling_water}} i {{eq:kastrull_1|def}} i 2–3 min, tills al dente."
+      ],
+      "duration": 1,
+      "wait": 3,
+      "tags": [],
+      "heat": "hög",
+      "tips": [
+        "Kokvattnet ska vara lika salt som havsvatten.",
+        "Al dente betyder att pastan är genomkokt, men att den fortfarande har tuggmotstånd."
+      ],
+      "equipment": [
+        {
+          "type": "kastrull_stor",
+          "ref": "kastrull_1",
+          "transition": "keep",
+          "after": "tagliatelle_ankragu__boiling_water"
+        }
+      ],
+      "devNotes": [
+        "HF Tagliatelle, färsk → fresh_tagliatelle, 500 g vid 4 portioner, linjärt. Avhällning i nästa node så att kokets wait ligger på sista steget."
+      ]
+    },
+    {
+      "id": "tagliatelle_ankragu__pasta_ragu",
+      "name": "Vänd Ner Pasta i Ragun",
+      "outputName": "Tagliatelle i ankragu",
+      "inputs": [
+        {
+          "id": "tagliatelle_ankragu__cooked_pasta",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "tagliatelle_ankragu__duck_ragu",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Häll av {{tagliatelle_ankragu__cooked_pasta}} från {{eq:kastrull_1|def}} i {{eq:durkslag_1}}.",
+        "Vänd ner pastan i {{tagliatelle_ankragu__duck_ragu}} i {{eq:traktorpanna_1|def}}."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [],
+      "heat": "låg",
+      "equipment": [
+        {
+          "type": "kastrull_stor",
+          "ref": "kastrull_1",
+          "transition": "keep",
+          "offHeat": true,
+          "after": "tagliatelle_ankragu__cooked_pasta"
+        },
+        {
+          "type": "durkslag",
+          "ref": "durkslag_1",
+          "inferred": true
+        },
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred",
+          "transition": "keep",
+          "after": "tagliatelle_ankragu__duck_ragu"
+        }
+      ]
+    },
+    {
+      "id": "tagliatelle_ankragu",
+      "name": "Tagliatelle och ragu på konfiterad anka",
+      "outputName": "Tagliatelle och ragu på konfiterad anka",
+      "inputs": [
+        {
+          "id": "tagliatelle_ankragu__pasta_ragu",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "tagliatelle_ankragu__grated_parmesan",
+          "amount": 0.5,
+          "unit": "st"
+        },
+        {
+          "id": "tagliatelle_ankragu__tomato_salad",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "tagliatelle_ankragu__chopped_walnuts",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "balsamic_cream",
+          "amount": 16,
+          "unit": "ml"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{tagliatelle_ankragu__pasta_ragu}} i {{eq:servering|pl}}.",
+        "Toppa med resterande {{tagliatelle_ankragu__grated_parmesan}}.",
+        "Toppa {{tagliatelle_ankragu__tomato_salad}} med {{tagliatelle_ankragu__chopped_walnuts}}, ringla över {{balsamic_cream}} och servera den i {{eq:sallad|def}} vid sidan av."
+      ],
+      "duration": 3,
+      "tags": [
+        "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_djup_tallrik",
+          "ref": "servering",
+          "count": "portions"
+        },
+        {
+          "type": "servering_skal",
+          "ref": "sallad",
+          "count": 1
+        }
+      ],
+      "devNotes": [
+        "All näring behållen inklusive fiber 14,2 g och 1185 kcal (rikt på ost, olja, anka och pasta). HF totalTime PT25M är orimligt mot ugn 30 min och beskrivningens 40 min — totalMinutes 40.",
+        "clonedFrom-originalet 691ee53b71644dd339c442df och dubbletten 69b92ff8fff2efa4150e4461 är samma recept och konverterades inte."
+      ]
+    }
+  ]
+}

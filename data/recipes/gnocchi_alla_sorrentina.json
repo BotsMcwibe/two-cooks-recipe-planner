@@ -1,0 +1,412 @@
+{
+  "masterId": "gnocchi_alla_sorrentina",
+  "source": "hellofresh",
+  "rawId": "6a915db8f3876e995cfb596d",
+  "createdAt": 1792603491,
+  "basePortions": 4,
+  "time": {
+    "totalMin": 34,
+    "activeMin": 23,
+    "computedFrom": "graph"
+  },
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/gnocchi_alla_sorrentina/main.jpg",
+    "byNode": {
+      "gnocchi_alla_sorrentina__fried_gnocchi": "assets/recipes/gnocchi_alla_sorrentina/steps/fried_gnocchi.jpg",
+      "gnocchi_alla_sorrentina__sliced_mozzarella": "assets/recipes/gnocchi_alla_sorrentina/steps/sliced_mozzarella.jpg",
+      "gnocchi_alla_sorrentina__tomato_sauce": "assets/recipes/gnocchi_alla_sorrentina/steps/tomato_sauce.jpg",
+      "gnocchi_alla_sorrentina__gratinated_gnocchi": "assets/recipes/gnocchi_alla_sorrentina/steps/gratinated_gnocchi.jpg",
+      "gnocchi_alla_sorrentina__salad": "assets/recipes/gnocchi_alla_sorrentina/steps/salad.jpg",
+      "gnocchi_alla_sorrentina": "assets/recipes/gnocchi_alla_sorrentina/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 595,
+    "perPortion": {
+      "energyKcal": 818,
+      "energyKj": 3423,
+      "fatG": 39.9,
+      "saturatedFatG": 14.3,
+      "carbsG": 87.5,
+      "sugarsG": 18.1,
+      "fiberG": 6.2,
+      "proteinG": 25.6,
+      "saltG": 8
+    }
+  },
+  "nodes": [
+    {
+      "id": "gnocchi_alla_sorrentina__preheated_oven_200",
+      "name": "Värm ugnen",
+      "outputName": "Förvärmd ugn (200°C)",
+      "inputs": [],
+      "steps": [
+        "Värm {{eq:ugn|def}} till 200°C, eller 180°C varmluft."
+      ],
+      "duration": 1,
+      "wait": 12,
+      "tags": [
+        "no-timer",
+        "resource"
+      ],
+      "tips": [
+        "Ugnen tar vanligtvis 10–15 minuter att värmas upp."
+      ],
+      "oven": {
+        "temp": 200,
+        "fanTemp": 180
+      },
+      "devNotes": [
+        "HF anger 200°C/180°C varmluft; ingen delad 200-pack finns, därför lokal ugnsnode."
+      ]
+    },
+    {
+      "id": "gnocchi_alla_sorrentina__fried_gnocchi",
+      "name": "Stek Gnocchi",
+      "outputName": "Stekt gnocchi",
+      "inputs": [
+        {
+          "id": "olive_oil",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "gnocchi",
+          "amount": 800,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{eq:traktorpanna_1}} på medelhög värme och tillsätt {{olive_oil}} så det täcker botten av {{eq:traktorpanna_1|def}}.",
+        "Stek {{gnocchi}} under omrörning i 5–6 min, eller tills gyllene.",
+        "Krydda med {{salt}} och en nypa {{pepper}}.",
+        "Ställ åt sidan på {{eq:tallrik_1}} med hushållspapper."
+      ],
+      "duration": 8,
+      "wait": 0,
+      "tags": [],
+      "heat": "medelhög",
+      "tips": [
+        "Tillsätt mer olivolja om gnocchin fastnar i pannan.",
+        "Gnocchin behöver inte kokas innan den steks.",
+        "Använd fler stekpannor vid behov."
+      ],
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred"
+        },
+        {
+          "type": "tallrik",
+          "ref": "tallrik_1"
+        }
+      ],
+      "devNotes": [
+        "Olja till stekning 2 msk, salt till gnocchi 0,5 tsk (4 portioner; salt samma vid 3). Ny ingrediens gnocchi.",
+        "Rådatan säger stor ugnstålig stekpanna, men samma panna (urtorkad) tar sedan 780 g krossade tomater + 2 dl vatten som sjuds (≈1 l vätska) och sedan 800 g gnocchi och går in i ugnen (≈2 l totalt), därför traktörpanna (typeSource inferred). FLAG: pannan måste vara ugnssäker; schemat har inget fält för det. HF-tipset om ugnsform finns kvar på gratineringsnoden."
+      ]
+    },
+    {
+      "id": "gnocchi_alla_sorrentina__sliced_mozzarella",
+      "name": "Skiva Mozzarella",
+      "outputName": "Skivad mozzarella",
+      "inputs": [
+        {
+          "id": "mozzarella",
+          "amount": 250,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Häll av och torka {{mozzarella}} med hushållspapper.",
+        "Skär i 1 cm tunna skivor."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "HF fresh-mozzarella → mozzarella. 250 g vid både 3 och 4 portioner."
+      ]
+    },
+    {
+      "id": "gnocchi_alla_sorrentina__rinsed_spinach",
+      "name": "Skölj Spenat",
+      "outputName": "Sköljd spenat",
+      "inputs": [
+        {
+          "id": "baby_spinach",
+          "amount": 60,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Skölj {{baby_spinach}}."
+      ],
+      "duration": 1,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "devNotes": [
+        "HF Spenat (organic-baby-spinach) → baby_spinach. Rådatan sköljer den 'under tiden' i såssteget; som prepnode kan det göras före."
+      ]
+    },
+    {
+      "id": "gnocchi_alla_sorrentina__tomato_sauce",
+      "name": "Gör Tomatsås",
+      "outputName": "Tomatsås",
+      "inputs": [
+        {
+          "id": "olive_oil",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "mamas_favorit",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "id": "buon_appetito",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "id": "canned_tomatoes",
+          "amount": 780,
+          "unit": "g"
+        },
+        {
+          "id": "butter",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "water",
+          "amount": 2,
+          "unit": "dl"
+        },
+        {
+          "id": "sugar",
+          "amount": 2,
+          "unit": "tsk"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i samma {{eq:traktorpanna_1|noun}} (torka ur den först) på medelhög värme.",
+        "Fräs {{mamas_favorit}} och {{buon_appetito}} i 30 sek, eller tills väldoftande.",
+        "Tillsätt {{canned_tomatoes}}, {{butter}}, {{water}}, {{sugar}}, {{salt}} och en nypa {{pepper}}. Sjud i 3–4 min, eller tills något tjocknat."
+      ],
+      "duration": 2,
+      "wait": 4,
+      "tags": [],
+      "heat": "medelhög",
+      "stepHeat": {
+        "2": "medellåg"
+      },
+      "heatSource": "inferred",
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred",
+          "transition": "wipe",
+          "after": "gnocchi_alla_sorrentina__fried_gnocchi"
+        }
+      ],
+      "devNotes": [
+        "Medelhög värme står i rådatan; bara sjudningen (steg 3) är inferred medellåg.",
+        "Olja till sås 2 msk, smör 2 msk (smälts, ingen Ta fram-node), vatten 2 dl, socker 2 tsk, salt 1 tsk (4 portioner; flera samma vid 3). Mamas Favorit 8 g och krossade tomater 780 g samma vid 3 och 4.",
+        "HF Krossade tomater (typ krossade-tomater-vitlok-lok) → canned_tomatoes. FLAG. Samma panna som gnocchin: after är resursordning (gnocchin kommer tillbaka i gratineringen)."
+      ]
+    },
+    {
+      "id": "gnocchi_alla_sorrentina__gratinated_gnocchi",
+      "name": "Gratinera Gnocchi",
+      "outputName": "Gratinerad gnocchi alla Sorrentina",
+      "inputs": [
+        {
+          "id": "gnocchi_alla_sorrentina__tomato_sauce",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "gnocchi_alla_sorrentina__rinsed_spinach",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "gnocchi_alla_sorrentina__fried_gnocchi",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "gnocchi_alla_sorrentina__sliced_mozzarella",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Vänd ner {{gnocchi_alla_sorrentina__rinsed_spinach}} i {{gnocchi_alla_sorrentina__tomato_sauce}}.",
+        "Fördela {{gnocchi_alla_sorrentina__fried_gnocchi}} i ett jämnt lager över såsen. Toppa med {{gnocchi_alla_sorrentina__sliced_mozzarella}}.",
+        "Grädda {{eq:traktorpanna_1|def}} i {{eq:ugn|def}} i 10–12 min, eller tills osten smälter och bubblar."
+      ],
+      "duration": 3,
+      "wait": 12,
+      "tags": [],
+      "tips": [
+        "Häll över sås och gnocchi i en ugnsform om du inte har en ugnssäker panna."
+      ],
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred",
+          "transition": "keep",
+          "offHeat": true
+        },
+        {
+          "type": "ugn",
+          "after": "gnocchi_alla_sorrentina__preheated_oven_200",
+          "slots": 1,
+          "temp": 200,
+          "fanTemp": 180
+        }
+      ],
+      "devNotes": [
+        "Pannan går in i ugnen och räknas som 1 ugnsplats (slots 1)."
+      ]
+    },
+    {
+      "id": "gnocchi_alla_sorrentina__salad",
+      "name": "Blanda Grönsallad",
+      "outputName": "Grönsallad med morot",
+      "inputs": [
+        {
+          "id": "mixed_salad",
+          "amount": 100,
+          "unit": "g"
+        },
+        {
+          "id": "carrot_julienne",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Skölj {{mixed_salad}}.",
+        "Blanda salladen, {{carrot_julienne}}, {{olive_oil}}, {{salt}} och en nypa {{pepper}} i {{eq:skal_stor}}."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "skal_stor"
+        }
+      ],
+      "devNotes": [
+        "Kall, men inte prep: salladen blandas under gräddningen (rådatan: 'under tiden') så att den inte blir slak.",
+        "HF Morot, Julienne 1 st (en påse) vid 2, 3 och 4 portioner, 2 st vid 6. Författad som 1 st vid 4 portioner med linjär skalning (0,5 påse vid 2, 1,5 vid 6 nära HF:s 2). FLAG.",
+        "Salladsmix 100 g (samma vid 3 och 4). Olja till sallad 2 msk, salt till sallad 0,5 tsk."
+      ]
+    },
+    {
+      "id": "gnocchi_alla_sorrentina",
+      "name": "Gnocchi alla Sorrentina och grönsallad",
+      "outputName": "Gnocchi alla Sorrentina och grönsallad",
+      "inputs": [
+        {
+          "id": "gnocchi_alla_sorrentina__gratinated_gnocchi",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "basil",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "gnocchi_alla_sorrentina__salad",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Garnera {{gnocchi_alla_sorrentina__gratinated_gnocchi}} med blad från {{basil}}.",
+        "Servera med {{gnocchi_alla_sorrentina__salad}} i {{eq:servering|pl}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "master"
+      ],
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred",
+          "transition": "keep",
+          "offHeat": true
+        }
+      ],
+      "serving": [
+        {
+          "type": "servering_skal",
+          "ref": "servering",
+          "count": "portions"
+        }
+      ],
+      "devNotes": [
+        "HF Basilika 1 st (en kruka/förpackning) vid 2, 3 och 4 portioner, 2 st vid 6. Garnering; författad som 1 st vid 4 portioner med linjär skalning (0,5 vid 2 räcker till några blad per portion). FLAG.",
+        "Gratängen serveras direkt ur pannan."
+      ]
+    }
+  ]
+}

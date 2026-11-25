@@ -4,6 +4,11 @@
   "rawId": "63e6bbd311d6aa361e490747",
   "createdAt": 1791037081,
   "basePortions": 4,
+  "time": {
+    "totalMin": 30,
+    "activeMin": 30,
+    "computedFrom": "graph"
+  },
   "sharedPrep": [],
   "images": {
     "main": "assets/recipes/rodvinsstekt_kyckling/main.jpg",

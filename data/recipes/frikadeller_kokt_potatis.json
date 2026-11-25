@@ -1,0 +1,595 @@
+{
+  "masterId": "frikadeller_kokt_potatis",
+  "source": "hellofresh",
+  "rawId": "6a9e92a8548a82de3e1a72fd",
+  "createdAt": 1794420480,
+  "basePortions": 4,
+  "time": {
+    "totalMin": 55,
+    "activeMin": 55,
+    "computedFrom": "graph"
+  },
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/frikadeller_kokt_potatis/main.png",
+    "byNode": {
+      "frikadeller_kokt_potatis__boiled_potatoes": "assets/recipes/frikadeller_kokt_potatis/steps/boiled_potatoes.jpg",
+      "frikadeller_kokt_potatis__pickled_cucumber": "assets/recipes/frikadeller_kokt_potatis/steps/pickled_cucumber.jpg",
+      "frikadeller_kokt_potatis__boiled_carrots": "assets/recipes/frikadeller_kokt_potatis/steps/boiled_carrots.jpg",
+      "frikadeller_kokt_potatis__fried_frikadeller": "assets/recipes/frikadeller_kokt_potatis/steps/fried_frikadeller.jpg",
+      "frikadeller_kokt_potatis__brown_sauce": "assets/recipes/frikadeller_kokt_potatis/steps/brown_sauce.jpg",
+      "frikadeller_kokt_potatis": "assets/recipes/frikadeller_kokt_potatis/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 700,
+    "perPortion": {
+      "energyKcal": 782,
+      "energyKj": 3273,
+      "fatG": 38.4,
+      "saturatedFatG": 14.6,
+      "carbsG": 78.3,
+      "sugarsG": 16,
+      "fiberG": 10.9,
+      "proteinG": 33.7,
+      "saltG": 3.9
+    }
+  },
+  "nodes": [
+    {
+      "id": "frikadeller_kokt_potatis__halved_potatoes",
+      "name": "Halvera Potatis",
+      "outputName": "Halverad potatis",
+      "inputs": [
+        {
+          "id": "potato",
+          "amount": 1000,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Halvera {{potato}}."
+      ],
+      "duration": 3,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "HF-typ baking-potato, mappad till potato."
+      ]
+    },
+    {
+      "id": "frikadeller_kokt_potatis__boiled_potatoes",
+      "name": "Koka Potatis",
+      "outputName": "Kokt potatis",
+      "inputs": [
+        {
+          "id": "frikadeller_kokt_potatis__halved_potatoes",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Koka upp saltat vatten i {{eq:kastrull_1}}.",
+        "Koka {{frikadeller_kokt_potatis__halved_potatoes}} i 12–15 min, eller tills de enkelt kan delas med en kniv."
+      ],
+      "duration": 2,
+      "wait": 15,
+      "tags": [],
+      "heat": "hög",
+      "heatSource": "inferred",
+      "equipment": [
+        {
+          "type": "kastrull_stor",
+          "ref": "kastrull_1"
+        }
+      ],
+      "devNotes": [
+        "Storleken stor står i rådatan. Salt i kokvattnet har ingen rad i HF:s lista. 1 kg potatis i rikligt vatten."
+      ]
+    },
+    {
+      "id": "frikadeller_kokt_potatis__seasoned_potatoes",
+      "name": "Krydda Potatis",
+      "outputName": "Kryddad kokt potatis",
+      "inputs": [
+        {
+          "id": "frikadeller_kokt_potatis__boiled_potatoes",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Häll av {{frikadeller_kokt_potatis__boiled_potatoes}} i {{eq:durkslag_1}} och lägg tillbaka potatisen i {{eq:kastrull_1|def}}.",
+        "Krydda med en nypa {{salt}} och {{pepper}} och ställ åt sidan under lock."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "kastrull_stor",
+          "ref": "kastrull_1",
+          "transition": "keep",
+          "offHeat": true,
+          "lid": true
+        },
+        {
+          "type": "durkslag",
+          "ref": "durkslag_1",
+          "inferred": true
+        }
+      ]
+    },
+    {
+      "id": "frikadeller_kokt_potatis__pickled_cucumber",
+      "name": "Sylta Gurka",
+      "outputName": "Syltad gurka med dill",
+      "inputs": [
+        {
+          "id": "cucumber",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "dill",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "white_wine_vinegar",
+          "amount": 24,
+          "unit": "ml"
+        },
+        {
+          "id": "sugar",
+          "amount": 1,
+          "unit": "tsk"
+        },
+        {
+          "id": "water",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Skär {{cucumber}} i tunna skivor.",
+        "Finhacka {{dill}}.",
+        "Blanda {{white_wine_vinegar}}, {{sugar}}, {{water}} och en nypa {{salt}} i {{eq:skal_liten}}.",
+        "Vänd gurka och dill i lagen och ställ åt sidan tills servering."
+      ],
+      "duration": 5,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        },
+        {
+          "type": "skal_liten"
+        }
+      ],
+      "devNotes": [
+        "Dill: HF 1 st vid 2 och 4 portioner, 2 st vid 6 (förpackning/knippe). Författad som 1 st vid 4 portioner med linjär skalning (0,5 st vid 2, 1,5 st vid 6). FLAG.",
+        "Lagen hälls av vid servering (mastern), inte i denna prepnode."
+      ]
+    },
+    {
+      "id": "frikadeller_kokt_potatis__carrot_wedges",
+      "name": "Skär Morot",
+      "outputName": "Morot i längdkvartar",
+      "inputs": [
+        {
+          "id": "carrot",
+          "amount": 4,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skär {{carrot}} i kvartar på längden."
+      ],
+      "duration": 3,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ]
+    },
+    {
+      "id": "frikadeller_kokt_potatis__boiled_carrots",
+      "name": "Koka Morot",
+      "outputName": "Kokt morot",
+      "inputs": [
+        {
+          "id": "frikadeller_kokt_potatis__carrot_wedges",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Koka upp saltat vatten i {{eq:kastrull_2}}.",
+        "Koka {{frikadeller_kokt_potatis__carrot_wedges}} i 10–12 min, eller tills mjukt."
+      ],
+      "duration": 2,
+      "wait": 12,
+      "tags": [],
+      "heat": "hög",
+      "heatSource": "inferred",
+      "equipment": [
+        {
+          "type": "kastrull_medelstor",
+          "ref": "kastrull_2"
+        }
+      ],
+      "devNotes": [
+        "Storleken medelstor står i rådatan. Salt i kokvattnet har ingen rad i HF:s lista."
+      ]
+    },
+    {
+      "id": "frikadeller_kokt_potatis__seasoned_carrots",
+      "name": "Krydda Morot",
+      "outputName": "Kryddad kokt morot",
+      "inputs": [
+        {
+          "id": "frikadeller_kokt_potatis__boiled_carrots",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Häll av {{frikadeller_kokt_potatis__boiled_carrots}} i {{eq:durkslag_2}}. Lägg tillbaka morötterna i {{eq:kastrull_2|def}}.",
+        "Krydda med en nypa {{salt}} och {{pepper}} och ställ åt sidan under lock."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "kastrull_medelstor",
+          "ref": "kastrull_2",
+          "transition": "keep",
+          "offHeat": true,
+          "lid": true
+        },
+        {
+          "type": "durkslag",
+          "ref": "durkslag_2",
+          "inferred": true
+        }
+      ]
+    },
+    {
+      "id": "frikadeller_kokt_potatis__chopped_onion",
+      "name": "Hacka Lök",
+      "outputName": "Finhackad lök",
+      "inputs": [
+        {
+          "id": "onion",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Finhacka {{onion}}."
+      ],
+      "duration": 3,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "Löken delas enligt rådatan: hälften (0,5 st) i frikadellerna, resten (0,5 st) i såsen."
+      ]
+    },
+    {
+      "id": "frikadeller_kokt_potatis__chopped_garlic",
+      "name": "Hacka Vitlök",
+      "outputName": "Finhackad vitlök",
+      "inputs": [
+        {
+          "id": "garlic",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Finhacka eller pressa {{garlic}}."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ]
+    },
+    {
+      "id": "frikadeller_kokt_potatis__rolled_frikadeller",
+      "name": "Rulla Frikadeller",
+      "outputName": "Råa frikadeller",
+      "inputs": [
+        {
+          "id": "mixed_mince",
+          "amount": 500,
+          "unit": "g"
+        },
+        {
+          "id": "frikadeller_kokt_potatis__chopped_onion",
+          "amount": 0.5,
+          "unit": "st"
+        },
+        {
+          "id": "egg",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "breadcrumbs",
+          "amount": 50,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Blanda {{mixed_mince}}, hälften av {{frikadeller_kokt_potatis__chopped_onion}}, {{egg}}, {{breadcrumbs}} och {{salt}} i {{eq:skal_1}}.",
+        "Rulla färsen till frikadeller med fuktiga händer (4 per person) och lägg dem på {{eq:tallrik_1}}."
+      ],
+      "duration": 8,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skal_stor",
+          "ref": "skal_1"
+        },
+        {
+          "type": "tallrik",
+          "ref": "tallrik_1"
+        }
+      ],
+      "devNotes": [
+        "Färsen skärs inte, den blandas och rullas i skål, därför ingen skarbrada_ra."
+      ]
+    },
+    {
+      "id": "frikadeller_kokt_potatis__fried_frikadeller",
+      "name": "Stek Frikadeller",
+      "outputName": "Stekta frikadeller",
+      "inputs": [
+        {
+          "id": "olive_oil",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "frikadeller_kokt_potatis__rolled_frikadeller",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i {{eq:traktorpanna_1}} på medelhög värme.",
+        "Stek {{frikadeller_kokt_potatis__rolled_frikadeller}} i 10–12 min, eller tills brynta och genomstekta. Vänd då och då. Sänk till medelvärme när de är brynta.",
+        "Lägg över på {{eq:tallrik_2}} och ställ åt sidan."
+      ],
+      "duration": 14,
+      "wait": 0,
+      "tags": [],
+      "heat": "medelhög",
+      "stepHeat": {
+        "1": "medel"
+      },
+      "tips": [
+        "Frikadellerna är färdiglagade när de inte längre är rosa i mitten."
+      ],
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred"
+        },
+        {
+          "type": "tallrik",
+          "ref": "tallrik_2"
+        }
+      ],
+      "devNotes": [
+        "Vändning under 10–12 min är hands-on, därför duration och ingen wait. Olja till stekning 2 msk.",
+        "Rådatan säger stor stekpanna, men samma panna (torkas inte ur) tar sedan 200 g brunsås + 1 dl vatten (3 dl vätska) som sjuds, och därefter frikadellerna tillbaka — därför traktörpanna (typeSource inferred). En ren tallrik (tallrik_2) för de stekta, inte samma som de råa."
+      ]
+    },
+    {
+      "id": "frikadeller_kokt_potatis__brown_sauce",
+      "name": "Gör Brunsås",
+      "outputName": "Brunsås med lök och vitlök",
+      "inputs": [
+        {
+          "id": "frikadeller_kokt_potatis__chopped_garlic",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "frikadeller_kokt_potatis__chopped_onion",
+          "amount": 0.5,
+          "unit": "st"
+        },
+        {
+          "id": "brown_sauce",
+          "amount": 200,
+          "unit": "g"
+        },
+        {
+          "id": "water",
+          "amount": 1,
+          "unit": "dl"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Hetta upp samma {{eq:traktorpanna_1|noun}} på medelvärme (torka inte ur den).",
+        "Stek {{frikadeller_kokt_potatis__chopped_garlic}} och resterande {{frikadeller_kokt_potatis__chopped_onion}} i 2–3 min, eller tills mjukt och väldoftande.",
+        "Tillsätt {{brown_sauce}}, {{water}} och {{salt}} och sjud i 2–3 min."
+      ],
+      "duration": 4,
+      "wait": 3,
+      "tags": [],
+      "heat": "medel",
+      "tips": [
+        "Tillsätt en extra skvätt vatten om såsen blir för tjock."
+      ],
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred",
+          "transition": "keep",
+          "after": "frikadeller_kokt_potatis__fried_frikadeller"
+        }
+      ],
+      "devNotes": [
+        "Ny ingrediens brown_sauce (Brunsås). Vatten till sås 1 dl, salt till sås 0,5 tsk. Frikadellerna vänds ner i nästa node så att sjudningens wait ligger på sista steget."
+      ]
+    },
+    {
+      "id": "frikadeller_kokt_potatis__frikadeller_in_sauce",
+      "name": "Vänd Ner Frikadeller",
+      "outputName": "Frikadeller i brunsås",
+      "inputs": [
+        {
+          "id": "frikadeller_kokt_potatis__brown_sauce",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "frikadeller_kokt_potatis__fried_frikadeller",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Vänd ner {{frikadeller_kokt_potatis__fried_frikadeller}} i {{frikadeller_kokt_potatis__brown_sauce}} och låt dem värmas upp."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [],
+      "heat": "medel",
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred",
+          "transition": "keep"
+        }
+      ]
+    },
+    {
+      "id": "frikadeller_kokt_potatis",
+      "name": "Frikadeller och kokt potatis",
+      "outputName": "Frikadeller och kokt potatis",
+      "inputs": [
+        {
+          "id": "frikadeller_kokt_potatis__seasoned_potatoes",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "frikadeller_kokt_potatis__frikadeller_in_sauce",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "frikadeller_kokt_potatis__seasoned_carrots",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "frikadeller_kokt_potatis__pickled_cucumber",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Häll av lagen från {{frikadeller_kokt_potatis__pickled_cucumber}}.",
+        "Lägg upp {{frikadeller_kokt_potatis__seasoned_potatoes}}, {{frikadeller_kokt_potatis__frikadeller_in_sauce}}, {{frikadeller_kokt_potatis__seasoned_carrots}} och den syltade gurkan på {{eq:servering|pl}}.",
+        "Skeda över såsen."
+      ],
+      "duration": 3,
+      "tags": [
+        "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_tallrik",
+          "ref": "servering",
+          "count": "portions"
+        }
+      ]
+    }
+  ]
+}

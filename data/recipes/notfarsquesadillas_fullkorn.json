@@ -1,0 +1,438 @@
+{
+  "masterId": "notfarsquesadillas_fullkorn",
+  "source": "hellofresh",
+  "rawId": "6a9e9293790f7867027dbec6",
+  "createdAt": 1794425774,
+  "basePortions": 4,
+  "time": {
+    "totalMin": 54,
+    "activeMin": 43,
+    "computedFrom": "graph"
+  },
+  "images": {
+    "main": "assets/recipes/notfarsquesadillas_fullkorn/main.jpg",
+    "byNode": {
+      "notfarsquesadillas_fullkorn__roasted_fries": "assets/recipes/notfarsquesadillas_fullkorn/steps/roasted_fries.jpg",
+      "notfarsquesadillas_fullkorn__chopped_tomato": "assets/recipes/notfarsquesadillas_fullkorn/steps/chopped_tomato.jpg",
+      "notfarsquesadillas_fullkorn__mustard_mayo": "assets/recipes/notfarsquesadillas_fullkorn/steps/mustard_mayo.jpg",
+      "notfarsquesadillas_fullkorn__fried_mince": "assets/recipes/notfarsquesadillas_fullkorn/steps/fried_mince.jpg",
+      "notfarsquesadillas_fullkorn__assembled_quesadillas": "assets/recipes/notfarsquesadillas_fullkorn/steps/assembled_quesadillas.jpg",
+      "notfarsquesadillas_fullkorn__fried_quesadillas": "assets/recipes/notfarsquesadillas_fullkorn/steps/fried_quesadillas.jpg",
+      "notfarsquesadillas_fullkorn": "assets/recipes/notfarsquesadillas_fullkorn/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 610,
+    "perPortion": {
+      "energyKcal": 899,
+      "energyKj": 3762,
+      "fatG": 44.9,
+      "saturatedFatG": 15,
+      "carbsG": 76.6,
+      "sugarsG": 19.6,
+      "proteinG": 45.3,
+      "saltG": 4.5
+    }
+  },
+  "nodes": [
+    {
+      "id": "notfarsquesadillas_fullkorn__preheated_oven_240",
+      "name": "Värm ugnen",
+      "outputName": "Förvärmd ugn (240°C)",
+      "inputs": [],
+      "steps": [
+        "Värm {{eq:ugn|def}} till 240°C, eller 220°C varmluft."
+      ],
+      "duration": 1,
+      "wait": 12,
+      "tags": [
+        "no-timer",
+        "resource"
+      ],
+      "tips": [
+        "Ugnen tar vanligtvis 10–15 minuter att värmas upp."
+      ],
+      "oven": {
+        "temp": 240,
+        "fanTemp": 220
+      },
+      "devNotes": [
+        "HF anger 240°C/220°C varmluft — lokal ugnsnode, inte preheated_oven_220."
+      ]
+    },
+    {
+      "id": "notfarsquesadillas_fullkorn__cut_fries",
+      "name": "Skär Rotfruktspommes",
+      "outputName": "Skurna rotfruktspommes",
+      "inputs": [
+        {
+          "id": "potato",
+          "amount": 500,
+          "unit": "g"
+        },
+        {
+          "id": "carrot",
+          "amount": 4,
+          "unit": "st"
+        },
+        {
+          "id": "beetroot",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skär {{potato}}, {{carrot}} och {{beetroot}} (oskalade) i 1 cm tunna pommes."
+      ],
+      "duration": 8,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "Potatis typ organic-potatoes → potato, 500 g vid 4 portioner (300 g vid 2, 375 g vid 3, 675 g vid 5, 800 g vid 6 — inte linjärt från 2). FLAG. Morot 4 st och rödbeta 2 st, linjärt. Alla oskalade enligt rådatan."
+      ]
+    },
+    {
+      "id": "notfarsquesadillas_fullkorn__roasted_fries",
+      "name": "Rosta Rotfruktspommes",
+      "outputName": "Rostade rotfruktspommes",
+      "inputs": [
+        {
+          "id": "notfarsquesadillas_fullkorn__cut_fries",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Placera {{notfarsquesadillas_fullkorn__cut_fries}} på {{eq:plat_1}} med bakplåtspapper.",
+        "Blanda med {{olive_oil}}, {{salt}} och en nypa {{pepper}}.",
+        "Rosta i {{eq:ugn|def}} i 25–35 min, eller tills gyllene och mjuka."
+      ],
+      "duration": 3,
+      "wait": 35,
+      "tags": [],
+      "tips": [
+        "Använd fler plåtar om det blir för trångt."
+      ],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "notfarsquesadillas_fullkorn__preheated_oven_240",
+          "slots": 1,
+          "temp": 240,
+          "fanTemp": 220
+        },
+        {
+          "type": "plat",
+          "ref": "plat_1",
+          "liner": "bakplatspapper"
+        }
+      ],
+      "devNotes": [
+        "Passiv rosttid 25–35 min → wait 35 (övre gräns). Sista steget äger timern.",
+        "Olivolja till pommes saknas i HF:s lista, därför standard 1 skvätt. Salt till grönsaker 1 tsk vid både 3 och 4 portioner (0,5 tsk vid 2). En plåt enligt rådatan, med tipset om fler plåtar; 500 g potatis + 4 morötter + 2 rödbetor som 1 cm pommes kan bli trångt. FLAG."
+      ]
+    },
+    {
+      "id": "notfarsquesadillas_fullkorn__chopped_tomato",
+      "name": "Grovhacka Tomat",
+      "outputName": "Grovhackad tomat",
+      "inputs": [
+        {
+          "id": "tomato",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Grovhacka {{tomato}}."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true,
+          "after": "notfarsquesadillas_fullkorn__cut_fries"
+        }
+      ],
+      "devNotes": [
+        "HF Tomat typ organic tomatoes → tomato, 2 st linjärt. Samma skärbräda som pommes (ingen rawAnimal på brädan; färsen går rakt i pannan)."
+      ]
+    },
+    {
+      "id": "notfarsquesadillas_fullkorn__mustard_mayo",
+      "name": "Blanda Senapsmajonnäs",
+      "outputName": "Senapsmajonnäs",
+      "inputs": [
+        {
+          "id": "mayonnaise",
+          "amount": 50,
+          "unit": "g"
+        },
+        {
+          "id": "wholegrain_mustard",
+          "amount": 25,
+          "unit": "g"
+        },
+        {
+          "id": "water",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Blanda {{mayonnaise}}, {{wholegrain_mustard}}, {{water}} och en nypa {{salt}} och {{pepper}} i {{eq:skal_1}}.",
+        "Ställ åt sidan."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skal_liten",
+          "ref": "skal_1"
+        }
+      ],
+      "devNotes": [
+        "HF Majonnas typ mayonnaise-r2 → mayonnaise (majonnäs). 50 g vid 4 (25/40/50/65/75). Grov senap 25 g (12/20/25/32/37, nästan linjärt). Vatten till dressing 2 msk, linjärt. Äggallergen finns redan i raw."
+      ]
+    },
+    {
+      "id": "notfarsquesadillas_fullkorn__fried_mince",
+      "name": "Stek Nötfärs",
+      "outputName": "Stekt nötfärs med tomat",
+      "inputs": [
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "msk"
+        },
+        {
+          "id": "ground_beef",
+          "amount": 450,
+          "unit": "g"
+        },
+        {
+          "id": "notfarsquesadillas_fullkorn__chopped_tomato",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "cajun_spice_mix",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "ketchup",
+          "amount": 2,
+          "unit": "msk"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i {{eq:stekpanna_1}} på medelhög värme.",
+        "Tillsätt {{ground_beef}} och {{notfarsquesadillas_fullkorn__chopped_tomato}}, krydda med {{cajun_spice_mix}}, {{salt}} och en nypa {{pepper}} och stek i 3–4 min, eller tills brynt.",
+        "Tillsätt {{ketchup}} och stek i 1–2 min. Lägg över i {{eq:skal_2}}."
+      ],
+      "duration": 6,
+      "wait": 0,
+      "tags": [],
+      "heat": "medelhög",
+      "tips": [
+        "Köttet är färdiglagat när det är utan inslag av rosa."
+      ],
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1",
+          "confirmed": true
+        },
+        {
+          "type": "skal_medelstor",
+          "ref": "skal_2"
+        }
+      ],
+      "devNotes": [
+        "HF Nötfärs typ beef-mince → ground_beef (befintlig 'Köttfärs', rawAnimal meat). FLAG. Färsen går rakt i pannan och skärs inte, därför ingen skarbrada_ra. 450 g linjärt nog (225/340/450/565/675). Olja till stekning 1 msk. Salt till kött 0,5 tsk vid både 3 och 4 (0,25 tsk vid 2). Ketchup till kött 2 msk används här i sin helhet.",
+        "HF Ay Cajun-ba typ cajun-spice-mix 8 g → cajun_spice_mix (blendId finns), linjärt 4/6/8/10/12.",
+        "Rådatan säger stor stekpanna. Bara tomat + 2 msk ketchup, ingen sjudning med ≥2 dl vätska → stekpanna, inte traktörpanna. Stekningen är hands-on, därför duration 6 och wait 0. Pannan torkas inte ur och återanvänds till quesadillas."
+      ]
+    },
+    {
+      "id": "notfarsquesadillas_fullkorn__assembled_quesadillas",
+      "name": "Fyll Quesadillas",
+      "outputName": "Ihopvikta quesadillas",
+      "inputs": [
+        {
+          "id": "notfarsquesadillas_fullkorn__fried_mince",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "whole_wheat_tortillas",
+          "amount": 8,
+          "unit": "st"
+        },
+        {
+          "id": "grated_gouda",
+          "amount": 100,
+          "unit": "g"
+        },
+        {
+          "id": "parmesan",
+          "amount": 40,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Fördela {{notfarsquesadillas_fullkorn__fried_mince}} på ena halvan av varje {{whole_wheat_tortillas}} och toppa med {{grated_gouda}} och {{parmesan}}.",
+        "Vik över den andra tortillahalvan till en halvmåneform."
+      ],
+      "duration": 5,
+      "wait": 0,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true,
+          "after": "notfarsquesadillas_fullkorn__chopped_tomato"
+        }
+      ],
+      "devNotes": [
+        "Ny ingrediens whole_wheat_tortillas (Tortillabröd, fullkorn, typ whole-wheat-tortillas), 8 st linjärt. Inte samma som tortillas (vanliga tortillabröd) i varianten 68dfaf4b… som lämnas i kön.",
+        "HF Riven gouda → grated_gouda, 100 g linjärt. HF Parmigiano Reggiano PDO → parmesan, 40 g linjärt. Steget säger bara 'riven ost' och skiljer inte ostarna; båda läggs på quesadillas eftersom ingen annan användning finns. FLAG."
+      ]
+    },
+    {
+      "id": "notfarsquesadillas_fullkorn__fried_quesadillas",
+      "name": "Stek Quesadillas",
+      "outputName": "Stekta quesadillas",
+      "inputs": [
+        {
+          "id": "notfarsquesadillas_fullkorn__assembled_quesadillas",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Hetta upp samma {{eq:stekpanna_1|noun}} (torka inte ur den) på medelvärme.",
+        "Stek {{notfarsquesadillas_fullkorn__assembled_quesadillas}} i omgångar, 1–2 min per sida."
+      ],
+      "duration": 12,
+      "wait": 0,
+      "tags": [],
+      "heat": "medel",
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1",
+          "confirmed": true,
+          "transition": "keep",
+          "after": "notfarsquesadillas_fullkorn__fried_mince"
+        }
+      ],
+      "devNotes": [
+        "1–2 min per sida är hands-on, därför duration och wait 0. 8 halvmånar, typiskt 2 i taget i en stor stekpanna → cirka 4 omgångar; duration 12 (övre 2+2 min × 4). FLAG omgångar."
+      ]
+    },
+    {
+      "id": "notfarsquesadillas_fullkorn",
+      "name": "Nötfärsquesadillas",
+      "outputName": "Nötfärsquesadillas",
+      "inputs": [
+        {
+          "id": "notfarsquesadillas_fullkorn__fried_quesadillas",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "notfarsquesadillas_fullkorn__roasted_fries",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "notfarsquesadillas_fullkorn__mustard_mayo",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{notfarsquesadillas_fullkorn__fried_quesadillas}} och {{notfarsquesadillas_fullkorn__roasted_fries}} på {{eq:servering|pl}}.",
+        "Servera {{notfarsquesadillas_fullkorn__mustard_mayo}} till de vuxna och ketchup till barnen i {{eq:servering_dipp|pl}} vid sidan av."
+      ],
+      "duration": 3,
+      "tags": [
+        "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_tallrik",
+          "ref": "servering",
+          "count": "portions"
+        },
+        {
+          "type": "servering_skal",
+          "ref": "servering_dipp",
+          "count": 2
+        }
+      ],
+      "devNotes": [
+        "Fiber 35 g släppt som orimlig; övrig näring behållen inklusive 899 kcal.",
+        "Serveringen nämner ketchup till barnen, men den enda ketchup-raden ('Ketchup till kött', 2 msk) används i färsen. Ingen extra mängd påhittad. Två servering_skal är dippskålarna (senapsmajonnäs till vuxna, ketchup till barnen). FLAG.",
+        "HF totalTime PT25M och prepTime PT30M stämmer inte med 25–35 min ugnstid; catalog totalMinutes satt till 40 (förvärmning överlappar skärningen, rostning övre 35). FLAG.",
+        "clonedFrom 67e5504e0d3e977968bd9820 och dubbletten 6a71a421e8e5c2a7fd0dce98 är samma recept (fullkornstortillas, parmesan + gouda) och konverterades inte. Varianten 68dfaf4b311cc828e18c563e (samma namn, vanliga tortillas 4 st, finriven ost i stället för parmesan) är en annan rätt, fortfarande i kön, och konverterades inte. kale_quesadillas (Grönkålsquesadillas) rördes inte."
+      ]
+    }
+  ]
+}

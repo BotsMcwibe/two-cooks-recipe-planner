@@ -4,6 +4,11 @@
   "rawId": "ica-724788",
   "createdAt": 1791049875,
   "basePortions": 4,
+  "time": {
+    "totalMin": 29,
+    "activeMin": 18,
+    "computedFrom": "graph"
+  },
   "sharedPrep": [],
   "images": {
     "main": "assets/recipes/linsgryta_kokosmjolk/main.jpg"

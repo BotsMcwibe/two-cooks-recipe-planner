@@ -1,0 +1,497 @@
+{
+  "masterId": "thai_gron_kycklingcurry",
+  "source": "hellofresh",
+  "rawId": "6a915dbcf3876e995cfb59c4",
+  "createdAt": 1792602902,
+  "basePortions": 4,
+  "time": {
+    "totalMin": 31,
+    "activeMin": 31,
+    "computedFrom": "graph"
+  },
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/thai_gron_kycklingcurry/main.jpg",
+    "byNode": {
+      "thai_gron_kycklingcurry__cooked_noodles": "assets/recipes/thai_gron_kycklingcurry/steps/cooked_noodles.jpg",
+      "thai_gron_kycklingcurry__pickled_onion": "assets/recipes/thai_gron_kycklingcurry/steps/pickled_onion.jpg",
+      "thai_gron_kycklingcurry__curry": "assets/recipes/thai_gron_kycklingcurry/steps/curry.jpg",
+      "thai_gron_kycklingcurry__mango_salad": "assets/recipes/thai_gron_kycklingcurry/steps/mango_salad.jpg",
+      "thai_gron_kycklingcurry__noodle_curry": "assets/recipes/thai_gron_kycklingcurry/steps/noodle_curry.jpg",
+      "thai_gron_kycklingcurry": "assets/recipes/thai_gron_kycklingcurry/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 789,
+    "perPortion": {
+      "energyKcal": 887,
+      "energyKj": 3711,
+      "fatG": 34.2,
+      "saturatedFatG": 19.1,
+      "carbsG": 95.7,
+      "sugarsG": 26.3,
+      "fiberG": 13.1,
+      "proteinG": 51.9,
+      "saltG": 6.6
+    }
+  },
+  "nodes": [
+    {
+      "id": "thai_gron_kycklingcurry__cooked_noodles",
+      "name": "Koka Nudlar",
+      "outputName": "Kokta udonnudlar",
+      "inputs": [
+        {
+          "id": "udon_noodles",
+          "amount": 300,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Koka upp saltat vatten i {{eq:kastrull_1}}.",
+        "Koka {{udon_noodles}} i 4–6 min, eller tills mjuka."
+      ],
+      "duration": 2,
+      "wait": 6,
+      "tags": [],
+      "heat": "hög",
+      "heatSource": "inferred",
+      "tips": [
+        "Kokvattnet ska vara lika salt som havsvatten."
+      ],
+      "equipment": [
+        {
+          "type": "kastrull_stor",
+          "ref": "kastrull_1",
+          "sizeSource": "inferred"
+        }
+      ],
+      "devNotes": [
+        "HF Udonnudlar, torkade → udon_noodles. Rådatan säger bara kastrull; 300 g nudlar i rikligt saltat vatten → kastrull_stor (inferred). Salt i kokvattnet har ingen rad i HF:s lista."
+      ]
+    },
+    {
+      "id": "thai_gron_kycklingcurry__rinsed_noodles",
+      "name": "Skölj Nudlar",
+      "outputName": "Sköljda nudlar",
+      "inputs": [
+        {
+          "id": "thai_gron_kycklingcurry__cooked_noodles",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Häll av vattnet och skölj {{thai_gron_kycklingcurry__cooked_noodles}} i kallt vatten i {{eq:durkslag_1}}."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "durkslag",
+          "ref": "durkslag_1",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "Avhällning/sköljning efter kokningen är egen node så att kokningens wait ligger på sista steget (§4.1 regel 4). Durkslag nämns inte i rådatan men behövs för att skölja nudlarna."
+      ]
+    },
+    {
+      "id": "thai_gron_kycklingcurry__pickled_onion",
+      "name": "Gör Snabbinlagd Lök",
+      "outputName": "Snabbinlagd schalottenlök",
+      "inputs": [
+        {
+          "id": "shallot",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "lime",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "sugar",
+          "amount": 1,
+          "unit": "tsk"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Skär {{shallot}} i tunna skivor.",
+        "Halvera {{lime}}.",
+        "Blanda en skvätt limesaft, {{sugar}}, {{salt}} och löken i {{eq:skal_1}} och ställ åt sidan."
+      ],
+      "duration": 4,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        },
+        {
+          "type": "skal_medelstor",
+          "ref": "skal_1"
+        }
+      ],
+      "devNotes": [
+        "HF Lök (typ shallot) → shallot. Socker 1 tsk och salt 0,5 tsk till inläggning (4 portioner).",
+        "HF Citrusfrukt (typ lime) → lime. 1 st vid 2, 3 och 4 portioner, 2 st vid 6. Bara en skvätt saft används, så mängden är egentligen inte proportionell. Författad som 1 st vid 4 portioner med vanlig linjär skalning (0,5 st vid 2 räcker till en skvätt; 1,5 st vid 6 nära HF:s 2). Resten av limen används inte. FLAG."
+      ]
+    },
+    {
+      "id": "thai_gron_kycklingcurry__ginger_paprika",
+      "name": "Riv Ingefära och Tärna Paprika",
+      "outputName": "Riven ingefära och tärnad paprika",
+      "inputs": [
+        {
+          "id": "ginger",
+          "amount": 4,
+          "unit": "tsk"
+        },
+        {
+          "id": "paprika",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Riv {{ginger}} (oskalad) fint.",
+        "Tärna {{paprika}} i 2 cm stora bitar."
+      ],
+      "duration": 4,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "Ingefära 4 tsk riven enligt HF (samma enhet som i andra recept)."
+      ]
+    },
+    {
+      "id": "thai_gron_kycklingcurry__chopped_pak_choi",
+      "name": "Hacka Pak Choi",
+      "outputName": "Grovhackad pak choi",
+      "inputs": [
+        {
+          "id": "pak_choi",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Grovhacka {{pak_choi}}."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "Egen prepnode eftersom pak choi går i pannan senare än paprika och ingefära."
+      ]
+    },
+    {
+      "id": "thai_gron_kycklingcurry__curry",
+      "name": "Laga Kycklingcurry",
+      "outputName": "Grön kycklingcurry",
+      "inputs": [
+        {
+          "id": "olive_oil",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "chicken_breast_strips",
+          "amount": 600,
+          "unit": "g"
+        },
+        {
+          "id": "thai_gron_kycklingcurry__ginger_paprika",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "thai_gron_kycklingcurry__chopped_pak_choi",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "coconut_milk",
+          "amount": 360,
+          "unit": "ml"
+        },
+        {
+          "id": "green_curry_paste",
+          "amount": 80,
+          "unit": "g"
+        },
+        {
+          "id": "soy_sauce",
+          "amount": 40,
+          "unit": "ml"
+        },
+        {
+          "id": "ga_laksa",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "id": "water",
+          "amount": 2,
+          "unit": "dl"
+        },
+        {
+          "id": "sugar",
+          "amount": 0.5,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i {{eq:traktorpanna_1}} på medelhög värme.",
+        "Stek {{chicken_breast_strips}} och {{thai_gron_kycklingcurry__ginger_paprika}} i 3–4 min, eller tills kycklingen är lätt brynt.",
+        "Sänk till medelvärme och rör i {{thai_gron_kycklingcurry__chopped_pak_choi}}, {{coconut_milk}}, {{green_curry_paste}}, {{soy_sauce}}, {{ga_laksa}}, {{water}} och {{sugar}}.",
+        "Sjud i 3–4 min, tills allt är blandat och såsen börjar tjockna."
+      ],
+      "duration": 7,
+      "wait": 4,
+      "tags": [],
+      "heat": "medelhög",
+      "stepHeat": {
+        "2": "medel",
+        "3": "medel"
+      },
+      "tips": [
+        "Tvätta händer och köksredskap noggrant efter hantering av rå kyckling.",
+        "Kycklingen är färdiglagad när köttet inte längre är rosa i mitten."
+      ],
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred"
+        }
+      ],
+      "devNotes": [
+        "Rådatan säger stor stekpanna, men samma panna steker kycklingen och sjuder sedan 360 ml kokosmjölk + 2 dl vatten (≈5,6 dl vätska) och tar till sist nudlarna, därför traktörpanna (typeSource inferred).",
+        "Kycklingen är färdigstrimlad (chicken_breast_strips) och skärs inte, därför ingen skarbrada_ra.",
+        "Olja till stekning 2 msk, vatten till sås 2 dl, socker till sås 0,5 tsk (4 portioner; samma olja vid 3). Kyckling 600 g vid 4 men 375 g vid 3 portioner (HF-ojämnhet); 4-portionsvärdet används. Sojasås 40 ml vid både 3 och 4.",
+        "Ga-Laksa saknar blend i spice-blends.json; ny ingrediens ga_laksa utan blendId. FLAG till Spice Mix-boten."
+      ]
+    },
+    {
+      "id": "thai_gron_kycklingcurry__mango_cucumber",
+      "name": "Tärna Mango och Gurka",
+      "outputName": "Tärnad mango och gurka",
+      "inputs": [
+        {
+          "id": "mango",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "cucumber",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skala och skär {{mango}} i tre delar längs med kärnan i mitten.",
+        "Tärna mangon och {{cucumber}} i 2 cm stora bitar."
+      ],
+      "duration": 5,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ]
+    },
+    {
+      "id": "thai_gron_kycklingcurry__chopped_coriander",
+      "name": "Hacka Koriander",
+      "outputName": "Finhackad koriander",
+      "inputs": [
+        {
+          "id": "coriander",
+          "amount": 10,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Finhacka {{coriander}}."
+      ],
+      "duration": 1,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "HF Koriander (organic-coriander) → coriander. 10 g vid 2, 3 och 4 portioner, 20 g vid 6. Garnering, så linjär skalning från 10 g vid 4 portioner (5 g vid 2, 15 g vid 6) är rimlig; HF:s platta värde är troligen förpackningsstorlek. FLAG."
+      ]
+    },
+    {
+      "id": "thai_gron_kycklingcurry__mango_salad",
+      "name": "Vänd Ihop Mangosallad",
+      "outputName": "Mangosallad",
+      "inputs": [
+        {
+          "id": "thai_gron_kycklingcurry__mango_cucumber",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "thai_gron_kycklingcurry__pickled_onion",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Vänd ner {{thai_gron_kycklingcurry__mango_cucumber}} i {{thai_gron_kycklingcurry__pickled_onion}} i {{eq:skal_1|def}} precis innan servering."
+      ],
+      "duration": 1,
+      "wait": 0,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "skal_medelstor",
+          "ref": "skal_1",
+          "transition": "keep"
+        }
+      ],
+      "devNotes": [
+        "Kall, men inte prep: rådatan säger precis innan servering."
+      ]
+    },
+    {
+      "id": "thai_gron_kycklingcurry__noodle_curry",
+      "name": "Vänd Ner Nudlar",
+      "outputName": "Nudlar i kycklingcurry",
+      "inputs": [
+        {
+          "id": "thai_gron_kycklingcurry__rinsed_noodles",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "thai_gron_kycklingcurry__curry",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Rör ner {{thai_gron_kycklingcurry__rinsed_noodles}} i {{thai_gron_kycklingcurry__curry}} i {{eq:traktorpanna_1|def}} och smaka av med en nypa {{salt}} och {{pepper}}.",
+        "Sjud i 1 min, tills genomvarmt."
+      ],
+      "duration": 1,
+      "wait": 1,
+      "tags": [],
+      "heat": "medellåg",
+      "heatSource": "inferred",
+      "tips": [
+        "Tillsätt en skvätt vatten om nudlarna verkar torra."
+      ],
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred",
+          "transition": "keep"
+        }
+      ]
+    },
+    {
+      "id": "thai_gron_kycklingcurry",
+      "name": "Thailändsk grön kycklingcurry",
+      "outputName": "Thailändsk grön kycklingcurry",
+      "inputs": [
+        {
+          "id": "thai_gron_kycklingcurry__noodle_curry",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "fried_onion",
+          "amount": 60,
+          "unit": "g"
+        },
+        {
+          "id": "thai_gron_kycklingcurry__mango_salad",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "thai_gron_kycklingcurry__chopped_coriander",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{thai_gron_kycklingcurry__noodle_curry}} i {{eq:servering|pl}} och toppa med {{fried_onion}}.",
+        "Servera med {{thai_gron_kycklingcurry__mango_salad}} och toppa hela rätten med {{thai_gron_kycklingcurry__chopped_coriander}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_skal",
+          "ref": "servering",
+          "count": "portions"
+        }
+      ],
+      "devNotes": [
+        "HF markerar isAddon: true men receptet har 6 riktiga steg; konverterat som fullständigt recept. HF Rostad lök (fried-onion) → ny ingrediens fried_onion."
+      ]
+    }
+  ]
+}

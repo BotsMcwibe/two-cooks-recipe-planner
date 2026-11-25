@@ -4,6 +4,11 @@
   "rawId": "5d76140b965c9800143495bd",
   "createdAt": 1790795820,
   "basePortions": 4,
+  "time": {
+    "totalMin": 41,
+    "activeMin": 41,
+    "computedFrom": "graph"
+  },
   "sharedPrep": [],
   "images": {
     "main": "assets/recipes/kale_quesadillas/main.jpg"

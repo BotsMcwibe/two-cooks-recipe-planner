@@ -4,6 +4,11 @@
   "rawId": "687a28d4c30d33981f9ad5b5",
   "createdAt": 1791041146,
   "basePortions": 4,
+  "time": {
+    "totalMin": 29,
+    "activeMin": 29,
+    "computedFrom": "graph"
+  },
   "sharedPrep": [],
   "images": {
     "main": "assets/recipes/kramig_basilikakyckling/main.jpg",

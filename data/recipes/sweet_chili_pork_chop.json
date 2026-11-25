@@ -4,6 +4,11 @@
   "rawId": "6a915db5f3876e995cfb58f9",
   "createdAt": 1790852559,
   "basePortions": 4,
+  "time": {
+    "totalMin": 37,
+    "activeMin": 37,
+    "computedFrom": "graph"
+  },
   "sharedPrep": [],
   "images": {
     "main": "assets/recipes/sweet_chili_pork_chop/main.jpg",

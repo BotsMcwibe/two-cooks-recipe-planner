@@ -4,6 +4,11 @@
   "rawId": "6a6891b8640e6eb29c2ac8ec",
   "createdAt": 1790796623,
   "basePortions": 4,
+  "time": {
+    "totalMin": 59,
+    "activeMin": 57,
+    "computedFrom": "graph"
+  },
   "sharedPrep": [],
   "images": {
     "main": "assets/recipes/beef_kofta_greek_salad/main.jpg",

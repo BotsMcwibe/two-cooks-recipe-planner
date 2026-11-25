@@ -4,6 +4,11 @@
   "rawId": "6273d44cfabd8854209415df",
   "createdAt": 1791039326,
   "basePortions": 4,
+  "time": {
+    "totalMin": 34,
+    "activeMin": 31,
+    "computedFrom": "graph"
+  },
   "sharedPrep": [],
   "images": {
     "main": "assets/recipes/vietnamesisk_kycklingbowl_vitloksris/main.jpg",

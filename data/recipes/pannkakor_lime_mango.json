@@ -4,6 +4,11 @@
   "rawId": "65fd4ca578b19ca7c0a951f6",
   "createdAt": 1790852541,
   "basePortions": 4,
+  "time": {
+    "totalMin": 24,
+    "activeMin": 24,
+    "computedFrom": "graph"
+  },
   "sharedPrep": [],
   "images": {
     "main": "assets/recipes/pannkakor_lime_mango/main.jpg",

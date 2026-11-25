@@ -1,0 +1,482 @@
+{
+  "masterId": "bao_sweet_chili_oring",
+  "source": "hellofresh",
+  "rawId": "6a9e92a1790f7867027dbff9",
+  "createdAt": 1794422388,
+  "basePortions": 4,
+  "time": {
+    "totalMin": 24,
+    "activeMin": 24,
+    "computedFrom": "graph"
+  },
+  "images": {
+    "main": "assets/recipes/bao_sweet_chili_oring/main.jpg",
+    "byNode": {
+      "bao_sweet_chili_oring__pickled_onion": "assets/recipes/bao_sweet_chili_oring/steps/pickled_onion.jpg",
+      "bao_sweet_chili_oring__prepped_salad": "assets/recipes/bao_sweet_chili_oring/steps/prepped_salad.jpg",
+      "bao_sweet_chili_oring__fried_trout": "assets/recipes/bao_sweet_chili_oring/steps/fried_trout.jpg",
+      "bao_sweet_chili_oring__glazed_trout": "assets/recipes/bao_sweet_chili_oring/steps/glazed_trout.jpg",
+      "bao_sweet_chili_oring__warmed_bao": "assets/recipes/bao_sweet_chili_oring/steps/warmed_bao.jpg",
+      "bao_sweet_chili_oring": "assets/recipes/bao_sweet_chili_oring/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 541,
+    "perPortion": {
+      "energyKcal": 782,
+      "energyKj": 3273,
+      "fatG": 39.9,
+      "saturatedFatG": 3.3,
+      "carbsG": 72.2,
+      "sugarsG": 22.3,
+      "fiberG": 9.1,
+      "proteinG": 29.5,
+      "saltG": 5.4
+    }
+  },
+  "nodes": [
+    {
+      "id": "bao_sweet_chili_oring__pickled_onion",
+      "name": "Sylta Lök",
+      "outputName": "Syltad lök",
+      "inputs": [
+        {
+          "id": "red_onion",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "lime",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "sugar",
+          "amount": 1,
+          "unit": "tsk"
+        },
+        {
+          "id": "water",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Skär {{red_onion}} i tunna skivor.",
+        "Halvera {{lime}}.",
+        "Blanda saften från {{lime}}, {{sugar}}, {{water}} och {{salt}} i {{eq:skal_1}}.",
+        "Vänd löken i lagen och ställ {{eq:skal_1|def}} åt sidan tills servering."
+      ],
+      "duration": 4,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        },
+        {
+          "type": "skal_liten",
+          "ref": "skal_1"
+        }
+      ],
+      "devNotes": [
+        "HF Lök typ red-onion → red_onion. HF Citrusfrukt (typ lime) → lime. 1 st vid 2 och 4 portioner, 2 st vid 6 — förpackning. Författad som 1 st vid 4 portioner med linjär skalning. Bara saften används i lagen.",
+        "Lagen hälls av vid servering (mastern), inte i denna prepnode. Socker, vatten och salt till inläggning 1 tsk / 2 msk / 0,5 tsk (samma vid 3)."
+      ]
+    },
+    {
+      "id": "bao_sweet_chili_oring__prepped_salad",
+      "name": "Skär Pak Choi, Sockerärtor och Morot",
+      "outputName": "Pak choi, sockerärtor och morotsband",
+      "inputs": [
+        {
+          "id": "pak_choi",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "sugar_snaps",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "carrot",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Grovhacka {{pak_choi}}.",
+        "Ansa och halvera {{sugar_snaps}}.",
+        "Skala {{carrot}} i långa band med en potatisskalare och finhacka den sista innersta biten."
+      ],
+      "duration": 6,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true,
+          "after": "bao_sweet_chili_oring__pickled_onion"
+        }
+      ],
+      "devNotes": [
+        "Potatisskalaren spåras inte. HF Sockerärtor 1 st vid 4 portioner (0,5 vid 2, 1,5 vid 6) — enhet st som i rådatan, troligen påse/förpackning."
+      ]
+    },
+    {
+      "id": "bao_sweet_chili_oring__salad",
+      "name": "Blanda Sallad",
+      "outputName": "Pak choi- och morotssallad",
+      "inputs": [
+        {
+          "id": "bao_sweet_chili_oring__prepped_salad",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Blanda {{bao_sweet_chili_oring__prepped_salad}} i {{eq:skal_2}}. Vänd ner {{olive_oil}} och {{salt}} precis före servering."
+      ],
+      "duration": 1,
+      "wait": 0,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "skal_medelstor",
+          "ref": "skal_2"
+        }
+      ],
+      "devNotes": [
+        "Olja till sallad 2 msk, salt till grönsaker 0,5 tsk (samma vid 3). Inte taggad prep eftersom den vänds precis före servering."
+      ]
+    },
+    {
+      "id": "bao_sweet_chili_oring__seasoned_trout",
+      "name": "Krydda Öring",
+      "outputName": "Kryddad öring",
+      "inputs": [
+        {
+          "id": "trout",
+          "amount": 500,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Torka {{trout}} med hushållspapper och krydda med {{salt}}."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "tallrik",
+          "ref": "tallrik_1",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "Ny ingrediens trout (Öring, rawAnimal fish). Fisken skärs inte och rådatan nämner ingen bräda; den torkas och kryddas på en tallrik, därför ingen skarbrada_ra. Salt till fisk 0,5 tsk (samma vid 3)."
+      ]
+    },
+    {
+      "id": "bao_sweet_chili_oring__seared_trout",
+      "name": "Stek Öring, Skinnsida",
+      "outputName": "Öring, stekt på skinnsidan",
+      "inputs": [
+        {
+          "id": "olive_oil",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "bao_sweet_chili_oring__seasoned_trout",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i {{eq:stekpanna_1}} på medelhög värme.",
+        "Stek {{bao_sweet_chili_oring__seasoned_trout}}, skinnsidan ner, i 3–4 min."
+      ],
+      "duration": 1,
+      "wait": 4,
+      "tags": [],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1"
+        }
+      ],
+      "devNotes": [
+        "Olja till stekning 2 msk. Rådatan säger stor stekpanna. Såsen efteråt är liten (1 msk vatten + 40 ml soja + 40 g sweet chilisås, kort sjudning med fisken avställd) → stekpanna, inte traktörpanna."
+      ]
+    },
+    {
+      "id": "bao_sweet_chili_oring__fried_trout",
+      "name": "Stek Öring Färdigt",
+      "outputName": "Stekt öring, utan skinn",
+      "inputs": [
+        {
+          "id": "bao_sweet_chili_oring__seared_trout",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Vänd {{bao_sweet_chili_oring__seared_trout}} och stek i ytterligare 3–5 min, eller tills gyllene och genomstekt.",
+        "Lägg över på {{eq:tallrik_2}} med skinnsidan upp och ta av skinnet."
+      ],
+      "duration": 1,
+      "wait": 5,
+      "tags": [],
+      "heat": "medelhög",
+      "tips": [
+        "Fisken är klar när fiskköttet är ogenomskinligt och lätt faller isär."
+      ],
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1",
+          "transition": "keep"
+        },
+        {
+          "type": "tallrik",
+          "ref": "tallrik_2",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "Egen tillagad tallrik, skild från den råa kryddtallriken. Skinnet tas av efter stekning, inte på skärbräda."
+      ]
+    },
+    {
+      "id": "bao_sweet_chili_oring__chili_glaze",
+      "name": "Sjud Sweet Chiliglaze",
+      "outputName": "Sweet chiliglaze",
+      "inputs": [
+        {
+          "id": "water",
+          "amount": 1,
+          "unit": "msk"
+        },
+        {
+          "id": "soy_sauce",
+          "amount": 40,
+          "unit": "ml"
+        },
+        {
+          "id": "sweet_chili_sauce",
+          "amount": 40,
+          "unit": "g"
+        },
+        {
+          "id": "chili_flakes",
+          "amount": 1,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Hetta upp samma {{eq:stekpanna_1|noun}} (torka inte ur den) på medelvärme.",
+        "Tillsätt {{water}}, {{soy_sauce}}, {{sweet_chili_sauce}} och {{chili_flakes}} och sjud i 1–2 min, eller tills något tjocknat."
+      ],
+      "duration": 1,
+      "wait": 2,
+      "tags": [],
+      "heat": "medel",
+      "tips": [
+        "Skippa chili eller använd mindre om du inte tycker om stark mat."
+      ],
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1",
+          "transition": "keep",
+          "after": "bao_sweet_chili_oring__fried_trout"
+        }
+      ],
+      "devNotes": [
+        "HF 'Vatten till dressing' 1 msk är vattnet i glazen, inte en separat dressing."
+      ]
+    },
+    {
+      "id": "bao_sweet_chili_oring__glazed_trout",
+      "name": "Glazera Öring",
+      "outputName": "Sweet chiliglaserad öring",
+      "inputs": [
+        {
+          "id": "bao_sweet_chili_oring__chili_glaze",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "bao_sweet_chili_oring__fried_trout",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Ta av {{eq:stekpanna_1|def}} från värmen och lägg tillbaka {{bao_sweet_chili_oring__fried_trout}} i {{bao_sweet_chili_oring__chili_glaze}}. Dela fisken i bitar med en stekspade och vänd försiktigt runt tills den är täckt i sås."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1",
+          "transition": "keep",
+          "offHeat": true
+        }
+      ],
+      "devNotes": [
+        "Stekspaden spåras inte (litet redskap)."
+      ]
+    },
+    {
+      "id": "bao_sweet_chili_oring__sunrise_mayo",
+      "name": "Gör Sunrise-majonnäs",
+      "outputName": "Sunrise-majonnäs",
+      "inputs": [
+        {
+          "id": "mayonnaise",
+          "amount": 50,
+          "unit": "g"
+        },
+        {
+          "id": "hello_sunrise",
+          "amount": 8,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Blanda {{mayonnaise}} och {{hello_sunrise}} i {{eq:skal_3}}."
+      ],
+      "duration": 1,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skal_liten",
+          "ref": "skal_3"
+        }
+      ]
+    },
+    {
+      "id": "bao_sweet_chili_oring__warmed_bao",
+      "name": "Värm Bao-bröd",
+      "outputName": "Uppvärmda bao-bröd",
+      "inputs": [
+        {
+          "id": "bao_buns",
+          "amount": 8,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Klipp ett hål i vardera sida av paketet med {{bao_buns}} och värm på full effekt i {{eq:mikro}} i 40 sek, eller placera bröden i {{eq:sil}} och ånga under lock över kokande vatten i 3–5 min."
+      ],
+      "duration": 1,
+      "wait": 0,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "mikro"
+        },
+        {
+          "type": "sil",
+          "optional": true,
+          "inferred": true
+        }
+      ],
+      "tips": [
+        "Ånga eller värm bröden precis innan servering, så de håller sig varma och mjuka.",
+        "Har du ingen mikrovågsugn, koka upp vatten i en medelstor kastrull och ånga bröden i en sil under lock i 3–5 min."
+      ],
+      "devNotes": [
+        "Återanvänd bao_buns, 8 st vid 4 portioner (2 per portion). Mikron är förstahandsmetoden (40 sek, därför duration 1 och ingen wait). Silen är alternativet utan mikro och optional. Rådatans 'koka upp vatten i en medelstor kastrull om du inte har en mikrovågsugn' är bara i tipset, ingen obligatorisk kastrull-node."
+      ]
+    },
+    {
+      "id": "bao_sweet_chili_oring",
+      "name": "Bao-bröd med sweet chiliglaserad öring",
+      "outputName": "Bao-bröd med sweet chiliglaserad öring",
+      "inputs": [
+        {
+          "id": "bao_sweet_chili_oring__warmed_bao",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "bao_sweet_chili_oring__salad",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "bao_sweet_chili_oring__glazed_trout",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "bao_sweet_chili_oring__pickled_onion",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "bao_sweet_chili_oring__sunrise_mayo",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Häll av lagen från {{bao_sweet_chili_oring__pickled_onion}}.",
+        "Fyll {{bao_sweet_chili_oring__warmed_bao}} med {{bao_sweet_chili_oring__salad}}, {{bao_sweet_chili_oring__glazed_trout}} och den syltade löken.",
+        "Servera med {{bao_sweet_chili_oring__sunrise_mayo}} och resterande fyllning vid sidan av, på {{eq:servering|pl}}."
+      ],
+      "duration": 3,
+      "tags": [
+        "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_tallrik",
+          "ref": "servering",
+          "count": "portions"
+        }
+      ]
+    }
+  ]
+}

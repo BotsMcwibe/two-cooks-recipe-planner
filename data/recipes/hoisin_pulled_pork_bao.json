@@ -1,0 +1,520 @@
+{
+  "masterId": "hoisin_pulled_pork_bao",
+  "source": "hellofresh",
+  "rawId": "6acf6ee6927de2ee6db862e6",
+  "createdAt": 1794420234,
+  "basePortions": 4,
+  "time": {
+    "totalMin": 33,
+    "activeMin": 31,
+    "computedFrom": "graph"
+  },
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/hoisin_pulled_pork_bao/main.jpg",
+    "byNode": {
+      "hoisin_pulled_pork_bao__roasted_veg": "assets/recipes/hoisin_pulled_pork_bao/steps/roasted_veg.jpg",
+      "hoisin_pulled_pork_bao__simmered_pork": "assets/recipes/hoisin_pulled_pork_bao/steps/simmered_pork.jpg",
+      "hoisin_pulled_pork_bao__cucumber_carrot": "assets/recipes/hoisin_pulled_pork_bao/steps/cucumber_carrot.jpg",
+      "hoisin_pulled_pork_bao__oiled_noodles": "assets/recipes/hoisin_pulled_pork_bao/steps/oiled_noodles.jpg",
+      "hoisin_pulled_pork_bao__noodle_salad": "assets/recipes/hoisin_pulled_pork_bao/steps/noodle_salad.jpg",
+      "hoisin_pulled_pork_bao": "assets/recipes/hoisin_pulled_pork_bao/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 748,
+    "perPortion": {
+      "energyKcal": 921,
+      "energyKj": 3853,
+      "fatG": 33,
+      "saturatedFatG": 8.3,
+      "carbsG": 105.4,
+      "sugarsG": 25.1,
+      "fiberG": 13.9,
+      "proteinG": 42.1,
+      "saltG": 6.8
+    }
+  },
+  "nodes": [
+    {
+      "id": "hoisin_pulled_pork_bao__preheated_oven_240",
+      "name": "Värm ugnen",
+      "outputName": "Förvärmd ugn (240°C)",
+      "inputs": [],
+      "steps": [
+        "Värm {{eq:ugn|def}} till 240°C, eller 220°C varmluft."
+      ],
+      "duration": 1,
+      "wait": 12,
+      "tags": [
+        "no-timer",
+        "resource"
+      ],
+      "tips": [
+        "Ugnen tar vanligtvis 10–15 minuter att värmas upp."
+      ],
+      "oven": {
+        "temp": 240,
+        "fanTemp": 220
+      },
+      "devNotes": [
+        "HF anger 240°C/220°C varmluft — lokal ugnsnode, inte preheated_oven_220."
+      ]
+    },
+    {
+      "id": "hoisin_pulled_pork_bao__cut_veg",
+      "name": "Skär Broccoli och Spetskål",
+      "outputName": "Broccolibitar och hackad spetskål",
+      "inputs": [
+        {
+          "id": "broccoli",
+          "amount": 500,
+          "unit": "g"
+        },
+        {
+          "id": "spetskal",
+          "amount": 200,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Skär broccolibuketter och stjälken från {{broccoli}} i 2 cm stora bitar.",
+        "Halvera {{spetskal}} och grovhacka den i 2 cm stora bitar. Släng roten."
+      ],
+      "duration": 5,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "HF Spetskål (hel, ska halveras och grovhackas, roten slängs) → spetskal, inte pointed_cabbage ('Förskuren spetskål')."
+      ]
+    },
+    {
+      "id": "hoisin_pulled_pork_bao__roasted_veg",
+      "name": "Rosta Broccoli och Spetskål",
+      "outputName": "Rostad broccoli och spetskål",
+      "inputs": [
+        {
+          "id": "hoisin_pulled_pork_bao__cut_veg",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Lägg {{hoisin_pulled_pork_bao__cut_veg}} på {{eq:plat_1}} med bakplåtspapper. Blanda med {{olive_oil}}, {{salt}} och en nypa {{pepper}}.",
+        "Rosta i {{eq:ugn|def}} i 10–12 min, eller tills mjuka."
+      ],
+      "duration": 2,
+      "wait": 12,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "hoisin_pulled_pork_bao__preheated_oven_240",
+          "slots": 1,
+          "temp": 240,
+          "fanTemp": 220
+        },
+        {
+          "type": "plat",
+          "ref": "plat_1",
+          "liner": "bakplatspapper"
+        }
+      ],
+      "devNotes": [
+        "Olivoljan har ingen rad i HF:s lista, därför standard 1 skvätt. Salt till grönsaker 0,5 tsk vid 4 portioner (samma vid 3; 0,25 tsk vid 2)."
+      ]
+    },
+    {
+      "id": "hoisin_pulled_pork_bao__simmered_pork",
+      "name": "Sjud Pulled Pork",
+      "outputName": "Sjudet pulled pork i hoisin och umami",
+      "inputs": [
+        {
+          "id": "pulled_pork",
+          "amount": 600,
+          "unit": "g"
+        },
+        {
+          "id": "umami_sauce",
+          "amount": 100,
+          "unit": "g"
+        },
+        {
+          "id": "hoisin_sauce",
+          "amount": 60,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Lägg {{pulled_pork}}, skyn från förpackningen, {{umami_sauce}} och {{hoisin_sauce}} i {{eq:kastrull_1}}.",
+        "Hetta upp {{eq:kastrull_1|def}} på medelvärme och låt sjuda under lock i 10–12 min."
+      ],
+      "duration": 2,
+      "wait": 12,
+      "tags": [],
+      "heat": "medel",
+      "equipment": [
+        {
+          "type": "kastrull_medelstor",
+          "ref": "kastrull_1",
+          "lid": true,
+          "sizeSource": "inferred"
+        }
+      ],
+      "devNotes": [
+        "Rådatan säger bara 'en kastrull med lock'. Innehåll 600 g pulled pork + 100 g umami + 60 g hoisin + sky ≈ 0,8–1 l → kastrull_medelstor (inferred). Inte traktörpanna: ingen stekning, rådatan namnger kastrull.",
+        "Pulled pork är färdiglagat (processed_meat, ingen rawAnimal); ingen skarbrada_ra och ingen Ta fram-node (inget rumstempererat)."
+      ]
+    },
+    {
+      "id": "hoisin_pulled_pork_bao__pulled_pork_glazed",
+      "name": "Riv Pulled Pork",
+      "outputName": "Hoisinglaserad pulled pork",
+      "inputs": [
+        {
+          "id": "hoisin_pulled_pork_bao__simmered_pork",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Använd 2 gafflar för att riva {{hoisin_pulled_pork_bao__simmered_pork}} tills köttet är helt strimlat."
+      ],
+      "duration": 3,
+      "wait": 0,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "kastrull_medelstor",
+          "ref": "kastrull_1",
+          "transition": "keep",
+          "offHeat": true,
+          "sizeSource": "inferred"
+        }
+      ],
+      "devNotes": [
+        "Egen node så att sjudningens wait ligger på sista steget (§4.1 regel 4)."
+      ]
+    },
+    {
+      "id": "hoisin_pulled_pork_bao__cucumber_carrot",
+      "name": "Skär Gurka och Riv Morot",
+      "outputName": "Skivad gurka och riven morot",
+      "inputs": [
+        {
+          "id": "cucumber",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "carrot",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skär {{cucumber}} i tunna skivor.",
+        "Riv {{carrot}} grovt."
+      ],
+      "duration": 4,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "Gurka 1 st vid både 3 och 4 portioner; 4-portionsvärdet används. Gurka och morot går till bao-fyllning och 'resterande' vid sidan av (samma konsument: mastern)."
+      ]
+    },
+    {
+      "id": "hoisin_pulled_pork_bao__sliced_spring_onion",
+      "name": "Skiva Salladslök",
+      "outputName": "Skivad salladslök",
+      "inputs": [
+        {
+          "id": "spring_onion",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skär {{spring_onion}} i tunna skivor."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "Egen prepnode: salladslöken toppas på nudelsalladen, inte i bao."
+      ]
+    },
+    {
+      "id": "hoisin_pulled_pork_bao__crushed_peanuts",
+      "name": "Krossa Jordnötter",
+      "outputName": "Krossade jordnötter",
+      "inputs": [
+        {
+          "id": "salted_peanuts",
+          "amount": 40,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Placera påsen med {{salted_peanuts}} på en plan yta och banka på den tills nötterna är krossade."
+      ],
+      "duration": 1,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "devNotes": [
+        "Rådatan säger 'banka dem med botten av en stekpanna'; stekpannan är bara ett bankredskap och spåras inte, därför omskrivet utan utrustningsord (annars eq-unlinked)."
+      ]
+    },
+    {
+      "id": "hoisin_pulled_pork_bao__cooked_noodles",
+      "name": "Koka Nudlar",
+      "outputName": "Kokta udonnudlar",
+      "inputs": [
+        {
+          "id": "udon_noodles",
+          "amount": 440,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Koka upp saltat vatten i {{eq:kastrull_2}}.",
+        "Koka {{udon_noodles}} i 1 min, eller tills genomvarma."
+      ],
+      "duration": 3,
+      "wait": 1,
+      "tags": [],
+      "heat": "hög",
+      "heatSource": "inferred",
+      "tips": [
+        "Kokvattnet ska vara lika salt som havsvatten."
+      ],
+      "equipment": [
+        {
+          "type": "kastrull_stor",
+          "ref": "kastrull_2"
+        }
+      ],
+      "devNotes": [
+        "HF Udonnudlar (typ udon-noodles, inte torkade) 440 g vid 4 portioner → befintliga udon_noodles. FLAG om färska ska ha egen id. Salt i kokvattnet har ingen rad i HF:s lista."
+      ]
+    },
+    {
+      "id": "hoisin_pulled_pork_bao__oiled_noodles",
+      "name": "Häll Av och Vänd Nudlar",
+      "outputName": "Nudlar med olja",
+      "inputs": [
+        {
+          "id": "hoisin_pulled_pork_bao__cooked_noodles",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        }
+      ],
+      "steps": [
+        "Häll av {{hoisin_pulled_pork_bao__cooked_noodles}} i {{eq:durkslag_1}} och vänd nudlarna med {{olive_oil}}."
+      ],
+      "duration": 1,
+      "wait": 0,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "durkslag",
+          "ref": "durkslag_1",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "Olivoljan har ingen rad i HF:s lista, därför standard 1 skvätt. Durkslag nämns inte men behövs för avhällningen."
+      ]
+    },
+    {
+      "id": "hoisin_pulled_pork_bao__warmed_bao",
+      "name": "Värm Bao-bröd",
+      "outputName": "Varma bao-bröd",
+      "inputs": [
+        {
+          "id": "bao_buns",
+          "amount": 8,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Klipp ett hål i vardera sida av paketet med {{bao_buns}} och värm på full effekt i {{eq:mikro}} i 40 sek, eller placera bröden i {{eq:sil}} och ånga under lock över kokande vatten i 3–5 min."
+      ],
+      "duration": 1,
+      "wait": 0,
+      "tags": [],
+      "tips": [
+        "Ånga eller värm bröden precis innan servering, så de håller sig varma och mjuka.",
+        "Har du ingen mikrovågsugn, koka upp vatten i en medelstor kastrull redan när du sätter på ugnen och ånga bröden i en sil under lock i 3–5 min."
+      ],
+      "equipment": [
+        {
+          "type": "mikro"
+        },
+        {
+          "type": "sil",
+          "optional": true,
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "Ny ingrediens bao_buns, 8 st vid 4 portioner (2 per portion; skalar linjärt 4/6/8/10/12). Mikron är förstahandsmetoden (40 sek, därför duration 1 och ingen wait). Silen är alternativet utan mikro och optional. Rådatans 'koka upp vatten i en medelstor kastrull om du inte har en mikrovågsugn' är bara i tipset, ingen obligatorisk kastrull-node."
+      ]
+    },
+    {
+      "id": "hoisin_pulled_pork_bao__noodle_salad",
+      "name": "Vänd Ihop Nudelsallad",
+      "outputName": "Nudelsallad med rostade grönsaker",
+      "inputs": [
+        {
+          "id": "hoisin_pulled_pork_bao__roasted_veg",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "hoisin_pulled_pork_bao__oiled_noodles",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "sesame_seeds",
+          "amount": 40,
+          "unit": "g"
+        },
+        {
+          "id": "asian_dressing",
+          "amount": 40,
+          "unit": "g"
+        },
+        {
+          "id": "hoisin_pulled_pork_bao__sliced_spring_onion",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Vänd {{hoisin_pulled_pork_bao__roasted_veg}} med {{hoisin_pulled_pork_bao__oiled_noodles}}, {{sesame_seeds}} och {{asian_dressing}} i {{eq:skal_1}}.",
+        "Toppa med {{hoisin_pulled_pork_bao__sliced_spring_onion}}."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "skal_stor",
+          "ref": "skal_1",
+          "sizeSource": "inferred"
+        }
+      ],
+      "devNotes": [
+        "Kall, men inte prep: vänds ihop när grönsakerna är rostade och nudlarna kokta. HF Asiatisk dressing → ny ingrediens asian_dressing. HF Sesamfrön, rostade → sesame_seeds. Rådatan anger ingen skål till vändningen; stor skål inferred för 440 g nudlar + 700 g grönsaker."
+      ]
+    },
+    {
+      "id": "hoisin_pulled_pork_bao",
+      "name": "Hoisinglaserad pulled pork i bao-bröd",
+      "outputName": "Hoisinglaserad pulled pork i bao-bröd",
+      "inputs": [
+        {
+          "id": "hoisin_pulled_pork_bao__warmed_bao",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "hoisin_pulled_pork_bao__pulled_pork_glazed",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "hoisin_pulled_pork_bao__cucumber_carrot",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "hoisin_pulled_pork_bao__crushed_peanuts",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "hoisin_pulled_pork_bao__noodle_salad",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Fyll {{hoisin_pulled_pork_bao__warmed_bao}} med {{hoisin_pulled_pork_bao__pulled_pork_glazed}}, {{hoisin_pulled_pork_bao__cucumber_carrot}} och {{hoisin_pulled_pork_bao__crushed_peanuts}}.",
+        "Servera resterande gurka och morot vid sidan av.",
+        "Lägg upp {{hoisin_pulled_pork_bao__noodle_salad}} i {{eq:servering_sallad|pl}}."
+      ],
+      "duration": 4,
+      "tags": [
+        "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_tallrik",
+          "ref": "servering",
+          "count": "portions"
+        },
+        {
+          "type": "servering_skal",
+          "ref": "servering_sallad",
+          "count": "portions"
+        }
+      ],
+      "devNotes": [
+        "Bao och gurka/morot på tallrikar; nudelsalladen i skålar enligt rådatan ('Lägg upp nudelsallad i en skål')."
+      ]
+    }
+  ]
+}

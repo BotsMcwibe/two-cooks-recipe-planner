@@ -1,0 +1,458 @@
+{
+  "masterId": "rumpstek_pepparsas_broccolini",
+  "source": "hellofresh",
+  "rawId": "6a9e929e548a82de3e1a725a",
+  "createdAt": 1794423719,
+  "basePortions": 4,
+  "time": {
+    "totalMin": 53,
+    "activeMin": 34,
+    "computedFrom": "graph"
+  },
+  "images": {
+    "main": "assets/recipes/rumpstek_pepparsas_broccolini/main.jpg",
+    "byNode": {
+      "rumpstek_pepparsas_broccolini__rosemary_potatoes": "assets/recipes/rumpstek_pepparsas_broccolini/steps/rosemary_potatoes.jpg",
+      "rumpstek_pepparsas_broccolini__prepped_veg": "assets/recipes/rumpstek_pepparsas_broccolini/steps/prepped_veg.jpg",
+      "rumpstek_pepparsas_broccolini__fried_veg": "assets/recipes/rumpstek_pepparsas_broccolini/steps/fried_veg.jpg",
+      "rumpstek_pepparsas_broccolini__fried_steak": "assets/recipes/rumpstek_pepparsas_broccolini/steps/fried_steak.jpg",
+      "rumpstek_pepparsas_broccolini__pepper_sauce": "assets/recipes/rumpstek_pepparsas_broccolini/steps/pepper_sauce.jpg",
+      "rumpstek_pepparsas_broccolini": "assets/recipes/rumpstek_pepparsas_broccolini/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 677,
+    "perPortion": {
+      "energyKcal": 568,
+      "energyKj": 2378,
+      "fatG": 17.4,
+      "saturatedFatG": 9.2,
+      "carbsG": 63.7,
+      "sugarsG": 13.8,
+      "proteinG": 42.6,
+      "saltG": 5.4
+    }
+  },
+  "nodes": [
+    {
+      "id": "rumpstek_pepparsas_broccolini__preheated_oven_240",
+      "name": "Värm ugnen",
+      "outputName": "Förvärmd ugn (240°C)",
+      "inputs": [],
+      "steps": [
+        "Värm {{eq:ugn|def}} till 240°C, eller 220°C varmluft."
+      ],
+      "duration": 1,
+      "wait": 12,
+      "tags": [
+        "no-timer",
+        "resource"
+      ],
+      "tips": [
+        "Ugnen tar vanligtvis 10–15 minuter att värmas upp."
+      ],
+      "oven": {
+        "temp": 240,
+        "fanTemp": 220
+      },
+      "devNotes": [
+        "HF skriver '240 °/220 °C (varmluft)' (saknar C på första temperaturen) — tolkat som 240°C/220°C varmluft. Lokal ugnsnode, inte preheated_oven_220."
+      ]
+    },
+    {
+      "id": "rumpstek_pepparsas_broccolini__roomtemp_meat",
+      "name": "Ta fram köttet",
+      "outputName": "Rumstempererad rumpstek",
+      "inputs": [
+        {
+          "id": "rump_steak",
+          "amount": 600,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Ta fram {{rump_steak}} ur kylen så att det blir rumstempererat."
+      ],
+      "duration": 1,
+      "wait": 30,
+      "tags": [
+        "prep"
+      ],
+      "devNotes": [
+        "Rådatan: 'Ta fram kött så det blir rumstempererat och krydda det med salt' → Ta fram-node (§4.6 regel 9), 30 min. Salt till kött (0,5 tsk) läggs på i stekningsnoden, samma mönster som hjortstek_paronrisotto. HF Rumpstek → rump_steak (redan i katalogen, rawAnimal meat)."
+      ]
+    },
+    {
+      "id": "rumpstek_pepparsas_broccolini__rosemary_potatoes",
+      "name": "Skär Pommes och Hacka Rosmarin",
+      "outputName": "Potatisstavar och rosmarin",
+      "inputs": [
+        {
+          "id": "potato",
+          "amount": 1000,
+          "unit": "g"
+        },
+        {
+          "id": "rosemary",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Plocka och finhacka bladen från {{rosemary}}.",
+        "Skär {{potato}} (oskalad) i 1 cm tunna pommes."
+      ],
+      "duration": 8,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "HF-typ organic-potatoes → potato. Rosmarin 1 st vid 3 och 4 portioner, 0,5 st vid 2 och 1,5 st vid 6 — skalas linjärt från 4-portionsvärdet."
+      ]
+    },
+    {
+      "id": "rumpstek_pepparsas_broccolini__roasted_fries",
+      "name": "Rosta Rosmarinspommes",
+      "outputName": "Rosmarinspommes",
+      "inputs": [
+        {
+          "id": "rumpstek_pepparsas_broccolini__rosemary_potatoes",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Placera {{rumpstek_pepparsas_broccolini__rosemary_potatoes}} på {{eq:plat_1}} med bakplåtspapper.",
+        "Blanda med {{olive_oil}}, {{salt}} och en nypa {{pepper}}.",
+        "Rosta i {{eq:ugn|def}} i 25–35 min, eller tills gyllene och spröda."
+      ],
+      "duration": 3,
+      "wait": 35,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "rumpstek_pepparsas_broccolini__preheated_oven_240",
+          "slots": 1,
+          "temp": 240,
+          "fanTemp": 220
+        },
+        {
+          "type": "plat",
+          "ref": "plat_1",
+          "liner": "bakplatspapper"
+        }
+      ],
+      "devNotes": [
+        "Olivolja till potatis saknas i HF:s lista, därför standard 1 skvätt. Salt till potatis 1 tsk (samma vid 3). Wait 35 = övre intervallet. Pepparsåsen startas när 5 min återstår, enligt stegtexten, utan egen ugnsfas (inget läggs på plåten).",
+        "1000 g potatis ligger exakt på plåtens oneLayerG (1000 g). En plåt enligt rådatan."
+      ]
+    },
+    {
+      "id": "rumpstek_pepparsas_broccolini__prepped_veg",
+      "name": "Skär Morot, Rödlök och Vitlök",
+      "outputName": "Morot, rödlök och vitlök",
+      "inputs": [
+        {
+          "id": "carrot",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "red_onion",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "garlic",
+          "amount": 3,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skär {{carrot}} (oskalad) i 5 cm långa stavar.",
+        "Skär {{red_onion}} i 1 cm breda klyftor.",
+        "Finhacka eller pressa {{garlic}}."
+      ],
+      "duration": 5,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true,
+          "after": "rumpstek_pepparsas_broccolini__rosemary_potatoes"
+        }
+      ],
+      "devNotes": [
+        "HF Lök typ red-onion → red_onion. Vitlök 3 st vid 3 och 4 portioner (2 st vid 2; linjärt vore 4 st vid 4). 4-portionsvärdet 3 st används. FLAG."
+      ]
+    },
+    {
+      "id": "rumpstek_pepparsas_broccolini__fried_veg",
+      "name": "Stek Grönsaker",
+      "outputName": "Stekt broccolini, morot och rödlök",
+      "inputs": [
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "broccolini",
+          "amount": 400,
+          "unit": "g"
+        },
+        {
+          "id": "rumpstek_pepparsas_broccolini__prepped_veg",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i {{eq:traktorpanna_1}} på medelhög värme.",
+        "Stek {{broccolini}} samt morot och rödlök från {{rumpstek_pepparsas_broccolini__prepped_veg}} i 5–6 min, eller tills mjuka. Tillsätt vitlöken från {{rumpstek_pepparsas_broccolini__prepped_veg}} och stek i 1 min, eller tills väldoftande. Krydda med {{salt}} och en nypa {{pepper}} och lägg över och håll varmt under lock."
+      ],
+      "duration": 2,
+      "wait": 6,
+      "tags": [],
+      "heat": "medelhög",
+      "tips": [
+        "Tillsätt en skvätt vatten till stekpannan för att framskynda tillagningsprocessen."
+      ],
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred"
+        }
+      ],
+      "devNotes": [
+        "Olivolja till grönsaker saknas i HF:s lista, därför standard 1 skvätt. Salt till grönsaker 0,5 tsk (samma vid 3). Broccolini skärs inte enligt rådatan.",
+        "Rådatan säger 'lägg över i en skål med lock'. Skålen håller bara grönsakerna varma till servering och spåras inte (godkänd regel för ställ-åt-sidan-skål). Texten undviker ordet skål för att inte ge eq-unlinked.",
+        "Rådatan säger stor stekpanna. Samma panna (torka inte ur) tar sedan 300 ml matlagningsgrädde + 4 msk vatten (ca 3,6 dl) som sjuds efter att köttet vilat → traktörpanna, typeSource inferred, i hela kedjan (grönsaker, stek, sås). FLAG: rump_steak_basil_sauce har 300 ml crème fraiche i bekräftad stekpanna (användarundantag); här följs ≥ 3 dl-regeln."
+      ]
+    },
+    {
+      "id": "rumpstek_pepparsas_broccolini__fried_steak",
+      "name": "Stek Rumpstek",
+      "outputName": "Stekt rumpstek",
+      "inputs": [
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "rumpstek_pepparsas_broccolini__roomtemp_meat",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i {{eq:traktorpanna_1|def}} på medelhög värme.",
+        "Stek {{rumpstek_pepparsas_broccolini__roomtemp_meat}} i 3–4 min per sida, eller tills brynt. Krydda med {{salt}}.",
+        "Låt köttet vila i ett foliepaket tills servering. Det kommer fortsätta tillagas något under tiden det vilar."
+      ],
+      "duration": 8,
+      "wait": 0,
+      "tags": [],
+      "heat": "medelhög",
+      "tips": [
+        "Stek i ytterligare 1–2 min för genomstekt."
+      ],
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred",
+          "transition": "keep",
+          "after": "rumpstek_pepparsas_broccolini__fried_veg"
+        }
+      ],
+      "devNotes": [
+        "Köttet saltas och steks utan att skäras rått, därför ingen skarbrada_ra. Salt till kött 0,5 tsk (samma vid 3). Olivolja till stekning saknas i HF:s lista, därför standard 1 skvätt. 600 g rumpstek ryms i ett lager (oneLayerG 650 g).",
+        "Stekning per sida är hands-on, därför duration och ingen wait. Vilan i folie 'tills servering' är ingen wait (§4.1 regel 7). Folie spåras inte (förbrukningsvara). Samma panna som grönsakerna: after fried_veg är resursordning."
+      ]
+    },
+    {
+      "id": "rumpstek_pepparsas_broccolini__pepper_sauce",
+      "name": "Gör Pepparsås",
+      "outputName": "Krämig pepparsås",
+      "inputs": [
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "cracked_black_pepper",
+          "amount": 4,
+          "unit": "g"
+        },
+        {
+          "id": "water",
+          "amount": 4,
+          "unit": "msk"
+        },
+        {
+          "id": "cooking_cream",
+          "amount": 300,
+          "unit": "ml"
+        },
+        {
+          "id": "chicken_bouillon",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i samma {{eq:traktorpanna_1|noun}} (torka inte ur den) på medellåg värme när det återstår 5 min av potatisens tillagningstid.",
+        "Fräs {{cracked_black_pepper}} i 20–30 sekunder. Tillsätt {{water}} och skrapa upp bitar som fastnat i botten av {{eq:traktorpanna_1|def}}.",
+        "Rör ner {{cooking_cream}}, {{chicken_bouillon}} och {{salt}}. Sjud i 1–2 min, eller tills såsen har tjocknat. Tillsätt eventuell extra sky från foliepaketet."
+      ],
+      "duration": 2,
+      "wait": 2,
+      "tags": [],
+      "heat": "medellåg",
+      "tips": [
+        "Tillsätt en extra skvätt vatten om såsen blir för tjock."
+      ],
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred",
+          "transition": "keep",
+          "after": "rumpstek_pepparsas_broccolini__fried_steak"
+        }
+      ],
+      "devNotes": [
+        "Ny ingrediens cracked_black_pepper (Grovmalen svartpeppar), 4 g vid 4 portioner (samma vid 3; linjärt 2/4/6). Inte samma som pantry-peppar som används i nypor till potatis och grönsaker.",
+        "Vatten till sås 4 msk, salt till sås 0,5 tsk (samma vid 3). HF Buljong (chicken-stock-powder) → chicken_bouillon, 8 g. Matlagningsgrädde (light-cooking-cream) → cooking_cream, 300 ml. Olivolja till sås saknas i listan, därför 1 skvätt."
+      ]
+    },
+    {
+      "id": "rumpstek_pepparsas_broccolini__sliced_steak",
+      "name": "Skiva Rumpstek",
+      "outputName": "Skivad rumpstek",
+      "inputs": [
+        {
+          "id": "rumpstek_pepparsas_broccolini__fried_steak",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skär {{rumpstek_pepparsas_broccolini__fried_steak}} i tunna skivor."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true,
+          "after": "rumpstek_pepparsas_broccolini__prepped_veg"
+        }
+      ],
+      "devNotes": [
+        "Stekt kött skärs på den vanliga (rena) skärbrädan; inget rått kött har skurits i receptet, därför ingen skarbrada_ra."
+      ]
+    },
+    {
+      "id": "rumpstek_pepparsas_broccolini",
+      "name": "Pannstekt rumpstek och krämig pepparsås",
+      "outputName": "Pannstekt rumpstek och krämig pepparsås",
+      "inputs": [
+        {
+          "id": "rumpstek_pepparsas_broccolini__sliced_steak",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "rumpstek_pepparsas_broccolini__roasted_fries",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "rumpstek_pepparsas_broccolini__fried_veg",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "rumpstek_pepparsas_broccolini__pepper_sauce",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{rumpstek_pepparsas_broccolini__sliced_steak}}, {{rumpstek_pepparsas_broccolini__roasted_fries}} och {{rumpstek_pepparsas_broccolini__fried_veg}} på {{eq:servering|pl}}.",
+        "Ringla {{rumpstek_pepparsas_broccolini__pepper_sauce}} över köttet."
+      ],
+      "duration": 2,
+      "tags": [
+        "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_tallrik",
+          "ref": "servering",
+          "count": "portions"
+        }
+      ],
+      "devNotes": [
+        "Kostfiber 40,6 g slängd som orimlig. HF totalTime/prepTime PT30M räknar troligen inte in Ta fram-vilans överlapp; totalMinutes 45 (30 min Ta fram överlappar preheat och en 25–35 min rostning).",
+        "Samma clonedFrom 63ae8e5e4ce8ac7a954a1f48 har också 645b51baa116286892337331 ('Grillad ryggbiff och krämig pepparsås', med brunsås) — annan rätt, inte konverterad. 677e317c84c33a69abdbf350 har samma visningsnamn men annat clonedFrom och rödkål/lingon/valnöt — fortfarande i kön, inte konverterad. rump_steak_basil_sauce är en annan rätt och är orörd."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,557 @@
+{
+  "masterId": "kottfarslimpa_graddsas",
+  "source": "hellofresh",
+  "rawId": "6a9e92a256a4cfbb9638f4b9",
+  "createdAt": 1794422118,
+  "basePortions": 4,
+  "time": {
+    "totalMin": 54,
+    "activeMin": 26,
+    "computedFrom": "graph"
+  },
+  "sharedPrep": [
+    "preheated_oven_220"
+  ],
+  "images": {
+    "main": "assets/recipes/kottfarslimpa_graddsas/main.png",
+    "byNode": {
+      "kottfarslimpa_graddsas__formed_loaf": "assets/recipes/kottfarslimpa_graddsas/steps/formed_loaf.jpg",
+      "kottfarslimpa_graddsas__baked_loaf_first": "assets/recipes/kottfarslimpa_graddsas/steps/baked_loaf_first.jpg",
+      "kottfarslimpa_graddsas__boiled_potatoes": "assets/recipes/kottfarslimpa_graddsas/steps/boiled_potatoes.jpg",
+      "kottfarslimpa_graddsas__pickled_cucumber": "assets/recipes/kottfarslimpa_graddsas/steps/pickled_cucumber.jpg",
+      "kottfarslimpa_graddsas__cream_sauce": "assets/recipes/kottfarslimpa_graddsas/steps/cream_sauce.jpg",
+      "kottfarslimpa_graddsas": "assets/recipes/kottfarslimpa_graddsas/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 595,
+    "perPortion": {
+      "energyKcal": 818,
+      "energyKj": 3422,
+      "fatG": 46.7,
+      "saturatedFatG": 20.9,
+      "carbsG": 66.6,
+      "sugarsG": 21.1,
+      "proteinG": 32.4,
+      "saltG": 4.2
+    }
+  },
+  "nodes": [
+    {
+      "id": "kottfarslimpa_graddsas__boiling_water",
+      "name": "Koka Upp Vatten",
+      "outputName": "Saltat kokvatten",
+      "inputs": [],
+      "steps": [
+        "Koka upp saltat vatten i {{eq:kastrull_1}}."
+      ],
+      "duration": 2,
+      "wait": 8,
+      "tags": [],
+      "heat": "hög",
+      "equipment": [
+        {
+          "type": "kastrull_medelstor",
+          "ref": "kastrull_1"
+        }
+      ],
+      "devNotes": [
+        "Rådatan säger medelstor kastrull. Salt i kokvattnet har ingen rad i HF:s lista. Vattnet sätts på i steg 1 så det kokar när potatisen ska i."
+      ]
+    },
+    {
+      "id": "kottfarslimpa_graddsas__formed_loaf",
+      "name": "Forma Köttfärslimpa",
+      "outputName": "Ogräddad köttfärslimpa",
+      "inputs": [
+        {
+          "id": "mixed_mince",
+          "amount": 500,
+          "unit": "g"
+        },
+        {
+          "id": "egg",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "breadcrumbs",
+          "amount": 50,
+          "unit": "g"
+        },
+        {
+          "id": "mustard",
+          "amount": 15,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Blanda {{mixed_mince}}, {{egg}}, {{breadcrumbs}}, {{mustard}}, {{salt}} och en nypa {{pepper}} i {{eq:skal_1}}.",
+        "Forma färsen till en avlång limpa i {{eq:ugnsform_1}}."
+      ],
+      "duration": 5,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skal_stor",
+          "ref": "skal_1"
+        },
+        {
+          "type": "ugnsform",
+          "ref": "ugnsform_1"
+        }
+      ],
+      "devNotes": [
+        "HF Blandfärs (blandfars) → mixed_mince. Färsen skärs inte, den blandas i skål och formas i ugnsformen, därför ingen skarbrada_ra. Skålen används bara till rå färs och återanvänds inte till färdig mat.",
+        "Salt till köttfärslimpa 1 tsk och ägg 1 st (samma vid 3). HF Senap 9 g vid 2, 15 g vid 4 och 24 g vid 6 — inte linjärt (9×2=18). 4-portionsvärdet 15 g används. FLAG.",
+        "HF:s VIKTIGT-ruta om 'halva mängden av vissa ingredienser' gäller kassens förpackningar och är utelämnad; mängderna här är redan 4-portionsvärden."
+      ]
+    },
+    {
+      "id": "kottfarslimpa_graddsas__baked_loaf_first",
+      "name": "Grädda Limpan, Första Fas",
+      "outputName": "Halvgräddad köttfärslimpa",
+      "inputs": [
+        {
+          "id": "kottfarslimpa_graddsas__formed_loaf",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Grädda {{kottfarslimpa_graddsas__formed_loaf}} i {{eq:ugnsform_1|def}} i {{eq:ugn|def}} i 15 min."
+      ],
+      "duration": 1,
+      "wait": 15,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "ugnsform",
+          "ref": "ugnsform_1",
+          "transition": "keep"
+        },
+        {
+          "type": "ugn",
+          "after": "preheated_oven_220",
+          "slots": 1,
+          "temp": 220,
+          "fanTemp": 200
+        }
+      ]
+    },
+    {
+      "id": "kottfarslimpa_graddsas__oven_180",
+      "name": "Sänk ugnsvärmen",
+      "outputName": "Förvärmd ugn (180°C)",
+      "inputs": [],
+      "steps": [
+        "Sänk {{eq:ugn|def}} till 180°C, eller 160°C varmluft."
+      ],
+      "duration": 1,
+      "wait": 5,
+      "tags": [
+        "no-timer",
+        "resource"
+      ],
+      "oven": {
+        "temp": 180,
+        "fanTemp": 160
+      },
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "kottfarslimpa_graddsas__baked_loaf_first"
+        }
+      ],
+      "devNotes": [
+        "Andra ugnstemperaturen (180/160) får en egen resource-nod per §4.6 (en preheat-resource per temperatur). after på första gräddningen så sänkningen sker först när 220-fasen är klar."
+      ]
+    },
+    {
+      "id": "kottfarslimpa_graddsas__baked_loaf",
+      "name": "Grädda Limpan Färdigt",
+      "outputName": "Gräddad köttfärslimpa",
+      "inputs": [
+        {
+          "id": "kottfarslimpa_graddsas__baked_loaf_first",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Grädda {{kottfarslimpa_graddsas__baked_loaf_first}} i {{eq:ugnsform_1|def}} i {{eq:ugn|def}} i ytterligare 15 min."
+      ],
+      "duration": 1,
+      "wait": 15,
+      "tags": [],
+      "tips": [
+        "Köttfärsen är färdiglagad när den är genomstekt och utan inslag av rosa."
+      ],
+      "equipment": [
+        {
+          "type": "ugnsform",
+          "ref": "ugnsform_1",
+          "transition": "keep"
+        },
+        {
+          "type": "ugn",
+          "after": "kottfarslimpa_graddsas__oven_180",
+          "slots": 1,
+          "temp": 180,
+          "fanTemp": 160
+        }
+      ]
+    },
+    {
+      "id": "kottfarslimpa_graddsas__boiled_potatoes",
+      "name": "Koka Potatis",
+      "outputName": "Kokt potatis",
+      "inputs": [
+        {
+          "id": "kottfarslimpa_graddsas__boiling_water",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "potato",
+          "amount": 800,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Koka {{potato}} i {{kottfarslimpa_graddsas__boiling_water}} i {{eq:kastrull_1|def}} i 12–15 min, eller tills den enkelt kan delas med en kniv."
+      ],
+      "duration": 1,
+      "wait": 15,
+      "tags": [],
+      "heat": "hög",
+      "equipment": [
+        {
+          "type": "kastrull_medelstor",
+          "ref": "kastrull_1",
+          "transition": "keep"
+        }
+      ],
+      "devNotes": [
+        "HF-typ organic-potatoes → potato. Rådatan säger inte att potatisen skärs, därför kokas den som den är."
+      ]
+    },
+    {
+      "id": "kottfarslimpa_graddsas__seasoned_potatoes",
+      "name": "Krydda Potatis",
+      "outputName": "Kryddad kokt potatis",
+      "inputs": [
+        {
+          "id": "kottfarslimpa_graddsas__boiled_potatoes",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Häll av vattnet från {{kottfarslimpa_graddsas__boiled_potatoes}} i {{eq:durkslag_1}} och lägg tillbaka potatisen i {{eq:kastrull_1|def}}.",
+        "Krydda med en nypa {{salt}} och {{pepper}} och ställ åt sidan under lock."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "kastrull_medelstor",
+          "ref": "kastrull_1",
+          "transition": "keep",
+          "offHeat": true,
+          "lid": true
+        },
+        {
+          "type": "durkslag",
+          "ref": "durkslag_1",
+          "inferred": true
+        }
+      ]
+    },
+    {
+      "id": "kottfarslimpa_graddsas__chopped_onion",
+      "name": "Hacka Lök",
+      "outputName": "Hackad lök",
+      "inputs": [
+        {
+          "id": "red_onion",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Finhacka {{red_onion}}."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "HF Lök har typ red-onion, mappad till red_onion."
+      ]
+    },
+    {
+      "id": "kottfarslimpa_graddsas__chopped_rosemary",
+      "name": "Hacka Rosmarin",
+      "outputName": "Hackad rosmarin",
+      "inputs": [
+        {
+          "id": "rosemary",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Finhacka {{rosemary}}."
+      ],
+      "duration": 1,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true,
+          "after": "kottfarslimpa_graddsas__chopped_onion"
+        }
+      ],
+      "devNotes": [
+        "HF Rosmarin 1 st vid 2 och 4 portioner, 2 st vid 6 — förpackning. Författad som 1 st vid 4 portioner med linjär skalning."
+      ]
+    },
+    {
+      "id": "kottfarslimpa_graddsas__pickled_cucumber",
+      "name": "Sylta Gurka",
+      "outputName": "Syltad gurka",
+      "inputs": [
+        {
+          "id": "cucumber",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "white_wine_vinegar",
+          "amount": 24,
+          "unit": "ml"
+        },
+        {
+          "id": "sugar",
+          "amount": 1,
+          "unit": "tsk"
+        },
+        {
+          "id": "water",
+          "amount": 4,
+          "unit": "msk"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Skala {{cucumber}} i tunna band med en potatisskalare.",
+        "Blanda {{white_wine_vinegar}}, {{sugar}}, {{water}} och {{salt}} i {{eq:skal_liten}}.",
+        "Vänd gurkan i lagen och ställ åt sidan tills servering."
+      ],
+      "duration": 4,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true,
+          "after": "kottfarslimpa_graddsas__chopped_rosemary"
+        },
+        {
+          "type": "skal_liten"
+        }
+      ],
+      "devNotes": [
+        "Potatisskalaren spåras inte. Lagen hälls av vid servering (mastern), inte i denna prepnode. Socker, vatten och salt till inläggning 1 tsk / 4 msk / 0,5 tsk (samma vid 3)."
+      ]
+    },
+    {
+      "id": "kottfarslimpa_graddsas__fried_onion",
+      "name": "Stek Lök",
+      "outputName": "Stekt lök",
+      "inputs": [
+        {
+          "id": "olive_oil",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "kottfarslimpa_graddsas__chopped_onion",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i {{eq:traktorpanna_1}} på medelhög värme.",
+        "Stek {{kottfarslimpa_graddsas__chopped_onion}} i 3–4 min, tills mjukt."
+      ],
+      "duration": 1,
+      "wait": 4,
+      "tags": [],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred"
+        }
+      ],
+      "devNotes": [
+        "Rådatan säger stor stekpanna, men samma panna tar sedan 300 ml matlagningsgrädde + 1 dl mjölk (4 dl) som sjuds → traktörpanna, typeSource inferred. Olja till stekning 2 msk."
+      ]
+    },
+    {
+      "id": "kottfarslimpa_graddsas__cream_sauce",
+      "name": "Sjud Gräddsås",
+      "outputName": "Gräddsås",
+      "inputs": [
+        {
+          "id": "kottfarslimpa_graddsas__fried_onion",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "cooking_cream",
+          "amount": 300,
+          "unit": "ml"
+        },
+        {
+          "id": "milk",
+          "amount": 1,
+          "unit": "dl"
+        },
+        {
+          "id": "kottfarslimpa_graddsas__chopped_rosemary",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "beef_bouillon",
+          "amount": 8,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Rör ner {{cooking_cream}}, {{milk}}, {{kottfarslimpa_graddsas__chopped_rosemary}}, {{salt}} och {{beef_bouillon}} i {{kottfarslimpa_graddsas__fried_onion}} i {{eq:traktorpanna_1|def}}.",
+        "Sjud i 3 min, eller tills något tjocknat."
+      ],
+      "duration": 1,
+      "wait": 3,
+      "tags": [],
+      "heat": "medel",
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred",
+          "transition": "keep"
+        }
+      ],
+      "devNotes": [
+        "HF Matlagningsgrädde (light-cooking-cream) → cooking_cream. HF Buljong (beef-stock-powder) → beef_bouillon. Mjölk till sås 1 dl, salt till sås 0,5 tsk (samma vid 3).",
+        "Sjud → värme medel (inferred; rådatan sänker inte uttryckligen från medelhög)."
+      ]
+    },
+    {
+      "id": "kottfarslimpa_graddsas",
+      "name": "Köttfärslimpa med gräddsås",
+      "outputName": "Köttfärslimpa med gräddsås",
+      "inputs": [
+        {
+          "id": "kottfarslimpa_graddsas__baked_loaf",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "kottfarslimpa_graddsas__seasoned_potatoes",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "kottfarslimpa_graddsas__cream_sauce",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "kottfarslimpa_graddsas__pickled_cucumber",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "lingon_jam",
+          "amount": 100,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Häll av lagen från {{kottfarslimpa_graddsas__pickled_cucumber}}.",
+        "Lägg upp {{kottfarslimpa_graddsas__baked_loaf}} och {{kottfarslimpa_graddsas__seasoned_potatoes}} på {{eq:servering|pl}}.",
+        "Toppa med {{kottfarslimpa_graddsas__cream_sauce}}. Servera med den syltade gurkan och {{lingon_jam}}."
+      ],
+      "duration": 3,
+      "tags": [
+        "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_tallrik",
+          "ref": "servering",
+          "count": "portions"
+        }
+      ],
+      "devNotes": [
+        "HF Lingonmarmelad (lingonsylt) → lingon_jam."
+      ]
+    }
+  ]
+}

@@ -30,6 +30,7 @@ Existing fields unchanged. Image / ratings / tag field semantics:
 | `image` | no | `null` \| `string` | Main thumbnail for picker / shopping. Path relative to app root. `null` or omit = no image. |
 | `ratingAverage` | no | `number` | Mirror of master `ratings.average` for sorting/filtering without loading the master. Omit if unknown. |
 | `ratingCount` | no | `number` (int ≥ 0) | Mirror of master `ratings.count`. May be `0` when average is present. |
+| `totalMinutes` | yes | integer | Mirror of master `time.totalMin`, shown on recipe cards. Written by `node scripts/compute-times.mjs`; never copied from the source site. |
 
 ```json
 {
@@ -90,6 +91,7 @@ Keep catalog small: **do not** put nutrition or step-image maps here. Flat `rati
   "source": "hellofresh",
   "createdAt": 1710000000,
   "basePortions": 4,
+  "time": { "totalMin": 34, "activeMin": 22, "computedFrom": "graph" },
   "sharedPrep": [],
   "images": {
     "main": "assets/recipes/bacon_tortelloni_tomato/main.jpg",
@@ -126,6 +128,7 @@ Keep catalog small: **do not** put nutrition or step-image maps here. Flat `rati
 |-------|----------|-------|
 | `source` | yes | Non-empty site slug. Same value as the catalog entry. Not an enum; `hellofresh` and `ica` are the values in use. Distinct from `ratings.source` and `cooked.source`. |
 | `createdAt` | yes | Integer unix seconds when this master was written. Same value as the catalog entry. Not milliseconds. |
+| `time` | yes | Computed by `node scripts/compute-times.mjs` from the graph, never typed in and never copied from the source site (HelloFresh `prepTime`/`totalTime`, Linas `cookingTimeMin/Max`, ICA/City Gross times are unreliable). `totalMin` = Scheduler makespan for the default cook view (1 cook, Preppa först off, default kitchen profile): node `duration` is hands-on time a cook spends, `wait` runs in parallel. `activeMin` = sum of node `duration`. `computedFrom` is always `"graph"`. The cook page still shows its own live makespan for the chosen options (2 cooks, Preppa först, kitchen profile). |
 | `images` | no | Object; omit entirely if none |
 | `images.main` | no | Same role as catalog `image` (prefer keeping both in sync when present) |
 | `images.byNode` | no | Map **node id → path**. Keys should be ids in this master (or its `sharedPrep`). Not part of DAG semantics |

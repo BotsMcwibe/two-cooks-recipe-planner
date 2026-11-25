@@ -1,0 +1,397 @@
+{
+  "masterId": "carbonara_nduja_guanciale",
+  "source": "hellofresh",
+  "rawId": "6a9e92a256a4cfbb9638f4d4",
+  "createdAt": 1794421937,
+  "basePortions": 4,
+  "time": {
+    "totalMin": 21,
+    "activeMin": 21,
+    "computedFrom": "graph"
+  },
+  "images": {
+    "main": "assets/recipes/carbonara_nduja_guanciale/main.jpg",
+    "byNode": {
+      "carbonara_nduja_guanciale__cooked_pasta": "assets/recipes/carbonara_nduja_guanciale/steps/cooked_pasta.jpg",
+      "carbonara_nduja_guanciale__fried_guanciale": "assets/recipes/carbonara_nduja_guanciale/steps/fried_guanciale.jpg",
+      "carbonara_nduja_guanciale__prepped_salad": "assets/recipes/carbonara_nduja_guanciale/steps/prepped_salad.jpg",
+      "carbonara_nduja_guanciale__salad": "assets/recipes/carbonara_nduja_guanciale/steps/salad.jpg",
+      "carbonara_nduja_guanciale__carbonara": "assets/recipes/carbonara_nduja_guanciale/steps/carbonara.jpg",
+      "carbonara_nduja_guanciale": "assets/recipes/carbonara_nduja_guanciale/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 444,
+    "perPortion": {
+      "energyKcal": 1015,
+      "energyKj": 4248,
+      "fatG": 63,
+      "saturatedFatG": 22.2,
+      "carbsG": 73,
+      "sugarsG": 8.7,
+      "fiberG": 9.9,
+      "proteinG": 35.7,
+      "saltG": 3.6
+    }
+  },
+  "nodes": [
+    {
+      "id": "carbonara_nduja_guanciale__cooked_pasta",
+      "name": "Koka Pasta",
+      "outputName": "Kokt linguine",
+      "inputs": [
+        {
+          "id": "linguine",
+          "amount": 360,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Koka upp saltat vatten i {{eq:kastrull_1}}.",
+        "Koka {{linguine}} i 8 min, eller tills al dente."
+      ],
+      "duration": 2,
+      "wait": 8,
+      "tags": [],
+      "heat": "hög",
+      "tips": [
+        "Kokvattnet ska vara lika salt som havsvatten.",
+        "Al dente betyder att pastan är genomkokt men fortfarande har tuggmotstånd."
+      ],
+      "equipment": [
+        {
+          "type": "kastrull_stor",
+          "ref": "kastrull_1"
+        }
+      ],
+      "devNotes": [
+        "Rådatan säger stor kastrull. Salt i kokvattnet har ingen rad i HF:s lista."
+      ]
+    },
+    {
+      "id": "carbonara_nduja_guanciale__drained_pasta",
+      "name": "Häll Av Pastan",
+      "outputName": "Avrunnen pasta och sparat pastavatten",
+      "inputs": [
+        {
+          "id": "carbonara_nduja_guanciale__cooked_pasta",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skopa upp ca 3 dl kokvatten från {{carbonara_nduja_guanciale__cooked_pasta}} i en kopp och ställ åt sidan.",
+        "Häll av vattnet och lägg tillbaka pastan i {{eq:kastrull_1|def}}."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "kastrull_stor",
+          "ref": "kastrull_1",
+          "transition": "keep",
+          "offHeat": true
+        }
+      ],
+      "devNotes": [
+        "HF Sparat pastavatten 3 dl (shipped false) är en biprodukt av pastakoket, inte en inköpsvara. Utgången innehåller både pastan och det sparade vattnet; hälften vispas i äggblandningen och resten går i pannan i carbonaranoden (samma mönster som marry_me_chicken_pasta).",
+        "Rådatan skopar upp vattnet 'precis innan pastan är färdig'; här direkt före avhällningen så att kokets wait ligger på sista steget. Koppen spåras inte (litet redskap)."
+      ]
+    },
+    {
+      "id": "carbonara_nduja_guanciale__chopped_chili",
+      "name": "Hacka Chili",
+      "outputName": "Hackad chili",
+      "inputs": [
+        {
+          "id": "fresh_chili",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Halvera, kärna ur och finhacka {{fresh_chili}}."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "tips": [
+        "Skippa chili eller använd mindre om du inte tycker om stark mat."
+      ],
+      "devNotes": [
+        "HF Chili (chilli) → fresh_chili. 0,5 st vid 2, 1 st vid 3 och 4 portioner; 4-portionsvärdet 1 st används."
+      ]
+    },
+    {
+      "id": "carbonara_nduja_guanciale__fried_guanciale",
+      "name": "Stek Guanciale",
+      "outputName": "Stekt guanciale",
+      "inputs": [
+        {
+          "id": "guanciale",
+          "amount": 160,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{eq:traktorpanna_1}} på medelhög värme.",
+        "Stek {{guanciale}} i 4–5 min, eller tills gyllene."
+      ],
+      "duration": 1,
+      "wait": 5,
+      "tags": [],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred"
+        }
+      ],
+      "devNotes": [
+        "Ny ingrediens guanciale (rawAnimal meat som bacon). Rådatan säger inte att den skärs, därför ingen skarbrada_ra.",
+        "Ingen olja i HF:s lista eller steg; guancialen släpper fett.",
+        "Rådatan säger stor stekpanna, men samma panna tar sedan pastan plus 3 dl pastavatten som rörs ihop till sås → traktörpanna, typeSource inferred, i hela kedjan."
+      ]
+    },
+    {
+      "id": "carbonara_nduja_guanciale__nduja_chili",
+      "name": "Stek Nduja och Chili",
+      "outputName": "Nduja och guanciale",
+      "inputs": [
+        {
+          "id": "carbonara_nduja_guanciale__fried_guanciale",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "nduja",
+          "amount": 160,
+          "unit": "g"
+        },
+        {
+          "id": "carbonara_nduja_guanciale__chopped_chili",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Tillsätt {{nduja}} och {{carbonara_nduja_guanciale__chopped_chili}} till {{carbonara_nduja_guanciale__fried_guanciale}} i {{eq:traktorpanna_1|def}} och stek i 2–3 min, eller tills ndujan har smält."
+      ],
+      "duration": 1,
+      "wait": 3,
+      "tags": [],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred",
+          "transition": "keep"
+        }
+      ]
+    },
+    {
+      "id": "carbonara_nduja_guanciale__prepped_salad",
+      "name": "Hyvla Fänkål och Förbered Sallad",
+      "outputName": "Hyvlad fänkål, rucola och citrus",
+      "inputs": [
+        {
+          "id": "fennel",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "lemon",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "rucola",
+          "amount": 70,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Halvera {{fennel}} och använd en potatisskalare för att skala den på längden.",
+        "Finhacka den innersta delen som kan vara svår att skala. Kasta stjälken.",
+        "Halvera {{lemon}}.",
+        "Skölj {{rucola}}."
+      ],
+      "duration": 6,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true,
+          "after": "carbonara_nduja_guanciale__chopped_chili"
+        }
+      ],
+      "devNotes": [
+        "Potatisskalaren spåras inte (litet redskap).",
+        "HF Citrusfrukt (typ lemon) → lemon. 1 st vid 2 och 4 portioner, 2 st vid 6 — förpackning. Författad som 1 st vid 4 portioner med linjär skalning. Bara en generös skvätt saft används i salladen.",
+        "HF Rucola 40 g vid 2, 70 g vid 4 och 110 g vid 6 — inte exakt linjärt (40→70 är 1,75×). Författad som 70 g vid 4 portioner. FLAG."
+      ]
+    },
+    {
+      "id": "carbonara_nduja_guanciale__salad",
+      "name": "Blanda Fänkålssallad",
+      "outputName": "Fänkålssallad",
+      "inputs": [
+        {
+          "id": "carbonara_nduja_guanciale__prepped_salad",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Blanda {{carbonara_nduja_guanciale__prepped_salad}}, {{olive_oil}}, {{salt}} och en generös skvätt citronsaft i {{eq:skal_stor}}."
+      ],
+      "duration": 1,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skal_stor"
+        }
+      ],
+      "devNotes": [
+        "Olja till sallad 2 msk, salt till sallad 0,5 tsk (samma vid 3)."
+      ]
+    },
+    {
+      "id": "carbonara_nduja_guanciale__carbonara",
+      "name": "Gör Carbonara",
+      "outputName": "Nduja- och guancialecarbonara",
+      "inputs": [
+        {
+          "id": "carbonara_nduja_guanciale__drained_pasta",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "carbonara_nduja_guanciale__nduja_chili",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "egg",
+          "amount": 4,
+          "unit": "st"
+        },
+        {
+          "id": "parmesan",
+          "amount": 20,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 2,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Separera äggulan från äggvitan och vispa ihop äggulan från {{egg}}, hälften av den finrivna {{parmesan}} och en nypa {{pepper}} med en gaffel i {{eq:skal_1}}.",
+        "Tillsätt långsamt hälften av det sparade pastavattnet från {{carbonara_nduja_guanciale__drained_pasta}} under vispning.",
+        "Tillsätt pastan, äggblandningen, resterande pastavatten, {{salt}} och en nypa {{pepper}} till {{carbonara_nduja_guanciale__nduja_chili}} i {{eq:traktorpanna_1|def}}. Rör om i 2 min, eller tills pastan är täckt med sås."
+      ],
+      "duration": 4,
+      "wait": 0,
+      "tags": [],
+      "heat": "medel",
+      "tips": [
+        "Äggulan gör såsen tjock och krämig.",
+        "Tillsätt mer pastavatten om såsen blir för tjock."
+      ],
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred",
+          "transition": "keep"
+        },
+        {
+          "type": "skal_medelstor",
+          "ref": "skal_1"
+        }
+      ],
+      "devNotes": [
+        "Ägg till sås 4 st; bara äggulorna används, vitorna slås bort. Salt till sås 0,5 tsk (samma vid 3). Två nypor peppar som i rådatan (en i äggblandningen, en i pannan).",
+        "Osten delas 20 g i såsen och 20 g till topping (totalt 40 g). HF Parmigiano Reggiano PDO → parmesan. FLAG.",
+        "Omrörning i 2 min är hands-on, därför duration och ingen wait. Värmen sänkt till medel (inferred) så äggen inte stelnar; rådatan anger ingen ny värmenivå. FLAG."
+      ]
+    },
+    {
+      "id": "carbonara_nduja_guanciale",
+      "name": "Carbonara på nduja och guanciale",
+      "outputName": "Carbonara på nduja och guanciale",
+      "inputs": [
+        {
+          "id": "carbonara_nduja_guanciale__carbonara",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "parmesan",
+          "amount": 20,
+          "unit": "g"
+        },
+        {
+          "id": "carbonara_nduja_guanciale__salad",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{carbonara_nduja_guanciale__carbonara}} i {{eq:servering|pl}}.",
+        "Toppa med resterande {{parmesan}} och servera med {{carbonara_nduja_guanciale__salad}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_skal",
+          "ref": "servering",
+          "count": "portions"
+        }
+      ],
+      "devNotes": [
+        "HF-namnet var '[SPICY] Carbonara på nduja och guanciale'. '[SPICY]' är en HF-namntag och är borttaget från titeln (jfr §2, korta bort marknadsföringsfluff). Mappad till curated tag 'spicy'. Finns inte som HF-tag-slug; hfTags följer recipe.tags (bl.a. bold-flavours)."
+      ]
+    }
+  ]
+}

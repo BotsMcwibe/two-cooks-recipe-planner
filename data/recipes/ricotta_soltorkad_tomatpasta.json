@@ -1,0 +1,274 @@
+{
+  "masterId": "ricotta_soltorkad_tomatpasta",
+  "source": "hellofresh",
+  "rawId": "6a9e9297790f7867027dbf2f",
+  "createdAt": 1794425193,
+  "basePortions": 4,
+  "time": {
+    "totalMin": 15,
+    "activeMin": 14,
+    "computedFrom": "graph"
+  },
+  "images": {
+    "main": "assets/recipes/ricotta_soltorkad_tomatpasta/main.jpg",
+    "byNode": {
+      "ricotta_soltorkad_tomatpasta__cooked_pasta": "assets/recipes/ricotta_soltorkad_tomatpasta/steps/cooked_pasta.jpg",
+      "ricotta_soltorkad_tomatpasta__tomato_cream_sauce": "assets/recipes/ricotta_soltorkad_tomatpasta/steps/tomato_cream_sauce.jpg",
+      "ricotta_soltorkad_tomatpasta__chopped_topping": "assets/recipes/ricotta_soltorkad_tomatpasta/steps/chopped_topping.jpg",
+      "ricotta_soltorkad_tomatpasta": "assets/recipes/ricotta_soltorkad_tomatpasta/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 541,
+    "perPortion": {
+      "energyKcal": 877,
+      "energyKj": 3669,
+      "fatG": 39.1,
+      "saturatedFatG": 15.5,
+      "carbsG": 97.3,
+      "sugarsG": 24.7,
+      "proteinG": 29.9,
+      "fiberG": 11.8,
+      "saltG": 7.4
+    }
+  },
+  "nodes": [
+    {
+      "id": "ricotta_soltorkad_tomatpasta__cooked_pasta",
+      "name": "Koka Linguine",
+      "outputName": "Kokt linguine",
+      "inputs": [
+        {
+          "id": "linguine",
+          "amount": 360,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Koka upp saltat vatten i {{eq:kastrull_1}}.",
+        "Koka {{linguine}} i 8 min, eller tills al dente."
+      ],
+      "duration": 2,
+      "wait": 8,
+      "tags": [],
+      "heat": "hög",
+      "tips": [
+        "Kokvattnet ska vara lika salt som havsvatten.",
+        "Al dente betyder att pastan är genomkokt, men att den fortfarande har tuggmotstånd."
+      ],
+      "equipment": [
+        {
+          "type": "kastrull_stor",
+          "ref": "kastrull_1"
+        }
+      ],
+      "devNotes": [
+        "HF Linguine → linguine, 360 g vid 3 och 4 portioner (180 g vid 2, 540 g vid 6). Rådatan säger stor kastrull. Salt i kokvattnet har ingen rad i HF:s lista och lämnas omätt (samma mönster som carbonara_nduja_guanciale). Avhällning i nästa node så att kokets wait ligger på sista steget."
+      ]
+    },
+    {
+      "id": "ricotta_soltorkad_tomatpasta__tomato_cream_sauce",
+      "name": "Sjud Tomat- och Gräddsås",
+      "outputName": "Soltorkad tomat- och gräddsås",
+      "inputs": [
+        {
+          "id": "cooking_cream",
+          "amount": 300,
+          "unit": "ml"
+        },
+        {
+          "id": "grana_padano_shavings",
+          "amount": 40,
+          "unit": "g"
+        },
+        {
+          "id": "hello_sunrise",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "id": "vegetable_bouillon",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "id": "garlic_herb_seasoning",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "id": "cherry_tomatoes",
+          "amount": 250,
+          "unit": "g"
+        },
+        {
+          "id": "canned_tomatoes",
+          "amount": 780,
+          "unit": "g"
+        },
+        {
+          "id": "sugar",
+          "amount": 1,
+          "unit": "tsk"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{eq:kastrull_2}} på medelvärme.",
+        "Tillsätt {{cooking_cream}}, {{grana_padano_shavings}}, {{hello_sunrise}}, {{vegetable_bouillon}}, {{garlic_herb_seasoning}}, {{cherry_tomatoes}}, {{canned_tomatoes}}, {{sugar}} och {{salt}}.",
+        "Sjud under omrörning i 4–5 min, tills tjocknat."
+      ],
+      "duration": 2,
+      "wait": 5,
+      "tags": [],
+      "heat": "medel",
+      "equipment": [
+        {
+          "type": "kastrull_stor",
+          "ref": "kastrull_2"
+        }
+      ],
+      "devNotes": [
+        "Rådatan säger stor kastrull (ingen stekning, inget lock). 300 ml matlagningsgrädde + 780 g krossade tomater + 250 g körsbärstomater + 40 g ost ≈ 1,4 l — ryms även i medelstor (≤1,8 l), men stor följer rådatan. Inte traktörpanna. Pastan kokas parallellt i en annan stor kastrull. FLAG volym vs 'stor'.",
+        "HF Matlagningsgrädde typ light-cooking-cream → cooking_cream. Krossade tomater typ krossade-tomater-vitlok-lok → canned_tomatoes. FLAG. Steget säger 'finriven ost' men ingrediensen är Grana Padano, flingor — ny ingrediens grana_padano_shavings, 40 g vid 3 och 4 (20 g vid 2, 60 g vid 6). FLAG.",
+        "Hello Sunrise 8 g (blendId finns). Vitlök- och örtkrydda 8 g vid 4, linjärt 4/6/8/10/12. Buljong typ vegetable-stock → vegetable_bouillon, 8 g. Socker och salt till sås 1 tsk (samma vid 3). Körsbärstomater 250 g vid 3 och 4 (125 g vid 2, 375 g vid 6). Ingen olja i rådatan."
+      ]
+    },
+    {
+      "id": "ricotta_soltorkad_tomatpasta__chopped_topping",
+      "name": "Hacka Basilika, Valnötter och Soltorkade Tomater",
+      "outputName": "Hackad basilika, valnötter och soltorkade tomater",
+      "inputs": [
+        {
+          "id": "basil",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "walnuts",
+          "amount": 80,
+          "unit": "g"
+        },
+        {
+          "id": "sun_dried_tomatoes",
+          "amount": 100,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Grovhacka {{basil}}, {{walnuts}} och {{sun_dried_tomatoes}}."
+      ],
+      "duration": 4,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "HF Basilika 1 st vid 2, 3 och 4 portioner, 2 st vid 6 — förpackning. Författad som 1 st vid 4 portioner med linjär skalning. Id basil (HF-namn Basilika).",
+        "Valnötter 80 g och soltorkade tomater 100 g vid 3 och 4 portioner (40/50 g vid 2, 120/150 g vid 6). All topping går på pastan vid servering, därför en prepnode."
+      ]
+    },
+    {
+      "id": "ricotta_soltorkad_tomatpasta__pasta_in_sauce",
+      "name": "Vänd Ner Pasta i Såsen",
+      "outputName": "Linguine i tomat- och gräddsås",
+      "inputs": [
+        {
+          "id": "ricotta_soltorkad_tomatpasta__cooked_pasta",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "ricotta_soltorkad_tomatpasta__tomato_cream_sauce",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Häll av {{ricotta_soltorkad_tomatpasta__cooked_pasta}} från {{eq:kastrull_1|def}} i {{eq:durkslag_1}} och lägg tillbaka pastan i {{eq:kastrull_1|def}}.",
+        "Vänd ner pastan i {{ricotta_soltorkad_tomatpasta__tomato_cream_sauce}} i {{eq:kastrull_2|def}}."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [],
+      "heat": "medel",
+      "equipment": [
+        {
+          "type": "kastrull_stor",
+          "ref": "kastrull_1",
+          "transition": "keep",
+          "offHeat": true,
+          "after": "ricotta_soltorkad_tomatpasta__cooked_pasta"
+        },
+        {
+          "type": "durkslag",
+          "ref": "durkslag_1",
+          "inferred": true
+        },
+        {
+          "type": "kastrull_stor",
+          "ref": "kastrull_2",
+          "transition": "keep",
+          "after": "ricotta_soltorkad_tomatpasta__tomato_cream_sauce"
+        }
+      ],
+      "devNotes": [
+        "Rådatan häller av pastan tillbaka i pastakastrullen och vänder sedan ner den i såsen."
+      ]
+    },
+    {
+      "id": "ricotta_soltorkad_tomatpasta",
+      "name": "Snabb ricottatoppad soltorkad tomatpasta",
+      "outputName": "Snabb ricottatoppad soltorkad tomatpasta",
+      "inputs": [
+        {
+          "id": "ricotta_soltorkad_tomatpasta__pasta_in_sauce",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "ricotta_soltorkad_tomatpasta__chopped_topping",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "ricotta",
+          "amount": 200,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{ricotta_soltorkad_tomatpasta__pasta_in_sauce}} i {{eq:servering|pl}}.",
+        "Toppa med {{ricotta_soltorkad_tomatpasta__chopped_topping}} och {{ricotta}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_djup_skal",
+          "ref": "servering",
+          "count": "portions"
+        }
+      ],
+      "devNotes": [
+        "All näring behållen inklusive fiber 11,8 g och 877 kcal. Salt 7,4 g/portion är högt men behållet. FLAG.",
+        "Ricotta 200 g vid 3 och 4 portioner (100 g vid 2, 300 g vid 6), färsk som topping, inte tillagad.",
+        "clonedFrom 660e471c306b165ac1c0534b har ingen raw-fil och ingen master. Dubbletten 6a7c83126f37d7d9bf9fe162 är samma recept och konverterades inte. Varianten 667c040e3d7908a0f17c3604 ('Lättlagad soltorkad tomatpasta': spaghetti, finriven ost, vitlöksflörter, double-cream) är en annan rätt, fortfarande i kön, och konverterades inte."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,400 @@
+{
+  "masterId": "flaskkotlett_medelhav_couscous",
+  "source": "hellofresh",
+  "rawId": "6a915db924b9d7fd9be541d5",
+  "createdAt": 1792603365,
+  "basePortions": 4,
+  "time": {
+    "totalMin": 33,
+    "activeMin": 33,
+    "computedFrom": "graph"
+  },
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/flaskkotlett_medelhav_couscous/main.jpg",
+    "byNode": {
+      "flaskkotlett_medelhav_couscous__couscous": "assets/recipes/flaskkotlett_medelhav_couscous/steps/couscous.jpg",
+      "flaskkotlett_medelhav_couscous__fennel_salad": "assets/recipes/flaskkotlett_medelhav_couscous/steps/fennel_salad.jpg",
+      "flaskkotlett_medelhav_couscous__toasted_pine_nuts": "assets/recipes/flaskkotlett_medelhav_couscous/steps/toasted_pine_nuts.jpg",
+      "flaskkotlett_medelhav_couscous__fried_pork": "assets/recipes/flaskkotlett_medelhav_couscous/steps/fried_pork.jpg",
+      "flaskkotlett_medelhav_couscous__finished_couscous": "assets/recipes/flaskkotlett_medelhav_couscous/steps/finished_couscous.jpg",
+      "flaskkotlett_medelhav_couscous": "assets/recipes/flaskkotlett_medelhav_couscous/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 504,
+    "perPortion": {
+      "energyKcal": 673,
+      "energyKj": 2817,
+      "fatG": 30.8,
+      "saturatedFatG": 5.7,
+      "carbsG": 62.6,
+      "sugarsG": 18.2,
+      "fiberG": 10.4,
+      "proteinG": 36.5,
+      "saltG": 3.8
+    }
+  },
+  "nodes": [
+    {
+      "id": "flaskkotlett_medelhav_couscous__couscous",
+      "name": "Koka Couscous",
+      "outputName": "Couscous",
+      "inputs": [
+        {
+          "id": "water",
+          "amount": 5,
+          "unit": "dl"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "couscous",
+          "amount": 200,
+          "unit": "g"
+        },
+        {
+          "id": "chicken_bouillon",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 2,
+          "unit": "msk"
+        }
+      ],
+      "steps": [
+        "Koka upp {{water}} och {{salt}} i {{eq:kastrull_1}}.",
+        "Rör i {{couscous}}, {{chicken_bouillon}} och {{olive_oil}}. Ta av {{eq:kastrull_1|def}} från värmen och låt stå under lock i 5 min, eller tills vattnet har absorberats."
+      ],
+      "duration": 3,
+      "wait": 5,
+      "tags": [],
+      "heat": "hög",
+      "heatSource": "inferred",
+      "equipment": [
+        {
+          "type": "kastrull_medelstor",
+          "ref": "kastrull_1",
+          "lid": true
+        }
+      ],
+      "devNotes": [
+        "Vatten 5 dl, salt 0,5 tsk, olja 2 msk till couscous (4 portioner; salt och olja samma vid 3). HF Buljong (chicken-stock-powder) → chicken_bouillon."
+      ]
+    },
+    {
+      "id": "flaskkotlett_medelhav_couscous__shaved_fennel",
+      "name": "Hyvla Fänkål",
+      "outputName": "Hyvlad fänkål",
+      "inputs": [
+        {
+          "id": "fennel",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Halvera {{fennel}} och använd en potatisskalare för att skala den på längden.",
+        "Lägg fänkålen i {{eq:skal_1}}."
+      ],
+      "duration": 4,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        },
+        {
+          "type": "skal",
+          "ref": "skal_1"
+        }
+      ],
+      "devNotes": [
+        "Rådatan säger bara 'en skål' (salladsskålen, där allt sedan vänds ihop) → osorterad typ skal. Potatisskalaren spåras inte (litet redskap)."
+      ]
+    },
+    {
+      "id": "flaskkotlett_medelhav_couscous__orange_mint",
+      "name": "Skär Apelsin och Hacka Mynta",
+      "outputName": "Apelsinbitar och hackad mynta",
+      "inputs": [
+        {
+          "id": "orange",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "mint",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skär bort botten och toppen på {{orange}} och skär sedan bort skalet runt om. Halvera den, ta bort eventuella kärnor och skär den i 2 cm stora bitar.",
+        "Grovhacka {{mint}}."
+      ],
+      "duration": 5,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "HF Mynta 1 st vid 2, 3 och 4 portioner, 2 st vid 6: troligen en förpackning/knippe. Författad som 1 st vid 4 portioner med linjär skalning (0,5 st vid 2 räcker gott till en grovhackad mynta i salladen; 1,5 vid 6 nära HF:s 2). FLAG."
+      ]
+    },
+    {
+      "id": "flaskkotlett_medelhav_couscous__fennel_salad",
+      "name": "Vänd Ihop Fänkålssallad",
+      "outputName": "Fänkålssallad med apelsin och mynta",
+      "inputs": [
+        {
+          "id": "flaskkotlett_medelhav_couscous__shaved_fennel",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "flaskkotlett_medelhav_couscous__orange_mint",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "lemon",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Halvera {{lemon}}.",
+        "Vänd ner {{flaskkotlett_medelhav_couscous__orange_mint}}, en generös nypa {{salt}} och en skvätt citronsaft i {{eq:skal_1|def}} med {{flaskkotlett_medelhav_couscous__shaved_fennel}}."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        },
+        {
+          "type": "skal",
+          "ref": "skal_1",
+          "transition": "keep"
+        }
+      ],
+      "devNotes": [
+        "HF Citrusfrukt (typ lemon) → lemon. 1 st vid 2, 3 och 4 portioner, 2 st vid 6. Bara en skvätt saft används; författad som 1 st vid 4 portioner med linjär skalning (0,5 st vid 2 räcker till en skvätt). Resten av citronen används inte. FLAG.",
+        "Salt till salladen har ingen rad i HF:s lista; 'en generös nypa' → 1 nypa."
+      ]
+    },
+    {
+      "id": "flaskkotlett_medelhav_couscous__toasted_pine_nuts",
+      "name": "Rosta Pinjenötter",
+      "outputName": "Rostade pinjenötter",
+      "inputs": [
+        {
+          "id": "pine_nuts",
+          "amount": 20,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{eq:stekpanna_1}} på medelhög värme.",
+        "Rosta {{pine_nuts}} i 3–4 min, eller tills gyllene. Lägg över i en liten skål."
+      ],
+      "duration": 5,
+      "wait": 0,
+      "tags": [],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1"
+        }
+      ],
+      "devNotes": [
+        "Den lilla skålen håller bara nötterna åt sidan och spåras inte (godkänd regel)."
+      ]
+    },
+    {
+      "id": "flaskkotlett_medelhav_couscous__fried_pork",
+      "name": "Stek Fläskkotletter",
+      "outputName": "Stekta fläskkotletter",
+      "inputs": [
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "herb_marinated_pork_chop",
+          "amount": 500,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i {{eq:stekpanna_1|def}} på medelhög värme.",
+        "Tillsätt {{herb_marinated_pork_chop}} och stek i 3–4 min per sida, eller tills brynt och genomstekt."
+      ],
+      "duration": 9,
+      "wait": 0,
+      "tags": [],
+      "heat": "medelhög",
+      "tips": [
+        "Köttet är färdiglagat när det är utan inslag av rosa."
+      ],
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1",
+          "transition": "keep",
+          "after": "flaskkotlett_medelhav_couscous__toasted_pine_nuts"
+        }
+      ],
+      "devNotes": [
+        "HF Fläskkotlett, örtmarinerad → ny ingrediens herb_marinated_pork_chop (rawAnimal meat). Kotletterna går direkt från förpackningen till pannan; ingen skärbräda och inget 'rumstempererat' i rådatan, därför ingen skarbrada_ra och ingen Ta fram-node.",
+        "Stekning per sida är hands-on, därför duration 9 och ingen wait. Ingen vätska, därför stekpanna. Samma panna som nötterna (torkas inte ur enligt rådatan): after är resursordning.",
+        "Olivoljan har ingen rad i HF:s lista, därför standard 1 skvätt."
+      ]
+    },
+    {
+      "id": "flaskkotlett_medelhav_couscous__chopped_parsley",
+      "name": "Hacka Persilja",
+      "outputName": "Grovhackad persilja",
+      "inputs": [
+        {
+          "id": "parsley",
+          "amount": 10,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Grovhacka {{parsley}}."
+      ],
+      "duration": 1,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "HF Bladpersilja (organic-parsley-flat) → parsley. 10 g vid 2, 3 och 4 portioner, 20 g vid 6: troligen förpackningsstorlek. Linjär skalning från 10 g vid 4 portioner (5 g vid 2, 15 g vid 6) är rimlig för en örtinblandning. FLAG."
+      ]
+    },
+    {
+      "id": "flaskkotlett_medelhav_couscous__finished_couscous",
+      "name": "Fluffa Couscous",
+      "outputName": "Couscous med persilja och pinjenötter",
+      "inputs": [
+        {
+          "id": "flaskkotlett_medelhav_couscous__couscous",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "flaskkotlett_medelhav_couscous__chopped_parsley",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "flaskkotlett_medelhav_couscous__toasted_pine_nuts",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Fluffa upp {{flaskkotlett_medelhav_couscous__couscous}} med en gaffel.",
+        "Rör ner {{flaskkotlett_medelhav_couscous__chopped_parsley}} och {{flaskkotlett_medelhav_couscous__toasted_pine_nuts}} i {{eq:kastrull_1|def}} precis före servering."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "kastrull_medelstor",
+          "ref": "kastrull_1",
+          "transition": "keep",
+          "offHeat": true
+        }
+      ],
+      "devNotes": [
+        "Fluffningen ligger efter couscousens 5 min vila, därför egen node (wait på sista steget i kokningen)."
+      ]
+    },
+    {
+      "id": "flaskkotlett_medelhav_couscous",
+      "name": "Fläskkotletter med medelhavssmaker",
+      "outputName": "Fläskkotletter med medelhavssmaker",
+      "inputs": [
+        {
+          "id": "flaskkotlett_medelhav_couscous__fried_pork",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "flaskkotlett_medelhav_couscous__finished_couscous",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "flaskkotlett_medelhav_couscous__fennel_salad",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "buttermilk_lemon_dressing",
+          "amount": 200,
+          "unit": "ml"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{flaskkotlett_medelhav_couscous__fried_pork}}, {{flaskkotlett_medelhav_couscous__finished_couscous}} och {{flaskkotlett_medelhav_couscous__fennel_salad}} på {{eq:servering|pl}}.",
+        "Servera med {{buttermilk_lemon_dressing}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_tallrik",
+          "ref": "servering",
+          "count": "portions"
+        }
+      ],
+      "devNotes": [
+        "HF Citrondressing med kärnmjölk → ny ingrediens buttermilk_lemon_dressing (färdig dressing)."
+      ]
+    }
+  ]
+}

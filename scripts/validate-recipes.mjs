@@ -132,6 +132,9 @@ function main() {
       if (entry.createdAt !== masterForEntry.createdAt) {
         fail(`Catalog ${entry.id}: createdAt ${entry.createdAt} != master createdAt ${masterForEntry.createdAt}`);
       }
+      if (masterForEntry.time?.computedFrom !== 'graph' || entry.totalMinutes !== masterForEntry.time.totalMin) {
+        warn(`Catalog ${entry.id}: time not computed from the graph; run node scripts/compute-times.mjs ${entry.id}`);
+      }
     }
     if (!masters[entry.id]) {
       fail(`Catalog ${entry.id}: no matching recipes/${entry.id}.json`);

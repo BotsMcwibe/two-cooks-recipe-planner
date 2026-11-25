@@ -4,6 +4,11 @@
   "rawId": "66472569db12ba3a5e0ff999",
   "createdAt": 1790853154,
   "basePortions": 4,
+  "time": {
+    "totalMin": 16,
+    "activeMin": 16,
+    "computedFrom": "graph"
+  },
   "sharedPrep": [],
   "images": {
     "main": "assets/recipes/tex_mex_pork_burrito/main.jpg",

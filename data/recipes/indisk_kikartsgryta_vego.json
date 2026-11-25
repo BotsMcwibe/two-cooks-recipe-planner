@@ -1,0 +1,486 @@
+{
+  "masterId": "indisk_kikartsgryta_vego",
+  "source": "hellofresh",
+  "rawId": "6a9e929f790f7867027dbfc4",
+  "createdAt": 1794422823,
+  "basePortions": 4,
+  "time": {
+    "totalMin": 32,
+    "activeMin": 23,
+    "computedFrom": "graph"
+  },
+  "images": {
+    "main": "assets/recipes/indisk_kikartsgryta_vego/main.jpg",
+    "byNode": {
+      "indisk_kikartsgryta_vego__simmered_rice": "assets/recipes/indisk_kikartsgryta_vego/steps/simmered_rice.jpg",
+      "indisk_kikartsgryta_vego__prepped_salad": "assets/recipes/indisk_kikartsgryta_vego/steps/prepped_salad.jpg",
+      "indisk_kikartsgryta_vego__mango_fennel_salad": "assets/recipes/indisk_kikartsgryta_vego/steps/mango_fennel_salad.jpg",
+      "indisk_kikartsgryta_vego__fried_onion": "assets/recipes/indisk_kikartsgryta_vego/steps/fried_onion.jpg",
+      "indisk_kikartsgryta_vego__chickpea_stew": "assets/recipes/indisk_kikartsgryta_vego/steps/chickpea_stew.jpg",
+      "indisk_kikartsgryta_vego": "assets/recipes/indisk_kikartsgryta_vego/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 557,
+    "perPortion": {
+      "energyKcal": 819,
+      "energyKj": 3428,
+      "fatG": 36,
+      "saturatedFatG": 16.5,
+      "carbsG": 103.5,
+      "sugarsG": 19.8,
+      "fiberG": 15,
+      "proteinG": 18.7,
+      "saltG": 5.5
+    }
+  },
+  "nodes": [
+    {
+      "id": "indisk_kikartsgryta_vego__simmered_rice",
+      "name": "Koka Ris",
+      "outputName": "Kokt ris",
+      "inputs": [
+        {
+          "id": "water",
+          "amount": 5.5,
+          "unit": "dl"
+        },
+        {
+          "id": "long_grain_rice",
+          "amount": 300,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Koka upp {{water}} i {{eq:kastrull_1}}.",
+        "Rör i {{long_grain_rice}} och {{salt}}, sänk till medellåg värme och sjud under lock i 14 min."
+      ],
+      "duration": 2,
+      "wait": 14,
+      "tags": [],
+      "heat": "hög",
+      "stepHeat": {
+        "1": "medellåg"
+      },
+      "tips": [
+        "Riset ska ångkoka, så tjuvkika inte!"
+      ],
+      "equipment": [
+        {
+          "type": "kastrull_medelstor",
+          "ref": "kastrull_1",
+          "lid": true
+        }
+      ],
+      "devNotes": [
+        "Rådatan säger medelstor kastrull. Vatten till ris 5,5 dl vid 4 portioner (3 dl vid 2 — inte linjärt; linjärt vore 6 dl). FLAG. Salt till ris 1 tsk (samma vid 3)."
+      ]
+    },
+    {
+      "id": "indisk_kikartsgryta_vego__rested_rice",
+      "name": "Låt Riset Vila",
+      "outputName": "Ångat ris",
+      "inputs": [
+        {
+          "id": "indisk_kikartsgryta_vego__simmered_rice",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Ta av {{indisk_kikartsgryta_vego__simmered_rice}} i {{eq:kastrull_1|def}} från värmen och låt vila under lock i 10 min."
+      ],
+      "duration": 1,
+      "wait": 10,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "kastrull_medelstor",
+          "ref": "kastrull_1",
+          "lid": true,
+          "transition": "keep",
+          "offHeat": true
+        }
+      ]
+    },
+    {
+      "id": "indisk_kikartsgryta_vego__prepped_salad",
+      "name": "Skär Fänkål, Mango och Lime",
+      "outputName": "Fänkål, mango och lime",
+      "inputs": [
+        {
+          "id": "lime",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "fennel",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "mango",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Halvera {{lime}}.",
+        "Halvera och skär {{fennel}} i tunna skivor.",
+        "Skala och skär {{mango}} i tre delar längs med kärnan i mitten.",
+        "Tärna mangon i 2 cm stora bitar."
+      ],
+      "duration": 6,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "HF Citrusfrukt (typ lime) → lime. 1 st vid 2 och 4 portioner, 2 st vid 6 — förpackning. Författad som 1 st vid 4 portioner med linjär skalning. Bara en skvätt saft används i salladen."
+      ]
+    },
+    {
+      "id": "indisk_kikartsgryta_vego__mango_fennel_salad",
+      "name": "Marinera Mango- och Fänkålssallad",
+      "outputName": "Mango- och fänkålssallad",
+      "inputs": [
+        {
+          "id": "indisk_kikartsgryta_vego__prepped_salad",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "sugar",
+          "amount": 1,
+          "unit": "tsk"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Blanda {{olive_oil}}, en skvätt limesaft från {{indisk_kikartsgryta_vego__prepped_salad}}, {{sugar}} och en nypa {{salt}} i {{eq:skal_1}}.",
+        "Vänd ner fänkål och mango och låt marinera tills servering."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skal_medelstor",
+          "ref": "skal_1"
+        }
+      ],
+      "devNotes": [
+        "Olja till sallad 2 msk, socker till sallad 1 tsk (samma vid 3). Salt är 'en nypa' i texten, ingen egen rad."
+      ]
+    },
+    {
+      "id": "indisk_kikartsgryta_vego__chopped_onion",
+      "name": "Hacka Lök",
+      "outputName": "Hackad lök",
+      "inputs": [
+        {
+          "id": "onion",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Finhacka {{onion}}."
+      ],
+      "duration": 3,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true,
+          "after": "indisk_kikartsgryta_vego__prepped_salad"
+        }
+      ],
+      "devNotes": [
+        "HF Lök typ onion → onion (gul lök)."
+      ]
+    },
+    {
+      "id": "indisk_kikartsgryta_vego__fried_onion",
+      "name": "Stek Lök",
+      "outputName": "Stekt lök",
+      "inputs": [
+        {
+          "id": "olive_oil",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "indisk_kikartsgryta_vego__chopped_onion",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i {{eq:traktorpanna_1}} på medelvärme.",
+        "Stek {{indisk_kikartsgryta_vego__chopped_onion}} och {{salt}} i 2–3 min, eller tills löken är mjuk."
+      ],
+      "duration": 1,
+      "wait": 3,
+      "tags": [],
+      "heat": "medel",
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred"
+        }
+      ],
+      "devNotes": [
+        "Rådatan säger stor stekpanna, men samma panna tar sedan 2 dl vatten som sjuds under lock och därefter 360 ml kokosmjölk (totalt ca 5,6 dl) → traktörpanna, typeSource inferred, i hela kedjan. Olja till stekning 2 msk, salt till sås 0,5 tsk (samma vid 3)."
+      ]
+    },
+    {
+      "id": "indisk_kikartsgryta_vego__stew_base",
+      "name": "Sjud Kryddbas",
+      "outputName": "Kryddad grytbas",
+      "inputs": [
+        {
+          "id": "indisk_kikartsgryta_vego__fried_onion",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "milda_mahal",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "id": "curry_on",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "id": "smoked_paprika",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "id": "water",
+          "amount": 2,
+          "unit": "dl"
+        }
+      ],
+      "steps": [
+        "Tillsätt {{milda_mahal}}, {{curry_on}} och {{smoked_paprika}} till {{indisk_kikartsgryta_vego__fried_onion}} i {{eq:traktorpanna_1|def}} och stek i 30 sek, eller tills väldoftande.",
+        "Tillsätt {{water}} och koka upp. Sjud under lock på medellåg värme i 10 min."
+      ],
+      "duration": 1,
+      "wait": 10,
+      "tags": [],
+      "heat": "medel",
+      "stepHeat": {
+        "1": "medellåg"
+      },
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred",
+          "transition": "keep",
+          "lid": true
+        }
+      ],
+      "devNotes": [
+        "Milda Mahal och Curry on har redan blendId. 30-sekundersfräsningen är aktiv tid i duration; wait ligger på sjudningen. Vatten till sås 2 dl."
+      ]
+    },
+    {
+      "id": "indisk_kikartsgryta_vego__drained_chickpeas",
+      "name": "Häll Av Kikärtor",
+      "outputName": "Avhällda kikärtor",
+      "inputs": [
+        {
+          "id": "chickpeas",
+          "amount": 780,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Häll av {{chickpeas}} i {{eq:durkslag_1}}."
+      ],
+      "duration": 1,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "durkslag",
+          "ref": "durkslag_1",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "Kikärtor 780 g vid både 3 och 4 portioner; 4-portionsvärdet används."
+      ]
+    },
+    {
+      "id": "indisk_kikartsgryta_vego__rinsed_spinach",
+      "name": "Skölj Spenat",
+      "outputName": "Sköljd spenat",
+      "inputs": [
+        {
+          "id": "baby_spinach",
+          "amount": 60,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Skölj {{baby_spinach}}."
+      ],
+      "duration": 1,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "devNotes": [
+        "HF Spenat (organic-baby-spinach) → baby_spinach."
+      ]
+    },
+    {
+      "id": "indisk_kikartsgryta_vego__chickpea_stew",
+      "name": "Sjud Kikärtsgryta",
+      "outputName": "Indisk kikärtsgryta",
+      "inputs": [
+        {
+          "id": "indisk_kikartsgryta_vego__stew_base",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "coconut_milk",
+          "amount": 360,
+          "unit": "ml"
+        },
+        {
+          "id": "vegetable_bouillon",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "id": "soy_sauce",
+          "amount": 40,
+          "unit": "ml"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "indisk_kikartsgryta_vego__drained_chickpeas",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "indisk_kikartsgryta_vego__rinsed_spinach",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Tillsätt {{coconut_milk}}, {{vegetable_bouillon}}, {{soy_sauce}}, {{salt}}, {{indisk_kikartsgryta_vego__drained_chickpeas}} och {{indisk_kikartsgryta_vego__rinsed_spinach}} till {{indisk_kikartsgryta_vego__stew_base}} i {{eq:traktorpanna_1|def}}. Sjud i ytterligare 2–3 min, eller tills genomvarmt."
+      ],
+      "duration": 1,
+      "wait": 3,
+      "tags": [],
+      "heat": "medellåg",
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred",
+          "transition": "keep"
+        }
+      ],
+      "devNotes": [
+        "Salt till gryta 0,5 tsk (samma vid 3). HF Buljong (vegetable-stock) → vegetable_bouillon. Rådatan nämner inte lock på den korta slutsjudningen."
+      ]
+    },
+    {
+      "id": "indisk_kikartsgryta_vego",
+      "name": "Indisk kikärtsgryta",
+      "outputName": "Indisk kikärtsgryta",
+      "inputs": [
+        {
+          "id": "indisk_kikartsgryta_vego__rested_rice",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "indisk_kikartsgryta_vego__chickpea_stew",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "coriander",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "indisk_kikartsgryta_vego__mango_fennel_salad",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{indisk_kikartsgryta_vego__rested_rice}} i {{eq:servering|pl}} och toppa med {{indisk_kikartsgryta_vego__chickpea_stew}}.",
+        "Garnera med rivna blad från {{coriander}}. Servera med {{indisk_kikartsgryta_vego__mango_fennel_salad}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_skal",
+          "ref": "servering",
+          "count": "portions"
+        }
+      ],
+      "devNotes": [
+        "HF Koriander 1 st vid 2 och 4 portioner, 2 st vid 6 — förpackning. Författad som 1 st vid 4 portioner med linjär skalning.",
+        "Vegetarisk version; masterId indisk_kikartsgryta_vego så det inte krockar med kycklingvarianten 68ff753f493c3115e3725fa0 i kön."
+      ]
+    }
+  ]
+}

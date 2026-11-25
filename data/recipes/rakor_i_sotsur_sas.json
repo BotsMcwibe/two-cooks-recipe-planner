@@ -4,6 +4,11 @@
   "rawId": "66ab66b1f66002bbd100b42c",
   "createdAt": 1791035806,
   "basePortions": 4,
+  "time": {
+    "totalMin": 26,
+    "activeMin": 25,
+    "computedFrom": "graph"
+  },
   "sharedPrep": [],
   "images": {
     "main": "assets/recipes/rakor_i_sotsur_sas/main.jpg",

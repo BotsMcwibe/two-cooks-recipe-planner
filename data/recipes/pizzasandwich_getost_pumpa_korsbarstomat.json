@@ -1,0 +1,611 @@
+{
+  "masterId": "pizzasandwich_getost_pumpa_korsbarstomat",
+  "source": "hellofresh",
+  "rawId": "6a9e928d548a82de3e1a7188",
+  "createdAt": 1794427986,
+  "basePortions": 4,
+  "time": {
+    "totalMin": 53,
+    "activeMin": 53,
+    "computedFrom": "graph"
+  },
+  "images": {
+    "main": "assets/recipes/pizzasandwich_getost_pumpa_korsbarstomat/main.jpg",
+    "byNode": {
+      "pizzasandwich_getost_pumpa_korsbarstomat__roasted_pumpkin": "assets/recipes/pizzasandwich_getost_pumpa_korsbarstomat/steps/roasted_pumpkin.jpg",
+      "pizzasandwich_getost_pumpa_korsbarstomat__rolled_dough": "assets/recipes/pizzasandwich_getost_pumpa_korsbarstomat/steps/rolled_dough.jpg",
+      "pizzasandwich_getost_pumpa_korsbarstomat__baked_pockets": "assets/recipes/pizzasandwich_getost_pumpa_korsbarstomat/steps/baked_pockets.jpg",
+      "pizzasandwich_getost_pumpa_korsbarstomat__caramelized_onion": "assets/recipes/pizzasandwich_getost_pumpa_korsbarstomat/steps/caramelized_onion.jpg",
+      "pizzasandwich_getost_pumpa_korsbarstomat__tomato_salad": "assets/recipes/pizzasandwich_getost_pumpa_korsbarstomat/steps/tomato_salad.jpg",
+      "pizzasandwich_getost_pumpa_korsbarstomat": "assets/recipes/pizzasandwich_getost_pumpa_korsbarstomat/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 557,
+    "perPortion": {
+      "energyKcal": 862,
+      "energyKj": 3605,
+      "fatG": 33.1,
+      "saturatedFatG": 12.6,
+      "carbsG": 113.1,
+      "sugarsG": 13.9,
+      "fiberG": 10.2,
+      "proteinG": 29.6,
+      "saltG": 4.2
+    }
+  },
+  "nodes": [
+    {
+      "id": "pizzasandwich_getost_pumpa_korsbarstomat__preheated_oven_250",
+      "name": "Värm ugnen",
+      "outputName": "Förvärmd ugn (250°C)",
+      "inputs": [],
+      "steps": [
+        "Värm {{eq:ugn|def}} till 250°C, eller 240°C varmluft."
+      ],
+      "duration": 1,
+      "wait": 12,
+      "tags": [
+        "no-timer",
+        "resource"
+      ],
+      "oven": {
+        "temp": 250,
+        "fanTemp": 240
+      },
+      "tips": [
+        "Ugnen tar vanligtvis 10–15 minuter att värmas upp."
+      ],
+      "devNotes": [
+        "HF anger 250°C/240°C varmluft — lokal ugnsnode, inte preheated_oven_220 eller preheated_oven_240."
+      ]
+    },
+    {
+      "id": "pizzasandwich_getost_pumpa_korsbarstomat__rested_dough",
+      "name": "Ta Ut Pizzadegen",
+      "outputName": "Vilad pizzadeg",
+      "inputs": [
+        {
+          "id": "pizza_dough",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Ta ut {{pizza_dough}} från kylen och förpackningen och låt den vila minst 10 min innan tillagning."
+      ],
+      "duration": 1,
+      "wait": 10,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Rumstempererad deg är lättare att kavla ut."
+      ],
+      "devNotes": [
+        "Ny ingrediens pizza_dough (HF Pizzadeg typ pizzadeg). 2 st vid 3 och 4 portioner (1 st vid 2, 3 st vid 5 och 6). FLAG. Detta är en vilosteg för degen, inte en Ta fram-node för smör; tipset nämner rumstempererad deg. Viloläget på 10 min kan överlappa med förvärmning och pumpaskärning."
+      ]
+    },
+    {
+      "id": "pizzasandwich_getost_pumpa_korsbarstomat__sliced_pumpkin",
+      "name": "Skär Butternutpumpa",
+      "outputName": "Pumpaskivor",
+      "inputs": [
+        {
+          "id": "butternut_squash",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skala och halvera {{butternut_squash}}. Gröp ur kärnor och skär den i 0,5 cm tunna skivor."
+      ],
+      "duration": 8,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "HF Butternutpumpa typ butternutpumpa → butternut_squash, 1 st vid 3 och 4 portioner (0,5 st vid 2, 1,5 st vid 5 och 6). FLAG."
+      ]
+    },
+    {
+      "id": "pizzasandwich_getost_pumpa_korsbarstomat__chopped_rosemary",
+      "name": "Grovhacka Rosmarin",
+      "outputName": "Grovhackad rosmarin",
+      "inputs": [
+        {
+          "id": "rosemary",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Plocka och grovhacka bladen från {{rosemary}}."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true,
+          "after": "pizzasandwich_getost_pumpa_korsbarstomat__sliced_pumpkin"
+        }
+      ],
+      "devNotes": [
+        "HF Rosmarin typ rosemary → rosemary. 1 st vid 2, 3 och 4 portioner, 2 st vid 5 och 6 — förpackning. Författad som 1 st vid 4 portioner med linjär skalning. All rosmarin går på pumpan."
+      ]
+    },
+    {
+      "id": "pizzasandwich_getost_pumpa_korsbarstomat__roasted_pumpkin",
+      "name": "Rosta Butternutpumpa",
+      "outputName": "Rostad butternutpumpa",
+      "inputs": [
+        {
+          "id": "pizzasandwich_getost_pumpa_korsbarstomat__sliced_pumpkin",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "pizzasandwich_getost_pumpa_korsbarstomat__chopped_rosemary",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Placera {{pizzasandwich_getost_pumpa_korsbarstomat__sliced_pumpkin}} på {{eq:plat_1}} med bakplåtspapper.",
+        "Blanda med en skvätt {{olive_oil}}, {{pizzasandwich_getost_pumpa_korsbarstomat__chopped_rosemary}}, {{salt}} och en nypa {{pepper}}.",
+        "Rosta i {{eq:ugn|def}} i 12–15 min, eller tills mjuk och gyllene."
+      ],
+      "duration": 3,
+      "wait": 15,
+      "tags": [],
+      "tips": [
+        "Använd fler plåtar om det blir för trångt."
+      ],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "pizzasandwich_getost_pumpa_korsbarstomat__preheated_oven_250",
+          "slots": 1,
+          "temp": 250,
+          "fanTemp": 240
+        },
+        {
+          "type": "plat",
+          "ref": "plat_1",
+          "liner": "bakplatspapper"
+        }
+      ],
+      "devNotes": [
+        "Olivolja till pumpan saknas i HF:s lista (stegtexten säger en skvätt), därför standard 1 skvätt. Salt till grönsaker 1 tsk vid 3 och 4. Wait 15 är övre intervallet. Tipset om fler plåtar lämnas som tips; en plåt enligt rådatan."
+      ]
+    },
+    {
+      "id": "pizzasandwich_getost_pumpa_korsbarstomat__rolled_dough",
+      "name": "Kavla och Vik Pizzadeg",
+      "outputName": "Formade pizzafickor",
+      "inputs": [
+        {
+          "id": "pizzasandwich_getost_pumpa_korsbarstomat__rested_dough",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "flour",
+          "amount": 2,
+          "unit": "msk"
+        }
+      ],
+      "steps": [
+        "Strö generöst med {{flour}} över köksbänken.",
+        "Placera {{pizzasandwich_getost_pumpa_korsbarstomat__rested_dough}} på ytan, halvera och rulla ut med händerna eller {{eq:kavel_1|noun}} tills den är 15 cm.",
+        "Lägg över på {{eq:plat_2}} med bakplåtspapper och vik degen på mitten till halvmånar."
+      ],
+      "duration": 6,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Om degen är svår att rulla ut kan du låta den vila i några minuter och försöka igen."
+      ],
+      "equipment": [
+        {
+          "type": "plat",
+          "ref": "plat_2",
+          "liner": "bakplatspapper"
+        },
+        {
+          "type": "kavel",
+          "ref": "kavel_1",
+          "optional": true
+        }
+      ],
+      "devNotes": [
+        "Vetemjöl till utkavling saknas i HF:s lista ('strö generöst') — 2 msk pantry. FLAG. Kavel är valfri enligt rådatan (händerna eller en kavel). Vikningen ligger här så att noden matchar stegfotot (ovikta halvmånar på plåt). 2 st deg ger 4 fickor (en per portion).",
+        "Egen plåt (plat_2) medan pumpan fortfarande rostar på plat_1. Ugnen serialiseras i baknoden, så bara en ugnsplats i taget; --trays 1 ska vara rent."
+      ]
+    },
+    {
+      "id": "pizzasandwich_getost_pumpa_korsbarstomat__baked_pockets",
+      "name": "Grädda Pizzafickor",
+      "outputName": "Gräddade pizzafickor",
+      "inputs": [
+        {
+          "id": "pizzasandwich_getost_pumpa_korsbarstomat__rolled_dough",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Grädda {{pizzasandwich_getost_pumpa_korsbarstomat__rolled_dough}} i {{eq:ugn|def}} i 11–12 min, eller tills gyllene och genomgräddad."
+      ],
+      "duration": 2,
+      "wait": 12,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": [
+            "pizzasandwich_getost_pumpa_korsbarstomat__preheated_oven_250",
+            "pizzasandwich_getost_pumpa_korsbarstomat__roasted_pumpkin"
+          ],
+          "slots": 1,
+          "temp": 250,
+          "fanTemp": 240
+        },
+        {
+          "type": "plat",
+          "ref": "plat_2",
+          "liner": "bakplatspapper",
+          "transition": "keep"
+        }
+      ],
+      "devNotes": [
+        "Ugn after både förvärmning (resource) och rostade_pumpkin så att bakningen börjar när pumpan är ute. Samma plat_2."
+      ]
+    },
+    {
+      "id": "pizzasandwich_getost_pumpa_korsbarstomat__toasted_walnuts",
+      "name": "Rosta Valnötter",
+      "outputName": "Rostade valnötter",
+      "inputs": [
+        {
+          "id": "walnuts",
+          "amount": 40,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{eq:stekpanna_1}} på medelhög värme under tiden pizzafickorna gräddas.",
+        "Rosta {{walnuts}} i 3–4 min, eller tills gyllene. Ställ åt sidan i {{eq:skal_1}}."
+      ],
+      "duration": 5,
+      "wait": 0,
+      "tags": [],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1"
+        },
+        {
+          "type": "skal_liten",
+          "ref": "skal_1"
+        }
+      ],
+      "devNotes": [
+        "HF Valnötter typ walnuts → walnuts, 40 g vid 3 och 4 portioner (20 g vid 2, 60 g vid 5 och 6). FLAG. Torrostning kräver omrörning, därför hands-on (duration 5) och ingen wait. Rådatan säger stor stekpanna och liten skål. Samma mönster som belgisk_stoemp_sotpotatis."
+      ]
+    },
+    {
+      "id": "pizzasandwich_getost_pumpa_korsbarstomat__sliced_onion",
+      "name": "Skiva Lök",
+      "outputName": "Skivad rödlök",
+      "inputs": [
+        {
+          "id": "red_onion",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Halvera {{red_onion}} och skär den i tunna skivor."
+      ],
+      "duration": 4,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true,
+          "after": "pizzasandwich_getost_pumpa_korsbarstomat__chopped_rosemary"
+        }
+      ],
+      "devNotes": [
+        "HF Lök typ red-onion → red_onion, 2 st vid 3 och 4 portioner (1 st vid 2, 3 st vid 5 och 6). FLAG."
+      ]
+    },
+    {
+      "id": "pizzasandwich_getost_pumpa_korsbarstomat__caramelized_onion",
+      "name": "Karamellisera Lök",
+      "outputName": "Karamelliserad lök",
+      "inputs": [
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "msk"
+        },
+        {
+          "id": "pizzasandwich_getost_pumpa_korsbarstomat__sliced_onion",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "balsamic_vinegar",
+          "amount": 48,
+          "unit": "ml"
+        },
+        {
+          "id": "butter",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "water",
+          "amount": 4,
+          "unit": "msk"
+        },
+        {
+          "id": "sugar",
+          "amount": 1,
+          "unit": "tsk"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Torka ur {{eq:stekpanna_1|def}} och hetta upp {{olive_oil}} i den på medelvärme.",
+        "Stek {{pizzasandwich_getost_pumpa_korsbarstomat__sliced_onion}} i 4–5 min, tills mjuk.",
+        "Tillsätt {{balsamic_vinegar}}, {{butter}}, {{water}}, {{sugar}} och {{salt}}. Rör om och stek i 2–3 min, eller tills karamelliserad."
+      ],
+      "duration": 10,
+      "wait": 0,
+      "tags": [],
+      "heat": "medel",
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1",
+          "transition": "wipe",
+          "after": "pizzasandwich_getost_pumpa_korsbarstomat__toasted_walnuts"
+        }
+      ],
+      "devNotes": [
+        "Olja 1 msk, smör 2 msk, vatten 4 msk, socker 1 tsk och salt 0,5 tsk till karamelliserad lök (samma vid 3). Balsamvinäger 48 ml vid 3 och 4 (24 ml vid 2). FLAG. Vätskan är ca 1,1 dl (48 ml balsam + 4 msk vatten) plus smör, kort inkokning 2–3 min — stekpanna_stor, inte traktörpanna. Rådatan säger stor stekpanna.",
+        "Lökstekningen och inkokningen kräver omrörning, därför allt i duration och ingen wait (samma bedömning som belgisk_stoemp_sotpotatis). Samma panna som valnötterna: after toasted_walnuts, transition wipe. Smöret smälts i pannan — ingen Ta fram-node."
+      ]
+    },
+    {
+      "id": "pizzasandwich_getost_pumpa_korsbarstomat__chopped_basil",
+      "name": "Grovhacka Basilika",
+      "outputName": "Grovhackad basilika",
+      "inputs": [
+        {
+          "id": "basil",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Grovhacka {{basil}}."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true,
+          "after": "pizzasandwich_getost_pumpa_korsbarstomat__sliced_onion"
+        }
+      ],
+      "devNotes": [
+        "HF Basilika typ basil → basil (inte fresh_basil). 1 st vid 2, 3 och 4 portioner, 2 st vid 5 och 6 — förpackning. Författad som 1 st vid 4 portioner med linjär skalning. All basilika går i tomatsalladen."
+      ]
+    },
+    {
+      "id": "pizzasandwich_getost_pumpa_korsbarstomat__rinsed_rucola",
+      "name": "Skölj Rucola",
+      "outputName": "Sköljd rucola",
+      "inputs": [
+        {
+          "id": "rucola",
+          "amount": 70,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Skölj {{rucola}}."
+      ],
+      "duration": 1,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "devNotes": [
+        "HF Rucola typ organic-rucola → rucola, 70 g vid 3 och 4 portioner (40 g vid 2, 110 g vid 5 och 6). FLAG. Delas: hälften (0,5 st) i salladen, resten (0,5 st) i pizzafickorna."
+      ]
+    },
+    {
+      "id": "pizzasandwich_getost_pumpa_korsbarstomat__tomato_salad",
+      "name": "Blanda Tomatsallad",
+      "outputName": "Tomat- och valnötssallad",
+      "inputs": [
+        {
+          "id": "cherry_tomatoes",
+          "amount": 250,
+          "unit": "g"
+        },
+        {
+          "id": "pizzasandwich_getost_pumpa_korsbarstomat__chopped_basil",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "pizzasandwich_getost_pumpa_korsbarstomat__rinsed_rucola",
+          "amount": 0.5,
+          "unit": "st"
+        },
+        {
+          "id": "pizzasandwich_getost_pumpa_korsbarstomat__toasted_walnuts",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "msk"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Halvera {{cherry_tomatoes}}.",
+        "Blanda tomaterna, {{pizzasandwich_getost_pumpa_korsbarstomat__chopped_basil}}, hälften av {{pizzasandwich_getost_pumpa_korsbarstomat__rinsed_rucola}}, {{pizzasandwich_getost_pumpa_korsbarstomat__toasted_walnuts}}, {{olive_oil}} och en nypa {{salt}} och {{pepper}} i {{eq:skal_2}}."
+      ],
+      "duration": 4,
+      "wait": 0,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "skal_medelstor",
+          "ref": "skal_2"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true,
+          "after": "pizzasandwich_getost_pumpa_korsbarstomat__chopped_basil"
+        }
+      ],
+      "devNotes": [
+        "Körsbärstomater 250 g vid 3 och 4 portioner (125 g vid 2, 375 g vid 5 och 6). FLAG. Olja till sallad 1 msk (samma vid 3). Salt och peppar till sallad är bara 'en nypa' i texten, ingen yield-rad — 1 nypa vardera. Rådatan säger medelstor skål."
+      ]
+    },
+    {
+      "id": "pizzasandwich_getost_pumpa_korsbarstomat",
+      "name": "Pizzasandwich med getost och butternutpumpa",
+      "outputName": "Pizzasandwich med getost, butternutpumpa, karamelliserad lök och tomatsallad",
+      "inputs": [
+        {
+          "id": "pizzasandwich_getost_pumpa_korsbarstomat__baked_pockets",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "pizzasandwich_getost_pumpa_korsbarstomat__roasted_pumpkin",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "pizzasandwich_getost_pumpa_korsbarstomat__caramelized_onion",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "goat_cheese",
+          "amount": 150,
+          "unit": "g"
+        },
+        {
+          "id": "pizzasandwich_getost_pumpa_korsbarstomat__rinsed_rucola",
+          "amount": 0.5,
+          "unit": "st"
+        },
+        {
+          "id": "pizzasandwich_getost_pumpa_korsbarstomat__tomato_salad",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Öppna försiktigt upp {{pizzasandwich_getost_pumpa_korsbarstomat__baked_pockets}} och ringla över {{olive_oil}}.",
+        "Fyll dem med {{pizzasandwich_getost_pumpa_korsbarstomat__roasted_pumpkin}}, {{pizzasandwich_getost_pumpa_korsbarstomat__caramelized_onion}}, {{goat_cheese}} och resterande {{pizzasandwich_getost_pumpa_korsbarstomat__rinsed_rucola}}.",
+        "Lägg upp pizzafickorna på {{eq:servering|pl}} och {{pizzasandwich_getost_pumpa_korsbarstomat__tomato_salad}} i {{eq:servering_sallad|pl}}."
+      ],
+      "duration": 4,
+      "tags": [
+        "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_tallrik",
+          "ref": "servering",
+          "count": "portions"
+        },
+        {
+          "type": "servering_skal",
+          "ref": "servering_sallad",
+          "count": "portions"
+        }
+      ],
+      "devNotes": [
+        "All näring behållen, inklusive fiber 10,2 g (862 kcal). Vete vikt in i gluten. Bekräftade allergener gluten, dairy (getost och smör), nuts (valnötter) och sulphites (balsamvinäger). Spår av sesam och övriga nötter utelämnade.",
+        "HF Getost typ goats-cheese (id 673721693b7854c34e92e8b3) är samma produkt som i fransk_chevre_chaud (hfm-goat-cheese, id 6551f2802d94ad532d602f56): samma produktfoto som pantry goat_cheese (mjuk chèvre-runda). Återanvänd goat_cheese, 150 g vid 4 (75/125/150/200/225 — 125 g vid 3 inte linjärt). FLAG. Osten skärs inte; den smulas i fickan vid fyllning.",
+        "Olivolja att ringla i fickorna saknas i HF:s lista, därför standard 1 skvätt. FLAG. HF totalTime PT25M är tight mot 12–15 min pumpa plus 11–12 min bakning; totalMinutes 35 efter prepTime. FLAG. HF difficulty 1 → easy. Cuisine italian.",
+        "clonedFrom 65e03bb5acc901eff8e7b4d4 och syskonet 67bf09ea8e41cf2506379ce6 konverterades inte."
+      ]
+    }
+  ]
+}

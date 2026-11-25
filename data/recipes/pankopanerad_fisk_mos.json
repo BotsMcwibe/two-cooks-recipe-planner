@@ -1,0 +1,477 @@
+{
+  "masterId": "pankopanerad_fisk_mos",
+  "source": "hellofresh",
+  "rawId": "6a9e9292790f7867027dbe91",
+  "createdAt": 1794426338,
+  "basePortions": 4,
+  "time": {
+    "totalMin": 48,
+    "activeMin": 48,
+    "computedFrom": "graph"
+  },
+  "images": {
+    "main": "assets/recipes/pankopanerad_fisk_mos/main.jpg",
+    "byNode": {
+      "pankopanerad_fisk_mos__mash": "assets/recipes/pankopanerad_fisk_mos/steps/mash.jpg",
+      "pankopanerad_fisk_mos__trimmed_beans": "assets/recipes/pankopanerad_fisk_mos/steps/trimmed_beans.jpg",
+      "pankopanerad_fisk_mos__lemon_wedges": "assets/recipes/pankopanerad_fisk_mos/steps/lemon_wedges.jpg",
+      "pankopanerad_fisk_mos__veg_sticks": "assets/recipes/pankopanerad_fisk_mos/steps/veg_sticks.jpg",
+      "pankopanerad_fisk_mos__breaded_fish": "assets/recipes/pankopanerad_fisk_mos/steps/breaded_fish.jpg",
+      "pankopanerad_fisk_mos__fried_fish": "assets/recipes/pankopanerad_fisk_mos/steps/fried_fish.jpg",
+      "pankopanerad_fisk_mos__fried_beans": "assets/recipes/pankopanerad_fisk_mos/steps/fried_beans.jpg",
+      "pankopanerad_fisk_mos": "assets/recipes/pankopanerad_fisk_mos/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 823,
+    "perPortion": {
+      "energyKcal": 768,
+      "energyKj": 3214,
+      "fatG": 22.6,
+      "saturatedFatG": 3.2,
+      "carbsG": 95.6,
+      "sugarsG": 18.3,
+      "proteinG": 46.3,
+      "saltG": 2.8
+    }
+  },
+  "nodes": [
+    {
+      "id": "pankopanerad_fisk_mos__cut_roots",
+      "name": "Tärna Potatis och Palsternacka",
+      "outputName": "Tärnad potatis och palsternacka",
+      "inputs": [
+        {
+          "id": "potato",
+          "amount": 1000,
+          "unit": "g"
+        },
+        {
+          "id": "parsnip",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skala och tärna {{potato}} och {{parsnip}} i 2 cm stora bitar."
+      ],
+      "duration": 8,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "HF Potatis typ organic-potatoes → potato, 1000 g linjärt. Palsternacka 2 st vid både 3 och 4 portioner (1 st vid 2, 3 st vid 5 och 6)."
+      ]
+    },
+    {
+      "id": "pankopanerad_fisk_mos__boiled_roots",
+      "name": "Koka Potatis och Palsternacka",
+      "outputName": "Kokt potatis och palsternacka",
+      "inputs": [
+        {
+          "id": "pankopanerad_fisk_mos__cut_roots",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Koka upp {{eq:kastrull_1}} med saltat vatten.",
+        "Koka {{pankopanerad_fisk_mos__cut_roots}} i 11–13 min, eller tills de enkelt kan delas med en kniv."
+      ],
+      "duration": 2,
+      "wait": 13,
+      "tags": [],
+      "heat": "hög",
+      "equipment": [
+        {
+          "type": "kastrull_stor",
+          "ref": "kastrull_1"
+        }
+      ],
+      "devNotes": [
+        "Rådatan säger stor kastrull (1000 g potatis + 2 palsternackor). Salt i kokvattnet har ingen rad i HF:s lista och lämnas omätt; 1 tsk salt hör till moset, inte kastrullen. Avhällning och mosning i nästa node så att kokets wait ligger på sista steget."
+      ]
+    },
+    {
+      "id": "pankopanerad_fisk_mos__mash",
+      "name": "Mosa Potatis och Palsternacka",
+      "outputName": "Potatis- och palsternacksmos",
+      "inputs": [
+        {
+          "id": "pankopanerad_fisk_mos__boiled_roots",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "milk",
+          "amount": 6,
+          "unit": "msk"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Häll av vattnet och mosa {{pankopanerad_fisk_mos__boiled_roots}} med {{milk}}, {{salt}} och en nypa {{pepper}} i {{eq:kastrull_1|def}}.",
+        "Ställ åt sidan under lock."
+      ],
+      "duration": 4,
+      "wait": 0,
+      "tags": [],
+      "tips": [
+        "Tillsätt en klick smör för att göra moset extra krämigt."
+      ],
+      "equipment": [
+        {
+          "type": "kastrull_stor",
+          "ref": "kastrull_1",
+          "transition": "keep",
+          "offHeat": true,
+          "lid": true,
+          "after": "pankopanerad_fisk_mos__boiled_roots"
+        }
+      ],
+      "devNotes": [
+        "Mjölk till mos 6 msk och salt till mos 1 tsk, linjärt. Smöret är bara ett valfritt HF-tips, därför ingen Ta fram-node och inget smör i inköpslistan. Under lock till servering är ingen klockad vila."
+      ]
+    },
+    {
+      "id": "pankopanerad_fisk_mos__trimmed_beans",
+      "name": "Ansa Haricots Verts",
+      "outputName": "Ansade haricots verts",
+      "inputs": [
+        {
+          "id": "haricots_verts",
+          "amount": 300,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Ansa {{haricots_verts}}."
+      ],
+      "duration": 3,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true,
+          "after": "pankopanerad_fisk_mos__cut_roots"
+        }
+      ],
+      "devNotes": [
+        "HF Haricots verts typ green-beans → haricots_verts, 300 g linjärt. Rådatan säger bara ansa, inte halvera."
+      ]
+    },
+    {
+      "id": "pankopanerad_fisk_mos__lemon_wedges",
+      "name": "Skär Citrusklyftor",
+      "outputName": "Citrusklyftor",
+      "inputs": [
+        {
+          "id": "lemon",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skär {{lemon}} i klyftor."
+      ],
+      "duration": 1,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true,
+          "after": "pankopanerad_fisk_mos__trimmed_beans"
+        }
+      ],
+      "devNotes": [
+        "HF Citrusfrukt typ lemon → lemon. 1 st vid 2, 3 och 4 portioner, 2 st vid 5 och 6 — förpackning. Författad som 1 st vid 4 portioner med linjär skalning. Alla klyftor serveras."
+      ]
+    },
+    {
+      "id": "pankopanerad_fisk_mos__veg_sticks",
+      "name": "Skär Gurk- och Morotsstavar",
+      "outputName": "Gurk- och morotsstavar",
+      "inputs": [
+        {
+          "id": "carrot",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "cucumber",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skär {{carrot}} (oskalad) och {{cucumber}} i 1 cm tunna stavar."
+      ],
+      "duration": 4,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true,
+          "after": "pankopanerad_fisk_mos__lemon_wedges"
+        }
+      ],
+      "devNotes": [
+        "Morot 2 st och gurka 1 st, linjärt (gurka 0,5/0,75/1/1,25/1,5). Moroten oskalad enligt rådatan."
+      ]
+    },
+    {
+      "id": "pankopanerad_fisk_mos__breaded_fish",
+      "name": "Panera Fisk",
+      "outputName": "Pankopanerad kolja",
+      "inputs": [
+        {
+          "id": "haddock",
+          "amount": 500,
+          "unit": "g"
+        },
+        {
+          "id": "flour",
+          "amount": 4,
+          "unit": "msk"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        },
+        {
+          "id": "egg",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "panko",
+          "amount": 100,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Blanda {{flour}}, 0,5 tsk {{salt}} och en nypa {{pepper}} i {{eq:djup_tallrik_1}}.",
+        "Vispa {{egg}} i en ny {{eq:djup_tallrik_2|bare}}.",
+        "Häll {{panko}} i en tredje {{eq:djup_tallrik_3|bare}}.",
+        "Torka {{haddock}} med hushållspapper, krydda med resterande {{salt}} och vänd fisken först i mjöl, sen i ägg och till sist i panko. Lägg över till {{eq:tallrik_1}}."
+      ],
+      "duration": 8,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "tips": [
+        "Om du inte har ägg kan du använda 2 msk mjölk istället."
+      ],
+      "equipment": [
+        {
+          "type": "djup_tallrik",
+          "ref": "djup_tallrik_1"
+        },
+        {
+          "type": "djup_tallrik",
+          "ref": "djup_tallrik_2"
+        },
+        {
+          "type": "djup_tallrik",
+          "ref": "djup_tallrik_3"
+        },
+        {
+          "type": "tallrik",
+          "ref": "tallrik_1"
+        }
+      ],
+      "devNotes": [
+        "HF Kolja typ haddock → haddock (rawAnimal fish), 500 g linjärt. Fisken skärs inte; den torkas och kryddas och paneras från tallrik till tallrik, därför ingen skarbrada_ra. Hushållspapper spåras inte.",
+        "Salt till panering 0,5 tsk och salt till fisk 0,5 tsk är båda 0,5 tsk vid 3 och 4; samlade till 1 tsk i den här noden för att undvika dubblerad salt-ingång. Mjöl 4 msk och ägg 2 st vid både 3 och 4 (2 msk / 1 st vid 2). Panko 100 g linjärt (samma id som i pankopanerade_plantbitar)."
+      ]
+    },
+    {
+      "id": "pankopanerad_fisk_mos__fried_fish",
+      "name": "Stek Fisk",
+      "outputName": "Stekt pankopanerad kolja",
+      "inputs": [
+        {
+          "id": "olive_oil",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "pankopanerad_fisk_mos__breaded_fish",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{eq:stekpanna_1}} på medelhög värme och tillsätt {{olive_oil}} så det täcker {{eq:stekpanna_1|def}}.",
+        "Stek {{pankopanerad_fisk_mos__breaded_fish}} i 2–3 min per sida, eller tills gyllene och genomstekt.",
+        "Ställ åt sidan på {{eq:tallrik_2}} med hushållspapper och krydda med {{salt}}."
+      ],
+      "duration": 10,
+      "wait": 0,
+      "tags": [],
+      "heat": "medelhög",
+      "tips": [
+        "Fisken är klar när fiskköttet är ogenomskinligt och lätt faller isär.",
+        "Stek i omgångar om det inte får plats i pannan."
+      ],
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1",
+          "confirmed": true
+        },
+        {
+          "type": "tallrik",
+          "ref": "tallrik_2"
+        }
+      ],
+      "devNotes": [
+        "Rådatan säger stor stekpanna. Bara stekning i olja, ingen sjudning → stekpanna, inte traktörpanna. Olja till stekning 2 msk vid 3 och 4. 2–3 min per sida är hands-on, därför duration och wait 0. Stegfotot visar 2 filéer som fyller pannan (troligen 2 portioner); vid 4 portioner behövs troligen två omgångar, därför duration 10. FLAG. Nypan salt efter stekning är utöver saltet i paneringen."
+      ]
+    },
+    {
+      "id": "pankopanerad_fisk_mos__fried_beans",
+      "name": "Stek Haricots Verts",
+      "outputName": "Stekta haricots verts",
+      "inputs": [
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "pankopanerad_fisk_mos__trimmed_beans",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i {{eq:stekpanna_2}} på medelhög värme.",
+        "Stek {{pankopanerad_fisk_mos__trimmed_beans}} i 3–4 min, eller tills mjukt."
+      ],
+      "duration": 5,
+      "wait": 0,
+      "tags": [],
+      "heat": "medelhög",
+      "tips": [
+        "Tillsätt en skvätt vatten till stekpannan för att påskynda tillagningsprocessen."
+      ],
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_2",
+          "confirmed": true
+        }
+      ],
+      "devNotes": [
+        "Rådatan säger en annan stor stekpanna, parallellt med fisken. Oljan är 'en skvätt' utan rad i HF:s lista, därför 1 skvätt. FLAG. En skvätt vatten i tipset är inte en sjudning ≥2 dl → stekpanna, inte traktörpanna. Stekningen är hands-on, därför duration 5 och wait 0."
+      ]
+    },
+    {
+      "id": "pankopanerad_fisk_mos",
+      "name": "Stekt pankopanerad fisk",
+      "outputName": "Stekt pankopanerad fisk",
+      "inputs": [
+        {
+          "id": "pankopanerad_fisk_mos__mash",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "pankopanerad_fisk_mos__fried_fish",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "pankopanerad_fisk_mos__fried_beans",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "remoulade",
+          "amount": 150,
+          "unit": "g"
+        },
+        {
+          "id": "pankopanerad_fisk_mos__lemon_wedges",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "pankopanerad_fisk_mos__veg_sticks",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{pankopanerad_fisk_mos__mash}}, {{pankopanerad_fisk_mos__fried_fish}} och {{pankopanerad_fisk_mos__fried_beans}} på {{eq:servering|pl}}.",
+        "Servera med en klick {{remoulade}} och {{pankopanerad_fisk_mos__lemon_wedges}}.",
+        "Servera {{pankopanerad_fisk_mos__veg_sticks}} i {{eq:servering_stavar|def}} vid sidan av."
+      ],
+      "duration": 3,
+      "tags": [
+        "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_tallrik",
+          "ref": "servering",
+          "count": "portions"
+        },
+        {
+          "type": "servering_skal",
+          "ref": "servering_stavar",
+          "count": 1
+        }
+      ],
+      "devNotes": [
+        "Fiber 47,7 g släppt som orimlig; övrig näring behållen inklusive 768 kcal. Mejeri tillagt som allergen (6 msk mjölk i moset); fisk och ägg fanns redan i raw.",
+        "Ny ingrediens remoulade (Remouladsås), 150 g vid 4 (75/120/150/195/225; 3-portionsvärdet 120 g är inte linjärt). FLAG.",
+        "HF totalTime PT25M och prepTime PT30M; 11–13 min kok plus uppkok och skärning gör 25 min tight. catalog totalMinutes satt till 30. FLAG.",
+        "clonedFrom 67acb235e602c94fd1c27fb1 har ingen raw-fil och ingen master. Dubbletterna 697684862460c72e4c6d91d1 och 6a839825e487134be04a87a5 är samma recept och konverterades inte. Varianten 67f50872fd9f35ae4fe9610f ('Stekt pankopanerad vit fisk', pommes och rotsellerisallad med äpple, senap och majonnäs) och 68d325fc478b7ea4b4a7d053 ('Stekt pankopanerad vit fisk med pommes') är andra rätter, fortfarande i kön, och konverterades inte."
+      ]
+    }
+  ]
+}

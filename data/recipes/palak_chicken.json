@@ -4,6 +4,11 @@
   "rawId": "linas-135012",
   "createdAt": 1791056876,
   "basePortions": 4,
+  "time": {
+    "totalMin": 17,
+    "activeMin": 12,
+    "computedFrom": "graph"
+  },
   "sharedPrep": [],
   "images": {
     "main": "assets/recipes/palak_chicken/main.jpg"

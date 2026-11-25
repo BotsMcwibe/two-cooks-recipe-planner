@@ -1,0 +1,441 @@
+{
+  "masterId": "falukorv_i_ugn",
+  "source": "hellofresh",
+  "rawId": "6a9e92a8548a82de3e1a72e2",
+  "createdAt": 1794420578,
+  "basePortions": 4,
+  "time": {
+    "totalMin": 44,
+    "activeMin": 32,
+    "computedFrom": "graph"
+  },
+  "sharedPrep": [],
+  "images": {
+    "main": "assets/recipes/falukorv_i_ugn/main.png",
+    "byNode": {
+      "falukorv_i_ugn__diced_potato": "assets/recipes/falukorv_i_ugn/steps/diced_potato.jpg",
+      "falukorv_i_ugn__tomato_onion_mix": "assets/recipes/falukorv_i_ugn/steps/tomato_onion_mix.jpg",
+      "falukorv_i_ugn__baked_falukorv": "assets/recipes/falukorv_i_ugn/steps/baked_falukorv.jpg",
+      "falukorv_i_ugn__salad": "assets/recipes/falukorv_i_ugn/steps/salad.jpg",
+      "falukorv_i_ugn__mash": "assets/recipes/falukorv_i_ugn/steps/mash.jpg",
+      "falukorv_i_ugn": "assets/recipes/falukorv_i_ugn/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 678,
+    "perPortion": {
+      "energyKcal": 911,
+      "energyKj": 3813,
+      "fatG": 58.5,
+      "saturatedFatG": 21.5,
+      "carbsG": 66.3,
+      "sugarsG": 10.2,
+      "proteinG": 29.2,
+      "saltG": 5.4
+    }
+  },
+  "nodes": [
+    {
+      "id": "falukorv_i_ugn__preheated_oven_225",
+      "name": "Värm ugnen",
+      "outputName": "Förvärmd ugn (225°C)",
+      "inputs": [],
+      "steps": [
+        "Värm {{eq:ugn|def}} till 225°C, eller 200°C varmluft."
+      ],
+      "duration": 1,
+      "wait": 12,
+      "tags": [
+        "no-timer",
+        "resource"
+      ],
+      "tips": [
+        "Ugnen tar vanligtvis 10–15 minuter att värmas upp."
+      ],
+      "oven": {
+        "temp": 225,
+        "fanTemp": 200
+      },
+      "devNotes": [
+        "HF anger 225°C/200°C varmluft (inte 20° under vanlig temp). Ingen delad pack vid 225, därför lokal ugnsnode."
+      ]
+    },
+    {
+      "id": "falukorv_i_ugn__diced_potato",
+      "name": "Skala och Tärna Potatis",
+      "outputName": "Tärnad potatis",
+      "inputs": [
+        {
+          "id": "potato",
+          "amount": 1000,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Skala och tärna {{potato}} i 2 cm stora bitar."
+      ],
+      "duration": 8,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "HF-typ organic-potatoes, mappad till potato."
+      ]
+    },
+    {
+      "id": "falukorv_i_ugn__boiled_potato",
+      "name": "Koka Potatis",
+      "outputName": "Kokt potatis",
+      "inputs": [
+        {
+          "id": "falukorv_i_ugn__diced_potato",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Koka upp saltat vatten i {{eq:kastrull_1}}.",
+        "Koka {{falukorv_i_ugn__diced_potato}} i 11–13 min, eller tills de enkelt kan delas med en kniv."
+      ],
+      "duration": 2,
+      "wait": 13,
+      "tags": [],
+      "heat": "hög",
+      "heatSource": "inferred",
+      "equipment": [
+        {
+          "type": "kastrull_stor",
+          "ref": "kastrull_1"
+        }
+      ],
+      "devNotes": [
+        "Storleken stor står i rådatan. Salt i kokvattnet har ingen rad i HF:s lista. 1 kg potatis i rikligt vatten."
+      ]
+    },
+    {
+      "id": "falukorv_i_ugn__mash",
+      "name": "Mosa Potatis",
+      "outputName": "Potatismos",
+      "inputs": [
+        {
+          "id": "falukorv_i_ugn__boiled_potato",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "milk",
+          "amount": 6,
+          "unit": "msk"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Häll av {{falukorv_i_ugn__boiled_potato}} i {{eq:durkslag_1}} och mosa potatisen med {{milk}}, {{salt}} och en nypa {{pepper}} i {{eq:kastrull_1|def}}."
+      ],
+      "duration": 4,
+      "wait": 0,
+      "tags": [],
+      "tips": [
+        "Tillsätt en klick smör för att göra moset extra krämigt."
+      ],
+      "equipment": [
+        {
+          "type": "kastrull_stor",
+          "ref": "kastrull_1",
+          "transition": "keep",
+          "offHeat": true
+        },
+        {
+          "type": "durkslag",
+          "ref": "durkslag_1",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "Mjölk till mos 6 msk, salt till mos 0,5 tsk (4 portioner; salt samma vid 3, linjärt från 2). Smöret är bara ett valfritt HF-tips, därför ingen Ta fram-node."
+      ]
+    },
+    {
+      "id": "falukorv_i_ugn__sliced_onion",
+      "name": "Skiva Lök",
+      "outputName": "Skivad lök",
+      "inputs": [
+        {
+          "id": "onion",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Halvera {{onion}} och skär den i tunna skivor."
+      ],
+      "duration": 3,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "Löken delas enligt rådatan: hälften (0,5 st) blandas med tomater under korven, resten (0,5 st) fylls i skårorna."
+      ]
+    },
+    {
+      "id": "falukorv_i_ugn__halved_tomatoes",
+      "name": "Halvera Körsbärstomater",
+      "outputName": "Halverade körsbärstomater",
+      "inputs": [
+        {
+          "id": "cherry_tomatoes",
+          "amount": 500,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Halvera {{cherry_tomatoes}}."
+      ],
+      "duration": 3,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "Tomaterna delas enligt rådatan: hälften (0,5 st) under korven, resten (0,5 st) i salladen."
+      ]
+    },
+    {
+      "id": "falukorv_i_ugn__tomato_onion_mix",
+      "name": "Blanda Tomat och Lök",
+      "outputName": "Tomat- och lökblandning",
+      "inputs": [
+        {
+          "id": "falukorv_i_ugn__halved_tomatoes",
+          "amount": 0.5,
+          "unit": "st"
+        },
+        {
+          "id": "falukorv_i_ugn__sliced_onion",
+          "amount": 0.5,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Blanda hälften av {{falukorv_i_ugn__halved_tomatoes}} och hälften av {{falukorv_i_ugn__sliced_onion}} med {{olive_oil}}, {{salt}} och en nypa {{pepper}} i {{eq:skal}}."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skal"
+        }
+      ],
+      "devNotes": [
+        "Olja till grönsaker 2 msk, salt till grönsaker 0,5 tsk. Rådatan säger bara 'en skål' → osorterad skal."
+      ]
+    },
+    {
+      "id": "falukorv_i_ugn__baked_falukorv",
+      "name": "Tillaga Falukorv i Ugnen",
+      "outputName": "Ugnsbakad falukorv med ost och panko",
+      "inputs": [
+        {
+          "id": "falukorv",
+          "amount": 600,
+          "unit": "g"
+        },
+        {
+          "id": "falukorv_i_ugn__tomato_onion_mix",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "falukorv_i_ugn__sliced_onion",
+          "amount": 0.5,
+          "unit": "st"
+        },
+        {
+          "id": "mustard",
+          "amount": 30,
+          "unit": "g"
+        },
+        {
+          "id": "grated_gouda",
+          "amount": 100,
+          "unit": "g"
+        },
+        {
+          "id": "panko",
+          "amount": 50,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Skär skåror i {{falukorv}}, utan att skära hela vägen igenom.",
+        "Lägg {{falukorv_i_ugn__tomato_onion_mix}} i {{eq:ugnsform_1}} och lägg korven ovanpå.",
+        "Fyll skårorna med resterande {{falukorv_i_ugn__sliced_onion}}, bre {{mustard}} över korven och toppa med {{grated_gouda}} och {{panko}}.",
+        "Tillaga i {{eq:ugn|def}} i 20 min, tills osten har smält och är gyllene."
+      ],
+      "duration": 5,
+      "wait": 20,
+      "tags": [],
+      "tips": [
+        "Det gör inget om lite av toppingen ramlar av."
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        },
+        {
+          "type": "ugn",
+          "after": "falukorv_i_ugn__preheated_oven_225",
+          "slots": 1,
+          "temp": 225,
+          "fanTemp": 200
+        },
+        {
+          "type": "ugnsform",
+          "ref": "ugnsform_1",
+          "sizeSource": "inferred"
+        }
+      ],
+      "devNotes": [
+        "Ny ingrediens falukorv (falu-sausage). Skåror i färdigkorv, inte rått kött, därför vanlig skärbräda (ingen skarbrada_ra). Ny ingrediens grated_gouda.",
+        "Rådatan säger bara ugnsform. Innehåll 600 g korv + hälften av tomaterna och löken ryms i vanlig ugnsform (~25×20 cm, 2,5 l), inte ugnsform_stor."
+      ]
+    },
+    {
+      "id": "falukorv_i_ugn__salad",
+      "name": "Blanda Sallad",
+      "outputName": "Sallad med körsbärstomater",
+      "inputs": [
+        {
+          "id": "mixed_salad",
+          "amount": 100,
+          "unit": "g"
+        },
+        {
+          "id": "falukorv_i_ugn__halved_tomatoes",
+          "amount": 0.5,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Skölj {{mixed_salad}}.",
+        "Blanda salladen, resterande {{falukorv_i_ugn__halved_tomatoes}}, {{olive_oil}}, {{salt}} och en nypa {{pepper}} i {{eq:skal_medelstor}}."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "skal_medelstor"
+        }
+      ],
+      "devNotes": [
+        "Kall, men inte prep: blandas medan korven är i ugnen så att salladen inte blir slak. Salladsmix 100 g vid 4 portioner (60 g vid 2, 160 g vid 6 — inte linjärt; 4-portionsvärdet används). FLAG.",
+        "Olja till sallad 2 msk, salt till sallad 0,5 tsk."
+      ]
+    },
+    {
+      "id": "falukorv_i_ugn",
+      "name": "Falukorv i ugn",
+      "outputName": "Falukorv i ugn",
+      "inputs": [
+        {
+          "id": "falukorv_i_ugn__baked_falukorv",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "falukorv_i_ugn__mash",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "falukorv_i_ugn__salad",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{falukorv_i_ugn__baked_falukorv}}, {{falukorv_i_ugn__mash}} och {{falukorv_i_ugn__salad}} på {{eq:servering|pl}}."
+      ],
+      "duration": 2,
+      "tags": [
+        "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_tallrik",
+          "ref": "servering",
+          "count": "portions"
+        }
+      ]
+    }
+  ]
+}

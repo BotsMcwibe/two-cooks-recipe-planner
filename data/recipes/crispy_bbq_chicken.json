@@ -4,6 +4,11 @@
   "rawId": "6551ee4b53b95b70f99733b8",
   "createdAt": 1790853043,
   "basePortions": 4,
+  "time": {
+    "totalMin": 19,
+    "activeMin": 19,
+    "computedFrom": "graph"
+  },
   "sharedPrep": [],
   "images": {
     "main": "assets/recipes/crispy_bbq_chicken/main.jpg",

@@ -1,0 +1,524 @@
+{
+  "masterId": "nduja_ravioli_ankconfit",
+  "source": "hellofresh",
+  "rawId": "6a9e928856a4cfbb9638f301",
+  "createdAt": 1794429790,
+  "basePortions": 4,
+  "time": {
+    "totalMin": 57,
+    "activeMin": 31,
+    "computedFrom": "graph"
+  },
+  "images": {
+    "main": "assets/recipes/nduja_ravioli_ankconfit/main.jpg",
+    "byNode": {
+      "nduja_ravioli_ankconfit__roasted_duck": "assets/recipes/nduja_ravioli_ankconfit/steps/roasted_duck.jpg",
+      "nduja_ravioli_ankconfit__prepped_cucumber": "assets/recipes/nduja_ravioli_ankconfit/steps/prepped_cucumber.jpg",
+      "nduja_ravioli_ankconfit__tomato_sauce": "assets/recipes/nduja_ravioli_ankconfit/steps/tomato_sauce.jpg",
+      "nduja_ravioli_ankconfit__cooked_ravioli": "assets/recipes/nduja_ravioli_ankconfit/steps/cooked_ravioli.jpg",
+      "nduja_ravioli_ankconfit__duck_sauce": "assets/recipes/nduja_ravioli_ankconfit/steps/duck_sauce.jpg",
+      "nduja_ravioli_ankconfit": "assets/recipes/nduja_ravioli_ankconfit/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 685,
+    "perPortion": {
+      "energyKcal": 1239,
+      "energyKj": 5185,
+      "fatG": 76,
+      "saturatedFatG": 26.7,
+      "carbsG": 68.1,
+      "sugarsG": 22.3,
+      "fiberG": 5.4,
+      "proteinG": 67.9,
+      "saltG": 4.5
+    }
+  },
+  "nodes": [
+    {
+      "id": "nduja_ravioli_ankconfit__preheated_oven_240",
+      "name": "Värm ugnen",
+      "outputName": "Förvärmd ugn (240°C)",
+      "inputs": [],
+      "steps": [
+        "Värm {{eq:ugn|def}} till 240°C, eller 220°C varmluft."
+      ],
+      "duration": 1,
+      "wait": 12,
+      "tags": [
+        "no-timer",
+        "resource"
+      ],
+      "tips": [
+        "Ugnen tar vanligtvis 10–15 minuter att värmas upp."
+      ],
+      "oven": {
+        "temp": 240,
+        "fanTemp": 220
+      },
+      "devNotes": [
+        "HF anger 240°C/220°C varmluft — lokal ugnsnode, inte preheated_oven_220."
+      ]
+    },
+    {
+      "id": "nduja_ravioli_ankconfit__boiling_water",
+      "name": "Koka Upp Pastavatten",
+      "outputName": "Kokande pastavatten",
+      "inputs": [],
+      "steps": [
+        "Koka upp saltat vatten i {{eq:kastrull_1}}."
+      ],
+      "duration": 2,
+      "wait": 10,
+      "tags": [],
+      "heat": "hög",
+      "equipment": [
+        {
+          "type": "kastrull_stor",
+          "ref": "kastrull_1",
+          "lid": true
+        }
+      ],
+      "devNotes": [
+        "Rådatan säger stor kastrull med saltat vatten, utan mängd. Vatten och salt till pastakoket saknas i HF:s lista och lämnas omätta (samma mönster som tagliatelle_ankragu). Rådatan startar uppkoket när det återstår 5 min av såsens koktid; vattnet tar ändå ca 10 min att koka upp."
+      ]
+    },
+    {
+      "id": "nduja_ravioli_ankconfit__roasted_duck",
+      "name": "Ugnsstek Anklår",
+      "outputName": "Ugnsstekta anklår",
+      "inputs": [
+        {
+          "id": "confit_duck_leg",
+          "amount": 860,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Placera {{confit_duck_leg}} på {{eq:plat_1}} med bakplåtspapper, med skinnsidan uppåt. Släng resterande sky från förpackningen.",
+        "Krydda skinnet med {{salt}} och tillaga i {{eq:ugn|def}} i 30 min."
+      ],
+      "duration": 2,
+      "wait": 30,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "nduja_ravioli_ankconfit__preheated_oven_240",
+          "slots": 1,
+          "temp": 240,
+          "fanTemp": 220
+        },
+        {
+          "type": "plat",
+          "ref": "plat_1",
+          "liner": "bakplatspapper"
+        }
+      ],
+      "devNotes": [
+        "Återanvänder confit_duck_leg från tagliatelle_ankragu (samma HF-SKU 64e329aea2c417189e0d8ee4, Sous vide-anklår, confiterat), 860 g vid 4 portioner, linjärt. Förkokt/konfiterat, därför ingen rawAnimal och ingen skarbrada_ra — låren läggs hela på plåten, inte skärs. Sky från förpackningen slängs, inte en ingrediens.",
+        "Salt till kött 0,5 tsk (samma vid 3). 860 g under plåtens oneLayerG 1000 g; fyra anklår ryms på en plåt."
+      ]
+    },
+    {
+      "id": "nduja_ravioli_ankconfit__prepped_cucumber",
+      "name": "Förbered Gurka",
+      "outputName": "Gurka i band",
+      "inputs": [
+        {
+          "id": "cucumber",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skala {{cucumber}} i långa band med en potatisskalare. Finhacka den sista innersta biten."
+      ],
+      "duration": 4,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "Gurka 1 st vid 3 och 4 portioner (0,5 st vid 2, 1,5 st vid 5 och 6) — inte linjärt. FLAG. Potatisskalaren spåras inte (litet redskap). Stegfotot visar även hackad vitlök; vitlöken förbereds i aromater-noden."
+      ]
+    },
+    {
+      "id": "nduja_ravioli_ankconfit__sauce_aromatics",
+      "name": "Hacka Lök och Vitlök",
+      "outputName": "Hackad lök och vitlök",
+      "inputs": [
+        {
+          "id": "shallot",
+          "amount": 4,
+          "unit": "st"
+        },
+        {
+          "id": "garlic",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Finhacka {{shallot}}.",
+        "Riv eller pressa {{garlic}} fint."
+      ],
+      "duration": 4,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true,
+          "after": "nduja_ravioli_ankconfit__prepped_cucumber"
+        }
+      ],
+      "devNotes": [
+        "HF-namnet är 'Lök' men typ=shallot, 4 st vid 4 portioner linjärt — mappat till shallot (schalottenlök). Produktfotot är en generisk lökbild (gul lök, rödlök och schalottenlök). FLAG. Vitlök 2 st, linjärt."
+      ]
+    },
+    {
+      "id": "nduja_ravioli_ankconfit__chopped_hazelnuts",
+      "name": "Grovhacka Hasselnötter",
+      "outputName": "Hackade hasselnötter",
+      "inputs": [
+        {
+          "id": "roasted_hazelnuts",
+          "amount": 40,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Grovhacka {{roasted_hazelnuts}}."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true,
+          "after": "nduja_ravioli_ankconfit__sauce_aromatics"
+        }
+      ],
+      "devNotes": [
+        "Ny ingrediens roasted_hazelnuts (Hasselnötter, rostade), 40 g vid 4 portioner, linjärt. Inte samma vara som befintliga hazelnuts (ospecificerade). Går på salladen vid servering; serveringssteget nämner dem inte, men foto och huvudbild visar dem på salladen. FLAG."
+      ]
+    },
+    {
+      "id": "nduja_ravioli_ankconfit__tomato_sauce",
+      "name": "Sjud Tomat- och Rödvinssås",
+      "outputName": "Tomat- och rödvinssås",
+      "inputs": [
+        {
+          "id": "olive_oil",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "nduja_ravioli_ankconfit__sauce_aromatics",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "passata",
+          "amount": 390,
+          "unit": "g"
+        },
+        {
+          "id": "water",
+          "amount": 2,
+          "unit": "dl"
+        },
+        {
+          "id": "red_wine_sauce",
+          "amount": 120,
+          "unit": "g"
+        },
+        {
+          "id": "sugar",
+          "amount": 1,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i {{eq:traktorpanna_1}} på medelhög värme.",
+        "Fräs lök och vitlök från {{nduja_ravioli_ankconfit__sauce_aromatics}} i 2–3 min, eller tills vitlöken är väldoftande och löken genomskinlig.",
+        "Tillsätt {{passata}}, {{water}}, {{red_wine_sauce}} och {{sugar}}.",
+        "Koka upp, sänk till låg värme och låt sjuda under lock i {{eq:traktorpanna_1|def}} i 6–8 min."
+      ],
+      "duration": 4,
+      "wait": 8,
+      "tags": [],
+      "heat": "låg",
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred",
+          "lid": true
+        }
+      ],
+      "devNotes": [
+        "Rådatan säger stor kastrull för såsen, men aromater steks först och därefter tillsätts 390 g passata + 2 dl vatten + 120 g rödvinssås (ca 7,1 dl) och det sjuds under lock 6–8 min. Stegfotot visar en djup stekpanna/sautépanna, inte en kastrull. Pastavattnet tar den stora kastrullen parallellt. → traktörpanna, typeSource inferred. Samma bedömning som tagliatelle_ankragu. FLAG.",
+        "Passata 390 g vid 4 (200 g vid 2, 292,5 g vid 3, 492,5 g vid 5, 590 g vid 6) — nästan linjärt, små avvikelser. FLAG. Olja till stekning 2 msk (linjärt; saknas vid 5 och 6). Vatten till sås 2 dl linjärt (saknas vid 5 och 6). Socker till sås 1 tsk (samma vid 3; saknas vid 5 och 6). Rödvinssås 120 g, linjärt."
+      ]
+    },
+    {
+      "id": "nduja_ravioli_ankconfit__duck_sauce",
+      "name": "Riv Anka och Sjud i Såsen",
+      "outputName": "Anka i tomatsås",
+      "inputs": [
+        {
+          "id": "nduja_ravioli_ankconfit__roasted_duck",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "nduja_ravioli_ankconfit__tomato_sauce",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Riv {{nduja_ravioli_ankconfit__roasted_duck}} i mindre bitar med två gafflar. Släng benet.",
+        "Vänd ner ankköttet i {{nduja_ravioli_ankconfit__tomato_sauce}} i {{eq:traktorpanna_1|def}} och sjud i ytterligare 4–5 min."
+      ],
+      "duration": 2,
+      "wait": 5,
+      "tags": [],
+      "heat": "låg",
+      "equipment": [
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred",
+          "transition": "keep",
+          "after": "nduja_ravioli_ankconfit__tomato_sauce"
+        }
+      ],
+      "devNotes": [
+        "Köttet rives med gafflar efter ugnen, inte på skärbräda. Ben slängs. Gafflar spåras inte. Egen node så att den andra sjudningens wait (4–5 min) ligger på sista steget. Rådatan nämner lock bara för den första sjudningen."
+      ]
+    },
+    {
+      "id": "nduja_ravioli_ankconfit__cooked_ravioli",
+      "name": "Koka Ravioli",
+      "outputName": "Kokt nduja-ravioli",
+      "inputs": [
+        {
+          "id": "nduja_pepper_ravioli",
+          "amount": 600,
+          "unit": "g"
+        },
+        {
+          "id": "nduja_ravioli_ankconfit__boiling_water",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Koka {{nduja_pepper_ravioli}} i {{nduja_ravioli_ankconfit__boiling_water}} i {{eq:kastrull_1|def}} i 3 min, eller tills al dente."
+      ],
+      "duration": 2,
+      "wait": 3,
+      "tags": [],
+      "heat": "hög",
+      "tips": [
+        "Kokvattnet ska vara lika salt som havsvatten.",
+        "Al dente betyder att pastan är genomkokt, men att den fortfarande har tuggmotstånd."
+      ],
+      "equipment": [
+        {
+          "type": "kastrull_stor",
+          "ref": "kastrull_1",
+          "transition": "keep",
+          "after": "nduja_ravioli_ankconfit__boiling_water"
+        }
+      ],
+      "devNotes": [
+        "Ny ingrediens nduja_pepper_ravioli (Ravioli med nduja och paprika), 600 g vid 4 portioner, linjärt. Inte samma vara som nduja (korv/smet, HF-SKU 6969ed48850f974aa2131300) i nduja_risotto, carbonara_nduja_guanciale och nduja_moules_frites — därför ny id, inte återanvänd nduja. Avhällning i nästa node så att kokets wait ligger på sista steget."
+      ]
+    },
+    {
+      "id": "nduja_ravioli_ankconfit__pasta_sauce",
+      "name": "Vänd Ner Ravioli i Såsen",
+      "outputName": "Ravioli i anksås",
+      "inputs": [
+        {
+          "id": "nduja_ravioli_ankconfit__cooked_ravioli",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "nduja_ravioli_ankconfit__duck_sauce",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "water",
+          "amount": 1,
+          "unit": "dl"
+        },
+        {
+          "id": "butter",
+          "amount": 4,
+          "unit": "msk"
+        }
+      ],
+      "steps": [
+        "Precis innan pastan är färdig, skopa upp 1 dl kokvatten från {{nduja_ravioli_ankconfit__cooked_ravioli}} i en kopp och ställ åt sidan.",
+        "Häll av {{nduja_ravioli_ankconfit__cooked_ravioli}} från {{eq:kastrull_1|def}} i {{eq:durkslag_1}}.",
+        "Vänd ner pastan, {{water}} och {{butter}} i {{nduja_ravioli_ankconfit__duck_sauce}} i {{eq:traktorpanna_1|def}}."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [],
+      "heat": "låg",
+      "equipment": [
+        {
+          "type": "kastrull_stor",
+          "ref": "kastrull_1",
+          "transition": "keep",
+          "offHeat": true,
+          "after": "nduja_ravioli_ankconfit__cooked_ravioli"
+        },
+        {
+          "type": "durkslag",
+          "ref": "durkslag_1",
+          "inferred": true
+        },
+        {
+          "type": "traktorpanna",
+          "ref": "traktorpanna_1",
+          "typeSource": "inferred",
+          "transition": "keep",
+          "after": "nduja_ravioli_ankconfit__duck_sauce"
+        }
+      ],
+      "devNotes": [
+        "HF Sparat pastavatten 1 dl vid 3 och 4 (0,5 dl vid 2; saknas vid 5 och 6) listas här som water, inte på kok- eller avhällningsnoden, så att pastakokets vatten inte dubbelräknas. Rådatan skopar upp vattnet precis innan pastan är färdig; här direkt före avhällningen så att kokets wait ligger på sista steget. Koppen spåras inte (litet redskap). Smör till pasta 4 msk, linjärt (saknas vid 5 och 6)."
+      ]
+    },
+    {
+      "id": "nduja_ravioli_ankconfit__salad",
+      "name": "Blanda Rucola- och Gurksallad",
+      "outputName": "Rucola- och gurksallad",
+      "inputs": [
+        {
+          "id": "rucola",
+          "amount": 70,
+          "unit": "g"
+        },
+        {
+          "id": "nduja_ravioli_ankconfit__prepped_cucumber",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "balsamic_cream",
+          "amount": 16,
+          "unit": "ml"
+        },
+        {
+          "id": "grana_padano_shavings",
+          "amount": 20,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        }
+      ],
+      "steps": [
+        "Skölj {{rucola}}.",
+        "Blanda rucola, {{nduja_ravioli_ankconfit__prepped_cucumber}}, {{balsamic_cream}}, hälften av den hyvlade osten ({{grana_padano_shavings}}) och {{salt}} i {{eq:skal_1}}. Ställ åt sidan."
+      ],
+      "duration": 3,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skal_stor",
+          "ref": "skal_1"
+        }
+      ],
+      "devNotes": [
+        "Rucola 70 g vid 4 (40 g vid 2, 56 g vid 3, 96 g vid 5, 110 g vid 6) — inte linjärt. FLAG. Salt till sallad 0,5 tsk (samma vid 3; saknas vid 5 och 6). Balsamicokräm 16 ml, linjärt. Grana Padano, flingor 40 g totalt, linjärt — 20 g i salladen och 20 g som topping (redan hyvlad, ingen rivnod). Hasselnötterna läggs på vid servering, inte i blandningen."
+      ]
+    },
+    {
+      "id": "nduja_ravioli_ankconfit",
+      "name": "Nduja- och paprikaravioli och konfiterat anklår",
+      "inputs": [
+        {
+          "id": "nduja_ravioli_ankconfit__pasta_sauce",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "grana_padano_shavings",
+          "amount": 20,
+          "unit": "g"
+        },
+        {
+          "id": "nduja_ravioli_ankconfit__salad",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "nduja_ravioli_ankconfit__chopped_hazelnuts",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{nduja_ravioli_ankconfit__pasta_sauce}} i {{eq:servering|pl}} och toppa med resterande {{grana_padano_shavings}}.",
+        "Toppa {{nduja_ravioli_ankconfit__salad}} med {{nduja_ravioli_ankconfit__chopped_hazelnuts}} och servera den i {{eq:sallad|pl}} vid sidan av."
+      ],
+      "duration": 3,
+      "tags": [
+        "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_djup_tallrik",
+          "ref": "servering",
+          "count": "portions"
+        },
+        {
+          "type": "servering_skal",
+          "ref": "sallad",
+          "count": "portions"
+        }
+      ],
+      "devNotes": [
+        "All näring behållen inklusive fiber 5,4 g och 1239 kcal (rikt på ost, smör, anka, nötter och fylld pasta). HF totalTime PT25M och prepTime PT35M är orimliga mot ugn 30 min plus förvärmning — totalMinutes 45.",
+        "Rådatan nämner inte hasselnötterna i serveringssteget; foto och huvudbild visar dem som topping på salladen i individuella skålar. Ostflingor syns både på pastan och i salladen.",
+        "clonedFrom 69b298d83ccf1147243a9ba3 fanns inte i raw-lagret. Inga dubbletter av just den här rätten konverterades."
+      ]
+    }
+  ]
+}

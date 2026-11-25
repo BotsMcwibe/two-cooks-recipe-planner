@@ -4,6 +4,11 @@
   "rawId": "67c08a226c214d706c770c24",
   "createdAt": 1790854508,
   "basePortions": 4,
+  "time": {
+    "totalMin": 9,
+    "activeMin": 9,
+    "computedFrom": "graph"
+  },
   "sharedPrep": [],
   "images": {
     "main": "assets/recipes/avocado_smoothie/main.jpg",

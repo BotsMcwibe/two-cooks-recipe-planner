@@ -4,6 +4,11 @@
   "rawId": "6a68914fd5e939e3a7ce5844",
   "createdAt": 1790852559,
   "basePortions": 4,
+  "time": {
+    "totalMin": 70,
+    "activeMin": 58,
+    "computedFrom": "graph"
+  },
   "sharedPrep": [],
   "images": {
     "main": "assets/recipes/chicken_kiev/main.jpg",

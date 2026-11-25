@@ -1,0 +1,513 @@
+{
+  "masterId": "citrusstekt_torsk",
+  "source": "hellofresh",
+  "rawId": "6a9e928a548a82de3e1a7142",
+  "createdAt": 1794428938,
+  "basePortions": 4,
+  "time": {
+    "totalMin": 51,
+    "activeMin": 35,
+    "computedFrom": "graph"
+  },
+  "sharedPrep": [
+    "preheated_oven_220"
+  ],
+  "images": {
+    "main": "assets/recipes/citrusstekt_torsk/main.jpg",
+    "byNode": {
+      "citrusstekt_torsk__roasted_roots": "assets/recipes/citrusstekt_torsk/steps/roasted_roots.jpg",
+      "citrusstekt_torsk__citrus_broth": "assets/recipes/citrusstekt_torsk/steps/citrus_broth.jpg",
+      "citrusstekt_torsk__roasted_veg": "assets/recipes/citrusstekt_torsk/steps/roasted_veg.jpg",
+      "citrusstekt_torsk__seared_fish": "assets/recipes/citrusstekt_torsk/steps/seared_fish.jpg",
+      "citrusstekt_torsk__fish_in_sauce": "assets/recipes/citrusstekt_torsk/steps/fish_in_sauce.jpg",
+      "citrusstekt_torsk": "assets/recipes/citrusstekt_torsk/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 671,
+    "perPortion": {
+      "energyKcal": 686,
+      "energyKj": 2870,
+      "fatG": 31.9,
+      "saturatedFatG": 6.8,
+      "carbsG": 61.3,
+      "sugarsG": 10.9,
+      "proteinG": 37.9,
+      "saltG": 4.8
+    }
+  },
+  "nodes": [
+    {
+      "id": "citrusstekt_torsk__cut_roots",
+      "name": "Skär Potatis och Palsternacka",
+      "outputName": "Tärnad potatis och palsternacka",
+      "inputs": [
+        {
+          "id": "potato",
+          "amount": 1000,
+          "unit": "g"
+        },
+        {
+          "id": "parsnip",
+          "amount": 2,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Tärna {{potato}} och {{parsnip}} (oskalade) i 1 cm stora bitar."
+      ],
+      "duration": 6,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "HF Potatis typ organic-potatoes → potato, 1000 g vid 4 portioner (500/1000/1500 linjärt 2/4/6; 800 g vid 3, 1300 g vid 5). FLAG. Palsternacka 2 st vid 3 och 4 (1 st vid 2, 3 st vid 5 och 6). FLAG. Till skillnad från citrusstekt_kolja (1 st palsternacka, 2 cm-bitar) är det 2 st och 1 cm-bitar."
+      ]
+    },
+    {
+      "id": "citrusstekt_torsk__roasted_roots",
+      "name": "Rosta Rotfrukter, Första Fas",
+      "outputName": "Halvrostad potatis och palsternacka",
+      "inputs": [
+        {
+          "id": "citrusstekt_torsk__cut_roots",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Placera {{citrusstekt_torsk__cut_roots}} på {{eq:plat_1}} med bakplåtspapper.",
+        "Blanda med {{olive_oil}}, {{salt}} och en nypa {{pepper}}.",
+        "Rosta i {{eq:ugn|def}} i 20–30 min, eller tills mjuka."
+      ],
+      "duration": 3,
+      "wait": 15,
+      "tags": [],
+      "tips": [
+        "Använd fler plåtar om det blir för trångt."
+      ],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "preheated_oven_220",
+          "slots": 1,
+          "temp": 220,
+          "fanTemp": 200
+        },
+        {
+          "type": "plat",
+          "ref": "plat_1",
+          "liner": "bakplatspapper"
+        }
+      ],
+      "devNotes": [
+        "HF anger 220°C/200°C varmluft — exakt match, därför delad pack preheated_oven_220 (inte en lokal 240-nod som i citrusstekt_kolja). Olivolja till rotfrukter saknas i HF:s lista, därför standard 1 skvätt. Salt till potatis 1 tsk vid 3 och 4 (0,5 tsk vid 2; saknas vid 5 och 6) läggs här. FLAG. Salt till grönsaker är en separat rad och ligger på broccolin. Första fasen 15 min = övre 30 minus de 15 som återstår när broccolin går in (rådatan säger 20–30 min tills mjuka, inte 25–35 tills gyllene).",
+        "1000 g potatis plus 2 palsternackor, senare 500 g broccoli, på en plåt enligt rådatan, med tipset om fler plåtar. FLAG. --trays 1 ska vara rent för den här rätten."
+      ]
+    },
+    {
+      "id": "citrusstekt_torsk__cut_broccoli",
+      "name": "Skär Broccoli",
+      "outputName": "Broccolibitar",
+      "inputs": [
+        {
+          "id": "broccoli",
+          "amount": 500,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Skär broccolibuketter och stjälken från {{broccoli}} i 1 cm stora bitar (skala stjälken först vid behov)."
+      ],
+      "duration": 4,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true,
+          "after": "citrusstekt_torsk__cut_roots"
+        }
+      ],
+      "devNotes": [
+        "Broccoli 500 g vid 3 och 4 portioner (250 g vid 2, 750 g vid 5 och 6). FLAG. 1 cm-bitar här, inte 2 cm som i citrusstekt_kolja."
+      ]
+    },
+    {
+      "id": "citrusstekt_torsk__roasted_veg",
+      "name": "Tillsätt Broccoli",
+      "outputName": "Ugnsrostade rotfrukter och broccoli",
+      "inputs": [
+        {
+          "id": "citrusstekt_torsk__roasted_roots",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "citrusstekt_torsk__cut_broccoli",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "När det återstår 15 min av tillagningstiden, placera {{citrusstekt_torsk__cut_broccoli}} på {{eq:plat_1|def}} med {{citrusstekt_torsk__roasted_roots}}.",
+        "Blanda med {{olive_oil}}, {{salt}} och en nypa {{pepper}} och rosta i {{eq:ugn|def}} i 15 min."
+      ],
+      "duration": 2,
+      "wait": 15,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "plat",
+          "ref": "plat_1",
+          "liner": "bakplatspapper",
+          "transition": "keep"
+        },
+        {
+          "type": "ugn",
+          "after": "preheated_oven_220",
+          "slots": 1,
+          "temp": 220,
+          "fanTemp": 200
+        }
+      ],
+      "devNotes": [
+        "Olivolja till broccoli saknas i HF:s lista, därför standard 1 skvätt. Salt till grönsaker 1 tsk vid 3 och 4 (0,5 tsk vid 2; saknas vid 5 och 6) — separat från salt till potatis, därför inte delad som i citrusstekt_kolja. FLAG. En plåt, inte en andra."
+      ]
+    },
+    {
+      "id": "citrusstekt_torsk__lemon_slices",
+      "name": "Skär Citrus i Skivor",
+      "outputName": "Citrusskivor",
+      "inputs": [
+        {
+          "id": "lemon",
+          "amount": 0.5,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skär {{lemon}} i tunna skivor."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true,
+          "after": "citrusstekt_torsk__cut_broccoli"
+        }
+      ],
+      "devNotes": [
+        "HF Citrusfrukt typ lemon → lemon. 1 st vid 2, 3 och 4 portioner, 2 st vid 5 och 6 — förpackning. Författad som 1 st vid 4 portioner med linjär skalning. Delas på rå ingång: 0,5 st tunna skivor till mastern, 0,5 st klyftor till saften i citrusbuljongen (rådatan: 'halva citrusfrukten i tunna skivor och resten i klyftor'). Inte samma klippning som citrusstekt_kolja, där hela citronen blev klyftor. 0,5+0,5 summerar till 1 st."
+      ]
+    },
+    {
+      "id": "citrusstekt_torsk__lemon_wedges",
+      "name": "Skär Citrus i Klyftor",
+      "outputName": "Citronklyftor",
+      "inputs": [
+        {
+          "id": "lemon",
+          "amount": 0.5,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skär {{lemon}} i klyftor."
+      ],
+      "duration": 1,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true,
+          "after": "citrusstekt_torsk__lemon_slices"
+        }
+      ]
+    },
+    {
+      "id": "citrusstekt_torsk__chopped_dill",
+      "name": "Grovhacka Dill",
+      "outputName": "Grovhackad dill",
+      "inputs": [
+        {
+          "id": "dill",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Grovhacka {{dill}}."
+      ],
+      "duration": 2,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true,
+          "after": "citrusstekt_torsk__lemon_wedges"
+        }
+      ],
+      "devNotes": [
+        "HF Dill typ dill. 1 st vid 2, 3 och 4 portioner, 2 st vid 5 och 6 — förpackning. Författad som 1 st vid 4 portioner med linjär skalning. Delas: hälften (0,5 st) i buljongen, resten (0,5 st) som garnering. Rådatans serveringssteg nämner inte dill som garnering (all dill nämns i buljongen), men förberedelsefotot lägger undan en kvist och huvud- och serveringsfotot visar tydligt dill på fisken. FLAG."
+      ]
+    },
+    {
+      "id": "citrusstekt_torsk__citrus_broth",
+      "name": "Blanda Citrusbuljong",
+      "outputName": "Citrusbuljong",
+      "inputs": [
+        {
+          "id": "garlic",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "water",
+          "amount": 1,
+          "unit": "dl"
+        },
+        {
+          "id": "vegetable_bouillon",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "id": "citrusstekt_torsk__lemon_wedges",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "citrusstekt_torsk__chopped_dill",
+          "amount": 0.5,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Finhacka eller pressa {{garlic}}.",
+        "Blanda {{water}}, {{vegetable_bouillon}}, {{garlic}}, hälften av {{citrusstekt_torsk__chopped_dill}} och en generös skvätt saft från {{citrusstekt_torsk__lemon_wedges}} i {{eq:skal_1}}."
+      ],
+      "duration": 3,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skal_liten",
+          "ref": "skal_1"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true,
+          "after": "citrusstekt_torsk__chopped_dill"
+        }
+      ],
+      "devNotes": [
+        "HF Buljong typ vegetable-stock → vegetable_bouillon, 8 g vid 3 och 4. Vatten till sås 1 dl vid 3 och 4 (0,5 dl vid 2). Vitlök 2 st vid 3 och 4. FLAG. Rådatan säger liten skål. Ingen salladsmix i den här varianten (till skillnad från citrusstekt_kolja)."
+      ]
+    },
+    {
+      "id": "citrusstekt_torsk__seared_fish",
+      "name": "Stek Torsk",
+      "outputName": "Ansad torsk",
+      "inputs": [
+        {
+          "id": "olive_oil",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "cod_fillet",
+          "amount": 500,
+          "unit": "g"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Torka av {{cod_fillet}} med hushållspapper och krydda med {{salt}} och en nypa {{pepper}} när det återstår 10 min av grönsakernas tillagningstid.",
+        "Hetta upp {{olive_oil}} i {{eq:stekpanna_1}} på medelhög värme.",
+        "Stek fisken i 2–3 min på ena sidan."
+      ],
+      "duration": 5,
+      "wait": 0,
+      "tags": [],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1"
+        }
+      ],
+      "devNotes": [
+        "HF Torsk typ cod, samma SKU 62ea70920000e2dd1bb91a6b som i ugnsbakad_torsk_chorizo → cod_fillet (rawAnimal fish), 500 g linjärt. Fisken skärs inte; den torkas och kryddas och går i pannan, därför ingen skarbrada_ra. Hushållspapper spåras inte. Salt till fisk 0,5 tsk vid 3 och 4. Olja till stekning 2 msk vid 3 och 4 (1 msk vid 2). FLAG. En nypa peppar finns i rådatan (saknades i citrusstekt_kolja). Ingen 'skinnsida ner'; stegfotot visar skinnfria filéer. 2–3 min på ena sidan är hands-on (duration 5). Rådatan säger stor stekpanna."
+      ]
+    },
+    {
+      "id": "citrusstekt_torsk__fish_in_sauce",
+      "name": "Stek Torsk i Citrusbuljong",
+      "outputName": "Citrusstekt torsk",
+      "inputs": [
+        {
+          "id": "citrusstekt_torsk__seared_fish",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "citrusstekt_torsk__citrus_broth",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "butter",
+          "amount": 2,
+          "unit": "msk"
+        }
+      ],
+      "steps": [
+        "Vänd {{citrusstekt_torsk__seared_fish}} och tillsätt {{citrusstekt_torsk__citrus_broth}} och {{butter}}.",
+        "Stek i ytterligare 1–2 min, eller tills fisken är genomstekt."
+      ],
+      "duration": 3,
+      "wait": 0,
+      "tags": [],
+      "heat": "medelhög",
+      "tips": [
+        "Fisken är klar när fiskköttet är ogenomskinligt och lätt faller isär."
+      ],
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1",
+          "transition": "keep"
+        }
+      ],
+      "devNotes": [
+        "Smör till sås 2 msk vid 3 och 4, smälts i pannan — inget rumstempererat, därför ingen Ta fram-node. Citrusbuljongen är ca 1 dl vatten + buljong, saft och smör; kort stek 1–2 min i samma panna, långt under 3 dl — stekpanna_stor, inte traktörpanna. Andra stekningen är hands-on (duration 3)."
+      ]
+    },
+    {
+      "id": "citrusstekt_torsk",
+      "name": "Citrusstekt torsk",
+      "outputName": "Citrusstekt torsk med rostade rotfrukter, broccoli och dill",
+      "inputs": [
+        {
+          "id": "citrusstekt_torsk__fish_in_sauce",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "citrusstekt_torsk__roasted_veg",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "citrusstekt_torsk__lemon_slices",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "citrusstekt_torsk__chopped_dill",
+          "amount": 0.5,
+          "unit": "st"
+        },
+        {
+          "id": "sesame_seeds",
+          "amount": 20,
+          "unit": "g"
+        },
+        {
+          "id": "aioli",
+          "amount": 80,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Lägg upp {{citrusstekt_torsk__fish_in_sauce}} och {{citrusstekt_torsk__roasted_veg}} på {{eq:servering|pl}}.",
+        "Ringla citrusbuljongen från {{eq:stekpanna_1|def}} över fisken och garnera med {{citrusstekt_torsk__lemon_slices}} och resterande {{citrusstekt_torsk__chopped_dill}}.",
+        "Strö {{sesame_seeds}} över rätten. Servera med {{aioli}}."
+      ],
+      "duration": 3,
+      "tags": [
+        "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_tallrik",
+          "ref": "servering",
+          "count": "portions"
+        }
+      ],
+      "devNotes": [
+        "Kostfiber 43,8 g slängd som orimlig. 686 kcal och övrig näring behållen. Allergen dairy tillagd: smör till sås 2 msk. HF-kortet hade bara spår av mjölk (plus spår av gluten, råg, havre, spelt, vete, khorasanvete, korn och senap — spår utelämnade). Fisk, ägg, senap, selleri och sesam fanns redan (aioli, buljong, sesamfrön, torsk).",
+        "Ingen salladsmix i den här varianten, därför ingen vändnod; sesamfrön 20 g vid 3 och 4 strös över rätten vid servering. FLAG. Aioli 80 g linjärt. Rådatan och fotona visar tallrikar (aioli som klick på tallriken). HF totalTime och prepTime PT35M behållna. HF difficulty 2 → medium. Cuisine danish (HF Dansk).",
+        "clonedFrom 63a5bf9e59152f2f3e13bc1d och dubbletten 6811d1205917498f8bf2e320 konverterades inte, inte heller varianterna 6780ec56df9801249fa7e0ee (rostad potatis), 68403a026329c8e5b722c062 (pangasius), 687a28f1c30d33981f9ad6de (extra räkor) och 6a71a41ee8e5c2a7fd0dce62. citrusstekt_kolja är syskonet och lämnades orört."
+      ]
+    }
+  ]
+}

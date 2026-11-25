@@ -1,0 +1,410 @@
+{
+  "masterId": "wraps_plantbitar_potatis",
+  "source": "hellofresh",
+  "rawId": "6a9e928e790f7867027dbe39",
+  "createdAt": 1794427713,
+  "basePortions": 4,
+  "time": {
+    "totalMin": 55,
+    "activeMin": 34,
+    "computedFrom": "graph"
+  },
+  "images": {
+    "main": "assets/recipes/wraps_plantbitar_potatis/main.jpg",
+    "byNode": {
+      "wraps_plantbitar_potatis__roasted_fries": "assets/recipes/wraps_plantbitar_potatis/steps/roasted_fries.jpg",
+      "wraps_plantbitar_potatis__pickled_onion": "assets/recipes/wraps_plantbitar_potatis/steps/pickled_onion.jpg",
+      "wraps_plantbitar_potatis__fried_strips": "assets/recipes/wraps_plantbitar_potatis/steps/fried_strips.jpg",
+      "wraps_plantbitar_potatis__warmed_tortillas": "assets/recipes/wraps_plantbitar_potatis/steps/warmed_tortillas.jpg",
+      "wraps_plantbitar_potatis__salad": "assets/recipes/wraps_plantbitar_potatis/steps/salad.jpg",
+      "wraps_plantbitar_potatis": "assets/recipes/wraps_plantbitar_potatis/steps/serve.jpg"
+    }
+  },
+  "nutrition": {
+    "basis": "per_portion",
+    "servingSizeGrams": 664,
+    "perPortion": {
+      "energyKcal": 1030,
+      "energyKj": 4308,
+      "fatG": 57.4,
+      "saturatedFatG": 6,
+      "carbsG": 97.9,
+      "sugarsG": 10.5,
+      "proteinG": 29.4,
+      "saltG": 6.3
+    }
+  },
+  "nodes": [
+    {
+      "id": "wraps_plantbitar_potatis__preheated_oven_240",
+      "name": "Värm ugnen",
+      "outputName": "Förvärmd ugn (240°C)",
+      "inputs": [],
+      "steps": [
+        "Värm {{eq:ugn|def}} till 240°C, eller 220°C varmluft."
+      ],
+      "duration": 1,
+      "wait": 12,
+      "tags": [
+        "no-timer",
+        "resource"
+      ],
+      "oven": {
+        "temp": 240,
+        "fanTemp": 220
+      },
+      "tips": [
+        "Ugnen tar vanligtvis 10–15 minuter att värmas upp."
+      ],
+      "devNotes": [
+        "HF anger 240°C/220°C varmluft — lokal ugnsnode, inte preheated_oven_220."
+      ]
+    },
+    {
+      "id": "wraps_plantbitar_potatis__cut_fries",
+      "name": "Skär Pommes",
+      "outputName": "Potatisstavar",
+      "inputs": [
+        {
+          "id": "potato",
+          "amount": 1000,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Skär {{potato}} (oskalad) i 1 cm tjocka pommes."
+      ],
+      "duration": 8,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true
+        }
+      ],
+      "devNotes": [
+        "HF Potatis typ organic-potatoes → potato, 1000 g vid 4 portioner (500/1000/1500 linjärt 2/4/6; 800 g vid 3, 1300 g vid 5). FLAG. Samma skärtid som notfarsquesadillas_fullkorn (1 cm pommes)."
+      ]
+    },
+    {
+      "id": "wraps_plantbitar_potatis__roasted_fries",
+      "name": "Rosta Za'atar-pommes",
+      "outputName": "Za'atar-pommes",
+      "inputs": [
+        {
+          "id": "wraps_plantbitar_potatis__cut_fries",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "olive_oil",
+          "amount": 1,
+          "unit": "skvätt"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        },
+        {
+          "id": "zaatar",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Placera {{wraps_plantbitar_potatis__cut_fries}} på {{eq:plat_1}} med bakplåtspapper.",
+        "Blanda med en skvätt {{olive_oil}}, {{salt}}, {{zaatar}} och en nypa {{pepper}}.",
+        "Rosta i {{eq:ugn|def}} i 25–35 min, eller tills gyllene och mjuka."
+      ],
+      "duration": 3,
+      "wait": 35,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "ugn",
+          "after": "wraps_plantbitar_potatis__preheated_oven_240",
+          "slots": 1,
+          "temp": 240,
+          "fanTemp": 220
+        },
+        {
+          "type": "plat",
+          "ref": "plat_1",
+          "liner": "bakplatspapper"
+        }
+      ],
+      "devNotes": [
+        "Olivolja till pommes saknas i HF:s lista (stegtexten säger en skvätt), därför standard 1 skvätt. Salt till potatis 1 tsk vid 3 och 4. Za'atar 8 g vid 4 (linjärt 2 g per portion: 4/6/8/10/12). Befintlig zaatar med blendId, ingen Spice Mix-flagga. Wait 35 är övre intervallet, samma mönster som notfarsquesadillas_fullkorn."
+      ]
+    },
+    {
+      "id": "wraps_plantbitar_potatis__pickled_onion",
+      "name": "Sylta Lök",
+      "outputName": "Syltad rödlök",
+      "inputs": [
+        {
+          "id": "red_onion",
+          "amount": 2,
+          "unit": "st"
+        },
+        {
+          "id": "salt",
+          "amount": 1,
+          "unit": "tsk"
+        },
+        {
+          "id": "water",
+          "amount": 1,
+          "unit": "dl"
+        }
+      ],
+      "steps": [
+        "Skär {{red_onion}} i tunna skivor.",
+        "Blanda löken, {{salt}} och {{water}} (tillräckligt för att täcka löken) i {{eq:skal_1}} och ställ åt sidan."
+      ],
+      "duration": 3,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skal_liten",
+          "ref": "skal_1"
+        },
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true,
+          "after": "wraps_plantbitar_potatis__cut_fries"
+        }
+      ],
+      "devNotes": [
+        "HF Lök typ shallot, namn 'Lök'. Stegbilderna visar tydligt rödlök (rosa lag, lila skivor i salladen), därför red_onion och inte shallot. FLAG. 2 st vid 3 och 4 portioner (1 st vid 2, 3 st vid 5 och 6).",
+        "Salt till inläggning 1 tsk vid 3 och 4. Vatten 'tillräckligt för att täcka löken' saknar yield — 1 dl som i kottbullar_tomatsas (samma saltvatteninläggning i liten skål). FLAG. Ingen klockad tid, därför wait 0."
+      ]
+    },
+    {
+      "id": "wraps_plantbitar_potatis__fried_strips",
+      "name": "Stek Vegostrimlor",
+      "outputName": "Stekta vegostrimlor",
+      "inputs": [
+        {
+          "id": "olive_oil",
+          "amount": 2,
+          "unit": "msk"
+        },
+        {
+          "id": "plant_based_chicken_strips",
+          "amount": 400,
+          "unit": "g"
+        },
+        {
+          "id": "panamat_spice",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "id": "pepper",
+          "amount": 1,
+          "unit": "nypa"
+        }
+      ],
+      "steps": [
+        "Hetta upp {{olive_oil}} i {{eq:stekpanna_1}} på medelhög värme när det återstår 6 min av potatisens tillagningstid.",
+        "Stek {{plant_based_chicken_strips}} med {{panamat_spice}} och en nypa {{pepper}} i 3–4 min, eller tills brynt."
+      ],
+      "duration": 6,
+      "wait": 0,
+      "tags": [],
+      "heat": "medelhög",
+      "equipment": [
+        {
+          "type": "stekpanna_stor",
+          "ref": "stekpanna_1"
+        }
+      ],
+      "devNotes": [
+        "Samma SKU som pankopanerade_plantbitar (692db6821ca49f0d8bd386df, typ plant-based-chicken-strips) → plant_based_chicken_strips, 400 g linjärt. Färdigstrimlade, skärs inte, och är inte rå animalisk protein — ingen skarbrada_ra.",
+        "HF Panamat Central American Spice → panamat_spice (befintlig blendId), 8 g vid 4 (4 g vid både 2 och 3). FLAG. Olja till stekning 2 msk vid 3 och 4 (1 msk vid 2). Rådatan säger stor stekpanna. Kort torr stekning, ingen traktörpanna. 3–4 min är hands-on, därför duration 6 och ingen wait."
+      ]
+    },
+    {
+      "id": "wraps_plantbitar_potatis__warmed_tortillas",
+      "name": "Värm Tortillas",
+      "outputName": "Varma tortillas",
+      "inputs": [
+        {
+          "id": "tortillas",
+          "amount": 8,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Värm {{tortillas}} i 30–60 sek i {{eq:mikro_1|def}}, eller tills mjuka och varma."
+      ],
+      "duration": 1,
+      "wait": 1,
+      "tags": [],
+      "tips": [
+        "Utan mikrovågsugn: värm tortillas täckta med folie i den redan varma ugnen i 4–5 min."
+      ],
+      "equipment": [
+        {
+          "type": "mikro",
+          "ref": "mikro_1"
+        }
+      ],
+      "devNotes": [
+        "HF Tortillabröd typ tortillas → tortillas (inte mini_tortillas eller fullkorn), 8 st vid 4 portioner, linjärt 2 per portion. Mikron är förstahandsmetoden enligt rådatan (30–60 sek, därför duration 1 och wait 1), samma mönster som curry_chickpea_wraps / asiatiska_raktacos / tex_mex_pork_burrito. Ugn+folie är bara i tipset — ingen andra ugnsanvändning, så --trays 1 förblir rent (pommesen ligger redan på den enda plåten). Stegfotot visar foliealternativet. FLAG."
+      ]
+    },
+    {
+      "id": "wraps_plantbitar_potatis__cucumber_sticks",
+      "name": "Skär Gurka i Stavar",
+      "outputName": "Gurkstavar",
+      "inputs": [
+        {
+          "id": "cucumber",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Skär {{cucumber}} i 1/2 cm tjocka stavar."
+      ],
+      "duration": 3,
+      "wait": 0,
+      "tags": [
+        "prep"
+      ],
+      "equipment": [
+        {
+          "type": "skarbrada",
+          "ref": "skarbrada",
+          "inferred": true,
+          "after": "wraps_plantbitar_potatis__pickled_onion"
+        }
+      ],
+      "devNotes": [
+        "Gurka 1 st vid 3 och 4 portioner (0,5 st vid 2, 1,5 st vid 5 och 6). FLAG. Gurkan går i wrapsen, inte i salladen, därför egen prep-nod."
+      ]
+    },
+    {
+      "id": "wraps_plantbitar_potatis__salad",
+      "name": "Blanda Sallad",
+      "outputName": "Sallad med syltad lök och srirachamajonnäs",
+      "inputs": [
+        {
+          "id": "shredded_salad_mix",
+          "amount": 300,
+          "unit": "g"
+        },
+        {
+          "id": "wraps_plantbitar_potatis__pickled_onion",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "salt",
+          "amount": 0.5,
+          "unit": "tsk"
+        },
+        {
+          "id": "vegan_sriracha_mayo",
+          "amount": 100,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Häll av lagen från {{wraps_plantbitar_potatis__pickled_onion}} precis innan servering.",
+        "Blanda {{shredded_salad_mix}}, löken, {{salt}} och hälften av {{vegan_sriracha_mayo}} i {{eq:skal_2}}."
+      ],
+      "duration": 3,
+      "wait": 0,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "skal_medelstor",
+          "ref": "skal_2"
+        }
+      ],
+      "devNotes": [
+        "HF Strimlad salladsmix typ strimlad-salladsmix → shredded_salad_mix, 300 g linjärt. Salt till sallad 0,5 tsk vid 3 och 4. Vegansk srirachamajonnäs 200 g totalt vid 4 (100/175/200/275/300 — 175 g vid 3 inte linjärt). FLAG. Hälften (100 g) i salladen, hälften till mastern. Rådatan säger medelstor skål."
+      ]
+    },
+    {
+      "id": "wraps_plantbitar_potatis",
+      "name": "Wraps på vegostrimlor",
+      "outputName": "Wraps på vegostrimlor med za'atar-pommes och srirachamajonnäs",
+      "inputs": [
+        {
+          "id": "wraps_plantbitar_potatis__warmed_tortillas",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "wraps_plantbitar_potatis__fried_strips",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "wraps_plantbitar_potatis__cucumber_sticks",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "wraps_plantbitar_potatis__salad",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "wraps_plantbitar_potatis__roasted_fries",
+          "amount": 1,
+          "unit": "st"
+        },
+        {
+          "id": "vegan_sriracha_mayo",
+          "amount": 100,
+          "unit": "g"
+        }
+      ],
+      "steps": [
+        "Fördela {{wraps_plantbitar_potatis__fried_strips}}, {{wraps_plantbitar_potatis__cucumber_sticks}} och {{wraps_plantbitar_potatis__salad}} i mitten på varje {{wraps_plantbitar_potatis__warmed_tortillas}}.",
+        "Vik in ändarna och rulla ihop till wraps.",
+        "Lägg upp wrapsen och {{wraps_plantbitar_potatis__roasted_fries}} på {{eq:servering|pl}}. Servera med resterande {{vegan_sriracha_mayo}} i {{eq:servering_dipp|pl}}."
+      ],
+      "duration": 4,
+      "tags": [
+        "master"
+      ],
+      "serving": [
+        {
+          "type": "servering_tallrik",
+          "ref": "servering",
+          "count": "portions"
+        },
+        {
+          "type": "servering_skal",
+          "ref": "servering_dipp",
+          "count": "portions"
+        }
+      ],
+      "devNotes": [
+        "Kostfiber 39,9 g slängd som orimlig. 1030 kcal och övrig näring behållen. Vete vikt in i gluten. Bekräftade allergener gluten, sesam och soja. Spår av senap, soja och ägg utelämnade. Vegansk majonnäs, därför ingen dairy och taggen laktosfri.",
+        "HF totalTime PT15M är orimligt mot 25–35 min rostning; totalMinutes 35 efter övre ugnstiden. FLAG. HF difficulty 1 → easy. Cuisine levantine (nytt katalogvärde; HF namnger Levantine, tom slug).",
+        "clonedFrom 64e31f620989be803362cb9d och dubbletten/syskonen 6a44d703…, 67c811d9…, 6538bd93…, 6825ebea… och 6a7c8315… konverterades inte."
+      ]
+    }
+  ]
+}

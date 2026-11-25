@@ -25,7 +25,7 @@
       "soy"
     ],
     "difficulty": "easy",
-    "totalMinutes": 50,
+    "totalMinutes": 56,
     "searchText": "apelsinglaserad chokladkaka apelsin choklad hasselnötter florsocker glasyr dessert kaka",
     "ratingAverage": 4,
     "ratingCount": 1
@@ -51,7 +51,7 @@
       "nuts"
     ],
     "difficulty": "easy",
-    "totalMinutes": 50,
+    "totalMinutes": 55,
     "searchText": "äppelkaka mandlar kanel sockerkaksmix crème fraiche dessert kaka",
     "ratingAverage": 4,
     "ratingCount": 2,
@@ -90,7 +90,7 @@
       "dairy"
     ],
     "difficulty": "easy",
-    "totalMinutes": 40,
+    "totalMinutes": 49,
     "searchText": "höstig grönkålssallad butternutpumpa valnöt tranbär feta honung senapsdressing vegetarisk sallad",
     "ratingAverage": 4,
     "ratingCount": 2
@@ -117,7 +117,7 @@
       "dairy"
     ],
     "difficulty": "easy",
-    "totalMinutes": 10,
+    "totalMinutes": 9,
     "searchText": "avokadosmoothie mango avokado spenat mynta yoghurt honung frukost smoothie mixer",
     "ratingAverage": 4,
     "ratingCount": 2
@@ -143,7 +143,7 @@
       "nuts"
     ],
     "difficulty": "easy",
-    "totalMinutes": 30,
+    "totalMinutes": 24,
     "searchText": "bacon tortelloni tomatsås pasta grädde broccoli ost",
     "ratingAverage": 2.5,
     "ratingCount": 2,
@@ -175,7 +175,7 @@
       "soy"
     ],
     "difficulty": "medium",
-    "totalMinutes": 45,
+    "totalMinutes": 40,
     "searchText": "basilikakyckling rotmos zucchini sallad",
     "hfTags": []
   },
@@ -203,7 +203,7 @@
       "sulphites"
     ],
     "difficulty": "easy",
-    "totalMinutes": 50,
+    "totalMinutes": 53,
     "searchText": "bbq lax ranchdressing potatis majssalsa kålsallad aioli festlig amerikansk fisk",
     "ratingAverage": 4,
     "ratingCount": 2,
@@ -234,7 +234,7 @@
       "egg"
     ],
     "difficulty": "easy",
-    "totalMinutes": 45,
+    "totalMinutes": 59,
     "searchText": "nötfärskoftas kofta grekisk sallad pommes tzatziki feta dill tunnbröd mynta",
     "ratingAverage": 4,
     "ratingCount": 2,
@@ -271,7 +271,7 @@
       "mustard"
     ],
     "difficulty": "easy",
-    "totalMinutes": 30,
+    "totalMinutes": 32,
     "searchText": "caesarsallad grön sparris krutonger romansallad gräddfil majonnäs vitlök citron riven ost vegetarisk",
     "ratingAverage": 4,
     "ratingCount": 5,
@@ -300,7 +300,7 @@
       "egg"
     ],
     "difficulty": "easy",
-    "totalMinutes": 20,
+    "totalMinutes": 16,
     "searchText": "cajun bacon linguine pasta rucola körsbärstomater grädde paprika",
     "ratingAverage": 4,
     "ratingCount": 2,
@@ -328,7 +328,7 @@
       "dairy"
     ],
     "difficulty": "medium",
-    "totalMinutes": 50,
+    "totalMinutes": 49,
     "searchText": "medelhavs kyckling bulgur yoghurt citron",
     "hfTags": [],
     "cooked": true,
@@ -355,7 +355,7 @@
       "dairy"
     ],
     "difficulty": "easy",
-    "totalMinutes": 20,
+    "totalMinutes": 26,
     "searchText": "kycklinggyros gyros pita tzatziki souvlaki gurka tomat grekisk lunch",
     "ratingAverage": 4,
     "ratingCount": 8,
@@ -385,7 +385,7 @@
       "mustard"
     ],
     "difficulty": "medium",
-    "totalMinutes": 50,
+    "totalMinutes": 70,
     "searchText": "kyckling kiev panko vitlökssmör rotfrukter rödbeta palsternacka broccolini aioli",
     "ratingAverage": 4,
     "ratingCount": 4,
@@ -414,7 +414,7 @@
       "nuts"
     ],
     "difficulty": "easy",
-    "totalMinutes": 40,
+    "totalMinutes": 34,
     "searchText": "chokladgranola granola havregryn kakao hasselnötter honung frystorkade jordgubbar frukost",
     "ratingAverage": 4,
     "ratingCount": 3,
@@ -444,7 +444,7 @@
       "nuts"
     ],
     "difficulty": "medium",
-    "totalMinutes": 35,
+    "totalMinutes": 25,
     "searchText": "kokossoppa nudlar champinjoner paprika koriander jordnötter curry kokosmjölk asiatisk vegetarisk",
     "ratingAverage": 3.3,
     "ratingCount": 27,
@@ -477,7 +477,7 @@
       "mustard"
     ],
     "difficulty": "easy",
-    "totalMinutes": 45,
+    "totalMinutes": 57,
     "searchText": "cowboy steak burger bbq rumpstek bacon brioche lökringar potatis aioli grill amerikansk",
     "ratingAverage": 4,
     "ratingCount": 4,
@@ -508,7 +508,7 @@
       "soy"
     ],
     "difficulty": "medium",
-    "totalMinutes": 40,
+    "totalMinutes": 42,
     "searchText": "krämig auberginecurry linser koriander kokosmjölk indisk vegetarisk baguette",
     "ratingAverage": 3.3,
     "ratingCount": 24,
@@ -536,7 +536,7 @@
       "gluten"
     ],
     "difficulty": "easy",
-    "totalMinutes": 25,
+    "totalMinutes": 27,
     "searchText": "krämig svampbruschetta champinjoner ciabatta tryffelolja persilja matlagningsgrädde vitlök antipasti vegetarisk",
     "ratingAverage": 4,
     "ratingCount": 2,
@@ -573,7 +573,7 @@
       "celery"
     ],
     "difficulty": "medium",
-    "totalMinutes": 45,
+    "totalMinutes": 47,
     "searchText": "krämig sötpotatisdhal röda linser kokosmjölk yoghurt korianderchips tortilla indisk vegetarisk",
     "ratingAverage": 4,
     "ratingCount": 1
@@ -601,7 +601,7 @@
       "mustard"
     ],
     "difficulty": "easy",
-    "totalMinutes": 20,
+    "totalMinutes": 19,
     "searchText": "krispig bbq kyckling panko vitlöksdipp gräddfil majonnäs panerad kycklinginnerfilé",
     "ratingAverage": 4,
     "ratingCount": 2,
@@ -696,7 +696,7 @@
       "soy"
     ],
     "difficulty": "easy",
-    "totalMinutes": 25,
+    "totalMinutes": 19,
     "searchText": "girasoli pasta paprikasås portobello spenat crème fraiche vegetarisk",
     "ratingAverage": 4,
     "ratingCount": 4,
@@ -756,7 +756,7 @@
       "dairy"
     ],
     "difficulty": "medium",
-    "totalMinutes": 40,
+    "totalMinutes": 50,
     "searchText": "gratinerad aubergine dukkah parmesan paprika schalottenlök tortilla rucola vegetarisk",
     "ratingAverage": 1.3,
     "ratingCount": 3,
@@ -785,7 +785,7 @@
       "celery"
     ],
     "difficulty": "medium",
-    "totalMinutes": 45,
+    "totalMinutes": 50,
     "searchText": "gratinerade kidneybönor tomatsås mozzarella jasminris gemsallad baharat vegetarisk",
     "ratingAverage": 2.6,
     "ratingCount": 26,
@@ -812,7 +812,7 @@
       "dairy"
     ],
     "difficulty": "medium",
-    "totalMinutes": 50,
+    "totalMinutes": 57,
     "searchText": "grönsaksfyllda paprikor mozzarella crème fraîche pärlcouscous svamp tex-mex ugn vegetarisk",
     "ratingAverage": 2.9,
     "ratingCount": 33,
@@ -844,7 +844,7 @@
       "nuts"
     ],
     "difficulty": "easy",
-    "totalMinutes": 50,
+    "totalMinutes": 54,
     "searchText": "gyllene toscakaka tosca mandlar hasselnötter sockerkaksmix sirap florsocker dessert kaka",
     "ratingAverage": 4,
     "ratingCount": 2
@@ -869,11 +869,39 @@
       "gluten"
     ],
     "difficulty": "medium",
-    "totalMinutes": 45,
+    "totalMinutes": 47,
     "searchText": "halloumi rostade morötter couscous zucchini tex-mex citron honung mandlar vegetarisk grekisk",
     "ratingAverage": 3.1,
     "ratingCount": 50,
     "hfTags": []
+  },
+  {
+    "id": "kaldolmar_graddsas_potatismos",
+    "source": "egen",
+    "createdAt": 1795527271,
+    "name": "Kåldolmar med gräddsås, potatismos och lingon",
+    "tags": [
+      "master",
+      "swedish",
+      "comfort",
+      "family",
+      "protein:beef",
+      "protein:pork",
+      "protein:mixed"
+    ],
+    "hfTags": [],
+    "image": null,
+    "basePortions": 6,
+    "cuisine": "swedish",
+    "allergens": [
+      "gluten",
+      "egg",
+      "dairy",
+      "soy"
+    ],
+    "difficulty": "medium",
+    "totalMinutes": 137,
+    "searchText": "kåldolmar gräddsås potatismos lingon rårörda lingon blandfärs vitkål ris sirap husmanskost svensk klassiker"
   },
   {
     "id": "kale_quesadillas",
@@ -896,7 +924,7 @@
       "gluten"
     ],
     "difficulty": "medium",
-    "totalMinutes": 30,
+    "totalMinutes": 41,
     "searchText": "grönkål quesadillas svarta bönor mozzarella tomatsallad gräddfil tex-mex tortilla vegetarisk",
     "ratingAverage": 3.1,
     "ratingCount": 41,
@@ -928,7 +956,7 @@
       "nuts"
     ],
     "difficulty": "easy",
-    "totalMinutes": 35,
+    "totalMinutes": 36,
     "searchText": "köttbullar tomatsås tagliatelle pasta pinjenötter sallad blandfärs italien",
     "ratingAverage": 4,
     "ratingCount": 2,
@@ -961,7 +989,7 @@
       "dairy"
     ],
     "difficulty": "medium",
-    "totalMinutes": 50,
+    "totalMinutes": 60,
     "searchText": "linsgratäng gröna linser potatis mozzarella gemsallad cajun gratäng vegetarisk",
     "ratingAverage": 2.8,
     "ratingCount": 55,
@@ -1016,7 +1044,7 @@
       "nuts"
     ],
     "difficulty": "easy",
-    "totalMinutes": 50,
+    "totalMinutes": 56,
     "searchText": "morotskaka morot kaka färskost glasyr valnötter kanel sockerkaksmix dessert",
     "ratingAverage": 4,
     "ratingCount": 3,
@@ -1043,7 +1071,7 @@
       "dairy"
     ],
     "difficulty": "medium",
-    "totalMinutes": 45,
+    "totalMinutes": 49,
     "searchText": "svamp risotto oregano äpple champinjon hasselnötter vegetarisk",
     "ratingAverage": 3.1,
     "ratingCount": 11,
@@ -1069,7 +1097,7 @@
       "egg"
     ],
     "difficulty": "easy",
-    "totalMinutes": 30,
+    "totalMinutes": 24,
     "searchText": "pannkakor limemarinerad mango yoghurt kokos sirap frukost dessert tropisk",
     "ratingAverage": 4,
     "ratingCount": 3,
@@ -1105,7 +1133,7 @@
       "nuts"
     ],
     "difficulty": "easy",
-    "totalMinutes": 25,
+    "totalMinutes": 29,
     "searchText": "päron getost bruschetta ciabatta honung valnötter timjan förrätt snack vegetarisk",
     "ratingAverage": 4,
     "ratingCount": 2
@@ -1130,7 +1158,7 @@
       "egg"
     ],
     "difficulty": "medium",
-    "totalMinutes": 60,
+    "totalMinutes": 59,
     "searchText": "piroger skinka broccoli ost deg",
     "hfTags": []
   },
@@ -1156,7 +1184,7 @@
       "mustard"
     ],
     "difficulty": "medium",
-    "totalMinutes": 45,
+    "totalMinutes": 53,
     "searchText": "potatis purjolök gratäng mozzarella crème fraiche panko senapssallad fransk vegetarisk",
     "ratingAverage": 2.8,
     "ratingCount": 19,
@@ -1192,7 +1220,7 @@
       "nuts"
     ],
     "difficulty": "easy",
-    "totalMinutes": 20,
+    "totalMinutes": 22,
     "searchText": "prosciutto pita pizza pitapizza valnötspesto rucola ost italiensk lunch",
     "ratingAverage": 4,
     "ratingCount": 2
@@ -1221,7 +1249,7 @@
       "gluten"
     ],
     "difficulty": "easy",
-    "totalMinutes": 30,
+    "totalMinutes": 32,
     "searchText": "pulled pork taquitos tortilla limedipp crème fraiche tex-mex enchilada mexikansk",
     "ratingAverage": 4,
     "ratingCount": 2
@@ -1276,7 +1304,7 @@
       "mustard"
     ],
     "difficulty": "easy",
-    "totalMinutes": 45,
+    "totalMinutes": 62,
     "searchText": "rosmarin lammstek purjolökssås potatis broccoli pistagenötter mynta senap grädde",
     "ratingAverage": 4,
     "ratingCount": 3,
@@ -1314,7 +1342,7 @@
       "nuts"
     ],
     "difficulty": "easy",
-    "totalMinutes": 30,
+    "totalMinutes": 36,
     "searchText": "rumpstek basilikasås potatismos crème fraiche pinjenötter sallad sojasås stek",
     "ratingAverage": 4,
     "ratingCount": 7,
@@ -1339,7 +1367,7 @@
       "dairy"
     ],
     "difficulty": "easy",
-    "totalMinutes": 45,
+    "totalMinutes": 35,
     "searchText": "spaghetti bolognese pasta köttfärssås italiensk",
     "hfTags": []
   },
@@ -1362,7 +1390,7 @@
       "dairy"
     ],
     "difficulty": "medium",
-    "totalMinutes": 45,
+    "totalMinutes": 34,
     "searchText": "spaghetti courgette zucchini tomatsås panko parmesan chili persilja",
     "ratingAverage": 3,
     "ratingCount": 17,
@@ -1417,7 +1445,7 @@
       "soy"
     ],
     "difficulty": "easy",
-    "totalMinutes": 45,
+    "totalMinutes": 51,
     "searchText": "spindelnätsbrownie brownie choklad hasselnötter glasyr halloween dessert",
     "ratingAverage": 4,
     "ratingCount": 3,
@@ -1449,7 +1477,7 @@
       "celery"
     ],
     "difficulty": "medium",
-    "totalMinutes": 30,
+    "totalMinutes": 37,
     "searchText": "sweet chili fläskkotlett fläsk jasminris broccolini sojasås ingefära rädisor lime",
     "ratingAverage": 4,
     "ratingCount": 4,
@@ -1484,7 +1512,7 @@
       "mustard"
     ],
     "difficulty": "easy",
-    "totalMinutes": 15,
+    "totalMinutes": 16,
     "searchText": "tex-mex fläskkött burrito tortilla sriracha majonnäs kålsallad lime mexikansk lunch",
     "ratingAverage": 4,
     "ratingCount": 2,
@@ -1513,7 +1541,7 @@
       "dairy"
     ],
     "difficulty": "medium",
-    "totalMinutes": 40,
+    "totalMinutes": 46,
     "searchText": "tomat paprika soppa pärlcouscous dragon crème fraiche ciabatta vitlöksbröd vegetarisk",
     "ratingAverage": 2.9,
     "ratingCount": 24,
@@ -1540,7 +1568,7 @@
       "gluten"
     ],
     "difficulty": "medium",
-    "totalMinutes": 45,
+    "totalMinutes": 43,
     "searchText": "ugnsbakade grönsaker baguette ostdressing vitlökssås paprika zucchini salladsost gräddfil vegetarisk",
     "ratingAverage": 3.6,
     "ratingCount": 8,
@@ -1575,7 +1603,7 @@
       "molluscs"
     ],
     "difficulty": "easy",
-    "totalMinutes": 30,
+    "totalMinutes": 33,
     "searchText": "umamiglaserade kikärtor jasminris ponzu rädisa gurka morot jordnötter sriracha yoghurt koriander umamisås sojasås honung asiatisk vegetarisk",
     "ratingAverage": 4,
     "ratingCount": 2,
@@ -1606,7 +1634,7 @@
       "dairy"
     ],
     "difficulty": "medium",
-    "totalMinutes": 50,
+    "totalMinutes": 53,
     "searchText": "varm linssallad butternutpumpa aubergine bulgur feta mynta persilja rostade grönsaker vegetarisk",
     "ratingAverage": 3.1,
     "ratingCount": 15,
@@ -1644,7 +1672,7 @@
       "soy"
     ],
     "difficulty": "easy",
-    "totalMinutes": 32,
+    "totalMinutes": 33,
     "searchText": "vietnamesisk räkbowl kokosris mango mangosallad kålrabbi rädisor kungsräkor ingefärssås koriander sojasås",
     "ratingAverage": 3.8,
     "ratingCount": 8,
@@ -1678,7 +1706,7 @@
       "sesame"
     ],
     "difficulty": "medium",
-    "totalMinutes": 40,
+    "totalMinutes": 51,
     "searchText": "citronstekt lax rostad potatis broccoli aioli citronbuljong dill sesamfrön fisk",
     "ratingAverage": 3.7,
     "ratingCount": 296,
@@ -1712,7 +1740,7 @@
       "celery"
     ],
     "difficulty": "easy",
-    "totalMinutes": 30,
+    "totalMinutes": 39,
     "searchText": "stekt fläsk gräslökssås svamp schalottenlök champinjoner morot potatismos fläskytterfilé",
     "ratingAverage": 3.6,
     "ratingCount": 194,
@@ -1744,7 +1772,7 @@
       "mustard"
     ],
     "difficulty": "easy",
-    "totalMinutes": 30,
+    "totalMinutes": 48,
     "searchText": "gyllenstekt kycklingschnitzel potatissallad panko citron spenat gräslök schalottenlök crème fraiche majonnäs",
     "ratingAverage": 3.6,
     "ratingCount": 119,
@@ -1777,7 +1805,7 @@
       "dairy"
     ],
     "difficulty": "easy",
-    "totalMinutes": 50,
+    "totalMinutes": 57,
     "searchText": "medelhavskryddad kyckling souvlaki potatis citronyoghurt rucola feta tomat rödlök",
     "ratingAverage": 3.6,
     "ratingCount": 112,
@@ -1814,7 +1842,7 @@
       "mustard"
     ],
     "difficulty": "easy",
-    "totalMinutes": 25,
+    "totalMinutes": 30,
     "searchText": "pannstekt lax krämig senapssås pestopotatis persilja schalottenlök rucola honung senapsdressing småpotatis",
     "ratingAverage": 3.6,
     "ratingCount": 97,
@@ -1924,7 +1952,7 @@
       "sulphites"
     ],
     "difficulty": "medium",
-    "totalMinutes": 45,
+    "totalMinutes": 53,
     "searchText": "ugnsstekt kycklingfilé sesampotatis rostad broccoli rucola aioli jorden runt",
     "ratingAverage": 3.5,
     "ratingCount": 1304,
@@ -1990,7 +2018,7 @@
       "sulphites"
     ],
     "difficulty": "medium",
-    "totalMinutes": 50,
+    "totalMinutes": 54,
     "searchText": "cajunpanerad kyckling kryddig potatis tomatsallad panko aioli paprika persilja",
     "ratingAverage": 3.5,
     "ratingCount": 725,
@@ -2094,7 +2122,7 @@
       "dairy"
     ],
     "difficulty": "easy",
-    "totalMinutes": 45,
+    "totalMinutes": 56,
     "searchText": "panerat citronpepparfläsk haricots verts dill crème fraiche småpotatis rucola panko",
     "ratingAverage": 3.5,
     "ratingCount": 295,
@@ -2125,7 +2153,7 @@
       "egg"
     ],
     "difficulty": "easy",
-    "totalMinutes": 50,
+    "totalMinutes": 56,
     "searchText": "äppelpannbiff nötfärs äpple kålsallad småpotatis mamas favorit vitlöksyoghurt karamelliserad lök",
     "ratingAverage": 3.5,
     "ratingCount": 205,
@@ -2160,7 +2188,7 @@
       "dairy"
     ],
     "difficulty": "easy",
-    "totalMinutes": 25,
+    "totalMinutes": 23,
     "searchText": "kallrökt lax dillpotatis crème fraiche syltad schalottenlök rädisor gurka sallad",
     "ratingAverage": 3.5,
     "ratingCount": 139,
@@ -2199,7 +2227,7 @@
       "fish"
     ],
     "difficulty": "easy",
-    "totalMinutes": 25,
+    "totalMinutes": 38,
     "searchText": "vietnamesisk räkbowl vitlöksnudlar mie-nudlar mango räkor kungsräkor marinad fisksås jordnötter",
     "ratingAverage": 3.5,
     "ratingCount": 32,
@@ -2230,7 +2258,7 @@
       "nuts"
     ],
     "difficulty": "medium",
-    "totalMinutes": 35,
+    "totalMinutes": 31,
     "searchText": "fläskytterfilé gräddsås basilikagräddsås kokt potatis äppelsallad valnötter småpotatis vitlöksflörter",
     "ratingAverage": 3.4,
     "ratingCount": 1393,
@@ -2263,7 +2291,7 @@
       "sesame"
     ],
     "difficulty": "medium",
-    "totalMinutes": 40,
+    "totalMinutes": 44,
     "searchText": "citronstekt fläskkött rostade rotfrukter tzatziki palsternacka rödbeta potatis citronbuljong sesam",
     "ratingAverage": 3.4,
     "ratingCount": 138,
@@ -2302,7 +2330,7 @@
       "egg"
     ],
     "difficulty": "easy",
-    "totalMinutes": 20,
+    "totalMinutes": 27,
     "searchText": "krämig medelhavs kyckling bulgur chili flakes spenat tomat gräddsås vitlöksflörter",
     "ratingAverage": 3.2,
     "ratingCount": 248,
@@ -2336,7 +2364,7 @@
       "dairy"
     ],
     "difficulty": "easy",
-    "totalMinutes": 45,
+    "totalMinutes": 55,
     "searchText": "spanskinspirerad kyckling romescosås örtpotatis tomatsallad calabresepesto valnötter hello sunrise",
     "cooked": true,
     "cookedAt": "2026-10-03T15:12:32+02:00"
@@ -2372,7 +2400,7 @@
       "sulphites"
     ],
     "difficulty": "medium",
-    "totalMinutes": 30,
+    "totalMinutes": 34,
     "searchText": "vietnamesisk kycklingbowl vitlöksris srirachamajonnäs jasminris ginger ninja woksås gurka koriander",
     "cooked": true,
     "cookedAt": "2026-10-03T15:12:32+02:00"
@@ -2406,7 +2434,7 @@
       "sulphites"
     ],
     "difficulty": "easy",
-    "totalMinutes": 25,
+    "totalMinutes": 29,
     "searchText": "skandinavisk citronpepparlax pärlcouscous gurka dill crème fraiche avokado sallad",
     "cooked": true,
     "cookedAt": "2026-10-03T15:12:32+02:00"
@@ -2440,7 +2468,7 @@
       "dairy"
     ],
     "difficulty": "easy",
-    "totalMinutes": 40,
+    "totalMinutes": 56,
     "searchText": "stekt vit fisk kolja rostade rädisor broccoli potatis dragonsås dragon",
     "cooked": true,
     "cookedAt": "2026-10-03T15:12:32+02:00"
@@ -2473,7 +2501,7 @@
       "dairy"
     ],
     "difficulty": "easy",
-    "totalMinutes": 25,
+    "totalMinutes": 29,
     "searchText": "sej sweet chili sojaglaze gurka spenat jasminris sesam gräddfil",
     "cooked": true,
     "cookedAt": "2026-10-03T15:12:32+02:00"
@@ -2505,7 +2533,7 @@
       "dairy"
     ],
     "difficulty": "easy",
-    "totalMinutes": 40,
+    "totalMinutes": 44,
     "searchText": "boeuf bourguignon nötkött svamp vitlöksmos potatis rödvinssås persilja",
     "ratingAverage": 3.2,
     "ratingCount": 354,
@@ -2539,7 +2567,7 @@
       "celery"
     ],
     "difficulty": "easy",
-    "totalMinutes": 30,
+    "totalMinutes": 47,
     "searchText": "norska köttbullar nötfärs grönkål potatismos lingon tranbär rödvinssås",
     "ratingAverage": 3.4,
     "ratingCount": 326,
@@ -2574,7 +2602,7 @@
       "nuts"
     ],
     "difficulty": "easy",
-    "totalMinutes": 40,
+    "totalMinutes": 54,
     "searchText": "salladsbowl krispiga kikärtor avokado pinjenötter gräslök aioli yoghurt romansallad potatis",
     "ratingAverage": 3.3,
     "ratingCount": 163,
@@ -2605,7 +2633,7 @@
       "dairy"
     ],
     "difficulty": "medium",
-    "totalMinutes": 35,
+    "totalMinutes": 50,
     "searchText": "honungsstekt grillost halloumi tzatziki oregano pommes körsbärstomater gurka yoghurt",
     "cooked": true,
     "cookedAt": "2026-10-03T15:12:32+02:00"
@@ -2639,7 +2667,7 @@
       "gluten"
     ],
     "difficulty": "easy",
-    "totalMinutes": 30,
+    "totalMinutes": 33,
     "searchText": "ugnsrostad kyckling brysselkål bulgur rödkål äpple päron valnötter vitlöksdressing jorden runt",
     "ratingAverage": 3.3,
     "ratingCount": 1,
@@ -2675,7 +2703,7 @@
       "mustard"
     ],
     "difficulty": "easy",
-    "totalMinutes": 40,
+    "totalMinutes": 58,
     "searchText": "caesar kycklingsallad rostad potatis broccoli panko vitlöksdressing aioli parmesan grönkål",
     "ratingAverage": 3.3,
     "ratingCount": 210,
@@ -2709,7 +2737,7 @@
       "dairy"
     ],
     "difficulty": "easy",
-    "totalMinutes": 40,
+    "totalMinutes": 55,
     "searchText": "honungs chiliglaserad kyckling regnbågspommes ranch rödbeta morot palsternacka chiliflakes honung",
     "ratingAverage": 3.3,
     "ratingCount": 81,
@@ -2741,7 +2769,7 @@
       "celery"
     ],
     "difficulty": "medium",
-    "totalMinutes": 25,
+    "totalMinutes": 29,
     "searchText": "krämig basilikakyckling kokt potatis tranbärssallad spetskål äpple gurka grädde",
     "ratingAverage": 3.4,
     "ratingCount": 444,
@@ -2775,7 +2803,7 @@
       "crustaceans"
     ],
     "difficulty": "easy",
-    "totalMinutes": 25,
+    "totalMinutes": 24,
     "searchText": "asiatisk räkwok kungsräkor pak choi ris broccoli sojasås sesam avokado woksås",
     "ratingAverage": 3.3,
     "ratingCount": 126,
@@ -2813,7 +2841,7 @@
       "gluten"
     ],
     "difficulty": "easy",
-    "totalMinutes": 20,
+    "totalMinutes": 24,
     "searchText": "asiatiska räktacos kungsräkor pico de gallo bang bang srirachamajonnäs sweet chili tortilla rödkål koriander lime",
     "cooked": true,
     "cookedAt": "2026-10-03T15:12:32+02:00"
@@ -2848,7 +2876,7 @@
       "mustard"
     ],
     "difficulty": "medium",
-    "totalMinutes": 30,
+    "totalMinutes": 31,
     "searchText": "japansk nötfärsbowl jasminris picklad rödlök asiatisk majonnäs pak choi gurka sesam woksås ingefära",
     "cooked": true,
     "cookedAt": "2026-10-03T15:12:32+02:00"
@@ -2876,7 +2904,7 @@
       "celery"
     ],
     "difficulty": "easy",
-    "totalMinutes": 40,
+    "totalMinutes": 48,
     "searchText": "grekisk nötfärsmoussaka rostad aubergine zucchini mornaysås krossade tomater persilja sallad",
     "ratingAverage": 3.4,
     "ratingCount": 44,
@@ -2913,9 +2941,9 @@
       "sulphites"
     ],
     "difficulty": "easy",
-    "totalMinutes": 40,
+    "totalMinutes": 57,
     "searchText": "cajunkryddad kycklingfilé rostade grönsaker majs spenat srirachamajonnäs paprika potatis",
-    "ratingAverage": 4.0,
+    "ratingAverage": 4,
     "ratingCount": 2
   },
   {
@@ -2943,9 +2971,9 @@
       "nuts"
     ],
     "difficulty": "easy",
-    "totalMinutes": 50,
+    "totalMinutes": 56,
     "searchText": "valnötskaka päron brynt smör glasyr sockerkaksmix florsocker dessert",
-    "ratingAverage": 4.0,
+    "ratingAverage": 4,
     "ratingCount": 1
   },
   {
@@ -2976,9 +3004,9 @@
       "sulphites"
     ],
     "difficulty": "easy",
-    "totalMinutes": 25,
+    "totalMinutes": 30,
     "searchText": "fransk chèvre chaud sallad getost baguette valnötter honung äpple balsamvinäger",
-    "ratingAverage": 4.0,
+    "ratingAverage": 4,
     "ratingCount": 1
   },
   {
@@ -3005,7 +3033,7 @@
       "dairy"
     ],
     "difficulty": "medium",
-    "totalMinutes": 30,
+    "totalMinutes": 29,
     "searchText": "linsgryta kokosmjölk röda linser naan ris koriander curry sambal tomat",
     "ratingAverage": 4.6,
     "ratingCount": 1582,
@@ -3031,7 +3059,7 @@
     "image": "assets/recipes/kyckling_rod_curry/main.jpg",
     "basePortions": 4,
     "allergens": [],
-    "totalMinutes": 25,
+    "totalMinutes": 28,
     "searchText": "kyckling röd curry jasminris kokosmjölk paprika zucchini morot"
   },
   {
@@ -3056,7 +3084,7 @@
       "egg",
       "gluten"
     ],
-    "totalMinutes": 40,
+    "totalMinutes": 26,
     "searchText": "katalansk räksoppa fänkål saffran surdegsbaguette aioli tomat",
     "ratingAverage": 4.14,
     "ratingCount": 333
@@ -3078,7 +3106,7 @@
     "image": "assets/recipes/hoisin_sticky_pork/main.jpg",
     "basePortions": 4,
     "allergens": [],
-    "totalMinutes": 35,
+    "totalMinutes": 15,
     "searchText": "hoisin sticky pork karré nudlar vattenkastanjer romansallad lime"
   },
   {
@@ -3098,7 +3126,7 @@
     "image": "assets/recipes/wraps_tacokyckling_keso/main.jpg",
     "basePortions": 4,
     "allergens": [],
-    "totalMinutes": 25,
+    "totalMinutes": 16,
     "searchText": "wraps tacokyckling keso tortilla majs gurka tomat sallad"
   },
   {
@@ -3117,7 +3145,7 @@
     "image": "assets/recipes/potatis_purjolokssoppa/main.jpg",
     "basePortions": 4,
     "allergens": [],
-    "totalMinutes": 35,
+    "totalMinutes": 31,
     "searchText": "potatis purjolök soppa korv vispgrädde kycklingbuljong"
   },
   {
@@ -3136,7 +3164,7 @@
     "image": "assets/recipes/skansk_aggakaka/main.jpg",
     "basePortions": 4,
     "allergens": [],
-    "totalMinutes": 35,
+    "totalMinutes": 37,
     "searchText": "skånsk äggakaka bacon morot äpple ugn vetemjöl ägg"
   },
   {
@@ -3157,7 +3185,7 @@
     "image": "assets/recipes/torsk_currykokos/main.jpg",
     "basePortions": 4,
     "allergens": [],
-    "totalMinutes": 25,
+    "totalMinutes": 19,
     "searchText": "torsk curry kokosmjölk ris sockerärtor lime ingefära purjolök"
   },
   {
@@ -3183,7 +3211,7 @@
       "sulphites",
       "egg"
     ],
-    "totalMinutes": 30,
+    "totalMinutes": 22,
     "searchText": "ugnsbakad lax chilipicklad gurka kålrabbi lime sojamajonnäs jasminris",
     "ratingAverage": 4.32,
     "ratingCount": 478
@@ -3211,7 +3239,7 @@
       "sulphites",
       "egg"
     ],
-    "totalMinutes": 40,
+    "totalMinutes": 32,
     "searchText": "räkbowl krispig kål sesam picklad gurka sojamajonnäs jasminris",
     "ratingAverage": 4.09,
     "ratingCount": 259
@@ -3237,7 +3265,7 @@
     "allergens": [
       "dairy"
     ],
-    "totalMinutes": 20,
+    "totalMinutes": 17,
     "searchText": "palak chicken spenat tomat basmatiris garam masala grädde",
     "ratingAverage": 3.84,
     "ratingCount": 332
@@ -3264,7 +3292,7 @@
       "soy",
       "gluten"
     ],
-    "totalMinutes": 20,
+    "totalMinutes": 17,
     "searchText": "färdig daal basmatiris kachumber yoghurt tomat gurka koriander"
   },
   {
@@ -3288,7 +3316,7 @@
       "sesame",
       "gluten"
     ],
-    "totalMinutes": 30,
+    "totalMinutes": 25,
     "searchText": "zaatar fläskkotlett bulgursallad apelsin yoghurt mynta",
     "ratingAverage": 3.92,
     "ratingCount": 190
@@ -3315,11 +3343,2249 @@
       "dairy"
     ],
     "difficulty": "medium",
-    "totalMinutes": 55,
+    "totalMinutes": 56,
     "searchText": "pastagratäng ziti pasta penne rigatoni salsiccia korv tomatsås mozzarella basilika gratäng ugn italiensk",
     "ratingAverage": 4.3,
     "ratingCount": 162,
     "cooked": true,
     "cookedAt": "2026-10-21T12:07:00+02:00"
+  },
+  {
+    "id": "cajunkryddad_pulled_chicken",
+    "source": "hellofresh",
+    "createdAt": 1792602461,
+    "name": "Cajunkryddad pulled chicken med klyftpotatis",
+    "tags": [
+      "master",
+      "chicken",
+      "family",
+      "build-your-own",
+      "protein:chicken"
+    ],
+    "hfTags": [
+      "vetefri",
+      "aggfri",
+      "barnvanlig",
+      "build-your-own-plate",
+      "kalla-till-fiber",
+      "north-american",
+      "dinner-bowls"
+    ],
+    "image": "assets/recipes/cajunkryddad_pulled_chicken/main.jpg",
+    "basePortions": 4,
+    "cuisine": "tex-mex",
+    "allergens": [
+      "dairy",
+      "sulphites"
+    ],
+    "difficulty": "easy",
+    "totalMinutes": 53,
+    "searchText": "cajunkryddad pulled chicken klyftpotatis adobo kyckling avokadomos paprika lök tomat cheddar lime tex-mex barnvänlig"
+  },
+  {
+    "id": "shepherds_pie_blandfars",
+    "source": "hellofresh",
+    "createdAt": 1792602637,
+    "name": "Shepherd's pie på blandfärs",
+    "tags": [
+      "master",
+      "family",
+      "pie",
+      "british",
+      "protein:beef",
+      "protein:pork",
+      "protein:mixed"
+    ],
+    "hfTags": [
+      "aggfri",
+      "hidden-veg",
+      "barnvanlig",
+      "kalla-till-fiber",
+      "classic-euro-dishes"
+    ],
+    "image": "assets/recipes/shepherds_pie_blandfars/main.jpg",
+    "basePortions": 4,
+    "cuisine": "british",
+    "allergens": [
+      "dairy"
+    ],
+    "difficulty": "easy",
+    "totalMinutes": 48,
+    "searchText": "shepherd's pie shepherds pie blandfärs köttfärssås palsternacka potatismos parmesan sallad pinjenötter brittisk ugnsrätt"
+  },
+  {
+    "id": "belgisk_stoemp_sotpotatis",
+    "source": "hellofresh",
+    "createdAt": 1792602759,
+    "name": "Belgisk stoemp på sötpotatis och feta",
+    "tags": [
+      "master",
+      "veggie",
+      "belgian",
+      "protein:vegetarian"
+    ],
+    "hfTags": [
+      "veggie",
+      "vetefri",
+      "aggfri",
+      "cuisine-spotlight",
+      "kalla-till-fiber",
+      "classic-euro-dishes",
+      "classic-plates"
+    ],
+    "image": "assets/recipes/belgisk_stoemp_sotpotatis/main.jpg",
+    "basePortions": 4,
+    "cuisine": "belgian",
+    "allergens": [
+      "nuts",
+      "sulphites",
+      "mustard",
+      "dairy"
+    ],
+    "difficulty": "easy",
+    "totalMinutes": 51,
+    "searchText": "belgisk stoemp sötpotatis potatismos feta karamelliserad lök balsamvinäger valnötter rucola paprika körsbärstomater vegetarisk"
+  },
+  {
+    "id": "thai_gron_kycklingcurry",
+    "source": "hellofresh",
+    "createdAt": 1792602902,
+    "name": "Thailändsk grön kycklingcurry",
+    "tags": [
+      "master",
+      "chicken",
+      "curry",
+      "noodles",
+      "thai",
+      "spicy",
+      "protein:chicken"
+    ],
+    "hfTags": [
+      "quick",
+      "spicy",
+      "mjlkfri",
+      "aggfri",
+      "other-surcharge",
+      "worldwide",
+      "south-southeastasian",
+      "noodle-stir-fry",
+      "premium"
+    ],
+    "image": "assets/recipes/thai_gron_kycklingcurry/main.jpg",
+    "basePortions": 4,
+    "cuisine": "thai",
+    "allergens": [
+      "gluten",
+      "soy"
+    ],
+    "difficulty": "easy",
+    "totalMinutes": 31,
+    "searchText": "thailändsk grön kycklingcurry grön curry kokosmjölk udonnudlar pak choi mangosallad rostad lök koriander thai"
+  },
+  {
+    "id": "honung_harissa_gronsaker_korv",
+    "source": "hellofresh",
+    "createdAt": 1792603025,
+    "name": "Honungs- och harissarostade grönsaker och korv",
+    "tags": [
+      "master",
+      "sausage",
+      "traybake",
+      "protein:pork"
+    ],
+    "hfTags": [
+      "enkel-att-forbereda",
+      "vetefri",
+      "kalla-till-fiber",
+      "platmat"
+    ],
+    "image": "assets/recipes/honung_harissa_gronsaker_korv/main.jpg",
+    "basePortions": 4,
+    "cuisine": "fusion",
+    "allergens": [
+      "soy",
+      "dairy",
+      "mustard",
+      "egg"
+    ],
+    "difficulty": "easy",
+    "totalMinutes": 48,
+    "searchText": "honung harissa rostade grönsaker korv morot palsternacka krossad potatis feta thousand island plåtmat"
+  },
+  {
+    "id": "miso_svamp_girasoli",
+    "source": "hellofresh",
+    "createdAt": 1792603134,
+    "name": "Snabb miso- och svampgirasoli",
+    "tags": [
+      "master",
+      "pasta",
+      "quick",
+      "veggie",
+      "italian",
+      "protein:vegetarian"
+    ],
+    "hfTags": [
+      "supersnabb",
+      "comfort-food",
+      "mediterranean",
+      "pasta-noodles"
+    ],
+    "image": "assets/recipes/miso_svamp_girasoli/main.jpg",
+    "basePortions": 4,
+    "cuisine": "italian",
+    "allergens": [
+      "dairy",
+      "celery",
+      "egg",
+      "soy",
+      "gluten"
+    ],
+    "difficulty": "easy",
+    "totalMinutes": 20,
+    "searchText": "snabb miso svamp girasoli pasta portobello matlagningsgrädde rucola paprika vegetarisk"
+  },
+  {
+    "id": "cannellini_bacongryta",
+    "source": "hellofresh",
+    "createdAt": 1792603244,
+    "name": "Italiensk cannellini- och bacongryta",
+    "tags": [
+      "master",
+      "stew",
+      "quick",
+      "italian",
+      "protein:pork"
+    ],
+    "hfTags": [
+      "quick",
+      "aggfri",
+      "kalla-till-fiber",
+      "mediterranean",
+      "soup-stew",
+      "veggie-spotlight"
+    ],
+    "image": "assets/recipes/cannellini_bacongryta/main.jpg",
+    "basePortions": 4,
+    "cuisine": "italian",
+    "allergens": [
+      "gluten",
+      "dairy"
+    ],
+    "difficulty": "easy",
+    "totalMinutes": 31,
+    "searchText": "italiensk cannellini cannelini bacongryta bönor bacon krossade tomater soltorkade tomater spenat baguette parmesan gryta"
+  },
+  {
+    "id": "flaskkotlett_medelhav_couscous",
+    "source": "hellofresh",
+    "createdAt": 1792603365,
+    "name": "Fläskkotletter med medelhavssmaker",
+    "tags": [
+      "master",
+      "quick",
+      "mediterranean",
+      "protein:pork"
+    ],
+    "hfTags": [
+      "quick",
+      "nyttig",
+      "proteinrik",
+      "mediterranean",
+      "classic-plates"
+    ],
+    "image": "assets/recipes/flaskkotlett_medelhav_couscous/main.jpg",
+    "basePortions": 4,
+    "cuisine": "mediterranean",
+    "allergens": [
+      "gluten",
+      "mustard",
+      "egg",
+      "dairy"
+    ],
+    "difficulty": "easy",
+    "totalMinutes": 33,
+    "searchText": "fläskkotletter medelhavssmaker örtmarinerad fläskkotlett couscous fänkålssallad apelsin mynta pinjenötter persilja citrondressing kärnmjölk"
+  },
+  {
+    "id": "gnocchi_alla_sorrentina",
+    "source": "hellofresh",
+    "createdAt": 1792603491,
+    "name": "Gnocchi alla Sorrentina och grönsallad",
+    "tags": [
+      "master",
+      "gnocchi",
+      "veggie",
+      "quick",
+      "italian",
+      "protein:vegetarian"
+    ],
+    "hfTags": [
+      "enkel-att-forbereda",
+      "quick",
+      "veggie",
+      "cuisine-spotlight",
+      "mediterranean",
+      "one-pan"
+    ],
+    "image": "assets/recipes/gnocchi_alla_sorrentina/main.jpg",
+    "basePortions": 4,
+    "cuisine": "italian",
+    "allergens": [
+      "gluten",
+      "egg",
+      "dairy"
+    ],
+    "difficulty": "easy",
+    "totalMinutes": 34,
+    "searchText": "gnocchi alla sorrentina gratinerad gnocchi tomatsås mozzarella spenat basilika grönsallad morot vegetarisk"
+  },
+  {
+    "id": "dragonkyckling_graddsas",
+    "source": "hellofresh",
+    "createdAt": 1792603623,
+    "name": "Dragonkyckling i gräddsås",
+    "tags": [
+      "master",
+      "chicken",
+      "quick",
+      "swedish",
+      "protein:chicken"
+    ],
+    "hfTags": [
+      "quick",
+      "vetefri",
+      "aggfri",
+      "nordic-flavours",
+      "comfort-food",
+      "regional-specialty",
+      "soup-stew"
+    ],
+    "image": "assets/recipes/dragonkyckling_graddsas/main.jpg",
+    "basePortions": 4,
+    "cuisine": "swedish",
+    "allergens": [
+      "dairy"
+    ],
+    "difficulty": "easy",
+    "totalMinutes": 34,
+    "searchText": "dragonkyckling gräddsås dragon kyckling matlagningsgrädde purjolök soltorkade tomater chili jasminris"
+  },
+  {
+    "id": "vegetarisk_tortellonigratang",
+    "source": "hellofresh",
+    "createdAt": 1792603739,
+    "name": "Vegetarisk tortellonigratäng",
+    "tags": [
+      "master",
+      "pasta",
+      "veggie",
+      "family",
+      "italian",
+      "protein:vegetarian"
+    ],
+    "hfTags": [
+      "veggie",
+      "family-friendly",
+      "mediterranean",
+      "one-pan"
+    ],
+    "image": "assets/recipes/vegetarisk_tortellonigratang/main.jpg",
+    "basePortions": 4,
+    "cuisine": "italian",
+    "allergens": [
+      "gluten",
+      "sulphites",
+      "dairy",
+      "egg",
+      "celery"
+    ],
+    "difficulty": "easy",
+    "totalMinutes": 32,
+    "searchText": "vegetarisk tortellonigratäng tortelloni spenat ricotta gratäng tomat paprika gräddsås panko solroskärnor parmesan rucola"
+  },
+  {
+    "id": "hjortstek_paronrisotto",
+    "source": "hellofresh",
+    "createdAt": 1792603872,
+    "name": "Pepparmarinerad hjortstek på päronrisotto",
+    "tags": [
+      "master",
+      "risotto",
+      "premium",
+      "protein:venison"
+    ],
+    "hfTags": [
+      "vetefri",
+      "aggfri",
+      "new",
+      "premium-ingredient",
+      "other-surcharge",
+      "modern-classics",
+      "premium",
+      "pasta-noodles"
+    ],
+    "image": "assets/recipes/hjortstek_paronrisotto/main.jpg",
+    "basePortions": 4,
+    "cuisine": "fusion",
+    "allergens": [
+      "sulphites",
+      "dairy",
+      "nuts"
+    ],
+    "difficulty": "easy",
+    "totalMinutes": 70,
+    "searchText": "pepparmarinerad hjortstek päronrisotto hjort vilt risotto päron gruyère brynt smör hasselnötter fänkålssallad granatäpple"
+  },
+  {
+    "id": "kung_pao_rakor",
+    "source": "hellofresh",
+    "createdAt": 1792603981,
+    "name": "Kinesiska kung pao-räkor",
+    "tags": [
+      "master",
+      "quick",
+      "spicy",
+      "chinese",
+      "protein:shrimp"
+    ],
+    "hfTags": [
+      "supersnabb",
+      "spicy",
+      "mjlkfri",
+      "aggfri",
+      "nyttig",
+      "proteinrik",
+      "under-650-kcal",
+      "kalla-till-fiber",
+      "pan-asian-plates",
+      "noodle-stir-fry"
+    ],
+    "image": "assets/recipes/kung_pao_rakor/main.jpg",
+    "basePortions": 4,
+    "cuisine": "chinese",
+    "allergens": [
+      "sesame",
+      "soy",
+      "gluten",
+      "peanuts",
+      "crustaceans"
+    ],
+    "difficulty": "easy",
+    "totalMinutes": 22,
+    "searchText": "kinesiska kung pao räkor kungsräkor jasminris paprika salladslök wokmix hoisin sweet chili sriracha jordnötter"
+  },
+  {
+    "id": "gochujangkyckling_risbadd",
+    "source": "hellofresh",
+    "createdAt": 1792604095,
+    "name": "Ugnsbakad koreansk gochujangkyckling på risbädd",
+    "tags": [
+      "master",
+      "chicken",
+      "korean",
+      "ovenbake",
+      "protein:chicken"
+    ],
+    "hfTags": [
+      "enkel-att-forbereda",
+      "mjlkfri",
+      "aggfri",
+      "easy-prep",
+      "pan-asian-plates"
+    ],
+    "image": "assets/recipes/gochujangkyckling_risbadd/main.jpg",
+    "basePortions": 4,
+    "cuisine": "korean",
+    "allergens": [
+      "soy",
+      "sesame",
+      "gluten",
+      "sulphites"
+    ],
+    "difficulty": "easy",
+    "totalMinutes": 51,
+    "searchText": "ugnsbakad koreansk gochujangkyckling risbädd gochujang kyckling basmatiris spetskål pak choi ingefärsdressing sesam"
+  },
+  {
+    "id": "marry_me_chicken_pasta",
+    "source": "hellofresh",
+    "createdAt": 1792604234,
+    "name": "\"Marry me chicken\"-pasta i krämig svampsås",
+    "tags": [
+      "master",
+      "pasta",
+      "chicken",
+      "premium",
+      "italian",
+      "protein:chicken"
+    ],
+    "hfTags": [
+      "quick",
+      "premium-ingredient",
+      "other-surcharge",
+      "modern-classics",
+      "premium",
+      "mediterranean",
+      "pasta-noodles"
+    ],
+    "image": "assets/recipes/marry_me_chicken_pasta/main.jpg",
+    "basePortions": 4,
+    "cuisine": "italian",
+    "allergens": [
+      "gluten",
+      "dairy",
+      "sulphites"
+    ],
+    "difficulty": "easy",
+    "totalMinutes": 48,
+    "searchText": "marry me chicken pasta krämig svampsås orecchiette kyckling ostronskivling gräddfil spenat mozzarella tomatsallad basilika pinjenötter"
+  },
+  {
+    "id": "hoisin_pulled_pork_bao",
+    "source": "hellofresh",
+    "createdAt": 1794420234,
+    "name": "Hoisinglaserad pulled pork i bao-bröd",
+    "tags": [
+      "master",
+      "pork",
+      "street-food",
+      "chinese",
+      "protein:pork"
+    ],
+    "hfTags": [
+      "mjlkfri",
+      "aggfri",
+      "laga-mig-forst",
+      "premium-ingredient",
+      "other-surcharge",
+      "street-food",
+      "premium",
+      "pan-asian-plates",
+      "noodle-stir-fry"
+    ],
+    "image": "assets/recipes/hoisin_pulled_pork_bao/main.jpg",
+    "basePortions": 4,
+    "cuisine": "chinese",
+    "allergens": [
+      "gluten",
+      "sesame",
+      "soy",
+      "peanuts"
+    ],
+    "difficulty": "easy",
+    "totalMinutes": 33,
+    "searchText": "hoisinglaserad pulled pork bao-bröd hoisin umami udonnudlar broccoli spetskål gurka morot jordnötter asiatisk dressing"
+  },
+  {
+    "id": "kottbullar_stuvade_makaroner",
+    "source": "hellofresh",
+    "createdAt": 1794420372,
+    "name": "Köttbullar med stuvade makaroner",
+    "tags": [
+      "master",
+      "swedish",
+      "comfort",
+      "protein:beef"
+    ],
+    "hfTags": [
+      "nordic-flavours",
+      "comfort-food",
+      "regional-specialty"
+    ],
+    "image": "assets/recipes/kottbullar_stuvade_makaroner/main.jpg",
+    "basePortions": 4,
+    "cuisine": "swedish",
+    "allergens": [
+      "gluten",
+      "dairy",
+      "celery",
+      "egg"
+    ],
+    "difficulty": "easy",
+    "totalMinutes": 51,
+    "searchText": "köttbullar stuvade makaroner nötfärs gräddsås persilja rädisor morot gurka svensk husmanskost"
+  },
+  {
+    "id": "frikadeller_kokt_potatis",
+    "source": "hellofresh",
+    "createdAt": 1794420480,
+    "name": "Frikadeller och kokt potatis",
+    "tags": [
+      "master",
+      "danish",
+      "protein:beef",
+      "protein:pork",
+      "protein:mixed"
+    ],
+    "hfTags": [
+      "nordic-flavours",
+      "regional-specialty"
+    ],
+    "image": "assets/recipes/frikadeller_kokt_potatis/main.png",
+    "basePortions": 4,
+    "cuisine": "danish",
+    "allergens": [
+      "gluten",
+      "dairy",
+      "sulphites",
+      "egg"
+    ],
+    "difficulty": "medium",
+    "totalMinutes": 55,
+    "searchText": "frikadeller kokt potatis blandfärs brunsås syltad gurka dill morot dansk"
+  },
+  {
+    "id": "falukorv_i_ugn",
+    "source": "hellofresh",
+    "createdAt": 1794420578,
+    "name": "Falukorv i ugn",
+    "tags": [
+      "master",
+      "swedish",
+      "ovenbake",
+      "protein:pork"
+    ],
+    "hfTags": [
+      "aggfri",
+      "nordic-flavours",
+      "kalla-till-fiber",
+      "regional-specialty",
+      "classic-plates"
+    ],
+    "image": "assets/recipes/falukorv_i_ugn/main.png",
+    "basePortions": 4,
+    "cuisine": "swedish",
+    "allergens": [
+      "mustard",
+      "dairy",
+      "gluten"
+    ],
+    "difficulty": "easy",
+    "totalMinutes": 44,
+    "searchText": "falukorv i ugn potatismos gouda panko senap körsbärstomater lök sallad svensk"
+  },
+  {
+    "id": "bacon_notfars_cannelloni",
+    "source": "hellofresh",
+    "createdAt": 1794420695,
+    "name": "Bacon- och nötfärscannelloni",
+    "tags": [
+      "master",
+      "pasta",
+      "italian",
+      "protein:beef",
+      "protein:pork",
+      "protein:mixed"
+    ],
+    "hfTags": [
+      "premium-ingredient",
+      "other-surcharge",
+      "premium",
+      "mediterranean",
+      "pasta-noodles",
+      "premium-elevated-ing"
+    ],
+    "image": "assets/recipes/bacon_notfars_cannelloni/main.jpg",
+    "basePortions": 4,
+    "cuisine": "italian",
+    "allergens": [
+      "egg",
+      "gluten",
+      "dairy",
+      "sulphites"
+    ],
+    "difficulty": "easy",
+    "totalMinutes": 52,
+    "searchText": "bacon nötfärscannelloni cannelloni lasagneplattor tomatsås mornaysås cheddar basilika sallad pinjenötter"
+  },
+  {
+    "id": "morbradgryde_flaskytterfile",
+    "source": "hellofresh",
+    "createdAt": 1794420807,
+    "name": "”Mørbradgryde” på fläskytterfilé",
+    "tags": [
+      "master",
+      "danish",
+      "stew",
+      "protein:pork"
+    ],
+    "hfTags": [
+      "vetefri",
+      "family-friendly",
+      "nordic-flavours",
+      "comfort-food",
+      "regional-specialty",
+      "soup-stew"
+    ],
+    "image": "assets/recipes/morbradgryde_flaskytterfile/main.png",
+    "basePortions": 4,
+    "cuisine": "danish",
+    "allergens": [
+      "dairy",
+      "celery",
+      "egg",
+      "mustard"
+    ],
+    "difficulty": "medium",
+    "totalMinutes": 39,
+    "searchText": "mørbradgryde morbradgryde fläskytterfilé fläskgryda ris champinjoner morot tomatgrädde jorden runt dansk"
+  },
+  {
+    "id": "nduja_risotto",
+    "source": "hellofresh",
+    "createdAt": 1794420921,
+    "name": "Nduja-risotto",
+    "tags": [
+      "master",
+      "risotto",
+      "italian",
+      "spicy",
+      "protein:pork"
+    ],
+    "hfTags": [
+      "quick",
+      "vetefri",
+      "aggfri",
+      "mediterranean",
+      "pasta-noodles",
+      "bold-flavours"
+    ],
+    "image": "assets/recipes/nduja_risotto/main.jpg",
+    "basePortions": 4,
+    "cuisine": "italian",
+    "allergens": [
+      "sulphites",
+      "dairy"
+    ],
+    "difficulty": "easy",
+    "totalMinutes": 52,
+    "searchText": "nduja-risotto nduja risotto chiliflakes purjolök ricotta parmesan italiensk spicy"
+  },
+  {
+    "id": "ugnsbakad_torsk_chorizo",
+    "source": "hellofresh",
+    "createdAt": 1794421027,
+    "name": "Ugnsbakad torsk, chorizo och grönsaker",
+    "tags": [
+      "master",
+      "fish",
+      "spanish",
+      "ovenbake",
+      "protein:fish",
+      "protein:pork",
+      "protein:mixed"
+    ],
+    "hfTags": [
+      "enkel-att-forbereda",
+      "vetefri",
+      "easy-prep",
+      "nyttig",
+      "mer-gront",
+      "max-50g-kolhydrater",
+      "kalla-till-fiber",
+      "mediterranean"
+    ],
+    "image": "assets/recipes/ugnsbakad_torsk_chorizo/main.jpg",
+    "basePortions": 4,
+    "cuisine": "spanish",
+    "allergens": [
+      "fish",
+      "dairy",
+      "mustard",
+      "egg"
+    ],
+    "difficulty": "easy",
+    "totalMinutes": 53,
+    "searchText": "ugnsbakad torsk chorizo grönsaker potatis paprika rödlök körsbärstomater vitlöksmajonnäs citron spansk"
+  },
+  {
+    "id": "thai_rod_kikartscurry",
+    "source": "hellofresh",
+    "createdAt": 1794421317,
+    "name": "Snabb thailändsk röd kikärtscurry",
+    "tags": [
+      "master",
+      "veggie",
+      "curry",
+      "thai",
+      "rice",
+      "protein:vegetarian"
+    ],
+    "hfTags": [
+      "supersnabb",
+      "veggie",
+      "mjlkfri",
+      "aggfri",
+      "plantbaserat",
+      "kalla-till-fiber",
+      "comfort-food",
+      "south-southeastasian",
+      "curries"
+    ],
+    "image": "assets/recipes/thai_rod_kikartscurry/main.jpg",
+    "basePortions": 4,
+    "cuisine": "thai",
+    "allergens": [
+      "gluten",
+      "soy"
+    ],
+    "difficulty": "easy",
+    "totalMinutes": 19,
+    "searchText": "snabb thailändsk röd kikärtscurry basmatiris paprika spenat kokosmjölk röd currypasta milda mahal krispig chiliolja lime sojasås thai vegetarisk"
+  },
+  {
+    "id": "stekt_paneer_pita",
+    "source": "hellofresh",
+    "createdAt": 1794421515,
+    "name": "Stekt paneer i pitabröd",
+    "tags": [
+      "master",
+      "veggie",
+      "greek",
+      "pita",
+      "protein:vegetarian"
+    ],
+    "hfTags": [
+      "veggie",
+      "aggfri",
+      "kalla-till-fiber",
+      "mediterranean"
+    ],
+    "image": "assets/recipes/stekt_paneer_pita/main.jpg",
+    "basePortions": 4,
+    "cuisine": "greek",
+    "allergens": [
+      "dairy",
+      "celery",
+      "mustard",
+      "gluten"
+    ],
+    "difficulty": "easy",
+    "totalMinutes": 57,
+    "searchText": "stekt paneer pitabröd pommes rucola morot soltorkade tomater vitlökssås gräddfil srirachamajonnäs hello sunrise grekisk vegetarisk"
+  },
+  {
+    "id": "skandinaviska_flaskkotletter",
+    "source": "hellofresh",
+    "createdAt": 1794421670,
+    "name": "Skandinaviska fläskkotletter",
+    "tags": [
+      "master",
+      "pork",
+      "scandinavian",
+      "protein:pork"
+    ],
+    "hfTags": [
+      "enkel-att-forbereda",
+      "vetefri",
+      "aggfri",
+      "kalla-till-fiber",
+      "regional-specialty",
+      "classic-plates"
+    ],
+    "image": "assets/recipes/skandinaviska_flaskkotletter/main.jpg",
+    "basePortions": 4,
+    "cuisine": "scandinavian",
+    "allergens": [
+      "dairy",
+      "mustard"
+    ],
+    "difficulty": "easy",
+    "totalMinutes": 53,
+    "searchText": "skandinaviska fläskkotletter örtmarinerad potatis rödbeta äpple rucola dill senaps-crème fraiche citron skandinavisk"
+  },
+  {
+    "id": "japansk_teriyaki_tofu_wok",
+    "source": "hellofresh",
+    "createdAt": 1794421802,
+    "name": "Snabblagad japansk teriyaki-tofu-wok",
+    "tags": [
+      "master",
+      "veggie",
+      "japanese",
+      "tofu",
+      "wok",
+      "rice",
+      "protein:vegetarian"
+    ],
+    "hfTags": [
+      "supersnabb",
+      "mjlkfri",
+      "nyttig",
+      "pan-asian-plates",
+      "noodle-stir-fry"
+    ],
+    "image": "assets/recipes/japansk_teriyaki_tofu_wok/main.jpg",
+    "basePortions": 4,
+    "cuisine": "japanese",
+    "allergens": [
+      "soy",
+      "gluten",
+      "sesame"
+    ],
+    "difficulty": "easy",
+    "totalMinutes": 29,
+    "searchText": "snabblagad japansk teriyaki-tofu-wok jasminris broccoli portobello salladslök sesam sojasås vegetarisk wok"
+  },
+  {
+    "id": "carbonara_nduja_guanciale",
+    "source": "hellofresh",
+    "createdAt": 1794421937,
+    "name": "Carbonara på nduja och guanciale",
+    "tags": [
+      "master",
+      "pasta",
+      "italian",
+      "spicy",
+      "protein:pork"
+    ],
+    "hfTags": [
+      "quick",
+      "comfort-food",
+      "mediterranean",
+      "pasta-noodles",
+      "bold-flavours"
+    ],
+    "image": "assets/recipes/carbonara_nduja_guanciale/main.jpg",
+    "basePortions": 4,
+    "cuisine": "italian",
+    "allergens": [
+      "gluten",
+      "dairy",
+      "egg"
+    ],
+    "difficulty": "easy",
+    "totalMinutes": 21,
+    "searchText": "carbonara nduja guanciale linguine fänkålssallad rucola parmesan chili citron italiensk stark"
+  },
+  {
+    "id": "kottfarslimpa_graddsas",
+    "source": "hellofresh",
+    "createdAt": 1794422118,
+    "name": "Köttfärslimpa med gräddsås",
+    "tags": [
+      "master",
+      "swedish",
+      "comfort",
+      "protein:beef",
+      "protein:pork",
+      "protein:mixed"
+    ],
+    "hfTags": [
+      "nordic-flavours",
+      "kalla-till-fiber",
+      "regional-specialty",
+      "classic-plates"
+    ],
+    "image": "assets/recipes/kottfarslimpa_graddsas/main.png",
+    "basePortions": 4,
+    "cuisine": "swedish",
+    "allergens": [
+      "gluten",
+      "mustard",
+      "dairy",
+      "sulphites",
+      "egg"
+    ],
+    "difficulty": "easy",
+    "totalMinutes": 54,
+    "searchText": "köttfärslimpa gräddsås blandfärs kokt potatis syltad gurka lingonsylt rosmarin svensk"
+  },
+  {
+    "id": "marockanska_pil_pil_rakor",
+    "source": "hellofresh",
+    "createdAt": 1794422243,
+    "name": "Marockanska pil pil-räkor",
+    "tags": [
+      "master",
+      "shrimp",
+      "moroccan",
+      "rice",
+      "protein:shrimp"
+    ],
+    "hfTags": [
+      "quick",
+      "vetefri",
+      "mjlkfri",
+      "aggfri",
+      "aventureux",
+      "cuisine-spotlight",
+      "nyttig",
+      "mer-gront",
+      "under-650-kcal",
+      "kalla-till-fiber",
+      "taste-of-middle-east",
+      "soup-stew",
+      "laga-mig-forst"
+    ],
+    "image": "assets/recipes/marockanska_pil_pil_rakor/main.jpg",
+    "basePortions": 4,
+    "cuisine": "moroccan",
+    "allergens": [
+      "crustaceans",
+      "celery"
+    ],
+    "difficulty": "easy",
+    "totalMinutes": 35,
+    "searchText": "marockanska pil pil-räkor kungsräkor basmatiris passata paprika tomat rökt paprikapulver persilja marockansk"
+  },
+  {
+    "id": "bao_sweet_chili_oring",
+    "source": "hellofresh",
+    "createdAt": 1794422388,
+    "name": "Bao-bröd med sweet chiliglaserad öring",
+    "tags": [
+      "master",
+      "fish",
+      "bao",
+      "chinese",
+      "spicy",
+      "protein:fish"
+    ],
+    "hfTags": [
+      "quick",
+      "spicy",
+      "mjlkfri",
+      "laga-mig-forst",
+      "pan-asian-plates"
+    ],
+    "image": "assets/recipes/bao_sweet_chili_oring/main.jpg",
+    "basePortions": 4,
+    "cuisine": "chinese",
+    "allergens": [
+      "fish",
+      "gluten",
+      "soy",
+      "celery",
+      "mustard",
+      "egg"
+    ],
+    "difficulty": "easy",
+    "totalMinutes": 24,
+    "searchText": "bao-bröd sweet chiliglaserad öring pak choi sockerärtor morot syltad lök sunrise-majonnäs chiliflakes"
+  },
+  {
+    "id": "calabresekolja",
+    "source": "hellofresh",
+    "createdAt": 1794422548,
+    "name": "Medelhavsinspirerad calabresekolja",
+    "tags": [
+      "master",
+      "fish",
+      "mediterranean",
+      "ovenbake",
+      "spicy",
+      "protein:fish"
+    ],
+    "hfTags": [
+      "spicy",
+      "aggfri",
+      "laga-mig-forst",
+      "nyttig",
+      "mer-gront",
+      "proteinrik",
+      "under-650-kcal",
+      "kalla-till-fiber",
+      "mediterranean",
+      "classic-plates",
+      "new"
+    ],
+    "image": "assets/recipes/calabresekolja/main.jpg",
+    "basePortions": 4,
+    "cuisine": "mediterranean",
+    "allergens": [
+      "nuts",
+      "almonds",
+      "dairy",
+      "fish",
+      "gluten",
+      "celery"
+    ],
+    "difficulty": "easy",
+    "totalMinutes": 56,
+    "searchText": "medelhavsinspirerad calabresekolja kolja calabresepesto panko rotselleri potatis rucola vitlöksyoghurt rökt paprikapulver"
+  },
+  {
+    "id": "nduja_moules_frites",
+    "source": "hellofresh",
+    "createdAt": 1794422701,
+    "name": "Nduja-moules frites",
+    "tags": [
+      "master",
+      "seafood",
+      "french",
+      "spicy",
+      "protein:pork",
+      "protein:shellfish"
+    ],
+    "hfTags": [
+      "vetefri",
+      "aggfri",
+      "kalla-till-fiber",
+      "classic-euro-dishes",
+      "classic-plates",
+      "bold-flavours"
+    ],
+    "image": "assets/recipes/nduja_moules_frites/main.jpg",
+    "basePortions": 4,
+    "cuisine": "french",
+    "allergens": [
+      "molluscs",
+      "sulphites",
+      "celery",
+      "dairy"
+    ],
+    "difficulty": "easy",
+    "totalMinutes": 53,
+    "searchText": "nduja-moules frites blåmusslor pommes fänkål persilja citron chili fransk stark"
+  },
+  {
+    "id": "indisk_kikartsgryta_vego",
+    "source": "hellofresh",
+    "createdAt": 1794422823,
+    "name": "Indisk kikärtsgryta",
+    "tags": [
+      "master",
+      "veggie",
+      "indian",
+      "curry",
+      "chickpea",
+      "rice",
+      "protein:vegetarian"
+    ],
+    "hfTags": [
+      "quick",
+      "veggie",
+      "aggfri",
+      "plantbaserat",
+      "kalla-till-fiber",
+      "south-southeastasian",
+      "curries"
+    ],
+    "image": "assets/recipes/indisk_kikartsgryta_vego/main.jpg",
+    "basePortions": 4,
+    "cuisine": "indian",
+    "allergens": [
+      "gluten",
+      "soy",
+      "celery"
+    ],
+    "difficulty": "easy",
+    "totalMinutes": 32,
+    "searchText": "indisk kikärtsgryta vegetarisk vego ris kokosmjölk mango fänkål koriander milda mahal curry on spenat"
+  },
+  {
+    "id": "chili_con_kottbullar",
+    "source": "hellofresh",
+    "createdAt": 1794422931,
+    "name": "Chili con köttbullar",
+    "tags": [
+      "master",
+      "meatballs",
+      "chili",
+      "rice",
+      "spicy",
+      "protein:beef"
+    ],
+    "hfTags": [
+      "quick",
+      "nyttig",
+      "mer-gront",
+      "dinner-bowls"
+    ],
+    "image": "assets/recipes/chili_con_kottbullar/main.jpg",
+    "basePortions": 4,
+    "cuisine": "mexican",
+    "allergens": [
+      "gluten",
+      "sulphites",
+      "dairy",
+      "egg"
+    ],
+    "difficulty": "easy",
+    "totalMinutes": 31,
+    "searchText": "chili con köttbullar nötfärs basmatiris paprika koriander lime gräddfil cajun chiliflakes krossade tomater"
+  },
+  {
+    "id": "honung_senapsglaserad_flaskkotlett",
+    "source": "hellofresh",
+    "createdAt": 1794423184,
+    "name": "Honung- och senapsglaserad fläskkotlett i ugn",
+    "tags": [
+      "master",
+      "pork",
+      "traybake",
+      "protein:pork"
+    ],
+    "hfTags": [
+      "vetefri",
+      "aggfri",
+      "easy-prep",
+      "kalla-till-fiber",
+      "classic-euro-dishes"
+    ],
+    "image": "assets/recipes/honung_senapsglaserad_flaskkotlett/main.jpg",
+    "basePortions": 4,
+    "cuisine": "french",
+    "allergens": [
+      "mustard",
+      "dairy"
+    ],
+    "difficulty": "easy",
+    "totalMinutes": 45,
+    "searchText": "honung senapsglaserad fläskkotlett ugn örtmarinerad potatis broccolini morot purjolök timjan crème fraiche grov senap plåtmat"
+  },
+  {
+    "id": "potatis_purjolokssoppa_bacon",
+    "source": "hellofresh",
+    "createdAt": 1794423391,
+    "name": "Krämig potatis- och purjolökssoppa",
+    "tags": [
+      "master",
+      "soup",
+      "bacon",
+      "protein:pork"
+    ],
+    "hfTags": [
+      "aggfri",
+      "nordic-flavours",
+      "kalla-till-fiber",
+      "regional-specialty",
+      "soup-stew"
+    ],
+    "image": "assets/recipes/potatis_purjolokssoppa_bacon/main.jpg",
+    "basePortions": 4,
+    "cuisine": "swedish",
+    "allergens": [
+      "gluten",
+      "dairy"
+    ],
+    "difficulty": "easy",
+    "totalMinutes": 37,
+    "searchText": "krämig potatis purjolökssoppa bacon surdegsfrallor timjan persilja matlagningsgrädde kycklingbuljong"
+  },
+  {
+    "id": "flaskkotlett_citronpepparsas",
+    "source": "hellofresh",
+    "createdAt": 1794423536,
+    "name": "Lättlagad fläskkotlett i citronpepparsås",
+    "tags": [
+      "master",
+      "pork",
+      "quick",
+      "scandinavian",
+      "protein:pork"
+    ],
+    "hfTags": [
+      "supersnabb",
+      "vetefri",
+      "aggfri",
+      "comfort-food",
+      "regional-specialty",
+      "classic-plates"
+    ],
+    "image": "assets/recipes/flaskkotlett_citronpepparsas/main.jpg",
+    "basePortions": 4,
+    "cuisine": "scandinavian",
+    "allergens": [
+      "dairy"
+    ],
+    "difficulty": "easy",
+    "totalMinutes": 17,
+    "searchText": "lättlagad fläskkotlett citronpepparsås skivad småpotatis äpple gurka dill lime matlagningsgrädde"
+  },
+  {
+    "id": "rumpstek_pepparsas_broccolini",
+    "source": "hellofresh",
+    "createdAt": 1794423719,
+    "name": "Pannstekt rumpstek och krämig pepparsås",
+    "tags": [
+      "master",
+      "steak",
+      "beef",
+      "premium",
+      "protein:beef"
+    ],
+    "hfTags": [
+      "vetefri",
+      "aggfri",
+      "premium-ingredient",
+      "other-surcharge",
+      "steak-special",
+      "premium",
+      "kalla-till-fiber",
+      "classic-plates",
+      "premium-elevated-ing"
+    ],
+    "image": "assets/recipes/rumpstek_pepparsas_broccolini/main.jpg",
+    "basePortions": 4,
+    "cuisine": "european",
+    "allergens": [
+      "dairy"
+    ],
+    "difficulty": "easy",
+    "totalMinutes": 53,
+    "searchText": "pannstekt rumpstek krämig pepparsås broccolini rosmarinspommes morot rödlök grovmalen svartpeppar matlagningsgrädde"
+  },
+  {
+    "id": "miso_ramen_rumpstek",
+    "source": "hellofresh",
+    "createdAt": 1794423873,
+    "name": "Miso-ramen-nudlar med rumpstek",
+    "tags": [
+      "master",
+      "ramen",
+      "steak",
+      "soup",
+      "japanese",
+      "protein:beef"
+    ],
+    "hfTags": [
+      "mjlkfri",
+      "aggfri",
+      "premium-ingredient",
+      "other-surcharge",
+      "premium",
+      "worldwide",
+      "pan-asian-plates",
+      "soup-stew"
+    ],
+    "image": "assets/recipes/miso_ramen_rumpstek/main.jpg",
+    "basePortions": 4,
+    "cuisine": "japanese",
+    "allergens": [
+      "gluten",
+      "soy",
+      "sulphites"
+    ],
+    "difficulty": "easy",
+    "totalMinutes": 43,
+    "searchText": "miso ramen nudlar rumpstek pak choi majs sojasås chili vitlöksolja salladslök rostad lök mie-nudlar köttbuljong"
+  },
+  {
+    "id": "honungs_srirachaglaserad_kyckling",
+    "source": "hellofresh",
+    "createdAt": 1794424004,
+    "name": "Honungs- och srirachaglaserad kyckling",
+    "tags": [
+      "master",
+      "chicken",
+      "protein:chicken"
+    ],
+    "hfTags": [
+      "vetefri",
+      "nyttig",
+      "proteinrik",
+      "kalla-till-fiber",
+      "classic-plates",
+      "mer-gront"
+    ],
+    "image": "assets/recipes/honungs_srirachaglaserad_kyckling/main.jpg",
+    "basePortions": 4,
+    "cuisine": "american",
+    "allergens": [
+      "dairy",
+      "mustard",
+      "egg"
+    ],
+    "difficulty": "easy",
+    "totalMinutes": 55,
+    "searchText": "honungs srirachaglaserad kyckling bbq-marinerad innerfilé regnbågspommes ranch rädisor rödbeta palsternacka majonnäs"
+  },
+  {
+    "id": "stekt_lax_citrus_smorsas",
+    "source": "hellofresh",
+    "createdAt": 1794424169,
+    "name": "Stekt lax i citrus- och smörsås",
+    "tags": [
+      "master",
+      "fish",
+      "salmon",
+      "scandinavian",
+      "protein:fish"
+    ],
+    "hfTags": [
+      "vetefri",
+      "premium-ingredient",
+      "other-surcharge",
+      "premium",
+      "kalla-till-fiber",
+      "regional-specialty",
+      "classic-plates",
+      "new",
+      "premium-elevated-ing"
+    ],
+    "image": "assets/recipes/stekt_lax_citrus_smorsas/main.jpg",
+    "basePortions": 4,
+    "cuisine": "scandinavian",
+    "allergens": [
+      "fish",
+      "dairy",
+      "mustard",
+      "egg",
+      "celery",
+      "gluten"
+    ],
+    "difficulty": "easy",
+    "totalMinutes": 54,
+    "searchText": "stekt lax citrus smörsås potatis sockerärtor rädisor dill schalottenlök crème fraiche honung senapsdressing salladslök"
+  },
+  {
+    "id": "atidua_bongryta_ghana",
+    "source": "hellofresh",
+    "createdAt": 1794424959,
+    "name": "Atidua: böngryta från Ghana",
+    "tags": [
+      "master",
+      "stew",
+      "vegetarian",
+      "ghanaian"
+    ],
+    "hfTags": [
+      "veggie",
+      "egg-free",
+      "discovery",
+      "cuisine-spotlight",
+      "source-of-fibre",
+      "comfort-food",
+      "soup-stew"
+    ],
+    "image": "assets/recipes/atidua_bongryta_ghana/main.jpg",
+    "basePortions": 4,
+    "cuisine": "ghanaian",
+    "allergens": [
+      "gluten",
+      "nuts",
+      "dairy",
+      "celery"
+    ],
+    "difficulty": "easy",
+    "totalMinutes": 33,
+    "searchText": "atidua böngryta ghana svarta bönor persiljepita fetaost cashewnötter rökt paprikapaste spenat krossade tomater"
+  },
+  {
+    "id": "tagliatelle_ankragu",
+    "source": "hellofresh",
+    "createdAt": 1794425072,
+    "name": "Tagliatelle och ragu på konfiterad anka",
+    "tags": [
+      "master",
+      "pasta",
+      "italian",
+      "meat",
+      "poultry",
+      "protein:meat"
+    ],
+    "hfTags": [
+      "premium-ingredient",
+      "other-surcharge",
+      "premium",
+      "comfort-food",
+      "mediterranean",
+      "pasta-noodles",
+      "premium-elevated-ing"
+    ],
+    "image": "assets/recipes/tagliatelle_ankragu/main.jpg",
+    "basePortions": 4,
+    "cuisine": "italian",
+    "allergens": [
+      "gluten",
+      "dairy",
+      "egg",
+      "sulphites",
+      "nuts"
+    ],
+    "difficulty": "easy",
+    "totalMinutes": 54,
+    "searchText": "tagliatelle ragu konfiterad anka anklår passata parmesan morot lök rucola kronärtskockor tomat basilika rödvinssås valnötter balsamicokräm"
+  },
+  {
+    "id": "pulled_pork_burgare_passionsfrukt",
+    "source": "hellofresh",
+    "createdAt": 1794425141,
+    "name": "Pulled pork-burgare och passionsfruktsås",
+    "tags": [
+      "master",
+      "burger",
+      "pork",
+      "meat",
+      "protein:meat"
+    ],
+    "hfTags": [
+      "source-of-fibre",
+      "handhelds"
+    ],
+    "image": "assets/recipes/pulled_pork_burgare_passionsfrukt/main.jpg",
+    "basePortions": 4,
+    "cuisine": "fusion",
+    "allergens": [
+      "mustard",
+      "egg",
+      "gluten",
+      "dairy"
+    ],
+    "difficulty": "easy",
+    "totalMinutes": 54,
+    "searchText": "pulled pork burgare passionsfrukt passionsfruktsås bbq brioche rödkål lime morot salladslök potatis palsternacka majonnäs kålsallad rotfrukter"
+  },
+  {
+    "id": "ricotta_soltorkad_tomatpasta",
+    "source": "hellofresh",
+    "createdAt": 1794425193,
+    "name": "Snabb ricottatoppad soltorkad tomatpasta",
+    "tags": [
+      "master",
+      "pasta",
+      "vegetarian",
+      "italian"
+    ],
+    "hfTags": [
+      "super-quick",
+      "mediterranean",
+      "pasta-noodles"
+    ],
+    "image": "assets/recipes/ricotta_soltorkad_tomatpasta/main.jpg",
+    "basePortions": 4,
+    "cuisine": "italian",
+    "allergens": [
+      "dairy",
+      "celery",
+      "mustard",
+      "egg",
+      "nuts",
+      "gluten"
+    ],
+    "difficulty": "easy",
+    "totalMinutes": 15,
+    "searchText": "ricotta soltorkad tomatpasta linguine körsbärstomater matlagningsgrädde basilika valnötter grana padano hello sunrise vitlök örtkrydda"
+  },
+  {
+    "id": "kryddig_citrusbakad_kolja",
+    "source": "hellofresh",
+    "createdAt": 1794425341,
+    "name": "Kryddig citrusbakad kolja",
+    "tags": [
+      "master",
+      "fish",
+      "protein:fish",
+      "latin-american",
+      "glutenfri",
+      "laktosfri"
+    ],
+    "hfTags": [
+      "gluten-free",
+      "lactose-free",
+      "eat-me-first",
+      "healthy",
+      "high-veggie",
+      "high-protein",
+      "source-of-fibre",
+      "classic-plates",
+      "new"
+    ],
+    "image": "assets/recipes/kryddig_citrusbakad_kolja/main.jpg",
+    "basePortions": 4,
+    "cuisine": "latin-american",
+    "allergens": [
+      "fish",
+      "mustard",
+      "egg"
+    ],
+    "difficulty": "easy",
+    "totalMinutes": 56,
+    "searchText": "kryddig citrusbakad kolja lime potatis brysselkål majs tex-mex rökt paprika chimichurri koriander persilja rökig majonnäs"
+  },
+  {
+    "id": "chorizo_harissaspaghetti",
+    "source": "hellofresh",
+    "createdAt": 1794425531,
+    "name": "Snabb chorizo- och harissaspaghetti",
+    "tags": [
+      "master",
+      "pasta",
+      "mediterranean",
+      "protein:pork",
+      "quick"
+    ],
+    "hfTags": [
+      "super-quick",
+      "egg-free",
+      "mediterranean",
+      "pasta-noodles"
+    ],
+    "image": "assets/recipes/chorizo_harissaspaghetti/main.jpg",
+    "basePortions": 4,
+    "cuisine": "mediterranean",
+    "allergens": [
+      "gluten",
+      "dairy"
+    ],
+    "difficulty": "easy",
+    "totalMinutes": 19,
+    "searchText": "snabb chorizo harissaspaghetti mozzarella spenat pinjenötter basilika krossade tomater spaghetti harissa"
+  },
+  {
+    "id": "notfarsquesadillas_fullkorn",
+    "source": "hellofresh",
+    "createdAt": 1794425774,
+    "name": "Nötfärsquesadillas",
+    "tags": [
+      "master",
+      "quesadilla",
+      "tex-mex",
+      "protein:beef"
+    ],
+    "hfTags": [
+      "child-friendly",
+      "parents-to-kids",
+      "source-of-fibre",
+      "north-american",
+      "handhelds",
+      "new"
+    ],
+    "image": "assets/recipes/notfarsquesadillas_fullkorn/main.jpg",
+    "basePortions": 4,
+    "cuisine": "tex-mex",
+    "allergens": [
+      "mustard",
+      "dairy",
+      "sulphites",
+      "gluten",
+      "egg"
+    ],
+    "difficulty": "easy",
+    "totalMinutes": 54,
+    "searchText": "nötfärsquesadillas fullkorn tortilla rotfruktspommes senapsmajonnäs gouda parmesan cajun morot rödbeta potatis"
+  },
+  {
+    "id": "pankopanerade_plantbitar",
+    "source": "hellofresh",
+    "createdAt": 1794426096,
+    "name": "Pankopanerade plantbaserade bitar",
+    "tags": [
+      "master",
+      "veggie",
+      "vegetarisk",
+      "east-asian",
+      "rice",
+      "quick",
+      "protein:vegetarian",
+      "laktosfri"
+    ],
+    "hfTags": [
+      "quick",
+      "veggie",
+      "lactose-free",
+      "comfort-food"
+    ],
+    "image": "assets/recipes/pankopanerade_plantbitar/main.jpg",
+    "basePortions": 4,
+    "cuisine": "east-asian",
+    "allergens": [
+      "mustard",
+      "egg",
+      "soy",
+      "gluten",
+      "sesame"
+    ],
+    "difficulty": "easy",
+    "totalMinutes": 37,
+    "searchText": "pankopanerade plantbaserade bitar teriyakisås asiatisk kålsallad ingefärsris vitlöksris ginger ninja panko vegansk asiatisk majonnäs"
+  },
+  {
+    "id": "pankopanerad_fisk_mos",
+    "source": "hellofresh",
+    "createdAt": 1794426338,
+    "name": "Stekt pankopanerad fisk",
+    "tags": [
+      "master",
+      "fish",
+      "protein:fish",
+      "danish"
+    ],
+    "hfTags": [
+      "eat-me-first",
+      "nordic-flavours",
+      "source-of-fibre",
+      "regional-specialty"
+    ],
+    "image": "assets/recipes/pankopanerad_fisk_mos/main.jpg",
+    "basePortions": 4,
+    "cuisine": "danish",
+    "allergens": [
+      "fish",
+      "gluten",
+      "egg",
+      "mustard",
+      "dairy"
+    ],
+    "difficulty": "easy",
+    "totalMinutes": 48,
+    "searchText": "stekt pankopanerad fisk kolja potatismos palsternacka haricots verts remouladsås gurka morot citron panko"
+  },
+  {
+    "id": "korean_bbq_chicken_bao",
+    "source": "hellofresh",
+    "createdAt": 1794426602,
+    "name": "Korean BBQ Chicken Bao Buns",
+    "tags": [
+      "master",
+      "chicken",
+      "korean",
+      "bao",
+      "street-food",
+      "quick",
+      "protein:chicken"
+    ],
+    "hfTags": [
+      "quick",
+      "aggfri",
+      "laga-mig-forst",
+      "nyttig",
+      "proteinrik",
+      "under-650-kcal",
+      "kalla-till-fiber",
+      "pan-asian-plates"
+    ],
+    "image": "assets/recipes/korean_bbq_chicken_bao/main.jpg",
+    "basePortions": 4,
+    "cuisine": "korean",
+    "allergens": [
+      "gluten",
+      "soy",
+      "sesame"
+    ],
+    "difficulty": "easy",
+    "totalMinutes": 27,
+    "searchText": "korean bbq chicken bao buns koreansk bbq-sås päron ingefära slaw haricots verts bao-bröd sesam vitlök"
+  },
+  {
+    "id": "kramig_indisk_kycklingcurry",
+    "source": "hellofresh",
+    "createdAt": 1794426889,
+    "name": "Krämig indisk kycklingcurry",
+    "tags": [
+      "master",
+      "chicken",
+      "curry",
+      "indian",
+      "rice",
+      "protein:chicken"
+    ],
+    "hfTags": [
+      "aggfri",
+      "hidden-veg",
+      "barnvanlig",
+      "south-southeastasian",
+      "curries"
+    ],
+    "image": "assets/recipes/kramig_indisk_kycklingcurry/main.jpg",
+    "basePortions": 4,
+    "cuisine": "indian",
+    "allergens": [
+      "peanuts",
+      "dairy"
+    ],
+    "difficulty": "easy",
+    "totalMinutes": 44,
+    "searchText": "krämig indisk kycklingcurry basmatiris blomkål morot lök kokosmjölk curry on milda mahal ingefärapuré jordnötter persilja"
+  },
+  {
+    "id": "flaskkotlett_dragonsas",
+    "source": "hellofresh",
+    "createdAt": 1794427062,
+    "name": "Snabb pannstekt fläskkotlett och dragonsås",
+    "tags": [
+      "master",
+      "pork",
+      "quick",
+      "scandinavian",
+      "protein:pork"
+    ],
+    "hfTags": [
+      "supersnabb",
+      "vetefri",
+      "aggfri",
+      "comfort-food",
+      "classic-plates"
+    ],
+    "image": "assets/recipes/flaskkotlett_dragonsas/main.jpg",
+    "basePortions": 4,
+    "cuisine": "scandinavian",
+    "allergens": [
+      "dairy"
+    ],
+    "difficulty": "easy",
+    "totalMinutes": 17,
+    "searchText": "snabb pannstekt fläskkotlett dragonsås smörslungad potatis morotssallad dragon matlagningsgrädde"
+  },
+  {
+    "id": "kyckling_paprikash_jasminris",
+    "source": "hellofresh",
+    "createdAt": 1794427223,
+    "name": "Kyckling paprikash",
+    "tags": [
+      "master",
+      "chicken",
+      "hungarian",
+      "rice",
+      "quick",
+      "protein:chicken"
+    ],
+    "hfTags": [
+      "supersnabb",
+      "aggfri",
+      "classic-euro-dishes",
+      "soup-stew",
+      "comfort-food"
+    ],
+    "image": "assets/recipes/kyckling_paprikash_jasminris/main.jpg",
+    "basePortions": 4,
+    "cuisine": "hungarian",
+    "allergens": [
+      "dairy",
+      "gluten",
+      "soy",
+      "sulphites"
+    ],
+    "difficulty": "easy",
+    "totalMinutes": 20,
+    "searchText": "kyckling paprikash jasminris gurksallad crème fraiche rökt paprikapulver tomatpuré sojasås morot"
+  },
+  {
+    "id": "citrusstekt_kolja",
+    "source": "hellofresh",
+    "createdAt": 1794427435,
+    "name": "Citrusstekt kolja",
+    "tags": [
+      "master",
+      "fish",
+      "protein:fish",
+      "scandinavian",
+      "ovenbake",
+      "glutenfri"
+    ],
+    "hfTags": [
+      "vetefri",
+      "laga-mig-forst",
+      "nyttig",
+      "mer-gront",
+      "proteinrik",
+      "under-650-kcal",
+      "kalla-till-fiber",
+      "regional-specialty",
+      "classic-plates"
+    ],
+    "image": "assets/recipes/citrusstekt_kolja/main.jpg",
+    "basePortions": 4,
+    "cuisine": "scandinavian",
+    "allergens": [
+      "fish",
+      "egg",
+      "mustard",
+      "sesame",
+      "celery",
+      "dairy"
+    ],
+    "difficulty": "medium",
+    "totalMinutes": 58,
+    "searchText": "citrusstekt kolja ugnsrostade sesamgrönsaker aioli palsternacka broccoli dill citron potatis"
+  },
+  {
+    "id": "wraps_plantbitar_potatis",
+    "source": "hellofresh",
+    "createdAt": 1794427713,
+    "name": "Wraps på vegostrimlor",
+    "tags": [
+      "master",
+      "veggie",
+      "vegetarisk",
+      "wrap",
+      "protein:vegetarian",
+      "laktosfri",
+      "levantine",
+      "ovenbake"
+    ],
+    "hfTags": [
+      "veggie",
+      "mjlkfri",
+      "plantbaserat",
+      "comfort-food",
+      "handhelds",
+      "quick"
+    ],
+    "image": "assets/recipes/wraps_plantbitar_potatis/main.jpg",
+    "basePortions": 4,
+    "cuisine": "levantine",
+    "allergens": [
+      "gluten",
+      "sesame",
+      "soy"
+    ],
+    "difficulty": "easy",
+    "totalMinutes": 55,
+    "searchText": "wraps på vegostrimlor plantbaserade kycklingbitar za'atar-pommes srirachamajonnäs tortilla rödlök gurka salladsmix"
+  },
+  {
+    "id": "pizzasandwich_getost_pumpa_korsbarstomat",
+    "source": "hellofresh",
+    "createdAt": 1794427986,
+    "name": "Pizzasandwich med getost och butternutpumpa",
+    "tags": [
+      "master",
+      "veggie",
+      "vegetarisk",
+      "pizza",
+      "protein:vegetarian",
+      "italian",
+      "ovenbake",
+      "äggfri"
+    ],
+    "hfTags": [
+      "veggie",
+      "aggfri",
+      "laga-mig-forst",
+      "mediterranean"
+    ],
+    "image": "assets/recipes/pizzasandwich_getost_pumpa_korsbarstomat/main.jpg",
+    "basePortions": 4,
+    "cuisine": "italian",
+    "allergens": [
+      "gluten",
+      "dairy",
+      "nuts",
+      "sulphites"
+    ],
+    "difficulty": "easy",
+    "totalMinutes": 53,
+    "searchText": "pizzasandwich med getost och butternutpumpa karamelliserad lök tomatsallad valnötter rosmarin basilika rucola körsbärstomat pizzadeg chèvre"
+  },
+  {
+    "id": "kramig_miso_ostronskivling_penne",
+    "source": "hellofresh",
+    "createdAt": 1794428217,
+    "name": "Krämig miso- och ostronskivlingpenne",
+    "tags": [
+      "master",
+      "pasta",
+      "quick",
+      "veggie",
+      "vegetarisk",
+      "protein:vegetarian",
+      "fusion"
+    ],
+    "hfTags": [
+      "quick",
+      "comfort-food",
+      "pasta-noodles"
+    ],
+    "image": "assets/recipes/kramig_miso_ostronskivling_penne/main.jpg",
+    "basePortions": 4,
+    "cuisine": "fusion",
+    "allergens": [
+      "gluten",
+      "soy",
+      "dairy",
+      "egg"
+    ],
+    "difficulty": "easy",
+    "totalMinutes": 33,
+    "searchText": "krämig miso- och ostronskivlingpenne grana padano örtpangrattato spenat panko solroskärnor crème fraiche bladpersilja"
+  },
+  {
+    "id": "kycklingwok_mienudlar_ketjap",
+    "source": "hellofresh",
+    "createdAt": 1794428443,
+    "name": "Snabblagad kycklingwok",
+    "tags": [
+      "master",
+      "wok",
+      "chicken",
+      "kyckling",
+      "protein:chicken",
+      "chinese",
+      "quick",
+      "laktosfri",
+      "äggfri"
+    ],
+    "hfTags": [
+      "supersnabb",
+      "mjlkfri",
+      "aggfri",
+      "nyttig",
+      "proteinrik",
+      "pan-asian-plates",
+      "noodle-stir-fry"
+    ],
+    "image": "assets/recipes/kycklingwok_mienudlar_ketjap/main.jpg",
+    "basePortions": 4,
+    "cuisine": "chinese",
+    "allergens": [
+      "gluten",
+      "soy",
+      "sulphites",
+      "fish",
+      "sesame"
+    ],
+    "difficulty": "easy",
+    "totalMinutes": 30,
+    "searchText": "snabblagad kycklingwok mie-nudlar salladslök ketjap manis thai wokmix ingefärapuré fisksås paprika sesamolja"
+  },
+  {
+    "id": "indisk_flaskkotlett_basmati",
+    "source": "hellofresh",
+    "createdAt": 1794428714,
+    "name": "Kryddiga fläskkotletter på indiskt vis",
+    "tags": [
+      "master",
+      "pork",
+      "fläsk",
+      "protein:pork",
+      "indian",
+      "quick",
+      "äggfri"
+    ],
+    "hfTags": [
+      "quick",
+      "aggfri",
+      "south-southeastasian",
+      "classic-plates"
+    ],
+    "image": "assets/recipes/indisk_flaskkotlett_basmati/main.jpg",
+    "basePortions": 4,
+    "cuisine": "indian",
+    "allergens": [
+      "gluten",
+      "soy",
+      "dairy"
+    ],
+    "difficulty": "easy",
+    "totalMinutes": 32,
+    "searchText": "kryddiga fläskkotletter på indiskt vis granatäppelsallad korianderyoghurt basmatiris milda mahal aprikoschutney lime mynta"
+  },
+  {
+    "id": "citrusstekt_torsk",
+    "source": "hellofresh",
+    "createdAt": 1794428938,
+    "name": "Citrusstekt torsk",
+    "tags": [
+      "master",
+      "fish",
+      "torsk",
+      "protein:fish",
+      "danish",
+      "ovenbake",
+      "glutenfri"
+    ],
+    "hfTags": [
+      "vetefri",
+      "family-friendly",
+      "nyttig",
+      "mer-gront",
+      "kalla-till-fiber",
+      "regional-specialty",
+      "classic-plates"
+    ],
+    "image": "assets/recipes/citrusstekt_torsk/main.jpg",
+    "basePortions": 4,
+    "cuisine": "danish",
+    "allergens": [
+      "fish",
+      "egg",
+      "mustard",
+      "sesame",
+      "celery",
+      "dairy"
+    ],
+    "difficulty": "medium",
+    "totalMinutes": 51,
+    "searchText": "citrusstekt torsk rostade rotfrukter broccoli dill aioli palsternacka potatis sesamfrön citrusbuljong"
+  },
+  {
+    "id": "blandfarstacos_tomatsalsa_vitloksmajs",
+    "source": "hellofresh",
+    "createdAt": 1794429159,
+    "name": "Blandfärstacos med tomatsalsa och vitlöksmajs",
+    "tags": [
+      "master",
+      "taco",
+      "mince",
+      "blandfärs",
+      "protein:beef",
+      "protein:pork",
+      "protein:mixed",
+      "mexican",
+      "äggfri",
+      "barnvänlig"
+    ],
+    "hfTags": [
+      "aggfri",
+      "hidden-veg",
+      "barnvanlig",
+      "latin-american-faves",
+      "handhelds"
+    ],
+    "image": "assets/recipes/blandfarstacos_tomatsalsa_vitloksmajs/main.jpg",
+    "basePortions": 4,
+    "cuisine": "mexican",
+    "allergens": [
+      "gluten",
+      "dairy"
+    ],
+    "difficulty": "easy",
+    "totalMinutes": 30,
+    "searchText": "blandfärstacos tomatsalsa vitlöksmajs gömd svamp hello fiesta cheddar gräddfil minitortillas champinjoner lime"
+  },
+  {
+    "id": "rumpstek_persiljepotatis_broccolini",
+    "source": "hellofresh",
+    "createdAt": 1794429411,
+    "name": "Rumpstek och smörslungad persiljepotatis",
+    "tags": [
+      "master",
+      "steak",
+      "beef",
+      "premium",
+      "protein:beef",
+      "glutenfri",
+      "äggfri"
+    ],
+    "hfTags": [
+      "vetefri",
+      "aggfri",
+      "premium-ingredient",
+      "other-surcharge",
+      "premium",
+      "nyttig",
+      "mer-gront",
+      "proteinrik",
+      "kalla-till-fiber",
+      "classic-plates"
+    ],
+    "image": "assets/recipes/rumpstek_persiljepotatis_broccolini/main.jpg",
+    "basePortions": 4,
+    "cuisine": "european",
+    "allergens": [
+      "mustard",
+      "dairy"
+    ],
+    "difficulty": "easy",
+    "totalMinutes": 44,
+    "searchText": "rumpstek smörslungad persiljepotatis palsternacka broccolini senapssås dragon schalottenlök grov senap"
+  },
+  {
+    "id": "nduja_ravioli_ankconfit",
+    "source": "hellofresh",
+    "createdAt": 1794429790,
+    "name": "Nduja- och paprikaravioli och konfiterat anklår",
+    "tags": [
+      "master",
+      "pasta",
+      "italian",
+      "meat",
+      "poultry",
+      "premium",
+      "protein:meat",
+      "protein:pork",
+      "protein:mixed"
+    ],
+    "hfTags": [
+      "new",
+      "premium-ingredient",
+      "double-protein",
+      "modern-classics",
+      "premium",
+      "comfort-food",
+      "mediterranean",
+      "pasta-noodles",
+      "premium-elevated-ing"
+    ],
+    "image": "assets/recipes/nduja_ravioli_ankconfit/main.jpg",
+    "basePortions": 4,
+    "cuisine": "italian",
+    "allergens": [
+      "gluten",
+      "dairy",
+      "egg",
+      "sulphites",
+      "nuts"
+    ],
+    "difficulty": "easy",
+    "totalMinutes": 57,
+    "searchText": "nduja paprikaravioli konfiterat anklår anka passata rödvinssås rucola gurka hasselnötter grana padano schalottenlök tomatsås italiensk"
+  },
+  {
+    "id": "goan_xacuti_plantbitar",
+    "source": "hellofresh",
+    "createdAt": 1794429989,
+    "name": "Snabbstekta goan xacuti-vegostrimlor",
+    "tags": [
+      "master",
+      "veggie",
+      "vegetarisk",
+      "goan",
+      "rice",
+      "bowl",
+      "quick",
+      "protein:vegetarian",
+      "laktosfri"
+    ],
+    "hfTags": [
+      "supersnabb",
+      "veggie",
+      "mjlkfri",
+      "plantbaserat",
+      "dinner-bowls",
+      "comfort-food"
+    ],
+    "image": "assets/recipes/goan_xacuti_plantbitar/main.jpg",
+    "basePortions": 4,
+    "cuisine": "goan",
+    "allergens": [
+      "gluten",
+      "soy"
+    ],
+    "difficulty": "easy",
+    "totalMinutes": 19,
+    "searchText": "snabbstekta goan xacuti vegostrimlor plantbaserade kycklingbitar jasminris asiatisk slaw kålrabbi kålmix srirachamajonnäs sojasås sweet chilisås purjolök chiliflakes vegetarisk"
+  },
+  {
+    "id": "parlcouscous_kungsrakbowl",
+    "source": "hellofresh",
+    "createdAt": 1794430237,
+    "name": "Pärlcouscous- och räkbowl",
+    "tags": [
+      "master",
+      "bowl",
+      "fusion",
+      "quick",
+      "protein:shrimp",
+      "laktosfri",
+      "äggfri"
+    ],
+    "hfTags": [
+      "quick",
+      "mjlkfri",
+      "aggfri",
+      "nyttig",
+      "mer-gront",
+      "under-650-kcal",
+      "kalla-till-fiber",
+      "dinner-bowls",
+      "new",
+      "laga-mig-forst"
+    ],
+    "image": "assets/recipes/parlcouscous_kungsrakbowl/main.jpg",
+    "basePortions": 4,
+    "cuisine": "fusion",
+    "allergens": [
+      "gluten",
+      "sulphites",
+      "crustaceans"
+    ],
+    "difficulty": "easy",
+    "totalMinutes": 32,
+    "searchText": "pärlcouscous räkbowl kungsräkor avokado zucchini koriandervinägrett tex-mex spenat citron chili vitvinsvinäger fusion"
   }
 ]

@@ -4,6 +4,11 @@
   "rawId": "6a689117640e6eb29c2ac576",
   "createdAt": 1791034509,
   "basePortions": 4,
+  "time": {
+    "totalMin": 33,
+    "activeMin": 33,
+    "computedFrom": "graph"
+  },
   "sharedPrep": [],
   "images": {
     "main": "assets/recipes/vietnamesisk_rakbowl/main.jpg",

@@ -4,6 +4,11 @@
   "rawId": "ica-715607",
   "createdAt": 1791654267,
   "basePortions": 4,
+  "time": {
+    "totalMin": 56,
+    "activeMin": 26,
+    "computedFrom": "graph"
+  },
   "sharedPrep": [],
   "images": {
     "main": "assets/recipes/pastagratang_ziti/main.jpg"
