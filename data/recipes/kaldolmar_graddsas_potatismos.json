@@ -4,8 +4,8 @@
   "createdAt": 1795527271,
   "basePortions": 6,
   "time": {
-    "totalMin": 137,
-    "activeMin": 105,
+    "totalMin": 140,
+    "activeMin": 108,
     "computedFrom": "graph"
   },
   "sharedPrep": [],
@@ -96,9 +96,9 @@
       ]
     },
     {
-      "id": "kaldolmar_graddsas_potatismos__trimmed_leaves",
-      "name": "Putsa Kålbladen",
-      "outputName": "Putsade kålblad",
+      "id": "kaldolmar_graddsas_potatismos__cooled_leaves",
+      "name": "Kyl Ner Kålbladen",
+      "outputName": "Avkylda kålblad",
       "inputs": [
         {
           "id": "kaldolmar_graddsas_potatismos__blanched_leaves",
@@ -107,8 +107,39 @@
         }
       ],
       "steps": [
-        "Låt {{kaldolmar_graddsas_potatismos__blanched_leaves}} rinna av och svalna så att du kan hantera dem.",
-        "Lägg bladen med utsidan uppåt på {{eq:skarbrada|def}} och skär ner den tjocka mittnerven längst ner på varje blad så att den blir lika tunn som resten av bladet."
+        "Lägg {{kaldolmar_graddsas_potatismos__blanched_leaves}} i {{eq:skal_2}} med kallt vatten, så att kokningen stannar.",
+        "Låt bladen rinna av i {{eq:durkslag_1}}."
+      ],
+      "duration": 3,
+      "wait": 0,
+      "tags": [],
+      "equipment": [
+        {
+          "type": "skal_stor",
+          "ref": "skal_2"
+        },
+        {
+          "type": "durkslag",
+          "ref": "durkslag_1"
+        }
+      ],
+      "tips": [
+        "Förvara bladen på en uppochnervänd skål tills det är dags att rulla."
+      ]
+    },
+    {
+      "id": "kaldolmar_graddsas_potatismos__trimmed_leaves",
+      "name": "Putsa Kålbladen",
+      "outputName": "Putsade kålblad",
+      "inputs": [
+        {
+          "id": "kaldolmar_graddsas_potatismos__cooled_leaves",
+          "amount": 1,
+          "unit": "st"
+        }
+      ],
+      "steps": [
+        "Lägg {{kaldolmar_graddsas_potatismos__cooled_leaves}} med utsidan uppåt på {{eq:skarbrada|def}} och skär ner den tjocka mittnerven längst ner på varje blad så att den blir lika tunn som resten av bladet."
       ],
       "duration": 6,
       "wait": 0,
